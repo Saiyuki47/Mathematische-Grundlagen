@@ -1,17 +1,18 @@
 import type { QuizQuestion } from '../types'
+import Frac from '../utils/Frac'
 
 export const quizData: QuizQuestion[] = [
   {
-    q: 'Was ergibt 3/7 + 7/3?',
-    opts: ['10/10', '58/21', '21/58', '10/21'],
+    q: <>{'Was ergibt '}<Frac n="3" d="7" />{' + '}<Frac n="7" d="3" />{'?'}</>,
+    opts: [<Frac n="10" d="10" />, <Frac n="58" d="21" />, <Frac n="21" d="58" />, <Frac n="10" d="21" />],
     ans: 1,
-    exp: 'Gemeinsamer Nenner ist 21: 9/21 + 49/21 = 58/21.',
+    exp: <>{'Gemeinsamer Nenner ist 21: '}<Frac n="9" d="21" />{' + '}<Frac n="49" d="21" />{' = '}<Frac n="58" d="21" />{'.'}</>,
   },
   {
     q: 'Was ergibt 5⁻² · 100?',
     opts: ['−100', '2500', '4', '25'],
     ans: 2,
-    exp: '5⁻² = 1/25, also 100/25 = 4.',
+    exp: <>{'5⁻² = '}<Frac n="1" d="25" />{', also '}<Frac n="100" d="25" />{' = 4.'}</>,
   },
   {
     q: 'Was ergibt √2 · √32?',
@@ -21,9 +22,9 @@ export const quizData: QuizQuestion[] = [
   },
   {
     q: 'Welcher Ausdruck kann NICHT weiter gekürzt werden?',
-    opts: ['(a²−b²)/(a−b)', '(k²+k³)/k²', '(a²+b²)/(a+b)', '(a−b)/(b−a)'],
+    opts: [<Frac n="a²−b²" d="a−b" />, <Frac n="k²+k³" d="k²" />, <Frac n="a²+b²" d="a+b" />, <Frac n="a−b" d="b−a" />],
     ans: 2,
-    exp: '(a²+b²)/(a+b) hat keine gemeinsamen Faktoren – nicht kürzbar. Die anderen lassen sich vereinfachen.',
+    exp: <><Frac n="a²+b²" d="a+b" />{' hat keine gemeinsamen Faktoren – nicht kürzbar. Die anderen lassen sich vereinfachen.'}</>,
   },
   {
     q: 'Wie lautet die 3. binomische Formel?',
@@ -38,16 +39,16 @@ export const quizData: QuizQuestion[] = [
     exp: 'In der Normalform y = m·x + b ist m = −2 die Steigung.',
   },
   {
-    q: 'An welcher Stelle schneidet y = (1/2)x − 2 die y-Achse?',
+    q: <>{'An welcher Stelle schneidet y = ('}<Frac n="1" d="2" />{')x − 2 die y-Achse?'}</>,
     opts: ['0', '−2', '4', '2'],
     ans: 1,
     exp: 'Der y-Achsenabschnitt ist b = −2 (setze x = 0: y = −2).',
   },
   {
-    q: 'Was ergibt (k² + k³) / k²?',
-    opts: ['k', '1 + k', 'k + k²', '1/k'],
+    q: <>{'Was ergibt '}<Frac n="k² + k³" d="k²" />{'?'}</>,
+    opts: ['k', '1 + k', 'k + k²', <Frac n="1" d="k" />],
     ans: 1,
-    exp: 'k²(1+k)/k² = 1+k. Man klammert k² im Zähler aus und kürzt.',
+    exp: <>{'k²'}<Frac n="1+k" d="k²" />{' = 1+k. Man klammert k² im Zähler aus und kürzt.'}</>,
   },
   {
     q: 'Was gilt für √(a+b) = √a + √b?',
@@ -61,10 +62,10 @@ export const quizData: QuizQuestion[] = [
     exp: 'Für a=9, b=16: √25 = 5, aber √9+√16 = 3+4 = 7. Die Gleichung gilt nicht allgemein.',
   },
   {
-    q: 'Was ist der Schnittpunkt der Geraden y = −2x+1 und y = (1/2)x−2?',
-    opts: ['(1, −1)', '(6/5, −7/5)', '(0, 1)', '(2, −3)'],
+    q: <>{'Was ist der Schnittpunkt der Geraden y = −2x+1 und y = ('}<Frac n="1" d="2" />{')x−2?'}</>,
+    opts: ['(1, −1)', <>{'('}<Frac n="6" d="5" />{', −'}<Frac n="7" d="5" />{')'}</>, '(0, 1)', '(2, −3)'],
     ans: 1,
-    exp: '−2x+1 = (1/2)x−2 → 3 = (5/2)x → x = 6/5; y = −12/5+5/5 = −7/5.',
+    exp: <>{'−2x+1 = ('}<Frac n="1" d="2" />{')x−2 → 3 = ('}<Frac n="5" d="2" />{')x → x = '}<Frac n="6" d="5" />{'; y = −'}<Frac n="12" d="5" />{' + '}<Frac n="5" d="5" />{' = −'}<Frac n="7" d="5" />{'.'}</>,
   },
   {
     q: 'Sei M = {1, 2, 3}. Welche Aussage ist korrekt?',
@@ -73,10 +74,10 @@ export const quizData: QuizQuestion[] = [
     exp: '{1} ⊆ M ist korrekt: {1} ist eine Teilmenge von M. {1} ∈ M ist falsch (1 ∈ M wäre richtig). 1 ⊆ M ist falsch (1 ist kein Mengensymbol).',
   },
   {
-    q: 'Seien X = {1,3,5,7} und Z = {1,5}. Was ergibt X \ Z?',
+    q: 'Seien X = {1,3,5,7} und Z = {1,5}. Was ergibt X \\ Z?',
     opts: ['{1,5}', '{3,7}', '∅', '{1,3,5,7}'],
     ans: 1,
-    exp: 'X \ Z enthält alle Elemente aus X, die nicht in Z sind: {1,3,5,7} \ {1,5} = {3,7}.',
+    exp: 'X \\ Z enthält alle Elemente aus X, die nicht in Z sind: {1,3,5,7} \\ {1,5} = {3,7}.',
   },
   {
     q: 'Wie viele Elemente hat die Potenzmenge P(A) für A = {1, 2, 3}?',

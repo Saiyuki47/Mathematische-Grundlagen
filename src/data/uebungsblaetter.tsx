@@ -1,4 +1,5 @@
 import type { MatheBlatt } from '../types'
+import Frac from '../utils/Frac'
 
 export const uebungsblaetter: MatheBlatt[] = [
   {
@@ -13,36 +14,44 @@ export const uebungsblaetter: MatheBlatt[] = [
         subaufgaben: [
           {
             letter: 'a',
-            text: '3/7 + 7/3',
-            hint: 'Bestimme den gemeinsamen Nenner: kgV(7, 3) = 21. Erweitere 3/7 auf 9/21 und 7/3 auf 49/21.',
-            solution: '3/7 + 7/3 = 9/21 + 49/21 = 58/21',
+            text: <><Frac n="3" d="7" />{' + '}<Frac n="7" d="3" /></>,
+            hint: <>{'Bestimme den gemeinsamen Nenner: kgV(7, 3) = 21. Erweitere '}<Frac n="3" d="7" />{' auf '}<Frac n="9" d="21" />{' und '}<Frac n="7" d="3" />{' auf '}<Frac n="49" d="21" />{'.'}</>,
+            solution: <><Frac n="3" d="7" />{' + '}<Frac n="7" d="3" />{' = '}<Frac n="9" d="21" />{' + '}<Frac n="49" d="21" />{' = '}<Frac n="58" d="21" /></>,
           },
           {
             letter: 'b',
-            text: '(1/3 + 2/9) · (11/8 − 1/4)',
+            text: <>{'('}<Frac n="1" d="3" />{' + '}<Frac n="2" d="9" />{') · ('}<Frac n="11" d="8" />{' − '}<Frac n="1" d="4" />{')'}</>,
             hint: 'Berechne zuerst jeden Klammerausdruck separat (gemeinsamer Nenner 9 bzw. 8), dann multipliziere.',
-            solution:
-              '(1/3 + 2/9) = 3/9 + 2/9 = 5/9\n(11/8 − 1/4) = 11/8 − 2/8 = 9/8\n5/9 · 9/8 = 45/72 = 5/8',
+            solution: (
+              <>
+                {'('}<Frac n="1" d="3" />{' + '}<Frac n="2" d="9" />{') = '}<Frac n="3" d="9" />{' + '}<Frac n="2" d="9" />{' = '}<Frac n="5" d="9" />{'\n'}
+                {'('}<Frac n="11" d="8" />{' − '}<Frac n="1" d="4" />{') = '}<Frac n="11" d="8" />{' − '}<Frac n="2" d="8" />{' = '}<Frac n="9" d="8" />{'\n'}
+                <Frac n="5" d="9" />{' · '}<Frac n="9" d="8" />{' = '}<Frac n="45" d="72" />{' = '}<Frac n="5" d="8" />
+              </>
+            ),
           },
           {
             letter: 'c',
-            text: '(13/2 : 169/12) : 3/26   (Hinweis: 13 · 13 = 169)',
+            text: <>{'('}<Frac n="13" d="2" />{' : '}<Frac n="169" d="12" />{') : '}<Frac n="3" d="26" />{'   (Hinweis: 13 · 13 = 169)'}</>,
             hint: 'Division durch einen Bruch = Multiplikation mit dem Kehrwert. Kürze mit 13 und nutze 169 = 13².',
-            solution:
-              '13/2 : 169/12 = 13/2 · 12/169 = 156/338 = 12/26\n12/26 : 3/26 = 12/26 · 26/3 = 12/3 = 4',
+            solution: (
+              <>
+                <Frac n="13" d="2" />{' : '}<Frac n="169" d="12" />{' = '}<Frac n="13" d="2" />{' · '}<Frac n="12" d="169" />{' = '}<Frac n="156" d="338" />{' = '}<Frac n="12" d="26" />{'\n'}
+                <Frac n="12" d="26" />{' : '}<Frac n="3" d="26" />{' = '}<Frac n="12" d="26" />{' · '}<Frac n="26" d="3" />{' = '}<Frac n="12" d="3" />{' = 4'}
+              </>
+            ),
           },
           {
             letter: 'd',
             text: '5⁻² · 100',
-            hint: 'Negative Hochzahl: a⁻ⁿ = 1/aⁿ. Also 5⁻² = 1/25.',
-            solution: '5⁻² · 100 = (1/25) · 100 = 100/25 = 4',
+            hint: <>{'Negative Hochzahl: a⁻ⁿ = '}<Frac n="1" d="aⁿ" />{'. Also 5⁻² = '}<Frac n="1" d="25" />{'.'}</>,
+            solution: <>{'5⁻² · 100 = ('}<Frac n="1" d="25" />{') · 100 = '}<Frac n="100" d="25" />{' = 4'}</>,
           },
           {
             letter: 'e',
             text: '−2(2x − 4) + x(1 + x) · (−1)',
             hint: 'Löse die Klammern schrittweise auf: zuerst −2(2x−4), dann x(1+x)·(−1). Sammle gleiche Terme.',
-            solution:
-              '−2(2x−4) = −4x + 8\nx(1+x)·(−1) = −x − x²\n−4x + 8 − x − x² = −x² − 5x + 8',
+            solution: '−2(2x−4) = −4x + 8\nx(1+x)·(−1) = −x − x²\n−4x + 8 − x − x² = −x² − 5x + 8',
           },
           {
             letter: 'f',
@@ -53,10 +62,15 @@ export const uebungsblaetter: MatheBlatt[] = [
           },
           {
             letter: 'g',
-            text: '−(a + b)/c − (a − b)/c',
+            text: <>{'−'}<Frac n="a + b" d="c" />{' − '}<Frac n="a − b" d="c" /></>,
             hint: 'Beide Brüche haben denselben Nenner c – fasse sie direkt zusammen.',
-            solution:
-              '= (−(a+b) − (a−b)) / c\n= (−a − b − a + b) / c\n= −2a/c',
+            solution: (
+              <>
+                {'= '}<Frac n="−(a+b) − (a−b)" d="c" />{'\n'}
+                {'= '}<Frac n="−a − b − a + b" d="c" />{'\n'}
+                {'= '}<Frac n="−2a" d="c" />
+              </>
+            ),
           },
         ],
       },
@@ -95,49 +109,49 @@ export const uebungsblaetter: MatheBlatt[] = [
         subaufgaben: [
           {
             letter: 'a',
-            text: '(a − b) / (a − b)',
+            text: <Frac n="a − b" d="a − b" />,
             hint: 'Zähler und Nenner sind identisch.',
-            solution: '(a−b)/(a−b) = 1',
+            solution: <><Frac n="a−b" d="a−b" />{' = 1'}</>,
           },
           {
             letter: 'b',
-            text: '(a − b) / (b − a)',
+            text: <Frac n="a − b" d="b − a" />,
             hint: 'Schreibe b−a = −(a−b) und kürze.',
-            solution: '(a−b)/(b−a) = (a−b)/(−(a−b)) = −1',
+            solution: <><Frac n="a−b" d="b−a" />{' = '}<Frac n="a−b" d="−(a−b)" />{' = −1'}</>,
           },
           {
             letter: 'c',
-            text: '(a² + b²) / (a + b)',
+            text: <Frac n="a² + b²" d="a + b" />,
             hint: 'Prüfe, ob Zähler oder Nenner faktorisiert werden können. a²+b² hat keine reellen Faktoren der Form (a+b).',
             solution: 'Nicht weiter kürzbar – Zähler und Nenner haben keine gemeinsamen Faktoren.',
           },
           {
             letter: 'd',
-            text: '(a² − b²) / (a − b)',
+            text: <Frac n="a² − b²" d="a − b" />,
             hint: 'Wende die 3. binomische Formel an: a²−b² = (a+b)(a−b).',
-            solution: '(a²−b²)/(a−b) = (a+b)(a−b)/(a−b) = a+b',
+            solution: <><Frac n="a²−b²" d="a−b" />{' = '}<Frac n="(a+b)(a−b)" d="a−b" />{' = a+b'}</>,
           },
           {
             letter: 'e',
-            text: '(2a + 3b) / (2c + 3d)',
+            text: <Frac n="2a + 3b" d="2c + 3d" />,
             hint: 'Gibt es einen gemeinsamen Faktor in Zähler und Nenner?',
             solution: 'Nicht weiter kürzbar – keine gemeinsamen Faktoren.',
           },
           {
             letter: 'f',
-            text: '(k² + k³) / k²',
+            text: <Frac n="k² + k³" d="k²" />,
             hint: 'Klammere k² im Zähler aus: k²(1+k).',
-            solution: '(k²+k³)/k² = k²(1+k)/k² = 1+k',
+            solution: <><Frac n="k²+k³" d="k²" />{' = '}<Frac n="k²(1+k)" d="k²" />{' = 1+k'}</>,
           },
           {
             letter: 'g',
-            text: '2k² / (4k² + 6k³)',
+            text: <Frac n="2k²" d="4k² + 6k³" />,
             hint: 'Klammere 2k² im Nenner aus: 2k²(2+3k).',
-            solution: '2k²/(4k²+6k³) = 2k²/(2k²(2+3k)) = 1/(2+3k)',
+            solution: <><Frac n="2k²" d="4k²+6k³" />{' = '}<Frac n="2k²" d="2k²(2+3k)" />{' = '}<Frac n="1" d="2+3k" /></>,
           },
           {
             letter: 'h',
-            text: '(1 + k²) / (1 + k³)',
+            text: <Frac n="1 + k²" d="1 + k³" />,
             hint: 'Lässt sich k³ = k·k² nutzen? Prüfe, ob (1+k²) ein Faktor von (1+k³) ist.',
             solution: 'Nicht weiter kürzbar.',
           },
@@ -163,11 +177,21 @@ export const uebungsblaetter: MatheBlatt[] = [
           },
           {
             letter: 'c',
-            text: 'Mache die Nenner von 1/√5 und 1/(√3 + √5) jeweils rational.',
-            hint:
-              'Für 1/√5: Erweitere mit √5/√5.\nFür 1/(√3+√5): Nutze die 3. binomische Formel – erweitere mit (√3−√5)/(√3−√5).',
-            solution:
-              '1/√5 = (1·√5)/(√5·√5) = √5/5\n\n1/(√3+√5)\n= 1/(√3+√5) · (√3−√5)/(√3−√5)\n= (√3−√5)/(3−5)\n= (√3−√5)/(−2)',
+            text: <>{'Mache die Nenner von '}<Frac n="1" d="√5" />{' und '}<Frac n="1" d="√3 + √5" />{' jeweils rational.'}</>,
+            hint: (
+              <>
+                {'Für '}<Frac n="1" d="√5" />{': Erweitere mit '}<Frac n="√5" d="√5" />{'.\nFür '}<Frac n="1" d="√3+√5" />{': Nutze die 3. binomische Formel – erweitere mit '}<Frac n="√3−√5" d="√3−√5" />{'.'} 
+              </>
+            ),
+            solution: (
+              <>
+                <Frac n="1" d="√5" />{' = '}<Frac n="1·√5" d="√5·√5" />{' = '}<Frac n="√5" d="5" />{'\n\n'}
+                <Frac n="1" d="√3+√5" />{'\n= '}
+                <Frac n="1" d="√3+√5" />{' · '}<Frac n="√3−√5" d="√3−√5" />{'\n= '}
+                <Frac n="√3−√5" d="3−5" />{'\n= '}
+                <Frac n="√3−√5" d="−2" />
+              </>
+            ),
           },
         ],
       },
@@ -190,7 +214,7 @@ export const uebungsblaetter: MatheBlatt[] = [
             letter: 'b',
             text: 'Skizziere y = −2x + 1.',
             hint: 'Steigung m = −2 (fällt steil), y-Achsenabschnitt b = 1. Punkte: (0,1) und (1,−1).',
-            solution: 'Gerade fällt steil nach rechts. Nullstelle bei x = 1/2.',
+            solution: <>{'Gerade fällt steil nach rechts. Nullstelle bei x = '}<Frac n="1" d="2" />{'.'}</>,
             graph: {
               lines: [{ m: -2, b: 1, label: 'y = −2x + 1' }],
               xMin: -1, xMax: 2, yMin: -2, yMax: 4,
@@ -198,8 +222,8 @@ export const uebungsblaetter: MatheBlatt[] = [
           },
           {
             letter: 'c',
-            text: 'Skizziere y = (1/2)x − 2.',
-            hint: 'Steigung m = 1/2 (steigt flach), y-Achsenabschnitt b = −2. Punkte: (0,−2) und (4,0).',
+            text: <>{'Skizziere y = ('}<Frac n="1" d="2" />{')x − 2.'}</>,
+            hint: <>{'Steigung m = '}<Frac n="1" d="2" />{' (steigt flach), y-Achsenabschnitt b = −2. Punkte: (0,−2) und (4,0).'}</>,
             solution: 'Gerade steigt flach nach rechts. Nullstelle bei x = 4.',
             graph: {
               lines: [{ m: 0.5, b: -2, label: 'y = x/2 − 2' }],
@@ -219,9 +243,14 @@ export const uebungsblaetter: MatheBlatt[] = [
           {
             letter: 'e',
             text: 'Bestimme den Schnittpunkt der Geraden aus (b) und (c).',
-            hint: 'Setze beide Gleichungen gleich: −2x+1 = (1/2)x−2. Löse nach x auf.',
-            solution:
-              '−2x + 1 = (1/2)x − 2\n3 = (5/2)x\nx = 6/5\ny = −2·(6/5) + 1 = −12/5 + 5/5 = −7/5\nSchnittpunkt: (6/5, −7/5)',
+            hint: <>{'Setze beide Gleichungen gleich: −2x+1 = ('}<Frac n="1" d="2" />{')x−2. Löse nach x auf.'}</>,
+            solution: (
+              <>
+                {'−2x + 1 = ('}<Frac n="1" d="2" />{')x − 2\n3 = ('}<Frac n="5" d="2" />{')x\nx = '}<Frac n="6" d="5" />{'\n'}
+                {'y = −2·('}<Frac n="6" d="5" />{') + 1 = −'}<Frac n="12" d="5" />{' + '}<Frac n="5" d="5" />{' = −'}<Frac n="7" d="5" />{'\n'}
+                {'Schnittpunkt: ('}<Frac n="6" d="5" />{', −'}<Frac n="7" d="5" />{')'}
+              </>
+            ),
             graph: {
               lines: [
                 { m: -2, b: 1, label: 'y = −2x + 1' },
@@ -241,9 +270,13 @@ export const uebungsblaetter: MatheBlatt[] = [
           {
             letter: 'a',
             text: 'Die Gerade schneidet die y-Achse bei 2 und die x-Achse bei 8. Gib die Geradengleichung an.',
-            hint: 'Lies zwei Punkte ab: P₁ = (0, 2) und P₂ = (8, 0). Steigung m = (y₂−y₁)/(x₂−x₁).',
-            solution:
-              'm = (0−2)/(8−0) = −2/8 = −1/4\nb = 2  (y-Achsenabschnitt)\ny = −(1/4)x + 2',
+            hint: <>{'Lies zwei Punkte ab: P₁ = (0, 2) und P₂ = (8, 0). Steigung m = '}<Frac n="y₂−y₁" d="x₂−x₁" />{'.'}</>,
+            solution: (
+              <>
+                {'m = '}<Frac n="0−2" d="8−0" />{' = −'}<Frac n="2" d="8" />{' = −'}<Frac n="1" d="4" />{'\n'}
+                {'b = 2  (y-Achsenabschnitt)\ny = −('}<Frac n="1" d="4" />{')x + 2'}
+              </>
+            ),
             taskGraph: {
               lines: [{ m: -0.25, b: 2, label: 'y = ?' }],
               points: [
@@ -257,8 +290,12 @@ export const uebungsblaetter: MatheBlatt[] = [
             letter: 'b',
             text: 'Die Gerade geht durch den Ursprung und durch den Punkt (2, −1). Gib die Geradengleichung an.',
             hint: 'Durch den Ursprung → b = 0. Berechne m aus P₁ = (0,0) und P₂ = (2,−1).',
-            solution:
-              'm = (−1−0)/(2−0) = −1/2\nb = 0  (Ursprungsgerade)\ny = −(1/2)x',
+            solution: (
+              <>
+                {'m = '}<Frac n="−1−0" d="2−0" />{' = −'}<Frac n="1" d="2" />{'\n'}
+                {'b = 0  (Ursprungsgerade)\ny = −('}<Frac n="1" d="2" />{')x'}
+              </>
+            ),
             taskGraph: {
               lines: [{ m: -0.5, b: 0, label: 'y = ?' }],
               points: [
@@ -387,4 +424,3 @@ export const uebungsblaetter: MatheBlatt[] = [
     ],
   },
 ]
-

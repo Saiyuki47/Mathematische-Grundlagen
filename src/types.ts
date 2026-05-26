@@ -1,15 +1,17 @@
+import type { ReactNode } from 'react'
+
 export type Difficulty = 'easy' | 'med' | 'hard'
 
 export interface QuizQuestion {
-  q: string
-  opts: string[]
+  q: ReactNode
+  opts: ReactNode[]
   ans: number
-  exp: string
+  exp: ReactNode
 }
 
 export interface CheatCard {
   title: string
-  content: string
+  content: ReactNode
 }
 
 export interface GraphLine {
@@ -36,9 +38,9 @@ export interface LineGraphData {
 
 export interface MatheSubaufgabe {
   letter: string
-  text: string
-  hint: string
-  solution: string
+  text: ReactNode
+  hint: ReactNode
+  solution: ReactNode
   graph?: LineGraphData      // shown in solution reveal
   taskGraph?: LineGraphData  // shown directly in task (always visible)
 }

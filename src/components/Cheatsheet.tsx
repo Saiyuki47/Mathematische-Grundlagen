@@ -1,5 +1,4 @@
 import { cheatCards } from '../data/cheatsheet'
-import { renderFractions } from '../utils/fractionRender'
 
 export default function Cheatsheet() {
   return (
@@ -12,7 +11,7 @@ export default function Cheatsheet() {
         {cheatCards.map(card => (
           <div key={card.title} className="cheat-card">
             <h3>{card.title}</h3>
-            <pre className="cheat-code">{renderFractions(card.content)}</pre>
+            <pre className="cheat-code">{card.content}</pre>
           </div>
         ))}
       </div>

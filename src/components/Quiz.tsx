@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react'
 import { quizData } from '../data/quiz'
-import { renderFractions } from '../utils/fractionRender'
 
 type QuizState = 'playing' | 'answered' | 'finished'
 
@@ -78,7 +77,7 @@ export default function Quiz() {
           <div className="progress-bar" style={{ '--bar-w': `${progress}%` } as React.CSSProperties} />
         </div>
         <p className="quiz-num">Frage {qi + 1} / {quizData.length}</p>
-        <p className="quiz-q">{renderFractions(q.q)}</p>
+        <p className="quiz-q">{q.q}</p>
         <div className="options">
           {q.opts.map((opt, i) => {
             let cls = 'opt-btn'
@@ -93,7 +92,7 @@ export default function Quiz() {
                 disabled={isAnswered}
                 onClick={() => handleAnswer(i)}
               >
-                {renderFractions(opt)}
+                {opt}
               </button>
             )
           })}
@@ -104,7 +103,7 @@ export default function Quiz() {
           {isAnswered && (
             <>
               {selected === q.ans ? '✓ Richtig! ' : '✗ Nicht ganz. '}
-              {renderFractions(q.exp)}
+              {q.exp}
             </>
           )}
         </p>

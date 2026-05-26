@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { uebungsblaetter } from '../data/uebungsblaetter'
 import LineGraph from './LineGraph'
-import { renderFractions } from '../utils/fractionRender'
 
 export default function Uebungsblaetter() {
   const [selectedId, setSelectedId] = useState(uebungsblaetter[0]?.id ?? '')
@@ -64,7 +63,7 @@ export default function Uebungsblaetter() {
                     <div key={sub.letter} className="sub-aufgabe">
                       <p className="sub-letter">({sub.letter})</p>
                       <div className="sub-body">
-                        <p className="sub-text">{renderFractions(sub.text)}</p>
+                        <p className="sub-text">{sub.text}</p>
                         {sub.taskGraph && (
                           <div className="graph-wrap graph-wrap--task">
                             <LineGraph data={sub.taskGraph} />
@@ -87,12 +86,12 @@ export default function Uebungsblaetter() {
                         {hintOpen && (
                           <div className="hint-block">
                             <span className="hint-icon">💡</span>
-                            {renderFractions(sub.hint)}
+                            {sub.hint}
                           </div>
                         )}
                         {solOpen && (
                           <div className="solution-wrap">
-                            <pre className="solution-block">{renderFractions(sub.solution)}</pre>
+                            <pre className="solution-block">{sub.solution}</pre>
                             {sub.graph && (
                               <div className="graph-wrap">
                                 <LineGraph data={sub.graph} />
