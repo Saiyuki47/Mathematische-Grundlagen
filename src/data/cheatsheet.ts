@@ -3,7 +3,7 @@ import type { CheatCard } from '../types'
 export const cheatCards: CheatCard[] = [
   {
     title: 'Bruchrechnen',
-    content: `Addition/Subtraktion:
+    content: `Addition + Subtraktion:
   a/b ± c/d = (a·d ± b·c) / (b·d)
   → gemeinsamen Nenner bilden
 
@@ -31,7 +31,7 @@ a⁻ⁿ = 1/aⁿ`,
 √a / √b = √(a/b)
 (√a)² = a
 √(a²) = |a|
-a^(1/2) = √a
+a^½ = √a
 a^(1/n) = ⁿ√a
 
 Nenner rational machen:
@@ -41,9 +41,7 @@ Nenner rational machen:
   {
     title: 'Binomische Formeln',
     content: `1. (a + b)² = a² + 2ab + b²
-
 2. (a − b)² = a² − 2ab + b²
-
 3. (a + b)(a − b) = a² − b²
 
 Anwendung beim Kürzen:
@@ -54,7 +52,6 @@ Anwendung beim Kürzen:
   {
     title: 'Geradengleichung',
     content: `Normalform:   y = m·x + b
-
   m = Steigung
   b = y-Achsenabschnitt
 
@@ -87,23 +84,24 @@ Beispiel:
 
 Anwendung – 3. Binomische Formel:
   Ausgangspunkt: (a²−b²)/(a−b)
-
   Schritt 1 – Zähler faktorisieren:
     a²−b² = (a+b)·(a−b)
-
   Schritt 2 – Einsetzen und kürzen:
     (a²−b²)/(a−b) = (a+b)·(a−b)/(a−b) = a+b
-    Der Faktor (a−b) steht oben und unten → kürzt weg
+    Faktor (a−b) oben und unten → kürzt weg
 
 Nicht erlaubt – keine gemeinsamen Faktoren:
   (a²+b²)/(a+b) ≠ a+b
     Summe im Zähler ist nicht faktorisierbar
-
   (1+k²)/(1+k³)   kein gemeinsamer Faktor
-  (2a+3b)/(2c+3d)  2 und 3 sind keine Faktoren der Terme
+  (2a+3b)/(2c+3d)  2,3 sind keine Faktoren
 
 Vorzeichen:
-  (a−b)/(b−a) = (a−b)/(−(a−b)) = −1`,
+  (a−b)/(b−a) = −1
+  Nenner umformen: b−a = −(a−b)
+  Also: (a−b)/(−(a−b)) = −1
+  Gilt nur für a ≠ b  (sonst 0/0 undefiniert)
+  Trick: gegengleiche Terme → Ergebnis immer −1`,
   },
   {
     title: 'Rechenreihenfolge',
@@ -123,29 +121,28 @@ Merke:
   {
     title: 'Mengen – Grundbegriffe',
     content: `Schreibweisen:
-  x ∈ A       x ist Element von A
-  x ∉ A       x ist kein Element von A
-  A ⊆ B       A ist Teilmenge von B
-  A = B       A und B haben dieselben Elemente
-  |A|         Mächtigkeit (Anzahl Elemente) von A
+  x ∈ A   x ist Element von A
+  x ∉ A   x ist kein Element von A
+  A ⊆ B   A ist Teilmenge von B
+  A = B   A und B sind gleich
+  |A|     Mächtigkeit von A
 
 Besondere Mengen:
-  ∅           leere Menge (kein Element)
-  ℕ           natürliche Zahlen {0, 1, 2, 3, …}
-  ℤ           ganze Zahlen {…, −2, −1, 0, 1, 2, …}
-  ℝ           reelle Zahlen`,
+  ∅   leere Menge
+  ℕ   natürliche Zahlen {0,1,2,3,…}
+  ℤ   ganze Zahlen {…,−1,0,1,2,…}
+  ℝ   reelle Zahlen`,
   },
   {
     title: 'Mengenoperationen',
-    content: `A ∪ B  Vereinigung: alle x ∈ A oder x ∈ B
-A ∩ B  Schnittmenge: alle x ∈ A und x ∈ B
-A \ B  Differenz: alle x ∈ A mit x ∉ B
-Ā      Komplement: alle x ∈ X mit x ∉ A
-A × B  Kartesisches Produkt: alle Paare (a,b)
-       mit a ∈ A und b ∈ B
+    content: `A ∪ B  Vereinigung: x ∈ A oder x ∈ B
+A ∩ B  Schnittmenge: x ∈ A und x ∈ B
+A \ B  Differenz: x ∈ A mit x ∉ B
+Ā      Komplement: x ∉ A (bzgl. X)
+A × B  Kart. Produkt: {(a,b)|a∈A,b∈B}
 
 Rechenregeln:
-  A ∩ B = B ∩ A          (Kommutativität)
+  A ∩ B = B ∩ A  (Kommutativität)
   A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
   A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)`,
   },
@@ -163,8 +160,8 @@ Potenzmenge P(A):
   P(A) = {∅, {1}, {2}, {1,2}}
 
 Mengendarstellung:
-  {2n : n ∈ ℕ}  = gerade Zahlen
-  {kn + r : n ∈ ℕ}  = Rest r bei Division durch k`,
+  {2n : n ∈ ℕ}    = gerade Zahlen
+  {kn+r : n ∈ ℕ}  = Vielfache von k, Rest r`,
   },
 ]
 

@@ -21,8 +21,9 @@ export function renderFractions(input: string): React.ReactNode {
 
   // Match fractions with flexible numerator/denominator formats:
   // - (expr) or non-whitespace/non-slash sequence
+  // - also handles one level of nested parens, e.g. −(a−b) as denominator
   // Separated by / with optional whitespace
-  const regex = /((?:\([^)]*\)|[^\s/()]+))\s*\/\s*((?:\([^)]*\)|[^\s/()]+))/g
+  const regex = /((?:\((?:[^()]*|\([^)]*\))*\)|[^\s/()]+))\s*\/\s*((?:\((?:[^()]*|\([^)]*\))*\)|[^\s/()]+))/g
   const nodes: FractionNode[] = []
   let lastIndex = 0
   let match
