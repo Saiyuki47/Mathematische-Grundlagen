@@ -142,22 +142,6 @@ header {
 }
 .toggle-btn:hover { background: var(--bg3); color: var(--text); }
 
-/* SQL BLOCK */
-.sql-block {
-  margin-top: 12px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--blue);
-  border-radius: var(--radius);
-  padding: 1rem 1.25rem;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  line-height: 1.9;
-  white-space: pre-wrap;
-  color: var(--text);
-}
-.kw { color: var(--blue); font-weight: 500; }
-
 /* CHEATSHEET */
 .cheat-grid {
   display: grid;
@@ -528,54 +512,6 @@ header {
   font-family: var(--font-mono);
   color: var(--text3);
   margin-top: 6px;
-}
-
-/* SQL TIPS */
-.ub-tips-section {
-  margin: 10px 0;
-}
-.toggle-btn--tips {
-  border-color: var(--amber);
-  color: var(--amber);
-}
-.toggle-btn--tips:hover {
-  background: var(--amber-dim);
-  color: var(--amber);
-}
-.ub-tips-list {
-  margin-top: 8px;
-}
-.ub-tip-card {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--amber);
-  border-radius: 6px;
-  padding: 10px 14px;
-  margin-bottom: 8px;
-}
-.ub-tip-keyword {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--amber);
-  margin-bottom: 4px;
-}
-.ub-tip-desc {
-  font-size: 13px;
-  color: var(--text2);
-  line-height: 1.6;
-  margin-bottom: 8px;
-}
-.ub-tip-example {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text3);
-  background: var(--bg3);
-  border-radius: 5px;
-  padding: 8px 10px;
-  margin: 0;
-  white-space: pre-wrap;
-  line-height: 1.6;
 }
 
 /* MATH SUB-AUFGABEN */

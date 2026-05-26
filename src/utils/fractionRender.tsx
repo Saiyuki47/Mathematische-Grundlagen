@@ -79,9 +79,9 @@ export function renderFractions(input: string): React.ReactNode {
           <React.Fragment key={i}>{node.value}</React.Fragment>
         ) : (
           <span key={i} className="fraction">
-            <span className="fraction-num">{renderFractions(node.num)}</span>
+            <span className="fraction-num">{renderFractions(node.num || '')}</span>
             <span className="fraction-bar" />
-            <span className="fraction-den">{renderFractions(node.den)}</span>
+            <span className="fraction-den">{renderFractions(node.den || '')}</span>
           </span>
         ),
       )}
