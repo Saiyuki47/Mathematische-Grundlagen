@@ -272,5 +272,119 @@ export const uebungsblaetter: MatheBlatt[] = [
       },
     ],
   },
+  {
+    id: 'blatt1',
+    nr: '1',
+    titel: 'Mengen',
+    aufgaben: [
+      {
+        id: 'b1a1',
+        nr: 1,
+        title: 'Mengenschreibweisen',
+        subaufgaben: [
+          {
+            letter: 'a',
+            text: 'Sei M = {1, 2, 3}. Entscheiden Sie jeweils, ob die Schreibweise korrekt ist:\n\n(i)   1 ∈ M\n(ii)  {1} ∈ M\n(iii) {1} ⊆ M',
+            hint: '∈ prüft, ob ein Objekt Element einer Menge ist. ⊆ prüft, ob eine Menge Teilmenge einer anderen ist. {1} ist eine Menge – nicht das Element 1.',
+            solution: '(i) 1 ∈ M  → korrekt  (1 ist Element von {1,2,3})\n(ii) {1} ∈ M  → falsch  ({1} ist keine Menge in M; 1 ist ein Element, nicht {1})\n(iii) {1} ⊆ M  → korrekt  ({1} ist Teilmenge von {1,2,3})',
+          },
+          {
+            letter: 'b',
+            text: 'Sei L = {∅, {1}, {2}, {1,2}}. Entscheiden Sie jeweils, ob die Schreibweise korrekt ist:\n\n(i)   2 ∈ L\n(ii)  {2} ∈ L\n(iii) {2} ⊆ L\n(iv)  {{2}} ⊆ L',
+            hint: 'Die Elemente von L sind: ∅, {1}, {2} und {1,2}. Die Zahl 2 selbst ist kein Element von L.',
+            solution: '(i) 2 ∈ L  → falsch  (2 ist kein direktes Element von L, nur {2} ist es)\n(ii) {2} ∈ L  → korrekt  ({2} ist direktes Element von L)\n(iii) {2} ⊆ L  → falsch  (wäre wahr, wenn 2 ∈ L gilt – das ist aber nicht der Fall)\n(iv) {{2}} ⊆ L  → korrekt  ({2} ∈ L, also ist {{2}} eine Teilmenge von L)',
+          },
+        ],
+      },
+      {
+        id: 'b1a2',
+        nr: 2,
+        title: 'Mengenoperationen',
+        subaufgaben: [
+          {
+            letter: 'a',
+            text: 'Gegeben:\n  X = {1,3,5,7},  Y = {5,7,8},  Z = {1,5}\n\nBestimmen Sie:\n(i)   Z \\ X\n(ii)  X \\ Z\n(iii) X ∩ Y ∩ Z\n(iv)  X ∪ Y ∪ Z\n(v)   X × Z',
+            hint: 'A \\ B = alle Elemente aus A, die nicht in B sind.\nX × Z = alle geordneten Paare (x, z) mit x ∈ X und z ∈ Z.',
+            solution: '(i) Z \\ X = {1,5} \\ {1,3,5,7} = ∅\n(ii) X \\ Z = {1,3,5,7} \\ {1,5} = {3,7}\n(iii) X ∩ Y ∩ Z = {5}\n(iv) X ∪ Y ∪ Z = {1,3,5,7,8}\n(v) X × Z = {(1,1),(1,5),(3,1),(3,5),(5,1),(5,5),(7,1),(7,5)}',
+          },
+          {
+            letter: 'b',
+            text: 'Grundmenge G = {1,2,3,4,5,6,7,8,9}\nL = {1,2,4,7},  M = {3,5,6,8,9},  N = {4,5,9}\n(L\u0305 = Komplement von L in G, etc.)\n\nBestimmen Sie:\n(i)   L\u0305 ∩ N\n(ii)  (L ∩ M\u0305) ∪ (N ∩ N\u0305)\n(iii) L ∩ N\u0305 ∩ M\u0305',
+            hint: 'L\u0305 = G \\ L = {3,5,6,8,9}\nM\u0305 = G \\ M = {1,2,4,7} = L\nN\u0305 = G \\ N = {1,2,3,6,7,8}\nBeachte: N ∩ N\u0305 = ∅ (Menge und ihr Komplement sind disjunkt).',
+            solution: 'Komplemente: L\u0305 = {3,5,6,8,9}  M\u0305 = {1,2,4,7}  N\u0305 = {1,2,3,6,7,8}\n\n(i) L\u0305 ∩ N = {3,5,6,8,9} ∩ {4,5,9} = {5,9}\n(ii) (L ∩ M\u0305) ∪ (N ∩ N\u0305) = ({1,2,4,7} ∩ {1,2,4,7}) ∪ ∅ = {1,2,4,7} = L\n(iii) L ∩ N\u0305 ∩ M\u0305 = {1,2,4,7} ∩ {1,2,3,6,7,8} ∩ {1,2,4,7} = {1,2,7}',
+          },
+          {
+            letter: 'c',
+            text: 'Gegeben:\n  M₁ = ℤ,  M₂ = ℕ,  M₃ = {−1, 1, 2},  M₄ = [−1, 2)\n\nBestimmen Sie:\n(i)   M₄ ∪ M₃\n(ii)  M₄ ∩ (M₂ \\ M₃)\n(iii) M₃ \\ (M₁ \\ M₂)',
+            hint: 'M₄ = [−1, 2) enthält alle reellen Zahlen von −1 bis 2 (2 nicht enthalten).\nM₁ \\ M₂ = ℤ \\ ℕ = {…, −3, −2, −1} (negative ganze Zahlen).\nM₂ \\ M₃ = ℕ ohne {1, 2} = {0, 3, 4, 5, …}.',
+            solution: '(i) M₄ ∪ M₃ = [−1, 2) ∪ {2} = [−1, 2] = {x ∈ ℝ : −1 ≤ x ≤ 2}\n(ii) M₂ \\ M₃ = {0, 3, 4, 5, …}\n    M₄ ∩ (M₂ \\ M₃) = [−1, 2) ∩ {0, 3, 4, …} = {0}\n(iii) M₁ \\ M₂ = {…, −3, −2, −1}\n    M₃ \\ (M₁ \\ M₂) = {−1, 1, 2} \\ {…, −1} = {1, 2}',
+          },
+          {
+            letter: 'd',
+            text: 'Sei A = {1, 2, 3}. Geben Sie die Potenzmenge P(A) an.',
+            hint: 'P(A) enthält alle Teilmengen von A, einschließlich ∅ und A selbst. Bei |A| = 3 gilt |P(A)| = 2³ = 8.',
+            solution: 'P(A) = {∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3}}',
+          },
+        ],
+      },
+      {
+        id: 'b1a3',
+        nr: 3,
+        title: 'Mengendarstellung',
+        subaufgaben: [
+          {
+            letter: 'a',
+            text: 'Stellen Sie folgende Mengen in der Form { Ausdruck : n ∈ ℕ } dar:\n\n(i)   Natürliche Zahlen, die ohne Rest durch 7 teilbar sind\n(ii)  Natürliche Zahlen, die bei Division durch 5 den Rest 3 lassen\n(iii) Natürliche Zahlen, die sowohl durch 2 als auch durch 3 ohne Rest teilbar sind',
+            hint: 'Gerade Zahlen: {2n : n ∈ ℕ}. Für Rest r bei Division durch k: {kn + r : n ∈ ℕ}. Für (iii): Welches ist die kleinste Zahl, die durch 2 und 3 teilbar ist?',
+            solution: '(i) {7n : n ∈ ℕ} = {0, 7, 14, 21, …}\n(ii) {5n + 3 : n ∈ ℕ} = {3, 8, 13, 18, …}\n(iii) kgV(2, 3) = 6  →  {6n : n ∈ ℕ} = {0, 6, 12, 18, …}',
+          },
+          {
+            letter: 'b',
+            text: 'Geben Sie folgende Mengen durch Auflistung der ersten Elemente an\n(n ∈ ℕ, d. h. n beginnt bei 0):\n\n(i)   {3n − 2 : n ∈ ℕ}\n(ii)  {3n + 2 : n ∈ ℕ}\n(iii) {2ⁿ : n ∈ ℕ}\n(iv)  {2²ⁿ : n ∈ ℕ}',
+            hint: 'Setzen Sie n = 0, 1, 2, 3, … ein. Bei (iv): 2²ⁿ = (2²)ⁿ = 4ⁿ.',
+            solution: '(i) {3n − 2 : n ∈ ℕ} = {−2, 1, 4, 7, 10, …}\n(ii) {3n + 2 : n ∈ ℕ} = {2, 5, 8, 11, 14, …}\n(iii) {2ⁿ : n ∈ ℕ} = {1, 2, 4, 8, 16, …}\n(iv) {2²ⁿ : n ∈ ℕ} = {4⁰, 4¹, 4², …} = {1, 4, 16, 64, 256, …}',
+          },
+        ],
+      },
+      {
+        id: 'b1a4',
+        nr: 4,
+        title: 'Venn-Diagramme',
+        subaufgaben: [
+          {
+            letter: 'a',
+            text: 'Seien A, B, C Mengen. Veranschaulichen Sie durch Venn-Diagramme und vergleichen Sie:\n\n  (A ∩ B) ∪ C\n  (A ∪ B) ∩ C\n  (A ∪ C) ∩ (B ∪ C)\n  (A ∩ C) ∪ (B ∩ C)\n\nWas fällt auf?',
+            hint: 'Färben Sie die entsprechenden Bereiche in einem 3-Kreise-Venn-Diagramm ein. Welche Diagramme sehen gleich aus?',
+            solution: '(A ∩ B) ∪ C  =  (A ∪ C) ∩ (B ∪ C)\n→ Distributivgesetz: ∪ verteilt sich über ∩\n\n(A ∪ B) ∩ C  =  (A ∩ C) ∪ (B ∩ C)\n→ Distributivgesetz: ∩ verteilt sich über ∪\n\nDie Mengenoperationen ∪ und ∩ sind wechselseitig distributiv.',
+          },
+          {
+            letter: 'b',
+            text: 'Veranschaulichen Sie durch Venn-Diagramme und vergleichen Sie:\n\n  A ∪ (B ∩ C)\n  (A ∪ B) ∩ C\n\nWas fällt auf?',
+            hint: 'Zeichnen Sie beide Ausdrücke getrennt. Sind die schattierten Bereiche identisch?',
+            solution: 'A ∪ (B ∩ C)  ≠  (A ∪ B) ∩ C  im Allgemeinen.\n\nBeispiel: A = {1,2}, B = {2,3}, C = {3,4}\n  A ∪ (B ∩ C) = {1,2} ∪ {3} = {1,2,3}\n  (A ∪ B) ∩ C = {1,2,3} ∩ {3,4} = {3}\n\n→ Klammern können nicht einfach weggelassen werden!',
+          },
+          {
+            letter: 'c',
+            text: 'Sei X Grundmenge, A, B ⊆ X. Veranschaulichen Sie und vergleichen Sie:\n\n  Ā ∪ B\n  Ā ∪ B̄\n  Ā ∩ B\n  Ā ∩ B̄\n\n(Ā = Komplement von A in X)',
+            hint: 'De Morgan\'sche Gesetze: Das Komplement einer Vereinigung ist der Schnitt der Komplemente – und umgekehrt.',
+            solution: 'Es gilt (De Morgan\'sche Gesetze):\n\nA ∪ B\u0305 = A\u0305 ∩ B\u0305   (Komplement der Vereinigung = Schnitt der Komplemente)\nA ∩ B\u0305 = A\u0305 ∪ B\u0305   (Komplement des Schnitts = Vereinigung der Komplemente)\n\n→ A\u0305 ∪ B und A\u0305 ∩ B\u0305 haben identische Venn-Diagramme.\n→ A\u0305 ∩ B und A\u0305 ∪ B\u0305 haben identische Venn-Diagramme.',
+          },
+        ],
+      },
+      {
+        id: 'b1a5',
+        nr: 5,
+        title: 'Mengengleichheiten (optional)',
+        subaufgaben: [
+          {
+            letter: 'a',
+            text: 'Seien A, B, C Teilmengen einer Grundmenge X.\nWelche Gleichheiten sind für jede Wahl immer erfüllt?\n\n(i)   A \\ (B \\ C) = (A \\ B) \\ C\n(ii)  A \\ B = A ∩ B\u0305\n(iii) A \\ (B ∩ C) = (A \\ B) ∪ (A \\ C)\n(iv)  A ∪ (A\u0305 ∩ B) = A ∪ B',
+            hint: 'Testen Sie (i) mit A = B = C = {1,2,3}. Für die anderen: Zeigen Sie x ∈ linke Seite ⟺ x ∈ rechte Seite.',
+            solution: '(i) NICHT immer erfüllt.\n    Gegenbeispiel A = B = C = {1,2,3}:\n      A \\ (B \\ C) = A \\ ∅ = A = {1,2,3}\n      (A \\ B) \\ C = ∅ \\ C = ∅\n      → A ≠ ∅\n\n(ii) Immer erfüllt.\n    A \\ B = {x : x ∈ A und x ∉ B} = A ∩ B\u0305  ✓\n\n(iii) Immer erfüllt.\n    A \\ (B ∩ C) = {x ∈ A : x ∉ B∩C}\n             = {x ∈ A : x ∉ B oder x ∉ C}\n             = (A \\ B) ∪ (A \\ C)  ✓\n\n(iv) Immer erfüllt.\n    A ∪ (A\u0305 ∩ B) = (A ∪ A\u0305) ∩ (A ∪ B)\n                = X ∩ (A ∪ B) = A ∪ B  ✓',
+          },
+        ],
+      },
+    ],
+  },
 ]
 

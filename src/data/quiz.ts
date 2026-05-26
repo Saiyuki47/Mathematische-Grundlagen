@@ -66,4 +66,34 @@ export const quizData: QuizQuestion[] = [
     ans: 1,
     exp: '−2x+1 = (1/2)x−2 → 3 = (5/2)x → x = 6/5; y = −12/5+5/5 = −7/5.',
   },
+  {
+    q: 'Sei M = {1, 2, 3}. Welche Aussage ist korrekt?',
+    opts: ['{1} ∈ M', '1 ⊆ M', '{1} ⊆ M', '{1, 2, 3} ∈ M'],
+    ans: 2,
+    exp: '{1} ⊆ M ist korrekt: {1} ist eine Teilmenge von M. {1} ∈ M ist falsch (1 ∈ M wäre richtig). 1 ⊆ M ist falsch (1 ist kein Mengensymbol).',
+  },
+  {
+    q: 'Seien X = {1,3,5,7} und Z = {1,5}. Was ergibt X \ Z?',
+    opts: ['{1,5}', '{3,7}', '∅', '{1,3,5,7}'],
+    ans: 1,
+    exp: 'X \ Z enthält alle Elemente aus X, die nicht in Z sind: {1,3,5,7} \ {1,5} = {3,7}.',
+  },
+  {
+    q: 'Wie viele Elemente hat die Potenzmenge P(A) für A = {1, 2, 3}?',
+    opts: ['3', '6', '8', '9'],
+    ans: 2,
+    exp: '|P(A)| = 2^|A| = 2³ = 8. Die 8 Teilmengen sind: ∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3}.',
+  },
+  {
+    q: 'Welche der folgenden Mengendarstellungen liefert {3, 8, 13, 18, …}?',
+    opts: ['{3n : n ∈ ℕ}', '{5n + 3 : n ∈ ℕ}', '{3n + 5 : n ∈ ℕ}', '{5n − 2 : n ∈ ℕ}'],
+    ans: 1,
+    exp: 'Für n = 0,1,2,3: 5·0+3=3, 5·1+3=8, 5·2+3=13, 5·3+3=18. Also {5n+3 : n ∈ ℕ}.',
+  },
+  {
+    q: 'Was besagt das De Morgansche Gesetz A ∪ B̄?',
+    opts: ['Ā ∪ B̄', 'Ā ∩ B̄', 'A ∩ B', 'Ā ∪ B'],
+    ans: 1,
+    exp: 'De Morgan: Das Komplement einer Vereinigung ist der Schnitt der Komplemente. A ∪ B̄ = Ā ∩ B̄.',
+  },
 ]

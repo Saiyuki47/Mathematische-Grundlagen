@@ -47,8 +47,9 @@ Nenner rational machen:
 3. (a + b)(a − b) = a² − b²
 
 Anwendung beim Kürzen:
-  (a²−b²)/(a−b)
-  = (a+b)(a−b)/(a−b) = a+b`,
+  Formel 3 ermöglicht Faktorisieren im Zähler:
+  (a²−b²)/(a−b)  = a+b
+  Weil: a²−b² = (a+b)·(a−b), und (a−b) kürzt weg`,
   },
   {
     title: 'Geradengleichung',
@@ -81,17 +82,28 @@ Beispiel:
   },
   {
     title: 'Kürzen von Brüchen',
-    content: `Erlaubt (gleicher Faktor):
+    content: `Erlaubt (gleicher Faktor oben und unten):
   (k·a)/(k·b) = a/b
-  (a²−b²)/(a−b) = a+b
 
-Nicht erlaubt (Summen):
+Anwendung – 3. Binomische Formel:
+  Ausgangspunkt: (a²−b²)/(a−b)
+
+  Schritt 1 – Zähler faktorisieren:
+    a²−b² = (a+b)·(a−b)
+
+  Schritt 2 – Einsetzen und kürzen:
+    (a²−b²)/(a−b) = (a+b)·(a−b)/(a−b) = a+b
+    Der Faktor (a−b) steht oben und unten → kürzt weg
+
+Nicht erlaubt – keine gemeinsamen Faktoren:
   (a²+b²)/(a+b) ≠ a+b
-  (1+k²)/(1+k³) nicht kürzbar
-  (2a+3b)/(2c+3d) nicht kürzbar
+    Summe im Zähler ist nicht faktorisierbar
+
+  (1+k²)/(1+k³)   kein gemeinsamer Faktor
+  (2a+3b)/(2c+3d)  2 und 3 sind keine Faktoren der Terme
 
 Vorzeichen:
-  (a−b)/(b−a) = −1`,
+  (a−b)/(b−a) = (a−b)/(−(a−b)) = −1`,
   },
   {
     title: 'Rechenreihenfolge',
@@ -107,6 +119,52 @@ Klammer auflösen:
 Merke:
   (−)·(−) = +
   (−)·(+) = −`,
+  },
+  {
+    title: 'Mengen – Grundbegriffe',
+    content: `Schreibweisen:
+  x ∈ A       x ist Element von A
+  x ∉ A       x ist kein Element von A
+  A ⊆ B       A ist Teilmenge von B
+  A = B       A und B haben dieselben Elemente
+  |A|         Mächtigkeit (Anzahl Elemente) von A
+
+Besondere Mengen:
+  ∅           leere Menge (kein Element)
+  ℕ           natürliche Zahlen {0, 1, 2, 3, …}
+  ℤ           ganze Zahlen {…, −2, −1, 0, 1, 2, …}
+  ℝ           reelle Zahlen`,
+  },
+  {
+    title: 'Mengenoperationen',
+    content: `A ∪ B  Vereinigung: alle x ∈ A oder x ∈ B
+A ∩ B  Schnittmenge: alle x ∈ A und x ∈ B
+A \ B  Differenz: alle x ∈ A mit x ∉ B
+Ā      Komplement: alle x ∈ X mit x ∉ A
+A × B  Kartesisches Produkt: alle Paare (a,b)
+       mit a ∈ A und b ∈ B
+
+Rechenregeln:
+  A ∩ B = B ∩ A          (Kommutativität)
+  A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
+  A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)`,
+  },
+  {
+    title: 'De Morgan & Potenzmenge',
+    content: `De Morgan'sche Gesetze:
+  A ∪ B̅ = Ā ∩ B̅
+  A ∩ B̅ = Ā ∪ B̅
+
+Potenzmenge P(A):
+  P(A) = {M : M ⊆ A}  (Menge aller Teilmengen)
+  |P(A)| = 2^|A|
+
+  Beispiel A = {1,2}:
+  P(A) = {∅, {1}, {2}, {1,2}}
+
+Mengendarstellung:
+  {2n : n ∈ ℕ}  = gerade Zahlen
+  {kn + r : n ∈ ℕ}  = Rest r bei Division durch k`,
   },
 ]
 

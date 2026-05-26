@@ -549,6 +549,7 @@ header {
   margin-bottom: 10px;
   line-height: 1.6;
   font-family: var(--font-mono);
+  white-space: pre-wrap;
 }
 .sub-actions {
   display: flex;
@@ -577,6 +578,7 @@ header {
   display: flex;
   gap: 8px;
   align-items: flex-start;
+  white-space: pre-wrap;
 }
 .hint-icon {
   font-size: 14px;
