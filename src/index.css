@@ -584,6 +584,11 @@ header {
   font-size: 14px;
   flex-shrink: 0;
 }
+.hint-content {
+  flex: 1;
+  min-width: 0;
+  white-space: pre-wrap;
+}
 .solution-block {
   margin-top: 10px;
   background: var(--bg);

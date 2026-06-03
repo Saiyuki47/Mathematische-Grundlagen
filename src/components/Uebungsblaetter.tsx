@@ -86,7 +86,7 @@ export default function Uebungsblaetter() {
                         {hintOpen && (
                           <div className="hint-block">
                             <span className="hint-icon">💡</span>
-                            {sub.hint}
+                            <div className="hint-content">{sub.hint}</div>
                           </div>
                         )}
                         {solOpen && (
