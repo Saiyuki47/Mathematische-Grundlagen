@@ -1,4 +1,3 @@
-import React from 'react'
 import type { ReactNode } from 'react'
 import type { MatheBlatt, HintSection } from '../types'
 import Frac from '../utils/Frac'
