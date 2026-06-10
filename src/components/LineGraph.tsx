@@ -112,23 +112,25 @@ export default function LineGraph({ data }: Props) {
       <text x={yAxisX + 4} y={PT - 2} fontSize="11" fill="rgba(255,255,255,0.45)" fontFamily="monospace">y</text>
 
       {/* Tick marks + numbers */}
-      {xTicks.filter(x => x !== 0).map(x => {
+      {xTicks.flatMap(x => {
+        if (x === 0) return []
         const [sx] = toSvg(x, 0, xMin, xMax, yMin, yMax)
-        return (
+        return [
           <g key={`tx${x}`}>
             <line x1={sx} y1={xAxisY - 3} x2={sx} y2={xAxisY + 3} stroke="rgba(255,255,255,0.35)" strokeWidth="1" />
             <text x={sx} y={xAxisY + 14} textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.4)" fontFamily="monospace">{x}</text>
           </g>
-        )
+        ]
       })}
-      {yTicks.filter(y => y !== 0).map(y => {
+      {yTicks.flatMap(y => {
+        if (y === 0) return []
         const [, sy] = toSvg(0, y, xMin, xMax, yMin, yMax)
-        return (
+        return [
           <g key={`ty${y}`}>
             <line x1={yAxisX - 3} y1={sy} x2={yAxisX + 3} y2={sy} stroke="rgba(255,255,255,0.35)" strokeWidth="1" />
             <text x={yAxisX - 6} y={sy + 4} textAnchor="end" fontSize="10" fill="rgba(255,255,255,0.4)" fontFamily="monospace">{y}</text>
           </g>
-        )
+        ]
       })}
 
       {/* Lines */}
