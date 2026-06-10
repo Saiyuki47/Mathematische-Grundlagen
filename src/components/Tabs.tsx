@@ -47,6 +47,7 @@ export default function Tabs({ activeTab, onTabChange }: Props) {
       {tabs.map(tab => (
         <button
           key={tab.id}
+          type="button"
           className={`tab${activeTab === tab.id ? ' active' : ''}`}
           onClick={() => onTabChange(tab.id)}
         >

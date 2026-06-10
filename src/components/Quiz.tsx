@@ -62,7 +62,7 @@ export default function Quiz() {
           <div className="result-box">
             <div className="result-score">{score}/{quizData.length}</div>
             <p className="result-label">{pct}% richtig &mdash; {msg}</p>
-            <button className="nav-btn" onClick={handleReset}>↺ Nochmal starten</button>
+            <button type="button" className="nav-btn" onClick={handleReset}>↺ Nochmal starten</button>
           </div>
         </div>
       </div>
@@ -80,6 +80,7 @@ export default function Quiz() {
         <p className="quiz-q">{q.q}</p>
         <div className="options">
           {q.opts.map((opt, i) => {
+            const optLetter = 'ABCD'[i]!
             let cls = 'opt-btn'
             if (isAnswered) {
               if (i === q.ans) cls += ' correct'
@@ -87,7 +88,8 @@ export default function Quiz() {
             }
             return (
               <button
-                key={i}
+                key={`q${qi}-${optLetter}`}
+                type="button"
                 className={cls}
                 disabled={isAnswered}
                 onClick={() => handleAnswer(i)}
@@ -109,7 +111,7 @@ export default function Quiz() {
         </p>
         <div className="quiz-nav">
           <span className="score-pill">{score} / {qi} richtig</span>
-          <button className="nav-btn" disabled={!isAnswered} onClick={handleNext}>
+          <button type="button" className="nav-btn" disabled={!isAnswered} onClick={handleNext}>
             Weiter →
           </button>
         </div>
