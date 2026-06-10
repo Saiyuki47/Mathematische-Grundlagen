@@ -565,29 +565,97 @@ header {
   background: var(--amber-dim);
   color: var(--amber);
 }
-.hint-block {
+/* HINT ACCORDION */
+.hint-accordion {
   margin-top: 8px;
-  background: var(--amber-dim);
   border: 1px solid rgba(245,166,35,0.25);
   border-left: 3px solid var(--amber);
   border-radius: var(--radius);
-  padding: 10px 14px;
-  font-size: 13px;
-  color: var(--text2);
-  line-height: 1.7;
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  white-space: pre-wrap;
+  overflow: hidden;
+  background: var(--amber-dim);
 }
-.hint-icon {
+.hint-section {
+  border-bottom: 1px solid rgba(245,166,35,0.15);
+}
+.hint-section:last-child {
+  border-bottom: none;
+}
+.hint-section-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  color: var(--amber);
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.hint-section-btn:hover {
+  background: rgba(245,166,35,0.1);
+}
+.hint-section-icon {
   font-size: 14px;
   flex-shrink: 0;
 }
-.hint-content {
+.hint-section-title {
   flex: 1;
-  min-width: 0;
+}
+.hint-section-arrow {
+  font-size: 10px;
+  color: var(--text3);
+  display: inline-block;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.hint-section-arrow--open {
+  transform: rotate(90deg);
+}
+.hint-section-body {
+  padding: 12px 16px 14px;
+  background: rgba(15,17,23,0.55);
+  border-top: 1px solid rgba(245,166,35,0.12);
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.75;
+}
+.hint-section-body p {
+  margin-bottom: 8px;
+}
+.hint-section-body p:last-child {
+  margin-bottom: 0;
+}
+.hint-section-body ul,
+.hint-section-body ol {
+  margin: 6px 0;
+  padding-left: 20px;
+}
+.hint-section-body li {
+  margin-bottom: 4px;
+}
+.hint-code-block {
+  margin: 8px 0 4px;
+  padding: 10px 14px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
   white-space: pre-wrap;
+  line-height: 1.65;
+}
+.hint-code-block:last-child {
+  margin-bottom: 0;
+}
+.hint-em {
+  color: var(--amber);
+  font-weight: 600;
 }
 .solution-block {
   margin-top: 10px;

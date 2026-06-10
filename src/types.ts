@@ -36,13 +36,19 @@ export interface LineGraphData {
   yMax: number
 }
 
+export interface HintSection {
+  icon: string
+  title: string
+  content: ReactNode
+}
+
 export interface MatheSubaufgabe {
   letter: string
   text: ReactNode
-  hint: ReactNode
+  hint: HintSection[]
   solution: ReactNode
-  graph?: LineGraphData      // shown in solution reveal
-  taskGraph?: LineGraphData  // shown directly in task (always visible)
+  graph?: LineGraphData
+  taskGraph?: LineGraphData
 }
 
 export interface MatheAufgabe {

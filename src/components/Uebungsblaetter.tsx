@@ -29,6 +29,7 @@ export default function Uebungsblaetter() {
           {uebungsblaetter.map(b => (
             <button
               key={b.id}
+              type="button"
               className={`filter-btn${selectedId === b.id ? ' on' : ''}`}
               onClick={() => setSelectedId(b.id)}
             >
@@ -71,12 +72,14 @@ export default function Uebungsblaetter() {
                         )}
                         <div className="sub-actions">
                           <button
+                            type="button"
                             className="toggle-btn toggle-btn--hint"
                             onClick={() => toggle(hintKey)}
                           >
                             {hintOpen ? '▼ Tipp verbergen' : '▶ Tipp anzeigen'}
                           </button>
                           <button
+                            type="button"
                             className="toggle-btn"
                             onClick={() => toggle(solKey)}
                           >
@@ -84,9 +87,27 @@ export default function Uebungsblaetter() {
                           </button>
                         </div>
                         {hintOpen && (
-                          <div className="hint-block">
-                            <span className="hint-icon">💡</span>
-                            <div className="hint-content">{sub.hint}</div>
+                          <div className="hint-accordion">
+                            {sub.hint.map((section, idx) => {
+                              const sKey = `${hintKey}-${idx}`
+                              const sOpen = open.has(sKey)
+                              return (
+                                <div key={section.title} className="hint-section">
+                                  <button
+                                    type="button"
+                                    className="hint-section-btn"
+                                    onClick={() => toggle(sKey)}
+                                  >
+                                    <span className="hint-section-icon">{section.icon}</span>
+                                    <span className="hint-section-title">{section.title}</span>
+                                    <span className={`hint-section-arrow${sOpen ? ' hint-section-arrow--open' : ''}`}>▶</span>
+                                  </button>
+                                  {sOpen && (
+                                    <div className="hint-section-body">{section.content}</div>
+                                  )}
+                                </div>
+                              )
+                            })}
                           </div>
                         )}
                         {solOpen && (
