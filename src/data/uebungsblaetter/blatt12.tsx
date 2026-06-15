@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react'
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
 import { h } from './shared'
