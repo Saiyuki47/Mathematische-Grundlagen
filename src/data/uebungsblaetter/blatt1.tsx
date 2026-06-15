@@ -44,7 +44,6 @@ c ∈ A     → falsch   (c selbst ist kein Element)`}</pre>
               <li><strong>❌ Falsch:</strong> ∈ und ⊆ tauschen: „1 ⊆ M" schreiben → <strong>✅ Richtig:</strong> 1 ist eine Zahl, keine Menge → schreibe 1 ∈ M (Element-Beziehung)</li>
               <li><strong>❌ Falsch:</strong> {'{1}'} ⊆ M bedeutet: Ist {'{1}'} ∈ M? → <strong>✅ Richtig:</strong> {'{1}'} ⊆ M bedeutet: Ist jedes Element von {'{1}'} auch in M? Das einzige Element ist 1 → 1 ∈ M ✓</li>
             </ul>,
-            <p>Was genau unterscheidet die Aussagen 1 ∈ M und {'{1}'} ⊆ M? Beide beziehen sich auf die Zahl 1 und die Menge M — warum können beide wahr sein, obwohl {'{1}'} ∉ M gilt?</p>,
           ),
           solution: '(i) 1 ∈ M  → korrekt  (1 ist Element von {1,2,3})\n(ii) {1} ∈ M  → falsch  ({1} ist keine Menge in M; 1 ist ein Element, nicht {1})\n(iii) {1} ⊆ M  → korrekt  ({1} ist Teilmenge von {1,2,3})',
         },
@@ -76,7 +75,6 @@ a ∈ M     → falsch   (a selbst ist kein Element)
               <li><strong>❌ Falsch:</strong> {'{2}'} ⊆ L bedeutet „{'{2}'} ist Element von L" → <strong>✅ Richtig:</strong> ⊆ ist Teilmengen-Relation: prüfe ob 2 (Element von {'{2}'}) in L ist → 2 ∉ L → {'{2}'} ⊄ L</li>
               <li><strong>❌ Falsch:</strong> {'{{2}}'} ⊆ L prüft ob 2 ∈ L → <strong>✅ Richtig:</strong> {'{{2}}'} ⊆ L prüft ob {'{2}'} ∈ L (eine Ebene tiefer: Element von {'{{2}}'} ist {'{2}'}, nicht 2)</li>
             </ul>,
-            <p>Beim Prüfen von A ⊆ B wechselst du von der Mengenebene auf die Elementebene. Warum ist {'{{2}}'} ⊆ L äquivalent zur Frage „Ist {'{2}'} ∈ L?" — und was wäre anders, wenn du stattdessen {'{2}'} ⊆ L prüfen würdest?</p>,
           ),
           solution: '(i) 2 ∈ L  → falsch  (2 ist kein direktes Element von L, nur {2} ist es)\n(ii) {2} ∈ L  → korrekt  ({2} ist direktes Element von L)\n(iii) {2} ⊆ L  → falsch  (wäre wahr, wenn 2 ∈ L gilt – das ist aber nicht der Fall)\n(iv) {{2}} ⊆ L  → korrekt  ({2} ∈ L, also ist {{2}} eine Teilmenge von L)',
         },
@@ -119,7 +117,6 @@ A×B = {(1,2),(1,3),(2,2),(2,3)}`}</pre>
               <li><strong>❌ Falsch:</strong> Reihenfolge im kartesischen Produkt ignorieren: (1,3) und (3,1) werden als gleich betrachtet → <strong>✅ Richtig:</strong> X×Z enthält geordnete Paare; (1,3) ∈ X×Z bedeutet erstes Element aus X, zweites aus Z</li>
               <li><strong>❌ Falsch:</strong> Bei X∪Y∪Z Duplikate aufführen wie {'{1,3,5,7,5,7,8,1,5}'} → <strong>✅ Richtig:</strong> Jedes Element nur einmal angeben: {'{1,3,5,7,8}'}</li>
             </ul>,
-            <p>Warum ist das kartesische Produkt A × B nicht kommutativ? Was würde es bedeuten, wenn man (a, b) und (b, a) als gleich betrachten würde — und welche mathematische Struktur würde man damit beschreiben?</p>,
           ),
           solution: '(i) Z \\ X = {1,5} \\ {1,3,5,7} = ∅\n(ii) X \\ Z = {1,3,5,7} \\ {1,5} = {3,7}\n(iii) X ∩ Y ∩ Z = {5}\n(iv) X ∪ Y ∪ Z = {1,3,5,7,8}\n(v) X × Z = {(1,1),(1,5),(3,1),(3,5),(5,1),(5,5),(7,1),(7,5)}',
         },
@@ -150,7 +147,6 @@ A ∪ Ā = {1,2,3,4,5} = G ✓`}</pre>
               <li><strong>❌ Falsch:</strong> N ∩ N̄ = N (oder irgendwas außer ∅) → <strong>✅ Richtig:</strong> N ∩ N̄ = ∅ immer (kein Element kann gleichzeitig in N und nicht in N sein)</li>
               <li><strong>❌ Falsch:</strong> L ∩ M̄ = L ∩ M̄ ≠ L → <strong>✅ Richtig:</strong> M̄ = {'{1,2,4,7}'} = L, daher L ∩ M̄ = L ∩ L = L</li>
             </ul>,
-            <p>Warum ist A ∩ Ā = ∅ eine logische Notwendigkeit und keine Zufälligkeit dieser Mengen? Gibt es ein Objekt, das gleichzeitig in A und in Ā = G \ A sein kann?</p>,
           ),
           solution: 'Komplemente: L̅ = {3,5,6,8,9}  M̅ = {1,2,4,7}  N̅ = {1,2,3,6,7,8}\n\n(i) L̅ ∩ N = {3,5,6,8,9} ∩ {4,5,9} = {5,9}\n(ii) (L ∩ M̅) ∪ (N ∩ N̅) = ({1,2,4,7} ∩ {1,2,4,7}) ∪ ∅ = {1,2,4,7} = L\n(iii) L ∩ N̅ ∩ M̅ = {1,2,4,7} ∩ {1,2,3,6,7,8} ∩ {1,2,4,7} = {1,2,7}',
         },
@@ -185,7 +181,6 @@ A ∪ Ā = {1,2,3,4,5} = G ✓`}</pre>
               <li><strong>❌ Falsch:</strong> M₂\M₃ enthält −1 nicht, weil −1 ∈ M₃ → <strong>✅ Richtig:</strong> −1 ∉ ℕ = M₂, kann also gar nicht in M₂\M₃ sein — M₃ hat keinen Einfluss auf −1</li>
               <li><strong>❌ Falsch:</strong> M₄ ∩ {'{0,3,4,...}'} = {'{0,1}'} (denken 1 ist drin) → <strong>✅ Richtig:</strong> 3 ∉ [−1,2), da 3 ≥ 2; nur 0 liegt in [−1,2)</li>
             </ul>,
-            <p>Was unterscheidet [−1, 2) und [−1, 2] grundlegend — und warum kann man ein Intervall mit einer endlichen Menge vereinigen, obwohl es sich um verschiedene Typen handelt? Was wäre das Ergebnis von [0,1) ∪ {'{1}'} ∪ [1,2)?</p>,
           ),
           solution: '(i) M₄ ∪ M₃ = [−1, 2) ∪ {2} = [−1, 2] = {x ∈ ℝ : −1 ≤ x ≤ 2}\n(ii) M₂ \\ M₃ = {0, 3, 4, 5, …}\n    M₄ ∩ (M₂ \\ M₃) = [−1, 2) ∩ {0, 3, 4, …} = {0}\n(iii) M₁ \\ M₂ = {…, −3, −2, −1}\n    M₃ \\ (M₁ \\ M₂) = {−1, 1, 2} \\ {…, −1} = {1, 2}',
         },
@@ -214,7 +209,6 @@ A ∪ Ā = {1,2,3,4,5} = G ✓`}</pre>
               <li><strong>❌ Falsch:</strong> A = {'{1,2,3}'} selbst weglassen → <strong>✅ Richtig:</strong> A ⊆ A gilt immer; die Potenzmenge enthält auch die Menge selbst</li>
               <li><strong>❌ Falsch:</strong> Nur 7 statt 8 Teilmengen (eine vergessen) → <strong>✅ Richtig:</strong> Zähle: 1 + C(3,1) + C(3,2) + 1 = 1+3+3+1 = 8 = 2³</li>
             </ul>,
-            <p>Warum hat eine n-elementige Menge genau 2ⁿ Teilmengen? Was hat das mit der Entscheidung für jedes Element zu tun — und wie überzeugt man sich, dass das keine Zufälligkeit für kleine n ist?</p>,
           ),
           solution: 'P(A) = {∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3}}',
         },
@@ -260,7 +254,6 @@ Richtig: {kgV(2,3)·n} = {6n} = {0,6,12,18,...}  ✓`}</pre>
               <li><strong>❌ Falsch:</strong> n bei 1 starten → <strong>✅ Richtig:</strong> n ∈ ℕ beginnt bei 0; n=1 würde erstes Element auslassen (z.B. fehlt 0 bei Vielfachen von 7)</li>
               <li><strong>❌ Falsch:</strong> Für (iii) ggT(2,3)=1 verwenden → {'{1n : n ∈ ℕ}'} = ℕ → <strong>✅ Richtig:</strong> kgV(2,3)=6 verwenden, weil die Zahl durch beide teilbar sein muss</li>
             </ul>,
-            <p>Warum verwendet man bei (iii) das kgV statt des ggT? Was würde die Menge {'{ggT(2,3)·n : n ∈ ℕ}'} = {'{n : n ∈ ℕ}'} stattdessen bedeuten — und was fehlt ihr?</p>,
           ),
           solution: '(i) {7n : n ∈ ℕ} = {0, 7, 14, 21, …}\n(ii) {5n + 3 : n ∈ ℕ} = {3, 8, 13, 18, …}\n(iii) kgV(2, 3) = 6  →  {6n : n ∈ ℕ} = {0, 6, 12, 18, …}',
         },
@@ -292,7 +285,6 @@ n=0: 4⁰=1,  n=1: 4¹=4,  n=2: 4²=16`}</pre>
               <li><strong>❌ Falsch:</strong> n bei 1 starten: 3·1−2=1 als erstes Element → <strong>✅ Richtig:</strong> n bei 0: 3·0−2=−2 ist das erste Element</li>
               <li><strong>❌ Falsch:</strong> 2²ⁿ = 4·n (Multiplikation statt Potenz) → <strong>✅ Richtig:</strong> 2²ⁿ = 2^(2n) = (2²)ⁿ = 4ⁿ; n ist der Exponent, nicht ein Faktor</li>
             </ul>,
-            <p>Was ist der konzeptuelle Unterschied zwischen {'{2ⁿ : n ∈ ℕ}'} und {'{2²ⁿ : n ∈ ℕ}'} — beide nutzen Basis 2, aber warum wachsen sie so unterschiedlich? Welche der beiden Mengen ist eine Teilmenge der anderen?</p>,
           ),
           solution: '(i) {3n − 2 : n ∈ ℕ} = {−2, 1, 4, 7, 10, …}\n(ii) {3n + 2 : n ∈ ℕ} = {2, 5, 8, 11, 14, …}\n(iii) {2ⁿ : n ∈ ℕ} = {1, 2, 4, 8, 16, …}\n(iv) {2²ⁿ : n ∈ ℕ} = {4⁰, 4¹, 4², …} = {1, 4, 16, 64, 256, …}',
         },
@@ -333,7 +325,6 @@ und schrittweise schattieren.
               <li><strong>❌ Falsch:</strong> (A∩B)∪C ohne Klammern als A∩B∪C lesen → <strong>✅ Richtig:</strong> Klammern zuerst: erst A∩B berechnen, dann ∪C</li>
               <li><strong>❌ Falsch:</strong> Alle 4 Ausdrücke als identisch annehmen → <strong>✅ Richtig:</strong> Es gibt 2 gleiche Paare: {'{(A∩B)∪C = (A∪C)∩(B∪C)} und {(A∪B)∩C = (A∩C)∪(B∩C)}'}</li>
             </ul>,
-            <p>Die Distributivgesetze sagen: ∪ verteilt sich über ∩ und umgekehrt. Was passiert auf Elementebene, wenn x ∈ (A∩B)∪C gilt — und warum ist das logisch dasselbe wie x ∈ (A∪C)∩(B∪C)?</p>,
           ),
           solution: '(A ∩ B) ∪ C  =  (A ∪ C) ∩ (B ∪ C)\n→ Distributivgesetz: ∪ verteilt sich über ∩\n\n(A ∪ B) ∩ C  =  (A ∩ C) ∪ (B ∩ C)\n→ Distributivgesetz: ∩ verteilt sich über ∪\n\nDie Mengenoperationen ∪ und ∩ sind wechselseitig distributiv.',
         },
@@ -366,7 +357,6 @@ A ∪ (B∩C) = {1,2} ∪ {3} = {1,2,3}
               <li><strong>❌ Falsch:</strong> A∪(B∩C) = (A∪B)∩C annehmen (∪ und ∩ beliebig kombiniert) → <strong>✅ Richtig:</strong> Gegenbeispiel: A={'{1,2}'}, B={'{2,3}'}, C={'{3}'} → A∪(B∩C)={'{1,2,3}'} ≠ (A∪B)∩C={'{3}'}</li>
               <li><strong>❌ Falsch:</strong> Nur die Schnittbereiche von A, B, C prüfen → <strong>✅ Richtig:</strong> Elemente die nur in A (nicht in B,C) liegen sind der Schlüsselunterschied: sie sind in Ausdruck 1 enthalten, in Ausdruck 2 nicht</li>
             </ul>,
-            <p>Was ist der konzeptuelle Unterschied zwischen „erst vereinigen, dann schneiden" und „erst schneiden, dann vereinigen"? Warum kann A ∪ (B∩C) Elemente aus A enthalten, die gar nichts mit B oder C zu tun haben — und warum ist das für (A∪B)∩C unmöglich?</p>,
           ),
           solution: 'A ∪ (B ∩ C)  ≠  (A ∪ B) ∩ C  im Allgemeinen.\n\nBeispiel: A = {1,2}, B = {2,3}, C = {3,4}\n  A ∪ (B ∩ C) = {1,2} ∪ {3} = {1,2,3}\n  (A ∪ B) ∩ C = {1,2,3} ∩ {3,4} = {3}\n\n→ Klammern können nicht einfach weggelassen werden!',
         },
@@ -403,7 +393,6 @@ A ∪ (B∩C) = {1,2} ∪ {3} = {1,2,3}
               <li><strong>❌ Falsch:</strong> Ā ∪ B̄ = Ā ∪ B (B und B̄ verwechselt) → <strong>✅ Richtig:</strong> B̄ = X \ B ist das Komplement von B, nicht B selbst</li>
               <li><strong>❌ Falsch:</strong> De Morgan als Ā ∪ B̄ = A ∪ B → <strong>✅ Richtig:</strong> De Morgan: (A∩B)‾ = Ā ∪ B̄ und (A∪B)‾ = Ā ∩ B̄</li>
             </ul>,
-            <p>De Morgan besagt: (A∪B)‾ = Ā∩B̄. Wie kannst du das nutzen, um Äquivalenzen unter den vier Ausdrücken ohne Venn-Diagramm zu identifizieren — und was sagt das über die Beziehung zwischen Ā∪B̄ und (A∩B)‾?</p>,
           ),
           solution: 'Es gilt (De Morgan\'sche Gesetze):\n\nA ∪ B̅ = A̅ ∩ B̅   (Komplement der Vereinigung = Schnitt der Komplemente)\nA ∩ B̅ = A̅ ∪ B̅   (Komplement des Schnitts = Vereinigung der Komplemente)\n\n→ A̅ ∪ B und A̅ ∩ B̅ haben identische Venn-Diagramme.\n→ A̅ ∩ B und A̅ ∪ B̅ haben identische Venn-Diagramme.',
         },
@@ -447,7 +436,6 @@ A ∪ (B∩C) = {1,2} ∪ {3} = {1,2,3}
               <li><strong>❌ Falsch:</strong> Bei (i) die erste Richtung korrekt prüfen und dann annehmen beide Richtungen stimmen → <strong>✅ Richtig:</strong> A\(B\C) = {'{1,2,3}'} ≠ ∅ = (A\B)\C → widerlegt</li>
               <li><strong>❌ Falsch:</strong> Elementmethode nur in eine Richtung zeigen → <strong>✅ Richtig:</strong> Für ⟺ beide Richtungen (⇒ und ⟸) beweisen</li>
             </ul>,
-            <p>Für jede als gültig eingestufte Gleichheit: Gilt die Elementkette x ∈ LHS ⟺ x ∈ RHS in beide Richtungen?</p>,
           ),
           solution: '(i) NICHT immer erfüllt.\n    Gegenbeispiel A = B = C = {1,2,3}:\n      A \\ (B \\ C) = A \\ ∅ = A = {1,2,3}\n      (A \\ B) \\ C = ∅ \\ C = ∅\n      → A ≠ ∅\n\n(ii) Immer erfüllt.\n    A \\ B = {x : x ∈ A und x ∉ B} = A ∩ B̅  ✓\n\n(iii) Immer erfüllt.\n    A \\ (B ∩ C) = {x ∈ A : x ∉ B∩C}\n             = {x ∈ A : x ∉ B oder x ∉ C}\n             = (A \\ B) ∪ (A \\ C)  ✓\n\n(iv) Immer erfüllt.\n    A ∪ (A̅ ∩ B) = (A ∪ A̅) ∩ (A ∪ B)\n                = X ∩ (A ∪ B) = A ∪ B  ✓',
         },

@@ -42,7 +42,6 @@ export const blatt2: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> ¬A∧¬B als ¬(A∧¬B) oder ¬(¬A∧B) lesen → <strong>✅ Richtig:</strong> ¬ bindet stärker als ∧ und ∨: ¬A∧¬B = (¬A)∧(¬B)</li>
               <li><strong>❌ Falsch:</strong> w∧f = w → <strong>✅ Richtig:</strong> w∧f = f (∧ ist nur wahr wenn BEIDE wahr)</li>
             </ul>,
-            <p>Welche Spaltenpaare stimmen überein — und welches logische Gesetz erklärt genau diese Äquivalenz? Wäre das Ergebnis überraschend, wenn man De Morgan kennt?</p>,
           ),
           solution: ' A | B | ¬(A∧B) | ¬(A∨B) | ¬A∧¬B | ¬A∨¬B\n w | w |   f    |   f    |   f   |   f\n w | f |   w    |   f    |   f   |   w\n f | w |   w    |   f    |   f   |   w\n f | f |   w    |   w    |   w   |   w\n\nSpalten 1 und 4 stimmen überein → ¬(A∧B) ≡ ¬A∨¬B\nSpalten 2 und 3 stimmen überein → ¬(A∨B) ≡ ¬A∧¬B\n(De Morgansche Gesetze)',
         },
@@ -77,7 +76,6 @@ export const blatt2: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> z ≥ 0 ⇒ z² ≥ 0 ist wahr → also gilt auch ⟺ → <strong>✅ Richtig:</strong> ⟺ erfordert BEIDE Richtungen; die Hinrichtung z² ≥ 0 ⇒ z ≥ 0 scheitert bei z=−1</li>
               <li><strong>❌ Falsch:</strong> Ohne Gegenbeispiel annehmen, die Aussage sei wahr → <strong>✅ Richtig:</strong> z=−1: (−1)²=1≥0, aber −1 &lt; 0 → Hinrichtung falsch → ⟺ falsch</li>
             </ul>,
-            <p>Warum reicht eine einzige Gegenzahl, um eine ⟺-Aussage zu widerlegen? Was sagt das über die Asymmetrie zwischen Widerlegen (ein Gegenbeispiel) und Beweisen (alle Fälle) aus?</p>,
           ),
           solution: 'In Symbolen: z² ≥ 0 ⟺ z ≥ 0\n→ falsch\n\nGegenbeispiel: z = −1\n  z² = 1 ≥ 0, aber z = −1 < 0\n→ Die Hinrichtung z² ≥ 0 ⇒ z ≥ 0 ist falsch.',
         },
@@ -107,7 +105,6 @@ Symbol „⟸": zeigt Richtung von rechts nach links`}</pre>
               <li><strong>❌ Falsch:</strong> „hinreichend" = „notwendig" → <strong>✅ Richtig:</strong> Hinreichend: A⇒B (A genügt); Notwendig: B⇒A (ohne A geht B nicht)</li>
               <li><strong>❌ Falsch:</strong> Pfeil falsch: 2|z ⇒ 4|z schreiben (umgekehrt) → <strong>✅ Richtig:</strong> „4|z ist hinreichend für 2|z" = 4|z ⇒ 2|z (der hinreichende Begriff steht links)</li>
             </ul>,
-            <p>Was ist der Unterschied zwischen „A ist hinreichend für B" und „B ist hinreichend für A"? Welchen Pfeil zeichnet jeweils welche Aussage — und welcher Pfeil fehlt, wenn man nur Hinreichendes ohne Notwendiges hat?</p>,
           ),
           solution: 'In Symbolen: z durch 2 teilbar ⟸ z durch 4 teilbar (wahr)\n\nBeweis: Wenn 4 | z, dann z = 4k für k ∈ ℤ.\n  z = 2·(2k) → 2 | z ✓',
         },
@@ -136,7 +133,6 @@ aber nicht durch 4 teilbar.`}</pre>
               <li><strong>❌ Falsch:</strong> „notwendig" mit „hinreichend" verwechseln und 4|z ⇒ 2|z schreiben → <strong>✅ Richtig:</strong> „4|z notwendig für 2|z" bedeutet: wenn 2|z, dann muss auch 4|z gelten = 2|z ⇒ 4|z</li>
               <li><strong>❌ Falsch:</strong> Ohne Gegenbeispiel behaupten die Aussage sei wahr → <strong>✅ Richtig:</strong> z=2: 2|2 ✓ aber 4∤2 ✗ — Gegenbeispiel widerlegt die Behauptung</li>
             </ul>,
-            <p>Warum ist „notwendige Bedingung" konzeptionell schwächer als „hinreichende Bedingung"? Wenn 4|z notwendig für 2|z wäre, was würde das über die Zahl z=2 aussagen — und warum ist das absurd?</p>,
           ),
           solution: 'In Symbolen: z durch 2 teilbar ⇒ z durch 4 teilbar (falsch)\n\nGegenbeispiel: z = 2\n  2 | 2 ✓, aber 4 ∤ 2 ✗\n→ Teilbarkeit durch 2 impliziert nicht Teilbarkeit durch 4.',
         },
@@ -174,7 +170,6 @@ Inverse:        ¬P ⇒ ¬Q  (nicht äquivalent ✗)`}</pre>
               <li><strong>❌ Falsch:</strong> Inverse ¬P⇒¬Q = Kontraposition ¬Q⇒¬P → <strong>✅ Richtig:</strong> Inverse: Prämisse und Konklusion negiert (nicht vertauscht); Kontraposition: zusätzlich die Richtung umgekehrt</li>
               <li><strong>❌ Falsch:</strong> Alle 4 Varianten (Original, Umkehrung, Inverse, Kontraposition) als äquivalent annehmen → <strong>✅ Richtig:</strong> Nur Original und Kontraposition sind äquivalent; Umkehrung und Inverse sind unabhängig</li>
             </ul>,
-            <p>Warum ist die Inverse ¬P⇒¬Q nicht äquivalent zu P⇒Q, obwohl sie sich ähnlich anfühlt? Welche zwei Ausdrücke sind stattdessen äquivalent — und was haben sie strukturell gemein?</p>,
           ),
           solution: '(a) In Symbolen: ¬P ⇒ ¬Q\n    → NICHT äquivalent zu P ⇒ Q (das ist die Inverse).',
         },
@@ -199,7 +194,6 @@ Inverse:        ¬P ⇒ ¬Q  (nicht äquivalent ✗)`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> Da die Aussage P betrifft und (b) auch P enthält, muss sie äquivalent sein → <strong>✅ Richtig:</strong> Die Formel ist ¬P⇒Q (anderer Inhalt als P⇒Q), Gegenbeispiel P=f, Q=f zeigt die Verschiedenheit</li>
             </ul>,
-            <p>P⇒Q macht eine Aussage über den Fall P=w. Was passiert bei P=f — sagt P⇒Q überhaupt etwas über diesen Fall aus? Und was folgt daraus für die Äquivalenz mit ¬P⇒Q?</p>,
           ),
           solution: '(b) In Symbolen: ¬P ⇒ Q\n    → NICHT äquivalent zu P ⇒ Q.',
         },
@@ -225,7 +219,6 @@ Inverse:        ¬P ⇒ ¬Q  (nicht äquivalent ✗)`}</pre>
               <li><strong>❌ Falsch:</strong> P∨Q statt ¬P∨Q (Negation von P vergessen) → <strong>✅ Richtig:</strong> P⇒Q ≡ ¬P∨Q; wenn P falsch ist, ist die Implikation automatisch wahr (egal was Q ist)</li>
               <li><strong>❌ Falsch:</strong> P⇒Q ≡ P∧Q annehmen → <strong>✅ Richtig:</strong> P⇒Q ≡ ¬P∨Q (die Wahrheitstafel beider Ausdrücke ist identisch)</li>
             </ul>,
-            <p>Warum gilt P⇒Q ≡ ¬P∨Q? Was bedeutet eine Implikation P⇒Q eigentlich — welche der vier Zeilen der Wahrheitstafel macht sie falsch, und wie drückt ¬P∨Q genau dasselbe aus?</p>,
           ),
           solution: '(c) In Symbolen: ¬P ∨ Q\n    → ÄQUIVALENT zu P ⇒ Q, denn P ⇒ Q ≡ ¬P ∨ Q ✓',
         },
@@ -254,7 +247,6 @@ P ⇒ Q ≇ ¬P ⇒ ¬Q  (Inverse, nicht äquivalent ✗)`}</pre>
               <li><strong>❌ Falsch:</strong> Kontraposition ¬Q⇒¬P = Umkehrung Q⇒P → <strong>✅ Richtig:</strong> Kontraposition dreht Pfeil UND negiert; Umkehrung dreht nur den Pfeil ohne Negation</li>
               <li><strong>❌ Falsch:</strong> ¬P⇒¬Q als Kontraposition → <strong>✅ Richtig:</strong> Das ist die Inverse (nur negiert, nicht umgekehrt); Kontraposition ist ¬Q⇒¬P</li>
             </ul>,
-            <p>Warum ist die Kontraposition logisch gleichwertig zur ursprünglichen Implikation, die Umkehrung aber nicht? Was ist der fundamentale Unterschied zwischen „A impliziert B" und „¬B impliziert ¬A"?</p>,
           ),
           solution: '(d) In Symbolen: ¬Q ⇒ ¬P\n    → ÄQUIVALENT zu P ⇒ Q (das ist die Kontraposition) ✓\n\nDie Aussage ist nur zu (c) und (d) äquivalent.',
         },
@@ -290,7 +282,6 @@ n gerade   ⟺ ∃k ∈ ℕ: n = 2k`}</pre>
               <li><strong>❌ Falsch:</strong> Nur konkrete Zahlen prüfen (z.B. 1²=1, 3²=9) statt allgemeinen Beweis → <strong>✅ Richtig:</strong> n = 2k+1 für beliebiges k ∈ ℕ verwenden, um alle ungeraden Zahlen abzudecken</li>
               <li><strong>❌ Falsch:</strong> n = 2k (gerade Zahl) für die Annahme verwenden → <strong>✅ Richtig:</strong> Die Voraussetzung ist „n ist ungerade" → n = 2k+1 (mit dem +1!)</li>
             </ul>,
-            <p>Warum muss man n als 2k+1 schreiben, statt einfach „n ist ungerade" zu sagen? Was ermöglicht diese algebraische Darstellung, die eine verbale Beschreibung nicht kann?</p>,
           ),
           solution: 'Direkter Beweis:\n\nEs genügt zu zeigen, dass A(n) = w, B(n) = f nicht auftreten kann.\n\nAnnahme: A(n) = w, d.h. n ist ungerade.\nDann ∃k ∈ ℕ mit n = 2k+1.\n\nn² = (2k+1)² = 4k²+4k+1 = 2(2k²+2k)+1\n\nDie Form 2m+1 zeigt: n² ist ungerade, also B(n) = w.\nDer Fall A(n)=w, B(n)=f kann somit nicht auftreten.\n\nZeilen mit A(n)=f werden nicht betrachtet (A⇒B dort automatisch wahr). □',
         },
@@ -327,7 +318,6 @@ n gerade   ⟺ ∃k ∈ ℕ: n = 2k`}</pre>
               <li><strong>❌ Falsch:</strong> Zum Widerspruch nur A(n)=f annehmen → <strong>✅ Richtig:</strong> Widerspruchsbeweis für A⇒B nimmt ¬(A⇒B) = A∧¬B an; beide Teile müssen in die Annahme</li>
               <li><strong>❌ Falsch:</strong> ¬(A⇒B) = ¬A⇒¬B → <strong>✅ Richtig:</strong> ¬(A⇒B) = A∧¬B (mit De Morgan: ¬(¬A∨B) = A∧¬B)</li>
             </ul>,
-            <p>Was ist der fundamentale Unterschied zwischen direktem Beweis und Widerspruchsbeweis — und warum führen beide Methoden hier zum selben Ergebnis? Wann wäre Widerspruchsbeweis die einzige praktikable Option?</p>,
           ),
           solution: 'Widerspruchsbeweis:\n\nWir nehmen an: ¬(A(n) ⇒ B(n)) = A(n) ∧ ¬B(n),\nd.h. n ist ungerade und n² ist gerade.\n\nAus A(n)=w folgt n = 2k+1 für k ∈ ℕ.\n\nn² = (2k+1)² = 4k²+4k+1 = 2(2k²+2k)+1\n→ n² ist ungerade — Widerspruch zu ¬B(n)!\n\nDie Annahme war falsch → A(n) ⇒ B(n) ∀n. □',
         },
@@ -370,7 +360,6 @@ f | f |     f    |  f  ✓`}</pre>
               <li><strong>❌ Falsch:</strong> A∨(¬A∧B) = (A∨¬A)∧B direkt (Distributivgesetz falsch) → <strong>✅ Richtig:</strong> Distributivgesetz: A∨(B∧C) = (A∨B)∧(A∨C); hier A∨(¬A∧B) = (A∨¬A)∧(A∨B)</li>
               <li><strong>❌ Falsch:</strong> A∨¬A = f → <strong>✅ Richtig:</strong> A∨¬A = t (Tautologie: immer wahr, unabhängig von A)</li>
             </ul>,
-            <p>Was bedeutet es, dass A∨(¬A∧B) = A∨B gilt — welche Rolle spielt der Term ¬A∧B, wenn A schon wahr ist? Und was passiert mit ¬A∧B, wenn A falsch ist?</p>,
           ),
           solution: 'A ∨ (¬A ∧ B)\n= (A ∨ ¬A) ∧ (A ∨ B)   (Distributivgesetz)\n= t ∧ (A ∨ B)            (A ∨ ¬A = t)\n= A ∨ B                   (t ∧ X = X)',
         },
@@ -403,7 +392,6 @@ Hier: ¬B ∨ (A ∧ ¬B) = ¬B  (setze X=¬B, Y=A)`}</pre>
               <li><strong>❌ Falsch:</strong> ¬(¬A∨B) = ¬A∧B (De Morgan falsch) → <strong>✅ Richtig:</strong> ¬(¬A∨B) = ¬(¬A)∧¬B = A∧¬B (beide Terme werden negiert)</li>
               <li><strong>❌ Falsch:</strong> Absorptionsgesetz nicht erkennen → <strong>✅ Richtig:</strong> X∨(Y∧X) = X; hier mit X=¬B, Y=A: ¬B∨(A∧¬B) = ¬B</li>
             </ul>,
-            <p>Was sagt das Absorptionsgesetz X ∨ (Y ∧ X) = X intuitiv aus — warum „absorbiert" X den Term (Y ∧ X)? Welche Bedingung muss erfüllt sein, damit X wahr ist, und macht dann (Y ∧ X) noch einen Unterschied?</p>,
           ),
           solution: '¬(A ∧ B) ∨ ¬(¬A ∨ B)\n= (¬A ∨ ¬B) ∨ (A ∧ ¬B)   (De Morgan)\n= ¬A ∨ (¬B ∨ (A ∧ ¬B))   (Assoziativität)\n= ¬A ∨ ¬B                  (Absorption: X ∨ (Y ∧ X) = X)\n= ¬(A ∧ B)                 (De Morgan)',
         },

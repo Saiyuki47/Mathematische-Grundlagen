@@ -33,7 +33,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> xₙ=n, yₙ=1/n² → xₙyₙ=1/n → 0 (zu schwach) → <strong>✅ Richtig:</strong> xₙ muss schneller wachsen als yₙ fällt; xₙ=n², yₙ=1/n → xₙyₙ=n → ∞</li>
             </ul>,
-            <p>Das Produkt xₙyₙ muss selbst gegen ∞ divergieren. Prüfe: lim xₙyₙ = ∞?</p>,
           ),
           solution: 'xₙ := n², yₙ := 1/n\nxₙyₙ = n² · (1/n) = n → ∞',
         },
@@ -57,7 +56,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> yₙ=-1/n ist keine Nullfolge (negativ) → <strong>✅ Richtig:</strong> Nullfolge bedeutet |yₙ| → 0; |−1/n| = 1/n → 0, also ist yₙ=−1/n eine Nullfolge</li>
             </ul>,
-            <p>Warum ist yₙ = −1/n eine Nullfolge, obwohl alle Glieder negativ sind — und was ist die korrekte Definition von „Nullfolge"?</p>,
           ),
           solution: 'xₙ := n², yₙ := −1/n\nxₙyₙ = n² · (−1/n) = −n → −∞',
         },
@@ -82,7 +80,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Für c=0 die triviale yₙ=0 wählen und xₙ beliebig → <strong>✅ Richtig:</strong> Das wäre erlaubt, aber die allgemeine Formel xₙ=n, yₙ=c/n funktioniert für alle c∈ℝ; für c=0: yₙ=0 (Nullfolge ✓)</li>
             </ul>,
-            <p>Warum funktioniert yₙ = c/xₙ für jedes c ∈ ℝ — und was passiert bei c = 0 mit der Wahl von xₙ?</p>,
           ),
           solution: 'xₙ := n, yₙ := c/n\nxₙyₙ = n · (c/n) = c → c',
         },
@@ -107,7 +104,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> yₙ=(−1)ⁿ/n ist keine Nullfolge (wegen Vorzeichenwechsel) → <strong>✅ Richtig:</strong> |yₙ| = |(−1)ⁿ/n| = 1/n → 0, also ist es eine Nullfolge; Vorzeichenwechsel spielt keine Rolle</li>
             </ul>,
-            <p>Warum reicht es, zwei Teilfolgen mit verschiedenen Grenzwerten zu finden, um die Nicht-Konvergenz der Gesamtfolge zu beweisen?</p>,
           ),
           solution: 'xₙ := n, yₙ := (−1)ⁿ · (1/n)\nxₙyₙ = (−1)ⁿ: beschränkt (|xₙyₙ| = 1), aber nicht konvergent\n(Teilfolge x₂ₙy₂ₙ = +1, x₂ₙ₊₁y₂ₙ₊₁ = −1)',
         },
@@ -138,7 +134,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> (−1/5)ⁿ divergiert wegen des negativen Vorzeichens → <strong>✅ Richtig:</strong> Für qⁿ → 0 zählt nur |q| &lt; 1; |(−1/5)| = 1/5 &lt; 1, daher (−1/5)ⁿ → 0</li>
             </ul>,
-            <p>Reicht es zu prüfen: |q| &lt; 1? Dann ist qⁿ → 0.</p>,
           ),
           solution: 'lim (−1/5)ⁿ = 0 (geometrische Folge, |q| = 1/5 < 1)\nlim xₙ = 1 − 0 = 1',
         },
@@ -168,7 +163,6 @@ export const blatt8: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> (−1)ⁿ/n divergiert wegen des Vorzeichenwechsels → <strong>✅ Richtig:</strong> (−1)ⁿ ist beschränkt und 1/n → 0; Produkt aus Nullfolge und beschränkter Folge → 0</li>
               <li><strong>❌ Falsch:</strong> lim n/(2n+1) = n/(2n) = 1/2 (ohne korrektes Ausklammern) → <strong>✅ Richtig:</strong> Durch n dividieren: n/(2n+1) = 1/(2+1/n) → 1/2</li>
             </ul>,
-            <p>Probe: Der zweite Term nähert sich für große n immer mehr 1/2 an (1/n → 0 im Nenner).</p>,
           ),
           solution: (
             <>
@@ -199,7 +193,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> (−1)ⁿ·n/(2n+1) → 1/2, weil n/(2n+1) → 1/2 → <strong>✅ Richtig:</strong> Der Faktor (−1)ⁿ wechselt das Vorzeichen; die Teilfolgen gehen gegen +1/2 und −1/2 → divergent</li>
             </ul>,
-            <p>Warum kann eine konvergente Folge nicht zwei verschiedene Häufungswerte haben — und was folgt daraus für diese Folge?</p>,
           ),
           solution: (
             <>
@@ -232,7 +225,6 @@ export const blatt8: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> n² als dominante Potenz → <strong>✅ Richtig:</strong> Der Zähler n²−2n³−2 hat den Leitterm −2n³; der Nenner 2n³+n² hat Leitterm 2n³; also durch n³ dividieren</li>
               <li><strong>❌ Falsch:</strong> Leitterm im Zähler ist +n² → <strong>✅ Richtig:</strong> −2n³ dominiert für große n; Leitkoeffizient ist −2; lim = −2/2 = −1</li>
             </ul>,
-            <p>Warum entscheidet bei rationalen Folgen nur der Leitterm über den Grenzwert — und wann gilt die Formel „Leitkoeffizient Zähler / Leitkoeffizient Nenner" nicht?</p>,
           ),
           solution: (
             <>
@@ -263,7 +255,6 @@ export const blatt8: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> lim (1+1/n)^(2n−1) = (1+0)^∞ = 1 → <strong>✅ Richtig:</strong> Unbestimmter Ausdruck 1^∞; Zerlegung nötig: (1+1/n)^(2n−1) = [(1+1/n)ⁿ]² · (1+1/n)^(−1) → e²·1 = e²</li>
               <li><strong>❌ Falsch:</strong> Exponent −1 beim letzten Faktor vergessen → <strong>✅ Richtig:</strong> 2n−1 = 2n+(−1); (1+1/n)^(−1) → 1^(−1) = 1; gesamter Faktor → 1</li>
             </ul>,
-            <p>Probe der Zerlegung: (1+1/n)^(2n−1) = (1+1/n)^(2n) · (1+1/n)^(−1). Für den zweiten Faktor: (1+1/n)^(−1) → 1.</p>,
           ),
           solution: (
             <>
@@ -295,7 +286,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> lim(1−1/n²)ⁿ = (lim(1−1/n²))ⁿ = 1ⁿ = 1 → <strong>✅ Richtig:</strong> Grenzwert nicht in Basis und Exponent trennen; stattdessen Bernoulli + Sandwich: 1−1/n ≤ xₙ ≤ 1, beide → 1</li>
             </ul>,
-            <p>Warum darf man den Grenzwert nicht direkt als (1−0)ⁿ = 1 berechnen — und was macht diesen Ausdruck zu einem unbestimmten Typ 1^∞?</p>,
           ),
           solution: (
             <>
@@ -344,7 +334,6 @@ export const blatt8: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> Formel direkt mit k=1 anwenden → <strong>✅ Richtig:</strong> Formel gilt für k=0; Indexshift: Σ(k=1..n)(1/10)ᵏ = (1/10)·Σ(k=0..n−1)(1/10)ᵏ</li>
               <li><strong>❌ Falsch:</strong> (9/10)·(1−(1/10)ⁿ)/(9/10) = (1−(1/10)ⁿ)·(9/10)²/9 → <strong>✅ Richtig:</strong> (9/10)/(9/10) = 1; Ergebnis direkt 1−(1/10)ⁿ</li>
             </ul>,
-            <p>Probe: x₁ = 9/10, x₂ = 9/10 + 9/100 = 99/100. Stimmt mit 1 − (1/10)ⁿ überein?</p>,
           ),
           solution: (
             <>
@@ -383,7 +372,6 @@ export const blatt8: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> Bei (iii) anderen Konvergenzbereich vermuten, weil die Summe bei k=2 beginnt → <strong>✅ Richtig:</strong> Endlich viele Anfangsglieder weglassen ändert Konvergenz nicht; alle drei haben x∈(−6,8)</li>
               <li><strong>❌ Falsch:</strong> Bei (ii) Faktor 3 auf Konvergenzbereich anrechnen → <strong>✅ Richtig:</strong> Faktor 3 beeinflusst nur den Wert der Summe, nicht ob sie konvergiert; Konvergenzbereich bleibt (−6,8)</li>
             </ul>,
-            <p>Warum haben alle drei Reihen denselben Konvergenzbereich — obwohl (ii) einen Vorfaktor und (iii) einen anderen Startindex hat?</p>,
           ),
           solution: (
             <>
@@ -429,7 +417,6 @@ export const blatt8: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> a = 2a/(2+a) → a(2+a) = 2 (falsches Umformen) → <strong>✅ Richtig:</strong> a(2+a) = 2a → 2a+a² = 2a → a² = 0 → a = 0</li>
               <li><strong>❌ Falsch:</strong> Monotonie mit aₙ₊₁ ≥ aₙ prüfen → <strong>✅ Richtig:</strong> Zuerst Richtung erraten: a₁=1 &lt; a₀=2 → fallend; dann aₙ₊₁ ≤ aₙ nachweisen: 0 ≤ aₙ² immer wahr</li>
             </ul>,
-            <p>Grenzwertberechnung: Wenn lim aₙ = a, dann auch lim aₙ₊₁ = a. Rekursionsformel im Grenzwert ergibt eine Gleichung für a.</p>,
           ),
           solution: (
             <>
@@ -469,7 +456,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Grenzwert = 2 wegen „lim n/√n = n^(1/2) → ∞, gar kein Limes" → <strong>✅ Richtig:</strong> 2n/√(n+1) ≥ 2n/√(2n) = √(2n) → ∞; bestimmt divergent</li>
             </ul>,
-            <p>Warum reicht es für xₙ → ∞, eine untere Schranke yₙ → ∞ zu finden — und welche Eigenschaft von ≤ wird hier genutzt?</p>,
           ),
           solution: (
             <>
@@ -497,7 +483,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Produkt durch direktes Ausrechnen bestimmen wollen → <strong>✅ Richtig:</strong> Teleskopstruktur erkennen: jeder Zähler k+1 kürzt sich mit dem Nenner des nächsten Faktors; Ergebnis (n+1)/1 = n+1</li>
             </ul>,
-            <p>Probe: n=3: xₙ = (2/1)(3/2)(4/3) = 4 = 3+1 ✓</p>,
           ),
           solution: 'xₙ = (2/1)·(3/2)·(4/3)·…·((n+1)/n) = n+1 (Teleskopprodukt)\nxₙ = n+1 → ∞',
         },
@@ -521,7 +506,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> xₙ = √(n+1) − √n → ∞, weil beide Terme → ∞ → <strong>✅ Richtig:</strong> Unbestimmter Ausdruck ∞−∞; nach Konjugation: xₙ = 1/(√(n+1)+√n) ≤ 1/√n → 0</li>
             </ul>,
-            <p>Die Differenz zweier großer Zahlen kann klein sein — hier sogar gegen 0 gehen.</p>,
           ),
           solution: 'xₙ = 1/(√(n+1)+√n) ≤ 1/√n → 0\nMit 0 ≤ xₙ und Einschnürungssatz: lim xₙ = 0',
         },
@@ -545,7 +529,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Jeden Term (k+1)²−k²=2k+1 einzeln berechnen und Summe aufstellen → <strong>✅ Richtig:</strong> Teleskopstruktur direkt nutzen: Σ((k+1)²−k²) = (n+1)²−0² = (n+1)²</li>
             </ul>,
-            <p>Probe: n=2: (1−0)+(4−1)+(9−4) = 1+3+5 = 9 = (2+1)² ✓</p>,
           ),
           solution: 'xₙ = (1²−0²)+(2²−1²)+…+((n+1)²−n²) = (n+1)² (Teleskopsumme)\n(n+1)² ≥ n → lim xₙ = ∞',
         },
@@ -579,7 +562,6 @@ export const blatt8: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> M = 0 zulassen und dann ε/M = ε/0 berechnen → <strong>✅ Richtig:</strong> Wähle M &gt; 0 (oder behandle M=0 separat: dann xₙ=0, xₙyₙ=0 trivialerweise)</li>
               <li><strong>❌ Falsch:</strong> |xₙyₙ| ≤ M · |yₙ| ohne Begründung hinschreiben → <strong>✅ Richtig:</strong> |xₙyₙ| = |xₙ|·|yₙ| ≤ M·|yₙ| wegen |xₙ| ≤ M (Beschränktheit)</li>
             </ul>,
-            <p>Warum wählt man im Beweis N so, dass |yₙ| &lt; ε/M (nicht einfach &lt; ε) — welche Rolle spielt M in der Abschätzung?</p>,
           ),
           solution: (
             <>
@@ -611,7 +593,6 @@ export const blatt8: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> xₙ &gt; 0 für alle n voraussetzen → <strong>✅ Richtig:</strong> Voraussetzung ist nur xₙ ∈ ℝ\{'{0}'}; dass xₙ &gt; 0 für n ≥ N folgt automatisch aus xₙ &gt; 1/ε &gt; 0</li>
             </ul>,
-            <p>Warum folgt aus xₙ → ∞, dass 1/xₙ → 0 — und für welche anderen Divergenztypen gilt das nicht?</p>,
           ),
           solution: (
             <>

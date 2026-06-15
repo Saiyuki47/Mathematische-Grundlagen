@@ -42,7 +42,6 @@ export const blatt7: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> xₙ = (−1)ⁿ⁺¹n für (iii) → <strong>✅ Richtig:</strong> Probe: n=1: (−1)²·1=1, aber gefordert ist −1; also (−1)ⁿ·n für (iii); für (iv) ist es (−1)ⁿ⁺¹·n</li>
               <li><strong>❌ Falsch:</strong> xₙ = (1/2)ⁿ für (v) → <strong>✅ Richtig:</strong> n=0 liefert (1/2)⁰=1, aber x₀=1/2 gefordert; richtig: xₙ = (1/2)ⁿ⁺¹ (Probe: n=0 → 1/2 ✓)</li>
             </ul>,
-            <p>Probe: Index n=0 und n=1 in die gefundene Vorschrift einsetzen und mit den ersten zwei Folgengliedern vergleichen.</p>,
           ),
           solution: '(i)   f: ℕ→ℝ, n ↦ 3n\n(ii)  f: ℕ→ℝ, n ↦ −4 + 3n\n(iii) f: ℕ→ℝ, n ↦ (−1)ⁿ n\n(iv)  f: ℕ→ℝ, n ↦ (−1)ⁿ⁺¹ n\n(v)   f: ℕ→ℝ, n ↦ 1 / 2ⁿ⁺¹\n(vi)  f: ℕ→ℝ, n ↦ 1 / (2ⁿ⁺¹ − 1)',
         },
@@ -73,7 +72,6 @@ export const blatt7: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> a₃ = f(a₁) statt f(a₂) → <strong>✅ Richtig:</strong> Die Rekursion verlangt den unmittelbaren Vorgänger; a₃ = 2a₂/(2+a₂) = 2·(2/3)/(2+2/3)</li>
               <li><strong>❌ Falsch:</strong> (4/3)/(8/3) = 4/3 · 8/3 = 32/9 (Kehrwert vergessen) → <strong>✅ Richtig:</strong> Division durch Bruch = Multiplikation mit Kehrwert: (4/3)/(8/3) = (4/3)·(3/8) = 12/24 = 1/2</li>
             </ul>,
-            <p>Probe: Folgt die Folge 2, 1, 2/3, 1/2, … einem Muster? Die Terme 1/a_n: 1/2, 1, 3/2, 2, … steigen um 1/2 — arithmetische Folge.</p>,
           ),
           solution: (
             <>
@@ -113,7 +111,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> Beide Folgen konvergent wählen → <strong>✅ Richtig:</strong> Die Aufgabe verlangt mindestens eine divergente Folge; z.B. xₙ=(−1)ⁿ divergiert, aber xₙ+yₙ=0 wenn yₙ=−(−1)ⁿ</li>
             </ul>,
-            <p>Reicht es, wenn nur eine der zwei Folgen divergiert? Ja — aber beide divergent ist auch erlaubt.</p>,
           ),
           solution: 'Zum Beispiel (xₙ) = ((−1)ⁿ), (yₙ) = ((−1)ⁿ⁺¹):\nxₙ + yₙ = 0 für alle n → konvergiert gegen 0.\n(xₙ) divergiert.\n\nAlternativ: (xₙ) = (n), (yₙ) = (−n).',
         },
@@ -135,7 +132,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> Nur divergente Beispiele suchen und frustriert aufgeben → <strong>✅ Richtig:</strong> xₙ=0 konstant (konvergent) und yₙ=(−1)ⁿ (divergent) → xₙ·yₙ=0 (konvergent) ✓</li>
             </ul>,
-            <p>Einfachste Strategie: eine Folge konstant 0 wählen — dann ist das Produkt immer 0.</p>,
           ),
           solution: 'Zum Beispiel (xₙ) = (0,0,0,…), (yₙ) = ((−1)ⁿ):\nxₙ · yₙ = 0 für alle n → konvergiert gegen 0.\n(yₙ) divergiert.\n\nAlternativ: (xₙ) = (n), (yₙ) = (1/n).',
         },
@@ -157,7 +153,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> Aus xₙ &lt; yₙ folgern, dass lim xₙ &lt; lim yₙ → <strong>✅ Richtig:</strong> Strikte Ungleichung überträgt sich nicht auf Grenzwerte; aus xₙ ≤ yₙ folgt nur lim xₙ ≤ lim yₙ; Gegenbeispiel: xₙ=0, yₙ=1/n, beide → 0</li>
             </ul>,
-            <p>Probe: 0 &lt; 1/n für n=1,2,3,… ✓. Beide Folgen konvergieren gegen 0 ✓.</p>,
           ),
           solution: '(xₙ) = (0,0,0,…), (yₙ) = (1/n):\nxₙ = 0 < 1/n = yₙ für alle n ≥ 1 ✓\nlim xₙ = 0 = lim yₙ ✓\n\nAus xₙ < yₙ folgt für Grenzwerte nur lim xₙ ≤ lim yₙ (keine strikte Ungleichung).',
         },
@@ -179,7 +174,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> lim |xₙ| existiert → lim xₙ existiert auch → <strong>✅ Richtig:</strong> Das gilt nur im Spezialfall lim |xₙ|=0 (dann lim xₙ=0); für lim |xₙ|=1 kann xₙ=(−1)ⁿ trotzdem divergieren</li>
             </ul>,
-            <p>Probe: (xₙ) = (−1, 1, −1, 1, …) hat keinen Grenzwert (divergiert). |xₙ| = 1 konstant → Grenzwert 1 ✓.</p>,
           ),
           solution: '(xₙ) = ((−1)ⁿ) = (−1, 1, −1, 1, …)\n\n(xₙ) divergiert (kein Grenzwert).\n|xₙ| = 1 für alle n → (|xₙ|) konvergiert gegen 1.',
         },
@@ -212,7 +206,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> Grenzwert = 3/4 (nur führende Koeffizienten, Grad ignoriert) → <strong>✅ Richtig:</strong> Grad(Zähler)=2 &lt; Grad(Nenner)=3 → nach Ausklammern von n³ bleibt Faktor 1/n → Grenzwert 0</li>
             </ul>,
-            <p>Ist der Grad des Zählers kleiner als der des Nenners? Dann ist der Grenzwert immer 0.</p>,
           ),
           solution: (
             <>
@@ -243,7 +236,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> Grenzwert = 2/5 (Vorzeichen des Nenners vergessen) → <strong>✅ Richtig:</strong> Führender Koeffizient des Nenners ist −5 (nicht 5); lim = 2/(−5) = −2/5</li>
             </ul>,
-            <p>Probe: Für sehr großes n dominiert 2n³/(−5n³) = −2/5.</p>,
           ),
           solution: (
             <>
@@ -270,7 +262,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
               <li><strong>❌ Falsch:</strong> 3/n → 3 statt → 0 → <strong>✅ Richtig:</strong> Für n→∞ geht jede Konstante geteilt durch n gegen 0; 3/n → 0</li>
               <li><strong>❌ Falsch:</strong> lim (2+3/n)⁵ = 2 (Potenz vergessen) → <strong>✅ Richtig:</strong> lim (2+0)⁵ = 2⁵ = 32</li>
             </ul>,
-            <p>Probe: n=100 → (2 + 0.03)⁵ ≈ 2.03⁵ ≈ 34.5, noch nicht bei 32. n=10 000 → sehr nah an 32.</p>,
           ),
           solution: 'lim (3/n) = 0\nlim xₙ = (2 + 0)⁵ = 2⁵ = 32',
         },
@@ -295,7 +286,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
               <li><strong>❌ Falsch:</strong> lim ⁿ√(2¹⁰⁰⁰) = 2 (als ob 1000 keine Rolle spielt) → <strong>✅ Richtig:</strong> xₙ = 2^(1000/n) und 1000/n → 0, also lim xₙ = 2⁰ = 1</li>
               <li><strong>❌ Falsch:</strong> 1000/n → ∞ denken → <strong>✅ Richtig:</strong> 1000 ist fest; für n→∞ gilt 1000/n → 0 (nicht ∞)</li>
             </ul>,
-            <p>Schlüssel: 1000 ist eine feste Zahl. 1000/n → 0 wenn n → ∞.</p>,
           ),
           solution: 'xₙ = ⁿ√(2¹⁰⁰⁰) = 2^(1000/n)\n\nlim 1000/n = 0\n\nlim xₙ = 2⁰ = 1',
         },
@@ -317,7 +307,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> lim (1+1/n)ⁿ = 1 (da 1+1/n→1 und 1ⁿ=1) → <strong>✅ Richtig:</strong> Das ist der unbestimmte Ausdruck 1^∞; Basis→1 und Exponent→∞ gleichzeitig ergibt e ≈ 2.718…, nicht 1</li>
             </ul>,
-            <p>Merkhilfe: xₙ = (1 + 1/n)ⁿ → e ist eine der wichtigsten Grenzwertformeln der Analysis.</p>,
           ),
           solution: 'xₙ = ((n+1)/n)ⁿ = (1 + 1/n)ⁿ\n\nlim (1 + 1/n)ⁿ = e\n\nDaher: lim xₙ = e',
         },
@@ -341,7 +330,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
               <li><strong>❌ Falsch:</strong> sin(n) und cos(n) einzeln ausrechnen wollen → <strong>✅ Richtig:</strong> Für ganzzahlige n lassen sich sin(n) und cos(n) nicht vereinfachen; stattdessen die Schranke |sin(n)| ≤ 1 nutzen</li>
               <li><strong>❌ Falsch:</strong> |(−1)ⁿ·sin(n)cos(n)|/(3n³) nicht vereinfachen → <strong>✅ Richtig:</strong> |(−1)ⁿ| = 1; daher |xₙ| = |sin(n)cos(n)|/(3n³) ≤ 1/(3n³)</li>
             </ul>,
-            <p>Schlüssel: |sin(n)cos(n)| ≤ 1 immer. Die Abschätzung durch 1/(3n³) reicht für den Einschnürungssatz.</p>,
           ),
           solution: (
             <>
@@ -376,7 +364,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> N = 1/ε² (nicht strikt) → <strong>✅ Richtig:</strong> Bei n = 1/ε² gilt 1/√n = ε, aber gefordert ist &lt; ε (strikt); wähle N = ⌊1/ε²⌋ + 1 oder N &gt; 1/ε²</li>
             </ul>,
-            <p>Probe für ε = 1/10: n = 101 → 1/√101 ≈ 0.0995 &lt; 0.1 ✓; n = 100 → 1/√100 = 0.1 = ε (nicht &lt; ε, also reicht 100 nicht).</p>,
           ),
           solution: (
             <>
@@ -411,7 +398,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
               <li><strong>❌ Falsch:</strong> Ungleichungen ohne Begründung hinschreiben → <strong>✅ Richtig:</strong> Jeder Schritt braucht eine kurze Erklärung: „n≥N und Wurzel monoton → 1/√n ≤ 1/√N" und „N&gt;1/ε² → 1/√N &lt; ε"</li>
               <li><strong>❌ Falsch:</strong> N = 1/ε² setzen (nicht natürlich) → <strong>✅ Richtig:</strong> N muss ∈ ℕ sein; wähle N := ⌊1/ε²⌋ + 1 oder beliebiges N &gt; 1/ε²</li>
             </ul>,
-            <p>Der Beweis ist fertig, sobald man gezeigt hat: |1/√n − 0| ≤ … &lt; ε für alle n ≥ N.</p>,
           ),
           solution: (
             <>
@@ -446,7 +432,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
               <li><strong>❌ Falsch:</strong> Σ(k=0..5)(1/2)ᵏ = (1−(1/2)⁵)/(1−1/2) (Exponent n statt n+1) → <strong>✅ Richtig:</strong> Formel: (1−q^(n+1))/(1−q); hier n=5, also Exponent 6: (1−(1/2)⁶)/(1/2)</li>
               <li><strong>❌ Falsch:</strong> (63/64)/(1/2) = 63/128 → <strong>✅ Richtig:</strong> Division durch 1/2 = Multiplikation mit 2: (63/64)·2 = 63/32</li>
             </ul>,
-            <p>Die geometrische Summenformel gilt für q ≠ 1. Hier q = 1/2 ≠ 1 ✓.</p>,
           ),
           solution: (
             <>
@@ -472,7 +457,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> (1/2)⁰ = 0 → <strong>✅ Richtig:</strong> Jede Zahl (≠0) hoch 0 ist 1; (1/2)⁰ = 1; dieser Term muss von 63/32 abgezogen werden</li>
             </ul>,
-            <p>Probe: 1/2 + 1/4 + 1/8 + 1/16 + 1/32 = 31/32 ✓</p>,
           ),
           solution: (
             <>
@@ -498,7 +482,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> Nur k=0 abziehen → <strong>✅ Richtig:</strong> Die Summe beginnt bei k=2; also k=0 und k=1 abziehen: 63/32 − 1 − 1/2 = 15/32</li>
             </ul>,
-            <p>Probe: 1/4 + 1/8 + 1/16 + 1/32 = 8/32 + 4/32 + 2/32 + 1/32 = 15/32 ✓</p>,
           ),
           solution: (
             <>
@@ -525,7 +508,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> (−1)¹¹ = 1 (gerade Potenz angenommen) → <strong>✅ Richtig:</strong> 11 ist ungerade; (−1)¹¹ = −1; daher 1−(−1) = 2 im Zähler</li>
             </ul>,
-            <p>Probe: 11 Terme (k=0,…,10): abwechselnd +1 und −1, aber erster und letzter Term sind +1 → 6 mal +1, 5 mal −1 → Summe = 1 ✓</p>,
           ),
           solution: 'Σ(k=0..10) (−1)ᵏ = (1 − (−1)¹¹) / (1 − (−1))\n= (1 − (−1)) / 2\n= 2/2 = 1',
         },
@@ -547,7 +529,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> (−1)¹² = −1 (ungerade Potenz angenommen) → <strong>✅ Richtig:</strong> 12 ist gerade; (−1)¹² = +1; daher 1−1 = 0 im Zähler → Summe = 0</li>
             </ul>,
-            <p>Probe: 6 mal +1 und 6 mal −1 → Summe = 0 ✓</p>,
           ),
           solution: 'Σ(k=0..11) (−1)ᵏ = (1 − (−1)¹²) / (1 − (−1))\n= (1 − 1) / 2\n= 0',
         },
@@ -570,7 +551,6 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
               <li><strong>❌ Falsch:</strong> 1−3 = 2 (Vorzeichen vergessen) → <strong>✅ Richtig:</strong> 1−3 = −2; (1−27)/(−2) = (−26)/(−2) = 13</li>
               <li><strong>❌ Falsch:</strong> Exponent n=2 statt n+1=3 verwenden → <strong>✅ Richtig:</strong> Formel: (1−q^(n+1))/(1−q); für n=2 und q=3: Exponent ist 3, nicht 2</li>
             </ul>,
-            <p>Formel: Σ(k=0..n) qᵏ = (1 − q^(n+1)) / (1 − q). Für n=2, q=3: Exponent ist n+1 = 3.</p>,
           ),
           solution: 'Σ(k=0..2) 3ᵏ = (1 − 3³) / (1 − 3) = (1 − 27) / (−2) = (−26)/(−2) = 13',
         },

@@ -35,7 +35,6 @@ export const blatt6: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> K = ℕ wählen → <strong>✅ Richtig:</strong> K muss eine echte Teilmenge sein (K ≠ ℕ), d.h. mindestens ein Element von ℕ fehlt in K; K = ℕ\{'{0}'} erfüllt das</li>
               <li><strong>❌ Falsch:</strong> „f ist offensichtlich bijektiv" ohne Beweis → <strong>✅ Richtig:</strong> Injektivität und Surjektivität separat zeigen; für Surjektivität: zu jedem k∈ℕ wähle n=k+1 ∈ K mit f(k+1)=(k+1)−1=k ✓</li>
             </ul>,
-            <p>Ist K ≠ ℕ? Ist f injektiv (verschiedene Eingaben → verschiedene Ausgaben) und surjektiv (jedes k ∈ ℕ wird getroffen)?</p>,
           ),
           solution: 'Wähle K := ℕ \\ {0} und f : K → ℕ, n ↦ n − 1.\n\nK ⊆ ℕ und K ≠ ℕ (da 0 ∉ K).\n\nf ist bijektiv:\n  – injektiv:  n−1 = m−1 ⟹ n = m\n  – surjektiv: für k ∈ ℕ gilt f(k+1) = k\n\nDamit existiert eine Bijektion von einer echten Teilmenge K auf ℕ → ℕ ist nach Dedekind unendlich. □',
         },
@@ -58,7 +57,6 @@ export const blatt6: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> ℕ×ℕ ist überabzählbar, weil ℕ „unendlich viele Zeilen" mit „unendlich vielen Einträgen" hat → <strong>✅ Richtig:</strong> Die Diagonalen-Aufzählung ordnet jedem (m,n) eine eindeutige natürliche Zahl zu; überabzählbar ist ℝ (Cantor-Diagonale), nicht ℕ×ℕ</li>
             </ul>,
-            <p>Warum garantiert die Diagonalen-Aufzählung, dass jedes Paar (m, n) genau einmal erscheint — und warum scheitert eine zeilenweise Aufzählung (alle (0,n), dann alle (1,n), ...)?</p>,
           ),
           solution: 'Ja, ℕ × ℕ ist abzählbar.\n\nDie Diagonalen-Aufzählung liefert eine Bijektion ℕ → ℕ×ℕ:\n(0,0), (0,1), (1,0), (0,2), (1,1), (2,0), (3,0), ...\n\nPaar (m,n) liegt in Diagonale m+n und ist eindeutig aufzählbar.',
         },
@@ -89,7 +87,6 @@ export const blatt6: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> |M₁ × M₂| = |M₁| + |M₂| (addiert) → <strong>✅ Richtig:</strong> Für jedes der |M₁| Elemente der ersten Komponente gibt es |M₂| Möglichkeiten für die zweite → Multiplikation: |M₁| · |M₂|</li>
               <li><strong>❌ Falsch:</strong> (1,a) = (a,1) → <strong>✅ Richtig:</strong> Im kartesischen Produkt ist die Reihenfolge relevant; (1,a) und (a,1) sind verschiedene geordnete Paare</li>
             </ul>,
-            <p>Probe: |{'{1,2}'} × {'{a,b,c}'}| = ? Alle Paare aufschreiben und zählen.</p>,
           ),
           solution: '|M₁ × ⋯ × Mₙ| = |M₁| · ⋯ · |Mₙ|\n\n(Formal kann die Formel über vollständige Induktion nach n gezeigt werden.)',
         },
@@ -117,7 +114,6 @@ export const blatt6: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> z₁ hat 10 Möglichkeiten {'{0,…,9}'} → <strong>✅ Richtig:</strong> Die Aufgabe schreibt z₁ ∈ {'{1,…,9}'} vor (keine führende Null); nur 9 Möglichkeiten</li>
               <li><strong>❌ Falsch:</strong> 26+26+9+10+10 = 81 (Summe) → <strong>✅ Richtig:</strong> Unabhängige Stellen werden multipliziert: 26·26·9·10·10 = 608 400</li>
             </ul>,
-            <p>Warum startet z₁ bei 1 und nicht 0? Die Aufgabenstellung schreibt z₁ ∈ {'{1,…,9}'} vor.</p>,
           ),
           solution: '|Menge der Autonummern|\n= |{(b₁, b₂, z₁, z₂, z₃) : b₁,b₂ ∈ {A,...,Z}, z₁ ∈ {1,...,9}, z₂,z₃ ∈ {0,...,9}}|\n= |{A,...,Z}| · |{A,...,Z}| · |{1,...,9}| · |{0,...,9}| · |{0,...,9}|\n= 26 · 26 · 9 · 10 · 10\n= 608 400',
         },
@@ -155,7 +151,6 @@ A∩B: 1 _ _ 0  → 2² = 4
               <li><strong>❌ Falsch:</strong> |A∪B| = |A|+|B| = 16 (ohne Subtraktion) → <strong>✅ Richtig:</strong> Zahlen in A∩B werden doppelt gezählt; Inklusion-Exklusion: 8+8−2=14</li>
               <li><strong>❌ Falsch:</strong> A∩B = ∅ weil „11 anfangen" und „00 enden" sich ausschließen → <strong>✅ Richtig:</strong> Eine Dualzahl kann beides haben; 11?00 mit einer freien Stelle → 2 Elemente</li>
             </ul>,
-            <p>Probe: Alle 32 fünfstelligen Dualzahlen (00000–11111) aufschreiben und zählen, wie viele mit 11 beginnen oder mit 00 enden.</p>,
           ),
           solution: 'A = {mit 11 anfangend}: |A| = 2³ = 8\nB = {mit 00 endend}:    |B| = 2³ = 8\nA ∩ B = {11?00}:       |A∩B| = 2¹ = 2\n\n|A ∪ B| = 8 + 8 − 2 = 14',
         },
@@ -176,7 +171,6 @@ A∩B: 1 _ _ 0  → 2² = 4
               <li><strong>❌ Falsch:</strong> 36·6 = 216 → <strong>✅ Richtig:</strong> Jede Stelle wird unabhängig gewählt; 6 Stellen mit je 36 Möglichkeiten ergibt 36⁶ (Potenz, nicht Produkt mit 6)</li>
               <li><strong>❌ Falsch:</strong> 26⁶ + 10⁶ (Buchstaben und Ziffern getrennt addiert) → <strong>✅ Richtig:</strong> Pro Stelle kann jedes der 36 Zeichen gewählt werden; Basis des Alphabets ist 36, nicht 26 oder 10</li>
             </ul>,
-            <p>Probe: Für 1-stellige Passwörter: 36¹ = 36 Zeichen. Für 2-stellige: 36² = 1296 Paare.</p>,
           ),
           solution: '(26 + 10)⁶ = 36⁶',
         },
@@ -206,7 +200,6 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
               <li><strong>❌ Falsch:</strong> 36⁶ − 10⁶ (nur Passwörter rein aus Ziffern abgezogen) → <strong>✅ Richtig:</strong> Es sollen Passwörter ohne Ziffer abgezogen werden; das sind Passwörter aus nur Buchstaben: 26⁶ (nicht 10⁶)</li>
               <li><strong>❌ Falsch:</strong> Direkt nach genau k Ziffern (k=1,…,6) zählen und addieren → <strong>✅ Richtig:</strong> Komplementärmethode ist einfacher: 36⁶ − 26⁶</li>
             </ul>,
-            <p>Warum ist die Menge „keine Ziffer" das richtige Komplement — und welchen Fehler macht man, wenn man stattdessen „nur Ziffern" (10⁶) subtrahiert?</p>,
           ),
           solution: 'Komplementärmethode:\nAlle 6-stelligen Passwörter:      36⁶\nPasswörter nur aus Buchstaben:    26⁶\n\nMindestens eine Ziffer: 36⁶ − 26⁶',
         },
@@ -238,7 +231,6 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
               <li><strong>❌ Falsch:</strong> C(60,20) wählen (ohne Reihenfolge) → <strong>✅ Richtig:</strong> Personen sind unterscheidbar → Reihenfolge zählt; wer auf welchem Platz sitzt ist relevant → Variation, nicht Kombination</li>
               <li><strong>❌ Falsch:</strong> 60²⁰ (mit Wiederholung) → <strong>✅ Richtig:</strong> Jeder Platz kann nur von einer Person besetzt werden → ohne Wiederholung; V(60,20) = 60!/40!</li>
             </ul>,
-            <p>Ist es ein Unterschied, ob Person A auf Platz 1 und Person B auf Platz 2 sitzt vs. umgekehrt? Ja → Reihenfolge zählt → Variation.</p>,
           ),
           solution: 'Urnenmodell: 60 Kugeln ≅ Plätze im Bus,\n20 Ziehungen ohne Wiederholung mit Reihenfolge.\n\nV(60, 20) = 60! / 40! = 60 · 59 · … · 41',
         },
@@ -274,7 +266,6 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
               <li><strong>❌ Falsch:</strong> C(4,2) = 6 (Kombination ohne Wiederholung) → <strong>✅ Richtig:</strong> Mehrere Spatzen dürfen auf derselben Leitung sitzen → mit Wiederholung; C*(4,2) = C(5,2) = 10</li>
               <li><strong>❌ Falsch:</strong> 4² = 16 (Variation mit Wiederholung) → <strong>✅ Richtig:</strong> Spatzen sind nicht unterscheidbar → Reihenfolge spielt keine Rolle; (L1,L2) = (L2,L1) → Kombination, nicht Variation</li>
             </ul>,
-            <p>Sind Spatzen unterscheidbar? (Nein → ohne Reihenfolge.) Darf eine Leitung mehrfach besetzt werden? (Ja → mit Wiederholung.)</p>,
           ),
           solution: 'Urnenmodell: 4 Kugeln ≅ Telegraphenleitungen,\n2 Ziehungen mit Wiederholung ohne Reihenfolge.\n\nC*(4, 2) = C(4+2−1, 2) = C(5, 2) = 10 Möglichkeiten.',
         },
@@ -306,7 +297,6 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
               <li><strong>❌ Falsch:</strong> 8! = 40 320 (alle Permutationen) → <strong>✅ Richtig:</strong> Die 3 Erstklasse-Wagen sind identisch und die 5 Zweitklasse-Wagen sind identisch; nur die Positionen zählen → C(8,3) = 56</li>
               <li><strong>❌ Falsch:</strong> C(8,3) = 8!/3! (Nenner vergessen) → <strong>✅ Richtig:</strong> C(8,3) = 8!/(3!·5!) = 56; beide Faktoren im Nenner nötig</li>
             </ul>,
-            <p>Warum liefern C(8,3) und C(8,5) dasselbe Ergebnis — und was bedeutet das intuitiv für die Wagenaufteilung?</p>,
           ),
           solution: 'Urnenmodell: 8 Kugeln ≅ 8 Wagenpositionen,\n3 Ziehungen ohne Wiederholung ohne Reihenfolge.\n\nC(8, 3) = (8 über 3) = 56 mögliche Wagenreihungen.',
         },
@@ -340,7 +330,6 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
               <li><strong>❌ Falsch:</strong> 5² = 25 (mit Wiederholung) → <strong>✅ Richtig:</strong> Jeder Buchstabe kann nur einmal verwendet werden (kein Buchstabe zweimal in MATHE); alle 5 sind verschieden → P(5) = 5! = 120</li>
               <li><strong>❌ Falsch:</strong> C(5,5) = 1 (Kombination) → <strong>✅ Richtig:</strong> Reihenfolge zählt — MATHE ≠ MAHTE; Permutation P(5) = 5! = 120</li>
             </ul>,
-            <p>Zählt die Reihenfolge? Ja → Permutation. Gibt es Wiederholungen? Nein → P(n) = n!</p>,
           ),
           solution: 'Alle 5 Buchstaben von MATHE sind verschieden.\nP(5) = 5! = 120 verschiedene Anordnungen.',
         },
@@ -366,7 +355,6 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
               <li><strong>❌ Falsch:</strong> 7! = 5040 → <strong>✅ Richtig:</strong> Die zwei U's sind identisch; tausche sie → gleiche Anordnung, aber doppelt gezählt; daher 7!/2! = 2520</li>
               <li><strong>❌ Falsch:</strong> Nur 5! = 120 (die restlichen Buchstaben) → <strong>✅ Richtig:</strong> Zusätzlich müssen die 2 U-Positionen aus 7 Gesamtpositionen gewählt werden: C(7,2)·5! = 21·120 = 2520</li>
             </ul>,
-            <p>Warum muss man durch 2! dividieren (nicht durch 2), wenn U genau zweimal vorkommt — und was würde passieren, wenn man es vergisst?</p>,
           ),
           solution: 'KLAUSUR hat 7 Buchstaben, U kommt zweimal vor.\n\nUrnenmodell für die U-Positionen:\n  n = 7 Positionen, k = 2 U\'s\n  C(7, 2) = (7 über 2) = 21\n\nPermutation der restlichen 5 Buchstaben:\n  5! = 120\n\nGesamt: C(7, 2) · P(5) = 21 · 120 = 2520\n\n(Alternativ: 7! / 2! = 5040 / 2 = 2520)',
         },
@@ -398,7 +386,6 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
               <li><strong>❌ Falsch:</strong> 2¹³ (bei jedem Schritt frei wählen rechts/oben) → <strong>✅ Richtig:</strong> Es gibt genau 8 Rechts- und 5 Oben-Schritte (fest); nur die Reihenfolge variiert → C(13,5) = 1287</li>
               <li><strong>❌ Falsch:</strong> 13! (alle Schritt-Permutationen) → <strong>✅ Richtig:</strong> Die 8 Rechts-Schritte sind untereinander identisch, ebenso die 5 Oben-Schritte; durch C(13,5) werden Doppelzählungen vermieden</li>
             </ul>,
-            <p>Probe: Einfaches 2×1-Gitter (3 Schritte: 2 rechts, 1 oben): C(3,1) = 3 mögliche Wege. Alle aufschreiben: ROO, ORO, OOR → 3 ✓</p>,
           ),
           solution: 'Um von A nach B zu kommen: genau 8 Schritte rechts + 5 Schritte oben.\n\nUrnenmodell:\n  n = 13 Schritte, k = 5 nach-oben-Schritte auswählen\n  Ohne Zurücklegen, ohne Reihenfolge:\n\nC(13, 5) = (13 über 5) = 1287 unterschiedliche Wege.',
         },

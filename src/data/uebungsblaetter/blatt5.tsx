@@ -38,7 +38,6 @@ export const blatt5: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> ℤ × ℕ als Graphen angeben → <strong>✅ Richtig:</strong> ℤ × ℕ enthält alle Paare (z,n) mit z∈ℤ, n∈ℕ — z.B. (1,5), aber f(1)=1≠5; der Graph ist viel kleiner</li>
               <li><strong>❌ Falsch:</strong> Bei (ii) z=0 nicht prüfen → <strong>✅ Richtig:</strong> (0,0) liegt in der ersten Teilmenge {'{(−n,n):n∈ℕ}'} mit n=0 ✓</li>
             </ul>,
-            <p>Was macht eine Menge A zu einem gültigen Graphen von f — und warum reicht es nicht, dass A alle richtigen Paare enthält, wenn A auch falsche enthält?</p>,
           ),
           solution: '(i)  nein – ℤ × ℕ enthält Paare wie (1, 5), die nicht auf dem Graph liegen.\n(ii) ja   – für z < 0: (−n, n); für z = 0: (0, 0) ∈ erste Menge; für z > 0: (n, n) ∈ zweite Menge.\n(iii) ja  – exakt die mengentheoretische Definition des Graphen von f.',
         },
@@ -63,7 +62,6 @@ export const blatt5: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> (ii) ablehnen weil die Form anders aussieht → <strong>✅ Richtig:</strong> Umsubstitution t=x+1 zeigt, dass {'{(x+1,x):x∈ℝ}'} = {'{(t,t−1):t∈ℝ}'} = Graph(f)</li>
               <li><strong>❌ Falsch:</strong> ℝ×ℝ als Graphen akzeptieren → <strong>✅ Richtig:</strong> ℝ×ℝ enthält z.B. (0,5), aber f(0)=−1≠5; zu groß</li>
             </ul>,
-            <p>Warum sind {'{(x+1, x):x∈ℝ}'} und {'{(x, x−1):x∈ℝ}'} dieselbe Menge — obwohl der Laufparameter x in beiden Ausdrücken anderes bedeutet? Was ändert sich beim Umbenennen eines gebundenen Variablennamens?</p>,
           ),
           solution: '(i)  nein – zu groß.\n(ii) ja   – Umsubstitution t = x+1 liefert {(t, t−1) : t ∈ ℝ} = Graph(f).\n(iii) ja  – exakt die Definition.',
         },
@@ -88,7 +86,6 @@ export const blatt5: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> {'{1} × ℕ'} und {'ℕ × {1}'} gleichsetzen → <strong>✅ Richtig:</strong> {'ℕ × {1}'} = {'{(n,1):n∈ℕ}'} (Input links, Output rechts); {'{1} × ℕ'} = {'{(1,n):n∈ℕ}'} (vertauscht) — völlig verschieden</li>
             </ul>,
-            <p>Warum ist {'ℕ × {1}'} dasselbe wie der Graph von f, aber {'{1} × ℕ'} eine völlig andere Menge — obwohl beide „1" und „alle natürliche Zahlen" kombinieren?</p>,
           ),
           solution: '(i)  ja   – ℕ × {1} = {(n, 1) : n ∈ ℕ} = Graph(f).\n(ii) ja   – exakt die Definition.\n(iii) nein – {1} × ℕ = {(1, n) : n ∈ ℕ} vertauscht Input und Output.',
         },
@@ -126,7 +123,6 @@ export const blatt5: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> Bei (vi) h⁻¹([−5,5]) = ∅ weil |x| ≥ 0 → <strong>✅ Richtig:</strong> |x| ≥ 0 immer, aber [−5,5] enthält auch [0,5]; also |x| ∈ [0,5] ⟺ x ∈ [−5,5]</li>
               <li><strong>❌ Falsch:</strong> h(ℤ) = ℤ → <strong>✅ Richtig:</strong> |n| ≥ 0 für alle n ∈ ℤ; h(ℤ) = {'{|n| : n ∈ ℤ}'} = {'{0,1,2,...}'} = ℕ</li>
             </ul>,
-            <p>Warum ist h⁻¹([−5, 5]) dasselbe wie h⁻¹([0, 5]), obwohl die Zielmenge verschieden ist — und was sagt das über den Unterschied zwischen Urbildmenge und Umkehrfunktion?</p>,
           ),
           solution: '(i)   f(ℝ \\ {2}) = [0, ∞)   (4 = (−2)² wird trotz x=2 ∉ Domain erreicht)\n(ii)  f⁻¹({4, 9}) = {−2, 3, −3}   (x=2 ist ausgeschlossen)\n(iii) h([0, 5]) = [0, 5]\n(iv)  h([−5, 5]) = [0, 5]\n(v)   h⁻¹([0, 5]) = [−5, 5]\n(vi)  h⁻¹([−5, 5]) = [−5, 5]   (da |x| ≥ 0, wirkt nur der Teil [0,5])\n(vii) h(ℤ) = ℕ',
         },
@@ -166,7 +162,6 @@ Für Bijektivität: je genau einen Repräsentanten pro Bild wählen.
               <li><strong>❌ Falsch:</strong> M = {'{1,2,4}'}: φ(1)=3, φ(2)=3 → Kollision → <strong>✅ Richtig:</strong> Aus den drei Elementen mit Bild 3 ({'{1,2,5}'}) nur eines wählen; M = {'{1,3,4}'} oder {'{2,3,4}'} oder {'{5,3,4}'}</li>
               <li><strong>❌ Falsch:</strong> |M| ≠ |Y| erlaubt → <strong>✅ Richtig:</strong> Für Bijektivität muss |M| = |Y| = 3 gelten (je ein Element pro Bild)</li>
             </ul>,
-            <p>Kontrolle: Sind alle Bilder verschieden? Decken sie ganz Y ab?</p>,
           ),
           solution: 'M = {1, 3, 4}: φ(1)=3, φ(3)=2, φ(4)=1 – injektiv (alle Bilder verschieden) und surjektiv (trifft 1, 2, 3).',
         },
@@ -197,7 +192,6 @@ M = {1, 2, 3, 4} ist eine minimale solche Menge.`}</pre>
               <li><strong>❌ Falsch:</strong> M = {'{3,4}'}: Bilder {'{1,2}'} → Bild 3 fehlt → <strong>✅ Richtig:</strong> Für Surjektivität müssen 1, 2 und 3 alle im Bild liegen; mindestens eines der Elemente {'{1,2,5}'} muss in M</li>
               <li><strong>❌ Falsch:</strong> M bijektiv wählen → <strong>✅ Richtig:</strong> Gefordert ist Surjektivität ohne Injektivität — M muss eine Kollision haben (zwei Elemente mit gleichem Bild)</li>
             </ul>,
-            <p>Ist jedes Element von Y mindestens einmal als Bild vorhanden? Gibt es ein Bild, das zweimal auftaucht?</p>,
           ),
           solution: 'M = X = {1,2,3,4,5}: surjektiv (alle Werte 1,2,3 getroffen), nicht injektiv (z. B. φ(1)=φ(2)=φ(5)=3).',
         },
@@ -230,7 +224,6 @@ Merkhilfe: Einelementige M sind immer injektiv.`}</pre>
               <li><strong>❌ Falsch:</strong> M = {'{1,3,4}'} wählen (bijektiv) → <strong>✅ Richtig:</strong> Bijektiv ist zu stark; gefordert ist injektiv-aber-nicht-surjektiv, also darf nicht jeder Wert aus Y getroffen werden</li>
               <li><strong>❌ Falsch:</strong> M = {'{1,2}'} wählen: φ(1)=3=φ(2) → Kollision → nicht injektiv → <strong>✅ Richtig:</strong> Für Injektivität keine zwei Elemente mit gleichem Bild in M; {'{1}'} allein reicht</li>
             </ul>,
-            <p>Sind alle Bilder in M verschieden? Fehlt mindestens ein Wert aus Y?</p>,
           ),
           solution: 'M = {1}: φ(1)=3 – injektiv (nur ein Element), nicht surjektiv (1 und 2 nicht getroffen).',
         },
@@ -263,7 +256,6 @@ Weder noch          | Kollision vorhanden UND Y nicht vollständig
               <li><strong>❌ Falsch:</strong> M = {'{1,3,4}'} wählen (bijektiv, alle drei Werte getroffen und verschieden) → <strong>✅ Richtig:</strong> „Weder noch" erfordert gleichzeitig Kollision UND fehlenden Wert; bijektive M erfüllen keine dieser Bedingungen</li>
               <li><strong>❌ Falsch:</strong> Nur eine der beiden Bedingungen prüfen → <strong>✅ Richtig:</strong> M = {'{1,2}'}: φ(1)=3, φ(2)=3 → Kollision (nicht injektiv) ✓ UND {'{1,2}'} ∉ Bild (nicht surjektiv) ✓</li>
             </ul>,
-            <p>Gibt es eine Kollision im Bild? Fehlt gleichzeitig ein Wert aus Y?</p>,
           ),
           solution: 'M = {1, 2}: φ(1)=φ(2)=3 – nicht injektiv (Kollision bei 3), nicht surjektiv (1 und 2 nicht getroffen).',
         },
@@ -297,7 +289,6 @@ Weder noch          | Kollision vorhanden UND Y nicht vollständig
               <li><strong>❌ Falsch:</strong> g∘f definieren ohne den Definitionsbereich zu prüfen → <strong>✅ Richtig:</strong> f(ℝ) = ℝ (da x³−1 alle reellen Werte annimmt), aber Dom(g) = [0,∞); da ℝ ⊄ [0,∞) ist g∘f nicht möglich</li>
               <li><strong>❌ Falsch:</strong> Reihenfolge bei f∘g verwechseln → <strong>✅ Richtig:</strong> (f∘g)(x) = f(g(x)): erst g (Input aus [0,∞)), dann f; nicht andersrum</li>
             </ul>,
-            <p>Welche Werte kann f(x) = x³−1 annehmen? Ist das eine Teilmenge von [0,∞)?</p>,
           ),
           solution: 'f ∘ g : [0,∞) → ℝ,  x ↦ (√x + 2)³ − 1\n\ng ∘ f ist nicht möglich, da f(ℝ) = ℝ ⊄ [0,∞) = Dom(g).',
         },
@@ -331,7 +322,6 @@ f∘g       | nein     | nein      | nein  ([0,1) → 1)`}</pre>
               <li><strong>❌ Falsch:</strong> Bei f∘g übersehen, dass x ∈ [0,1) alle auf 1 landen → <strong>✅ Richtig:</strong> g(x)=0 für x&lt;1, dann f(0)=1; also f∘g ist für x∈[0,1) konstant 1 → nicht injektiv</li>
               <li><strong>❌ Falsch:</strong> f als surjektiv einordnen → <strong>✅ Richtig:</strong> f(x)=x+1 ≥ 1 für alle x ≥ 0; der Wert 0 ∈ [0,∞) wird nie erreicht → nicht surjektiv</li>
             </ul>,
-            <p>Warum ist g∘f bijektiv, obwohl weder f noch g allein bijektiv ist — und was sagt das über die Verkettung von Funktionen mit komplementären Mängeln?</p>,
           ),
           solution: 'f: injektiv, nicht surjektiv, nicht bijektiv  (0 ∉ Bild f)\ng: nicht injektiv, surjektiv, nicht bijektiv  (g(0)=g(0.5)=0)\n\ng∘f: [0,∞)→[0,∞), x↦x  → bijektiv\n\nf∘g: [0,∞)→[0,∞), x↦{ x falls x≥1; 1 sonst }\n  → nicht injektiv, nicht surjektiv, nicht bijektiv',
         },
@@ -384,7 +374,6 @@ Ergebnis: R₁ (rechtstotal, linkseindeutig) ist keine Funktion
               <li><strong>❌ Falsch:</strong> Linkseindeutig = linke Seite eindeutig → je ein Paar pro linker Komponente → <strong>✅ Richtig:</strong> Linkseindeutig heißt: gleiche rechte → gleiche linke; x=1 und x=−1 in R₁ geben (1,1) und (1,−1) → gleiche linke Komponente (1), verschiedene rechte → nicht rechtseindeutig</li>
               <li><strong>❌ Falsch:</strong> Bei R₂: m|m für alle m als „linkseindeutig" werten → <strong>✅ Richtig:</strong> m|m zeigt nur linkstotal (jedes m kommt links vor); linkseindeutig wäre: n|k und m|k ⟹ n=m — widerlegt durch 2|4 und 4|4</li>
             </ul>,
-            <p>Warum reicht Rechtseindeutigkeit allein nicht aus, damit eine Relation eine Funktion ist — und welche der beiden Relationen R₁, R₂ ist näher daran, eine Funktion zu sein?</p>,
           ),
           solution: 'R₁ ist:\n  – nicht linkstotal  (negative Zahlen sind kein Quadrat)\n  – rechtstotal       (x³ : ℝ → ℝ ist surjektiv)\n  – linkseindeutig    (x³ = y³ ⟹ x = y ⟹ x² = y²)\n  – nicht rechtseindeutig  (x=1 und x=−1 liefern (1,1) und (1,−1))\n\nR₂ ist:\n  – linkstotal        (m | m für alle m)\n  – rechtstotal       (1 | n für alle n)\n  – nicht linkseindeutig  (2|4 und 4|4)\n  – nicht rechtseindeutig (2|4 und 2|6)\n\nEine Funktion ist nicht dabei.',
         },
@@ -416,7 +405,6 @@ Ergebnis: R₁ (rechtstotal, linkseindeutig) ist keine Funktion
             <ul>
               <li><strong>❌ Falsch:</strong> ℕ×ℕ ist überabzählbar, weil es „unendlich viele unendliche Zeilen" hat → <strong>✅ Richtig:</strong> Die Diagonalen-Aufzählung zeigt, dass ℕ×ℕ abzählbar ist; überabzählbar ist z.B. ℝ (Cantors Diagonalargument)</li>
             </ul>,
-            <p>Kann jedes Paar (m, n) ∈ ℕ×ℕ in der Liste gefunden werden? In welcher Diagonale liegt (m, n)?</p>,
           ),
           solution: 'Ja, ℕ × ℕ ist abzählbar.\n\nDie Diagonalen-Aufzählung liefert eine Bijektion f : ℕ → ℕ×ℕ:\n(0,0), (1,0), (0,1), (2,0), (1,1), (0,2), (3,0), ...\n\nPaar (m,n) liegt in Diagonale m+n und ist eindeutig aufzählbar.',
         },
@@ -454,7 +442,6 @@ surjektiv: k gerade → k=2(k/2) = f(k/2)  ✓
               <li><strong>❌ Falsch:</strong> K = ℕ wählen → <strong>✅ Richtig:</strong> K muss eine echte Teilmenge sein (K ≠ ℕ); K = ℕ\{'{0}'} erfüllt das, weil 0 ∉ K</li>
               <li><strong>❌ Falsch:</strong> Bijektivität ohne Nachweis behaupten → <strong>✅ Richtig:</strong> Beide Eigenschaften explizit zeigen: injektiv (n−1=m−1 ⟹ n=m) und surjektiv (für k∈ℕ wähle n=k+1: f(k+1)=k)</li>
             </ul>,
-            <p>Ist K ≠ ℕ? Ist f : K → ℕ wirklich bijektiv (injektiv + surjektiv)?</p>,
           ),
           solution: 'Wähle K := ℕ \\ {0} und f : K → ℕ, n ↦ n − 1.\n\nK ⊆ ℕ und K ≠ ℕ (da 0 ∉ K).\n\nf ist bijektiv:\n  – injektiv:  n−1 = m−1 ⟹ n = m\n  – surjektiv: für k ∈ ℕ gilt f(k+1) = k\n\nDamit existiert eine Bijektion von einer echten Teilmenge K auf ℕ → ℕ ist nach Dedekind unendlich. □',
         },

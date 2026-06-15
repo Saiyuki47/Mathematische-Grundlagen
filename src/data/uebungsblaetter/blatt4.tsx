@@ -40,7 +40,6 @@ export const blatt4: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> Den Schritt (IV) nicht markieren → <strong>✅ Richtig:</strong> Explizit schreiben „=(IV)" oder „[nach IV]" um zu zeigen, wo die Induktionsvoraussetzung eingesetzt wird</li>
               <li><strong>❌ Falsch:</strong> IA bei n=0 beginnen → <strong>✅ Richtig:</strong> n ∈ ℕ* bedeutet n ≥ 1; der Basisfall ist n=1 (das leere Produkt bei n=0 wäre 1, nicht 1+1=2)</li>
             </ul>,
-            <p>Warum lässt sich das Produkt ∏(k=1..n)(1+1/k) so einfach induktiv behandeln — welche Eigenschaft des Produkts macht den IS-Schritt besonders direkt?</p>,
           ),
           solution: 'A(n): ∏(k=1..n)(1+1/k) = n+1\n\nIA (n=1): ∏(k=1..1)(1+1/k) = 1+1 = 2 = 1+1 ✓\n\nIS (n → n+1): Sei n ∈ ℕ*. Angenommen ∏(k=1..n)(1+1/k) = n+1 (IV).\n\n∏(k=1..n+1)(1+1/k)\n= (1+1/(n+1)) · ∏(k=1..n)(1+1/k)\n=(IV) (1+1/(n+1)) · (n+1)\n= n+1+1 = n+2  ✓  □',
         },
@@ -74,7 +73,6 @@ export const blatt4: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> Voraussetzung x ≥ −1 nicht erwähnen → <strong>✅ Richtig:</strong> Beim Multiplizieren der IV mit (1+x) muss 1+x ≥ 0 stehen, sonst dreht die Ungleichung — das ist genau x ≥ −1</li>
               <li><strong>❌ Falsch:</strong> nx² als negative Zahl behandeln → <strong>✅ Richtig:</strong> n ≥ 0 und x² ≥ 0 → nx² ≥ 0; daher 1+(n+1)x+nx² ≥ 1+(n+1)x</li>
             </ul>,
-            <p>Warum darf man (IV) mit (1+x) multiplizieren ohne die Ungleichung umzukehren?</p>,
           ),
           solution: 'IA (n=0): (1+x)⁰ = 1 ≥ 1+0·x = 1  ✓\n\nIS: Sei n ∈ ℕ. Angenommen (1+x)ⁿ ≥ 1+nx (IV).\n\n(1+x)^(n+1) = (1+x)(1+x)ⁿ\n            ≥ (1+x)(1+nx)   [IV und x ≥ −1 → 1+x ≥ 0, (*) ]\n            = 1 + (n+1)x + nx²\n            ≥ 1 + (n+1)x    [da nx² ≥ 0]  ✓  □\n\nVoraussetzung x ≥ −1 wurde bei (*) verwendet: Wäre 1+x < 0, würde sich die Ungleichungsrichtung umkehren.',
         },
@@ -113,7 +111,6 @@ export const blatt4: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> 4/(x−9) ≤ 2 → 4 ≤ 2(x−9) (einfach mit x−9 multipliziert) → <strong>✅ Richtig:</strong> Vorzeichen von (x−9) hängt von x ab; zwei Fälle nötig (x&gt;9 und x&lt;9)</li>
               <li><strong>❌ Falsch:</strong> x=9 in die Lösungsmenge aufnehmen → <strong>✅ Richtig:</strong> x=9 macht den Nenner 0 → undefiniert → ausgeschlossen</li>
             </ul>,
-            <p>Warum kann man eine Bruchungleichung nicht einfach durch den Nenner multiplizieren, ohne Fallunterscheidung zu machen — und was würde ein falsches Ergebnis aussehen, wenn man das ignoriert?</p>,
           ),
           solution: 'Fall 1 (x > 9): 4 ≤ 2(x−9) ⟺ 11 ≤ x → [11, ∞)\nFall 2 (x < 9): 4 ≥ 2(x−9) ⟺ 11 ≥ x, zusammen x < 9 → (−∞, 9)\n\nA = [11, ∞) ∪ (−∞, 9)',
         },
@@ -141,7 +138,6 @@ export const blatt4: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> |x+4| ≥ 6 als −6 ≤ x+4 ≤ 6 lösen → <strong>✅ Richtig:</strong> −6 ≤ A ≤ 6 entspricht |A| ≤ 6 (kleiner-gleich!); für |A| ≥ 6 gilt A ≥ 6 oder A ≤ −6</li>
               <li><strong>❌ Falsch:</strong> Im Fall 2 beim Auflösen Vorzeichen vergessen: −(x+4) ≥ 6 → x+4 ≥ 6 → <strong>✅ Richtig:</strong> −(x+4) ≥ 6 ⟺ x+4 ≤ −6 ⟺ x ≤ −10</li>
             </ul>,
-            <p>|x+4| ≥ 6 bedeutet geometrisch: Der Abstand von x zur Zahl −4 beträgt mindestens 6. Welche zwei Punkte liegen genau im Abstand 6 von −4, und sind das die Randpunkte deiner Lösung?</p>,
           ),
           solution: 'Fall 1 (x ≥ −4): x+4 ≥ 6 ⟺ x ≥ 2 → [2, ∞)\nFall 2 (x < −4): −(x+4) ≥ 6 ⟺ −10 ≥ x → (−∞, −10]\n\nB = (−∞, −10] ∪ [2, ∞)',
         },
@@ -168,7 +164,6 @@ export const blatt4: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> −(x−2) = x−2 → <strong>✅ Richtig:</strong> −(x−2) = −x+2 = 2−x (Vorzeichenfehler beim Auflösen des Betrags)</li>
               <li><strong>❌ Falsch:</strong> In Fall 3 nur prüfen ob die Ungleichung gilt, ohne Fallbedingung zu intersektieren → <strong>✅ Richtig:</strong> 2 ≥ −3 ist immer wahr → alle x &lt; −3 liegen in C</li>
             </ul>,
-            <p>|x−2| ist der Abstand von x zu 2, |x+3| der Abstand zu −3. Was sagt die Ungleichung |x−2| ≥ |x+3| geometrisch aus — welche Punkte auf der Zahlengeraden sind von 2 mindestens so weit entfernt wie von −3?</p>,
           ),
           solution: (
             <>
@@ -207,7 +202,6 @@ export const blatt4: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> inf = 0 = min schreiben → <strong>✅ Richtig:</strong> 0 ∉ M₁ wegen der strikten Ungleichung x &gt; 0; daher existiert kein Minimum, nur inf = 0</li>
               <li><strong>❌ Falsch:</strong> sup = 2 ohne Maximum → <strong>✅ Richtig:</strong> 2 ∈ M₁ (2 &gt; 0 ✓ und 4 ≤ 4 ✓), also ist max = sup = 2</li>
             </ul>,
-            <p>Was ist der konzeptuelle Unterschied zwischen sup und max: Warum existiert hier das Maximum, aber kein Minimum — und welches Zeichen (strikt oder nicht-strikt) in den Bedingungen ist dafür entscheidend?</p>,
           ),
           solution: 'M₁ = (0, 2]\n\nsup = 2 = max  (2 ∈ M₁)\ninf = 0,  min existiert nicht  (0 ∉ M₁)',
         },
@@ -232,7 +226,6 @@ export const blatt4: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> inf = 0, weil 1/z → 0 für |z| → ∞ → <strong>✅ Richtig:</strong> M₂ enthält auch negative Werte (z=−1 → −1), also ist inf = −1, nicht 0</li>
               <li><strong>❌ Falsch:</strong> min = sup = 1 ohne z=1 zu prüfen → <strong>✅ Richtig:</strong> z=1 ∈ ℤ\{0} und 1/1=1 ∈ M₂ → max = 1 wird angenommen</li>
             </ul>,
-            <p>Warum nähert sich 1/z für große |z| dem Wert 0, aber M₂ enthält 0 trotzdem nicht — und was bedeutet das für den Unterschied zwischen inf und min in dieser Menge?</p>,
           ),
           solution: 'M₂ enthält Werte 1, −1, 1/2, −1/2, 1/3, −1/3, …\n\nsup = 1 = max  (bei z=1)\ninf = −1 = min  (bei z=−1)',
         },
@@ -258,7 +251,6 @@ export const blatt4: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> sup = 2 ohne max zu nennen → <strong>✅ Richtig:</strong> n=m=1 liefert 1+1=2 ∈ M₃, also ist max = 2 vorhanden</li>
               <li><strong>❌ Falsch:</strong> min = 0, weil 1/n+1/m → 0 → <strong>✅ Richtig:</strong> 0 ∉ M₃ (für alle n,m ∈ ℕ* gilt 1/n+1/m &gt; 0); inf = 0, kein Minimum</li>
             </ul>,
-            <p>Warum kann 0 kein Minimum von M₃ sein, obwohl sich die Elemente beliebig nahe an 0 annähern? Was ist der grundlegende Unterschied zwischen „Grenzwert einer Folge in M₃" und „Element von M₃"?</p>,
           ),
           solution: 'Größter Wert: n=m=1 → 1+1=2, also max = sup = 2\nKleinste Werte: 1/n+1/m → 0 für n,m → ∞, aber nie = 0\n\nsup = 2 = max,  inf = 0,  min existiert nicht',
         },
@@ -283,7 +275,6 @@ export const blatt4: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> sup = max = 1, da 1/n−1/m für m→∞ gegen 1 geht → <strong>✅ Richtig:</strong> 1 wird nie angenommen (1/n−1/m=1 erfordert 1/m=0, unmöglich für m∈ℕ*); sup = 1, kein max</li>
               <li><strong>❌ Falsch:</strong> inf = 0, weil 1/n−1/m → 0 für n,m→∞ → <strong>✅ Richtig:</strong> Für n→∞, m=1 geht 1/n−1 → −1; inf = −1, kein min</li>
             </ul>,
-            <p>Vergleiche M₃ und M₄: Bei M₃ existiert ein Maximum, bei M₄ nicht — obwohl beide nach oben durch 2 bzw. 1 beschränkt sind. Was unterscheidet die Erreichbarkeit des Supremums in diesen beiden Mengen?</p>,
           ),
           solution: 'n=1, m→∞: 1/n−1/m → 1 (nie genau 1)\nn→∞, m=1: 1/n−1/m → −1 (nie genau −1)\n\nsup = 1,  inf = −1,  max und min existieren nicht',
         },
@@ -317,7 +308,6 @@ Struktur: Das y darf von x abhängen!`}</pre>
               <li><strong>❌ Falsch:</strong> ∀x∃y mit ∃y∀x gleichsetzen → <strong>✅ Richtig:</strong> Reihenfolge ist entscheidend: ∀x∃y erlaubt y=x² (y hängt von x ab); ∃y∀x würde ein festes y für alle x fordern</li>
               <li><strong>❌ Falsch:</strong> y muss eine Konstante sein → <strong>✅ Richtig:</strong> Bei ∀x∃y darf y von x abhängen; die Wahl y:=x² ist vollkommen gültig</li>
             </ul>,
-            <p>Was erlaubt die Reihenfolge ∀x∃y, was ∃y∀x nicht erlaubt? Warum darf y von x abhängen — und was bedeutet das für die Universalität des Arguments?</p>,
           ),
           solution: 'Wahr. Für jedes x ∈ ℝ wähle y := x². Dann gilt y = x².',
         },
@@ -343,7 +333,6 @@ x² kann nicht alle reellen Zahlen annehmen — nur [0,∞).`}</pre>
               <li><strong>❌ Falsch:</strong> Nur y&gt;0 testen und „wahr" schließen → <strong>✅ Richtig:</strong> y=−1 hat kein reelles Urbild unter x², da x²≥0 immer → Aussage falsch</li>
               <li><strong>❌ Falsch:</strong> ∃x∀y wie ∀x∃y behandeln → <strong>✅ Richtig:</strong> Bei ∃x∀y wird x zuerst fest gewählt, dann muss y=x₀² für alle y ∈ ℝ gelten — das ist unmöglich</li>
             </ul>,
-            <p>Was genau macht die Reihenfolge ∃x∀y so viel stärker als ∀x∃y — und warum scheitert die Behauptung an dem Wertebereich von x²?</p>,
           ),
           solution: 'Falsch. Für jedes fixe x gilt x² ≥ 0, also kann y = −1 nicht erfüllt werden.',
         },
@@ -367,7 +356,6 @@ x=3, y=9:   y = 9 = 3² ✓
               <li><strong>❌ Falsch:</strong> Für ∃x∃y alle Paare prüfen wollen → <strong>✅ Richtig:</strong> Ein einziges konkretes Beispiel (z.B. x=1, y=1) genügt als Beweis für ∃x∃y</li>
               <li><strong>❌ Falsch:</strong> Zu kompliziertes Beispiel suchen → <strong>✅ Richtig:</strong> x=0, y=0 ist das einfachste: y=0=0²=x² ✓</li>
             </ul>,
-            <p>Warum ist ∃x∃y die schwächste aller fünf Varianten in dieser Aufgabe — und was wäre ein Existenzaussage, die trotzdem falsch wäre?</p>,
           ),
           solution: 'Wahr. Beispiel: x = 1, y = 1, dann y = 1 = 1².',
         },
@@ -393,7 +381,6 @@ Der Unterschied liegt im Definitionsbereich von y!`}</pre>
               <li><strong>❌ Falsch:</strong> Nur y≥0 testen und auf „wahr" schließen → <strong>✅ Richtig:</strong> Ein einziges Gegenbeispiel (y=−1) reicht; x²≥0 für alle x ∈ ℝ → kein x mit x²=−1</li>
               <li><strong>❌ Falsch:</strong> √y für negatives y berechnen wollen → <strong>✅ Richtig:</strong> √ ist auf negativen reellen Zahlen nicht definiert; deshalb hat y=−1 kein reelles Urbild</li>
             </ul>,
-            <p>∀y∃x wäre wahr, wenn der Wertebereich von x² ganz ℝ wäre. Was ist der tatsächliche Wertebereich von x² für x ∈ ℝ — und für welche y scheitert die Aussage?</p>,
           ),
           solution: 'Falsch. Gegenbeispiel: y = −1. Es gibt kein x ∈ ℝ mit x² = −1.',
         },
@@ -423,7 +410,6 @@ Merkhilfe: In ∃y∀x ist y unabhängig von x zu wählen!`}</pre>
               <li><strong>❌ Falsch:</strong> ∃y∀x mit ∀x∃y gleichsetzen → <strong>✅ Richtig:</strong> Reihenfolge ist entscheidend: bei ∃y∀x muss y unabhängig von x gewählt werden; x=1 und x=2 liefern verschiedene Quadrate → kein gemeinsames y möglich</li>
               <li><strong>❌ Falsch:</strong> y=0 als Kandidaten prüfen: 0=1²=1? → <strong>✅ Richtig:</strong> 0 ≠ 1, also funktioniert y=0 bereits für x=1 nicht</li>
             </ul>,
-            <p>Warum kann kein festes y gleichzeitig 1² und 2² sein — und was bedeutet das für die Forderung „für alle x"? Wann wäre ∃y∀x: y=x² wahr, und in welchem mathematischen Kontext würde diese Aussage Sinn ergeben?</p>,
           ),
           solution: 'Falsch. x=1 liefert y=1, x=2 liefert y=4. Kein festes y passt zu allen x.',
         },
@@ -457,7 +443,6 @@ Merkhilfe: In ∃y∀x ist y unabhängig von x zu wählen!`}</pre>
               <li><strong>❌ Falsch:</strong> ggT(156, −64) = −4 (Vorzeichen mitgenommen) → <strong>✅ Richtig:</strong> ggT ist per Definition ≥ 0; ggT(a,b) = ggT(|a|,|b|)</li>
               <li><strong>❌ Falsch:</strong> Rest falsch berechnen, z.B. 156 mod 64 = 92 → <strong>✅ Richtig:</strong> Rest = Dividend − Quotient·Divisor = 156 − 2·64 = 28</li>
             </ul>,
-            <p>Warum terminiert der euklidische Algorithmus immer — und warum ist gerade die Fibonacci-Folge ein Extremfall, der besonders viele Schritte benötigt?</p>,
           ),
           solution: '(i) ggT(156,−64) = ggT(156,64) = 4\n  156 = 2·64+28,  64 = 2·28+8,  28 = 3·8+4,  8 = 2·4+0\n\n(ii) ggT(−296,−96) = ggT(296,96) = 8\n  296 = 3·96+8,  96 = 12·8+0\n\n(iii) ggT(34,21) = 1\n  34=1·21+13, 21=1·13+8, 13=1·8+5, 8=1·5+3, 5=1·3+2, 3=1·2+1, 2=2·1+0\n  Die Reste 13,8,5,3,2,1 sind gerade die ersten Fibonacci-Zahlen.',
         },
@@ -499,7 +484,6 @@ Rückwärts:
               <li><strong>❌ Falsch:</strong> −3·(64−2·28) = −3·64+2·28 (falscher Vorfaktor) → <strong>✅ Richtig:</strong> −3·(64−2·28) = −3·64+6·28; zusammen mit 28: (1+6)·28−3·64 = 7·28−3·64</li>
               <li><strong>❌ Falsch:</strong> Probe vergessen → <strong>✅ Richtig:</strong> 7·156+17·(−64) = 1092−1088 = 4 ✓ — die Probe erkennt Rechenfehler sofort</li>
             </ul>,
-            <p>Was sagt der Satz von Bézout: Wenn ggT(a,b) = d, gibt es dann immer s,t mit s·a + t·b = d? Und was bedeutet es, dass d die kleinstmögliche positive Linearkombination von a und b über ℤ ist?</p>,
           ),
           solution: 'Rückwärts durch (a)(i):\n  4 = 28 − 3·8\n    = 28 − 3·(64 − 2·28) = 7·28 − 3·64\n    = 7·(156 − 2·64) − 3·64 = 7·156 − 17·64\n    = 7·156 + 17·(−64)\n\ns = 7,  t = 17\nProbe: 7·156 + 17·(−64) = 1092 − 1088 = 4 ✓',
         },
@@ -543,7 +527,6 @@ Rückwärts:
               <li><strong>❌ Falsch:</strong> Bei (i) denken: Indexverschiebung ändert nur Grenzen, nicht Summand → <strong>✅ Richtig:</strong> k→k+1 macht aus ∑(k=1..n) k³ die Summe ∑(k=2..n+1) (k+1)³, nicht k³; (i) ist daher falsch</li>
               <li><strong>❌ Falsch:</strong> Bei (vi) 4·∏aₖ = ∏(4aₖ) annehmen → <strong>✅ Richtig:</strong> ∏(4aₖ) = 4ⁿ·∏aₖ weil jeder der n Faktoren mit 4 multipliziert wird; nur für n=1 würde 4=4¹ stimmen</li>
             </ul>,
-            <p>Bei (vi): ∏(4aₖ) = 4ⁿ · ∏aₖ ≠ 4 · ∏aₖ für n &gt; 1.</p>,
           ),
           solution: '(i)  falsch: Index­shift ergibt (k+2)³, nicht k³.\n(ii) wahr: Substitution l=k+2 liefert exakt dieselbe Summe.\n(iii) falsch: (∑aₖ)² enthält Kreuzterme. Gegenbeispiel: a₁=a₂=1 → 4 ≠ 2.\n(iv) wahr: (a₁·…·aₙ)² = a₁²·…·aₙ².\n(v)  wahr: Konstante kann aus der Summe gezogen werden.\n(vi) falsch: ∏(4aₖ) = 4ⁿ·∏aₖ. Gegenbeispiel n=2, a₁=a₂=1 → 4 ≠ 16.\n\nNur (ii), (iv), (v) gelten allgemein.',
         },

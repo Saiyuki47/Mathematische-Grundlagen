@@ -32,7 +32,6 @@ ohne Nullstellen im Nenner → f stetig auf ℝ.`}</pre>
               <li><strong>❌ Falsch:</strong> Nenner-Prüfung überspringen → <strong>✅ Richtig:</strong> Immer nachweisen, dass der Nenner ≠ 0 für alle x; hier (cos x)² + 1 ≥ 1 &gt; 0</li>
               <li><strong>❌ Falsch:</strong> exp(x) könnte undefiniert sein → <strong>✅ Richtig:</strong> exp ist auf ganz ℝ definiert und stetig; nur im Nenner wäre eine Nullstelle ein Problem</li>
             </ul>,
-            <p>Welche untere Schranke hat (cos x)² für alle x — und warum reicht das, um die Stetigkeit des Bruchs zu sichern?</p>,
           ),
           solution: '(cos x)² + 1 ≥ 1 > 0 für alle x ∈ ℝ → kein Ausschluss nötig.\nf ist Verkettung/Quotient stetiger Funktionen → f stetig auf ℝ.',
         },
@@ -58,7 +57,6 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
             <ul>
               <li><strong>❌ Falsch:</strong> √|sin x| könnte undefiniert sein (negative Argumente) → <strong>✅ Richtig:</strong> |sin x| ≥ 0 immer, daher ist das Argument der Wurzel stets ≥ 0 und g überall definiert</li>
             </ul>,
-            <p>Warum reicht es für die Stetigkeit der Verkettung nicht, nur die äußerste Funktion zu prüfen — welche Bedingung muss das Argument der Wurzel erfüllen?</p>,
           ),
           solution: '|sin x| ≥ 0 für alle x → Argument von √ immer ≥ 0.\ng = √ ∘ |·| ∘ sin ist Verkettung stetiger Funktionen → g stetig auf ℝ.',
         },
@@ -88,7 +86,6 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
             <ul>
               <li><strong>❌ Falsch:</strong> h ist nicht stetig, weil g nicht stetig ist (Produktregel für Stetigkeit) → <strong>✅ Richtig:</strong> Die Produktregel gilt nur für stetige Faktoren; h direkt analysieren ergibt h(x) = 4|x|, was stetig ist</li>
             </ul>,
-            <p>Warum kann ein Produkt zweier Funktionen stetig sein, obwohl ein Faktor nicht stetig ist?</p>,
           ),
           solution: 'f ist als Polynom stetig.\n\ng ist in 0 nicht stetig (lim(x→0) g(x) existiert nicht: −4 ≠ 4).\n\nh(x) = x·g(x) = 4|x|: Betragsfunktion stetig → h stetig auf ℝ.\n(Probe: lim(x→0) h(x) = 0 = h(0) ✓)',
         },
@@ -118,7 +115,6 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
             <ul>
               <li><strong>❌ Falsch:</strong> x = 1 direkt in (x²−1)/(x−1) einsetzen → <strong>✅ Richtig:</strong> Das ergibt 0/0; erst den Zähler faktorisieren und (x−1) kürzen, dann einsetzen</li>
             </ul>,
-            <p>Warum darf man (x−1) im Grenzwertprozess kürzen, obwohl (x−1) = 0 für x = 1?</p>,
           ),
           solution: (
             <>
@@ -146,7 +142,6 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
               <li><strong>❌ Falsch:</strong> x = 0 direkt einsetzen → <strong>✅ Richtig:</strong> Ergibt 0/0; Konjugaterweiterung mit (√(1+x)+1) anwenden, um den Ausdruck umzuformen</li>
               <li><strong>❌ Falsch:</strong> (√(1+x)−1)(√(1+x)+1) = (1+x)−1 vergessen = x → <strong>✅ Richtig:</strong> 3. binomische Formel: Produkt ergibt (1+x)−1 = x, dann x im Nenner kürzen</li>
             </ul>,
-            <p>Warum funktioniert die Konjugaterweiterung hier — welche algebraische Identität macht den Zähler einfacher?</p>,
           ),
           solution: (
             <>
@@ -173,7 +168,6 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
             <ul>
               <li><strong>❌ Falsch:</strong> c = 0 wählen, da f(0) = 0 naheliegt → <strong>✅ Richtig:</strong> Stetigkeit erfordert, dass der Grenzwert existiert; da Links ≠ Rechts, gibt es kein c, das Stetigkeit erzwingt</li>
             </ul>,
-            <p>Warum kann kein c die Stetigkeit in x = 0 herstellen, wenn die einseitigen Grenzwerte verschieden sind?</p>,
           ),
           solution: 'x > 0: f(x) = 3/2\nx < 0: f(x) = −3/2\n\nlim(x→0, x<0) f(x) = −3/2 ≠ lim(x→0, x>0) f(x) = 3/2\n→ Grenzwert existiert nicht → kein c möglich.',
         },
@@ -196,7 +190,6 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
             <ul>
               <li><strong>❌ Falsch:</strong> lim |x| für x → 0⁻ ist undefiniert → <strong>✅ Richtig:</strong> Für x &lt; 0 gilt |x| = −x, also lim(−x) = 0 für x → 0⁻; der Grenzwert existiert und ist 0</li>
             </ul>,
-            <p>Was ist die Stetigkeitsbedingung in x = 0 — welche drei Dinge müssen für Stetigkeit gelten?</p>,
           ),
           solution: 'lim(x→0, x<0) f(x) = lim |x| = 0\nlim(x→0, x>0) f(x) = lim √x = 0\n\n→ lim(x→0) f(x) = 0  →  c = 0\n\nMit c = 0 ist f stetig auf ℝ.',
         },
@@ -230,7 +223,6 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
               <li><strong>❌ Falsch:</strong> ZWS anwenden ohne Stetigkeit zu prüfen → <strong>✅ Richtig:</strong> Erst Stetigkeit auf [0,4] zeigen (√x braucht x ≥ 0, erfüllt auf [0,4]), dann ZWS anwenden</li>
               <li><strong>❌ Falsch:</strong> Bei f(mid) &lt; 0 das Intervall falsch aktualisieren → <strong>✅ Richtig:</strong> Neues Intervall enthält den Vorzeichenwechsel; f(mid) &lt; 0 und f(links) &gt; 0 → [links, mid]</li>
             </ul>,
-            <p>Warum muss das neue Intervall immer einen Vorzeichenwechsel enthalten — und wie wählst du zwischen [links, mid] und [mid, rechts]?</p>,
           ),
           solution: (
             <>
@@ -270,7 +262,6 @@ f₄(x) = x⁴        → flachere Parabel (schmalere Öffnung)`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> f₂(−x) = −f₂(x) annehmen (antisymmetrisch) → <strong>✅ Richtig:</strong> f₂ und f₄ sind gerade Funktionen: f(−x) = f(x); ihre Graphen sind symmetrisch zur y-Achse</li>
             </ul>,
-            <p>Gemeinsame Punkte: (0,0), (1,1) für alle n; (−1,1) für gerades n, (−1,−1) für ungerades n.</p>,
           ),
           solution: 'f₁: Gerade y=x\nf₂: Normalparabel y=x²\nf₃: kubische Kurve y=x³ (antisymmetrisch)\nf₄: y=x⁴ (flacher als f₂, ≥0)\n\nAlle durch (0,0) und (1,1). Für |x|<1 gilt: f₄ < f₂ und |f₃| < f₁.',
         },
@@ -293,7 +284,6 @@ f₄(x) = x⁴        → flachere Parabel (schmalere Öffnung)`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> lim(n→∞)(−1)ⁿ = −1 (immer negativ) → <strong>✅ Richtig:</strong> (−1)ⁿ alterniert zwischen +1 und −1; der Grenzwert existiert nicht</li>
             </ul>,
-            <p>Was ist das Kriterium für Konvergenz einer geometrischen Folge qⁿ — und welche Werte in [−1,1] erfüllen es?</p>,
           ),
           solution: 'lim(n→∞) xⁿ existiert für x ∈ (−1,1]:\n\n  0,  |x| < 1\n  1,  x = 1\n\nFür x = −1: (−1)ⁿ alterniert → kein Grenzwert.',
         },
@@ -316,7 +306,6 @@ f₄(x) = x⁴        → flachere Parabel (schmalere Öffnung)`}</pre>
               <li><strong>❌ Falsch:</strong> D = [−1,1] (auch x = −1 aufnehmen) → <strong>✅ Richtig:</strong> D = (−1,1], da lim(n→∞)(−1)ⁿ nicht existiert; x = −1 liegt außerhalb von D</li>
               <li><strong>❌ Falsch:</strong> f(1) = 0 (weil alle anderen Grenzwerte 0 sind) → <strong>✅ Richtig:</strong> 1ⁿ = 1 für alle n, daher f(1) = lim(n→∞) 1ⁿ = 1</li>
             </ul>,
-            <p>Die Grenzfunktion entsteht aus stetigen fₙ — warum kann die Grenzfunktion trotzdem unstetig sein?</p>,
           ),
           solution: 'D = (−1,1]\n\nf: (−1,1] → ℝ,  x ↦ {0 für x ∈ (−1,1),  1 für x = 1}\n\nSkizze: y=0 auf (−1,1) (offenes Intervall), isolierter Punkt (1,1).\nHinweis: f ist nicht stetig in x=1, obwohl alle fₙ stetig sind.',
         },

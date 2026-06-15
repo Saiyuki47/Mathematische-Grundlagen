@@ -34,7 +34,6 @@ export const blatt9: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> Formel anwenden ohne |q| &lt; 1 zu prüfen → <strong>✅ Richtig:</strong> |1/2| = 1/2 &lt; 1 ✓; Formel gilt; Ergebnis 1/(1−1/2) = 2, gesamt 5·2 = 10</li>
               <li><strong>❌ Falsch:</strong> 1/(1+q) statt 1/(1−q) → <strong>✅ Richtig:</strong> Geometrische Reihe: Σqᵏ = 1/(1−q); Nenner ist 1 minus q</li>
             </ul>,
-            <p>Ist |1/2| &lt; 1? Ja. Ergibt 1/(1−1/2) = 2 und 5·2 = 10? ✓</p>,
           ),
           solution: (
             <>
@@ -65,7 +64,6 @@ export const blatt9: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> Σ(k=2..∞)(−2/5)ᵏ = 1/(1−(−2/5)) (Formel ab k=0 ohne Korrektur) → <strong>✅ Richtig:</strong> Σ(k=2..∞)qᵏ = q²·Σ(j=0..∞)qʲ = q²/(1−q); oder Indexshift j=k−2</li>
               <li><strong>❌ Falsch:</strong> 1−(−2/5) = 3/5 → <strong>✅ Richtig:</strong> 1−(−2/5) = 1+2/5 = 7/5; 1/(7/5) = 5/7</li>
             </ul>,
-            <p>Ergibt 2·(4/25)·(5/7) = 8/35? ✓</p>,
           ),
           solution: (
             <>
@@ -99,7 +97,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Direktes Anwenden von Wurzel- oder Quotientenkriterium → <strong>✅ Richtig:</strong> Zuerst notwendige Bedingung prüfen: aₖ=√k → ∞ ≠ 0 → sofortige Divergenz ohne weitere Kriterien</li>
             </ul>,
-            <p>Gilt aₖ → 0? Hier aₖ = √k → ∞. Nullfolgenbedingung verletzt → Divergenz.</p>,
           ),
           solution: 'aₖ = √k → ∞ (keine Nullfolge)\n→ Reihe divergiert.',
         },
@@ -122,7 +119,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> 1/√k → 0 → Reihe konvergiert → <strong>✅ Richtig:</strong> aₖ → 0 ist nur notwendig, nicht hinreichend; hier zeigt 1/√k ≥ 1/k und Minorantenkriterium die Divergenz</li>
             </ul>,
-            <p>Gilt 1/√k ≥ 1/k für k ≥ 1? Ja. Σ 1/k divergiert → Minorantenkriterium → Σ 1/√k divergiert.</p>,
           ),
           solution: (
             <>
@@ -149,7 +145,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Nur lim aₖ = 0 prüfen und Leibniz anwenden → <strong>✅ Richtig:</strong> Leibniz erfordert ZWEI Bedingungen: aₖ monoton fallend UND aₖ → 0; beide müssen explizit gezeigt werden</li>
             </ul>,
-            <p>Sind beide Bedingungen erfüllt: aₖ monoton fallend UND aₖ → 0? Dann Leibnizkriterium anwendbar.</p>,
           ),
           solution: 'aₖ := 1/√k ist monoton fallend und lim aₖ = 0.\nNach dem Leibnizkriterium konvergiert die Reihe.',
         },
@@ -171,7 +166,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> ᵏ√((1/√k)ᵏ) = 1/k (falsche Vereinfachung) → <strong>✅ Richtig:</strong> ᵏ√(xᵏ) = x für x ≥ 0; daher ᵏ√((1/√k)ᵏ) = 1/√k → 0 &lt; 1</li>
             </ul>,
-            <p>Warum vereinfacht sich ᵏ√((1/√k)ᵏ) zu 1/√k — und was passiert mit diesem Ausdruck für k → ∞?</p>,
           ),
           solution: (
             <>
@@ -204,7 +198,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> lim ᵏ√k = ∞ → ᵏ√|aₖ| = ∞/3 → kein Kriterium → <strong>✅ Richtig:</strong> lim ᵏ√k = 1 (Standardgrenzwert!); ᵏ√k/3 → 1/3 &lt; 1 → Wurzelkriterium gibt Konvergenz</li>
             </ul>,
-            <p>Ergibt das Quotientenkriterium (k+1)/(3k) → 1/3 &lt; 1? ✓</p>,
           ),
           solution: (
             <>
@@ -231,7 +224,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Leibnizkriterium anwenden wollen → <strong>✅ Richtig:</strong> Leibniz erfordert aₖ → 0; hier aₖ = 1−1/k → 1 ≠ 0 → Leibniz nicht anwendbar; Nullfolgenbedingung verletzt → sofortige Divergenz</li>
             </ul>,
-            <p>Was ist der Grenzwert von |aₖ| für k → ∞ — und was folgt daraus für die Reihe?</p>,
           ),
           solution: '|aₖ| = |1 − 1/k| → 1 ≠ 0 (keine Nullfolge)\n→ Reihe divergiert.',
         },
@@ -255,7 +247,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> ᵏ√(k²) = k² → ᵏ√|aₖ| = 4·k²/5 → ∞ → kein Kriterium → <strong>✅ Richtig:</strong> ᵏ√(k²) = k^(2/k) → 1; und ᵏ√4 = 4^(1/k) → 1; daher ᵏ√|aₖ| → 2/5 &lt; 1</li>
             </ul>,
-            <p>Ergibt das Quotientenkriterium (2/5)·(k/(k+1))² → 2/5 &lt; 1? ✓</p>,
           ),
           solution: (
             <>
@@ -283,7 +274,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Wurzel- oder Quotientenkriterium anwenden → <strong>✅ Richtig:</strong> Hier ist die Partialsumme direkt berechenbar (Teleskop); Partialsumme xₙ = 1/√(n+1) − 1 → −1</li>
             </ul>,
-            <p>Warum nennt man diese Summe eine Teleskopsumme — und wie erkennt man, welche Terme stehen bleiben?</p>,
           ),
           solution: (
             <>
@@ -324,7 +314,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Im IS √(2+xₙ₊₁) ≥ √(2+xₙ) ohne Begründung → <strong>✅ Richtig:</strong> Begründung: xₙ₊₁ ≥ xₙ (IV) und √ monoton → √(2+xₙ₊₁) ≥ √(2+xₙ); beide Schritte explizit nennen</li>
             </ul>,
-            <p>Wird im IS die IV klar verwendet, um xₙ₊₁ ≤ xₙ₊₂ zu folgern?</p>,
           ),
           solution: 'IA (n=0): x₀=1, x₁=√3; somit x₁≥x₀ ✓\n\nIS (n→n+1): Sei xₙ ≤ xₙ₊₁ (IV). Dann:\nxₙ₊₂ = √(2+xₙ₊₁) ≥^(IV) √(2+xₙ) = xₙ₊₁  □',
         },
@@ -348,7 +337,6 @@ export const blatt9: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> √4 = 4 → <strong>✅ Richtig:</strong> √4 = 2; der Schlüsselschritt ist √(2+xₙ) ≤^(IV) √(2+2) = √4 = 2</li>
               <li><strong>❌ Falsch:</strong> IV (xₙ ≤ 2) nicht einsetzen → <strong>✅ Richtig:</strong> Mit IV: 2+xₙ ≤ 2+2 = 4, dann √ monoton → √(2+xₙ) ≤ √4 = 2</li>
             </ul>,
-            <p>Warum darf man im Induktionsschritt 2+xₙ durch 4 nach oben abschätzen — welche Voraussetzung ermöglicht das?</p>,
           ),
           solution: 'IA (n=0): x₀=1 ≤ 2 ✓\n\nIS (n→n+1): Sei xₙ ≤ 2 (IV). Dann:\nxₙ₊₁ = √(2+xₙ) ≤^(IV) √(2+2) = √4 = 2  □',
         },
@@ -372,7 +360,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Beide Lösungen x=2 und x=−1 als Grenzwert angeben → <strong>✅ Richtig:</strong> xₙ ∈ [1,2] für alle n (aus a,b); daher muss der Grenzwert auch in [1,2] liegen; x=−1 ∉ [1,2] → verwerfen</li>
             </ul>,
-            <p>Wenn die Gleichung mehrere Lösungen liefert — nach welchem Kriterium wählt man die korrekte aus?</p>,
           ),
           solution: '(xₙ) monoton wachsend (a) und beschränkt durch 2 (b) → konvergiert.\n\nSei x = lim xₙ:\nx = √(2+x)  →  x²−x−2 = 0  →  (x−2)(x+1) = 0\nx=2 oder x=−1. Da xₙ ∈ [1,2]: Grenzwert = 2.',
         },
@@ -403,7 +390,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Vorzeichen beim Subtrahieren vergessen → <strong>✅ Richtig:</strong> Man subtrahiert den Zwischenterm; z.B. −(−x³+2x²) = +x³−2x²; dann zum Restpolynom addieren</li>
             </ul>,
-            <p>Rest = 0? Rückmultiplikation als Probe.</p>,
           ),
           solution: '(−x³+4x²−x−6) : (x−2) = −x²+2x+3\n\nProbe: (x−2)·(−x²+2x+3) = −x³+4x²−x−6 ✓',
         },
@@ -426,7 +412,6 @@ export const blatt9: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Führenden Term des Rests falsch bestimmen (z.B. 12x² − (−2x²) rechnen) → <strong>✅ Richtig:</strong> Rest = Dividend minus Zwischenterm; 10x² − (−2x²) = 12x²; dann 12x²/3x² = 4 für nächsten Quotiententerm</li>
             </ul>,
-            <p>Rest = 0? Probe: (3x²−2x+1)·(x+4) = 3x³+10x²−7x+4 ✓</p>,
           ),
           solution: '(3x³+10x²−7x+4) : (3x²−2x+1) = x+4\n\nProbe: (3x²−2x+1)·(x+4) = 3x³+10x²−7x+4 ✓',
         },
@@ -454,7 +439,6 @@ export const blatt9: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> x⁵ ÷ 2x³ = x² → <strong>✅ Richtig:</strong> x⁵/2x³ = (1/2)x²; Koeffizient 1/2 nicht vergessen</li>
               <li><strong>❌ Falsch:</strong> −2x³ ÷ 2x³ = −x → <strong>✅ Richtig:</strong> −2x³/2x³ = −1 (Konstante, kein x-Term); Ergebnis des zweiten Schritts ist −1</li>
             </ul>,
-            <p>Ergibt die Probe (2x³−2)·((1/2)x²−1)+(−1) = x⁵−2x³−x²+1? ✓</p>,
           ),
           solution: (
             <>

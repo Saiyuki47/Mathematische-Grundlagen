@@ -26,7 +26,6 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
             <ul>
               <li><strong>❌ Falsch:</strong> Wechselnde Vorzeichen → Leibnizkriterium → Reihe konvergiert → <strong>✅ Richtig:</strong> Leibniz erfordert zusätzlich aₖ → 0; hier gilt (−1)ᵏ ↛ 0, daher divergiert die Reihe</li>
             </ul>,
-            <p>Warum reicht es nicht aus, dass die Vorzeichen alternieren — welche zusätzliche Bedingung braucht das Leibnizkriterium?</p>,
           ),
           solution: 'aₖ = (−1)ᵏ bildet keine Nullfolge (pendelt zwischen ±1).\n→ Reihe divergiert.',
         },
@@ -54,7 +53,6 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
               <li><strong>❌ Falsch:</strong> aₖ → 0 genügt für Leibniz → <strong>✅ Richtig:</strong> Zusätzlich muss aₖ monoton fallend sein; beide Bedingungen prüfen</li>
               <li><strong>❌ Falsch:</strong> Majorante bₖ beliebig wählen → <strong>✅ Richtig:</strong> bₖ muss selbst eine konvergente Reihe ergeben (z.B. p-Reihe mit p &gt; 1)</li>
             </ul>,
-            <p>Welche zwei Bedingungen braucht Leibniz — und wie überzeugst du dich, dass beide hier tatsächlich gelten?</p>,
           ),
           solution: (
             <>
@@ -82,7 +80,6 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
               <li><strong>❌ Falsch:</strong> (k+1)!/k! = 1 → <strong>✅ Richtig:</strong> (k+1)!/k! = k+1; der Faktor k+1 bleibt im Nenner stehen</li>
               <li><strong>❌ Falsch:</strong> Vorzeichen −4 beeinflusst das Konvergenzergebnis → <strong>✅ Richtig:</strong> Quotientenkriterium verwendet Beträge, daher spielt das Vorzeichen keine Rolle</li>
             </ul>,
-            <p>Warum vereinfacht sich (k+1)!/k! zu k+1 — und wie wirkt sich dieser Term auf den Grenzwert des Quotienten aus?</p>,
           ),
           solution: (
             <>
@@ -110,7 +107,6 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
               <li><strong>❌ Falsch:</strong> ᵏ√(aᵏ) = a^(1/k) → <strong>✅ Richtig:</strong> ᵏ√(aᵏ) = a für a ≥ 0; die k-te Potenz und die k-te Wurzel heben sich auf</li>
               <li><strong>❌ Falsch:</strong> lim k/(2k+1) = 1 → <strong>✅ Richtig:</strong> Durch k dividieren: 1/(2+1/k) → 1/2; höchste Potenz ausklammern</li>
             </ul>,
-            <p>Warum hebt sich beim Wurzelkriterium die k-te Potenz auf — und was ist der nächste Schritt nach der Vereinfachung?</p>,
           ),
           solution: (
             <>
@@ -145,7 +141,6 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
               <li><strong>❌ Falsch:</strong> Durch die höchste Zähler-Potenz (x³) dividieren → <strong>✅ Richtig:</strong> Immer durch die höchste Potenz aller Terme (hier x⁴ aus dem Nenner) dividieren</li>
               <li><strong>❌ Falsch:</strong> Grad(Z) = 7 oder Grad(N) = 1 ablesen → <strong>✅ Richtig:</strong> Grad(Z) = max-Exponent im Zähler = 3, Grad(N) = 4</li>
             </ul>,
-            <p>Was passiert mit einem Bruch, dessen Zählergrad kleiner ist als der Nennergrad — und warum?</p>,
           ),
           solution: (
             <>
@@ -174,7 +169,6 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
               <li><strong>❌ Falsch:</strong> x⁵ → +∞ für x → −∞ → <strong>✅ Richtig:</strong> Ungerade Potenz: (−∞)⁵ = −∞; das Vorzeichen wechselt</li>
               <li><strong>❌ Falsch:</strong> 1/x − 3 → +3 für x → −∞ → <strong>✅ Richtig:</strong> 1/x → 0, also 1/x − 3 → −3; das Vorzeichen des −3 bleibt</li>
             </ul>,
-            <p>Warum ergibt xⁿ für x → −∞ einen negativen Wert — und für welche Exponenten wechselt sich das Vorzeichen?</p>,
           ),
           solution: (
             <>
@@ -212,7 +206,6 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
               <li><strong>❌ Falsch:</strong> lim(x→−1) h(x) = h(−1) = −100 → <strong>✅ Richtig:</strong> Der Grenzwert ist −2; h(−1) = −100 ist nur der Funktionswert, nicht der Grenzwert</li>
               <li><strong>❌ Falsch:</strong> (x+1) auch bei x = −1 kürzen → <strong>✅ Richtig:</strong> Kürzen nur beim Grenzwertprozess erlaubt; bei x = −1 direkt wäre (x+1) = 0 (Division durch 0)</li>
             </ul>,
-            <p>Was bedeutet es für die Stetigkeit, wenn der Grenzwert zwar existiert, aber nicht mit dem Funktionswert übereinstimmt?</p>,
           ),
           solution: (
             <>
@@ -253,7 +246,6 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
               <li><strong>❌ Falsch:</strong> |2−x| = x−2 für alle x → <strong>✅ Richtig:</strong> Betrag ist fallweise: für x &lt; 2 ist |2−x| = 2−x, für x &gt; 2 ist |2−x| = x−2</li>
               <li><strong>❌ Falsch:</strong> lim(x→0) f(x) = "nicht definiert" → <strong>✅ Richtig:</strong> f ist bei x = 0 durch die Formel direkt auswertbar; Einsetzen ergibt f(0) = −2</li>
             </ul>,
-            <p>Wann existiert ein beidseitiger Grenzwert — und was passiert, wenn links- und rechtsseitiger Grenzwert verschieden sind?</p>,
           ),
           solution: (
             <>
@@ -292,7 +284,6 @@ Dᶠ = ℝ \\ {−1, 1}`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> Zähler x³−x²−x = 0 lösen für den Definitionsbereich → <strong>✅ Richtig:</strong> Nur der Nenner darf nicht 0 sein; Zähler ≠ 0 ist keine Bedingung für den Definitionsbereich</li>
             </ul>,
-            <p>Warum spielen die Nullstellen des Zählers keine Rolle für den Definitionsbereich — was verbietet wirklich den Definitionsbereich einzuschränken?</p>,
           ),
           solution: 'x² − 1 ≠ 0  ⟺  x ≠ ±1\nDᶠ = ℝ \\ {−1, 1}',
         },
@@ -314,7 +305,6 @@ Dᶠ = ℝ \\ {−1, 1}`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> Grenzwert = 0 weil es ein Bruch ist → <strong>✅ Richtig:</strong> Grenzwert 0 gilt nur wenn Grad(Nenner) &gt; Grad(Zähler); hier Grad(Z) = 3 &gt; Grad(N) = 2, also → ±∞</li>
             </ul>,
-            <p>Warum bestimmt hier der Grad-Unterschied zwischen Zähler und Nenner das Wachstumsverhalten — und nicht der Quotient der Koeffizienten?</p>,
           ),
           solution: (
             <>
@@ -342,7 +332,6 @@ Dᶠ = ℝ \\ {−1, 1}`}</pre>
               <li><strong>❌ Falsch:</strong> Polynomdivision nach dem ersten Schritt (x) abbrechen → <strong>✅ Richtig:</strong> Weiter dividieren bis Rest-Grad &lt; Divisor-Grad (Grad 0 &lt; 2); zweiter Schritt ergibt −1</li>
               <li><strong>❌ Falsch:</strong> Probe weglassen → <strong>✅ Richtig:</strong> lim(x→±∞) (f(x) − a(x)) = 0 prüfen, um die Asymptote zu bestätigen</li>
             </ul>,
-            <p>Warum liefert nur der Quotient der Polynomdivision (und nicht der Rest) die Asymptote?</p>,
           ),
           solution: (
             <>
@@ -378,7 +367,6 @@ Dᶠ = ℝ \\ {−1, 1}`}</pre>
               <li><strong>❌ Falsch:</strong> 1000n² ∉ O(n²) wegen großem Koeffizient → <strong>✅ Richtig:</strong> C = 1000 ist eine positive Konstante; O ignoriert konstante Faktoren</li>
               <li><strong>❌ Falsch:</strong> f ∈ O(g) ⟺ g ∈ O(f) (Symmetrie wie Θ) → <strong>✅ Richtig:</strong> O ist nur obere Schranke, nicht symmetrisch; n ∈ O(n²) aber n² ∉ O(n)</li>
             </ul>,
-            <p>Was unterscheidet O-Notation von Θ-Notation — und warum ist O nicht symmetrisch?</p>,
           ),
           solution: '(i)   wahr: n ≤ 1·n² für n ≥ 1\n(ii)  wahr: n + n² ≤ 2n² für n ≥ 1\n(iii) wahr: 1000n² ≤ 1000·n²\n(iv)  falsch: n ∈ O(n²) aber n² ∉ O(n)',
         },
@@ -400,7 +388,6 @@ Dᶠ = ℝ \\ {−1, 1}`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> „Ja offensichtlich" ohne Beweis hinschreiben → <strong>✅ Richtig:</strong> Explizit C := C₁·C₂ und N := max(N₁,N₂) angeben, um die O-Definition zu erfüllen</li>
             </ul>,
-            <p>Warum genügt es, C := C₁·C₂ und N := max(N₁,N₂) zu wählen — welche Eigenschaft dieser Werte macht die O-Definition erfüllt?</p>,
           ),
           solution: 'Ja.\n∃C₁,N₁: |f(n)| ≤ C₁|g(n)| für n ≥ N₁\n∃C₂,N₂: |g(n)| ≤ C₂|h(n)| für n ≥ N₂\n→ |f(n)| ≤ C₁C₂·|h(n)| für n ≥ max(N₁,N₂)\n→ f(n) ∈ O(h(n)) ✓',
         },

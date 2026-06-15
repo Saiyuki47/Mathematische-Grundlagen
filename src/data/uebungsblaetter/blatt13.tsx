@@ -31,7 +31,6 @@ export const blatt13: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> (exp(1+2x))' = exp(1+2x) (Kettenregel vergessen) → <strong>✅ Richtig:</strong> Kettenregel: (exp(1+2x))' = exp(1+2x) · 2; innerer Faktor 2 muss mitgenommen werden</li>
               <li><strong>❌ Falsch:</strong> Nur u'v oder nur uv' hinschreiben → <strong>✅ Richtig:</strong> Produktregel liefert beide Summanden: f' = u'v + uv'</li>
             </ul>,
-            <p>u' = 3x² und v' = 2·exp(1+2x) korrekt bestimmt, Produktregel angewandt?</p>,
           ),
           solution: (
             <>
@@ -60,7 +59,6 @@ export const blatt13: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> Zähler und Nenner getrennt ableiten: (2x)'/(2x²+1)' = 2/(4x) → <strong>✅ Richtig:</strong> Das ist nicht die Quotientenregel; korrekt ist (u'v − uv')/v²</li>
               <li><strong>❌ Falsch:</strong> Vorzeichen vertauschen: uv' − u'v → <strong>✅ Richtig:</strong> Quotientenregel: Zähler immer u'v − uv' (Ableitungsterm kommt zuerst)</li>
             </ul>,
-            <p>Warum steht bei der Quotientenregel u'v − uv' im Zähler und nicht u v' − u' v?</p>,
           ),
           solution: (
             <>
@@ -88,7 +86,6 @@ export const blatt13: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> (ln(x²+x))' = 1/(x²+x) (Kettenregel vergessen) → <strong>✅ Richtig:</strong> Kettenregel: (ln(g(x)))' = g'(x)/g(x); hier g(x) = x²+x, g'(x) = 2x+1, also v' = (2x+1)/(x²+x)</li>
             </ul>,
-            <p>v' = (2x+1)/(x²+x) korrekt mit Kettenregel bestimmt?</p>,
           ),
           solution: (
             <>
@@ -116,7 +113,6 @@ export const blatt13: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Differenzierbarkeit in 0 überspringen und nur die Teilableitungen angeben → <strong>✅ Richtig:</strong> Bei stückweise definierten Funktionen immer separat den Differenzenquotienten in 0 berechnen</li>
             </ul>,
-            <p>Einseitige Grenzwerte des Differenzenquotienten in 0 beide = 0?</p>,
           ),
           solution: (
             <>
@@ -158,7 +154,6 @@ export const blatt13: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> f ist stetig in 0 → f ist differenzierbar in 0 → <strong>✅ Richtig:</strong> Stetigkeit ist notwendig, aber nicht hinreichend; der Knick (f'₊ = 1 ≠ 0 = f'₋) zeigt Nicht-Differenzierbarkeit</li>
             </ul>,
-            <p>Was genau besagt die Definition der Ableitung in x = 0 — und warum reicht Stetigkeit allein nicht für Differenzierbarkeit?</p>,
           ),
           solution: (
             <>
@@ -186,7 +181,6 @@ export const blatt13: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Nur Stetigkeit prüfen und daraus Differenzierbarkeit folgern → <strong>✅ Richtig:</strong> Stetigkeit ist notwendig, aber nicht hinreichend; beide einseitigen Differenzenquotienten explizit berechnen</li>
             </ul>,
-            <p>Warum müssen beide einseitigen Differenzenquotienten berechnet werden — reicht es, dass die Funktion stetig ist?</p>,
           ),
           solution: (
             <>
@@ -214,7 +208,6 @@ export const blatt13: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Differenzenquotienten berechnen ohne Stetigkeit zu prüfen → <strong>✅ Richtig:</strong> Zuerst Stetigkeit prüfen; ein Sprung schließt Differenzierbarkeit sofort aus (Differenzierbarkeit impliziert Stetigkeit)</li>
             </ul>,
-            <p>Wie lautet die logische Kette: Was gilt, wenn eine Funktion nicht stetig ist — und welches allgemeine Prinzip steckt dahinter?</p>,
           ),
           solution: (
             <>
@@ -253,7 +246,6 @@ export const blatt13: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> (√x)' = (x^(1/2))' = (1/2)x^(−1/2) direkt per Potenzregel ableiten → <strong>✅ Richtig:</strong> Zwar korrekt, aber die Aufgabe verlangt explizit die Umkehrfunktionsregel (f⁻¹)'(x) = 1/f'(f⁻¹(x))</li>
             </ul>,
-            <p>f'(f⁻¹(x)) = 2·√x eingesetzt, Kehrwert gebildet?</p>,
           ),
           solution: (
             <>
@@ -298,7 +290,6 @@ export const blatt13: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> Indexshift nach der Ableitung weglassen → <strong>✅ Richtig:</strong> Nach gliedweiser Ableitung beginnt die Summe bei k=1; Indexshift k → k+1 liefert Σ(k+1)xᵏ ab k=0</li>
               <li><strong>❌ Falsch:</strong> ((1−x)⁻¹)' = −(1−x)⁻² ohne inneren Faktor → <strong>✅ Richtig:</strong> Kettenregel: innerer Faktor (1−x)' = −1; also ((1−x)⁻¹)' = −(1−x)⁻²·(−1) = 1/(1−x)²</li>
             </ul>,
-            <p>Warum darf man eine Potenzreihe gliedweise ableiten — gilt das immer oder nur unter bestimmten Bedingungen?</p>,
           ),
           solution: (
             <>
@@ -349,7 +340,6 @@ export const blatt13: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Potenzregel (xᵃ)' = a·xᵃ⁻¹ direkt ohne Herleitung hinschreiben → <strong>✅ Richtig:</strong> Über xᵃ = exp(a·ln(x)) und Kettenregel herleiten; das ist der verlangte Weg</li>
             </ul>,
-            <p>f'(x) = a · x^(a−1) — hergeleitet über Kettenregel?</p>,
           ),
           solution: (
             <>
@@ -378,7 +368,6 @@ export const blatt13: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> Potenzregel (cˣ)' = x·cˣ⁻¹ → <strong>✅ Richtig:</strong> Potenzregel gilt nur wenn die Basis die Variable ist (xⁿ)' = n·xⁿ⁻¹; hier ist die Basis c konstant, daher: cˣ = exp(x·ln c) → (cˣ)' = ln(c)·cˣ</li>
             </ul>,
-            <p>Warum liefert die Potenzregel (cˣ)' = x·cˣ⁻¹ ein falsches Ergebnis — welche Voraussetzung verletzt sie?</p>,
           ),
           solution: (
             <>
@@ -416,7 +405,6 @@ export const blatt13: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> (cos x)' = sin x (falsches Vorzeichen) → <strong>✅ Richtig:</strong> (cos x)' = −sin x; das Minuszeichen ist entscheidend, um (cos²+sin²)/cos² = 1/cos² zu erhalten</li>
             </ul>,
-            <p>1/cos² = 1 + tan² über den Pythagoras bestätigt?</p>,
           ),
           solution: (
             <>
@@ -449,7 +437,6 @@ export const blatt13: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> 1 + tan²(arctan(x)) stehen lassen ohne zu vereinfachen → <strong>✅ Richtig:</strong> Schlüsselidentität tan(arctan(x)) = x einsetzen; ergibt sofort 1 + x²</li>
             </ul>,
-            <p>1 + tan²(arctan(x)) = 1 + x² korrekt vereinfacht?</p>,
           ),
           solution: (
             <>

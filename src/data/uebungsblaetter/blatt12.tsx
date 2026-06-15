@@ -33,7 +33,6 @@ export const blatt12: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> cos(1/x) für x → ∞ ohne Argument-Grenzwert auswerten → <strong>✅ Richtig:</strong> Zuerst 1/x → 0 erkennen, dann cos(1/x) → cos(0) per Stetigkeit</li>
               <li><strong>❌ Falsch:</strong> cos(0) = 0 → <strong>✅ Richtig:</strong> cos(0) = 1 (der Cosinus hat sein Maximum bei 0)</li>
             </ul>,
-            <p>Ergibt sich 0·1 = 0?</p>,
           ),
           solution: (
             <>
@@ -63,7 +62,6 @@ export const blatt12: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> lim cos(x) für x → ∞ ausrechnen wollen → <strong>✅ Richtig:</strong> Dieser Grenzwert existiert nicht, ist aber unnötig; cos(x) ist beschränkt ∈ [−1,1], und Nullfolge · Beschränkte = 0</li>
             </ul>,
-            <p>Ist cos(x) beschränkt und geht 1/x → 0?</p>,
           ),
           solution: (
             <>
@@ -90,7 +88,6 @@ export const blatt12: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> exp(x) als Potenzreihe (1 + x + x²/2 + …) entwickeln → <strong>✅ Richtig:</strong> Stetigkeit von exp reicht; lim x·exp(x) = 0·exp(0) = 0·1 = 0</li>
             </ul>,
-            <p>x → 0 und exp(x) → 1 für x → 0?</p>,
           ),
           solution: <>{'x → 0 und exp(x) → exp(0) = 1 für x → 0.\n\nlim x · exp(x) = 0 · 1 = 0.'}</>,
         },
@@ -112,7 +109,6 @@ export const blatt12: MatheBlatt = {
             <ul>
               <li><strong>❌ Falsch:</strong> „−∞ · 0 = −∞" direkt schreiben → <strong>✅ Richtig:</strong> Das ist ein unbestimmter Ausdruck; Substitution y = −x umformen, dann y/exp(y) → 0 auswerten</li>
             </ul>,
-            <p>Nach Substitution y = −x: Ergibt sich −y/exp(y) → 0?</p>,
           ),
           solution: (
             <>
@@ -146,7 +142,6 @@ lim 1/ln(n) = 0 (da ln(n) → ∞).
             <ul>
               <li><strong>❌ Falsch:</strong> lim cos(n) für n → ∞ ausrechnen wollen → <strong>✅ Richtig:</strong> Dieser Grenzwert existiert nicht, ist aber unnötig; cos(n) ist beschränkt ∈ [−1,1], und Nullfolge · Beschränkte = 0</li>
             </ul>,
-            <p>cos(n) beschränkt und 1/ln(n) → 0?</p>,
           ),
           solution: (
             <>
@@ -174,7 +169,6 @@ lim 1/ln(n) = 0 (da ln(n) → ∞).
             <ul>
               <li><strong>❌ Falsch:</strong> lim cos(n) für n → ∞ bestimmen wollen → <strong>✅ Richtig:</strong> Dieser Grenzwert existiert nicht, ist aber unnötig; cos(n) ist beschränkt ∈ [−1,1] und sin(1/n) → 0</li>
             </ul>,
-            <p>sin(1/n) → 0 und |cos(n)| ≤ 1?</p>,
           ),
           solution: (
             <>
@@ -203,7 +197,6 @@ lim 1/ln(n) = 0 (da ln(n) → ∞).
             <ul>
               <li><strong>❌ Falsch:</strong> Bruch direkt auswerten ohne durch n⁴ zu dividieren → <strong>✅ Richtig:</strong> Durch die höchste Potenz n⁴ dividieren; ergibt (1−3/n²)/(1/n−3) → (1)/(−3) = −1/3</li>
             </ul>,
-            <p>Bruch → −1/3 und exp-Term → 1?</p>,
           ),
           solution: (
             <>
@@ -232,7 +225,6 @@ lim 1/ln(n) = 0 (da ln(n) → ∞).
             <ul>
               <li><strong>❌ Falsch:</strong> „∞·0 = 0" oder „∞·0 = ∞" direkt schreiben → <strong>✅ Richtig:</strong> Unbestimmter Ausdruck; Umformung n·ln(1+1/n) = ln((1+1/n)ⁿ) → ln(e) = 1 verwenden</li>
             </ul>,
-            <p>Nach Umformung zu ln((1+1/n)^n): Grenzwert = ln(e) = 1?</p>,
           ),
           solution: (
             <>
@@ -268,7 +260,6 @@ Verkettung stetiger Funktionen → stetig.`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> a ≤ 0 zulassen → <strong>✅ Richtig:</strong> Die Bedingung a &gt; 0 ist nötig; ln(a) ist nur für a &gt; 0 definiert, daher ist die Darstellung aˣ = exp(x·ln(a)) nur für a &gt; 0 gültig</li>
             </ul>,
-            <p>f(x) = exp(x·ln(a)) — Verkettung stetiger Funktionen?</p>,
           ),
           solution: <>{'f(x) = aˣ = exp(x · ln(a)).\n\nDa a > 0 ist ln(a) ∈ ℝ. Das Argument x·ln(a) ist ein Polynom in x (stetig), und exp ist stetig auf ℝ.\nVerkettung stetiger Funktionen ist stetig → f ist stetig auf ℝ.'}</>,
         },
@@ -291,7 +282,6 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> k^(1/k) = k^0 = 1 direkt schreiben (Exponent 1/k → 0 einfach einsetzen) → <strong>✅ Richtig:</strong> Der Exponent 1/k hängt von k ab; über exp(ln(k)/k) und lim ln(k)/k = 0 herleiten</li>
             </ul>,
-            <p>exp(ln(k)/k) → exp(0) = 1?</p>,
           ),
           solution: (
             <>
@@ -326,7 +316,6 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> aˣ·aʸ = a^(x+y) direkt als bekannt voraussetzen → <strong>✅ Richtig:</strong> Über die Definition aˣ = exp(x·ln a) herleiten und das Additionstheorem exp(u+v) = exp(u)·exp(v) anwenden</li>
             </ul>,
-            <p>exp(x ln a + y ln a) = exp((x+y) ln a) = a^(x+y)?</p>,
           ),
           solution: (
             <>
@@ -355,7 +344,6 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> ln(aˣ) = x·ln(a) direkt als bekannt voraussetzen → <strong>✅ Richtig:</strong> Erst aˣ = exp(x·ln a) einsetzen, dann ln(exp(u)) = u verwenden; nur so ist der Beweis vollständig</li>
             </ul>,
-            <p>y · ln(exp(x ln a)) = y · (x ln a) = xy ln a?</p>,
           ),
           solution: (
             <>
@@ -386,7 +374,6 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> ln(a) + ln(b) = ln(a+b) verwenden → <strong>✅ Richtig:</strong> Logarithmengesetz: ln(a) + ln(b) = ln(a·b) für a, b &gt; 0; nicht ln(a+b)</li>
             </ul>,
-            <p>ln a + ln b = ln(ab) korrekt eingesetzt?</p>,
           ),
           solution: (
             <>
@@ -422,7 +409,6 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> log₁₀(1) = 1 → <strong>✅ Richtig:</strong> 10⁰ = 1, also log₁₀(1) = 0; der Logarithmus von 1 ist stets 0 (egal zur welcher Basis)</li>
             </ul>,
-            <p>Jedes Argument als 10^k dargestellt?</p>,
           ),
           solution: (
             <>
@@ -451,7 +437,6 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> 2/64 direkt mit der Basis vergleichen ohne zu vereinfachen → <strong>✅ Richtig:</strong> Erst 2/64 = 1/32 = 2⁻⁵ berechnen, dann 2⁻⁵ als Potenz der jeweiligen Basis darstellen</li>
             </ul>,
-            <p>2/64 = 1/32 = 2⁻⁵ — als Potenz der Basis ausgedrückt?</p>,
           ),
           solution: (
             <>
@@ -482,7 +467,6 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> log₂(2/64)/log₂(64) als log₂(2/64 − 64) oder log₂((2/64)/64) interpretieren → <strong>✅ Richtig:</strong> Das ist der Basiswechselsatz: log_a(x)/log_a(b) = log_b(x); hier log₂(2/64)/log₂(64) = log₆₄(2/64)</li>
             </ul>,
-            <p>Basiswechselsatz korrekt angewandt?</p>,
           ),
           solution: (
             <>
@@ -536,7 +520,6 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> x als wachsende Variable im Grenzwert behandeln → <strong>✅ Richtig:</strong> x ist eine feste reelle Zahl; nur k → ∞; der Grenzwert des Quotienten |aₖ₊₁/aₖ| = x²/((2k+3)(2k+2)) → 0</li>
             </ul>,
-            <p>|aₖ₊₁/aₖ| → 0 {'<'} 1 für k → ∞ (x fest)?</p>,
           ),
           solution: (
             <>
@@ -567,7 +550,6 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
             <ul>
               <li><strong>❌ Falsch:</strong> (−x)²ᵏ = −x²ᵏ behaupten → <strong>✅ Richtig:</strong> Gerade Potenzen: (−x)²ᵏ = (−1)²ᵏ · x²ᵏ = 1 · x²ᵏ = x²ᵏ; das Vorzeichen verschwindet</li>
             </ul>,
-            <p>(−x)²ᵏ = x²ᵏ und (−x)²ᵏ⁺¹ = −x²ᵏ⁺¹ korrekt angewandt?</p>,
           ),
           solution: (
             <>

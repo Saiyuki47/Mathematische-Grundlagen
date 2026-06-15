@@ -39,7 +39,6 @@ export const blatt0: MatheBlatt = {
               <li><strong>❌ Falsch:</strong> Zähler und Nenner getrennt addieren: (3+7)/(7+3) = 10/10 = 1 → <strong>✅ Richtig:</strong> Nur Zähler addieren, wenn Nenner gleich sind</li>
               <li><strong>❌ Falsch:</strong> Ergebnis nicht auf Kürzbarkeit prüfen → <strong>✅ Richtig:</strong> ggT(58,21) = 1, also ist 58/21 bereits vollständig gekürzt</li>
             </ul>,
-            <p>Warum kann man Zähler und Nenner nicht einfach getrennt addieren (3+7 = 10, 7+3 = 10 → 10/10)? Was muss vor der Addition von Brüchen gelten, und warum?</p>,
           ),
           solution: <><Frac n="3" d="7" />{' + '}<Frac n="7" d="3" />{' = '}<Frac n="9" d="21" />{' + '}<Frac n="49" d="21" />{' = '}<Frac n="58" d="21" /></>,
         },
@@ -71,7 +70,6 @@ Rechte Klammer: 3/4 − 1/4 = 2/4 = 1/2
               <li><strong>❌ Falsch:</strong> 5·9/(9·8) nicht kürzen → <strong>✅ Richtig:</strong> Die 9 im Zähler (aus 5/9·9/8) kürzt mit der 9 im Nenner: ergibt 5/8</li>
               <li><strong>❌ Falsch:</strong> Klammern sofort ausmultiplizieren → <strong>✅ Richtig:</strong> Erst innerhalb der Klammern vereinfachen, deutlich einfacher</li>
             </ul>,
-            <p>Was würde passieren, wenn man sofort ausmultipliziert (vier Terme entstehen)? Käme man zum selben Ergebnis — und warum ist der Klammerweg trotzdem vorzuziehen?</p>,
           ),
           solution: (
             <>
@@ -108,7 +106,6 @@ Rechte Klammer: 3/4 − 1/4 = 2/4 = 1/2
               <li><strong>❌ Falsch:</strong> Beide Divisionen gleichzeitig umschreiben → <strong>✅ Richtig:</strong> Von links nach rechts: erst innere Division lösen, dann äußere</li>
               <li><strong>❌ Falsch:</strong> Hinweis 169=13·13 ignorieren → <strong>✅ Richtig:</strong> 13/169 = 13/(13·13) = 1/13 — wichtige Kürzung nicht verpassen</li>
             </ul>,
-            <p>Warum gilt a/b ÷ c/d = a/b · d/c? Was bedeutet es, durch den Bruch c/d zu dividieren — und wieso dreht man dafür den Divisor um?</p>,
           ),
           solution: (
             <>
@@ -144,7 +141,6 @@ Rechte Klammer: 3/4 − 1/4 = 2/4 = 1/2
               <li><strong>❌ Falsch:</strong> 5⁻² = 1/(−5²) = 1/(−25) → <strong>✅ Richtig:</strong> 5⁻² = 1/5² = 1/25 (Basis bleibt 5, das Minus gehört zum Exponenten)</li>
               <li><strong>❌ Falsch:</strong> (1/25)·100 = 100/25 = 5 → <strong>✅ Richtig:</strong> 100/25 = 4 (25×4=100)</li>
             </ul>,
-            <p>Was unterscheidet 5⁻² (negativer Exponent) von −5² (negiertes Ergebnis)? Warum ist 5⁻² eine positive Zahl?</p>,
           ),
           solution: <>{'5⁻² · 100 = ('}<Frac n="1" d="25" />{') · 100 = '}<Frac n="100" d="25" />{' = 4'}</>,
         },
@@ -176,7 +172,6 @@ Ergebnis:        −x² + (−3x − x) + 6 = −x² − 4x + 6`}</pre>
               <li><strong>❌ Falsch:</strong> x(1+x)·(−1) = x(−1+x) = −x+x² → <strong>✅ Richtig:</strong> (−1) gilt für das gesamte Produkt x(1+x): erst x·(1+x) = x+x², dann ·(−1) = −x−x²</li>
               <li><strong>❌ Falsch:</strong> −4x − x² − x = −5x² → <strong>✅ Richtig:</strong> x und x² sind ungleiche Terme (verschiedene Exponenten), nur −4x und −x können zusammengefasst werden: −5x</li>
             </ul>,
-            <p>Was macht zwei Terme zu "gleichartigen Termen", die zusammengefasst werden dürfen? Warum darf man x² und x nicht addieren, obwohl beide x enthalten?</p>,
           ),
           solution: '−2(2x−4) = −4x + 8\nx(1+x)·(−1) = −x − x²\n−4x + 8 − x − x² = −x² − 5x + 8',
         },
@@ -216,7 +211,6 @@ Ergebnis:        −x² + (−3x − x) + 6 = −x² − 4x + 6`}</pre>
               <li><strong>❌ Falsch:</strong> a⁴ · a⁻³ = a⁻¹² (Exponenten multipliziert) → <strong>✅ Richtig:</strong> a⁴ · a⁻³ = a⁴⁺⁽⁻³⁾ = a¹ (Exponenten addieren!)</li>
               <li><strong>❌ Falsch:</strong> −(−242ab³) = −242ab³ → <strong>✅ Richtig:</strong> −(−242ab³) = +242ab³ (Minus vor Minus = Plus)</li>
             </ul>,
-            <p>Bei welcher Potenzregel addiert man Exponenten (aᵐ·aⁿ), und bei welcher multipliziert man sie ((aᵐ)ⁿ)? Warum der Unterschied — was steht bei einer Regel im Exponent, was bei der anderen?</p>,
           ),
           solution:
             '(11a²b)² = 121a⁴b²\n121a⁴b² · (−2a⁻³b) = −242a⁴⁻³b²⁺¹ = −242ab³\n−121ab³ − (−242ab³) = −121ab³ + 242ab³ = 121ab³',
@@ -249,7 +243,6 @@ Ergebnis:        −x² + (−3x − x) + 6 = −x² − 4x + 6`}</pre>
               <li><strong>❌ Falsch:</strong> −(a−b) = −a−b → <strong>✅ Richtig:</strong> −(a−b) = −a+b (das Plus-Minus-Tausch gilt für jeden Term)</li>
               <li><strong>❌ Falsch:</strong> Auch den Nenner zusammenfassen: −(a+b)−(a−b) / 2c → <strong>✅ Richtig:</strong> Nenner bleibt unverändert = c, nur Zähler kombinieren</li>
             </ul>,
-            <p>Was bedeutet ein Minuszeichen vor einer Klammer? Warum ändert es das Vorzeichen ALLER Terme in der Klammer — und nicht nur des ersten?</p>,
           ),
           solution: (
             <>
@@ -292,7 +285,6 @@ Probe: −1 · (−3x + 2) = 3x − 2 ✓`}</pre>
               <li><strong>❌ Falsch:</strong> Nur erstem Term Vorzeichen wechseln: −1·(b(a−b)+b−a) = −b(a−b)+b−a → <strong>✅ Richtig:</strong> ALLE Terme wechseln: −b(a−b)−b+a</li>
               <li><strong>❌ Falsch:</strong> b(a−b)·(−1) = −b·(−a+b) = ab−b² (Klammer falsch ausmultipliziert) → <strong>✅ Richtig:</strong> −b(a−b) = −b·a + b·b = −ab+b² = b(b−a)</li>
             </ul>,
-            <p>Warum bleibt der Wert des Ausdrucks gleich, wenn man (−1) ausklammert? Was ist der mathematische Zweck dieser Umformung — in welchen Situationen braucht man sie?</p>,
           ),
           solution:
             'b(a−b) + b − a\n= (−1) · (−b(a−b) − b + a)\n= (−1) · (b(b−a) − b + a)',
@@ -318,7 +310,6 @@ Probe: −1 · (−3x + 2) = 3x − 2 ✓`}</pre>
               <li><strong>❌ Falsch:</strong> b−a = a−b (Vorzeichen ignoriert) → <strong>✅ Richtig:</strong> b−a = −(a−b) (Subtraktionsreihenfolge zählt!)</li>
               <li><strong>❌ Falsch:</strong> Restfaktor nach Ausklammern ist (b+1) → <strong>✅ Richtig:</strong> b(a−b) ÷ (a−b) = b und (−(a−b)) ÷ (a−b) = −1 → Restfaktor = (b−1)</li>
             </ul>,
-            <p>Ohne vollständig zu rechnen: Welche Terme im Ausdruck b(a−b)+b−a deuten darauf hin, dass (a−b) ein Faktor sein könnte? Was verrät dir der erste Term?</p>,
           ),
           solution:
             'b(a−b) + b − a\n= b(a−b) − (a−b)\n= (a−b) · (b − 1)',
@@ -345,7 +336,6 @@ Probe: −1 · (−3x + 2) = 3x − 2 ✓`}</pre>
               <li><strong>❌ Falsch:</strong> a−b = b−a → <strong>✅ Richtig:</strong> a−b = −(b−a), daher b(a−b) = −b(b−a)</li>
               <li><strong>❌ Falsch:</strong> Restfaktor (1+b) oder (−b+0) → <strong>✅ Richtig:</strong> −b(b−a) ÷ (b−a) = −b und (b−a) ÷ (b−a) = 1 → Restfaktor = (−b+1) = (1−b)</li>
             </ul>,
-            <p>Was ist der Unterschied zwischen (a−b) und (b−a) als ausgelämmertem Faktor? In welcher Situation würde man (b−a) gegenüber (a−b) bevorzugen?</p>,
           ),
           solution:
             'b(a−b) + b − a\n= −b(b−a) + (b−a)\n= (b−a) · (−b + 1)',
@@ -379,7 +369,6 @@ Probe: −1 · (−3x + 2) = 3x − 2 ✓`}</pre>
               <li><strong>❌ Falsch:</strong> a/a − b/b = 1 − 1 = 0 → <strong>✅ Richtig:</strong> (a−b) als Ganzes betrachten: (a−b)/(a−b) = 1</li>
               <li><strong>❌ Falsch:</strong> Kürzen ist für alle a, b erlaubt → <strong>✅ Richtig:</strong> Nur wenn der Nenner ≠ 0 ist, hier also a ≠ b</li>
             </ul>,
-            <p>Warum gilt x/x = 1 für alle x ≠ 0? Was wäre das Ergebnis, wenn man denselben Bruch in einer Gleichung kürzt — und warum ist die Bedingung x ≠ 0 mathematisch unerlässlich?</p>,
           ),
           solution: <><Frac n="a−b" d="a−b" />{' = 1'}</>,
         },
@@ -412,7 +401,6 @@ Probe: −1 · (−3x + 2) = 3x − 2 ✓`}</pre>
               <li><strong>❌ Falsch:</strong> (a−b)/(b−a) = 1 (Vorzeichen ignoriert) → <strong>✅ Richtig:</strong> (a−b)/(b−a) = −1</li>
               <li><strong>❌ Falsch:</strong> b−a = a−b → <strong>✅ Richtig:</strong> b−a = −(a−b) (Reihenfolge der Subtraktion zählt!)</li>
             </ul>,
-            <p>Warum ergibt (a−b)/(b−a) = −1 und nicht +1? Was verändert die Umkehrung der Subtraktionsreihenfolge mathematisch — und wie hilft der Schritt b−a = −(a−b)?</p>,
           ),
           solution: <><Frac n="a−b" d="b−a" />{' = '}<Frac n="a−b" d="−(a−b)" />{' = −1'}</>,
         },
@@ -440,7 +428,6 @@ a² + b² = ?           → kein Faktor (a+b)`}</pre>
               <li><strong>❌ Falsch:</strong> a²+b² = (a+b)² (mit dem Quadrat der Summe verwechselt) → <strong>✅ Richtig:</strong> (a+b)² = a²+2ab+b² ≠ a²+b²</li>
               <li><strong>❌ Falsch:</strong> a²+b² mit a²−b² verwechseln → <strong>✅ Richtig:</strong> Nur a²−b² = (a+b)(a−b) faktorisierbar (3. binomische Formel); a²+b² hat keine reelle Faktorzerlegung</li>
             </ul>,
-            <p>Warum lässt sich a²−b² faktorisieren (3. binomische Formel), aber a²+b² nicht? Was ist der entscheidende Unterschied — und was müsste im Zähler stehen, damit Kürzen mit (a+b) möglich wäre?</p>,
           ),
           solution: 'Nicht weiter kürzbar – Zähler und Nenner haben keine gemeinsamen Faktoren.',
         },
@@ -464,7 +451,6 @@ a² + b² = ?           → kein Faktor (a+b)`}</pre>
               <li><strong>❌ Falsch:</strong> a²+b² = (a+b)(a−b) (Plus statt Minus im Zähler) → <strong>✅ Richtig:</strong> Nur a²−b² = (a+b)(a−b), das Minuszeichen im Zähler ist entscheidend</li>
               <li><strong>❌ Falsch:</strong> a²−b² = (a−b)² = a²−2ab+b² → <strong>✅ Richtig:</strong> a²−b² = (a+b)(a−b), das ist die 3. binomische Formel, nicht die 2.</li>
             </ul>,
-            <p>Welche Form muss ein Zählerausdruck haben, damit er sich mit dem Nenner (a−b) kürzen lässt? Und welche bekannte Formel liefert genau diese Faktorisierung für a²−b²?</p>,
           ),
           solution: <><Frac n="a²−b²" d="a−b" />{' = '}<Frac n="(a+b)(a−b)" d="a−b" />{' = a+b'}</>,
         },
@@ -492,7 +478,6 @@ Nenner = 2c + 3d → kein k extrahierbar
               <li><strong>❌ Falsch:</strong> „2a/2c kürzen und 3b/3d kürzen" (Terme getrennt kürzen) → <strong>✅ Richtig:</strong> Kürzen nur mit gemeinsamem Faktor vor der gesamten Summe</li>
               <li><strong>❌ Falsch:</strong> (2a+3b)/(2c+3d) = a/c + b/d → <strong>✅ Richtig:</strong> Nicht kürzbar</li>
             </ul>,
-            <p>Was ist der Unterschied zwischen Kürzen durch einen gemeinsamen Faktor (erlaubt) und Kürzen einzelner Summanden (verboten)? Formuliere als Merkregel: Wann darf man kürzen?</p>,
           ),
           solution: 'Nicht weiter kürzbar – keine gemeinsamen Faktoren.',
         },
@@ -522,7 +507,6 @@ Nenner = 2c + 3d → kein k extrahierbar
               <li><strong>❌ Falsch:</strong> k²/k² = 0 → <strong>✅ Richtig:</strong> k²/k² = 1 (gleiche Potenzen dividiert geben 1)</li>
               <li><strong>❌ Falsch:</strong> Zähler und Nenner getrennt kürzen → <strong>✅ Richtig:</strong> Erst ausklammern, dann Kürzen als Gesamtfaktor</li>
             </ul>,
-            <p>Warum darf man k² aus k²+k³ ausklammern, obwohl k² ein Summand ist — und wie ist das mit dem anschließenden Kürzen verbunden? Was ist der Zusammenhang zwischen Ausklammern und Faktorisieren?</p>,
           ),
           solution: <><Frac n="k²+k³" d="k²" />{' = '}<Frac n="k²(1+k)" d="k²" />{' = 1+k'}</>,
         },
@@ -553,7 +537,6 @@ Nenner = 2c + 3d → kein k extrahierbar
               <li><strong>❌ Falsch:</strong> ggT(4,6) = 4 → <strong>✅ Richtig:</strong> ggT(4,6) = 2 (kleinster gemeinsamer Teiler)</li>
               <li><strong>❌ Falsch:</strong> ggT(k², k³) = k³ → <strong>✅ Richtig:</strong> ggT(k², k³) = k² (kleinste Potenz)</li>
             </ul>,
-            <p>Warum muss man den Nenner erst ausklammern, bevor man kürzen kann? Was wäre falsch, wenn man bei 2k²/(4k²+6k³) einfach versucht, direkt 2k² zu kürzen, ohne 4k²+6k³ zu faktorisieren?</p>,
           ),
           solution: <><Frac n="2k²" d="4k²+6k³" />{' = '}<Frac n="2k²" d="2k²(2+3k)" />{' = '}<Frac n="1" d="2+3k" /></>,
         },
@@ -580,7 +563,6 @@ Faktor (1−k+k²) ≠  (1+k²)  → kein Match`}</pre>
               <li><strong>❌ Falsch:</strong> k²/(k³) kürzen im Nenner: 1/k² + 1/k³ = ... → <strong>✅ Richtig:</strong> 1+k³ ist eine Summe, kein Produkt — Terme einer Summe können nicht einzeln aus dem Bruch herausgekürzt werden</li>
               <li><strong>❌ Falsch:</strong> 1+k² faktorisieren als k(1/k+k) → <strong>✅ Richtig:</strong> 1+k² hat keinen einfachen Faktor — überprüfe Probe: k=1: (1+1)/(1+1)=1; k=2: 5/9 — kein ganzzahliges Ergebnis → nicht kürzbar</li>
             </ul>,
-            <p>Warum hilft die Faktorisierung 1+k³ = (1+k)(1−k+k²)? Und warum scheitert das Kürzen trotzdem — welchen Faktor müsste der Zähler (1+k²) dafür enthalten?</p>,
           ),
           solution: 'Nicht weiter kürzbar.',
         },
@@ -613,7 +595,6 @@ Faktor (1−k+k²) ≠  (1+k²)  → kein Match`}</pre>
               <li><strong>❌ Falsch:</strong> √64 = 32 (halbiert statt Wurzel gezogen) → <strong>✅ Richtig:</strong> √64 = 8, weil 8² = 64</li>
               <li><strong>❌ Falsch:</strong> √a + √b = √(a+b) (Additionsregel) → <strong>✅ Richtig:</strong> Diese Regel gilt NICHT — nur Produktregel gilt: √a · √b = √(ab)</li>
             </ul>,
-            <p>Warum gilt √a · √b = √(ab), aber √a + √b ≠ √(a+b)? Was macht die Produktregel "legal" — und was würde man brauchen, damit eine Summenregel auch gelten würde?</p>,
           ),
           solution: '√2 · √32 = √(2·32) = √64 = 8',
         },
@@ -638,7 +619,6 @@ Rechte Seite: √9 + √16 = 3 + 4 = 7
               <li><strong>❌ Falsch:</strong> Ein Beispiel das stimmt (a=0, b=0: √0 = 0+0 ✓) als Beweis nehmen → <strong>✅ Richtig:</strong> Ein Beispiel beweist nicht die Allgemeingültigkeit; man braucht ein Gegenbeispiel zum Widerlegen</li>
               <li><strong>❌ Falsch:</strong> Viele Gegenbeispiele suchen → <strong>✅ Richtig:</strong> Ein einziges Gegenbeispiel reicht zum Widerlegen einer Allaussage</li>
             </ul>,
-            <p>Warum reicht zum Widerlegen einer Allaussage ein einziges Gegenbeispiel? Und warum wäre a=0, b=0 als Gegenbeispiel ungeeignet — obwohl 0 = 0 gilt?</p>,
           ),
           solution:
             'Nein – nicht allgemein gültig.\nGegenbeispiel a=9, b=16:\n√(9+16) = √25 = 5\n√9 + √16 = 3 + 4 = 7\n5 ≠ 7',
@@ -676,7 +656,6 @@ Für 1/(√3+√5):
               <li><strong>❌ Falsch:</strong> (√3+√5)·(√3−√5) = √3·√3 − √5·√5 = 3−5 = −2 falsch berechnet → <strong>✅ Richtig:</strong> (a+b)(a−b) = a²−b², also (√3+√5)(√3−√5) = (√3)²−(√5)² = 3−5 = −2 ✓</li>
               <li><strong>❌ Falsch:</strong> 1/√5 · √5/√5 = 1/(√5·√5) = 1/5 (Fehler: Zähler vergessen) → <strong>✅ Richtig:</strong> 1/√5 · √5/√5 = √5/(√5·√5) = √5/5</li>
             </ul>,
-            <p>Warum lässt sich der Nenner √3+√5 durch Multiplizieren mit dem Konjugat √3−√5 "rationalisieren"? Was steckt hinter dem Trick — welche algebraische Formel macht das möglich?</p>,
           ),
           solution: (
             <>
@@ -720,7 +699,6 @@ Gerade einzeichnen`}</pre>
               <li><strong>❌ Falsch:</strong> m=0, b=1 (m und b vertauscht) → <strong>✅ Richtig:</strong> In y = mx + b ist m der Koeffizient vor x (Steigung) und b der konstanteTerm (y-Achsenabschnitt); hier m=1, b=0</li>
               <li><strong>❌ Falsch:</strong> Steigung m=1 als „bei x=0 beginnt die Gerade" missverstehen → <strong>✅ Richtig:</strong> m=1 bedeutet: pro 1 Schritt nach rechts → 1 Schritt nach oben</li>
             </ul>,
-            <p>Was bedeutet Steigung m=1 geometrisch? Wie würde die Gerade aussehen, wenn m=2 (steiler) oder m=0,5 (flacher) wäre — und wo genau liegt der Unterschied zur Ursprungsgerade y=x?</p>,
           ),
           solution: 'Gerade durch den Ursprung mit Steigung 1 (45°-Winkel nach rechts oben).',
           graph: {
@@ -748,7 +726,6 @@ Nullstelle bei x = 3`}</pre>
               <li><strong>❌ Falsch:</strong> Negative Steigung als aufsteigende Gerade zeichnen → <strong>✅ Richtig:</strong> m=−2 bedeutet: 1 rechts → 2 runter (fallende Gerade)</li>
               <li><strong>❌ Falsch:</strong> b=1 vergessen und Gerade durch Ursprung (0,0) zeichnen → <strong>✅ Richtig:</strong> b=1 ist der y-Achsenabschnitt: Startpunkt ist (0, 1), nicht (0, 0)</li>
             </ul>,
-            <p>Was verändert ein negatives m an der Richtung der Gerade? Und wie beeinflusst |m| = 2 die Steilheit im Vergleich zu m=1 oder m=−½?</p>,
           ),
           solution: <>'Gerade fällt steil nach rechts. Nullstelle bei x = '<Frac n="1" d="2" />{'.'}</>,
           graph: {
@@ -777,7 +754,6 @@ Flache, steigende Gerade`}</pre>
               <li><strong>❌ Falsch:</strong> m=1/2 als 0,5 rechts und 0,5 hoch → <strong>✅ Richtig:</strong> Für ganzzahlige Gitterpunkte: 2 rechts und 1 hoch (Zähler = hoch, Nenner = rechts)</li>
               <li><strong>❌ Falsch:</strong> y-Achsenabschnitt = +2 → <strong>✅ Richtig:</strong> b=−2: bei x=0 gilt y = (1/2)·0 − 2 = −2, also Startpunkt (0, −2)</li>
             </ul>,
-            <p>Wie hilft es, die gebrochene Steigung m=½ als "2 rechts, 1 hoch" umzudeuten? Was wäre der Nachteil, wenn man stattdessen "0,5 rechts, 0,5 hoch" zeichnen würde?</p>,
           ),
           solution: 'Gerade steigt flach nach rechts. Nullstelle bei x = 4.',
           graph: {
@@ -805,7 +781,6 @@ y = 0   → die x-Achse selbst`}</pre>
               <li><strong>❌ Falsch:</strong> Vertikale Linie bei x=4 zeichnen → <strong>✅ Richtig:</strong> y=4 ist eine horizontale Linie (parallel zur x-Achse); x=4 wäre eine senkrechte Linie</li>
               <li><strong>❌ Falsch:</strong> Nur den Punkt (0,4) markieren → <strong>✅ Richtig:</strong> Eine Gerade durch alle Punkte mit y=4 zeichnen: (−3,4), (0,4), (2,4), usw.</li>
             </ul>,
-            <p>Welche Steigung hat y=4 — und was bedeutet das für die Richtung der Geraden? Warum ist der Graph eine waagerechte Linie und keine fallende oder steigende?</p>,
           ),
           solution: 'Waagerechte Linie bei y = 4, parallel zur x-Achse.',
           graph: {
@@ -843,7 +818,6 @@ Schnittpunkt: (1, 1)`}</pre>
               <li><strong>❌ Falsch:</strong> −2x+1 = (1/2)x−2 → −2x+(1/2)x = −2−1 → Vorzeichen beim Umformen falsch → <strong>✅ Richtig:</strong> (1/2)x auf linke Seite bringt −(5/2)x; −2 auf rechte Seite bringt −3</li>
               <li><strong>❌ Falsch:</strong> Ergebnis nur in eine Gerade prüfen → <strong>✅ Richtig:</strong> Schnittpunkt (6/5, −7/5) in BEIDE Gleichungen einsetzen zur Probe</li>
             </ul>,
-            <p>Warum setzt man die rechten Seiten der Gleichungen gleich, um den Schnittpunkt zu finden? Was bedeutet diese Gleichheit geometrisch — an welchem Punkt hat eine Funktion denselben y-Wert wie die andere?</p>,
           ),
           solution: (
             <>
@@ -893,7 +867,6 @@ y = −(1/2)x + 5`}</pre>
               <li><strong>❌ Falsch:</strong> m = (x₂−x₁)/(y₂−y₁) (Bruch umgekehrt) → <strong>✅ Richtig:</strong> m = (y₂−y₁)/(x₂−x₁) = Δy/Δx (immer y-Differenz durch x-Differenz)</li>
               <li><strong>❌ Falsch:</strong> b aus der Formel berechnen statt direkt abzulesen → <strong>✅ Richtig:</strong> Punkt (0, 2) auf y-Achse → b = 2 direkt, kein Rechnung nötig</li>
             </ul>,
-            <p>Welche zwei Informationen bestimmen eine Gerade eindeutig? Warum reicht ein einziger Punkt nicht — und welche der beiden Informationen (m oder b) kann hier direkt abgelesen werden?</p>,
           ),
           solution: (
             <>
@@ -931,7 +904,6 @@ y = 2x`}</pre>
               <li><strong>❌ Falsch:</strong> b aus der allgemeinen Formel ermitteln statt direkt aus dem Ursprung → <strong>✅ Richtig:</strong> Durch Ursprung (0,0) geht → b = 0 direkt, kein Rechnung nötig</li>
               <li><strong>❌ Falsch:</strong> m = 2/(−1) = −2 (x/y verwechselt) → <strong>✅ Richtig:</strong> m = Δy/Δx = (−1−0)/(2−0) = −1/2</li>
             </ul>,
-            <p>Was ist die Besonderheit einer Ursprungsgeraden? Welche Vereinfachung ergibt sich für y = mx + b — und warum genügt dann ein einziger Punkt (nicht der Ursprung) zur Bestimmung der Gleichung?</p>,
           ),
           solution: (
             <>
