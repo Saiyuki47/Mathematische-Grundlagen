@@ -21,7 +21,7 @@ export default function Uebungsblaetter() {
     <div>
       <div className="section-header">
         <h2>Übungsblätter</h2>
-        <p>Aufgaben mit Tipps und Musterlösungen.</p>
+        <p>Aufgaben und Musterlösungen nach Übungsblatt geordnet.</p>
       </div>
 
       {uebungsblaetter.length > 1 && (
