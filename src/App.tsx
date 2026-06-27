@@ -3,16 +3,16 @@ import Tabs from './components/Tabs'
 import Cheatsheet from './components/Cheatsheet'
 import Themen from './components/Themen'
 import Hilfsmittel from './components/Hilfsmittel'
-import Folien from './components/Folien'
 import Uebungsblaetter from './components/Uebungsblaetter'
-import { Quiz, Flashcards, GlobalSearch, useTheme, useHashTab } from 'lernseiten-ui'
+import { Quiz, Flashcards, GlobalSearch, Moodle, useTheme, useHashTab } from 'lernseiten-ui'
 import { quizFragen } from './data/quiz'
 import { karteikarten } from './data/karteikarten'
 import { searchIndex } from './data/searchIndex'
+import { dateienTree } from './data/dateien'
 
-export type TabId = 'uebung' | 'themen' | 'referenz' | 'hilfsmittel' | 'folien' | 'quiz' | 'karten'
+export type TabId = 'uebung' | 'themen' | 'referenz' | 'hilfsmittel' | 'moodle' | 'quiz' | 'karten'
 
-const TABS: readonly TabId[] = ['uebung', 'themen', 'referenz', 'hilfsmittel', 'folien', 'quiz', 'karten']
+const TABS: readonly TabId[] = ['uebung', 'themen', 'referenz', 'hilfsmittel', 'moodle', 'quiz', 'karten']
 
 function App() {
   const [activeTab, setActiveTab] = useHashTab(TABS, 'uebung')
@@ -30,7 +30,7 @@ function App() {
         {activeTab === 'themen' && <Themen />}
         {activeTab === 'referenz' && <Cheatsheet />}
         {activeTab === 'hilfsmittel' && <Hilfsmittel />}
-        {activeTab === 'folien' && <Folien />}
+        {activeTab === 'moodle' && <Moodle tree={dateienTree} baseUrl={import.meta.env.BASE_URL} />}
         {activeTab === 'quiz' && <Quiz fragen={quizFragen} />}
         {activeTab === 'karten' && <Flashcards cards={karteikarten} />}
       </div>
