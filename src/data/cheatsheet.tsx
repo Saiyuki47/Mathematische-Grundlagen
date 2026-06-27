@@ -16,6 +16,7 @@ export const cheatCards: CheatCard[] = [
         <Frac n="k·a" d="k·b" />{' = '}<Frac n="a" d="b" />
       </>
     ),
+    plain: 'Addition/Subtraktion: a/b ± c/d = (a·d ± b·c)/(b·d) → gemeinsamen Nenner bilden. Multiplikation: a/b · c/d = a·c/(b·d). Division: a/b : c/d = a/b · d/c (Kehrwert). Kürzen: k·a/(k·b) = a/b.',
   },
   {
     title: 'Potenzregeln',
@@ -27,6 +28,7 @@ export const cheatCards: CheatCard[] = [
         <Frac n="1" d="aⁿ" />
       </>
     ),
+    plain: 'aⁿ · aᵐ = aⁿ⁺ᵐ; aⁿ/aᵐ = aⁿ⁻ᵐ; (aⁿ)ᵐ = aⁿ·ᵐ; (a·b)ⁿ = aⁿ · bⁿ; a⁰ = 1 (a ≠ 0); a⁻ⁿ = 1/aⁿ.',
   },
   {
     title: 'Wurzelregeln',
@@ -39,6 +41,7 @@ export const cheatCards: CheatCard[] = [
         <Frac n="1" d="√a+√b" />{' = '}<Frac n="√a−√b" d="a−b" />
       </>
     ),
+    plain: '√a · √b = √(a·b); √a/√b = √(a/b); (√a)² = a; √(a²) = |a|; a^½ = √a; a^(1/n) = ⁿ√a. Nenner rational machen: 1/√a = √a/a; 1/(√a+√b) = (√a−√b)/(a−b).',
   },
   {
     title: 'Binomische Formeln',
@@ -48,6 +51,7 @@ export const cheatCards: CheatCard[] = [
         <Frac n="a²−b²" d="a−b" />{' = a+b\n  Weil: a²−b² = (a+b)·(a−b), und (a−b) kürzt weg'}
       </>
     ),
+    plain: '1. (a + b)² = a² + 2ab + b²; 2. (a − b)² = a² − 2ab + b²; 3. (a + b)(a − b) = a² − b². Anwendung beim Kürzen: (a²−b²)/(a−b) = a+b, weil a²−b² = (a+b)·(a−b).',
   },
   {
     title: 'Geradengleichung',
@@ -58,6 +62,7 @@ export const cheatCards: CheatCard[] = [
         {'\n\nSchnittpunkt zweier Geraden:\n  y = m₁x + b₁ = m₂x + b₂\n  → nach x auflösen'}
       </>
     ),
+    plain: 'Normalform: y = m·x + b (m = Steigung, b = y-Achsenabschnitt). Steigung: m = (y₂ − y₁)/(x₂ − x₁). Schnittpunkt zweier Geraden: m₁x + b₁ = m₂x + b₂ → nach x auflösen.',
   },
   {
     title: 'Ausklammern',
@@ -73,6 +78,7 @@ Beispiel:
   b(a−b) + b − a
   = b(a−b) − (a−b)
   = (a−b)·(b−1)`,
+    plain: 'Faktor ausklammern: a·x + a·y = a·(x + y). Vorzeichen ausklammern: −a + b = −(a − b); a − b = −(b − a); b − a = −(a − b). Beispiel: b(a−b) + b − a = (a−b)·(b−1).',
   },
   {
     title: 'Kürzen von Brüchen',
@@ -93,6 +99,7 @@ Beispiel:
         <Frac n="a−b" d="−(a−b)" />{' = −1\n  Gilt nur für a ≠ b  (sonst 0/0 undefiniert)\n  Trick: gegengleiche Terme → Ergebnis immer −1'}
       </>
     ),
+    plain: 'Erlaubt (gleicher Faktor oben und unten): k·a/(k·b) = a/b. Mit 3. binomischer Formel: (a²−b²)/(a−b) = (a+b)(a−b)/(a−b) = a+b. Nicht erlaubt: (a²+b²)/(a+b) ≠ a+b; Summen sind nicht faktorisierbar. (a−b)/(b−a) = −1, weil b−a = −(a−b).',
   },
   {
     title: 'Rechenreihenfolge',
@@ -108,6 +115,7 @@ Klammer auflösen:
 Merke:
   (−)·(−) = +
   (−)·(+) = −`,
+    plain: 'Rechenreihenfolge: 1. Klammern, 2. Potenzen und Wurzeln, 3. Punktrechnung (· /), 4. Strichrechnung (+ −). Klammer auflösen: −2(2x−4) = −4x + 8; x(1+x) = x + x². Merke: (−)·(−) = +, (−)·(+) = −.',
   },
   {
     title: 'Mengen – Grundbegriffe',
@@ -123,6 +131,7 @@ Besondere Mengen:
   ℕ   natürliche Zahlen {0,1,2,3,…}
   ℤ   ganze Zahlen {…,−1,0,1,2,…}
   ℝ   reelle Zahlen`,
+    plain: 'x ∈ A: Element von A; x ∉ A: kein Element; A ⊆ B: Teilmenge; A = B: gleich; |A|: Mächtigkeit. Besondere Mengen: ∅ leere Menge, ℕ natürliche Zahlen, ℤ ganze Zahlen, ℝ reelle Zahlen.',
   },
   {
     title: 'Mengenoperationen',
@@ -136,6 +145,7 @@ Rechenregeln:
   A ∩ B = B ∩ A  (Kommutativität)
   A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
   A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)`,
+    plain: 'A ∪ B Vereinigung (x ∈ A oder x ∈ B); A ∩ B Schnitt (x ∈ A und x ∈ B); A \\ B Differenz (x ∈ A, x ∉ B); Ā Komplement; A × B kartesisches Produkt. Distributiv: A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C).',
   },
   {
     title: 'De Morgan & Potenzmenge',
@@ -153,6 +163,7 @@ Potenzmenge P(A):
 Mengendarstellung:
   {2n : n ∈ ℕ}    = gerade Zahlen
   {kn+r : n ∈ ℕ}  = Vielfache von k, Rest r`,
+    plain: 'De Morgan: (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ; (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ. Potenzmenge P(A) = {M : M ⊆ A}, |P(A)| = 2^|A|. Beispiel A = {1,2}: P(A) = {∅, {1}, {2}, {1,2}}.',
   },
 
   // Blatt 2 – Logik
@@ -177,6 +188,7 @@ Nicht äquivalent:
 Hinreichend / notwendig:
   A hinreichend für B: A ⇒ B
   A notwendig für B:   B ⇒ A`,
+    plain: '¬A wahr ⟺ A falsch; A ∧ B (beide wahr); A ∨ B (mind. eines wahr); A ⇒ B falsch nur bei A=w, B=f; A ⟺ B gleicher Wahrheitswert. P ⇒ Q ≡ ¬P ∨ Q ≡ ¬Q ⇒ ¬P (Kontraposition). A hinreichend für B: A ⇒ B; A notwendig für B: B ⇒ A.',
   },
   {
     title: 'Logik – De Morgan & Beweise',
@@ -196,6 +208,7 @@ Quantoren – Negation:
   ¬(∀x: P(x)) = ∃x: ¬P(x)
   ¬(∃x: P(x)) = ∀x: ¬P(x)
   ∀x ∃y ≠ ∃y ∀x  (Reihenfolge wesentlich!)`,
+    plain: 'De Morgan (logisch): ¬(A ∧ B) = ¬A ∨ ¬B; ¬(A ∨ B) = ¬A ∧ ¬B. Negation Implikation: ¬(A ⇒ B) = A ∧ ¬B. Beweismethoden: direkt, Widerspruch, Gegenbeispiel. Quantoren: ¬(∀x: P(x)) = ∃x: ¬P(x); ¬(∃x: P(x)) = ∀x: ¬P(x).',
   },
 
   // Blatt 3 – Summen, Binomialkoeffizient
@@ -216,6 +229,7 @@ Indexverschiebung:
 
 Geom. Summenformel (endlich):
   Σ(k=0..n) qᵏ = (1−qⁿ⁺¹)/(1−q)  (q ≠ 1)`,
+    plain: 'Σ(k=a..b) f(k) = f(a) + … + f(b); ∏(k=a..b) f(k) = f(a) · … · f(b). Regeln: Σ c·f(k) = c·Σf(k); Σ(f+g)(k) = Σf(k)+Σg(k). Geometrische Summenformel: Σ(k=0..n) qᵏ = (1−qⁿ⁺¹)/(1−q) für q ≠ 1.',
   },
   {
     title: 'Binomialkoeffizienten',
@@ -225,6 +239,7 @@ Geom. Summenformel (endlich):
         {'\n\nEigenschaften:\n  C(n,0) = C(n,n) = 1\n  C(n,1) = n = C(n,n−1)\n  C(n,k) = C(n,n−k)     (Symmetrie)\n  C(n,k)+C(n,k+1) = C(n+1,k+1)  (Pascal)\n\nBinomischer Lehrsatz:\n  (x+y)ⁿ = Σ(k=0..n) C(n,k)·xⁿ⁻ᵏ·yᵏ\n\nSpezialfälle:\n  x=y=1:   Σ C(n,k) = 2ⁿ\n  x=1,y=−1: Σ (−1)ᵏC(n,k) = 0'}
       </>
     ),
+    plain: 'C(n,k) = n!/(k!·(n−k)!). Eigenschaften: C(n,0)=C(n,n)=1; C(n,1)=n; C(n,k)=C(n,n−k) (Symmetrie); C(n,k)+C(n,k+1)=C(n+1,k+1) (Pascal). Binomischer Lehrsatz: (x+y)ⁿ = Σ C(n,k)·xⁿ⁻ᵏ·yᵏ. Spezialfall x=y=1: Σ C(n,k) = 2ⁿ.',
   },
 
   // Blatt 3–4 – Vollständige Induktion
@@ -247,6 +262,7 @@ Typische Muster:
   Summenformel: Sₙ₊₁ = Sₙ + (n+1)-ter Term
   Ungleichung:  an+1 mit aⁿ ≥ (IV) abschätzen
   Teilbarkeit:  aⁿ⁺¹ − c = (aⁿ − c)·a + c(a−1)`,
+    plain: 'Beweis von A(n) für alle n ≥ n₀: IA (Induktionsanfang): A(n₀) direkt prüfen. IS (Induktionsschritt n → n+1): Annahme A(n) (IV), zu zeigen A(n+1) → A(n+1)-Term mit A(n)-Term verknüpfen, IV einsetzen, A(n+1) folgern.',
   },
 
   // Blatt 4 – Zahlbereiche
@@ -269,6 +285,7 @@ Beispiele:
   (0,1]: sup=1=max, inf=0, kein min
   (0,1):  sup=1, kein max, inf=0, kein min
   {1/n : n∈ℕ*}: sup=1=max, inf=0, kein min`,
+    plain: 'sup(M): kleinste obere Schranke; max(M): größtes Element (= sup falls sup ∈ M). inf(M): größte untere Schranke; min(M): kleinstes Element (= inf falls inf ∈ M). sup/inf existieren immer (falls beschränkt), max/min nur wenn die Schranke angenommen wird. Beispiel (0,1]: sup=1=max, inf=0, kein min.',
   },
   {
     title: 'Betragsungleichungen & Intervalle',
@@ -289,6 +306,7 @@ Bruch-Ungleichungen (Fallunterscheidung!):
 Intervallnotation:
   [a,b]: a ≤ x ≤ b  (Randpunkte ∈)
   (a,b): a < x < b  (Randpunkte ∉)`,
+    plain: 'Betrag: |x| ≥ 0, |x| = 0 ⟺ x = 0, |x·y| = |x|·|y|, |x+y| ≤ |x|+|y| (Dreiecksungleichung). |A| ≤ c (c>0): −c ≤ A ≤ c. |A| ≥ c (c>0): A ≥ c oder A ≤ −c. Intervalle: [a,b] Randpunkte ∈, (a,b) Randpunkte ∉.',
   },
 
   // Blatt 5 – Funktionen
@@ -309,6 +327,7 @@ Achtung: f⁻¹(N) ist die Urbildmenge,
 Komposition: (g∘f)(x) = g(f(x))
   g∘f injektiv ⟸ f und g injektiv
   g∘f surjektiv ⟸ f und g surjektiv`,
+    plain: 'f : A → B injektiv: x₁ ≠ x₂ ⟹ f(x₁) ≠ f(x₂). surjektiv: f(A) = B (jedes y hat ein Urbild). bijektiv: injektiv + surjektiv. Bild f(M) = {f(x) : x ∈ M}; Urbild f⁻¹(N) = {x ∈ A : f(x) ∈ N}. Komposition: (g∘f)(x) = g(f(x)).',
   },
 
   // Blatt 7–9 – Folgen & Reihen
@@ -323,6 +342,7 @@ Komposition: (g∘f)(x) = g(f(x))
         <Frac n="1" d="n" />{')ⁿ → e\n\nDivergenzarten:\n  bestimmt divergent: lim = ±∞\n  unbestimmt: kein Grenzwert (z. B. (−1)ⁿ)'}
       </>
     ),
+    plain: '(aₙ) konvergiert gegen a, wenn ∀ε>0 ∃N ∀n≥N: |aₙ−a| < ε. Grenzwertregeln: aₙ+bₙ → a+b; aₙ·bₙ → a·b; aₙ/bₙ → a/b (b ≠ 0). Wichtige Grenzwerte: 1/n → 0; qⁿ → 0 (|q|<1); (1 + 1/n)ⁿ → e. Divergenz: bestimmt (±∞) oder unbestimmt (z. B. (−1)ⁿ).',
   },
   {
     title: 'Reihen & Konvergenzkriterien',
@@ -333,6 +353,7 @@ Komposition: (g∘f)(x) = g(f(x))
         <Frac n="|aₙ₊₁|" d="|aₙ|" />{' → L\n    L < 1: konvergent;  L > 1: divergent\n  Majorante: |aₙ| ≤ bₙ,  Σbₙ konv. → Σaₙ konv.\n  Leibniz (alternierend): (−1)ⁿbₙ konv.\n    falls bₙ≥0, bₙ+₁≤bₙ, bₙ→0'}
       </>
     ),
+    plain: 'Reihe: Sₙ = Σ(k=0..n) aₖ, S = lim Sₙ. Geometrische Reihe: Σ(k=0..∞) qᵏ = 1/(1−q) für |q| < 1. Notwendige Bedingung: aₙ → 0 (Umkehrung gilt nicht!). Quotientenkriterium: |aₙ₊₁|/|aₙ| → L; L<1 konvergent, L>1 divergent. Majorante und Leibniz (alternierend).',
   },
 
   // Blatt 11 – Stetigkeit
@@ -356,6 +377,7 @@ Wichtige Sätze:
 
 Summe, Produkt, Komposition stetiger Funktionen
 sind wieder stetig.`,
+    plain: 'f stetig in x₀: lim(x→x₀) f(x) = f(x₀). Folgenkriterium: f stetig ⟺ für jede Folge xₙ→x₀ gilt f(xₙ)→f(x₀). Zwischenwertsatz: f stetig auf [a,b] ⟹ jeder Wert zwischen f(a) und f(b) wird angenommen. Extremwertsatz: f nimmt Max und Min an. Summe/Produkt/Komposition stetiger Funktionen sind stetig.',
   },
 
   // Blatt 12 – Spezielle Funktionen
@@ -369,6 +391,7 @@ sind wieder stetig.`,
         {'\n  (sin x)′ = cos x,  (cos x)′ = −sin x'}
       </>
     ),
+    plain: 'exp(x) = eˣ, Umkehrfunktion ln(x). eˣ⁺ʸ = eˣ·eʸ; (eˣ)ʸ = eˣ·ʸ; e⁰ = 1. Allgemeine Potenz (a>0): aˣ = eˣ·ln a. Logarithmus: ln(x·y) = ln x + ln y; ln(xⁿ) = n·ln x; logₐ(x) = ln x / ln a. Ableitungen: (eˣ)′ = eˣ; (ln x)′ = 1/x; (sin x)′ = cos x.',
   },
 
   // Blatt 13 – Differentiation
@@ -385,5 +408,6 @@ sind wieder stetig.`,
         {'   (Quotientenregel)\n  (g∘f)′(x) = g′(f(x))·f′(x)   (Kettenregel)'}
       </>
     ),
+    plain: 'Differenzenquotient: f′(x₀) = lim(h→0) (f(x₀+h)−f(x₀))/h. Grundfunktionen: (xⁿ)′ = n·xⁿ⁻¹; (eˣ)′ = eˣ; (ln x)′ = 1/x. Regeln: (f+g)′ = f′+g′; (c·f)′ = c·f′; (f·g)′ = f′·g + f·g′ (Produktregel); (f/g)′ = (f′·g − f·g′)/g² (Quotientenregel); (g∘f)′ = g′(f(x))·f′(x) (Kettenregel).',
   },
 ]

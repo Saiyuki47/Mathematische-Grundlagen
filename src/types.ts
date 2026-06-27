@@ -5,6 +5,8 @@ export type Difficulty = 'easy' | 'med' | 'hard'
 export interface CheatCard {
   title: string
   content: ReactNode
+  /** Plain-Text-Fassung des Inhalts (Unicode-Mathe) für Karteikarten und Suche. */
+  plain?: string
 }
 
 export interface GraphLine {

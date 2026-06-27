@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
+import { useDoneTracker } from 'lernseiten-ui'
 import { uebungsblaetter } from '../data/uebungsblaetter'
 import LineGraph from './LineGraph'
 
 export default function Uebungsblaetter() {
   const [selectedId, setSelectedId] = useState(uebungsblaetter[0]?.id ?? '')
   const [open, setOpen] = useState<Set<string>>(new Set())
+  const { done, toggle: toggleDone, ratio } = useDoneTracker()
 
   const blatt = uebungsblaetter.find(b => b.id === selectedId)
 
@@ -16,6 +18,12 @@ export default function Uebungsblaetter() {
       return next
     })
   }
+
+  const taskKeys = blatt
+    ? blatt.aufgaben.flatMap(a => a.subaufgaben.map(sub => `${blatt.id}-${a.id}-${sub.letter}`))
+    : []
+  const verstanden = taskKeys.filter(k => done.has(k)).length
+  const pct = Math.round(ratio(taskKeys) * 100)
 
   return (
     <div>
@@ -46,6 +54,16 @@ export default function Uebungsblaetter() {
             {blatt.beschreibung && (
               <p className="ub-desc">{blatt.beschreibung}</p>
             )}
+            {taskKeys.length > 0 && (
+              <>
+                <div className="progress-wrap" style={{ marginTop: '0.75rem' }}>
+                  <div className="progress-bar" style={{ '--bar-w': `${pct}%` } as CSSProperties} />
+                </div>
+                <p className="ub-desc" style={{ marginTop: '0.4rem' }}>
+                  {verstanden} / {taskKeys.length} Teilaufgaben verstanden ({pct}%)
+                </p>
+              </>
+            )}
           </div>
 
           {blatt.aufgaben.map(aufgabe => (
@@ -55,10 +73,12 @@ export default function Uebungsblaetter() {
 
               <div className="sub-aufgaben">
                 {aufgabe.subaufgaben.map(sub => {
-                  const hintKey = `${blatt.id}-${aufgabe.id}-${sub.letter}-hint`
-                  const solKey = `${blatt.id}-${aufgabe.id}-${sub.letter}-sol`
+                  const baseKey = `${blatt.id}-${aufgabe.id}-${sub.letter}`
+                  const hintKey = `${baseKey}-hint`
+                  const solKey = `${baseKey}-sol`
                   const hintOpen = open.has(hintKey)
                   const solOpen = open.has(solKey)
+                  const isDone = done.has(baseKey)
 
                   return (
                     <div key={sub.letter} className="sub-aufgabe">
@@ -84,6 +104,14 @@ export default function Uebungsblaetter() {
                             onClick={() => toggle(solKey)}
                           >
                             {solOpen ? '▼ Lösung verbergen' : '▶ Lösung anzeigen'}
+                          </button>
+                          <button
+                            type="button"
+                            className="toggle-btn"
+                            onClick={() => toggleDone(baseKey)}
+                            style={isDone ? { color: 'var(--green, #2ea043)', borderColor: 'var(--green, #2ea043)' } : undefined}
+                          >
+                            {isDone ? '✓ Verstanden' : '○ Als verstanden markieren'}
                           </button>
                         </div>
                         {hintOpen && (
