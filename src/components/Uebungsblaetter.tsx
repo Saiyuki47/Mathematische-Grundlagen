@@ -1,12 +1,16 @@
 import { useState, type CSSProperties } from 'react'
-import { useDoneTracker } from 'lernseiten-ui'
+import { useDoneTracker, useTaskDeepLink, getHashDetail } from 'lernseiten-ui'
 import { uebungsblaetter } from '../data/uebungsblaetter'
 import LineGraph from './LineGraph'
 
 export default function Uebungsblaetter() {
-  const [selectedId, setSelectedId] = useState(uebungsblaetter[0]?.id ?? '')
+  const [selectedId, setSelectedId] = useState(() => {
+    const b = getHashDetail().blatt
+    return b && uebungsblaetter.some(x => x.id === b) ? b : (uebungsblaetter[0]?.id ?? '')
+  })
   const [open, setOpen] = useState<Set<string>>(new Set())
   const { done, toggle: toggleDone, ratio } = useDoneTracker()
+  const listRef = useTaskDeepLink<HTMLDivElement>(selectedId)
 
   const blatt = uebungsblaetter.find(b => b.id === selectedId)
 
@@ -66,8 +70,9 @@ export default function Uebungsblaetter() {
             )}
           </div>
 
-          {blatt.aufgaben.map(aufgabe => (
-            <div key={aufgabe.id} className="card">
+          <div ref={listRef}>
+            {blatt.aufgaben.map(aufgabe => (
+            <div key={aufgabe.id} className="card" data-aufgabe={String(aufgabe.nr)}>
               <p className="ub-task-nr">Aufgabe {aufgabe.nr}</p>
               <p className="q-title">{aufgabe.title}</p>
 
@@ -154,7 +159,8 @@ export default function Uebungsblaetter() {
                 })}
               </div>
             </div>
-          ))}
+            ))}
+          </div>
         </>
       )}
     </div>
