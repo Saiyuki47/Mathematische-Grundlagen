@@ -9,6 +9,22 @@ export interface CheatCard {
   plain?: string
 }
 
+/** Eine aufklappbare Beispielgruppe (ein Szenario, mehrere durchgerechnete Beispiele). */
+export interface ReferenzBeispielGruppe {
+  szenario: string
+  beispiele: string[]
+}
+
+/** Eine Referenz-Karte = ein Thema, von Grund auf erklärt (Markdown-lite + LaTeX). */
+export interface ReferenzKarte {
+  /** Stabiler kebab-Slug für Inhaltsverzeichnis + Deep-Link (#referenz/<id>). */
+  id?: string
+  titel: string
+  inhalt: string
+  /** Pro Szenario aufklappbare Beispiele (je 3 durchgerechnete). */
+  beispiele?: ReferenzBeispielGruppe[]
+}
+
 export interface GraphLine {
   m: number       // slope
   b: number       // y-intercept
