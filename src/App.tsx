@@ -1,15 +1,18 @@
 import Header from './components/Header'
 import Tabs from './components/Tabs'
 import Cheatsheet from './components/Cheatsheet'
+import Themen from './components/Themen'
+import Hilfsmittel from './components/Hilfsmittel'
+import Folien from './components/Folien'
 import Uebungsblaetter from './components/Uebungsblaetter'
 import { Quiz, Flashcards, GlobalSearch, useTheme, useHashTab } from 'lernseiten-ui'
 import { quizFragen } from './data/quiz'
 import { karteikarten } from './data/karteikarten'
 import { searchIndex } from './data/searchIndex'
 
-export type TabId = 'uebung' | 'cheat' | 'quiz' | 'karten'
+export type TabId = 'uebung' | 'themen' | 'referenz' | 'hilfsmittel' | 'folien' | 'quiz' | 'karten'
 
-const TABS: readonly TabId[] = ['uebung', 'cheat', 'quiz', 'karten']
+const TABS: readonly TabId[] = ['uebung', 'themen', 'referenz', 'hilfsmittel', 'folien', 'quiz', 'karten']
 
 function App() {
   const [activeTab, setActiveTab] = useHashTab(TABS, 'uebung')
@@ -24,7 +27,10 @@ function App() {
           <GlobalSearch index={searchIndex} onNavigate={t => setActiveTab(t as TabId)} />
         </div>
         {activeTab === 'uebung' && <Uebungsblaetter />}
-        {activeTab === 'cheat' && <Cheatsheet />}
+        {activeTab === 'themen' && <Themen />}
+        {activeTab === 'referenz' && <Cheatsheet />}
+        {activeTab === 'hilfsmittel' && <Hilfsmittel />}
+        {activeTab === 'folien' && <Folien />}
         {activeTab === 'quiz' && <Quiz fragen={quizFragen} />}
         {activeTab === 'karten' && <Flashcards cards={karteikarten} />}
       </div>

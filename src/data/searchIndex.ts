@@ -5,7 +5,7 @@ import { uebungsblaetter } from './uebungsblaetter'
 
 // Such-Index aus den Inhalten der Seite. Jeder Treffer kennt seinen Ziel-Tab,
 // damit die globale Suche direkt dorthin springen kann. tab MUSS eine gültige
-// TabId sein ('uebung' | 'cheat' | 'quiz'). Aufgaben-/Lösungstexte sind teils
+// TabId sein ('uebung' | 'referenz' | 'quiz'). Aufgaben-/Lösungstexte sind teils
 // JSX, daher werden nur die reinen Stringfelder (Titel, Frage, Formel) indiziert.
 export const searchIndex: SearchItem[] = [
   ...uebungsblaetter.flatMap(b =>
@@ -19,8 +19,8 @@ export const searchIndex: SearchItem[] = [
   ...cheatCards.map(c => ({
     label: c.title,
     snippet: c.plain,
-    tab: 'cheat',
-    keywords: 'Formelsammlung',
+    tab: 'referenz',
+    keywords: 'Formelsammlung Referenz',
   })),
   ...quizFragen.map(q => ({
     label: q.frage,

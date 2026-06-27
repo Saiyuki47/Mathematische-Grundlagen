@@ -407,6 +407,78 @@ header > :first-child { flex: 1; }
 }
 .schema-no-data-hint { font-size: 11px; color: var(--text3); }
 
+/* THEMEN */
+.schema-data-name .thema-blatt {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  color: var(--blue);
+  background: var(--blue-dim);
+  border: 1px solid rgba(77,159,255,0.25);
+  padding: 1px 7px;
+  border-radius: 4px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.thema-detail { margin-top: 12px; }
+.thema-punkte {
+  margin: 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+.thema-punkte li {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.9;
+}
+
+/* FOLIEN */
+.folien-gruppe-titel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.folien-liste { display: flex; flex-direction: column; gap: 10px; }
+.folien-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.folien-item--video { align-items: flex-start; }
+.folien-badge {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.folien-badge--pdf { background: var(--red-dim); color: var(--red); border: 1px solid rgba(229,83,75,0.25); }
+.folien-badge--video { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(77,159,255,0.25); }
+.folien-badge--bild { background: var(--green-dim); color: var(--green); border: 1px solid rgba(62,207,142,0.25); }
+.folien-badge--sonstig { background: var(--bg3); color: var(--text3); border: 1px solid var(--border2); }
+.folien-link {
+  font-size: 13px;
+  color: var(--blue);
+  text-decoration: none;
+  word-break: break-word;
+}
+.folien-link:hover { text-decoration: underline; }
+.folien-name { font-size: 13px; color: var(--text2); word-break: break-word; }
+.folien-item--video video {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-top: 4px;
+}
+
+/* HILFSMITTEL */
+.fs-empty { font-size: 14px; color: var(--text2); line-height: 1.8; }
+
 /* RESPONSIVE */
 @media (max-width: 600px) {
   header { padding: 1rem; }
