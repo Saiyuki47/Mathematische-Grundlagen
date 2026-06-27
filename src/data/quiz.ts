@@ -1,4 +1,4 @@
-import type { QuizFrage } from '../types'
+import type { QuizFrage } from 'lernseiten-ui'
 
 // Quizfragen für "Mathematische Grundlagen".
 // Inhalte aus den Übungsblättern 0–13 (Probeklausuren/Klausuren sind nicht
