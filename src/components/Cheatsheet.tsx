@@ -1,6 +1,5 @@
-import { Referenz, type ReferenzKarte } from 'lernseiten-ui'
+import { Referenz, MathText, type ReferenzKarte } from 'lernseiten-ui'
 import { referenzKarten } from '../data/referenz'
-import MathText from './MathText'
 
 // Slug aus dem Titel (LaTeX entfernt) – Fallback, falls eine Karte kein
 // explizites `id` hat. Stabil genug für das Inhaltsverzeichnis + Deep-Links.
