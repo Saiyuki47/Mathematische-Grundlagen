@@ -910,7 +910,7 @@ Nullstelle: 0 = −x + 3 → x = 3 → (3, 0)`}</pre>
             </ul>,
             <p>Selbstkontrolle: setze x=0 (→ y=1) und x=1 (→ y=−1) ein und prüfe die Punkte; die Nullstelle x=1/2 in die Gleichung einsetzen ergibt y=0. Frage: Was bewirkt das negative Vorzeichen von m für die Richtung, und wie ändert |m|=2 die Steilheit gegenüber m=−½?</p>,
           ),
-          solution: <>'Gerade fällt steil nach rechts. Nullstelle bei x = '<Frac n="1" d="2" />{'.'}</>,
+          solution: <>{'Gerade fällt steil nach rechts. Nullstelle bei x = '}<Frac n="1" d="2" />{'.'}</>,
           graph: {
             lines: [{ m: -2, b: 1, label: 'y = −2x + 1' }],
             xMin: -1, xMax: 2, yMin: -2, yMax: 4,
