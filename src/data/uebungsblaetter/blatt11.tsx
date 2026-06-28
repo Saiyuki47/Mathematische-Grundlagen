@@ -11,6 +11,7 @@ export const blatt11: MatheBlatt = {
       id: 'b11a1',
       nr: 1,
       title: 'Stetigkeit in ℝ prüfen',
+      referenz: ['stetigkeit'],
       subaufgaben: [
         {
           letter: 'a',
@@ -68,6 +69,7 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
       id: 'b11a2',
       nr: 2,
       title: 'Stetigkeit von f, g, h (Wenn noch Zeit ist)',
+      referenz: ['stetigkeit'],
       subaufgaben: [
         {
           letter: 'a',
@@ -98,6 +100,7 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
       id: 'b11a3',
       nr: 3,
       title: 'Stetige Fortsetzbarkeit — c bestimmen',
+      referenz: ['stetigkeit', 'funktionsgrenzwerte'],
       subaufgaben: [
         {
           letter: 'a',
@@ -206,6 +209,7 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
       id: 'b11a4',
       nr: 4,
       title: 'Zwischenwertsatz und Bisektionsverfahren',
+      referenz: ['stetigkeit'],
       subaufgaben: [
         {
           letter: 'a',
@@ -252,6 +256,7 @@ Argument von √ ist immer ≥ 0 (Betrag) → keine Einschränkung.
       id: 'b11a5',
       nr: 5,
       title: 'Punktweise Konvergenz von fₙ(x) = xⁿ (Wenn noch Zeit ist)',
+      referenz: ['folgen-konvergenz', 'stetigkeit'],
       subaufgaben: [
         {
           letter: 'a',

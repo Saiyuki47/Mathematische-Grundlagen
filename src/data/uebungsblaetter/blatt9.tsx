@@ -11,6 +11,7 @@ export const blatt9: MatheBlatt = {
       id: 'b9a1',
       nr: 1,
       title: 'Grenzwerte geometrischer Reihen',
+      referenz: ['reihen-konvergenz', 'geometrische-summenformel'],
       subaufgaben: [
         {
           letter: 'a',
@@ -80,6 +81,7 @@ export const blatt9: MatheBlatt = {
       id: 'b9a2',
       nr: 2,
       title: 'Reihen auf Konvergenz prüfen',
+      referenz: ['reihen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -185,6 +187,7 @@ export const blatt9: MatheBlatt = {
       id: 'b9a3',
       nr: 3,
       title: 'Weitere Reihen auf Konvergenz prüfen',
+      referenz: ['reihen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -299,6 +302,7 @@ export const blatt9: MatheBlatt = {
       id: 'b9a4',
       nr: 4,
       title: 'Rekursive Folge: x₀=1, xₙ₊₁=√(2+xₙ)',
+      referenz: ['rekursive-folgen'],
       subaufgaben: [
         {
           letter: 'a',
@@ -382,6 +386,7 @@ export const blatt9: MatheBlatt = {
       id: 'b9a5',
       nr: 5,
       title: 'Polynomdivisionen (wenn noch Zeit ist)',
+      referenz: ['polynomdivision'],
       subaufgaben: [
         {
           letter: 'a',

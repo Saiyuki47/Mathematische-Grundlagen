@@ -10,6 +10,7 @@ export const blatt6: MatheBlatt = {
       id: 'b6a1',
       nr: 1,
       title: 'Unendliche Mengen und Abzählbarkeit (Falls noch nicht in der Vorwoche besprochen …)',
+      referenz: ['abzaehlbarkeit'],
       subaufgaben: [
         {
           letter: 'a',
@@ -68,6 +69,7 @@ export const blatt6: MatheBlatt = {
       id: 'b6a2',
       nr: 2,
       title: 'Kartesisches Produkt und Autonummern',
+      referenz: ['kombinatorik'],
       subaufgaben: [
         {
           letter: 'a',
@@ -127,6 +129,7 @@ export const blatt6: MatheBlatt = {
       id: 'b6a3',
       nr: 3,
       title: 'Dualzahlen und Passwörter',
+      referenz: ['kombinatorik'],
       subaufgaben: [
         {
           letter: 'a',
@@ -216,6 +219,7 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
       id: 'b6a4',
       nr: 4,
       title: 'Sitzplatzverteilung im Bus',
+      referenz: ['kombinatorik'],
       subaufgaben: [
         {
           letter: 'a',
@@ -248,6 +252,7 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
       id: 'b6a5',
       nr: 5,
       title: 'Spatzen auf Telegraphenleitungen',
+      referenz: ['kombinatorik'],
       subaufgaben: [
         {
           letter: 'a',
@@ -284,6 +289,7 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
       id: 'b6a6',
       nr: 6,
       title: 'Wagenfolgen im Zug',
+      referenz: ['kombinatorik'],
       subaufgaben: [
         {
           letter: 'a',
@@ -316,6 +322,7 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
       id: 'b6a7',
       nr: 7,
       title: 'Anagramme',
+      referenz: ['kombinatorik'],
       subaufgaben: [
         {
           letter: 'a',
@@ -376,6 +383,7 @@ Mindestens eine gerade: 10 000 − 625 = 9 375`}</pre>
       id: 'b6a8',
       nr: 8,
       title: 'Gitterwege (Wenn noch Zeit ist …)',
+      referenz: ['kombinatorik', 'binomialkoeffizienten'],
       subaufgaben: [
         {
           letter: 'a',

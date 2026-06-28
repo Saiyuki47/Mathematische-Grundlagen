@@ -11,6 +11,7 @@ export const blatt10: MatheBlatt = {
       id: 'b10a1',
       nr: 1,
       title: 'Reihen auf Konvergenz untersuchen',
+      referenz: ['reihen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -124,6 +125,7 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
       id: 'b10a2',
       nr: 2,
       title: 'Grenzwerte bestimmen',
+      referenz: ['funktionsgrenzwerte'],
       subaufgaben: [
         {
           letter: 'a',
@@ -190,6 +192,7 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
       id: 'b10a3',
       nr: 3,
       title: 'Grenzwerte und Stetigkeit der Funktion h',
+      referenz: ['funktionsgrenzwerte', 'stetigkeit'],
       subaufgaben: [
         {
           letter: 'a',
@@ -230,6 +233,7 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
       id: 'b10a4',
       nr: 4,
       title: 'Grenzwerte und Stetigkeit von f',
+      referenz: ['funktionsgrenzwerte', 'stetigkeit'],
       subaufgaben: [
         {
           letter: 'a',
@@ -273,6 +277,7 @@ aₖ pendelt zwischen −1 und +1 → kein Grenzwert
       id: 'b10a5',
       nr: 5,
       title: 'Definitionsbereich und Asymptotik',
+      referenz: ['funktionsgrenzwerte', 'polynomdivision'],
       subaufgaben: [
         {
           letter: 'a',
@@ -358,6 +363,7 @@ Dᶠ = ℝ \\ {−1, 1}`}</pre>
       id: 'b10a6',
       nr: 6,
       title: 'O-Notation (Wenn noch Zeit ist)',
+      referenz: ['landau-notation'],
       subaufgaben: [
         {
           letter: 'a',

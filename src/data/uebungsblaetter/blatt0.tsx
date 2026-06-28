@@ -266,6 +266,7 @@ Ergebnis:        −x² + (−3x − x) + 6 = −x² − 4x + 6`}</pre>
       id: 'a2',
       nr: 2,
       title: 'Ausklammern aus b(a − b) + b − a',
+      referenz: ['ausklammern'],
       subaufgaben: [
         {
           letter: 'a',
@@ -357,6 +358,7 @@ Probe: −1 · (−3x + 2) = 3x − 2 ✓`}</pre>
       id: 'a3',
       nr: 3,
       title: 'Kürzen (a, b, c, d, k ≠ 0)',
+      referenz: ['kuerzen', 'binomische-formeln'],
       subaufgaben: [
         {
           letter: 'a',
@@ -591,6 +593,7 @@ Faktor (1−k+k²) ≠  (1+k²)  → kein Match`}</pre>
       id: 'a4',
       nr: 4,
       title: 'Wurzeln',
+      referenz: ['wurzelregeln'],
       subaufgaben: [
         {
           letter: 'a',
@@ -695,6 +698,7 @@ Für 1/(√3+√5):
       id: 'a5',
       nr: 5,
       title: 'Geraden skizzieren',
+      referenz: ['geradengleichung'],
       subaufgaben: [
         {
           letter: 'a',
@@ -868,6 +872,7 @@ Schnittpunkt: (1, 1)`}</pre>
       id: 'a6',
       nr: 6,
       title: 'Geradengleichungen bestimmen',
+      referenz: ['geradengleichung'],
       subaufgaben: [
         {
           letter: 'a',

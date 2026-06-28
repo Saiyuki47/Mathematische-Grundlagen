@@ -11,6 +11,7 @@ export const blatt3: MatheBlatt = {
       id: 'b3a1',
       nr: 1,
       title: 'Summenzeichen',
+      referenz: ['summen-produktzeichen'],
       subaufgaben: [
         {
           letter: 'a',
@@ -107,6 +108,7 @@ k=3: 2³ = 8 ✓`}</pre>
       id: 'b3a2',
       nr: 2,
       title: 'Identitäten mit dem Binomischen Lehrsatz',
+      referenz: ['binomialkoeffizienten'],
       subaufgaben: [
         {
           letter: 'a',
@@ -168,6 +170,7 @@ k=3: 2³ = 8 ✓`}</pre>
       id: 'b3a3',
       nr: 3,
       title: 'Vollständige Induktion',
+      referenz: ['vollstaendige-induktion'],
       subaufgaben: [
         {
           letter: 'a',
@@ -272,6 +275,7 @@ k=3: 2³ = 8 ✓`}</pre>
       id: 'b3a4',
       nr: 4,
       title: 'Potenzmenge (Knobelaufgabe)',
+      referenz: ['vollstaendige-induktion', 'de-morgan-potenzmenge'],
       subaufgaben: [
         {
           letter: 'a',
@@ -305,6 +309,7 @@ k=3: 2³ = 8 ✓`}</pre>
       id: 'b3a5',
       nr: 5,
       title: 'Identitäten der Binomialkoeffizienten',
+      referenz: ['binomialkoeffizienten'],
       subaufgaben: [
         {
           letter: 'a',

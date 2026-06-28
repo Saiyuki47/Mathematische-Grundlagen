@@ -10,6 +10,7 @@ export const blatt2: MatheBlatt = {
       id: 'b2a1',
       nr: 1,
       title: 'Wahrheitstafel',
+      referenz: ['logik-operatoren'],
       subaufgaben: [
         {
           letter: 'a',
@@ -52,6 +53,7 @@ export const blatt2: MatheBlatt = {
       id: 'b2a2',
       nr: 2,
       title: 'Aussagen formulieren (⇒, ⟸, ⟺)',
+      referenz: ['logik-operatoren'],
       subaufgaben: [
         {
           letter: 'a',
@@ -146,6 +148,7 @@ aber nicht durch 4 teilbar.`}</pre>
       id: 'b2a3',
       nr: 3,
       title: 'Äquivalente Aussagen zu einer Implikation',
+      referenz: ['logik-operatoren'],
       subaufgaben: [
         {
           letter: 'a',
@@ -264,6 +267,7 @@ P ⇒ Q ≇ ¬P ⇒ ¬Q  (Inverse, nicht äquivalent ✗)`}</pre>
       id: 'b2a4',
       nr: 4,
       title: 'Direkter Beweis: A(n) ⇒ B(n) ∀n',
+      referenz: ['logik-beweise'],
       subaufgaben: [
         {
           letter: 'a',
@@ -300,6 +304,7 @@ n gerade   ⟺ ∃k ∈ ℕ: n = 2k`}</pre>
       id: 'b2a5',
       nr: 5,
       title: 'Widerspruchsbeweis',
+      referenz: ['logik-beweise'],
       subaufgaben: [
         {
           letter: 'a',
@@ -337,6 +342,7 @@ n gerade   ⟺ ∃k ∈ ℕ: n = 2k`}</pre>
       id: 'b2a6',
       nr: 6,
       title: 'Logische Ausdrücke vereinfachen',
+      referenz: ['logik-operatoren'],
       subaufgaben: [
         {
           letter: 'a',

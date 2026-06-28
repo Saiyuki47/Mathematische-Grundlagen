@@ -10,6 +10,7 @@ export const blatt1: MatheBlatt = {
       id: 'b1a1',
       nr: 1,
       title: 'Mengenschreibweisen',
+      referenz: ['mengen-grundbegriffe'],
       subaufgaben: [
         {
           letter: 'a',
@@ -86,6 +87,7 @@ a ∈ M     → falsch   (a selbst ist kein Element)
       id: 'b1a2',
       nr: 2,
       title: 'Mengenoperationen',
+      referenz: ['mengenoperationen'],
       subaufgaben: [
         {
           letter: 'a',
@@ -224,6 +226,7 @@ A ∪ Ā = {1,2,3,4,5} = G ✓`}</pre>
       id: 'b1a3',
       nr: 3,
       title: 'Mengendarstellung',
+      referenz: ['mengendarstellung'],
       subaufgaben: [
         {
           letter: 'a',
@@ -302,6 +305,7 @@ n=0: 4⁰=1,  n=1: 4¹=4,  n=2: 4²=16`}</pre>
       id: 'b1a4',
       nr: 4,
       title: 'Venn-Diagramme',
+      referenz: ['mengenoperationen'],
       subaufgaben: [
         {
           letter: 'a',
@@ -413,6 +417,7 @@ A ∪ (B∩C) = {1,2} ∪ {3} = {1,2,3}
       id: 'b1a5',
       nr: 5,
       title: 'Mengengleichheiten (optional)',
+      referenz: ['mengenoperationen', 'de-morgan-potenzmenge'],
       subaufgaben: [
         {
           letter: 'a',

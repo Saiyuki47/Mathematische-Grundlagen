@@ -11,6 +11,7 @@ export const blatt13: MatheBlatt = {
       id: 'b13a1',
       nr: 1,
       title: 'Ableitungen bestimmen',
+      referenz: ['ableitungsregeln'],
       subaufgaben: [
         {
           letter: 'a',
@@ -139,6 +140,7 @@ export const blatt13: MatheBlatt = {
       id: 'b13a2',
       nr: 2,
       title: 'Differenzierbarkeit in 0 prüfen',
+      referenz: ['ableitungsregeln'],
       subaufgaben: [
         {
           letter: 'a',
@@ -230,6 +232,7 @@ export const blatt13: MatheBlatt = {
       id: 'b13a3',
       nr: 3,
       title: 'Ableitung der Wurzelfunktion (Umkehrfunktionsregel)',
+      referenz: ['ableitungsregeln'],
       subaufgaben: [
         {
           letter: '',
@@ -268,6 +271,7 @@ export const blatt13: MatheBlatt = {
       id: 'b13a4',
       nr: 4,
       title: 'Potenzreihe und geometrische Reihe (Wenn noch Zeit ist)',
+      referenz: ['ableitungsregeln', 'reihen-konvergenz'],
       subaufgaben: [
         {
           letter: '',
@@ -330,6 +334,7 @@ export const blatt13: MatheBlatt = {
       id: 'b13a5',
       nr: 5,
       title: 'Allgemeine Potenz und Exponentialfunktion (Wenn noch Zeit ist)',
+      referenz: ['ableitungsregeln', 'exp-log'],
       subaufgaben: [
         {
           letter: 'a',
@@ -393,6 +398,7 @@ export const blatt13: MatheBlatt = {
       id: 'b13a6',
       nr: 6,
       title: 'Ableitung von tan und arctan (Wenn noch Zeit ist)',
+      referenz: ['ableitungsregeln'],
       subaufgaben: [
         {
           letter: 'a',

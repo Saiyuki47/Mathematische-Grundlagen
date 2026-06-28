@@ -11,6 +11,7 @@ export const blatt12: MatheBlatt = {
       id: 'b12a1',
       nr: 1,
       title: 'Funktionsgrenzwerte',
+      referenz: ['funktionsgrenzwerte'],
       subaufgaben: [
         {
           letter: 'a',
@@ -129,6 +130,7 @@ export const blatt12: MatheBlatt = {
       id: 'b12a2',
       nr: 2,
       title: 'Folgengrenzwerte',
+      referenz: ['folgen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -248,6 +250,7 @@ lim 1/ln(n) = 0 (da ln(n) → ∞).
       id: 'b12a3',
       nr: 3,
       title: 'Allgemeine Exponentialfunktion und ᵏ√k',
+      referenz: ['exp-log'],
       subaufgaben: [
         {
           letter: 'a',
@@ -307,6 +310,7 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
       id: 'b12a4',
       nr: 4,
       title: 'Rechenregeln für die allgemeine Exponentialfunktion',
+      referenz: ['exp-log', 'potenzregeln'],
       subaufgaben: [
         {
           letter: 'a',
@@ -404,6 +408,7 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
       id: 'b12a5',
       nr: 5,
       title: 'Logarithmuswerte berechnen',
+      referenz: ['exp-log'],
       subaufgaben: [
         {
           letter: 'a',
@@ -499,6 +504,7 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
       id: 'b12a6',
       nr: 6,
       title: 'Konvergenz der sin- und cos-Reihe (Wenn noch Zeit ist)',
+      referenz: ['reihen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',

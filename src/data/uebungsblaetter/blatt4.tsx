@@ -11,6 +11,7 @@ export const blatt4: MatheBlatt = {
       id: 'b4a1',
       nr: 1,
       title: 'Produktformel per Induktion',
+      referenz: ['vollstaendige-induktion', 'summen-produktzeichen'],
       subaufgaben: [
         {
           letter: 'a',
@@ -50,6 +51,7 @@ export const blatt4: MatheBlatt = {
       id: 'b4a2',
       nr: 2,
       title: 'Bernoulli\'sche Ungleichung',
+      referenz: ['vollstaendige-induktion'],
       subaufgaben: [
         {
           letter: 'a',
@@ -84,6 +86,7 @@ export const blatt4: MatheBlatt = {
       id: 'b4a3',
       nr: 3,
       title: 'Mengen als Intervalle',
+      referenz: ['betrag-intervalle'],
       subaufgaben: [
         {
           letter: 'a',
@@ -185,6 +188,7 @@ export const blatt4: MatheBlatt = {
       id: 'b4a4',
       nr: 4,
       title: 'Supremum, Infimum, Maximum, Minimum',
+      referenz: ['supremum-infimum'],
       subaufgaben: [
         {
           letter: 'a',
@@ -293,6 +297,7 @@ export const blatt4: MatheBlatt = {
       id: 'b4a5',
       nr: 5,
       title: 'Quantoren und y = x²',
+      referenz: ['logik-operatoren'],
       subaufgaben: [
         {
           letter: 'a',
@@ -433,6 +438,7 @@ Merkhilfe: In ∃y∀x ist y unabhängig von x zu wählen!`}</pre>
       id: 'b4a6',
       nr: 6,
       title: 'Euklidischer Algorithmus (Wenn noch Zeit ist)',
+      referenz: ['rekursive-folgen'],
       subaufgaben: [
         {
           letter: 'a',
@@ -509,6 +515,7 @@ Rückwärts:
       id: 'b4a7',
       nr: 7,
       title: 'Gleichheiten für Summen und Produkte (Wenn noch Zeit ist)',
+      referenz: ['summen-produktzeichen'],
       subaufgaben: [
         {
           letter: 'a',

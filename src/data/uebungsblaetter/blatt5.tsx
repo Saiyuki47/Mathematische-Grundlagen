@@ -10,6 +10,7 @@ export const blatt5: MatheBlatt = {
       id: 'b5a1',
       nr: 1,
       title: 'Graph einer Funktion',
+      referenz: ['funktionen-eigenschaften', 'relationen'],
       subaufgaben: [
         {
           letter: 'a',
@@ -98,6 +99,7 @@ export const blatt5: MatheBlatt = {
       id: 'b5a2',
       nr: 2,
       title: 'Bilder und Urbilder',
+      referenz: ['bild-urbild'],
       subaufgaben: [
         {
           letter: 'a',
@@ -136,6 +138,7 @@ export const blatt5: MatheBlatt = {
       id: 'b5a3',
       nr: 3,
       title: 'Injektivität, Surjektivität, Bijektivität',
+      referenz: ['funktionen-eigenschaften'],
       subaufgaben: [
         {
           letter: 'a',
@@ -273,6 +276,7 @@ Weder noch          | Kollision vorhanden UND Y nicht vollständig
       id: 'b5a4',
       nr: 4,
       title: 'Verkettung von Funktionen',
+      referenz: ['funktionen-eigenschaften'],
       subaufgaben: [
         {
           letter: 'a',
@@ -341,6 +345,7 @@ f∘g       | nein     | nein      | nein  ([0,1) → 1)`}</pre>
       id: 'b5a5',
       nr: 5,
       title: 'Eigenschaften von Relationen (Wenn noch Zeit ist ...)',
+      referenz: ['relationen'],
       subaufgaben: [
         {
           letter: 'a',
@@ -394,6 +399,7 @@ Ergebnis: R₁ (rechtstotal, linkseindeutig) ist keine Funktion
       id: 'b5a6',
       nr: 6,
       title: 'Abzählbarkeit (Wenn noch Zeit ist ...)',
+      referenz: ['abzaehlbarkeit'],
       subaufgaben: [
         {
           letter: 'a',

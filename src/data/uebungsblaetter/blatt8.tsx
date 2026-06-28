@@ -11,6 +11,7 @@ export const blatt8: MatheBlatt = {
       id: 'b8a1',
       nr: 1,
       title: 'Folgen mit lim xₙ = ∞ und lim yₙ = 0',
+      referenz: ['folgen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -117,6 +118,7 @@ export const blatt8: MatheBlatt = {
       id: 'b8a2',
       nr: 2,
       title: 'Grenzwerte von Folgen bestimmen',
+      referenz: ['folgen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -312,6 +314,7 @@ export const blatt8: MatheBlatt = {
       id: 'b8a3',
       nr: 3,
       title: 'Geometrische Reihe',
+      referenz: ['reihen-konvergenz', 'geometrische-summenformel'],
       subaufgaben: [
         {
           letter: 'a',
@@ -400,6 +403,7 @@ export const blatt8: MatheBlatt = {
       id: 'b8a4',
       nr: 4,
       title: 'Rekursive Folge: aₙ₊₁ = 2aₙ/(2+aₙ)',
+      referenz: ['rekursive-folgen'],
       subaufgaben: [
         {
           letter: 'a',
@@ -448,6 +452,7 @@ export const blatt8: MatheBlatt = {
       id: 'b8a5',
       nr: 5,
       title: 'Weitere Grenzwerte (wenn noch Zeit ist)',
+      referenz: ['folgen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -555,6 +560,7 @@ export const blatt8: MatheBlatt = {
       id: 'b8a6',
       nr: 6,
       title: 'Grenzwertsätze beweisen (wenn noch Zeit ist)',
+      referenz: ['folgen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',

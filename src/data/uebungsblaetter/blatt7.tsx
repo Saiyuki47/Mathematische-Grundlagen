@@ -11,6 +11,7 @@ export const blatt7: MatheBlatt = {
       id: 'b7a1',
       nr: 1,
       title: 'Abbildungsvorschriften und rekursive Folge',
+      referenz: ['rekursive-folgen', 'folgen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -89,6 +90,7 @@ export const blatt7: MatheBlatt = {
       id: 'b7a2',
       nr: 2,
       title: 'Konvergenz und Divergenz von Folgen',
+      referenz: ['folgen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -189,6 +191,7 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
       id: 'b7a3',
       nr: 3,
       title: 'Grenzwerte von Folgen',
+      referenz: ['folgen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -355,6 +358,7 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
       id: 'b7a4',
       nr: 4,
       title: 'Konvergenz mit ε-N-Definition (Wenn noch Zeit ist …)',
+      referenz: ['folgen-konvergenz'],
       subaufgaben: [
         {
           letter: 'a',
@@ -425,6 +429,7 @@ xₙ = n  →  divergiert gegen +∞`}</pre>
       id: 'b7a5',
       nr: 5,
       title: 'Geometrische Summenformel (Wenn noch Zeit ist …)',
+      referenz: ['geometrische-summenformel'],
       subaufgaben: [
         {
           letter: 'a',
