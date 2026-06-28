@@ -119,7 +119,7 @@ export default function Uebungsblaetter() {
                             <LineGraph data={sub.taskGraph} />
                           </div>
                         )}
-                        <div className="sub-actions">
+                        <div className="ub-hints-section">
                           <button
                             type="button"
                             className="toggle-btn toggle-btn--hint"
@@ -127,46 +127,38 @@ export default function Uebungsblaetter() {
                           >
                             {hintOpen ? '▼ Tipp verbergen' : '▶ Tipp anzeigen'}
                           </button>
-                          <button
-                            type="button"
-                            className="toggle-btn"
-                            onClick={() => toggle(solKey)}
-                          >
-                            {solOpen ? '▼ Lösung verbergen' : '▶ Lösung anzeigen'}
-                          </button>
-                          <button
-                            type="button"
-                            className="toggle-btn"
-                            onClick={() => toggleDone(baseKey)}
-                            style={isDone ? { color: 'var(--green, #2ea043)', borderColor: 'var(--green, #2ea043)' } : undefined}
-                          >
-                            {isDone ? '✓ Verstanden' : '○ Als verstanden markieren'}
-                          </button>
+                          {hintOpen && (
+                            <div className="hint-accordion">
+                              {sub.hint.map((section, idx) => {
+                                const sKey = `${hintKey}-${idx}`
+                                const sOpen = open.has(sKey)
+                                return (
+                                  <div key={section.title} className="hint-section">
+                                    <button
+                                      type="button"
+                                      className="hint-section-btn"
+                                      onClick={() => toggle(sKey)}
+                                    >
+                                      <span className="hint-section-icon">{section.icon}</span>
+                                      <span className="hint-section-title">{section.title}</span>
+                                      <span className={`hint-section-arrow${sOpen ? ' hint-section-arrow--open' : ''}`}>▶</span>
+                                    </button>
+                                    {sOpen && (
+                                      <div className="hint-section-body">{section.content}</div>
+                                    )}
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          )}
                         </div>
-                        {hintOpen && (
-                          <div className="hint-accordion">
-                            {sub.hint.map((section, idx) => {
-                              const sKey = `${hintKey}-${idx}`
-                              const sOpen = open.has(sKey)
-                              return (
-                                <div key={section.title} className="hint-section">
-                                  <button
-                                    type="button"
-                                    className="hint-section-btn"
-                                    onClick={() => toggle(sKey)}
-                                  >
-                                    <span className="hint-section-icon">{section.icon}</span>
-                                    <span className="hint-section-title">{section.title}</span>
-                                    <span className={`hint-section-arrow${sOpen ? ' hint-section-arrow--open' : ''}`}>▶</span>
-                                  </button>
-                                  {sOpen && (
-                                    <div className="hint-section-body">{section.content}</div>
-                                  )}
-                                </div>
-                              )
-                            })}
-                          </div>
-                        )}
+                        <button
+                          type="button"
+                          className="toggle-btn"
+                          onClick={() => toggle(solKey)}
+                        >
+                          {solOpen ? '▼ Lösung verbergen' : '▶ Lösung anzeigen'}
+                        </button>
                         {solOpen && (
                           <div className="solution-wrap">
                             <pre className="solution-block">{sub.solution}</pre>
@@ -177,6 +169,13 @@ export default function Uebungsblaetter() {
                             )}
                           </div>
                         )}
+                        <button
+                          type="button"
+                          className={`toggle-btn${isDone ? ' done' : ''}`}
+                          onClick={() => toggleDone(baseKey)}
+                        >
+                          {isDone ? '✓ Verstanden' : '○ Als verstanden markieren'}
+                        </button>
                       </div>
                     </div>
                   )
