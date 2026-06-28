@@ -67,6 +67,8 @@ export interface MatheAufgabe {
   nr: number
   title: string
   subaufgaben: MatheSubaufgabe[]
+  /** IDs der passenden Referenz-Themen → Deep-Links „📘 Referenz" (#referenz/<id>). */
+  referenz?: string[]
 }
 
 export interface MatheBlatt {

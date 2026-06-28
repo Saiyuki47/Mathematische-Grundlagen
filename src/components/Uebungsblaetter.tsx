@@ -1,7 +1,22 @@
 import { useState, type CSSProperties } from 'react'
 import { useDoneTracker, useTaskDeepLink, getHashDetail } from 'lernseiten-ui'
 import { uebungsblaetter } from '../data/uebungsblaetter'
+import { referenzTitelById } from '../data/referenz'
 import LineGraph from './LineGraph'
+
+const refLinksRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.4rem', margin: '0.5rem 0 0' }
+const refLinkStyle: CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '0.3rem',
+  fontSize: '0.8rem',
+  padding: '0.2rem 0.6rem',
+  border: '1px solid var(--blue, #2563eb)',
+  borderRadius: '999px',
+  color: 'var(--blue, #2563eb)',
+  textDecoration: 'none',
+  lineHeight: 1.3,
+}
 
 export default function Uebungsblaetter() {
   const [selectedId, setSelectedId] = useState(() => {
@@ -75,6 +90,15 @@ export default function Uebungsblaetter() {
             <div key={aufgabe.id} className="card" data-aufgabe={String(aufgabe.nr)}>
               <p className="ub-task-nr">Aufgabe {aufgabe.nr}</p>
               <p className="q-title">{aufgabe.title}</p>
+              {aufgabe.referenz && aufgabe.referenz.length > 0 && (
+                <div style={refLinksRow}>
+                  {aufgabe.referenz.map(rid => (
+                    <a key={rid} href={`#referenz/${rid}`} style={refLinkStyle}>
+                      📘 {referenzTitelById[rid] ?? rid}
+                    </a>
+                  ))}
+                </div>
+              )}
 
               <div className="sub-aufgaben">
                 {aufgabe.subaufgaben.map(sub => {
