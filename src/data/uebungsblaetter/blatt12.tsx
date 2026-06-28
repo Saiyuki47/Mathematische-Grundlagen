@@ -18,23 +18,43 @@ export const blatt12: MatheBlatt = {
           text: <>{'lim'}<sub>{'x→∞'}</sub>{' '}<Frac n="1" d="x" />{' cos('}<Frac n="1" d="x" />{')'}</>,
           hint: h(
             <>
-              <p>Der Ausdruck ist ein Produkt: <span className="hint-em">Nullfolge · stetige Funktion im Grenzpunkt</span>. Wenn f(x) → 0 und g stetig ist, gilt f(x)·g(f(x)) → 0·g(0).</p>
+              <p>Ein <span className="hint-em">Funktionsgrenzwert</span> lim(x→∞) … fragt: Welchem Wert nähert sich der Ausdruck, wenn x immer größer wird? Eine <span className="hint-em">Nullfolge</span> ist ein Ausdruck, der dabei gegen 0 geht — z. B. 1/x → 0, weil „1 geteilt durch etwas sehr Großes" winzig wird.</p>
+              <p>Zwei Rechenregeln, die man hier zusammensetzt:</p>
+              <ul>
+                <li><span className="hint-em">Stetigkeit erlaubt Vertauschen mit dem Grenzwert</span>: Ist g stetig, darf man den Grenzwert „ins Argument ziehen": lim g(u(x)) = g(lim u(x)). cos ist stetig, also lim cos(u) = cos(lim u).</li>
+                <li><span className="hint-em">Produktregel für Grenzwerte</span>: Existieren beide Grenzwerte, ist lim (a(x)·b(x)) = (lim a(x))·(lim b(x)).</li>
+              </ul>
+              <p>Außerdem ein Funktionswert, den man kennen muss: <span className="hint-em">cos(0) = 1</span> (der Kosinus hat bei 0 seinen Höchstwert). Achtung: nicht 0!</p>
             </>,
             <>
-              <ol>
-                <li>Bestimme lim(x→∞) 1/x</li>
-                <li>Nutze die Stetigkeit von cos: lim cos(f(x)) = cos(lim f(x))</li>
-                <li>Multipliziere die beiden Grenzwerte</li>
-              </ol>
+              <p>So berechnet man lim(x→∞) (1/x)·cos(1/x):</p>
+              <pre className="hint-code-block">{`Zerlege in zwei Faktoren  a(x)·b(x)  mit
+   a(x) = 1/x        b(x) = cos(1/x)
+
+1) Grenzwert des ersten Faktors:
+   lim(x→∞) 1/x = 0      (Nenner → ∞ ⇒ Bruch → 0)
+
+2) Grenzwert des zweiten Faktors (cos ist stetig,
+   Grenzwert ins Argument ziehen):
+   das Argument 1/x → 0, also
+   lim(x→∞) cos(1/x) = cos(lim 1/x) = cos(0) = 1
+
+3) Produktregel anwenden:
+   lim (1/x)·cos(1/x) = (lim 1/x)·(lim cos(1/x))
+                      = 0 · 1 = 0`}</pre>
+              <p>Der erste Faktor zieht das Produkt auf 0, der zweite ist ein harmloser endlicher Wert (1). 0 mal endlich = 0.</p>
             </>,
             <>
-              <p>Stetige Funktionen dürfen mit dem Grenzwert vertauscht werden: lim g(f(x)) = g(lim f(x)).</p>
+              <p>Anderes Beispiel: lim(x→∞) (1/x)·sin(1/x).</p>
+              <pre className="hint-code-block">{`1/x → 0;  sin stetig ⇒ sin(1/x) → sin(0) = 0
+Produkt: 0 · 0 = 0.
+(Hier gehen sogar beide Faktoren gegen 0.)`}</pre>
             </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> cos(1/x) für x → ∞ ohne Argument-Grenzwert auswerten → <strong>✅ Richtig:</strong> Zuerst 1/x → 0 erkennen, dann cos(1/x) → cos(0) per Stetigkeit</li>
-              <li><strong>❌ Falsch:</strong> cos(0) = 0 → <strong>✅ Richtig:</strong> cos(0) = 1 (der Cosinus hat sein Maximum bei 0)</li>
+              <li><strong>❌ Falsch:</strong> cos(1/x) für x → ∞ auswerten, ohne erst das Argument 1/x → 0 zu bestimmen → <strong>✅ Richtig:</strong> Zuerst 1/x → 0 erkennen, dann per Stetigkeit cos(1/x) → cos(0).</li>
+              <li><strong>❌ Falsch:</strong> cos(0) = 0 → <strong>✅ Richtig:</strong> cos(0) = 1 (Maximum des Kosinus liegt bei 0); nur sin(0) = 0.</li>
             </ul>,
-            <p>Ergibt sich 0·1 = 0?</p>,
+            <p>Selbst-Probe: Setze x = 1000: 1/1000 = 0,001 und cos(0,001) ≈ 0,9999995 ≈ 1, Produkt ≈ 0,001 → klein, Richtung 0. Frage: Welcher der beiden Faktoren ist die Nullfolge, welcher geht gegen den endlichen Wert 1, und warum ergibt 0 · 1 genau 0?</p>,
           ),
           solution: (
             <>
@@ -49,22 +69,38 @@ export const blatt12: MatheBlatt = {
           text: <>{'lim'}<sub>{'x→∞'}</sub>{' '}<Frac n="1" d="x" />{' cos(x)'}</>,
           hint: h(
             <>
-              <p>cos(x) ist <span className="hint-em">beschränkt</span>: cos(x) ∈ [−1, 1] für alle x ∈ ℝ. Das Produkt einer Nullfolge mit einer beschränkten Funktion ergibt 0.</p>
+              <p>Achtung — anders als bei (a)! Hier steht cos(<span className="hint-em">x</span>), nicht cos(1/x). Für x → ∞ <span className="hint-em">existiert lim cos(x) NICHT</span>: der Kosinus schwingt für immer zwischen −1 und 1 hin und her, er nähert sich keiner einzigen Zahl. Man darf hier also NICHT „cos ins Argument ziehen".</p>
+              <p>Rettung ist eine andere Regel. Eine Funktion heißt <span className="hint-em">beschränkt</span>, wenn ihre Werte nie über eine feste Grenze hinausgehen: für den Kosinus gilt −1 ≤ cos(x) ≤ 1, kurz |cos(x)| ≤ 1 für alle x.</p>
+              <p><span className="hint-em">Regel „Nullfolge · Beschränkte = Nullfolge"</span>: Geht a(x) → 0 und ist b(x) beschränkt (|b(x)| ≤ M), dann gilt a(x)·b(x) → 0. Begründung über den <span className="hint-em">Sandwichsatz</span> (Einschnürung): 0 ≤ |a·b| ≤ |a|·M, und |a|·M → 0 drückt |a·b| von oben gegen 0.</p>
             </>,
             <>
-              <ol>
-                <li>Stelle fest, dass cos(x) beschränkt ist (Schranke angeben)</li>
-                <li>Bestimme lim(x→∞) 1/x</li>
-                <li>Wende die Regel: beschränkte Funktion × Nullfolge = 0 an</li>
-              </ol>
+              <p>So berechnet man lim(x→∞) cos(x)/x:</p>
+              <pre className="hint-code-block">{`Schreibe als Produkt:  cos(x)/x = (1/x) · cos(x)
+   a(x) = 1/x   → Nullfolge (→ 0)
+   b(x) = cos(x) → beschränkt: |cos(x)| ≤ 1
+
+1) Beschränktheit festhalten: −1 ≤ cos(x) ≤ 1.
+
+2) Betrag abschätzen (Sandwich):
+   |cos(x)/x| = |cos(x)|/|x| ≤ 1/|x|
+   und 1/|x| → 0 für x → ∞.
+
+3) Da 0 ≤ |cos(x)/x| ≤ 1/|x| → 0, wird der
+   eingeklemmte Ausdruck ebenfalls 0:
+   lim(x→∞) cos(x)/x = 0.`}</pre>
+              <p>Der Trick: Man braucht lim cos(x) gar nicht (existiert nicht). Es genügt, dass cos(x) gefangen zwischen −1 und 1 bleibt, während 1/x alles auf 0 zieht.</p>
             </>,
             <>
-              <p>Sandwichsatz: |<Frac n="cos x" d="x" />| ≤ <Frac n="1" d="|x|" /> → 0.</p>
+              <p>Anderes Beispiel: lim(x→∞) sin(x²)/x.</p>
+              <pre className="hint-code-block">{`|sin(x²)| ≤ 1 (beschränkt, egal wie wild das Argument);
+1/x → 0.
+|sin(x²)/x| ≤ 1/x → 0  ⇒  Grenzwert = 0.`}</pre>
             </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> lim cos(x) für x → ∞ ausrechnen wollen → <strong>✅ Richtig:</strong> Dieser Grenzwert existiert nicht, ist aber unnötig; cos(x) ist beschränkt ∈ [−1,1], und Nullfolge · Beschränkte = 0</li>
+              <li><strong>❌ Falsch:</strong> lim(x→∞) cos(x) ausrechnen wollen → <strong>✅ Richtig:</strong> Dieser Grenzwert existiert NICHT (cos schwingt); man braucht ihn auch nicht — beschränkt (∈[−1,1]) · Nullfolge = 0.</li>
+              <li><strong>❌ Falsch:</strong> cos(x) → cos(∞) „ins Argument ziehen" → <strong>✅ Richtig:</strong> Das Hineinziehen gilt nur, wenn das Argument konvergiert; x → ∞ konvergiert nicht. Stattdessen Beschränktheit nutzen.</li>
             </ul>,
-            <p>Ist cos(x) beschränkt und geht 1/x → 0?</p>,
+            <p>Selbst-Probe: Egal welches x — cos(x)/x liegt zwischen −1/x und +1/x; für x = 100 also zwischen −0,01 und 0,01, beide gegen 0. Frage: Warum braucht man lim cos(x) hier gar nicht, und welche zwei Schranken klemmen cos(x)/x ein, sodass der Sandwichsatz greift?</p>,
           ),
           solution: (
             <>
@@ -79,19 +115,33 @@ export const blatt12: MatheBlatt = {
           text: <>{'lim'}<sub>{'x→0'}</sub>{' x · exp(x)'}</>,
           hint: h(
             <>
-              <p>exp(x) ist stetig, daher kann der Grenzwert direkt durch Einsetzen bestimmt werden.</p>
+              <p>Die <span className="hint-em">Exponentialfunktion</span> exp(x) = eˣ (mit der Eulerschen Zahl e ≈ 2,718) ist auf ganz ℝ stetig. Ein wichtiger Funktionswert: <span className="hint-em">exp(0) = e⁰ = 1</span> (jede Basis hoch 0 ist 1).</p>
+              <p><span className="hint-em">Stetigkeit erlaubt „einfach einsetzen"</span>: Ist eine Funktion in x₀ stetig, gilt lim(x→x₀) f(x) = f(x₀) — man darf den Grenzpunkt direkt einsetzen. Produkte stetiger Funktionen sind wieder stetig, also ist x·exp(x) stetig und man darf x = 0 einsetzen.</p>
+              <p>Wichtig: Bei x → 0 (einem ENDLICHEN Punkt) entsteht hier KEIN unbestimmter Ausdruck — beide Faktoren haben endliche Grenzwerte (0 bzw. 1). Man braucht weder Substitution noch Reihen.</p>
             </>,
             <>
-              <ol>
-                <li>Erkenne, dass x·exp(x) ein Produkt stetiger Funktionen ist</li>
-                <li>Setze x = 0 direkt ein (Stetigkeit erlaubt das)</li>
-              </ol>
+              <p>So berechnet man lim(x→0) x·exp(x):</p>
+              <pre className="hint-code-block">{`x·exp(x) ist Produkt zweier stetiger Funktionen
+⇒ selbst stetig in 0 ⇒ Grenzpunkt direkt einsetzen:
+
+   lim(x→0) x        = 0
+   lim(x→0) exp(x)   = exp(0) = 1   (e⁰ = 1)
+
+Produktregel:
+   lim(x→0) x·exp(x) = 0 · 1 = 0.`}</pre>
+              <p>Kein Trick nötig: 0 (endlich) mal 1 (endlich) = 0.</p>
             </>,
-            <p>x·exp(x) ist als Produkt stetiger Funktionen selbst stetig in x = 0.</p>,
+            <>
+              <p>Anderes Beispiel: lim(x→0) (x+2)·exp(x).</p>
+              <pre className="hint-code-block">{`stetig ⇒ einsetzen:
+(0+2)·exp(0) = 2·1 = 2.`}</pre>
+              <p>Vergleich/Warnung: lim(x→−∞) x·exp(x) ist NICHT so einfach (siehe (d)) — dort ist −∞·0 unbestimmt. Bei x → 0 hingegen ist alles endlich.</p>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> exp(x) als Potenzreihe (1 + x + x²/2 + …) entwickeln → <strong>✅ Richtig:</strong> Stetigkeit von exp reicht; lim x·exp(x) = 0·exp(0) = 0·1 = 0</li>
+              <li><strong>❌ Falsch:</strong> exp(x) als Potenzreihe 1 + x + x²/2 + … entwickeln → <strong>✅ Richtig:</strong> Stetigkeit reicht völlig; lim x·exp(x) = 0·exp(0) = 0·1 = 0.</li>
+              <li><strong>❌ Falsch:</strong> exp(0) = 0 setzen → <strong>✅ Richtig:</strong> exp(0) = e⁰ = 1.</li>
             </ul>,
-            <p>x → 0 und exp(x) → 1 für x → 0?</p>,
+            <p>Selbst-Probe: x = 0,01 → 0,01·exp(0,01) ≈ 0,01·1,01 ≈ 0,0101 → klein, Richtung 0. Frage: Warum darf man hier x = 0 direkt einsetzen (welche Eigenschaft von x·exp(x) erlaubt das), und wie viel ist exp(0)?</p>,
           ),
           solution: <>{'x → 0 und exp(x) → exp(0) = 1 für x → 0.\n\nlim x · exp(x) = 0 · 1 = 0.'}</>,
         },
@@ -100,20 +150,41 @@ export const blatt12: MatheBlatt = {
           text: <>{'lim'}<sub>{'x→−∞'}</sub>{' x · exp(x)'}</>,
           hint: h(
             <>
-              <p>{'Substitution y = −x: Dann gilt x → −∞ ⟺ y → +∞. Schreibe x·exp(x) = −y·exp(−y) = −y/exp(y) und nutze lim_{y→∞} y/exp(y) = 0.'}</p>
+              <p>Bei x → −∞ schauen wir auf x·exp(x): der Faktor x geht gegen −∞ (unendlich groß negativ), der Faktor exp(x) gegen 0 (denn e hoch sehr negativ ist winzig, exp(−10) ≈ 0,000045). Das Produkt ist also „(−∞)·0" — ein <span className="hint-em">unbestimmter Ausdruck</span>: Man kann das Ergebnis NICHT direkt ablesen, weil zwei gegenläufige Tendenzen kämpfen. Man muss umformen.</p>
+              <p>Werkzeug 1 — <span className="hint-em">Substitution</span> (Variablentausch): Setze y = −x. Dann bedeutet x → −∞ gerade y → +∞, und es gilt x = −y, exp(x) = exp(−y) = 1/exp(y) (negativer Exponent = Kehrwert). So verlagert man das Problem ins Positive, wo man Standardresultate kennt.</p>
+              <p>Werkzeug 2 — <span className="hint-em">Wachstums-Hierarchie</span>: exp wächst schneller als jedes Polynom. Daraus folgt der Standardgrenzwert (aus der Vorlesung) lim(y→∞) y/exp(y) = 0 — der Nenner exp(y) „gewinnt" gegen den Zähler y.</p>
             </>,
             <>
-              <ol>
-                <li>Führe die Substitution y = −x ein (x → −∞ ⟺ y → +∞)</li>
-                <li>Schreibe x·exp(x) mithilfe von y um</li>
-                <li>Nutze den bekannten Standardgrenzwert lim(y→∞) y/exp(y)</li>
-              </ol>
+              <p>So berechnet man lim(x→−∞) x·exp(x):</p>
+              <pre className="hint-code-block">{`1) Unbestimmtheit erkennen:  x → −∞, exp(x) → 0
+   ⇒ Form (−∞)·0 ⇒ nicht direkt einsetzbar.
+
+2) Substitution y = −x  (x → −∞  ⟺  y → +∞):
+   x      = −y
+   exp(x) = exp(−y) = 1/exp(y)
+
+3) Einsetzen:
+   x·exp(x) = (−y)·(1/exp(y)) = − y/exp(y)
+
+4) Standardgrenzwert benutzen:
+   lim(y→∞) y/exp(y) = 0   (exp schlägt Polynom)
+   ⇒ lim = −(0) = 0.
+
+Also:  lim(x→−∞) x·exp(x) = 0.`}</pre>
+              <p>Anschaulich: exp(x) wird mit x → −∞ so rasend schnell klein, dass es das (negativ) wachsende x überkompensiert — das Produkt geht gegen 0 (von unten, da x &lt; 0).</p>
             </>,
-            <p>exp wächst schneller als jedes Polynom: y/exp(y) → 0 für y → ∞.</p>,
+            <>
+              <p>Anderes Beispiel: lim(x→−∞) x²·exp(x).</p>
+              <pre className="hint-code-block">{`y = −x:  x²·exp(x) = y²·exp(−y) = y²/exp(y)
+Aus der Hierarchie: lim(y→∞) y²/exp(y) = 0
+(exp schlägt auch y², jede Polynom-Potenz).
+⇒ Grenzwert = 0.`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> „−∞ · 0 = −∞" direkt schreiben → <strong>✅ Richtig:</strong> Das ist ein unbestimmter Ausdruck; Substitution y = −x umformen, dann y/exp(y) → 0 auswerten</li>
+              <li><strong>❌ Falsch:</strong> „(−∞)·0 = −∞" (oder „= 0") direkt hinschreiben → <strong>✅ Richtig:</strong> Das ist unbestimmt; erst per y = −x umformen zu −y/exp(y), dann den Standardgrenzwert 0 nutzen.</li>
+              <li><strong>❌ Falsch:</strong> exp(−y) = −exp(y) → <strong>✅ Richtig:</strong> exp(−y) = 1/exp(y) (negativer Exponent = Kehrwert, NICHT Vorzeichenwechsel); exp ist immer positiv.</li>
             </ul>,
-            <p>Nach Substitution y = −x: Ergibt sich −y/exp(y) → 0?</p>,
+            <p>Selbst-Probe: x = −10 → (−10)·exp(−10) ≈ −10·0,0000454 ≈ −0,00045 → sehr klein, Richtung 0. Frage: Warum ist „(−∞)·0" unbestimmt (welche zwei Tendenzen kämpfen), und welcher Standardgrenzwert entscheidet nach der Substitution y = −x den Kampf zugunsten von 0?</p>,
           ),
           solution: (
             <>
@@ -137,18 +208,40 @@ export const blatt12: MatheBlatt = {
           text: <>{'lim'}<sub>{'n→∞'}</sub>{' '}<Frac n="cos(n)" d="ln(n)" /></>,
           hint: h(
             <>
-              <p>cos(n) ∈ [−1,1] ist <span className="hint-em">beschränkt</span>. Da ln(n) → ∞ gilt 1/ln(n) → 0. Wende die Regel „beschränkte Folge mal Nullfolge = Nullfolge" an.</p>
+              <p>Eine <span className="hint-em">Folge</span> ist eine durchnummerierte Liste von Zahlen a₁, a₂, a₃, … (Index n = 1,2,3,…); lim(n→∞) fragt nach dem Wert, dem sie sich nähert. Hier ist aₙ = cos(n)/ln(n).</p>
+              <p>Zwei Begriffe:</p>
+              <ul>
+                <li><span className="hint-em">Beschränkt</span>: cos(n) bleibt für jedes ganze n im Bereich [−1, 1], also |cos(n)| ≤ 1. Der Grenzwert lim cos(n) selbst existiert NICHT (springt herum), wird aber auch nicht gebraucht.</li>
+                <li><span className="hint-em">Nullfolge</span>: ln(n) ist der natürliche Logarithmus; mit n → ∞ wächst ln(n) → ∞ (langsam, aber unbeschränkt). Daher 1/ln(n) → 0.</li>
+              </ul>
+              <p><span className="hint-em">Regel „Beschränkte Folge · Nullfolge = Nullfolge"</span>: |aₙ| = |cos(n)|/ln(n) ≤ 1/ln(n) → 0, also klemmt der <span className="hint-em">Sandwichsatz</span> aₙ gegen 0 ein.</p>
             </>,
             <>
-              <pre className="hint-code-block">{`|cos(n)| ≤ 1 für alle n ∈ ℕ.
-lim 1/ln(n) = 0 (da ln(n) → ∞).
-→ lim cos(n)/ln(n) = 0.`}</pre>
+              <p>So berechnet man lim(n→∞) cos(n)/ln(n):</p>
+              <pre className="hint-code-block">{`Schreibe als Produkt: cos(n)/ln(n) = cos(n) · (1/ln(n))
+   cos(n)   → beschränkt:  |cos(n)| ≤ 1
+   1/ln(n)  → Nullfolge:   ln(n) → ∞ ⇒ 1/ln(n) → 0
+
+1) Betrag abschätzen (Sandwich):
+   |cos(n)/ln(n)| = |cos(n)|/ln(n) ≤ 1/ln(n)
+
+2) Obere Schranke geht gegen 0:
+   1/ln(n) → 0  für n → ∞
+
+3) 0 ≤ |cos(n)/ln(n)| ≤ 1/ln(n) → 0
+   ⇒ eingeklemmt ⇒ lim cos(n)/ln(n) = 0.`}</pre>
+              <p>ln(n) ist im Nenner und wächst über alle Grenzen, der Zähler bleibt brav zwischen −1 und 1 — der Bruch wird beliebig klein.</p>
             </>,
-            <p>|cos(n)/ln(n)| ≤ 1/ln(n) → 0 (Sandwichsatz).</p>,
+            <>
+              <p>Anderes Beispiel: lim(n→∞) sin(n)/n.</p>
+              <pre className="hint-code-block">{`|sin(n)| ≤ 1;  1/n → 0.
+|sin(n)/n| ≤ 1/n → 0  ⇒  Grenzwert = 0.`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> lim cos(n) für n → ∞ ausrechnen wollen → <strong>✅ Richtig:</strong> Dieser Grenzwert existiert nicht, ist aber unnötig; cos(n) ist beschränkt ∈ [−1,1], und Nullfolge · Beschränkte = 0</li>
+              <li><strong>❌ Falsch:</strong> lim cos(n) für n → ∞ ausrechnen wollen → <strong>✅ Richtig:</strong> Dieser Grenzwert existiert NICHT, wird aber nicht gebraucht; beschränkt (∈[−1,1]) · Nullfolge (1/ln n) = 0.</li>
+              <li><strong>❌ Falsch:</strong> ln(n) bleibt beschränkt → <strong>✅ Richtig:</strong> ln(n) → ∞ (unbeschränkt, nur langsam), daher 1/ln(n) → 0.</li>
             </ul>,
-            <p>cos(n) beschränkt und 1/ln(n) → 0?</p>,
+            <p>Selbst-Probe: n = e¹⁰ ≈ 22026 → ln(n) = 10, also |cos(n)/ln(n)| ≤ 1/10 = 0,1; für noch größeres n wird die Schranke noch kleiner. Frage: Welcher Faktor ist beschränkt, welcher die Nullfolge, und welche obere Schranke klemmt cos(n)/ln(n) im Sandwichsatz gegen 0?</p>,
           ),
           solution: (
             <>
@@ -163,20 +256,42 @@ lim 1/ln(n) = 0 (da ln(n) → ∞).
           text: <>{'lim'}<sub>{'n→∞'}</sub>{' sin('}<Frac n="1" d="n" />{') · cos(n)'}</>,
           hint: h(
             <>
-              <p>cos(n) ist beschränkt. Da sin stetig ist und 1/n → 0, gilt sin(1/n) → sin(0) = 0. Beschränkte Folge mal Nullfolge = 0.</p>
+              <p>Wieder das Muster „<span className="hint-em">Nullfolge · Beschränkte = Nullfolge</span>" — man muss nur erkennen, welcher Faktor was ist:</p>
+              <ul>
+                <li><span className="hint-em">cos(n) ist beschränkt</span>: |cos(n)| ≤ 1 für alle n. (lim cos(n) existiert nicht, egal.)</li>
+                <li><span className="hint-em">sin(1/n) ist eine Nullfolge</span>: Das Argument 1/n → 0, und weil sin stetig ist, darf man den Grenzwert ins Argument ziehen: sin(1/n) → sin(0) = 0. (Merke sin(0) = 0, im Gegensatz zu cos(0) = 1.)</li>
+              </ul>
+              <p><span className="hint-em">Stetigkeit + Grenzwert</span>: lim sin(uₙ) = sin(lim uₙ), wenn uₙ konvergiert. Hier uₙ = 1/n → 0.</p>
+              <p>Sandwich: |sin(1/n)·cos(n)| ≤ |sin(1/n)|·1 = |sin(1/n)| → 0.</p>
             </>,
             <>
-              <ol>
-                <li>Stelle fest, welche der beiden Funktionen beschränkt ist</li>
-                <li>Bestimme, welche der beiden Funktionen eine Nullfolge bildet (Stetigkeit nutzen)</li>
-                <li>Wende die Regel: Nullfolge × beschränkt = 0 an</li>
-              </ol>
+              <p>So berechnet man lim(n→∞) sin(1/n)·cos(n):</p>
+              <pre className="hint-code-block">{`Faktoren bestimmen:
+   sin(1/n) → Nullfolge:  1/n → 0, sin stetig
+              ⇒ sin(1/n) → sin(0) = 0
+   cos(n)   → beschränkt: |cos(n)| ≤ 1
+
+1) Betrag abschätzen (Sandwich):
+   |sin(1/n)·cos(n)| = |sin(1/n)|·|cos(n)|
+                     ≤ |sin(1/n)| · 1 = |sin(1/n)|
+
+2) Obere Schranke geht gegen 0:
+   |sin(1/n)| → |sin(0)| = 0
+
+3) 0 ≤ |sin(1/n)·cos(n)| ≤ |sin(1/n)| → 0
+   ⇒ eingeklemmt ⇒ lim sin(1/n)·cos(n) = 0.`}</pre>
+              <p>Der Faktor sin(1/n) zieht alles auf 0; cos(n) darf dabei beliebig zwischen −1 und 1 zappeln, das ändert nichts.</p>
             </>,
-            <p>|sin(1/n)·cos(n)| ≤ |sin(1/n)| → 0.</p>,
+            <>
+              <p>Anderes Beispiel: lim(n→∞) (1/n)·sin(n).</p>
+              <pre className="hint-code-block">{`1/n → 0 (Nullfolge);  |sin(n)| ≤ 1 (beschränkt).
+|(1/n)·sin(n)| ≤ 1/n → 0  ⇒  Grenzwert = 0.`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> lim cos(n) für n → ∞ bestimmen wollen → <strong>✅ Richtig:</strong> Dieser Grenzwert existiert nicht, ist aber unnötig; cos(n) ist beschränkt ∈ [−1,1] und sin(1/n) → 0</li>
+              <li><strong>❌ Falsch:</strong> lim cos(n) für n → ∞ bestimmen wollen → <strong>✅ Richtig:</strong> Dieser Grenzwert existiert NICHT, wird aber nicht gebraucht; cos(n) ist beschränkt und sin(1/n) → 0.</li>
+              <li><strong>❌ Falsch:</strong> sin(0) = 1 → <strong>✅ Richtig:</strong> sin(0) = 0 (nur cos(0) = 1); deshalb ist sin(1/n) die Nullfolge.</li>
             </ul>,
-            <p>sin(1/n) → 0 und |cos(n)| ≤ 1?</p>,
+            <p>Selbst-Probe: n = 1000 → sin(0,001) ≈ 0,001, mal cos(1000) (irgendwo in [−1,1]) ⇒ Betrag ≤ 0,001 → klein, Richtung 0. Frage: Welcher Faktor ist die Nullfolge und warum (welche Eigenschaft von sin nutzt du), und warum stört cos(n) trotz fehlenden Grenzwerts nicht?</p>,
           ),
           solution: (
             <>
@@ -191,21 +306,41 @@ lim 1/ln(n) = 0 (da ln(n) → ∞).
           text: <>{'lim'}<sub>{'n→∞'}</sub>{' '}<Frac n="n⁴ − 3n²" d="n³ − 3n⁴" />{' · exp('}<Frac n="2" d="n³ + 1" />{')'}</>,
           hint: h(
             <>
-              <p>Teile Zähler und Nenner des Bruchs durch n⁴. Für den exp-Term: 2/(n³+1) → 0, und da exp stetig ist, gilt exp(0) = 1. Produktregel für Grenzwerte anwenden.</p>
+              <p>Der Ausdruck ist ein Produkt aus einem <span className="hint-em">rationalen Bruch</span> (Polynom durch Polynom) und einem exp-Term. Man behandelt beide Faktoren getrennt und multipliziert die Grenzwerte (<span className="hint-em">Produktregel</span>: lim(a·b) = lim a · lim b, sofern beide existieren).</p>
+              <p><span className="hint-em">Standardtrick für Polynom-Brüche bei n → ∞</span>: Durch die HÖCHSTE auftretende Potenz teilen (hier n⁴, da n⁴ im Zähler und 3n⁴ im Nenner stehen). Begründung: Terme wie 3/n², 1/n gehen dann gegen 0, übrig bleiben nur die Koeffizienten der höchsten Potenzen. Wichtig ist also der GRAD: hier oben und unten Grad 4 ⇒ Grenzwert = Quotient der Leitkoeffizienten.</p>
+              <p><span className="hint-em">exp-Term per Stetigkeit</span>: 2/(n³+1) → 0 (Nenner → ∞), und weil exp stetig ist, exp(2/(n³+1)) → exp(0) = 1.</p>
             </>,
             <>
-              <ol>
-                <li>Dividiere Zähler und Nenner des Bruchs durch die höchste Potenz</li>
-                <li>Bestimme den Grenzwert des Bruchs</li>
-                <li>Bestimme lim 2/(n³+1) und wende Stetigkeit von exp an</li>
-                <li>Multipliziere die beiden Teilgrenzwerte</li>
-              </ol>
+              <p>So berechnet man lim(n→∞) [(n⁴−3n²)/(n³−3n⁴)] · exp(2/(n³+1)):</p>
+              <pre className="hint-code-block">{`Faktor 1 — der Bruch (höchste Potenz ist n⁴):
+   teile Zähler UND Nenner durch n⁴:
+
+   n⁴ − 3n²     n⁴/n⁴ − 3n²/n⁴     1 − 3/n²
+   ────────  =  ──────────────  =  ────────
+   n³ − 3n⁴     n³/n⁴ − 3n⁴/n⁴     1/n − 3
+
+   Grenzwert (3/n² → 0, 1/n → 0):
+   (1 − 0)/(0 − 3) = 1/(−3) = −1/3.
+
+Faktor 2 — der exp-Term:
+   2/(n³+1) → 0   (Nenner → ∞)
+   exp stetig ⇒ exp(2/(n³+1)) → exp(0) = 1.
+
+Produktregel:
+   (−1/3) · 1 = −1/3.`}</pre>
+              <p>Merke: Bei gleichem Grad oben/unten zählt nur das Verhältnis der Vorzahlen der höchsten Potenz: hier +1 (zu n⁴ oben) geteilt durch −3 (zu n⁴ unten) = −1/3.</p>
             </>,
-            <p>lim f(n)·g(n) = (lim f(n))·(lim g(n)), falls beide Grenzwerte existieren.</p>,
+            <>
+              <p>Anderes Beispiel: lim(n→∞) (2n³+5)/(4n³−n).</p>
+              <pre className="hint-code-block">{`durch n³ teilen:
+(2 + 5/n³)/(4 − 1/n²) → (2+0)/(4−0) = 2/4 = 1/2.
+(Leitkoeffizienten 2 und 4 ⇒ 2/4.)`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> Bruch direkt auswerten ohne durch n⁴ zu dividieren → <strong>✅ Richtig:</strong> Durch die höchste Potenz n⁴ dividieren; ergibt (1−3/n²)/(1/n−3) → (1)/(−3) = −1/3</li>
+              <li><strong>❌ Falsch:</strong> den Bruch ohne Division auswerten oder „n⁴/n³ = n → ∞" als Ergebnis nehmen → <strong>✅ Richtig:</strong> Durch die höchste Potenz n⁴ teilen; (1−3/n²)/(1/n−3) → 1/(−3) = −1/3.</li>
+              <li><strong>❌ Falsch:</strong> exp(2/(n³+1)) → exp(∞) oder „→ 0" → <strong>✅ Richtig:</strong> Das Argument 2/(n³+1) → 0, also exp(0) = 1.</li>
             </ul>,
-            <p>Bruch → −1/3 und exp-Term → 1?</p>,
+            <p>Selbst-Probe: n = 10 → Bruch = (10000−300)/(1000−30000) = 9700/(−29000) ≈ −0,334 ≈ −1/3; exp(2/1001) ≈ exp(0,002) ≈ 1. Frage: Warum teilt man durch n⁴ und nicht durch n³, und woran erkennt man am Grad von Zähler und Nenner sofort, dass der Bruchgrenzwert das Verhältnis der Leitkoeffizienten ist?</p>,
           ),
           solution: (
             <>
@@ -221,20 +356,41 @@ lim 1/ln(n) = 0 (da ln(n) → ∞).
           text: <>{'lim'}<sub>{'n→∞'}</sub>{' n · ln(1 + '}<Frac n="1" d="n" />{')'}</>,
           hint: h(
             <>
-              <p>Schreibe n·ln(1+1/n) = ln((1+1/n)^n). Der Grenzwert (1+1/n)^n = e ist bekannt. Da ln stetig ist: lim ln((1+1/n)^n) = ln(e) = 1.</p>
+              <p>Form prüfen: n → ∞, und ln(1+1/n) → ln(1) = 0 (da 1/n → 0 und ln stetig, ln(1) = 0). Also „∞ · 0" — ein <span className="hint-em">unbestimmter Ausdruck</span>, nicht direkt auswertbar. Man muss umformen.</p>
+              <p>Werkzeug 1 — <span className="hint-em">Logarithmusgesetz (Potenzregel)</span>: b·ln(a) = ln(aᵇ). Man darf einen Vorfaktor als Exponenten ins Argument ziehen. Rückwärts gelesen: n·ln(1 + 1/n) = ln( (1 + 1/n)ⁿ ). Damit wird aus „∞·0" ein ln von etwas Bekanntem.</p>
+              <p>Werkzeug 2 — der <span className="hint-em">berühmte Grenzwert</span> lim(n→∞) (1 + 1/n)ⁿ = e (so ist die Eulersche Zahl e ≈ 2,718 definiert).</p>
+              <p>Werkzeug 3 — <span className="hint-em">ln stetig</span> + <span className="hint-em">ln(e) = 1</span> (der natürliche Logarithmus von e ist 1, da ln und exp Umkehrfunktionen sind). Stetigkeit erlaubt lim ln(uₙ) = ln(lim uₙ).</p>
             </>,
             <>
-              <ol>
-                <li>Schreibe n·ln(1+1/n) als ln von etwas um (Logarithmusregel: b·ln(a) = ln(aᵇ))</li>
-                <li>Erkenne das entstehende Argument als bekannte Folge</li>
-                <li>Nutze die Stetigkeit von ln, um den Grenzwert ins Argument zu ziehen</li>
-              </ol>
+              <p>So berechnet man lim(n→∞) n·ln(1 + 1/n):</p>
+              <pre className="hint-code-block">{`1) Unbestimmtheit erkennen:
+   n → ∞,  ln(1+1/n) → ln(1) = 0  ⇒ Form ∞·0.
+
+2) Logarithmusgesetz b·ln(a) = ln(aᵇ) rückwärts:
+   n·ln(1 + 1/n) = ln( (1 + 1/n)ⁿ )
+
+3) Inneres als bekannten Grenzwert erkennen:
+   (1 + 1/n)ⁿ → e   für n → ∞.
+
+4) ln ist stetig ⇒ Grenzwert ins Argument ziehen:
+   lim ln( (1+1/n)ⁿ ) = ln( lim (1+1/n)ⁿ ) = ln(e)
+
+5) ln(e) = 1.
+
+Also:  lim(n→∞) n·ln(1 + 1/n) = 1.`}</pre>
+              <p>Der Kniff ist Schritt 2: Der Vorfaktor n wird zum Exponenten — genau so entsteht der Ausdruck (1+1/n)ⁿ, dessen Grenzwert e man kennt.</p>
             </>,
-            <p>Die Umformung nutzt ln(aᵇ) = b·ln(a) rückwärts: n·ln(a) = ln(aⁿ).</p>,
+            <>
+              <p>Anderes Beispiel: lim(n→∞) n·ln(1 + 2/n).</p>
+              <pre className="hint-code-block">{`n·ln(1 + 2/n) = ln((1 + 2/n)ⁿ)
+Bekannt: (1 + a/n)ⁿ → eᵃ, hier a = 2 ⇒ → e²
+ln stetig ⇒ ln(e²) = 2.`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> „∞·0 = 0" oder „∞·0 = ∞" direkt schreiben → <strong>✅ Richtig:</strong> Unbestimmter Ausdruck; Umformung n·ln(1+1/n) = ln((1+1/n)ⁿ) → ln(e) = 1 verwenden</li>
+              <li><strong>❌ Falsch:</strong> „∞·0 = 0" (oder „= ∞") direkt schreiben → <strong>✅ Richtig:</strong> Unbestimmt; mit n·ln(a) = ln(aⁿ) umformen zu ln((1+1/n)ⁿ) → ln(e) = 1.</li>
+              <li><strong>❌ Falsch:</strong> ln(e) = e oder ln(e) = 0 → <strong>✅ Richtig:</strong> ln(e) = 1 (ln und exp sind Umkehrfunktionen, ln(e¹) = 1).</li>
             </ul>,
-            <p>Nach Umformung zu ln((1+1/n)^n): Grenzwert = ln(e) = 1?</p>,
+            <p>Selbst-Probe: n = 1000 → 1000·ln(1,001) ≈ 1000·0,0009995 ≈ 0,9995 ≈ 1. Frage: Mit welchem Logarithmusgesetz wird aus n·ln(1+1/n) der Ausdruck ln((1+1/n)ⁿ), und welchen bekannten Grenzwert hat das Innere (1+1/n)ⁿ?</p>,
           ),
           solution: (
             <>
@@ -257,21 +413,46 @@ lim 1/ln(n) = 0 (da ln(n) → ∞).
           text: <>{'Sei a > 0. Ist die Abbildung f: ℝ → ℝ,  x ↦ aˣ stetig?'}</>,
           hint: h(
             <>
-              <p>Schreibe aˣ = exp(x · ln(a)). Dann ist f eine Verkettung stetiger Funktionen.</p>
+              <p>Die <span className="hint-em">allgemeine Exponentialfunktion</span> aˣ (Basis a beliebig positiv, z. B. 2ˣ, 10ˣ) wird über die natürliche exp <span className="hint-em">definiert</span>: <span className="hint-em">aˣ := exp(x·ln a)</span>. Das ist die Schlüsselformel der ganzen Aufgabe. Sie folgt aus aˣ = (e^{'{'}ln a{'}'})ˣ = e^{'{'}x·ln a{'}'}.</p>
+              <p>Warum braucht man a &gt; 0? Der <span className="hint-em">Logarithmus</span> ln(a) ist nur für a &gt; 0 definiert (man kann keinen Logarithmus von 0 oder negativen Zahlen bilden). Nur dann ergibt die Formel exp(x·ln a) Sinn.</p>
+              <p>Werkzeuge für den Stetigkeitsnachweis:</p>
+              <ul>
+                <li>ln(a) ist eine feste reelle <span className="hint-em">Konstante</span> (a ist gegeben, x ist die Variable). Damit ist x ↦ x·ln(a) ein Polynom (lineare Funktion) → stetig.</li>
+                <li>exp ist stetig auf ganz ℝ.</li>
+                <li><span className="hint-em">Verkettungsregel</span>: g∘h (g von h) ist stetig, wenn h und g stetig sind.</li>
+              </ul>
             </>,
             <>
-              <pre className="hint-code-block">{`f(x) = aˣ = exp(x · ln(a))
+              <p>So zeigt man, dass f(x) = aˣ (a &gt; 0) auf ganz ℝ stetig ist:</p>
+              <pre className="hint-code-block">{`1) Definition einsetzen:
+   f(x) = aˣ = exp(x · ln a)
 
-Da a > 0: ln(a) ∈ ℝ ist eine Konstante.
-x ↦ x·ln(a) ist ein Polynom → stetig.
-exp ist stetig auf ℝ.
-Verkettung stetiger Funktionen → stetig.`}</pre>
+2) f als Verkettung g∘h schreiben:
+   innere Funktion  h(x) = x · ln a
+   äußere Funktion  g(u) = exp(u)
+   d.h. f(x) = g(h(x)) = exp(x·ln a).
+
+3) Bausteine prüfen:
+   • ln a ist konstant (a > 0 fest) ⇒
+     h(x) = x·ln a ist linear ⇒ stetig auf ℝ.
+   • g = exp ist stetig auf ℝ.
+
+4) Verkettungsregel: g∘h stetig
+   ⇒ f(x) = aˣ ist stetig auf ganz ℝ.   ∎`}</pre>
+              <p>Der ganze Trick: Die „neue" Funktion aˣ wird auf die bekannten stetigen Bausteine (lineares Polynom + exp) zurückgeführt.</p>
             </>,
-            <p>Allgemein: g∘h ist stetig, wenn g und h stetig sind.</p>,
+            <>
+              <p>Konkret a = 2: f(x) = 2ˣ = exp(x·ln 2).</p>
+              <pre className="hint-code-block">{`ln 2 ≈ 0,693 (Konstante)
+h(x) = 0,693·x  → lineare Funktion, stetig
+exp(...)        → stetig
+⇒ 2ˣ = exp(0,693·x) stetig auf ℝ.`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> a ≤ 0 zulassen → <strong>✅ Richtig:</strong> Die Bedingung a &gt; 0 ist nötig; ln(a) ist nur für a &gt; 0 definiert, daher ist die Darstellung aˣ = exp(x·ln(a)) nur für a &gt; 0 gültig</li>
+              <li><strong>❌ Falsch:</strong> a ≤ 0 zulassen → <strong>✅ Richtig:</strong> ln(a) existiert nur für a &gt; 0; ohne a &gt; 0 ist die Darstellung aˣ = exp(x·ln a) gar nicht definiert.</li>
+              <li><strong>❌ Falsch:</strong> behaupten, aˣ sei „einfach so" stetig, ohne Begründung → <strong>✅ Richtig:</strong> aˣ über exp(x·ln a) auf bekannte stetige Bausteine zurückführen und die Verkettungsregel zitieren.</li>
             </ul>,
-            <p>f(x) = exp(x·ln(a)) — Verkettung stetiger Funktionen?</p>,
+            <p>Selbst-Probe: Prüfe die Formel an einer Stelle, z. B. a = 2, x = 3: exp(3·ln 2) = exp(ln 2³) = exp(ln 8) = 8 = 2³ ✓. Frage: Welche Definitionsformel führt aˣ auf exp zurück, warum ist dafür a &gt; 0 nötig, und aus welchen zwei stetigen Bausteinen setzt sich f zusammen?</p>,
           ),
           solution: <>{'f(x) = aˣ = exp(x · ln(a)).\n\nDa a > 0 ist ln(a) ∈ ℝ. Das Argument x·ln(a) ist ein Polynom in x (stetig), und exp ist stetig auf ℝ.\nVerkettung stetiger Funktionen ist stetig → f ist stetig auf ℝ.'}</>,
         },
@@ -280,21 +461,39 @@ Verkettung stetiger Funktionen → stetig.`}</pre>
           text: <>{'Sei k ∈ ℕ, k ≥ 2. Bestimmen Sie lim'}<sub>{'k→∞'}</sub>{' ᵏ√k.\n\nHinweis: ᵏ√k = k'}<sup>{'1/k'}</sup>{'.'}</>,
           hint: h(
             <>
-              <p>Schreibe k^(1/k) = exp(<Frac n="ln(k)" d="k" />). Der Grenzwert ln(k)/k → 0 ist aus der Vorlesung bekannt. Da exp stetig ist: lim exp(ln(k)/k) = exp(0) = 1.</p>
+              <p>Gesucht ist der Grenzwert der k-ten Wurzel aus k, also ᵏ√k, für k → ∞. Die Schreibweise als Potenz (Hinweis): <span className="hint-em">ᵏ√k = k^(1/k)</span> (n-te Wurzel = Hochzahl 1/n).</p>
+              <p>Die Falle: Der Exponent 1/k → 0, das Innere k → ∞ — eine „∞ hoch 0"-Situation, ein <span className="hint-em">unbestimmter Ausdruck</span>. Man darf NICHT einfach 1/k = 0 einsetzen und „k⁰ = 1" sagen, weil der Exponent von k abhängt und beide Tendenzen gleichzeitig laufen.</p>
+              <p>Werkzeug 1 — <span className="hint-em">Potenz über exp/ln ausdrücken</span>: Für b &gt; 0 gilt bᶜ = exp(c·ln b). Hier b = k, c = 1/k:</p>
+              <pre className="hint-code-block">{`k^(1/k) = exp( (1/k)·ln k ) = exp( ln(k)/k )`}</pre>
+              <p>Werkzeug 2 — der <span className="hint-em">Standardgrenzwert</span> lim(k→∞) ln(k)/k = 0 (ln wächst langsamer als jedes Polynom, der Nenner k „gewinnt"). Werkzeug 3 — <span className="hint-em">exp stetig</span> und exp(0) = 1.</p>
             </>,
             <>
-              <pre className="hint-code-block">{`k^(1/k) = exp((1/k)·ln(k)) = exp(ln(k)/k)
+              <p>So berechnet man lim(k→∞) ᵏ√k:</p>
+              <pre className="hint-code-block">{`1) Wurzel als Potenz, Potenz über exp/ln:
+   ᵏ√k = k^(1/k) = exp( ln(k)/k )
 
-Aus Vorlesung: lim ln(k)/k = 0.
+2) Standardgrenzwert des Exponenten:
+   lim(k→∞) ln(k)/k = 0
+   (k im Nenner schlägt ln k im Zähler)
 
-Da exp stetig:
-lim k^(1/k) = exp(0) = 1.`}</pre>
+3) exp ist stetig ⇒ Grenzwert ins Argument ziehen:
+   lim exp( ln(k)/k ) = exp( lim ln(k)/k )
+                      = exp(0) = 1.
+
+Also:  lim(k→∞) ᵏ√k = 1.`}</pre>
+              <p>Inhaltlich: Die Wurzel „glättet" das Wachstum von k so stark, dass das Ergebnis trotz wachsendem k gegen 1 strebt.</p>
             </>,
-            <p>ln wächst langsamer als jedes Polynom: ln(k)/k → 0.</p>,
+            <>
+              <p>Verwandtes Beispiel: lim(k→∞) ᵏ√(k²) = lim k^(2/k).</p>
+              <pre className="hint-code-block">{`k^(2/k) = exp( 2·ln(k)/k )
+2·ln(k)/k → 2·0 = 0
+exp(0) = 1.  (auch hier Grenzwert 1)`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> k^(1/k) = k^0 = 1 direkt schreiben (Exponent 1/k → 0 einfach einsetzen) → <strong>✅ Richtig:</strong> Der Exponent 1/k hängt von k ab; über exp(ln(k)/k) und lim ln(k)/k = 0 herleiten</li>
+              <li><strong>❌ Falsch:</strong> k^(1/k) = k⁰ = 1 schreiben, indem man 1/k → 0 einfach einsetzt → <strong>✅ Richtig:</strong> Der Exponent 1/k hängt von k ab (Form ∞^0, unbestimmt); über exp(ln(k)/k) und lim ln(k)/k = 0 sauber herleiten.</li>
+              <li><strong>❌ Falsch:</strong> lim ln(k)/k = ∞ annehmen (ln wächst ja) → <strong>✅ Richtig:</strong> ln(k)/k → 0, weil der Nenner k schneller wächst als der Zähler ln(k).</li>
             </ul>,
-            <p>exp(ln(k)/k) → exp(0) = 1?</p>,
+            <p>Selbst-Probe: k = 1000 → ln(1000)/1000 ≈ 6,91/1000 ≈ 0,0069 → exp(0,0069) ≈ 1,0069 ≈ 1; je größer k, desto näher an 1. Frage: Warum ist ᵏ√k = k^(1/k) ein „∞ hoch 0"-Fall (also nicht trivial 1), und über welche Umformung und welchen Standardgrenzwert kommt man dennoch auf exp(0) = 1?</p>,
           ),
           solution: (
             <>
@@ -317,20 +516,41 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
           text: <>{'Seien x, y ∈ ℝ, a > 0. Zeigen Sie: aˣ · aʸ = a'}<sup>{'x+y'}</sup>{'.'}</>,
           hint: h(
             <>
-              <p>Schreibe aˣ = exp(x·ln a) und aʸ = exp(y·ln a). Nutze dann exp(u)·exp(v) = exp(u+v).</p>
+              <p>„<span className="hint-em">Zeigen Sie</span>" heißt beweisen — man darf das Potenzgesetz aˣ·aʸ = a^(x+y) NICHT als bekannt voraussetzen, sondern muss es aus der Definition herleiten. Genau dafür gibt es zwei Bausteine:</p>
+              <ul>
+                <li><span className="hint-em">Definition der allgemeinen Potenz</span>: aˣ = exp(x·ln a) (für a &gt; 0). Damit übersetzt man alles in die natürliche exp.</li>
+                <li><span className="hint-em">Additionstheorem (Funktionalgleichung) von exp</span>: exp(u)·exp(v) = exp(u+v) für alle u, v ∈ ℝ. Das ist DIE Grundeigenschaft der Exponentialfunktion — „aus mal wird plus im Exponenten". Sie darf man benutzen.</li>
+              </ul>
+              <p>Außerdem nur einfaches Ausklammern: x·ln a + y·ln a = (x+y)·ln a (gemeinsamer Faktor ln a).</p>
             </>,
             <>
-              <ol>
-                <li>Schreibe aˣ und aʸ über die Definition aˣ = exp(x ln a) um</li>
-                <li>Wende das Additionstheorem von exp an: exp(u)·exp(v) = exp(u+v)</li>
-                <li>Klammere ln a aus und erkenne exp((x+y) ln a) als a^(x+y)</li>
-              </ol>
+              <p>So beweist man aˣ·aʸ = a^(x+y):</p>
+              <pre className="hint-code-block">{`1) Beide Seiten über die Definition aˣ = exp(x ln a):
+   aˣ · aʸ = exp(x ln a) · exp(y ln a)
+
+2) Additionstheorem exp(u)·exp(v) = exp(u+v),
+   hier u = x ln a, v = y ln a:
+   = exp(x ln a + y ln a)
+
+3) ln a ausklammern (gemeinsamer Faktor):
+   = exp( (x + y) · ln a )
+
+4) Definition rückwärts lesen: exp((x+y) ln a) ist
+   genau a hoch (x+y):
+   = a^(x+y).                              ∎`}</pre>
+              <p>Roter Faden: Über die Definition ins exp übersetzen → dort die „mal→plus"-Regel anwenden → über die Definition zurückübersetzen.</p>
             </>,
-            <p>Additionstheorem für exp: exp(u)·exp(v) = exp(u+v) für alle u, v ∈ ℝ.</p>,
+            <>
+              <p>Analoge Herleitung (Quotient): aˣ/aʸ = a^(x−y).</p>
+              <pre className="hint-code-block">{`aˣ/aʸ = exp(x ln a)/exp(y ln a) = exp(x ln a − y ln a)
+       = exp((x−y) ln a) = a^(x−y).
+(nutzt exp(u)/exp(v) = exp(u−v))`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> aˣ·aʸ = a^(x+y) direkt als bekannt voraussetzen → <strong>✅ Richtig:</strong> Über die Definition aˣ = exp(x·ln a) herleiten und das Additionstheorem exp(u+v) = exp(u)·exp(v) anwenden</li>
+              <li><strong>❌ Falsch:</strong> aˣ·aʸ = a^(x+y) als bekannt voraussetzen (genau das soll bewiesen werden) → <strong>✅ Richtig:</strong> Über die Definition aˣ = exp(x·ln a) und das Additionstheorem exp(u)·exp(v) = exp(u+v) herleiten.</li>
+              <li><strong>❌ Falsch:</strong> exp(u)·exp(v) = exp(u·v) → <strong>✅ Richtig:</strong> exp(u)·exp(v) = exp(u + v); aus MAL der Funktionswerte wird PLUS der Argumente, nicht mal.</li>
             </ul>,
-            <p>exp(x ln a + y ln a) = exp((x+y) ln a) = a^(x+y)?</p>,
+            <p>Selbst-Probe: Zahlenprobe a = 2, x = 3, y = 2: 2³·2² = 8·4 = 32 = 2⁵ = 2^(3+2) ✓. Frage: Welche zwei Tatsachen (Definition + welche exp-Eigenschaft) trägt der Beweis, und an welcher Stelle wird aus „mal" ein „plus"?</p>,
           ),
           solution: (
             <>
@@ -346,20 +566,43 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
           text: <>{'Seien x, y ∈ ℝ, a > 0. Zeigen Sie: (aˣ)'}<sup>{'y'}</sup>{' = a'}<sup>{'xy'}</sup>{'.'}</>,
           hint: h(
             <>
-              <p>Schreibe (aˣ)^y = exp(y · ln(aˣ)). Berechne ln(aˣ) = ln(exp(x·ln a)) = x·ln(a) und setze ein.</p>
+              <p>Zu beweisen ist das Gesetz „Potenz einer Potenz" (aˣ)ʸ = a^(xy) — Exponenten MULTIPLIZIEREN. Wieder aus der Definition herleiten, nicht voraussetzen. Drei Bausteine:</p>
+              <ul>
+                <li><span className="hint-em">Definition</span>: für jede positive Basis b gilt bʸ = exp(y·ln b). Hier ist die „Basis" selbst aˣ, also (aˣ)ʸ = exp(y·ln(aˣ)).</li>
+                <li><span className="hint-em">aˣ einsetzen</span>: aˣ = exp(x·ln a).</li>
+                <li><span className="hint-em">Umkehr-Eigenschaft</span> ln(exp(u)) = u für alle u (ln und exp heben sich auf, da Umkehrfunktionen). Das ist der Schlüsselschritt: ln(exp(x·ln a)) = x·ln a.</li>
+              </ul>
+              <p>Wichtig: Man darf ln(aˣ) = x·ln a NICHT als bekannt unterstellen — genau das fällt hier aus ln(exp(u)) = u heraus.</p>
             </>,
             <>
-              <ol>
-                <li>Schreibe (aˣ)^y = exp(y · ln(aˣ)) über die Definition</li>
-                <li>Ersetze aˣ durch exp(x ln a) und vereinfache ln(exp(…)) = …</li>
-                <li>Klammere aus und erkenne exp(xy ln a) als a^(xy)</li>
-              </ol>
+              <p>So beweist man (aˣ)ʸ = a^(xy):</p>
+              <pre className="hint-code-block">{`1) Definition (Basis ist aˣ):
+   (aˣ)ʸ = exp( y · ln(aˣ) )
+
+2) aˣ = exp(x ln a) einsetzen:
+   = exp( y · ln( exp(x ln a) ) )
+
+3) Umkehr-Eigenschaft ln(exp(u)) = u  mit u = x ln a:
+   ln( exp(x ln a) ) = x ln a
+   ⇒ = exp( y · (x ln a) )
+
+4) Faktoren ordnen (y·x = xy):
+   = exp( xy · ln a )
+
+5) Definition rückwärts: exp(xy ln a) = a^(xy):
+   = a^(xy).                               ∎`}</pre>
+              <p>Kernschritt ist 3): ln und exp „kürzen sich weg", dadurch fällt der innere Exponent x·ln a heraus und multipliziert sich mit y.</p>
             </>,
-            <p>Schlüsselschritt: ln(exp(u)) = u für alle u ∈ ℝ.</p>,
+            <>
+              <p>Hilfsbaustein isoliert (oft separat gefragt): ln(aˣ) = x·ln a.</p>
+              <pre className="hint-code-block">{`ln(aˣ) = ln( exp(x ln a) ) = x ln a   (ln∘exp = id)
+Damit z.B. ln(2⁵) = 5·ln 2.`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> ln(aˣ) = x·ln(a) direkt als bekannt voraussetzen → <strong>✅ Richtig:</strong> Erst aˣ = exp(x·ln a) einsetzen, dann ln(exp(u)) = u verwenden; nur so ist der Beweis vollständig</li>
+              <li><strong>❌ Falsch:</strong> ln(aˣ) = x·ln(a) direkt als bekannt voraussetzen → <strong>✅ Richtig:</strong> Erst aˣ = exp(x ln a) einsetzen, dann ln(exp(u)) = u anwenden — nur so ist der Beweis vollständig.</li>
+              <li><strong>❌ Falsch:</strong> (aˣ)ʸ = a^(x+y) (Exponenten addieren) → <strong>✅ Richtig:</strong> Bei Potenz EINER Potenz werden Exponenten MULTIPLIZIERT: (aˣ)ʸ = a^(xy). (Addiert wird nur bei aˣ·aʸ.)</li>
             </ul>,
-            <p>y · ln(exp(x ln a)) = y · (x ln a) = xy ln a?</p>,
+            <p>Selbst-Probe: a = 2, x = 3, y = 2: (2³)² = 8² = 64 = 2⁶ = 2^(3·2) ✓. Frage: Welche Umkehr-Eigenschaft von ln und exp ist der Schlüsselschritt, und warum werden hier die Exponenten multipliziert statt addiert?</p>,
           ),
           solution: (
             <>
@@ -376,21 +619,43 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
           text: <>{'Seien x ∈ ℝ, a, b > 0. Zeigen Sie: aˣbˣ = (ab)ˣ.'}</>,
           hint: h(
             <>
-              <p>Schreibe aˣ = exp(x·ln a) und bˣ = exp(x·ln b). Nutze exp(u)·exp(v) = exp(u+v) und ln a + ln b = ln(ab).</p>
+              <p>Zu beweisen: aˣ·bˣ = (ab)ˣ — gleiche Hochzahl, verschiedene Basen, dürfen unter EINE Basis ab gezogen werden. Drei Bausteine:</p>
+              <ul>
+                <li><span className="hint-em">Definition</span>: aˣ = exp(x·ln a), bˣ = exp(x·ln b) (a, b &gt; 0).</li>
+                <li><span className="hint-em">Additionstheorem von exp</span>: exp(u)·exp(v) = exp(u+v).</li>
+                <li><span className="hint-em">Logarithmengesetz für Produkte</span>: ln a + ln b = ln(a·b) für a, b &gt; 0. (Der Log eines Produkts ist die Summe der Logs — „mal wird plus".) ACHTUNG: ln(a)+ln(b) = ln(ab), NICHT ln(a+b)!</li>
+              </ul>
+              <p>Außerdem Ausklammern: x·ln a + x·ln b = x·(ln a + ln b).</p>
             </>,
             <>
-              <ol>
-                <li>Schreibe aˣ und bˣ über die Definition exp(… ln …) um</li>
-                <li>Wende das Additionstheorem von exp an</li>
-                <li>Nutze das Logarithmengesetz ln a + ln b = ln(ab)</li>
-                <li>Erkenne exp(x ln(ab)) als (ab)^x</li>
-              </ol>
+              <p>So beweist man aˣ·bˣ = (ab)ˣ:</p>
+              <pre className="hint-code-block">{`1) Definition für beide Faktoren:
+   aˣ · bˣ = exp(x ln a) · exp(x ln b)
+
+2) Additionstheorem exp(u)·exp(v) = exp(u+v):
+   = exp( x ln a + x ln b )
+
+3) x ausklammern:
+   = exp( x·(ln a + ln b) )
+
+4) Logarithmengesetz ln a + ln b = ln(ab):
+   = exp( x · ln(ab) )
+
+5) Definition rückwärts: exp(x ln(ab)) = (ab)ˣ:
+   = (ab)ˣ.                                ∎`}</pre>
+              <p>Zwei „mal→plus"-Schritte greifen ineinander: das Additionstheorem (Schritt 2) und das Logarithmengesetz (Schritt 4).</p>
             </>,
-            <p>{'Logarithmengesetz: ln a + ln b = ln(ab) für a, b > 0.'}</p>,
+            <>
+              <p>Zahlenprobe als Anschauung: a = 2, b = 3, x = 2.</p>
+              <pre className="hint-code-block">{`aˣ·bˣ = 2²·3² = 4·9 = 36
+(ab)ˣ = (2·3)² = 6² = 36   ✓ gleich
+(Logarithmengesetz dahinter: ln2 + ln3 = ln6.)`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> ln(a) + ln(b) = ln(a+b) verwenden → <strong>✅ Richtig:</strong> Logarithmengesetz: ln(a) + ln(b) = ln(a·b) für a, b &gt; 0; nicht ln(a+b)</li>
+              <li><strong>❌ Falsch:</strong> ln(a) + ln(b) = ln(a+b) verwenden → <strong>✅ Richtig:</strong> ln(a) + ln(b) = ln(a·b) für a, b &gt; 0 (Produkt, nicht Summe!).</li>
+              <li><strong>❌ Falsch:</strong> aˣ·bˣ = (a+b)ˣ behaupten → <strong>✅ Richtig:</strong> aˣ·bˣ = (a·b)ˣ; die Basen werden multipliziert, nicht addiert.</li>
             </ul>,
-            <p>ln a + ln b = ln(ab) korrekt eingesetzt?</p>,
+            <p>Selbst-Probe: a = 4, b = 9, x = ½: 4^½·9^½ = 2·3 = 6 und (4·9)^½ = 36^½ = 6 ✓. Frage: Welches Logarithmengesetz verwandelt ln a + ln b in den Ausdruck mit der Basis ab, und warum ist ln(a)+ln(b) ≠ ln(a+b)?</p>,
           ),
           solution: (
             <>
@@ -415,19 +680,29 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
           text: <>(i) log₁₀(10),{'  '}(ii) log₁₀(10000),{'  '}(iii) log₁₀(1),{'  '}(iv) log₁₀(0,01)</>,
           hint: h(
             <>
-              <p>Nutze log_a(a^k) = k. Schreibe das Argument als Potenz von 10.</p>
+              <p>Der <span className="hint-em">Logarithmus</span> log_a(z) beantwortet die Frage: „Mit welcher Hochzahl muss ich die Basis a potenzieren, um z zu erhalten?" Also log_a(z) = c bedeutet a^c = z. Beispiel: log₁₀(1000) = 3, weil 10³ = 1000.</p>
+              <p><span className="hint-em">Grundregel</span>: log_a(a^k) = k. Wenn das Argument schon als Potenz der Basis dasteht, ist der Logarithmus einfach die Hochzahl. Strategie also: jedes Argument als <span className="hint-em">Zehnerpotenz</span> 10^k schreiben, dann k ablesen.</p>
+              <p>Nützliche Zehnerpotenzen: 10 = 10¹, 100 = 10², 10000 = 10⁴, 1 = 10⁰ (alles hoch 0 ist 1), und Dezimalbrüche über negative Exponenten: 0,1 = 10⁻¹, 0,01 = 1/100 = 10⁻² (negativer Exponent = Kehrwert).</p>
             </>,
             <>
-              <ol>
-                <li>Schreibe jedes Argument als Potenz von 10</li>
-                <li>Nutze log₁₀(10ᵏ) = k</li>
-              </ol>
+              <p>So berechnet man die vier Werte (jeweils Argument als 10^k, dann log = k):</p>
+              <pre className="hint-code-block">{`(i)   log₁₀(10)    : 10    = 10¹  ⇒ = 1
+(ii)  log₁₀(10000) : 10000 = 10⁴  ⇒ = 4
+(iii) log₁₀(1)     : 1     = 10⁰  ⇒ = 0
+(iv)  log₁₀(0,01)  : 0,01  = 1/100 = 10⁻² ⇒ = −2`}</pre>
+              <p>Bei (iv) hilft der Zwischenschritt 0,01 = 1/100 und 100 = 10², also 1/100 = 10⁻² (Kehrwert ⇒ Minus im Exponenten).</p>
             </>,
-            <p>0,01 = 1/100 = 10⁻².</p>,
+            <>
+              <p>Anderes Beispiel zur Basis 2:</p>
+              <pre className="hint-code-block">{`log₂(8)   : 8   = 2³    ⇒ 3
+log₂(1)   : 1   = 2⁰    ⇒ 0
+log₂(1/4) : 1/4 = 2⁻²   ⇒ −2  (4 = 2², Kehrwert ⇒ −2)`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> log₁₀(1) = 1 → <strong>✅ Richtig:</strong> 10⁰ = 1, also log₁₀(1) = 0; der Logarithmus von 1 ist stets 0 (egal zur welcher Basis)</li>
+              <li><strong>❌ Falsch:</strong> log₁₀(1) = 1 → <strong>✅ Richtig:</strong> 10⁰ = 1, also log₁₀(1) = 0; der Logarithmus von 1 ist immer 0 (zu jeder Basis).</li>
+              <li><strong>❌ Falsch:</strong> log₁₀(0,01) = 2 (Vorzeichen vergessen) → <strong>✅ Richtig:</strong> 0,01 = 10⁻², also log₁₀(0,01) = −2; Zahlen kleiner als 1 haben negative Logarithmen.</li>
             </ul>,
-            <p>Jedes Argument als 10^k dargestellt?</p>,
+            <p>Selbst-Probe: Rechne rückwärts, jede Antwort muss die Basis-Potenz zurückgeben: 10¹ = 10, 10⁴ = 10000, 10⁰ = 1, 10⁻² = 0,01 ✓. Frage: Was bedeutet log₁₀(z) als Frage formuliert, und warum ist der Logarithmus von 1 zu jeder Basis 0?</p>,
           ),
           solution: (
             <>
@@ -443,20 +718,45 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
           text: <>(i) log₂(<Frac n="2" d="64" />),{'  '}(ii) log₄(<Frac n="2" d="64" />),{'  '}(iii) log₃₂(<Frac n="2" d="64" />),{'  '}(iv) log₆₄(<Frac n="2" d="64" />)</>,
           hint: h(
             <>
-              <p>Vereinfache zunächst: <Frac n="2" d="64" /> = <Frac n="1" d="32" /> = 2⁻⁵. Schreibe 1/32 dann als Potenz der jeweiligen Basis.</p>
+              <p>Wieder gilt log_a(z) = c ⟺ a^c = z, und die Grundregel log_a(a^k) = k. Trick: Erst das Argument vereinfachen, dann als Potenz der jeweiligen Basis ausdrücken.</p>
+              <p><span className="hint-em">Argument vereinfachen</span>: 2/64 = 1/32 (Zähler und Nenner durch 2 teilen). Und 32 = 2⁵, also 1/32 = 2⁻⁵ (Kehrwert ⇒ negativer Exponent). Das Argument ist also einheitlich 2⁻⁵.</p>
+              <p>Zwei Logarithmengesetze als Werkzeug, falls die Basis keine Potenz von 2 ist:</p>
+              <ul>
+                <li><span className="hint-em">Quotient</span>: log_b(u/v) = log_b(u) − log_b(v).</li>
+                <li><span className="hint-em">Potenz</span>: log_b(u^k) = k·log_b(u).</li>
+              </ul>
+              <p>Und log_b(2): Wenn b = 2^m, dann ist log_b(2) = 1/m, denn b^(1/m) = (2^m)^(1/m) = 2.</p>
             </>,
             <>
-              <ol>
-                <li>Vereinfache 2/64 zu einer einfacheren Form als Potenz von 2</li>
-                <li>Drücke die vereinfachte Form für jede Basis als deren Potenz aus</li>
-                <li>Wende log_b(b^k) = k an</li>
-              </ol>
+              <p>So berechnet man die vier Logarithmen (Argument stets 2/64 = 1/32 = 2⁻⁵):</p>
+              <pre className="hint-code-block">{`(i) Basis 2:  log₂(2⁻⁵) = −5.        (direkt, Grundregel)
+
+(ii) Basis 4 = 2²:
+   log₄(2/64) = log₄(2) − log₄(64)
+   log₄(2)  = 1/2   (4^(1/2) = 2)
+   log₄(64) = 3     (4³ = 64)
+   = 1/2 − 3 = −5/2.
+
+(iii) Basis 32 = 2⁵:
+   1/32 = 32⁻¹  ⇒  log₃₂(32⁻¹) = −1.   (Grundregel)
+
+(iv) Basis 64 = 2⁶:
+   log₆₄(2/64) = log₆₄(2) − log₆₄(64)
+   log₆₄(2)  = 1/6   (64^(1/6) = 2)
+   log₆₄(64) = 1     (64¹ = 64)
+   = 1/6 − 1 = −5/6.`}</pre>
+              <p>Zwei Wege: Bei Basen, die direkt mit dem Argument zusammenpassen (i, iii), reicht die Grundregel; sonst spaltet man mit log(u/v) = log u − log v auf (ii, iv).</p>
             </>,
-            <p>Alternativ: log_b(2/64) = log_b(2) − log_b(64).</p>,
+            <>
+              <p>Anderes Beispiel: log₉(1/3) mit 9 = 3².</p>
+              <pre className="hint-code-block">{`1/3 = 3⁻¹.  log₉(3⁻¹) = −1·log₉(3)
+log₉(3) = 1/2 (9^(1/2)=3)  ⇒ −1·(1/2) = −1/2.`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> 2/64 direkt mit der Basis vergleichen ohne zu vereinfachen → <strong>✅ Richtig:</strong> Erst 2/64 = 1/32 = 2⁻⁵ berechnen, dann 2⁻⁵ als Potenz der jeweiligen Basis darstellen</li>
+              <li><strong>❌ Falsch:</strong> 2/64 unverändert „mit der Basis vergleichen" → <strong>✅ Richtig:</strong> Erst 2/64 = 1/32 = 2⁻⁵ vereinfachen, dann zur jeweiligen Basis umrechnen.</li>
+              <li><strong>❌ Falsch:</strong> log₄(64) = 4 (Basis mit Exponent verwechselt) → <strong>✅ Richtig:</strong> log₄(64) = 3, denn 4³ = 64 (Frage: 4 hoch was = 64?).</li>
             </ul>,
-            <p>2/64 = 1/32 = 2⁻⁵ — als Potenz der Basis ausgedrückt?</p>,
+            <p>Selbst-Probe: Rückprobe (ii): 4^(−5/2) = (4^(1/2))⁻⁵ = 2⁻⁵ = 1/32 = 2/64 ✓. Frage: Wie schreibt man 2/64 als reine Zweierpotenz, und mit welchem Logarithmengesetz zerlegt man log₄(2/64), wenn die Basis nicht direkt passt?</p>,
           ),
           solution: (
             <>
@@ -473,21 +773,36 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
           text: <>(i) log₂(64),{'  '}(ii) <Frac n="log₂(2/64)" d="log₂(64)" />. Vergleichen Sie das Ergebnis mit log₆₄(<Frac n="2" d="64" />).</>,
           hint: h(
             <>
-              <p>Nutze den <span className="hint-em">Basiswechselsatz</span>: log_b(x) = log_a(x) / log_a(b). Damit ist log₂(2/64) / log₂(64) = log₆₄(2/64).</p>
+              <p>Kern dieser Aufgabe ist der <span className="hint-em">Basiswechselsatz</span>: log_b(x) = log_a(x) / log_a(b). Er erlaubt, einen Logarithmus zur Basis b über eine BELIEBIGE andere Basis a auszudrücken — man teilt einfach log_a(x) durch log_a(b). (Deshalb genügt am Taschenrechner ln oder log₁₀ für jede Basis.)</p>
+              <p>Begründung in einem Satz: Setzt man c = log_b(x), also b^c = x, und logarithmiert mit log_a, folgt c·log_a(b) = log_a(x), also c = log_a(x)/log_a(b).</p>
+              <p>Hier ist a = 2, b = 64, x = 2/64. Der Bruch log₂(2/64)/log₂(64) ist also <span className="hint-em">genau</span> log₆₄(2/64) — er muss daher mit dem Ergebnis aus (b)(iv) übereinstimmen. Vorab braucht man log₂(64): 64 = 2⁶ ⇒ log₂(64) = 6.</p>
             </>,
             <>
-              <ol>
-                <li>Berechne log₂(64) durch Ausdrücken von 64 als Potenz von 2</li>
-                <li>Bilde den Bruch log₂(2/64)/log₂(64) mit dem Ergebnis aus (b)(i)</li>
-                <li>Identifiziere das Ergebnis als Basiswechselsatz: log_a(x)/log_a(b) = log_b(x)</li>
-                <li>Vergleiche mit dem entsprechenden Wert aus Teilaufgabe (b)(iv)</li>
-              </ol>
+              <p>So löst man (i) und (ii) und vergleicht:</p>
+              <pre className="hint-code-block">{`(i) log₂(64):  64 = 2⁶  ⇒ log₂(64) = 6.
+
+(ii) Bruch bilden (Zähler aus (b)(i): log₂(2/64) = −5):
+   log₂(2/64)      −5
+   ───────────  =  ──  = −5/6.
+   log₂(64)         6
+
+Basiswechselsatz lesen (a = 2, b = 64, x = 2/64):
+   log₂(2/64) / log₂(64) = log₆₄(2/64)
+
+Aus (b)(iv): log₆₄(2/64) = −5/6.
+⇒ Beide Werte stimmen überein: −5/6 = −5/6.  ✓`}</pre>
+              <p>Die Aufgabe demonstriert den Satz an konkreten Zahlen: der Bruch zweier log₂-Werte liefert denselben Wert wie der direkte log₆₄ — das ist kein Zufall, sondern der Basiswechselsatz.</p>
             </>,
-            <p>{'Basiswechselsatz: log_b(x) = ln(x)/ln(b) für a, b > 0, a,b ≠ 1.'}</p>,
+            <>
+              <p>Anderes Beispiel: log₈(2) über Basis 2 berechnen.</p>
+              <pre className="hint-code-block">{`log₈(2) = log₂(2)/log₂(8) = 1/3.
+Probe: 8^(1/3) = 2 ✓  (8 = 2³)`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> log₂(2/64)/log₂(64) als log₂(2/64 − 64) oder log₂((2/64)/64) interpretieren → <strong>✅ Richtig:</strong> Das ist der Basiswechselsatz: log_a(x)/log_a(b) = log_b(x); hier log₂(2/64)/log₂(64) = log₆₄(2/64)</li>
+              <li><strong>❌ Falsch:</strong> log₂(2/64)/log₂(64) als log₂((2/64)/64) oder log₂(2/64 − 64) deuten → <strong>✅ Richtig:</strong> Ein QUOTIENT zweier Logarithmen ist der Basiswechselsatz: log_a(x)/log_a(b) = log_b(x), hier = log₆₄(2/64).</li>
+              <li><strong>❌ Falsch:</strong> log_a(x)/log_a(b) mit log_a(x) − log_a(b) verwechseln → <strong>✅ Richtig:</strong> Geteilt gibt den Basiswechsel (= log_b(x)); minus gäbe log_a(x/b) — etwas ganz anderes.</li>
             </ul>,
-            <p>Basiswechselsatz korrekt angewandt?</p>,
+            <p>Selbst-Probe: −5 geteilt durch 6 ist −5/6, und (b)(iv) lieferte ebenfalls −5/6 — Übereinstimmung bestätigt den Satz. Frage: Wie lautet der Basiswechselsatz, und warum ist ein QUOTIENT zweier Logarithmen (nicht etwa ihre Differenz) gleich log_b(x)?</p>,
           ),
           solution: (
             <>
@@ -528,21 +843,50 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
           ),
           hint: h(
             <>
-              <p>Das <span className="hint-em">Quotientenkriterium</span>: Σaₖ konvergiert absolut, wenn lim |aₖ₊₁/aₖ| {'<'} 1. Bilde das Verhältnis zweier aufeinanderfolgender Glieder und bestimme den Grenzwert für k → ∞.</p>
+              <p>Eine <span className="hint-em">Reihe</span> Σaₖ ist die Summe unendlich vieler Glieder a₀ + a₁ + a₂ + …; „konvergiert" heißt, diese Summe nähert sich einem endlichen Wert. Die <span className="hint-em">Fakultät</span> n! = 1·2·3·…·n (z. B. 5! = 120) wächst extrem schnell.</p>
+              <p><span className="hint-em">Quotientenkriterium</span>: Bildet man den Betrag des Verhältnisses aufeinanderfolgender Glieder und gilt L = lim(k→∞) |aₖ₊₁/aₖ| &lt; 1, so konvergiert die Reihe (sogar absolut). Idee: Die Glieder schrumpfen schließlich schneller als eine geometrische Folge mit Quotient &lt; 1.</p>
+              <p>Wichtige Vereinfachungsregeln beim Quotienten:</p>
+              <ul>
+                <li>Potenzen: x^(2k+3)/x^(2k+1) = x² (Exponenten subtrahieren).</li>
+                <li>Fakultäten: (2k+1)!/(2k+3)! = 1/((2k+3)(2k+2)), weil (2k+3)! = (2k+3)(2k+2)·(2k+1)! — die gemeinsamen Faktoren kürzen sich.</li>
+                <li>Das Vorzeichen (−1)ᵏ verschwindet im Betrag (|−1| = 1).</li>
+                <li><span className="hint-em">x ist fest</span>, nur k → ∞ — also ist x² eine Konstante im Zähler.</li>
+              </ul>
             </>,
             <>
-              <ol>
-                <li>Schreibe aₖ für die Sinusreihe auf (Vorzeichen und Betrag getrennt)</li>
-                <li>Bilde |aₖ₊₁/aₖ| — vereinfache Zähler und Nenner durch Kürzen der Potenzen und Fakultäten</li>
-                <li>Bestimme den Grenzwert für k → ∞ (x ist dabei eine feste Konstante)</li>
-                <li>Wiederhole analog für die Kosinusreihe</li>
-              </ol>
+              <p>So zeigt man Konvergenz beider Reihen für jedes x ∈ ℝ:</p>
+              <pre className="hint-code-block">{`SINUSREIHE: aₖ = (−1)ᵏ · x^(2k+1)/(2k+1)!
+
+|aₖ₊₁/aₖ| = |x^(2k+3)/(2k+3)!| · |(2k+1)!/x^(2k+1)|
+   Potenzen:   x^(2k+3)/x^(2k+1) = x²
+   Fakultäten: (2k+1)!/(2k+3)! = 1/[(2k+3)(2k+2)]
+   ⇒ |aₖ₊₁/aₖ| = x² / [(2k+3)(2k+2)]
+
+Grenzwert k → ∞ (x fest, Nenner → ∞):
+   x² / [(2k+3)(2k+2)] → 0 < 1
+   ⇒ Quotientenkriterium ⇒ Sinusreihe konvergiert. ✓
+
+KOSINUSREIHE: aₖ = (−1)ᵏ · x^(2k)/(2k)!
+   analog:
+   |aₖ₊₁/aₖ| = x² / [(2k+2)(2k+1)] → 0 < 1
+   ⇒ Kosinusreihe konvergiert. ✓
+
+Da für JEDES feste x der Grenzwert 0 (<1) ist,
+konvergieren beide Reihen für alle x ∈ ℝ.`}</pre>
+              <p>Entscheidend: Egal wie groß x² ist — der Nenner (2k+3)(2k+2) wächst mit k über alle Grenzen, drückt den Quotienten also auf 0. Die schnell wachsende Fakultät schlägt jede feste Potenz von x.</p>
             </>,
-            <p>x ist fest; nur k → ∞. Der Grenzwert ist 0 für jedes x ∈ ℝ.</p>,
+            <>
+              <p>Anderes Beispiel: Σ xᵏ/k! (die exp-Reihe).</p>
+              <pre className="hint-code-block">{`aₖ = xᵏ/k!
+|aₖ₊₁/aₖ| = |x^(k+1)/(k+1)!| · |k!/xᵏ|
+          = |x|/(k+1) → 0 < 1  (x fest, k → ∞)
+⇒ konvergiert für alle x. (gleiches Fakultäts-Argument)`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> x als wachsende Variable im Grenzwert behandeln → <strong>✅ Richtig:</strong> x ist eine feste reelle Zahl; nur k → ∞; der Grenzwert des Quotienten |aₖ₊₁/aₖ| = x²/((2k+3)(2k+2)) → 0</li>
+              <li><strong>❌ Falsch:</strong> x als mit k wachsende Variable behandeln → <strong>✅ Richtig:</strong> x ist eine FESTE reelle Zahl; nur k → ∞; deshalb ist x² konstant und der Quotient x²/((2k+3)(2k+2)) → 0.</li>
+              <li><strong>❌ Falsch:</strong> (2k+1)!/(2k+3)! = (2k+1)/(2k+3) → <strong>✅ Richtig:</strong> (2k+3)! = (2k+3)(2k+2)(2k+1)!, also kürzt sich (2k+1)! weg und es bleibt 1/((2k+3)(2k+2)).</li>
             </ul>,
-            <p>|aₖ₊₁/aₖ| → 0 {'<'} 1 für k → ∞ (x fest)?</p>,
+            <p>Selbst-Probe: Setze x = 10 fest, k = 100: Quotient ≈ 100/(203·202) ≈ 0,0024 → schon winzig; für noch größeres k geht er gegen 0. Frage: Warum darf man x als Konstante behandeln, und warum sorgt die Fakultät im Nenner dafür, dass der Quotient für JEDES feste x gegen 0 (und damit unter 1) geht?</p>,
           ),
           solution: (
             <>
@@ -560,20 +904,43 @@ lim k^(1/k) = exp(0) = 1.`}</pre>
           text: <>{'Zeigen Sie, dass für jedes x ∈ ℝ gilt:\n\ncos(−x) = cos(x)  und  sin(−x) = −sin(x).'}</>,
           hint: h(
             <>
-              <p>Setze −x in die Reihendarstellung ein. Nutze (−x)²ᵏ = x²ᵏ (gerade Potenz bleibt positiv) und (−x)²ᵏ⁺¹ = −x²ᵏ⁺¹ (ungerade Potenz wechselt Vorzeichen).</p>
+              <p>Zu zeigen sind die <span className="hint-em">Symmetrien</span> cos(−x) = cos(x) (cos ist eine <span className="hint-em">gerade</span> Funktion) und sin(−x) = −sin(x) (sin ist <span className="hint-em">ungerade</span>). Beweisidee: −x in die Reihendarstellung einsetzen und das Vorzeichen sauber behandeln.</p>
+              <p><span className="hint-em">Schlüsselregel über gerade/ungerade Potenzen</span> (denn (−x)ⁿ = (−1)ⁿ·xⁿ):</p>
+              <ul>
+                <li>Gerade Hochzahl: (−x)^(2k) = (−1)^(2k)·x^(2k) = (+1)·x^(2k) = x^(2k). Ein Minus, gerade oft multipliziert, hebt sich weg → Vorzeichen verschwindet.</li>
+                <li>Ungerade Hochzahl: (−x)^(2k+1) = (−1)^(2k+1)·x^(2k+1) = (−1)·x^(2k+1) = −x^(2k+1). Ein Minus, ungerade oft → bleibt.</li>
+              </ul>
+              <p>Die cos-Reihe enthält nur GERADE Potenzen x^(2k), die sin-Reihe nur UNGERADE Potenzen x^(2k+1) — daher die unterschiedliche Symmetrie. Ein <span className="hint-em">konstanter Faktor</span> (hier das gemeinsame −1) darf aus einer Summe herausgezogen werden: Σ(−1)·bₖ = −Σbₖ.</p>
             </>,
             <>
-              <ol>
-                <li>Setze −x in die Reihendarstellung von cos(x) und sin(x) ein</li>
-                <li>Vereinfache (−x)^(2k) und (−x)^(2k+1) — beachte gerade vs. ungerade Potenzen</li>
-                <li>Ziehe konstante Faktoren aus der Summe heraus und erkenne die ursprüngliche Reihe</li>
-              </ol>
+              <p>So beweist man beide Symmetrien aus den Reihen:</p>
+              <pre className="hint-code-block">{`COSINUS (nur gerade Potenzen x^(2k)):
+   cos(−x) = Σ (−1)ᵏ · (−x)^(2k) / (2k)!
+   da (−x)^(2k) = x^(2k):
+           = Σ (−1)ᵏ · x^(2k) / (2k)!
+           = cos(x).            ⇒ cos(−x) = cos(x) ✓
+
+SINUS (nur ungerade Potenzen x^(2k+1)):
+   sin(−x) = Σ (−1)ᵏ · (−x)^(2k+1) / (2k+1)!
+   da (−x)^(2k+1) = −x^(2k+1):
+           = Σ (−1)ᵏ · (−1)·x^(2k+1) / (2k+1)!
+   konstanten Faktor (−1) vor die Summe ziehen:
+           = − Σ (−1)ᵏ · x^(2k+1) / (2k+1)!
+           = − sin(x).          ⇒ sin(−x) = −sin(x) ✓`}</pre>
+              <p>Alles hängt am Exponenten der x-Potenz: gerade (cos) ⇒ Vorzeichen weg ⇒ unverändert; ungerade (sin) ⇒ ein Minus bleibt ⇒ Gesamt-Vorzeichenwechsel.</p>
             </>,
-            <p>(−1)^(2k) = 1 (gerade) und (−1)^(2k+1) = −1 (ungerade).</p>,
+            <>
+              <p>Anschauung an einzelnen Potenzen (ohne Reihe):</p>
+              <pre className="hint-code-block">{`gerade:   (−x)² = x²,  (−x)⁴ = x⁴   (wie x²,x⁴)
+ungerade: (−x)³ = −x³, (−x)⁵ = −x⁵  (Vorzeichen dreht)
+→ Funktion aus geraden Potenzen ist gerade,
+  aus ungeraden Potenzen ungerade.`}</pre>
+            </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> (−x)²ᵏ = −x²ᵏ behaupten → <strong>✅ Richtig:</strong> Gerade Potenzen: (−x)²ᵏ = (−1)²ᵏ · x²ᵏ = 1 · x²ᵏ = x²ᵏ; das Vorzeichen verschwindet</li>
+              <li><strong>❌ Falsch:</strong> (−x)^(2k) = −x^(2k) behaupten → <strong>✅ Richtig:</strong> (−x)^(2k) = (−1)^(2k)·x^(2k) = (+1)·x^(2k) = x^(2k); bei gerader Hochzahl verschwindet das Vorzeichen.</li>
+              <li><strong>❌ Falsch:</strong> auch das Vorzeichen (−1)ᵏ der Reihe mit umdrehen → <strong>✅ Richtig:</strong> (−1)ᵏ bleibt unangetastet; nur (−x)ⁿ wird umgeschrieben. Beim sin entsteht GENAU EIN zusätzliches Minus, das man ausklammert.</li>
             </ul>,
-            <p>(−x)²ᵏ = x²ᵏ und (−x)²ᵏ⁺¹ = −x²ᵏ⁺¹ korrekt angewandt?</p>,
+            <p>Selbst-Probe: Konkret cos(−x): erstes Glied (k=0): (−x)⁰/0! = 1 (= bei cos(x)); nächstes (k=1): −(−x)²/2! = −x²/2 (= bei cos(x)) — identisch. Bei sin(−x), k=0: (−x)¹/1! = −x = −(x) ⇒ Vorzeichen gedreht. Frage: Warum macht die gerade Potenz x^(2k) den Kosinus symmetrisch, während die ungerade Potenz x^(2k+1) beim Sinus ein Gesamt-Minus erzeugt?</p>,
           ),
           solution: (
             <>
