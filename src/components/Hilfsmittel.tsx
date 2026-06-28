@@ -297,17 +297,20 @@ export default function Hilfsmittel() {
   useEffect(() => injectFsCss(), [])
   return (
     <div>
-      <div className="section-header">
-        <h2>Hilfsmittel</h2>
-        <p>
-          Zweiseitige Formelsammlung — deckt alle Übungsblätter (0–13) ab. Mit „Drucken" als
-          beidseitiges A4-Blatt ausgeben (im Druckdialog „Hintergrundgrafiken" optional).
-        </p>
-      </div>
-
-      <div className="fs-toolbar">
-        <button type="button" className="nav-btn" onClick={() => window.print()}>🖨 Drucken / als PDF speichern</button>
-        <span className="fs-hint">2 Seiten · so kompakt wie möglich</span>
+      <div className="hilf-bar">
+        <div className="hilf-bar-text">
+          <h2>Hilfsmittel</h2>
+          <p>
+            Zweiseitige Formelsammlung — deckt alle Übungsblätter (0–13) ab. Im Druckdialog
+            optional „Hintergrundgrafiken" aktivieren.
+          </p>
+        </div>
+        <div className="hilf-bar-actions">
+          <span className="hilf-bar-hint">2 Seiten · A4</span>
+          <button type="button" className="hilf-print-btn" onClick={() => window.print()}>
+            🖨 Drucken / als PDF
+          </button>
+        </div>
       </div>
 
       <div className="fs-print-area">
