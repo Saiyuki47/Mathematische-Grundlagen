@@ -551,7 +551,7 @@ De-Morgan-Querprüfung an dieser Probe:
             </ul>,
             <p>Selbstkontrolle: prüfe an deiner Probe, ob (A∪B)‾ wirklich elementweise gleich Ā∩B̄ ist. Frage: Wie erkennst du mit De Morgan ganz ohne Venn-Diagramm, dass Ā∩B̄ das Komplement von A∪B ist — und wovon ist Ā∪B̄ das Komplement?</p>,
           ),
-          solution: 'Es gilt (De Morgan\'sche Gesetze):\n\nA ∪ B̅ = A̅ ∩ B̅   (Komplement der Vereinigung = Schnitt der Komplemente)\nA ∩ B̅ = A̅ ∪ B̅   (Komplement des Schnitts = Vereinigung der Komplemente)\n\n→ A̅ ∪ B und A̅ ∩ B̅ haben identische Venn-Diagramme.\n→ A̅ ∩ B und A̅ ∪ B̅ haben identische Venn-Diagramme.',
+          solution: 'Komplemente sind relativ zur Grundmenge X. Beispiel X = {1,2,3,4,5}, A = {1,2,3}, B = {3,4} → A̅ = {4,5}, B̅ = {1,2,5}:\n\n  A̅ ∪ B  = {3,4,5}\n  A̅ ∪ B̅ = {1,2,4,5}\n  A̅ ∩ B  = {4}\n  A̅ ∩ B̅ = {5}\n\nAlle vier Ausdrücke sind im Allgemeinen verschieden. Mit den De Morganschen Gesetzen erkennt man ihre Bedeutung:\n  A̅ ∩ B̅ = (A ∪ B)‾   (Komplement der Vereinigung)\n  A̅ ∪ B̅ = (A ∩ B)‾   (Komplement des Schnitts)\n  A̅ ∩ B  = B \\ A      (nur in B, nicht in A)\n  A̅ ∪ B  = (A \\ B)‾   (Komplement von „nur in A")',
         },
       ],
     },
