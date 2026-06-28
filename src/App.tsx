@@ -1,6 +1,5 @@
 import Tabs from './components/Tabs'
 import Cheatsheet from './components/Cheatsheet'
-import Themen from './components/Themen'
 import Hilfsmittel from './components/Hilfsmittel'
 import Uebungsblaetter from './components/Uebungsblaetter'
 import { Header, Quiz, Flashcards, GlobalSearch, Moodle, useTheme, useHashTab } from 'lernseiten-ui'
@@ -9,9 +8,9 @@ import { karteikarten } from './data/karteikarten'
 import { searchIndex } from './data/searchIndex'
 import { dateienTree } from './data/dateien'
 
-export type TabId = 'uebung' | 'themen' | 'referenz' | 'hilfsmittel' | 'moodle' | 'quiz' | 'karten'
+export type TabId = 'uebung' | 'referenz' | 'hilfsmittel' | 'moodle' | 'quiz' | 'karten'
 
-const TABS: readonly TabId[] = ['uebung', 'themen', 'referenz', 'hilfsmittel', 'moodle', 'quiz', 'karten']
+const TABS: readonly TabId[] = ['uebung', 'referenz', 'hilfsmittel', 'moodle', 'quiz', 'karten']
 
 function App() {
   const [activeTab, setActiveTab] = useHashTab(TABS, 'uebung')
@@ -32,7 +31,6 @@ function App() {
           <GlobalSearch index={searchIndex} onNavigate={t => setActiveTab(t as TabId)} />
         </div>
         {activeTab === 'uebung' && <Uebungsblaetter />}
-        {activeTab === 'themen' && <Themen />}
         {activeTab === 'referenz' && <Cheatsheet />}
         {activeTab === 'hilfsmittel' && <Hilfsmittel />}
         {activeTab === 'moodle' && <Moodle tree={dateienTree} baseUrl={import.meta.env.BASE_URL} />}
