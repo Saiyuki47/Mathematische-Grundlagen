@@ -236,8 +236,6 @@ const PAGE2: Box[] = [
 ]
 
 const FS_CSS = `
-.fs-toolbar{display:flex;gap:.6rem;align-items:center;margin-bottom:1rem;flex-wrap:wrap}
-.fs-hint{font-size:12px;color:var(--text2)}
 .fs-print-area{display:flex;flex-direction:column;gap:1.25rem}
 .fs-page{background:#fff;color:#111;border:1px solid var(--border);border-radius:8px;padding:7mm;max-width:210mm;width:100%;margin:0 auto;box-sizing:border-box}
 .fs-page-head{display:flex;justify-content:space-between;font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#555;border-bottom:1px solid #ccc;padding-bottom:3px;margin-bottom:6px}
@@ -256,7 +254,6 @@ const FS_CSS = `
   .fs-print-area{position:absolute;left:0;top:0;width:100%;gap:0}
   .fs-page{border:none;border-radius:0;margin:0;max-width:none;padding:0}
   .fs-page:first-child{page-break-after:always}
-  .fs-toolbar{display:none}
 }
 `
 

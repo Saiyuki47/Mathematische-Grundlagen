@@ -1,9 +1,4 @@
 /* CHEATSHEET */
-.cheat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-}
 .cheat-card {
   background: var(--bg2);
   border: 1px solid var(--border);
@@ -400,12 +395,6 @@
   line-height: 1.6;
   font-family: var(--font-mono);
   white-space: pre-wrap;
-}
-.sub-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
 }
 .toggle-btn--hint {
   border-color: var(--green);
