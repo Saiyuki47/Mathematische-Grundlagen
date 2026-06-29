@@ -11,7 +11,7 @@ export const blatt0: MatheBlatt = {
       id: 'a1',
       nr: 1,
       title: 'Vereinfachen',
-      referenz: ['bruchrechnen'],
+      referenz: ['bruchrechnen', 'rechenreihenfolge'],
       subaufgaben: [
         {
           letter: 'a',
