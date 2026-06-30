@@ -665,5 +665,92 @@
   min-width: 20px;
 }
 
+/* =========================================================================
+   REFERENZ-TAB – aufgewertete Darstellung (MathText-Inhalt in lsref-Karten).
+   Nur hier gestylt; MathText wird in Mathe ausschließlich in der Referenz genutzt.
+   ========================================================================= */
+
+/* Jedes Thema als eigenes Panel statt loser Fließtext-Block */
+.lsref-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.3rem 1.5rem 1.45rem;
+}
+
+/* Karten-Titel: kräftig, mit kurzem blauem Akzentstrich darunter */
+.lsref-card h3 {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  padding-bottom: 0.7rem;
+  margin: 0 0 1rem;
+}
+.lsref-card h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.6rem;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--blue);
+}
+
+/* Fließtext gut lesbar (Sans statt Mono) */
+.lsref-card .math-block {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+/* Zwischenüberschriften: blau, fett, mit Akzent-Leiste + Luft – brechen die Textwüste auf */
+.lsref-card .math-subhead {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--blue);
+  line-height: 1.4;
+  margin: 1.45em 0 0.5em;
+  padding-left: 0.65rem;
+  border-left: 3px solid var(--blue);
+}
+.lsref-card .math-subhead:first-child { margin-top: 0; }
+
+/* Formel-Tabellen sauber gerahmt, Kopf farbig abgesetzt */
+.lsref-card .math-table {
+  border-collapse: collapse;
+  margin: 0.8rem 0;
+  font-size: 13.5px;
+}
+.lsref-card .math-table th,
+.lsref-card .math-table td {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.85rem;
+  text-align: center;
+}
+.lsref-card .math-table th {
+  background: var(--bg);
+  color: var(--blue);
+  font-weight: 600;
+}
+.lsref-card .math-table td:first-child,
+.lsref-card .math-table th:first-child {
+  text-align: left;
+  color: var(--text2);
+}
+
+/* Beispiel-Boxen heben sich INNERHALB des Themen-Panels ab (Seiten-BG statt Panel-BG) */
+.lsref-card .lsref-bsp {
+  background: var(--bg);
+}
+.lsref-card .lsref-bsp-list .math-block {
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
 
 
