@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import { h } from './shared'
+import { Venn2, Venn3 } from '../../components/Venn'
 
 export const blatt1: MatheBlatt = {
   id: 'blatt1',
@@ -470,6 +471,20 @@ kgV(2,3) = 6 → {6n}   = {0,6,12,18,…}     ✓`}</pre>
             <p>Selbstkontrolle: rechne ein eigenes Zahlenbeispiel und vergleiche die vier Ergebnismengen. Frage: Was bedeutet x ∈ (A∩B)∪C auf Elementebene (in Worten), und warum ist das logisch dasselbe wie x ∈ (A∪C)∩(B∪C)?</p>,
           ),
           solution: '(A ∩ B) ∪ C  =  (A ∪ C) ∩ (B ∪ C)\n→ Distributivgesetz: ∪ verteilt sich über ∩\n\n(A ∪ B) ∩ C  =  (A ∩ C) ∪ (B ∩ C)\n→ Distributivgesetz: ∩ verteilt sich über ∪\n\nDie Mengenoperationen ∪ und ∩ sind wechselseitig distributiv.',
+          abbildung: (
+            <>
+              <p className="abb-title">Paar 1 — beide schattieren exakt dieselbe Fläche:</p>
+              <div className="venn-grid">
+                <Venn3 caption="(A ∩ B) ∪ C" shade={(a, b, c) => (a && b) || c} />
+                <Venn3 caption="(A ∪ C) ∩ (B ∪ C)" shade={(a, b, c) => (a || c) && (b || c)} />
+              </div>
+              <p className="abb-title">Paar 2 — ebenfalls deckungsgleich:</p>
+              <div className="venn-grid">
+                <Venn3 caption="(A ∪ B) ∩ C" shade={(a, b, c) => (a || b) && c} />
+                <Venn3 caption="(A ∩ C) ∪ (B ∩ C)" shade={(a, b, c) => (a && c) || (b && c)} />
+              </div>
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -510,6 +525,15 @@ fällt sie beim ∩C weg, weil 1 ∉ C.`}</pre>
             <p>Selbstkontrolle: dein Gegenbeispiel ist gültig, sobald die beiden Ergebnismengen verschieden sind. Frage: Warum kann A ∪ (B∩C) ein Element aus A enthalten, das nichts mit B oder C zu tun hat, während (A∪B)∩C das nie kann?</p>,
           ),
           solution: 'A ∪ (B ∩ C)  ≠  (A ∪ B) ∩ C  im Allgemeinen.\n\nBeispiel: A = {1,2}, B = {2,3}, C = {3,4}\n  A ∪ (B ∩ C) = {1,2} ∪ {3} = {1,2,3}\n  (A ∪ B) ∩ C = {1,2,3} ∩ {3,4} = {3}\n\n→ Klammern können nicht einfach weggelassen werden!',
+          abbildung: (
+            <>
+              <p className="abb-title">Die beiden schattierten Flächen sind verschieden:</p>
+              <div className="venn-grid">
+                <Venn3 caption="A ∪ (B ∩ C)" shade={(a, b, c) => a || (b && c)} />
+                <Venn3 caption="(A ∪ B) ∩ C" shade={(a, b, c) => (a || b) && c} />
+              </div>
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -552,6 +576,14 @@ De-Morgan-Querprüfung an dieser Probe:
             <p>Selbstkontrolle: prüfe an deiner Probe, ob (A∪B)‾ wirklich elementweise gleich Ā∩B̄ ist. Frage: Wie erkennst du mit De Morgan ganz ohne Venn-Diagramm, dass Ā∩B̄ das Komplement von A∪B ist — und wovon ist Ā∪B̄ das Komplement?</p>,
           ),
           solution: 'Komplemente sind relativ zur Grundmenge X. Beispiel X = {1,2,3,4,5}, A = {1,2,3}, B = {3,4} → A̅ = {4,5}, B̅ = {1,2,5}:\n\n  A̅ ∪ B  = {3,4,5}\n  A̅ ∪ B̅ = {1,2,4,5}\n  A̅ ∩ B  = {4}\n  A̅ ∩ B̅ = {5}\n\nAlle vier Ausdrücke sind im Allgemeinen verschieden. Mit den De Morganschen Gesetzen erkennt man ihre Bedeutung:\n  A̅ ∩ B̅ = (A ∪ B)‾   (Komplement der Vereinigung)\n  A̅ ∪ B̅ = (A ∩ B)‾   (Komplement des Schnitts)\n  A̅ ∩ B  = B \\ A      (nur in B, nicht in A)\n  A̅ ∪ B  = (A \\ B)‾   (Komplement von „nur in A")',
+          abbildung: (
+            <div className="venn-grid">
+              <Venn2 caption="A̅ ∪ B" shade={(a, b) => !a || b} />
+              <Venn2 caption="A̅ ∪ B̅" shade={(a, b) => !a || !b} />
+              <Venn2 caption="A̅ ∩ B" shade={(a, b) => !a && b} />
+              <Venn2 caption="A̅ ∩ B̅" shade={(a, b) => !a && !b} />
+            </div>
+          ),
         },
       ],
     },

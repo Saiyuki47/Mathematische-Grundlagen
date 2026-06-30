@@ -60,6 +60,8 @@ export interface MatheSubaufgabe {
   solution: ReactNode
   graph?: LineGraphData
   taskGraph?: LineGraphData
+  /** Frei gerenderte Abbildung (z. B. Venn-Diagramm, Funktionsskizze) unter der Lösung. */
+  abbildung?: ReactNode
 }
 
 export interface MatheAufgabe {

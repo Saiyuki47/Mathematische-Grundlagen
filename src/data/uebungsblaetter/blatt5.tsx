@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import { h } from './shared'
+import FunctionPlot from '../../components/FunctionPlot'
 
 export const blatt5: MatheBlatt = {
   id: 'blatt5',
@@ -524,6 +525,42 @@ f∘g (= x für x≥1, =1 für x<1):
             <p>Selbstkontrolle: Prüfe (g∘f)(3)=g(4)=3 und (f∘g)(0.5)=f(0)=1=(f∘g)(0) (gleicher Output → f∘g nicht injektiv). Frage: Warum ist g∘f bijektiv, obwohl weder f (nicht surjektiv) noch g (nicht injektiv) für sich bijektiv ist — wie ergänzen sich ihre Defekte beim Verketten?</p>,
           ),
           solution: 'f: injektiv, nicht surjektiv, nicht bijektiv  (0 ∉ Bild f)\ng: nicht injektiv, surjektiv, nicht bijektiv  (g(0)=g(0.5)=0)\n\ng∘f: [0,∞)→[0,∞), x↦x  → bijektiv\n\nf∘g: [0,∞)→[0,∞), x↦{ x falls x≥1; 1 sonst }\n  → nicht injektiv, nicht surjektiv, nicht bijektiv',
+          abbildung: (
+            <div className="venn-grid">
+              <FunctionPlot
+                data={{
+                  xMin: -0.4, xMax: 5, yMin: -0.4, yMax: 6,
+                  caption: 'f(x) = x + 1',
+                  series: [{ f: x => x + 1, from: 0, to: 5, color: '#4d9fff' }],
+                  markers: [{ x: 0, y: 1, filled: true, color: '#4d9fff' }],
+                }}
+              />
+              <FunctionPlot
+                data={{
+                  xMin: -0.4, xMax: 5, yMin: -0.4, yMax: 6,
+                  caption: 'g(x) = x−1 (x≥1), sonst 0',
+                  series: [{ f: x => (x >= 1 ? x - 1 : 0), from: 0, to: 5, color: '#3ecf8e' }],
+                  markers: [{ x: 0, y: 0, filled: true, color: '#3ecf8e' }],
+                }}
+              />
+              <FunctionPlot
+                data={{
+                  xMin: -0.4, xMax: 5, yMin: -0.4, yMax: 6,
+                  caption: 'g∘f (x) = x  → bijektiv',
+                  series: [{ f: x => x, from: 0, to: 5, color: '#f5a623' }],
+                  markers: [{ x: 0, y: 0, filled: true, color: '#f5a623' }],
+                }}
+              />
+              <FunctionPlot
+                data={{
+                  xMin: -0.4, xMax: 5, yMin: -0.4, yMax: 6,
+                  caption: 'f∘g (x) = 1 (x<1), x (x≥1)',
+                  series: [{ f: x => (x >= 1 ? x : 1), from: 0, to: 5, color: '#c77dff' }],
+                  markers: [{ x: 0, y: 1, filled: true, color: '#c77dff' }],
+                }}
+              />
+            </div>
+          ),
         },
       ],
     },

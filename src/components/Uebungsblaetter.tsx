@@ -167,6 +167,9 @@ export default function Uebungsblaetter() {
                                 <LineGraph data={sub.graph} />
                               </div>
                             )}
+                            {sub.abbildung && (
+                              <div className="abbildung-wrap">{sub.abbildung}</div>
+                            )}
                           </div>
                         )}
                         <button

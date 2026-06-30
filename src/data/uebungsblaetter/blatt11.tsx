@@ -1,6 +1,7 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
 import { h } from './shared'
+import FunctionPlot from '../../components/FunctionPlot'
 
 export const blatt11: MatheBlatt = {
   id: 'blatt11',
@@ -493,6 +494,24 @@ x³ = (−0,5)³ = −0,125  (ungerade Potenz → negativ)
             <p>Selbst-Probe: Setze x = −1 ein: f₁=−1, f₂=1, f₃=−1, f₄=1 — gerade Exponenten ergeben +1, ungerade −1. Frage: Welche Punkte teilen alle vier Kurven, und woran erkennt man am Exponenten n, ob der Graph symmetrisch zur y-Achse (gerade) oder zum Ursprung (ungerade) ist?</p>,
           ),
           solution: 'f₁: Gerade y=x\nf₂: Normalparabel y=x²\nf₃: kubische Kurve y=x³ (antisymmetrisch)\nf₄: y=x⁴ (flacher als f₂, ≥0)\n\nAlle durch (0,0) und (1,1). Für |x|<1 gilt: f₄ < f₂ und |f₃| < f₁.',
+          abbildung: (
+            <FunctionPlot
+              data={{
+                xMin: -1.25, xMax: 1.25, yMin: -1.25, yMax: 1.25,
+                caption: 'fₙ(x) = xⁿ auf [−1, 1] — alle durch (0,0) und (1,1)',
+                series: [
+                  { f: x => x, from: -1, to: 1, label: 'f₁ = x', color: '#4d9fff' },
+                  { f: x => x * x, from: -1, to: 1, label: 'f₂ = x²', color: '#3ecf8e' },
+                  { f: x => x ** 3, from: -1, to: 1, label: 'f₃ = x³', color: '#f5a623' },
+                  { f: x => x ** 4, from: -1, to: 1, label: 'f₄ = x⁴', color: '#c77dff' },
+                ],
+                markers: [
+                  { x: 0, y: 0, filled: true, color: '#f16063' },
+                  { x: 1, y: 1, filled: true, color: '#f16063' },
+                ],
+              }}
+            />
+          ),
         },
         {
           letter: 'b',
@@ -586,6 +605,20 @@ obwohl alle gₙ stetig sind. (gleiches Phänomen)`}</pre>
             <p>Selbst-Probe: Für x = 0,99 ist 0,99ⁿ → 0 (sehr langsam, aber gegen 0), für x = 1 bleibt 1ⁿ = 1 — direkt nebeneinander liegen Wert 0 und Wert 1, daher der Sprung. Frage: Alle fₙ sind stetig — warum kann die punktweise gebildete Grenzfunktion trotzdem unstetig sein (was passiert genau zwischen x knapp unter 1 und x = 1)?</p>,
           ),
           solution: 'D = (−1,1]\n\nf: (−1,1] → ℝ,  x ↦ {0 für x ∈ (−1,1),  1 für x = 1}\n\nSkizze: y=0 auf (−1,1) (offenes Intervall), isolierter Punkt (1,1).\nHinweis: f ist nicht stetig in x=1, obwohl alle fₙ stetig sind.',
+          abbildung: (
+            <FunctionPlot
+              data={{
+                xMin: -1.4, xMax: 1.4, yMin: -0.5, yMax: 1.5,
+                caption: 'Grenzfunktion f: 0 auf (−1,1), Sprung auf 1 bei x=1',
+                series: [{ f: () => 0, from: -1, to: 1, color: '#4d9fff' }],
+                markers: [
+                  { x: -1, y: 0, filled: false, color: '#4d9fff' },
+                  { x: 1, y: 0, filled: false, color: '#4d9fff' },
+                  { x: 1, y: 1, filled: true, color: '#f16063' },
+                ],
+              }}
+            />
+          ),
         },
       ],
     },
