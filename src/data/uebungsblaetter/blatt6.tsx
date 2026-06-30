@@ -584,7 +584,7 @@ Auflistung: OOTT, OTOT, OTTO, TOOT, TOTO, TTOO → 6 ✓
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Betrachten Sie das Gitter in Abbildung 1. Die Punkte markieren die so genannten Knoten des Gitters. Wie viele Wege mit genau 13 Schritten gibt es, um von A (untere linke Ecke) nach B (obere rechte Ecke) zu gelangen? Dabei bedeutet ein Schritt, dass man von einem Knoten zu einem benachbarten Knoten geht (nur nach rechts oder nach oben).',
+          text: 'Betrachten Sie das Gitter in Abbildung 1. Die Punkte markieren die so genannten Knoten des Gitters. Wie viele Wege mit genau 13 Schritten gibt es, um von A nach B zu gelangen? Dabei bedeutet ein Schritt, dass man von einem Knoten zu einem benachbarten Knoten geht. Ein Beispiel für einen Weg mit 13 Schritten ist in Abbildung 2 zu sehen.',
           hint: h(
             <>
               <p>Idee: Ein Weg von A (unten links) nach B (oben rechts) besteht aus lauter kleinen Schritten, jeder entweder <span className="hint-em">R</span> (nach rechts) oder <span className="hint-em">O</span> (nach oben). Da B genau 8 Felder rechts und 5 Felder über A liegt, braucht JEDER Weg genau 8 R-Schritte und 5 O-Schritte — zusammen 8+5 = 13 Schritte. Die Wege unterscheiden sich nur in der REIHENFOLGE dieser Schritte.</p>

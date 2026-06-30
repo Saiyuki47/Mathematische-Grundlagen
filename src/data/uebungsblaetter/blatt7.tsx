@@ -139,7 +139,7 @@ b₂: setze bₙ = b₁ = 3/4 ein:
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Finden Sie Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ, so dass mindestens eine der Folgen (xₙ) bzw. (yₙ) divergiert, aber die Folge (xₙ + yₙ) konvergiert.',
+          text: 'Finden Sie jeweils Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ, so dass nachfolgende Eigenschaften erfüllt sind.\n\nMindestens eine der Folgen (xₙ) bzw. (yₙ) divergiert, aber die Folge (xₙ + yₙ) konvergiert.',
           hint: h(
             <>
               <p>Eine Folge <span className="hint-em">konvergiert</span>, wenn sich ihre Glieder für wachsendes n beliebig nah an eine feste Zahl (den <span className="hint-em">Grenzwert</span>) annähern. <span className="hint-em">Divergiert</span> heißt einfach „konvergiert nicht" — entweder weil die Glieder ins Unendliche laufen (z. B. xₙ = n → ∞) oder weil sie hin- und herspringen ohne sich festzulegen (z. B. (−1)ⁿ springt zwischen +1 und −1).</p>
@@ -178,7 +178,7 @@ xₙ + yₙ = n + (−n) = 0 → konvergiert gegen 0 ✓`}</pre>
         },
         {
           letter: 'b',
-          text: 'Finden Sie Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ, so dass mindestens eine der Folgen (xₙ) bzw. (yₙ) divergiert, aber die Folge (xₙ · yₙ) konvergiert.',
+          text: 'Finden Sie jeweils Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ, so dass nachfolgende Eigenschaften erfüllt sind.\n\nMindestens eine der Folgen (xₙ) bzw. (yₙ) divergiert, aber die Folge (xₙ · yₙ) konvergiert.',
           hint: h(
             <>
               <p>Gleiche Begriffe wie vorher: <span className="hint-em">konvergiert</span> = nähert sich einer festen Zahl, <span className="hint-em">divergiert</span> = tut das nicht (läuft ins Unendliche oder springt). Jetzt geht es ums <span className="hint-em">Produkt</span> xₙ·yₙ (Glied mal Glied), und wieder soll mindestens ein Faktor divergieren, das Produkt aber konvergieren.</p>
@@ -215,7 +215,7 @@ Produkt: xₙ·yₙ = n·(1/n) = 1 für alle n ≥ 1
         },
         {
           letter: 'c',
-          text: 'Finden Sie Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ, die beide konvergieren, und so dass xₙ < yₙ für alle n ∈ ℕ gilt, aber lim xₙ = lim yₙ.',
+          text: 'Finden Sie jeweils Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ, so dass nachfolgende Eigenschaften erfüllt sind.\n\nDie Folgen (xₙ) und (yₙ) konvergieren, und es ist xₙ < yₙ für alle n, aber es gilt nicht limₙ→∞ xₙ < limₙ→∞ yₙ.',
           hint: h(
             <>
               <p>Zur Erinnerung: <span className="hint-em">lim xₙ</span> ist die Zahl, gegen die die Folgenglieder streben (der <span className="hint-em">Grenzwert</span>). „xₙ &lt; yₙ für alle n" heißt: in JEDEM einzelnen Glied ist die x-Folge echt kleiner. <span className="hint-em">Strikt</span> (&lt;) bedeutet „echt kleiner, nie gleich", <span className="hint-em">schwach</span> (≤) bedeutet „kleiner oder gleich".</p>
@@ -249,7 +249,7 @@ lim xₙ = 0 = lim yₙ ✓ (beide gehen gegen 0)`}</pre>
         },
         {
           letter: 'd',
-          text: 'Finden Sie eine Folge (xₙ) ⊆ ℝ, die divergiert, aber für die die Folge (|xₙ|) konvergiert.',
+          text: 'Finden Sie jeweils Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ, so dass nachfolgende Eigenschaften erfüllt sind.\n\nDie Folge (xₙ) divergiert, aber die Folge (|xₙ|) konvergiert.',
           hint: h(
             <>
               <p>Der <span className="hint-em">Betrag</span> |x| ist der Abstand der Zahl x von 0, also die Zahl „ohne Vorzeichen": |−3| = 3, |+3| = 3, |0| = 0. Die Folge (|xₙ|) entsteht, indem man von jedem Glied das Vorzeichen wegnimmt.</p>
@@ -294,7 +294,7 @@ divergent (springt −2 ↔ 2);
         {
           letter: 'a',
           text: <>
-            {'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ für xₙ = '}
+            {'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ, falls xₙ = '}
             <Frac n="3n² + 4n + 20" d="4n³ + 1000" />
             {'.'}
           </>,
@@ -346,7 +346,7 @@ Grenzwert = 0.`}</pre>
         {
           letter: 'b',
           text: <>
-            {'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ für xₙ = '}
+            {'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ, falls xₙ = '}
             <Frac n="2n³ + 7n² + 12" d="−5n³ − n + 3" />
             {'.'}
           </>,
@@ -393,7 +393,7 @@ Grenzwert = −2/5.`}</pre>
         },
         {
           letter: 'c',
-          text: <>{'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ für xₙ = (2 + '}<Frac n="3" d="n" />{')⁵.'}</>,
+          text: <>{'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ, falls xₙ = (2 + '}<Frac n="3" d="n" />{')⁵.'}</>,
           hint: h(
             <>
               <p>Es gibt <span className="hint-em">Grenzwert-Rechenregeln</span>, mit denen man den Grenzwert „nach innen ziehen" darf, wenn die Einzelteile konvergieren:</p>
@@ -432,22 +432,22 @@ lim (5 − 1/n)³ = 5³ = 125`}</pre>
         },
         {
           letter: 'd',
-          text: 'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ für xₙ = ⁿ√(2¹⁰⁰⁰).',
+          text: 'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ, falls xₙ = ²ⁿ√(2¹⁰⁰⁰).',
           hint: h(
             <>
               <p>Die <span className="hint-em">n-te Wurzel</span> ⁿ√a fragt: „Welche Zahl ergibt, n-mal mit sich selbst multipliziert, a?" Sie lässt sich als <span className="hint-em">Potenz mit Bruch-Exponent</span> schreiben: <span className="hint-em">ⁿ√a = a^(1/n)</span> und allgemein <span className="hint-em">ⁿ√(aᵐ) = a^(m/n)</span>. (Das folgt aus dem Potenzgesetz (a^(1/n))ᵐ = a^(m/n).)</p>
-              <p>Achtung beim Index: Bei ⁿ√(2¹⁰⁰⁰) ist die 1000 ein <span className="hint-em">fester Exponent unter der Wurzel</span>, und n (der Wurzelgrad) wächst gegen ∞. Damit wird der Exponent 1000/n: feste Zahl 1000 durch wachsendes n. Grundtatsache: <span className="hint-em">c/n → 0</span> für festes c, also 1000/n → 0. Und für jede Basis a &gt; 0 gilt <span className="hint-em">a⁰ = 1</span>.</p>
+              <p>Achtung beim Index: Bei ²ⁿ√(2¹⁰⁰⁰) ist die 1000 ein <span className="hint-em">fester Exponent unter der Wurzel</span>, und der Wurzelgrad 2n wächst gegen ∞. Damit wird der Exponent 1000/(2n) = 500/n: feste Zahl durch wachsendes n. Grundtatsache: <span className="hint-em">c/n → 0</span> für festes c, also 500/n → 0. Und für jede Basis a &gt; 0 gilt <span className="hint-em">a⁰ = 1</span>.</p>
             </>,
             <>
-              <p>So bestimmt man lim ⁿ√(2¹⁰⁰⁰):</p>
-              <pre className="hint-code-block">{`1) Wurzel in Potenz umschreiben (ⁿ√(aᵐ) = a^(m/n)):
-   ⁿ√(2¹⁰⁰⁰) = 2^(1000/n)
+              <p>So bestimmt man lim ²ⁿ√(2¹⁰⁰⁰):</p>
+              <pre className="hint-code-block">{`1) Wurzel in Potenz umschreiben (ᵏ√(aᵐ) = a^(m/k), hier k = 2n):
+   ²ⁿ√(2¹⁰⁰⁰) = 2^(1000/(2n)) = 2^(500/n)
 
-2) Grenzwert des Exponenten: 1000 ist fest, n → ∞
-   → 1000/n → 0
+2) Grenzwert des Exponenten: 500 ist fest, n → ∞
+   → 500/n → 0
 
 3) Potenzregel (Basis 2 fest, Exponent → 0):
-   lim 2^(1000/n) = 2^(lim 1000/n) = 2⁰ = 1
+   lim 2^(500/n) = 2^(lim 500/n) = 2⁰ = 1
 
 Grenzwert = 1.`}</pre>
               <p>Warum nicht 2? Die 1000 sieht riesig aus, ist aber eine feste Zahl. Geteilt durch ein immer größeres n geht sie gegen 0, und 2⁰ = 1 — nicht 2.</p>
@@ -458,16 +458,16 @@ Grenzwert = 1.`}</pre>
 Allgemein: ⁿ√c → 1 für jede feste Zahl c > 0`}</pre>
             </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> lim ⁿ√(2¹⁰⁰⁰) = 2 (als spiele die 1000 keine Rolle und blieb nur die 2 übrig) → <strong>✅ Richtig:</strong> 2^(1000/n) und 1000/n → 0, also 2⁰ = 1.</li>
-              <li><strong>❌ Falsch:</strong> 1000/n → ∞ → <strong>✅ Richtig:</strong> 1000 ist fest, n wächst; ein fester Zähler durch wachsenden Nenner geht gegen 0, nicht ∞.</li>
+              <li><strong>❌ Falsch:</strong> lim ²ⁿ√(2¹⁰⁰⁰) = 2 (als spiele die 1000 keine Rolle und blieb nur die 2 übrig) → <strong>✅ Richtig:</strong> 2^(1000/(2n)) = 2^(500/n) und 500/n → 0, also 2⁰ = 1.</li>
+              <li><strong>❌ Falsch:</strong> 500/n → ∞ → <strong>✅ Richtig:</strong> 500 ist fest, n wächst; ein fester Zähler durch wachsenden Nenner geht gegen 0, nicht ∞.</li>
             </ul>,
-            <p>Selbstkontrolle: n = 1000 → 2^(1000/1000) = 2¹ = 2; n = 10⁶ → 2^(0,001) ≈ 1,0007 — die Folge sinkt Richtung 1 ✓. Frage: Warum geht 1000/n gegen 0 (nicht ∞), und warum ist a⁰ = 1 für jede Basis a &gt; 0?</p>,
+            <p>Selbstkontrolle: n = 1000 → 2^(500/1000) = 2^0,5 = √2 ≈ 1,414; n = 10⁶ → 2^(0,0005) ≈ 1,00035 — die Folge sinkt Richtung 1 ✓. Frage: Warum geht 500/n gegen 0 (nicht ∞), und warum ist a⁰ = 1 für jede Basis a &gt; 0?</p>,
           ),
-          solution: 'xₙ = ⁿ√(2¹⁰⁰⁰) = 2^(1000/n)\n\nlim 1000/n = 0\n\nlim xₙ = 2⁰ = 1',
+          solution: 'xₙ = ²ⁿ√(2¹⁰⁰⁰) = 2^(1000/(2n)) = 2^(500/n)\n\nlim 500/n = 0\n\nlim xₙ = 2⁰ = 1',
         },
         {
           letter: 'e',
-          text: <>{'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ für xₙ = ('}<Frac n="n+1" d="n" />{')ⁿ.'}</>,
+          text: <>{'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ, falls xₙ = ('}<Frac n="n+1" d="n" />{')ⁿ.'}</>,
           hint: h(
             <>
               <p>Die <span className="hint-em">Eulersche Zahl e ≈ 2,718…</span> ist über genau diesen Grenzwert definiert: <span className="hint-em">lim (1 + 1/n)ⁿ = e</span>. Diese Formel muss man als Standardgrenzwert kennen.</p>
@@ -505,7 +505,7 @@ Es gilt der erweiterte Standard: lim (1 + a/n)ⁿ = eᵃ
         },
         {
           letter: 'f',
-          text: <>{'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ für xₙ = (−1)ⁿ · '}<Frac n="sin(n)cos(n)" d="3n³" />{'.'}</>,
+          text: <>{'Bestimmen Sie den Grenzwert der Folge (xₙ) ⊆ ℝ, falls xₙ = (−1)ⁿ '}<Frac n="sin(n)cos(n)" d="3n³" />{'.'}</>,
           hint: h(
             <>
               <p>Eine <span className="hint-em">Nullfolge</span> ist eine Folge mit Grenzwert 0. Der <span className="hint-em">Einschnürungssatz</span> (auch Sandwich- oder Quetschsatz) sagt: Wenn man eine Folge xₙ betragsmäßig zwischen 0 und eine Nullfolge yₙ einsperren kann, also <span className="hint-em">0 ≤ |xₙ| ≤ yₙ mit yₙ → 0</span>, dann muss auch |xₙ| → 0 und damit xₙ → 0. (Anschaulich: wird der Abstand zu 0 von oben durch etwas erdrückt, das selbst gegen 0 geht, bleibt nichts übrig.)</p>
@@ -605,7 +605,7 @@ Probe: n=101 → 1/101 ≈ 0,0099 < 0,01 ✓
         {
           letter: 'b',
           text: <>
-            {'Zeigen Sie direkt mit der Definition von „Konvergenz gegen x*", dass lim '}<Frac n="1" d="√n" />{' = 0 gilt.\n\nHinweis: Sie dürfen ohne Beweis verwenden, dass die Wurzelfunktion monoton ist, d.h. für x, y ∈ [0, ∞) mit x ≤ y gilt auch √x ≤ √y.'}
+            {'Zeigen Sie direkt mit der Definition von „Konvergenz gegen x", dass\n\nlimₙ→∞ xₙ = 0\n\ngilt.\n\nHinweis: Sie dürfen ohne Beweis verwenden, dass die Wurzelfunktion monoton ist, das heißt, für x, y ∈ [0, ∞) mit x ≤ y gilt auch √x ≤ √y.'}
           </>,
           hint: h(
             <>
@@ -660,7 +660,7 @@ Für n ≥ N: |1/n − 0| = 1/n ≤ 1/N < ε
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Bestimmen Sie mit Hilfe der geometrischen Summenformel: '}<br />{'Σ(k=0 bis 5) ('}<Frac n="1" d="2" />{')ᵏ'}</>,
+          text: <>{'Bestimmen Sie mit Hilfe der geometrischen Summenformel (siehe Kapitel II.1) folgende Summen: '}<br />{'Σ(k=0 bis 5) ('}<Frac n="1" d="2" />{')ᵏ'}</>,
           hint: h(
             <>
               <p>Das Zeichen <span className="hint-em">Σ (Sigma)</span> ist eine Kurzschreibweise für eine Summe. <span className="hint-em">Σ(k=0 bis 5) qᵏ</span> heißt: setze für k nacheinander 0, 1, 2, 3, 4, 5 ein und addiere alles: q⁰ + q¹ + q² + q³ + q⁴ + q⁵. Eine solche Summe von Potenzen mit fester Basis q heißt <span className="hint-em">geometrische Summe</span>.</p>

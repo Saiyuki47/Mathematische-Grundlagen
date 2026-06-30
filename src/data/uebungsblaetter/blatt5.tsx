@@ -152,7 +152,7 @@ Kandidat ℝ × ℝ?  (0, 9): f(0)=0≠9 → zu groß → NEIN`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Betrachten Sie die Abbildungen\n\nf : ℝ \\ {2} → ℝ,  x ↦ x²   und   h : ℝ → ℝ,  x ↦ |x|.\n\nBestimmen Sie:\n(i)   f(ℝ \\ {2})\n(ii)  f⁻¹({4, 9})\n(iii) h([0, 5])\n(iv)  h([−5, 5])\n(v)   h⁻¹([0, 5])\n(vi)  h⁻¹([−5, 5])\n(vii) h(ℤ)',
+          text: 'Betrachten Sie die Abbildungen\n\nf : ℝ \\ {2} → ℝ,  x ↦ x²   und   h : ℝ → ℝ,  x ↦ |x|,\n\nund bestimmen Sie folgende Bilder und Urbilder:\n\n(i)   f(ℝ \\ {2})\n(ii)  f⁻¹({4, 9})\n(iii) h([0, 5])\n(iv)  h([−5, 5])\n(v)   h⁻¹([0, 5])\n(vi)  h⁻¹([−5, 5])\n(vii) h(ℤ)',
           hint: h(
             <>
               <p>Zwei zentrale Begriffe — bitte sauber auseinanderhalten:</p>
@@ -461,7 +461,7 @@ p ∘ q: Bild(q) = [0,∞) ⊆ Dom(p) = ℝ ✓ → definierbar.
         },
         {
           letter: 'b',
-          text: 'Betrachten Sie die Funktionen\n\nf : [0,∞) → [0,∞),  x ↦ x + 1\n\nund\n\ng : [0,∞) → [0,∞),  x ↦ { x−1,  falls x ≥ 1\n                         { 0,     sonst.\n\nUntersuchen Sie f, g, g ∘ f und f ∘ g jeweils auf Injektivität, Surjektivität und Bijektivität. Skizzieren Sie zunächst die jeweiligen Funktionsgraphen.',
+          text: 'Betrachten Sie die Funktionen\n\nf : [0,∞) → [0,∞),  x ↦ x + 1,\n\nund\n\ng : [0,∞) → [0,∞),  x ↦ { x − 1,  x ≥ 1,\n                         { 0,       sonst.\n\nUntersuchen Sie f, g, g ∘ f und f ∘ g jeweils auf Injektivität, Surjektivität und Bijektivität. Skizzieren Sie zunächst die jeweiligen Funktionsgraphen.',
           hint: h(
             <>
               <p>Drei Eigenschaften (jeweils auf dem angegebenen Definitions- und Zielbereich [0,∞)):</p>
@@ -572,7 +572,7 @@ f∘g (= x für x≥1, =1 für x<1):
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Sei R₁ die Relation\n\nR₁ = {(x², x³) : x ∈ ℝ} ⊆ ℝ × ℝ\n\nauf ℝ und R₂ die Relation\n\nR₂ = {(m, n) : m, n ∈ ℤ, m | n} ⊆ ℤ × ℤ\n\nauf ℤ. Welche der Eigenschaften linkstotal, rechtstotal, linkseindeutig und rechtseindeutig besitzen die Relationen jeweils? Ist eine Funktion dabei?',
+          text: 'Sei R₁ die Relation\n\nR₁ = {(x², x³) : x ∈ ℝ} ⊆ ℝ × ℝ\n\nauf ℝ und R₂ die Relation\n\nR₂ = {(m, n) : m, n ∈ ℤ, m|n} ⊆ ℤ × ℤ\n\nauf ℤ. Welche der Eigenschaften linkstotal, rechtstotal, linkseindeutig und rechtseindeutig besitzen die Relationen jeweils? Ist eine Funktion dabei?',
           hint: h(
             <>
               <p>Eine <span className="hint-em">Relation</span> R auf A ist eine Menge von Paaren, R ⊆ A × A. „(a,b) ∈ R" heißt „a steht in Relation zu b". Vier Eigenschaften beschreiben, wie sich linke und rechte Komponenten verteilen:</p>

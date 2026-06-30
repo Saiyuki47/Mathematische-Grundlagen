@@ -15,7 +15,7 @@ export const blatt8: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Finden Sie Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ mit lim xₙ = ∞ und lim yₙ = 0, sodass lim(n→∞) xₙyₙ = ∞.',
+          text: 'Finden Sie jeweils Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ mit limₙ→∞ xₙ = ∞ und limₙ→∞ yₙ = 0, so dass nachfolgende Eigenschaften erfüllt sind:\n\nlimₙ→∞(xₙyₙ) = ∞.',
           hint: h(
             <>
               <p>„<span className="hint-em">lim xₙ = ∞</span>" (bestimmte Divergenz gegen Unendlich) heißt: die Glieder wachsen über jede Schranke hinaus, z. B. xₙ = n = 1, 2, 3, … . „<span className="hint-em">lim yₙ = 0</span>" (Nullfolge) heißt: die Glieder werden beliebig klein, z. B. yₙ = 1/n.</p>
@@ -54,7 +54,7 @@ xₙyₙ = n³/n = n² → ∞ ✓`}</pre>
         },
         {
           letter: 'b',
-          text: 'Finden Sie Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ mit lim xₙ = ∞ und lim yₙ = 0, sodass lim(n→∞) xₙyₙ = −∞.',
+          text: 'Finden Sie jeweils Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ mit limₙ→∞ xₙ = ∞ und limₙ→∞ yₙ = 0, so dass nachfolgende Eigenschaften erfüllt sind:\n\nlimₙ→∞(xₙyₙ) = −∞.',
           hint: h(
             <>
               <p>Wie in (a) geht es um den unbestimmten Typ <span className="hint-em">„∞·0"</span> (lim xₙ = ∞, lim yₙ = 0), nur soll das Produkt jetzt <span className="hint-em">−∞</span> werden (stark negativ, unbegrenzt fallend). Idee: das Beispiel aus (a) nehmen und das <span className="hint-em">Vorzeichen umdrehen</span>, indem yₙ negativ wird.</p>
@@ -91,7 +91,7 @@ xₙyₙ = −n³/n = −n² → −∞ ✓`}</pre>
         },
         {
           letter: 'c',
-          text: 'Finden Sie Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ mit lim xₙ = ∞ und lim yₙ = 0, sodass lim(n→∞) xₙyₙ = c, wobei c eine beliebig vorgegebene reelle Zahl ist.',
+          text: 'Finden Sie jeweils Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ mit limₙ→∞ xₙ = ∞ und limₙ→∞ yₙ = 0, so dass nachfolgende Eigenschaften erfüllt sind:\n\nlimₙ→∞(xₙyₙ) = c, wobei c eine beliebig vorgegebene reelle Zahl ist.',
           hint: h(
             <>
               <p>Wieder Typ <span className="hint-em">„∞·0"</span> (lim xₙ = ∞, lim yₙ = 0), jetzt soll das Produkt gegen eine <span className="hint-em">beliebig vorgegebene reelle Zahl c</span> konvergieren (z. B. c = 7 oder c = −3). Das unterstreicht: „∞·0" kann JEDEN Wert liefern — man muss die Folgen passend zusammenbauen.</p>
@@ -125,7 +125,7 @@ Produkt = n·0 = 0 → 0 ✓
         },
         {
           letter: 'd',
-          text: 'Finden Sie Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ mit lim xₙ = ∞ und lim yₙ = 0, sodass die Folge (xₙyₙ) beschränkt, aber nicht konvergent ist.',
+          text: 'Finden Sie jeweils Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ mit limₙ→∞ xₙ = ∞ und limₙ→∞ yₙ = 0, so dass nachfolgende Eigenschaften erfüllt sind:\n\nDie Folge (xₙyₙ) ist beschränkt, aber nicht konvergent.',
           hint: h(
             <>
               <p>Wieder Typ <span className="hint-em">„∞·0"</span>, jetzt soll das Produkt <span className="hint-em">beschränkt, aber nicht konvergent</span> sein. <span className="hint-em">Beschränkt</span> heißt: alle Glieder bleiben zwischen zwei festen Schranken (z. B. immer zwischen −1 und +1). <span className="hint-em">Nicht konvergent</span> heißt: es gibt keinen einzigen Grenzwert.</p>
@@ -172,7 +172,7 @@ Teilfolgen → +2 und −2 → divergent ✓`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'xₙ = 1 − ('}<Frac n="−1" d="5" />{')ⁿ'}</>,
+          text: <>{'Berechnen Sie die (eventuell uneigentlichen) Grenzwerte der Folgen (xₙ)ₙ∈ℕ* ⊆ ℝ sofern vorhanden, falls\n\nxₙ = 1 − ('}<Frac n="−1" d="5" />{')ⁿ'}</>,
           hint: h(
             <>
               <p>Ein Ausdruck der Form <span className="hint-em">qⁿ</span> (feste Basis q, wachsender Exponent n) ist eine <span className="hint-em">geometrische Folge</span>. Ihr Verhalten hängt nur vom <span className="hint-em">Betrag |q|</span> ab:</p>
@@ -303,48 +303,47 @@ ungerade n: −1·(1+1/n) → −1
         },
         {
           letter: 'd',
-          text: <>{'xₙ = '}<Frac n="n²−2n³−2" d="2n³+n²" /></>,
+          text: <>{'xₙ = '}<Frac n="n²−2n⁴−2" d="2n³+n²" /></>,
           hint: h(
             <>
-              <p>Eine <span className="hint-em">rationale Folge</span> (Polynom durch Polynom). Der <span className="hint-em">Leitterm</span> ist der Summand mit der höchsten Potenz von n; sein Vorzeichen und Koeffizient bestimmen das Verhalten für große n. Vorsicht beim Ablesen: Im Zähler n² − 2n³ − 2 steht n² zwar vorne, aber die höchste Potenz ist <span className="hint-em">−2n³</span> (Grad 3) — die Reihenfolge der Summanden täuscht!</p>
-              <p>Beide Polynome haben Grad 3 (Zähler-Leitterm −2n³, Nenner-Leitterm +2n³). Methode: höchste Potenz <span className="hint-em">n³ in Zähler und Nenner ausklammern</span>, kürzen, dann <span className="hint-em">c/nᵏ → 0</span> (fester Zähler durch wachsende Potenz). Bei gleichem Grad ist der Grenzwert das Verhältnis der Leitkoeffizienten (mit Vorzeichen): −2/2 = −1.</p>
+              <p>Eine <span className="hint-em">rationale Folge</span> (Polynom durch Polynom). Der <span className="hint-em">Leitterm</span> ist der Summand mit der höchsten Potenz von n; sein Grad und Vorzeichen bestimmen das Verhalten für große n. Vorsicht beim Ablesen: Im Zähler n² − 2n⁴ − 2 steht n² zwar vorne, aber die höchste Potenz ist <span className="hint-em">−2n⁴</span> (Grad 4) — die Reihenfolge der Summanden täuscht!</p>
+              <p>Der Zähler hat Grad 4 (Leitterm −2n⁴), der Nenner nur Grad 3 (Leitterm +2n³). Ist der <span className="hint-em">Zählergrad größer als der Nennergrad</span>, divergiert die Folge bestimmt — der Betrag wächst über jede Schranke. Methode: höchste Potenz ausklammern (<span className="hint-em">n⁴ im Zähler, n³ im Nenner</span>) und kürzen; es bleibt ein Faktor n übrig. Das Leitkoeffizienten-Verhältnis −2/2 = −1 ist negativ, also läuft die Folge gegen <span className="hint-em">−∞</span>.</p>
             </>,
             <>
-              <p>So bestimmt man lim (n² − 2n³ − 2)/(2n³ + n²):</p>
+              <p>So bestimmt man lim (n² − 2n⁴ − 2)/(2n³ + n²):</p>
               <pre className="hint-code-block">{`1) Leitterme finden (höchste Potenz, nicht erster Summand):
-   Zähler: −2n³ (Grad 3)   Nenner: 2n³ (Grad 3)
-   → gleicher Grad → Grenzwert = Leitkoeff.-Verhältnis.
+   Zähler: −2n⁴ (Grad 4)   Nenner: 2n³ (Grad 3)
+   → Zählergrad > Nennergrad → die Folge divergiert.
 
-2) n³ in Zähler und Nenner ausklammern:
-   Zähler: n² − 2n³ − 2 = n³·(1/n − 2 − 2/n³)
-           (n³·1/n = n², n³·(−2) = −2n³, n³·(−2/n³) = −2 ✓)
-   Nenner: 2n³ + n² = n³·(2 + 1/n)
+2) höchste Potenz ausklammern (n⁴ oben, n³ unten):
+   Zähler: n² − 2n⁴ − 2 = n⁴·(1/n² − 2 − 2/n⁴)
+   Nenner: 2n³ + n²       = n³·(2 + 1/n)
 
-3) n³ kürzt sich weg:
-   = (1/n − 2 − 2/n³)/(2 + 1/n)
+3) n⁴/n³ = n abspalten:
+   = n · (1/n² − 2 − 2/n⁴)/(2 + 1/n)
 
-4) n→∞: alle 1/nᵏ → 0:
-   = (0 − 2 − 0)/(2 + 0) = −2/2 = −1
+4) n→∞: alle 1/nᵏ → 0, der Bruch → (0 − 2 − 0)/(2 + 0) = −1:
+   = n · (−1) → −∞
 
-Grenzwert = −1.`}</pre>
-              <p>Warum −1? Für große n dominieren die Leitterme; der Quotient −2n³/2n³ = −1, alle niedrigeren Terme verschwinden.</p>
+Grenzwert = −∞.`}</pre>
+              <p>Warum −∞? Der Bruchteil strebt gegen −1, aber der abgespaltene Faktor n wächst unbegrenzt — das Produkt n·(−1) läuft gegen −∞.</p>
             </>,
             <>
-              <p>Anderes Beispiel: lim (4n² − n)/(−2n² + 5)</p>
-              <pre className="hint-code-block">{`Leitterme: 4n² und −2n² (beide Grad 2)
-= n²(4 − 1/n) / n²(−2 + 5/n²)
-= (4 − 1/n)/(−2 + 5/n²) → 4/(−2) = −2`}</pre>
+              <p>Anderes Beispiel (Zählergrad &gt; Nennergrad): lim (−n³ + n)/(4n² + 1)</p>
+              <pre className="hint-code-block">{`Leitterme: −n³ (Grad 3) über 4n² (Grad 2)
+= n³(−1 + 1/n²) / n²(4 + 1/n²)
+= n · (−1 + 1/n²)/(4 + 1/n²) → n · (−1/4) → −∞`}</pre>
             </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> n² für die dominante Potenz halten (weil es im Zähler vorne steht) → <strong>✅ Richtig:</strong> die höchste Potenz ist n³; Leitterm des Zählers ist −2n³, also durch n³ teilen.</li>
-              <li><strong>❌ Falsch:</strong> Leitkoeffizient des Zählers = +2 (Minus übersehen) → <strong>✅ Richtig:</strong> −2n³ ⟹ Leitkoeffizient −2; lim = −2/2 = −1 (negativ).</li>
+              <li><strong>❌ Falsch:</strong> n² für die dominante Potenz halten (weil es im Zähler vorne steht) → <strong>✅ Richtig:</strong> die höchste Potenz ist n⁴; Leitterm des Zählers ist −2n⁴, also durch n⁴ teilen.</li>
+              <li><strong>❌ Falsch:</strong> Zähler- und Nennergrad für gleich halten und −2/2 = −1 als Grenzwert angeben → <strong>✅ Richtig:</strong> Zählergrad 4 &gt; Nennergrad 3 → die Folge divergiert; −1 ist nur der Faktor, der mit dem übrigen n multipliziert wird: n·(−1) → −∞.</li>
             </ul>,
-            <p>Selbstkontrolle: n = 1000 → Zähler ≈ −2·10⁹, Nenner ≈ 2·10⁹, Quotient ≈ −1 ✓. Frage: Warum entscheidet bei großen n nur der Leitterm (höchste Potenz), und warum muss man auf dessen Vorzeichen achten?</p>,
+            <p>Selbstkontrolle: n = 1000 → Zähler ≈ −2·10¹², Nenner ≈ 2·10⁹, Quotient ≈ −10³ = −1000 (groß und negativ, wächst weiter) ✓. Frage: Woran erkennst du am Grad von Zähler und Nenner, ob eine rationale Folge konvergiert oder gegen ±∞ divergiert — und was bestimmt das Vorzeichen?</p>,
           ),
           solution: (
             <>
-              <Frac n="n²−2n³−2" d="2n³+n²" />{' = '}<Frac n="n³(1/n − 2 − 2/n³)" d="n³(2 + 1/n)" />
-              {'\n= '}<Frac n="1/n − 2 − 2/n³" d="2 + 1/n" />{' → '}<Frac n="0−2−0" d="2+0" />{' = −1'}
+              <Frac n="n²−2n⁴−2" d="2n³+n²" />{' = '}<Frac n="n⁴(1/n² − 2 − 2/n⁴)" d="n³(2 + 1/n)" />
+              {'\n= n · '}<Frac n="1/n² − 2 − 2/n⁴" d="2 + 1/n" />{'\n\nn → ∞ und '}<Frac n="1/n² − 2 − 2/n⁴" d="2 + 1/n" />{' → '}<Frac n="0 − 2 − 0" d="2 + 0" />{' = −1\n\nsomit lim xₙ = −∞'}
             </>
           ),
         },
@@ -468,7 +467,7 @@ Oben: ≤ 1
               {'Σ'}
               {'(k=1 bis n) 9 · ('}
               <Frac n="1" d="10" />
-              {')ᵏ. Bestimmen Sie lim xₙ.'}
+              {')ᵏ. Bestimmen Sie limₙ→∞ xₙ.'}
             </>
           ),
           hint: h(
@@ -583,7 +582,7 @@ x₂ = 0,9 + 9·(1/100) = 0,9 + 0,09 = 0,99
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Die Folge (aₙ) sei rekursiv definiert durch a₀ := 2, aₙ₊₁ := 2aₙ/(2+aₙ), n ≥ 0. Zeigen Sie mit vollständiger Induktion, dass aₙ > 0 für alle n ∈ ℕ. Überlegen Sie, ob die Folge (aₙ) konvergiert, und bestimmen Sie gegebenenfalls den Grenzwert.',
+          text: 'Die Folge (aₙ) sei rekursiv definiert durch\n\na₀ := 2, aₙ₊₁ := 2aₙ/(2+aₙ), n ≥ 0.\n\nZeigen Sie zunächst mit vollständiger Induktion, dass aₙ > 0 für alle n ∈ ℕ. Überlegen Sie dann, ob die Folge (aₙ) konvergiert und bestimmen Sie gegebenenfalls den Grenzwert.',
           hint: h(
             <>
               <p>Die <span className="hint-em">vollständige Induktion</span> beweist eine Aussage A(n) für ALLE n ∈ ℕ in zwei Schritten:</p>
@@ -657,7 +656,7 @@ a(1+a) = a → a + a² = a → a² = 0 → a = 0
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'xₙ = '}<Frac n="2n" d="√(n+1)" /></>,
+          text: <>{'Betrachten Sie die Folgen (xₙ)ₙ∈ℕ* ⊆ ℝ. Bestimmen Sie die (eventuell uneigentlichen) Grenzwerte der Folgen (xₙ), sofern vorhanden.\n\nxₙ = '}<Frac n="2n" d="√(n+1)" /></>,
           hint: h(
             <>
               <p>Gesucht ist das Verhalten von 2n/√(n+1) für n → ∞. Idee: vergleichen, wie schnell Zähler und Nenner wachsen. Der Zähler wächst wie n (linear), der Nenner wie √n (Wurzel, langsamer). Quotient also etwa n/√n = √n → ∞ — die Folge <span className="hint-em">divergiert bestimmt gegen ∞</span>.</p>
@@ -825,7 +824,7 @@ Summe der ersten (n+1) ungeraden Zahlen = (n+1)²
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Zeigen Sie: Ist (xₙ) ⊆ ℝ eine beschränkte Folge und lim yₙ = 0, dann ist auch (xₙyₙ) eine Nullfolge, d. h. lim(n→∞) xₙyₙ = 0.',
+          text: 'Zeigen Sie: Ist (xₙ) ⊆ ℝ eine beschränkte Folge und (yₙ) ⊆ ℝ eine Nullfolge, das heißt, limₙ→∞ yₙ = 0, dann ist die Folge (xₙyₙ) ⊆ ℝ ebenfalls eine Nullfolge.',
           hint: h(
             <>
               <p>Zu beweisen ist der Satz „<span className="hint-em">beschränkt mal Nullfolge ist Nullfolge</span>" mit der <span className="hint-em">ε-N-Definition</span>. Begriffe: (xₙ) <span className="hint-em">beschränkt</span> heißt, es gibt eine feste Schranke M mit |xₙ| ≤ M für ALLE n. (yₙ) <span className="hint-em">Nullfolge</span> heißt, zu jedem ε &gt; 0 gibt es ein N mit |yₙ| &lt; ε für n ≥ N. Zu zeigen: zu jedem ε &gt; 0 gibt es ein N mit |xₙyₙ − 0| &lt; ε für n ≥ N.</p>

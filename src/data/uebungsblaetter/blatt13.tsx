@@ -15,7 +15,7 @@ export const blatt13: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'f : ℝ → ℝ,  x ↦ x³ · exp(1 + 2x)'}</>,
+          text: <>{'Bestimmen Sie die Ableitungen der folgenden Funktionen:\n\nf : ℝ → ℝ,  x ↦ x³ exp(1 + 2x)'}</>,
           hint: h(
             <>
               <p><span className="hint-em">Ableiten</span> heißt, die Steigung einer Funktion zu bestimmen; das Ergebnis f'(x) heißt Ableitung. Hier steht ein <span className="hint-em">Produkt</span> zweier Funktionen: x³ mal exp(1+2x). exp(z) ist die <span className="hint-em">Exponentialfunktion</span> eˢᶻ (e ≈ 2,718); ihre Besonderheit: abgeleitet bleibt sie sich selbst, also (exp(z))' = exp(z), solange z = x ist.</p>
@@ -239,7 +239,7 @@ Im Gegensatz dazu passt bei x|x| beides zu 0.`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'f : ℝ → ℝ,  x ↦ { x (x ≥ 0),  x² (x < 0)'}</>,
+          text: <>{'Skizzieren Sie zunächst folgende Funktionen und überprüfen Sie dann, ob sie in 0 differenzierbar sind.\n\nf : ℝ → ℝ,  x ↦ { x, x ≥ 0;  x², x < 0 }'}</>,
           hint: h(
             <>
               <p>Die Funktion ist <span className="hint-em">stückweise definiert</span>: für x ≥ 0 gilt f(x) = x (eine Gerade), für x {'<'} 0 gilt f(x) = x² (eine Parabel). An der Nahtstelle x = 0 treffen beide Teile aufeinander; beide ergeben dort f(0) = 0, die Funktion ist also lückenlos (stetig). Die Frage ist, ob sie dort auch eine eindeutige Steigung hat — ob sie <span className="hint-em">differenzierbar</span> ist.</p>
@@ -285,7 +285,7 @@ links:  lim (x³−0)/x = lim x² = 0
         },
         {
           letter: 'b',
-          text: <>{'g : ℝ → ℝ,  x ↦ { x³ (x ≥ 0),  x² (x < 0)'}</>,
+          text: <>{'g : ℝ → ℝ,  x ↦ { x³, x ≥ 0;  x², x < 0 }'}</>,
           hint: h(
             <>
               <p>Wieder eine <span className="hint-em">stückweise definierte</span> Funktion: für x ≥ 0 gilt g(x) = x³, für x {'<'} 0 gilt g(x) = x². Beide ergeben in 0 den Wert g(0) = 0 (lückenlos). Wir prüfen die <span className="hint-em">Differenzierbarkeit</span> in der Nahtstelle x = 0.</p>
@@ -329,7 +329,7 @@ Bei x³/x² dagegen kommt 0 = 0 heraus → differenzierbar.`}</pre>
         },
         {
           letter: 'c',
-          text: <>{'h : ℝ → ℝ,  x ↦ { x³+1 (x ≥ 0),  x² (x < 0)'}</>,
+          text: <>{'h : ℝ → ℝ,  x ↦ { x³ + 1, x ≥ 0;  x², x < 0 }'}</>,
           hint: h(
             <>
               <p>Wieder stückweise: für x ≥ 0 gilt h(x) = x³ + 1, für x {'<'} 0 gilt h(x) = x². Achtung — diesmal steht im oberen Teil ein „+1". Bevor man überhaupt über die Steigung nachdenkt, prüft man die <span className="hint-em">Stetigkeit</span>: Passt der Funktionswert an der Nahtstelle zusammen?</p>
@@ -385,7 +385,7 @@ Bei x³/x² dagegen kommt 0 = 0 heraus → differenzierbar.`}</pre>
           letter: '',
           text: (
             <>
-              {'Die Funktion f : (0,∞) → (0,∞), x ↦ x² ist bijektiv und differenzierbar mit f\'(x) ≠ 0. Ihre Umkehrfunktion f⁻¹ : (0,∞) → (0,∞), x ↦ √x ist ebenfalls differenzierbar. Berechnen Sie die Ableitung von f⁻¹ mit der Umkehrfunktionsregel.'}
+              {'Die Funktion f : (0,∞) → (0,∞), x ↦ x² ist bijektiv, differenzierbar und f\'(x) ≠ 0 für alle x ∈ (0,∞). Ihre Umkehrfunktion\n\nf⁻¹ : (0,∞) → (0,∞), x ↦ √x\n\nist somit ebenfalls differenzierbar. Berechnen Sie die Ableitung der Wurzelfunktion f⁻¹ mit der Regel zur Berechnung der Ableitung der Umkehrfunktion.'}
             </>
           ),
           hint: h(
@@ -442,12 +442,12 @@ Probe Potenzregel: (x^(1/3))' = (1/3)x^(−2/3) ✓`}</pre>
           letter: '',
           text: (
             <>
-              {'Leiten Sie f : (−1,1) → ℝ, x ↦ Σ'}
+              {'Leiten Sie die Funktionen\n\nf : (−1,1) → ℝ, x ↦ Σ'}
               <sub>{'k=0'}</sub>
               <sup>{'∞'}</sup>
-              {' xᵏ und g : (−1,1) → ℝ, x ↦ '}
+              {' xᵏ   und   g : (−1,1) → ℝ, x ↦ '}
               <Frac n="1" d="1 − x" />
-              {' ab. Was ist der Zusammenhang zwischen f\' und g\'? (Hinweis: Geometrische Reihe)'}
+              {'\n\nab. Was ist der Zusammenhang zwischen f\' und g\'?\nHinweis: Denken Sie an die geometrische Reihe.'}
             </>
           ),
           hint: h(
@@ -523,7 +523,7 @@ h'(x) = −(1−2x)⁻² · (−2) = 2/(1−2x)²`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Sei a ∈ ℝ. Bestimmen Sie die Ableitung von f : (0,∞) → ℝ, x ↦ xᵃ.'}</>,
+          text: <>{'Sei a ∈ ℝ. Bestimmen Sie die Ableitung der Funktion f : (0,∞) → ℝ, x ↦ xᵃ.'}</>,
           hint: h(
             <>
               <p>Hier ist der Exponent a eine beliebige reelle Zahl (auch z. B. √2 oder −0,7), nicht nur eine natürliche Zahl. Für solche <span className="hint-em">allgemeinen Potenzen</span> ist xᵃ überhaupt erst DEFINIERT über exp und ln: xᵃ := exp(a·ln(x)) für x {'>'} 0. Darum soll man die Ableitung über diese Darstellung herleiten (nicht die Potenzregel als bekannt voraussetzen).</p>
@@ -572,7 +572,7 @@ f'(x) = exp(√2·ln x)·(√2/x) = x^√2·(√2/x)
         },
         {
           letter: 'b',
-          text: <>{'Sei c ∈ (0,∞). Bestimmen Sie die Ableitung von g : ℝ → ℝ, x ↦ cˣ.'}</>,
+          text: <>{'Sei c ∈ (0,∞). Bestimmen Sie die Ableitung der Funktion g : ℝ → ℝ, x ↦ cˣ.'}</>,
           hint: h(
             <>
               <p>Achtung auf den Unterschied zu Teil (a): Bei xᵃ ist die <span className="hint-em">Basis</span> die Variable x und der Exponent fest. Bei cˣ ist es umgekehrt — die <span className="hint-em">Basis c ist fest</span> (eine feste Zahl {'>'} 0) und der <span className="hint-em">Exponent x ist die Variable</span>. Das ist eine <span className="hint-em">Exponentialfunktion zur Basis c</span>, und sie wird ganz anders abgeleitet als eine Potenz.</p>
@@ -624,7 +624,7 @@ g'(x) = exp(x·ln 2)·ln 2 = ln(2)·2ˣ ≈ 0,693·2ˣ`}</pre>
           letter: 'a',
           text: (
             <>
-              {'Zeigen Sie: tan\'(x) = '}<Frac n="1" d="(cos x)²" />{' = 1 + (tan x)² auf (−π/2, π/2).'}
+              {'Zeigen Sie, dass die Ableitung von tan : (−π/2, π/2) → ℝ, x ↦ '}<Frac n="sin(x)" d="cos(x)" />{' gegeben ist sowohl durch\n\ntan\' : (−π/2, π/2) → ℝ, x ↦ '}<Frac n="1" d="(cos(x))²" />{'\n\nals auch durch\n\ntan\' : (−π/2, π/2) → ℝ, x ↦ 1 + (tan(x))².'}
             </>
           ),
           hint: h(
@@ -677,7 +677,7 @@ cot'(x) = [ −sin·sin − cos·cos ] / sin²
           letter: 'b',
           text: (
             <>
-              {'Zeigen Sie mit der zweiten Darstellung von tan\' und der Ableitungsregel für Umkehrfunktionen: arctan\'(x) = '}<Frac n="1" d="1 + x²" />{' für alle x ∈ ℝ.'}
+              {'Zeigen Sie dann mit der zweiten Darstellung für die Ableitung und mit Hilfe der Ableitungsregel für Umkehrfunktionen, dass für alle x ∈ ℝ gilt\n\narctan\'(x) = '}<Frac n="1" d="1 + x²" />{'.'}
             </>
           ),
           hint: h(

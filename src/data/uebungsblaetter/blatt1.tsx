@@ -1,5 +1,5 @@
 import type { MatheBlatt } from '../../types'
-import { h } from './shared'
+import { h, Ol } from './shared'
 import { Venn2, Venn3 } from '../../components/Venn'
 
 export const blatt1: MatheBlatt = {
@@ -15,7 +15,7 @@ export const blatt1: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Sei M = {1, 2, 3}. Entscheiden Sie jeweils, ob die Schreibweise korrekt ist:\n\n(i)   1 ∈ M\n(ii)  {1} ∈ M\n(iii) {1} ⊆ M',
+          text: 'Sei M = {1, 2, 3}. Entscheiden Sie jeweils, welche Schreibweisen korrekt sind.\n\n(i) 1 ∈ M,   (ii) {1} ∈ M,   (iii) {1} ⊆ M',
           hint: h(
             <>
               <p>Eine <span className="hint-em">Menge</span> ist eine Zusammenfassung von unterscheidbaren Objekten zu einem Ganzen; diese Objekte heißen <span className="hint-em">Elemente</span>. Man schreibt eine Menge durch Aufzählung in geschweiften Klammern: M = {'{1, 2, 3}'} hat die drei Elemente 1, 2 und 3.</p>
@@ -67,7 +67,7 @@ c ∈ A     → falsch   (nur {c} ist Element, c selbst nicht)`}</pre>
         },
         {
           letter: 'b',
-          text: 'Sei L = {∅, {1}, {2}, {1,2}}. Entscheiden Sie jeweils, ob die Schreibweise korrekt ist:\n\n(i)   2 ∈ L\n(ii)  {2} ∈ L\n(iii) {2} ⊆ L\n(iv)  {{2}} ⊆ L',
+          text: 'Sei L = {∅, {1}, {2}, {1, 2}}. Entscheiden Sie jeweils, welche Schreibweisen korrekt sind.\n\n(i) 2 ∈ L,   (ii) {2} ∈ L,   (iii) {2} ⊆ L,   (iv) {{2}} ⊆ L',
           hint: h(
             <>
               <p>L = {'{∅, {1}, {2}, {1,2}}'} ist eine <span className="hint-em">Menge von Mengen</span>: ihre <em>direkten Elemente</em> sind selbst wieder Mengen — die leere Menge ∅, {'{1}'}, {'{2}'} und {'{1,2}'}. Die Zahlen 1 und 2 stehen NICHT direkt in L, sondern nur eine Ebene tiefer, <em>innerhalb</em> dieser Elemente.</p>
@@ -128,7 +128,7 @@ a ∈ M     → falsch   (a selbst steht nicht in M)
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Gegeben:\n  X = {1,3,5,7},  Y = {5,7,8},  Z = {1,5}\n\nBestimmen Sie:\n(i)   Z \\ X\n(ii)  X \\ Z\n(iii) X ∩ Y ∩ Z\n(iv)  X ∪ Y ∪ Z\n(v)   X × Z',
+          text: 'Gegeben seien die Mengen X = {1, 3, 5, 7}, Y = {5, 7, 8} und Z = {1, 5}. Geben Sie folgende Mengen an:\n\n(i) Z \\ X,   (ii) X \\ Z,   (iii) X ∩ Y ∩ Z,   (iv) X ∪ Y ∪ Z,   (v) X × Z',
           hint: h(
             <>
               <p>Vier Grundoperationen verbinden zwei Mengen zu einer neuen. Definition jeweils mit der Bedingung, die ein Element erfüllen muss:</p>
@@ -185,7 +185,12 @@ A×B = {(1,2),(1,3),(2,2),(2,3)}   |A|·|B| = 2·2 = 4 ✓`}</pre>
         },
         {
           letter: 'b',
-          text: 'Grundmenge G = {1,2,3,4,5,6,7,8,9}\nL = {1,2,4,7},  M = {3,5,6,8,9},  N = {4,5,9}\n(L̅ = Komplement von L in G, etc.)\n\nBestimmen Sie:\n(i)   L̅ ∩ N\n(ii)  (L ∩ M̅) ∪ (N ∩ N̅)\n(iii) L ∩ N̅ ∩ M̅',
+          text: (
+            <>
+              {'In der Grundmenge G = {1, 2, 3, 4, 5, 6, 7, 8, 9} betrachten wir die Teilmengen\nL = {1, 2, 4, 7},  M = {3, 5, 6, 8, 9},  N = {4, 5, 9}. Bestimmen Sie\n\n'}
+              {'(i) '}<Ol>L</Ol>{' ∩ N,   (ii) (L ∩ '}<Ol>M</Ol>{') ∪ (N ∩ '}<Ol>N</Ol>{'),   (iii) L ∩ '}<Ol>N ∩ <Ol>M</Ol></Ol>
+            </>
+          ),
           hint: h(
             <>
               <p>Das <span className="hint-em">Komplement</span> Ā einer Menge A (bezüglich einer festen <span className="hint-em">Grundmenge</span> G) ist Ā = G \ A: alle Elemente von G, die NICHT in A liegen. Das Komplement hängt immer von G ab — es enthält nie etwas außerhalb von G.</p>
@@ -231,7 +236,7 @@ A ∪ Ā = {1,2,3} ∪ {4,5} = {1,2,3,4,5} = G ✓ (Regel)`}</pre>
             </ul>,
             <p>Selbstkontrolle: prüfe |L̅| = |G| − |L| = 5 und L ∪ L̅ = G. Frage: Warum ist A ∩ Ā = ∅ eine logische Notwendigkeit (kein Zufall dieser Zahlen) — kann ein Objekt zugleich in A und in G\A liegen?</p>,
           ),
-          solution: 'Komplemente: L̅ = {3,5,6,8,9}  M̅ = {1,2,4,7}  N̅ = {1,2,3,6,7,8}\n\n(i) L̅ ∩ N = {3,5,6,8,9} ∩ {4,5,9} = {5,9}\n(ii) (L ∩ M̅) ∪ (N ∩ N̅) = ({1,2,4,7} ∩ {1,2,4,7}) ∪ ∅ = {1,2,4,7} = L\n(iii) L ∩ N̅ ∩ M̅ = {1,2,4,7} ∩ {1,2,3,6,7,8} ∩ {1,2,4,7} = {1,2,7}',
+          solution: 'Komplemente: L̅ = {3,5,6,8,9}  M̅ = {1,2,4,7}  N̅ = {1,2,3,6,7,8}\n\n(i) L̅ ∩ N = {3,5,6,8,9} ∩ {4,5,9} = {5,9}\n(ii) (L ∩ M̅) ∪ (N ∩ N̅) = ({1,2,4,7} ∩ {1,2,4,7}) ∪ ∅ = {1,2,4,7} = L\n(iii) N ∩ M̅ = {4,5,9} ∩ {1,2,4,7} = {4}\n     (N ∩ M̅)‾ = G \\ {4} = {1,2,3,5,6,7,8,9}\n     L ∩ (N ∩ M̅)‾ = {1,2,4,7} ∩ {1,2,3,5,6,7,8,9} = {1,2,7}',
         },
         {
           letter: 'c',
@@ -330,7 +335,7 @@ Zählprobe: 1 + 2 + 1 = 4 = 2² ✓`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Stellen Sie folgende Mengen in der Form { Ausdruck : n ∈ ℕ } dar:\n\n(i)   Natürliche Zahlen, die ohne Rest durch 7 teilbar sind\n(ii)  Natürliche Zahlen, die bei Division durch 5 den Rest 3 lassen\n(iii) Natürliche Zahlen, die sowohl durch 2 als auch durch 3 ohne Rest teilbar sind',
+          text: 'In der Vorlesung haben wir gesehen, dass sich die Menge der geraden natürlichen Zahlen in der Form {2n : n ∈ ℕ} schreiben lässt und die Menge der ungeraden natürlichen Zahlen in der Form {2n + 1 : n ∈ ℕ}. Stellen Sie folgende Mengen nach dem gleichen Prinzip dar:\n\n(i) Die Menge der natürlichen Zahlen, die ohne Rest durch 7 teilbar ist.\n(ii) Die Menge der natürlichen Zahlen, die bei Division durch 5 den Rest 3 lässt.\n(iii) Die Menge der natürlichen Zahlen, die sowohl durch 2 als auch durch 3 ohne Rest teilbar ist.',
           hint: h(
             <>
               <p>Die <span className="hint-em">Erzeuger-Notation</span> (auch beschreibende Form) {'{f(n) : n ∈ ℕ}'} liest man als „die Menge aller Werte f(n), wobei n alle natürlichen Zahlen durchläuft". Statt die Elemente aufzuzählen, gibt man eine <em>Bildungsvorschrift</em> f(n) an. Hier gilt ℕ = {'{0, 1, 2, 3, …}'}, n startet also bei <strong>0</strong>.</p>
@@ -381,7 +386,7 @@ kgV(2,3) = 6 → {6n}   = {0,6,12,18,…}     ✓`}</pre>
         },
         {
           letter: 'b',
-          text: 'Geben Sie folgende Mengen durch Auflistung der ersten Elemente an\n(n ∈ ℕ, d. h. n beginnt bei 0):\n\n(i)   {3n − 2 : n ∈ ℕ}\n(ii)  {3n + 2 : n ∈ ℕ}\n(iii) {2ⁿ : n ∈ ℕ}\n(iv)  {2²ⁿ : n ∈ ℕ}',
+          text: 'Geben Sie folgende Mengen durch Auflistung der ersten Elemente an:\n\n(i) {3n − 2 : n ∈ ℕ}   (ii) {3n + 2 : n ∈ ℕ}\n(iii) {2ⁿ : n ∈ ℕ}   (iv) {2²ⁿ : n ∈ ℕ}',
           hint: h(
             <>
               <p>Umkehrung der vorigen Aufgabe: Hier ist die Bildungsvorschrift f(n) gegeben, und man soll die Menge <span className="hint-em">durch Auflisten</span> der ersten Elemente angeben. Dazu setzt man <em>der Reihe nach</em> n = 0, 1, 2, 3, … in f(n) ein (ℕ beginnt bei 0). In einer Menge spielt Reihenfolge keine Rolle und Duplikate werden weggelassen.</p>
@@ -430,7 +435,7 @@ kgV(2,3) = 6 → {6n}   = {0,6,12,18,…}     ✓`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Seien A, B, C Mengen. Veranschaulichen Sie durch Venn-Diagramme und vergleichen Sie:\n\n  (A ∩ B) ∪ C\n  (A ∪ B) ∩ C\n  (A ∪ C) ∩ (B ∪ C)\n  (A ∩ C) ∪ (B ∩ C)\n\nWas fällt auf?',
+          text: 'Seien A, B und C Mengen. Veranschaulichen Sie die Mengen\n\n(A ∩ B) ∪ C,   (A ∪ B) ∩ C,   (A ∪ C) ∩ (B ∪ C),   (A ∩ C) ∪ (B ∩ C)\n\ndurch Venn-Diagramme. Was fällt auf?',
           hint: h(
             <>
               <p>Ein <span className="hint-em">Venn-Diagramm</span> stellt Mengen als überlappende Kreise in einem Rechteck (= Grundmenge) dar. Bei 3 Mengen entstehen 8 Teilbereiche. Eine Operation veranschaulicht man durch <span className="hint-em">Schattieren</span>: ∩ = nur der Überlappungsbereich, ∪ = beide Flächen zusammen. Zwei Ausdrücke sind gleich, wenn sie exakt dieselbe Fläche schattieren.</p>
@@ -488,7 +493,7 @@ kgV(2,3) = 6 → {6n}   = {0,6,12,18,…}     ✓`}</pre>
         },
         {
           letter: 'b',
-          text: 'Veranschaulichen Sie durch Venn-Diagramme und vergleichen Sie:\n\n  A ∪ (B ∩ C)\n  (A ∪ B) ∩ C\n\nWas fällt auf?',
+          text: 'Veranschaulichen Sie die Mengen\n\nA ∪ (B ∩ C)   und   (A ∪ B) ∩ C\n\ndurch Venn-Diagramme. Was fällt auf?',
           hint: h(
             <>
               <p>Anders als in (a) (wo zwei Ausdrücke per Distributivgesetz gleich waren) sind hier A ∪ (B∩C) und (A∪B)∩C im Allgemeinen <span className="hint-em">verschieden</span>. Die <span className="hint-em">Klammerung</span> entscheidet über das Ergebnis — man darf ∪ und ∩ NICHT beliebig umstellen.</p>
@@ -537,7 +542,13 @@ fällt sie beim ∩C weg, weil 1 ∉ C.`}</pre>
         },
         {
           letter: 'c',
-          text: 'Sei X Grundmenge, A, B ⊆ X. Veranschaulichen Sie und vergleichen Sie:\n\n  Ā ∪ B\n  Ā ∪ B̄\n  Ā ∩ B\n  Ā ∩ B̄\n\n(Ā = Komplement von A in X)',
+          text: (
+            <>
+              {'Sei X eine Menge und seien A, B ⊆ X. Veranschaulichen Sie die Mengen\n\n'}
+              <Ol>A ∪ B</Ol>{',   '}<Ol>A</Ol>{' ∪ '}<Ol>B</Ol>{',   '}<Ol>A ∩ B</Ol>{',   '}<Ol>A</Ol>{' ∩ '}<Ol>B</Ol>
+              {'\n\ndurch Venn-Diagramme. Was fällt auf?'}
+            </>
+          ),
 
           hint: h(
             <>
@@ -575,14 +586,20 @@ De-Morgan-Querprüfung an dieser Probe:
             </ul>,
             <p>Selbstkontrolle: prüfe an deiner Probe, ob (A∪B)‾ wirklich elementweise gleich Ā∩B̄ ist. Frage: Wie erkennst du mit De Morgan ganz ohne Venn-Diagramm, dass Ā∩B̄ das Komplement von A∪B ist — und wovon ist Ā∪B̄ das Komplement?</p>,
           ),
-          solution: 'Komplemente sind relativ zur Grundmenge X. Beispiel X = {1,2,3,4,5}, A = {1,2,3}, B = {3,4} → A̅ = {4,5}, B̅ = {1,2,5}:\n\n  A̅ ∪ B  = {3,4,5}\n  A̅ ∪ B̅ = {1,2,4,5}\n  A̅ ∩ B  = {4}\n  A̅ ∩ B̅ = {5}\n\nAlle vier Ausdrücke sind im Allgemeinen verschieden. Mit den De Morganschen Gesetzen erkennt man ihre Bedeutung:\n  A̅ ∩ B̅ = (A ∪ B)‾   (Komplement der Vereinigung)\n  A̅ ∪ B̅ = (A ∩ B)‾   (Komplement des Schnitts)\n  A̅ ∩ B  = B \\ A      (nur in B, nicht in A)\n  A̅ ∪ B  = (A \\ B)‾   (Komplement von „nur in A")',
+          solution: 'Die vier Mengen veranschaulichen die De Morganschen Gesetze. Probe mit X = {1,2,3,4,5}, A = {1,2,3}, B = {3,4} (also A̅ = {4,5}, B̅ = {1,2,5}):\n\n  (A ∪ B)‾ = {1,2,3,4}‾ = {5}        ;  A̅ ∩ B̅ = {4,5} ∩ {1,2,5} = {5}\n  (A ∩ B)‾ = {3}‾ = {1,2,4,5}        ;  A̅ ∪ B̅ = {4,5} ∪ {1,2,5} = {1,2,4,5}\n\nEs fällt auf:\n  (A ∪ B)‾ = A̅ ∩ B̅   (Komplement der Vereinigung)\n  (A ∩ B)‾ = A̅ ∪ B̅   (Komplement des Schnitts)\n\nJedes Venn-Paar schattiert dieselbe Fläche — genau die De Morganschen Gesetze.',
           abbildung: (
-            <div className="venn-grid">
-              <Venn2 caption="A̅ ∪ B" shade={(a, b) => !a || b} />
-              <Venn2 caption="A̅ ∪ B̅" shade={(a, b) => !a || !b} />
-              <Venn2 caption="A̅ ∩ B" shade={(a, b) => !a && b} />
-              <Venn2 caption="A̅ ∩ B̅" shade={(a, b) => !a && !b} />
-            </div>
+            <>
+              <p className="abb-title">De-Morgan-Paar 1 — gleiche Fläche:</p>
+              <div className="venn-grid">
+                <Venn2 caption={<Ol>A ∪ B</Ol>} name="Komplement von A vereinigt B" shade={(a, b) => !(a || b)} />
+                <Venn2 caption={<><Ol>A</Ol> ∩ <Ol>B</Ol></>} name="A quer geschnitten B quer" shade={(a, b) => !a && !b} />
+              </div>
+              <p className="abb-title">De-Morgan-Paar 2 — gleiche Fläche:</p>
+              <div className="venn-grid">
+                <Venn2 caption={<Ol>A ∩ B</Ol>} name="Komplement von A geschnitten B" shade={(a, b) => !(a && b)} />
+                <Venn2 caption={<><Ol>A</Ol> ∪ <Ol>B</Ol></>} name="A quer vereinigt B quer" shade={(a, b) => !a || !b} />
+              </div>
+            </>
           ),
         },
       ],
@@ -590,12 +607,53 @@ De-Morgan-Querprüfung an dieser Probe:
     {
       id: 'b1a5',
       nr: 5,
-      title: 'Mengengleichheiten (optional)',
+      title: 'Mengengleichheiten (Wenn noch Zeit ist …)',
       referenz: ['mengenoperationen', 'de-morgan-potenzmenge'],
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Seien A, B, C Teilmengen einer Grundmenge X.\nWelche Gleichheiten sind für jede Wahl immer erfüllt?\n\n(i)   A \\ (B \\ C) = (A \\ B) \\ C\n(ii)  A \\ B = A ∩ B̅\n(iii) A \\ (B ∩ C) = (A \\ B) ∪ (A \\ C)\n(iv)  A ∪ (A̅ ∩ B) = A ∪ B',
+          text: (
+            <>
+              {'Seien A, B, C Teilmengen einer Grundmenge X. Kreuzen Sie an, welche Mengengleichheiten für jede Wahl von A, B, C und X immer erfüllt sind?'}
+              <table className="aufg-table">
+                <thead>
+                  <tr>
+                    <th aria-label="Nummer" />
+                    <th aria-label="Gleichheit" />
+                    <th>immer erfüllt</th>
+                    <th>nicht immer erfüllt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="aufg-nr">(i)</td>
+                    <td className="aufg-eq">A \ (B \ C) = (A \ B) \ C</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                  </tr>
+                  <tr>
+                    <td className="aufg-nr">(ii)</td>
+                    <td className="aufg-eq">A \ B = A ∩ <Ol>B</Ol></td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                  </tr>
+                  <tr>
+                    <td className="aufg-nr">(iii)</td>
+                    <td className="aufg-eq">A \ (B ∩ C) = (A \ B) ∪ (A \ C)</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                  </tr>
+                  <tr>
+                    <td className="aufg-nr">(iv)</td>
+                    <td className="aufg-eq">A ∪ (<Ol>A</Ol> ∩ B) = A ∪ B</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                  </tr>
+                </tbody>
+              </table>
+              {'Falls eine Gleichheit nicht immer erfüllt ist, geben Sie ein konkretes Beispiel an, bei dem keine Gleichheit gilt.'}
+            </>
+          ),
           hint: h(
             <>
               <p>Hier ist zu entscheiden, ob eine Mengengleichheit für JEDE Wahl von A, B, C gilt. Es gibt eine grundlegende Asymmetrie:</p>

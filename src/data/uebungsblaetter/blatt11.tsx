@@ -16,7 +16,7 @@ export const blatt11: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'f: ℝ → ℝ,  x ↦ exp('}<Frac n="x" d="(cos x)² + 1" />{')'}
+          text: <>{'Überprüfen Sie, ob folgende Funktionen in ℝ stetig sind:\n\nf: ℝ → ℝ,  x ↦ exp('}<Frac n="x" d="(cos x)² + 1" />{')'}
           </>,
           hint: h(
             <>
@@ -72,7 +72,7 @@ export const blatt11: MatheBlatt = {
         },
         {
           letter: 'b',
-          text: 'g: ℝ → ℝ,  x ↦ √|sin(x)|',
+          text: 'g: ℝ → ℝ,  x ↦ √|x · sin(x)|',
           hint: h(
             <>
               <p>Eine <span className="hint-em">Verkettung</span> (Komposition) ist eine „Funktion in einer Funktion": man steckt das Ergebnis der inneren in die äußere. g(x) = √|sin x| ist dreifach verkettet: <span className="hint-em">zuerst</span> sin x, <span className="hint-em">dann</span> der Betrag |·| davon, <span className="hint-em">zuletzt</span> die Wurzel √. Man schreibt das als g = √ ∘ |·| ∘ sin (von rechts nach links lesen: sin zuerst).</p>
@@ -116,7 +116,7 @@ cos x ≥ −1 für alle x  ⇒ cos x + 1 ≥ −1 + 1 = 0.
             </ul>,
             <p>Selbst-Probe: Setze x = π ein → sin π = 0 → |0| = 0 → √0 = 0, definiert. Und x = π/2 → sin = 1 → √1 = 1. Beide klappen, weil das Argument ≥ 0 ist. Frage: Warum genügt es bei einer Verkettung NICHT, nur die äußerste Funktion (√) auf Stetigkeit zu prüfen — welche Bedingung muss das Argument der Wurzel zusätzlich erfüllen, und welcher Baustein sorgt hier dafür?</p>,
           ),
-          solution: '|sin x| ≥ 0 für alle x → Argument von √ immer ≥ 0.\ng = √ ∘ |·| ∘ sin ist Verkettung stetiger Funktionen → g stetig auf ℝ.',
+          solution: '|x · sin x| ≥ 0 für alle x → Argument von √ immer ≥ 0.\ng = √ ∘ |·| ∘ (x·sin x) ist Verkettung/Produkt stetiger Funktionen → g stetig auf ℝ.',
         },
       ],
     },
@@ -128,7 +128,7 @@ cos x ≥ −1 für alle x  ⇒ cos x + 1 ≥ −1 + 1 = 0.
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Gegeben: f: ℝ → ℝ, x ↦ x;  g: ℝ → ℝ, x ↦ {4 für x ≥ 0, −4 für x < 0};  h: ℝ → ℝ, x ↦ f(x)·g(x).\n\nWelche der Funktionen f, g und h sind stetig?',
+          text: 'Gegeben seien die Funktionen\n\nf: ℝ → ℝ, x ↦ x,   g: ℝ → ℝ, x ↦ {4, x ≥ 0; −4, x < 0}   und   h: ℝ → ℝ, x ↦ f(x) · g(x).\n\nWelche der Funktionen f, g und h sind stetig?',
           hint: h(
             <>
               <p>Drei Stetigkeits-Werkzeuge braucht man hier:</p>
@@ -186,7 +186,7 @@ obwohl der Faktor s unstetig ist.`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'f: ℝ → ℝ,  x ↦ '}<Frac n="x²−1" d="x−1" />{' für x ≠ 1,  f(1) = c'}</>,
+          text: <>{'Untersuchen Sie jeweils, ob es ein c ∈ ℝ gibt, so dass nachfolgende Funktionen in ihrem gesamten Definitionsbereich stetig sind.\n\nf: ℝ → ℝ,  x ↦ '}<Frac n="x²−1" d="x−1" />{' für x ≠ 1,  f(1) = c'}</>,
           hint: h(
             <>
               <p>„<span className="hint-em">Stetig fortsetzen</span>" bedeutet: An der einen problematischen Stelle (hier x = 1, wo der Nenner 0 wird) ist die Funktion zunächst nicht definiert. Man sucht den fehlenden Funktionswert c so, dass kein Sprung und keine Lücke entsteht.</p>
@@ -379,7 +379,7 @@ beide = 1 → lim(x→0) g = 1
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Zeigen Sie mit dem Zwischenwertsatz, dass '}<Frac n="1" d="1+x²" />{' = √x eine Lösung in [0,4] besitzt. Führen Sie das Bisektionsverfahren durch und geben Sie ein Intervall der Länge '}<Frac n="1" d="4" />{' an, in dem die Lösung liegt.'}</>,
+          text: <>{'Zeigen Sie mit Hilfe des Zwischenwertsatzes, dass die Gleichung\n\n'}<Frac n="1" d="1 + x²" />{' = √x\n\neine Lösung in dem Intervall [0, 4] besitzt.\nFühren Sie nun das Bisektionsverfahren durch und geben Sie ein Intervall der Länge '}<Frac n="1" d="4" />{' an, in dem sich die Lösung der Gleichung befinden muss.'}</>,
           hint: h(
             <>
               <p><span className="hint-em">Zwischenwertsatz (ZWS)</span>: Ist eine Funktion f auf einem abgeschlossenen Intervall [a,b] <span className="hint-em">stetig</span> und haben die Randwerte f(a) und f(b) <span className="hint-em">verschiedene Vorzeichen</span> (eines positiv, eines negativ), dann gibt es mindestens eine Stelle x* zwischen a und b mit f(x*) = 0. Anschaulich: Eine ohne abzusetzen gezeichnete Kurve, die von unterhalb der x-Achse nach oberhalb wechselt, muss die x-Achse irgendwo kreuzen.</p>
@@ -452,7 +452,7 @@ f(1,5)<0, f(2)>0 → Nullstelle in [1,5; 2].`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Für n ∈ ℕ* sei fₙ: [−1,1] → ℝ, x ↦ xⁿ. Skizzieren Sie f₁, f₂, f₃, f₄.',
+          text: 'Für n ∈ ℕ* sei die Funktion\n\nfₙ: [−1, 1] → ℝ, x ↦ xⁿ\n\ngegeben.\n\nSkizzieren Sie die Funktionen f₁, f₂, f₃, f₄.',
           hint: h(
             <>
               <p>fₙ(x) = xⁿ heißt „x hoch n", also x n-mal mit sich multipliziert (x² = x·x, x³ = x·x·x). Zum Skizzieren braucht man drei Ideen:</p>
@@ -515,7 +515,7 @@ x³ = (−0,5)³ = −0,125  (ungerade Potenz → negativ)
         },
         {
           letter: 'b',
-          text: 'Für welche x ∈ [−1,1] existiert lim(n→∞) fₙ(x)? Geben Sie die Grenzwerte an.',
+          text: 'Für welche x ∈ [−1, 1] existiert lim(n→∞) fₙ(x)? Geben Sie auch die zugehörigen Grenzwerte an.',
           hint: h(
             <>
               <p>Hier ist x eine <span className="hint-em">feste</span> Zahl aus [−1,1] und nur n läuft gegen ∞. Die Zahlenfolge (xⁿ) = x¹, x², x³, … ist eine <span className="hint-em">geometrische Folge</span> mit Quotient x (jedes Glied = vorheriges · x).</p>
@@ -565,7 +565,7 @@ q = −1:   (−1)ⁿ alterniert → kein Grenzwert`}</pre>
         },
         {
           letter: 'c',
-          text: 'Skizzieren Sie die Grenzfunktion f: D → ℝ, x ↦ lim(n→∞) fₙ(x), wobei D = {x ∈ [−1,1] : lim(n→∞) fₙ(x) existiert}.',
+          text: 'Skizzieren Sie die Funktion\n\nf: D → ℝ, x ↦ lim(n→∞) fₙ(x),\n\nwobei D = {x ∈ [−1, 1] : lim(n→∞) fₙ(x) existiert}.',
           hint: h(
             <>
               <p>Die <span className="hint-em">Grenzfunktion</span> f entsteht, indem man für JEDES feste x den Grenzwert der Folge fₙ(x) = xⁿ bildet: f(x) = lim(n→∞) xⁿ. Definiert ist f nur dort, wo dieser Grenzwert existiert — das ist der <span className="hint-em">Definitionsbereich</span> D aus Teil (b): D = (−1, 1] (alle x in [−1,1] außer −1).</p>

@@ -15,7 +15,7 @@ export const blatt3: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: '1² + 2³ + 3⁴ + 4⁵ + 5⁶',
+          text: 'Schreiben Sie folgende Ausdrücke mit Hilfe des Summenzeichens:\n\n1² + 2³ + 3⁴ + 4⁵ + 5⁶',
           hint: h(
             <>
               <p>Das <span className="hint-em">Summenzeichen Σ</span> (großes griechisches Sigma) ist eine Kurzschreibweise für eine Summe vieler gleichartiger Terme. Die Definition lautet:</p>
@@ -73,7 +73,7 @@ Kontrolle: k=1 → 1²=1 ✓, k=4 → 4²=16 ✓`}</pre>
         },
         {
           letter: 'b',
-          text: <>{'1 + '}<Frac n="1" d="3" />{' + '}<Frac n="1" d="9" />{' + '}<Frac n="1" d="27" /></>,
+          text: <>{'Schreiben Sie folgende Ausdrücke mit Hilfe des Summenzeichens:\n\n1 + '}<Frac n="1" d="3" />{' + '}<Frac n="1" d="9" />{' + '}<Frac n="1" d="27" /></>,
           hint: h(
             <>
               <p>Wieder soll eine Summe ins <span className="hint-em">Summenzeichen Σ</span> übersetzt werden: Σ(k=a bis b) f(k) = f(a) + … + f(b). Gesucht sind Summandenformel f(k), Startindex und Endindex.</p>
@@ -124,7 +124,7 @@ k=0: 2⁰=1, k=1: 2¹=2, k=2: 2²=4, k=3: 2³=8 ✓
         },
         {
           letter: 'c',
-          text: '4 + 7 + 10 + 13 + 16 + 19 + 22',
+          text: 'Schreiben Sie folgende Ausdrücke mit Hilfe des Summenzeichens:\n\n4 + 7 + 10 + 13 + 16 + 19 + 22',
           hint: h(
             <>
               <p>Erneut: eine Summe ins <span className="hint-em">Summenzeichen Σ</span> übersetzen, also f(k), Startindex und Endindex finden. Σ(k=a bis b) f(k) = f(a) + … + f(b).</p>
@@ -180,7 +180,7 @@ k=0: 1+0=1, k=1: 1+2=3, k=2: 1+4=5, k=3: 1+6=7 ✓
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Zeigen Sie für n ∈ ℕ*:\n  Σ(k=0 bis n) C(n,k) = 2ⁿ',
+          text: 'Zeigen Sie für n ∈ ℕ* folgende Identitäten mit Hilfe des Binomischen Lehrsatzes:\n\nΣ(k=0 bis n) C(n,k) = 2ⁿ',
           hint: h(
             <>
               <p>Ein <span className="hint-em">Binomialkoeffizient</span> C(n,k) (gesprochen "n über k") zählt, auf wie viele Arten man k Dinge aus n Dingen auswählen kann. Formel: C(n,k) = n!/(k!·(n−k)!), wobei n! ("n Fakultät") = 1·2·3·…·n das Produkt aller Zahlen bis n ist (und 0! = 1).</p>
@@ -227,7 +227,7 @@ Für n=2: C(2,0)+C(2,1)+C(2,2) = 1+2+1 = 4 = 2² ✓`}</pre>
         },
         {
           letter: 'b',
-          text: 'Zeigen Sie für n ∈ ℕ*:\n  Σ(k=0 bis n) (−1)ᵏ · C(n,k) = 0',
+          text: 'Zeigen Sie für n ∈ ℕ* folgende Identitäten mit Hilfe des Binomischen Lehrsatzes:\n\nΣ(k=0 bis n) (−1)ᵏ · C(n,k) = 0',
           hint: h(
             <>
               <p>Wieder ist eine <span className="hint-em">Identität</span> mit dem <span className="hint-em">Binomischen Lehrsatz</span> (x+y)ⁿ = Σ(k=0 bis n) C(n,k)·x^(n−k)·yᵏ zu zeigen. Die <span className="hint-em">Binomialkoeffizienten</span> C(n,k) = n!/(k!(n−k)!) zählen die Auswahlmöglichkeiten von k aus n.</p>
@@ -282,7 +282,7 @@ Für n=2: 1 − 2 + 1 = 0 ✓`}</pre>
           letter: 'a',
           text: (
             <>
-              {'Für jedes n ∈ ℕ* gilt:\n  Σ(k=1 bis n) '}
+              {'Zeigen Sie nachfolgende Behauptungen jeweils mit vollständiger Induktion.\n\nFür jedes n ∈ ℕ* gilt:\n\nΣ(k=1 bis n) '}
               <Frac n="1" d="k(k+1)" />
               {' = 1 − '}
               <Frac n="1" d="n+1" />
@@ -364,7 +364,7 @@ IS: Σ(k=1..n+1) k = Σ(k=1..n) k + (n+1)
         },
         {
           letter: 'b',
-          text: 'Für jedes n ∈ ℕ gilt: 2ⁿ ≥ n + 1',
+          text: 'Zeigen Sie nachfolgende Behauptungen jeweils mit vollständiger Induktion.\n\nFür jedes n ∈ ℕ gilt:\n\n2ⁿ ≥ n + 1',
           hint: h(
             <>
               <p>Zu zeigen ist eine <span className="hint-em">Ungleichung</span> für alle n ∈ ℕ (natürliche Zahlen ab 0) per <span className="hint-em">vollständiger Induktion</span> (IA: Basisfall direkt; IV: für ein festes n angenommen; IS: A(n) ⇒ A(n+1)). A(n) lautet: 2ⁿ ≥ n+1.</p>
@@ -425,7 +425,7 @@ IS: 2^(n+1) = 2·2ⁿ ≥(IV) 2·2n = 4n
         },
         {
           letter: 'c',
-          text: 'Für jedes n ∈ ℕ* ist 3ⁿ − 3 ohne Rest durch 6 teilbar.',
+          text: 'Zeigen Sie nachfolgende Behauptungen jeweils mit vollständiger Induktion.\n\nFür jedes n ∈ ℕ* ist die Zahl 3ⁿ − 3 ohne Rest durch 6 teilbar.',
           hint: h(
             <>
               <p>Zu beweisen ist eine <span className="hint-em">Teilbarkeitsaussage</span> per <span className="hint-em">vollständiger Induktion</span> (IA: Basisfall direkt; IV: für festes n angenommen; IS: A(n) ⇒ A(n+1)). A(n): 3ⁿ − 3 ist durch 6 teilbar.</p>
@@ -496,7 +496,7 @@ IS: (n+1)³ − (n+1)
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Zeigen Sie mit vollständiger Induktion: Für jedes n ∈ ℕ* hat die Potenzmenge von {1,…,n} genau 2ⁿ Elemente.',
+          text: 'Zeigen Sie mit vollständiger Induktion, dass für jedes n ∈ ℕ* die Potenzmenge von {1, …, n} genau 2ⁿ Elemente enthält.',
           hint: h(
             <>
               <p>Eine <span className="hint-em">Teilmenge</span> von M ist eine Menge, deren Elemente alle auch in M liegen (auch die leere Menge ∅ und M selbst zählen dazu). Die <span className="hint-em">Potenzmenge</span> 𝒫(M) ist die Menge ALLER Teilmengen von M. Die <span className="hint-em">Kardinalität</span> |X| ist die Anzahl der Elemente einer Menge. Behauptung: |𝒫({'{1,…,n}'})| = 2ⁿ.</p>
@@ -568,7 +568,7 @@ zusammen 2+2 = 4 = 2² ✓`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Zeigen Sie: C(n,1) = n = C(n, n−1),  falls n ∈ ℕ*',
+          text: 'Zeigen Sie folgende Identitäten für die Binomialkoeffizienten:\n\nC(n,1) = n = C(n, n−1),  falls n ∈ ℕ*',
           hint: h(
             <>
               <p>Die <span className="hint-em">Fakultät</span> n! ("n Fakultät") ist das Produkt aller ganzen Zahlen von 1 bis n: n! = 1·2·3·…·n. Beispiele: 5! = 1·2·3·4·5 = 120, 1! = 1, und per Definition <span className="hint-em">0! = 1</span> (das leere Produkt ist 1 — eine Konvention, die viele Formeln glatt macht).</p>
@@ -615,7 +615,7 @@ C(5,4) = 5!/(4!·1!) = 120/(24·1) = 5 ✓
         },
         {
           letter: 'b',
-          text: 'Zeigen Sie: C(n,k) = C(n, n−k),  falls n, k ∈ ℕ und k ≤ n.',
+          text: 'Zeigen Sie folgende Identitäten für die Binomialkoeffizienten:\n\nC(n,k) = C(n, n−k),  falls n, k ∈ ℕ und k ≤ n.',
           hint: h(
             <>
               <p>Der <span className="hint-em">Binomialkoeffizient</span> C(n,k) = n! / (k!·(n−k)!) zählt die Auswahlmöglichkeiten von k aus n (mit der <span className="hint-em">Fakultät</span> m! = 1·2·…·m, 0! = 1). Zu zeigen ist die <span className="hint-em">Symmetrieregel</span> C(n,k) = C(n, n−k) für k ≤ n.</p>
@@ -658,7 +658,7 @@ C(5,5−2) = C(5,3) = 5!/(3!·2!) = 120/(6·2) = 10
         },
         {
           letter: 'c',
-          text: 'Zeigen Sie: C(n,k) + C(n,k+1) = C(n+1,k+1),  falls n ∈ ℕ*, k ∈ ℕ, k+1 ≤ n.',
+          text: 'Zeigen Sie folgende Identitäten für die Binomialkoeffizienten:\n\nC(n,k) + C(n,k+1) = C(n+1,k+1),  falls n ∈ ℕ*, k ∈ ℕ und k+1 ≤ n.',
           hint: h(
             <>
               <p>Das ist die <span className="hint-em">Pascal-Regel</span> (Additionsformel) für <span className="hint-em">Binomialkoeffizienten</span> C(n,k) = n!/(k!(n−k)!). Sie sagt: zwei benachbarte Koeffizienten einer Zeile addieren sich zum Koeffizienten direkt darunter — das ist das Bauprinzip des <span className="hint-em">Pascalschen Dreiecks</span> (jede Zahl = Summe der zwei darüber).</p>

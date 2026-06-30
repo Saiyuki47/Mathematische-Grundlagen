@@ -15,7 +15,7 @@ export const blatt12: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'lim'}<sub>{'x→∞'}</sub>{' '}<Frac n="1" d="x" />{' cos('}<Frac n="1" d="x" />{')'}</>,
+          text: <>{'Welche der folgenden Funktionsgrenzwerte existieren? Bestimmen Sie gegebenenfalls den Grenzwert.\n\n'}{'lim'}<sub>{'x→∞'}</sub>{' '}<Frac n="1" d="x" />{' cos('}<Frac n="1" d="x" />{')'}</>,
           hint: h(
             <>
               <p>Ein <span className="hint-em">Funktionsgrenzwert</span> lim(x→∞) … fragt: Welchem Wert nähert sich der Ausdruck, wenn x immer größer wird? Eine <span className="hint-em">Nullfolge</span> ist ein Ausdruck, der dabei gegen 0 geht — z. B. 1/x → 0, weil „1 geteilt durch etwas sehr Großes" winzig wird.</p>
@@ -205,7 +205,7 @@ Aus der Hierarchie: lim(y→∞) y²/exp(y) = 0
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'lim'}<sub>{'n→∞'}</sub>{' '}<Frac n="cos(n)" d="ln(n)" /></>,
+          text: <>{'Welche der folgenden Folgengrenzwerte existieren? Bestimmen Sie gegebenenfalls den Grenzwert.\n\n'}{'lim'}<sub>{'n→∞'}</sub>{' '}<Frac n="cos(n)" d="ln(n)" /></>,
           hint: h(
             <>
               <p>Eine <span className="hint-em">Folge</span> ist eine durchnummerierte Liste von Zahlen a₁, a₂, a₃, … (Index n = 1,2,3,…); lim(n→∞) fragt nach dem Wert, dem sie sich nähert. Hier ist aₙ = cos(n)/ln(n).</p>
@@ -513,7 +513,7 @@ exp(0) = 1.  (auch hier Grenzwert 1)`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Seien x, y ∈ ℝ, a > 0. Zeigen Sie: aˣ · aʸ = a'}<sup>{'x+y'}</sup>{'.'}</>,
+          text: <>{'Seien x, y ∈ ℝ und sei a > 0. Zeigen Sie folgende Rechenregeln:\n\naˣaʸ = a'}<sup>{'x+y'}</sup>{'.'}</>,
           hint: h(
             <>
               <p>„<span className="hint-em">Zeigen Sie</span>" heißt beweisen — man darf das Potenzgesetz aˣ·aʸ = a^(x+y) NICHT als bekannt voraussetzen, sondern muss es aus der Definition herleiten. Genau dafür gibt es zwei Bausteine:</p>
@@ -563,7 +563,7 @@ exp(0) = 1.  (auch hier Grenzwert 1)`}</pre>
         },
         {
           letter: 'b',
-          text: <>{'Seien x, y ∈ ℝ, a > 0. Zeigen Sie: (aˣ)'}<sup>{'y'}</sup>{' = a'}<sup>{'xy'}</sup>{'.'}</>,
+          text: <>{'(aˣ)'}<sup>{'y'}</sup>{' = a'}<sup>{'xy'}</sup>{'.'}</>,
           hint: h(
             <>
               <p>Zu beweisen ist das Gesetz „Potenz einer Potenz" (aˣ)ʸ = a^(xy) — Exponenten MULTIPLIZIEREN. Wieder aus der Definition herleiten, nicht voraussetzen. Drei Bausteine:</p>
@@ -616,7 +616,7 @@ Damit z.B. ln(2⁵) = 5·ln 2.`}</pre>
         },
         {
           letter: 'c',
-          text: <>{'Seien x ∈ ℝ, a, b > 0. Zeigen Sie: aˣbˣ = (ab)ˣ.'}</>,
+          text: <>{'aˣbˣ = (ab)ˣ, falls b > 0.'}</>,
           hint: h(
             <>
               <p>Zu beweisen: aˣ·bˣ = (ab)ˣ — gleiche Hochzahl, verschiedene Basen, dürfen unter EINE Basis ab gezogen werden. Drei Bausteine:</p>
@@ -677,7 +677,7 @@ Damit z.B. ln(2⁵) = 5·ln 2.`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: <>(i) log₁₀(10),{'  '}(ii) log₁₀(10000),{'  '}(iii) log₁₀(1),{'  '}(iv) log₁₀(0,01)</>,
+          text: <>{'Berechnen Sie folgende Ausdrücke:\n\n'}(i) log₁₀(10),{'  '}(ii) log₁₀(10000),{'  '}(iii) log₁₀(1),{'  '}(iv) log₁₀(0,01)</>,
           hint: h(
             <>
               <p>Der <span className="hint-em">Logarithmus</span> log_a(z) beantwortet die Frage: „Mit welcher Hochzahl muss ich die Basis a potenzieren, um z zu erhalten?" Also log_a(z) = c bedeutet a^c = z. Beispiel: log₁₀(1000) = 3, weil 10³ = 1000.</p>
@@ -825,7 +825,7 @@ Probe: 8^(1/3) = 2 ✓  (8 = 2³)`}</pre>
           letter: 'a',
           text: (
             <>
-              {'Zeigen Sie mit dem Quotientenkriterium, dass die Reihen\n\n'}
+              {'Zeigen Sie mit Hilfe des Quotientenkriteriums, dass die Reihen\n\n'}
               {'sin(x) = '}
               {'Σ'}
               <sub>{'k=0'}</sub>
@@ -901,7 +901,7 @@ konvergieren beide Reihen für alle x ∈ ℝ.`}</pre>
         },
         {
           letter: 'b',
-          text: <>{'Zeigen Sie, dass für jedes x ∈ ℝ gilt:\n\ncos(−x) = cos(x)  und  sin(−x) = −sin(x).'}</>,
+          text: <>{'Zeigen Sie, dass für jedes x ∈ ℝ\n\ncos(x) = cos(−x)  und  sin(−x) = −sin(x)\n\ngilt.'}</>,
           hint: h(
             <>
               <p>Zu zeigen sind die <span className="hint-em">Symmetrien</span> cos(−x) = cos(x) (cos ist eine <span className="hint-em">gerade</span> Funktion) und sin(−x) = −sin(x) (sin ist <span className="hint-em">ungerade</span>). Beweisidee: −x in die Reihendarstellung einsetzen und das Vorzeichen sauber behandeln.</p>

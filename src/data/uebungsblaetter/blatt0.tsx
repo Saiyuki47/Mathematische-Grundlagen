@@ -15,7 +15,7 @@ export const blatt0: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: <><Frac n="3" d="7" />{' + '}<Frac n="7" d="3" /></>,
+          text: <>{'Vereinfachen Sie so weit wie möglich.\n\n'}<Frac n="3" d="7" />{' + '}<Frac n="7" d="3" /></>,
           hint: h(
             <>
               <p>Ein <span className="hint-em">Bruch</span> a/b besteht aus dem <span className="hint-em">Zähler</span> a (oben) und dem <span className="hint-em">Nenner</span> b (unten). Der Nenner sagt, in wie viele gleiche Teile ein Ganzes zerlegt ist; der Zähler, wie viele dieser Teile gemeint sind. 3/7 heißt also „3 von 7 gleich großen Stücken".</p>
@@ -347,7 +347,7 @@ Summe: (−3x + 6) + (−x² − x)
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Klammere −1 aus.',
+          text: 'Klammern Sie in dem Ausdruck b(a − b) + b − a\n\n(a) −1\n\naus.',
           hint: h(
             <>
               <p><span className="hint-em">Ausklammern</span> ist die Umkehrung des Ausmultiplizierens: Man zieht einen gemeinsamen Faktor f vor eine Klammer, sodass f · (Rest) wieder den Originalausdruck ergibt. Faktor f ausklammern heißt: jeden Term durch f teilen und das Ergebnis in die Klammer schreiben.</p>
@@ -385,7 +385,7 @@ Probe: (−1)·(−3x + 2) = 3x − 2 ✓`}</pre>
         },
         {
           letter: 'b',
-          text: 'Klammere a − b aus.',
+          text: 'Klammern Sie in dem Ausdruck b(a − b) + b − a\n\n(b) a − b\n\naus.',
           hint: h(
             <>
               <p>Man kann einen Ausdruck wie (a−b) nur dann <span className="hint-em">ausklammern</span>, wenn er in jedem Summanden als Faktor steckt. Ausklammern heißt: jeden Term durch (a−b) teilen, das Ergebnis kommt in die Klammer, (a−b) davor: T₁ + T₂ = (a−b)·(T₁/(a−b) + T₂/(a−b)).</p>
@@ -423,7 +423,7 @@ Probe: (−1)·(−3x + 2) = 3x − 2 ✓`}</pre>
         },
         {
           letter: 'c',
-          text: 'Klammere b − a aus.',
+          text: 'Klammern Sie in dem Ausdruck b(a − b) + b − a\n\n(c) b − a\n\naus.',
           hint: h(
             <>
               <p>Aufgabe wie (b), nur soll diesmal <span className="hint-em">(b−a)</span> ausgeklammert werden (die andere Reihenfolge der Subtraktion). Ausklammern bedeutet wieder: jeden Term durch den Faktor — hier (b−a) — teilen und das Ergebnis in die Klammer schreiben.</p>
@@ -472,7 +472,7 @@ Probe: (−1)·(−3x + 2) = 3x − 2 ✓`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: <Frac n="a − b" d="a − b" />,
+          text: <>{'Kürzen Sie wo weit wie möglich. Dabei seien die reellen Zahlen a, b, c, d, k jeweils so gewählt, dass nicht durch 0 geteilt wird.\n\n'}<Frac n="a − b" d="a − b" /></>,
           hint: h(
             <>
               <p><span className="hint-em">Kürzen</span> heißt: Zähler und Nenner eines Bruchs durch denselben Faktor (ungleich 0) teilen. Der Wert bleibt gleich, der Bruch wird einfacher: (k·u)/(k·v) = u/v.</p>
@@ -733,7 +733,7 @@ Faktoren des Nenners mit (1 + k²) vergleichen:
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Bestimme √2 · √32.',
+          text: 'Erinnerung: Die Wurzel einer reellen Zahl x ∈ ℝ, x ≥ 0, ist eine reelle Zahl y ≥ 0 mit y · y = x (Notation: y = √x oder y = x^(1/2)). (Bemerkung: Die Wurzel einer reellen Zahl x ≥ 0 ist eindeutig.)\n\nBestimmen Sie √2 · √32.',
           hint: h(
             <>
               <p>Die <span className="hint-em">Quadratwurzel</span> √a ist die (nicht-negative) Zahl, die mit sich selbst multipliziert a ergibt: √64 = 8, weil 8·8 = 64. Sie ist nur für a ≥ 0 definiert.</p>
@@ -761,7 +761,7 @@ Faktoren des Nenners mit (1 + k²) vergleichen:
         },
         {
           letter: 'b',
-          text: 'Gilt √(a + b) = √a + √b für beliebige a, b ≥ 0?',
+          text: 'Gilt √(a + b) = √a + √b für beliebige Zahlen a, b ≥ 0?',
           hint: h(
             <>
               <p>Gefragt ist, ob eine <span className="hint-em">Allaussage</span> ("für beliebige a, b ≥ 0") stimmt. Eine Allaussage gilt nur, wenn sie für ALLE Werte stimmt. Um sie zu <span className="hint-em">widerlegen</span>, genügt ein einziges <span className="hint-em">Gegenbeispiel</span>: eine konkrete Wahl von a und b, bei der die Gleichung NICHT aufgeht.</p>
@@ -792,7 +792,7 @@ Der Extra-Term 2√(ab) ist > 0, sobald a,b > 0
         },
         {
           letter: 'c',
-          text: <>{'Mache die Nenner von '}<Frac n="1" d="√5" />{' und '}<Frac n="1" d="√3 + √5" />{' jeweils rational.'}</>,
+          text: <>{'Machen Sie die Nenner von '}<Frac n="1" d="√5" />{' und '}<Frac n="1" d="√3 + √5" />{' jeweils rational (im Nenner darf also keine irrationale Zahl stehen).'}</>,
           hint: h(
             <>
               <p>Eine Zahl heißt <span className="hint-em">rational</span>, wenn sie als Bruch ganzer Zahlen geschrieben werden kann; eine Wurzel wie √5 ist <em>irrational</em>. <span className="hint-em">Den Nenner rational machen</span> heißt: den Bruch so umformen, dass im Nenner keine Wurzel mehr steht. Das Werkzeug ist <span className="hint-em">Erweitern</span> (Zähler und Nenner mit demselben Ausdruck malnehmen — der Wert bleibt gleich).</p>
@@ -849,7 +849,7 @@ Teil 2 — 1/(√3 + √5):
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Skizziere y = x.',
+          text: 'Skizzieren Sie die Geraden, welche durch folgende Gleichungen gegeben sind:\n\n(a) y = x,',
           hint: h(
             <>
               <p>Im <span className="hint-em">Koordinatensystem</span> beschreibt ein Punkt (x, y) eine Position: x nach rechts, y nach oben. Eine <span className="hint-em">lineare Funktion</span> (Gerade) hat die Form <span className="hint-em">y = m·x + b</span>:</p>
@@ -886,7 +886,7 @@ Gerade durch diese Punkte`}</pre>
         },
         {
           letter: 'b',
-          text: 'Skizziere y = −2x + 1.',
+          text: '(b) y = −2x + 1,',
           hint: h(
             <>
               <p>Wieder Form <span className="hint-em">y = m·x + b</span>. Hier ist m = −2 (Steigung) und b = 1 (y-Achsenabschnitt). Eine <span className="hint-em">negative Steigung</span> (m &lt; 0) bedeutet: die Gerade <em>fällt</em> von links nach rechts.</p>
@@ -918,7 +918,7 @@ Nullstelle: 0 = −x + 3 → x = 3 → (3, 0)`}</pre>
         },
         {
           letter: 'c',
-          text: <>{'Skizziere y = ('}<Frac n="1" d="2" />{')x − 2.'}</>,
+          text: <>{'(c) y = '}<Frac n="1" d="2" />{'x − 2,'}</>,
           hint: h(
             <>
               <p>Form <span className="hint-em">y = m·x + b</span> mit m = 1/2 (Steigung) und b = −2 (y-Achsenabschnitt). Eine <span className="hint-em">gebrochene Steigung</span> m = Zähler/Nenner liest man am besten als "<span className="hint-em">Nenner nach rechts, Zähler nach oben</span>": m = 1/2 → 2 Einheiten rechts, 1 Einheit hoch. So landet man auf ganzen Gitterpunkten (statt mit Halbschritten zu hantieren).</p>
@@ -951,7 +951,7 @@ flache, steigende Gerade`}</pre>
         },
         {
           letter: 'd',
-          text: 'Skizziere y = 4.',
+          text: '(d) y = 4.',
           hint: h(
             <>
               <p>y = 4 enthält gar kein x. Das ist eine <span className="hint-em">konstante Funktion</span> y = c: egal welches x man einsetzt, y ist immer 4. In der Form y = m·x + b heißt das m = 0 und b = 4 (der x-Term fällt weg, weil 0·x = 0).</p>
@@ -981,7 +981,7 @@ y = 0   → genau die x-Achse selbst`}</pre>
         },
         {
           letter: 'e',
-          text: 'Bestimme den Schnittpunkt der Geraden aus (b) und (c).',
+          text: '(e) Bestimmen Sie den Schnittpunkt der Geraden aus (b) und (c).',
           hint: h(
             <>
               <p>Der <span className="hint-em">Schnittpunkt</span> zweier Geraden ist der eine Punkt (x, y), der auf BEIDEN Geraden liegt — dort haben beide denselben x- und denselben y-Wert. Die beiden Geraden sind hier (b) y = −2x + 1 und (c) y = (1/2)x − 2.</p>
@@ -1045,7 +1045,7 @@ y = 1   → Schnittpunkt (1, 1)`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Die Gerade schneidet die y-Achse bei 2 und die x-Achse bei 8. Gib die Geradengleichung an.',
+          text: 'Geben Sie jeweils die zugehörige Geradengleichung an.\n\n(a)',
           hint: h(
             <>
               <p>Ziel: aus zwei gegebenen Punkten die Gleichung <span className="hint-em">y = m·x + b</span> aufstellen. Zwei Punkte legen eine Gerade eindeutig fest.</p>
@@ -1093,7 +1093,7 @@ y = −(1/2)x + 5`}</pre>
         },
         {
           letter: 'b',
-          text: 'Die Gerade geht durch den Ursprung und durch den Punkt (2, −1). Gib die Geradengleichung an.',
+          text: '(b)',
           hint: h(
             <>
               <p>Der <span className="hint-em">Ursprung</span> ist der Punkt (0, 0), wo sich die Achsen kreuzen. Geht eine Gerade durch den Ursprung, dann ist bei x = 0 auch y = 0 — also ist der <span className="hint-em">y-Achsenabschnitt b = 0</span>. Die Gleichung y = m·x + b vereinfacht sich zu <span className="hint-em">y = m·x</span> (Ursprungsgerade).</p>

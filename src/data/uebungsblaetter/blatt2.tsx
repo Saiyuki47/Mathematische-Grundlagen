@@ -14,7 +14,57 @@ export const blatt2: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Seien A und B mathematische Aussagen. Füllen Sie nachstehende Wahrheitstafel aus.\nBeachten Sie: „¬" bindet stärker als „∨",\nd.h. „¬A ∧ ¬B" = „(¬A) ∧ (¬B)" und „¬A ∨ ¬B" = „(¬A) ∨ (¬B)".\n\n A | B | ¬(A∧B) | ¬(A∨B) | ¬A∧¬B | ¬A∨¬B\n w | w |        |        |       |\n w | f |        |        |       |\n f | w |        |        |       |\n f | f |        |        |       |',
+          text: (
+            <>
+              {'Seien A und B mathematische Aussagen. Füllen Sie nachstehende Wahrheitstafel aus und überlegen Sie anschließend, welche Spalten übereinstimmen. Beachten Sie, dass „¬" stärker bindet als „∧" bzw. „∨", das heißt, „¬A ∧ ¬B" bedeutet „(¬A) ∧ (¬B)" und „¬A ∨ ¬B" bedeutet „(¬A) ∨ (¬B)".'}
+              <table className="aufg-table">
+                <thead>
+                  <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>¬(A ∧ B)</th>
+                    <th>¬(A ∨ B)</th>
+                    <th>¬A ∧ ¬B</th>
+                    <th>¬A ∨ ¬B</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="aufg-box">w</td>
+                    <td className="aufg-box">w</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                  </tr>
+                  <tr>
+                    <td className="aufg-box">w</td>
+                    <td className="aufg-box">f</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                  </tr>
+                  <tr>
+                    <td className="aufg-box">f</td>
+                    <td className="aufg-box">w</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                  </tr>
+                  <tr>
+                    <td className="aufg-box">f</td>
+                    <td className="aufg-box">f</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                    <td className="aufg-box">☐</td>
+                  </tr>
+                </tbody>
+              </table>
+            </>
+          ),
           hint: h(
             <>
               <p>Eine <span className="hint-em">Aussage</span> ist ein Satz, der entweder wahr (w) oder falsch (f) ist. Aus A und B baut man zusammengesetzte Aussagen mit drei <span className="hint-em">Junktoren</span>:</p>
@@ -64,7 +114,7 @@ Beispiel Zeile 2 (A=w, B=f):
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Sei z ∈ ℤ. Welche der folgenden Aussagen ist/sind wahr?\nSchreiben Sie die Aussagen mit „⇒", „⟸" oder „⟺".\n\nEs gilt genau dann z² ≥ 0, wenn z ≥ 0 ist.',
+          text: 'Sei z ∈ ℤ. Welche der folgenden Aussagen ist/sind wahr? Schreiben Sie die Aussagen zunächst mit Hilfe von „⇒", „⇐" oder „⇔".\n\nEs gilt genau dann z² ≥ 0, wenn z ≥ 0 ist.',
           hint: h(
             <>
               <p>Drei Pfeile verbinden zwei Aussagen A und B:</p>
@@ -110,7 +160,7 @@ Hinrichtung z²=4 ⇒ z=2: Gegenbeispiel z=−2:
         },
         {
           letter: 'b',
-          text: 'Sei z ∈ ℤ. Welche der folgenden Aussagen ist/sind wahr?\nSchreiben Sie die Aussagen mit „⇒", „⟸" oder „⟺".\n\nEine hinreichende Bedingung dafür, dass z durch 2 ohne Rest teilbar ist,\nist die Teilbarkeit von z durch 4 ohne Rest.',
+          text: 'Sei z ∈ ℤ. Welche der folgenden Aussagen ist/sind wahr? Schreiben Sie die Aussagen zunächst mit Hilfe von „⇒", „⇐" oder „⇔".\n\nEine hinreichende Bedingung dafür, dass z durch 2 ohne Rest teilbar ist, ist die Teilbarkeit von z durch 4 ohne Rest.',
           hint: h(
             <>
               <p>Eine <span className="hint-em">hinreichende Bedingung</span>: „A ist hinreichend für B" bedeutet <span className="hint-em">A ⇒ B</span> — A allein <em>genügt</em>, um B zu garantieren. B kann aber durchaus auch ohne A eintreten.</p>
@@ -151,7 +201,7 @@ Beispiel: "durch 6 teilbar" hinreichend für "durch 3 teilbar"?
         },
         {
           letter: 'c',
-          text: 'Sei z ∈ ℤ. Welche der folgenden Aussagen ist/sind wahr?\nSchreiben Sie die Aussagen mit „⇒", „⟸" oder „⟺".\n\nEine notwendige Bedingung dafür, dass z durch 2 ohne Rest teilbar ist,\nist die Teilbarkeit von z durch 4 ohne Rest.',
+          text: 'Sei z ∈ ℤ. Welche der folgenden Aussagen ist/sind wahr? Schreiben Sie die Aussagen zunächst mit Hilfe von „⇒", „⇐" oder „⇔".\n\nEine notwendige Bedingung dafür, dass z durch 2 ohne Rest teilbar ist, ist die Teilbarkeit von z durch 4 ohne Rest.',
           hint: h(
             <>
               <p>Eine <span className="hint-em">notwendige Bedingung</span>: „A ist notwendig für B" bedeutet <span className="hint-em">B ⇒ A</span> — ohne A kann B nicht gelten, A ist eine unverzichtbare Voraussetzung. Das heißt aber NICHT, dass A allein schon B garantiert.</p>
@@ -198,7 +248,7 @@ Muster: Zahlen 2, 6, 10, 14, … (Rest 2 bei :4)`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Welche der folgenden Aussagen sind äquivalent zur Aussage:\n„Wenn das Wetter schön ist, dann kommt Maxi Musterfrau mit dem Fahrrad an die Hochschule."\n(Sei P: „Wetter schön", Q: „Maxi mit Fahrrad" → Original: P ⇒ Q)\n\n(a) Wenn das Wetter nicht schön ist, dann kommt Maxi nicht mit dem Fahrrad.',
+          text: 'Welche der nachfolgenden Aussagen sind äquivalent zu der Aussage: „Wenn das Wetter schön ist, dann kommt Maxi Musterfrau mit dem Fahrrad an die Hochschule."\n(Hinweis: Schreiben Sie die Aussagen zunächst mit Hilfe von „⇒", „⇐" oder „⇔".)\n\n(a) Wenn das Wetter nicht schön ist, dann kommt Maxi Musterfrau nicht mit dem Fahrrad an die Hochschule.',
           hint: h(
             <>
               <p>Aus einer <span className="hint-em">Implikation</span> P ⇒ Q lassen sich drei verwandte Aussagen bilden — man muss sie unterscheiden können:</p>
@@ -240,7 +290,7 @@ Inverse:        ¬P ⇒ ¬Q    → NICHT äquivalent ✗
         },
         {
           letter: 'b',
-          text: '(b) Wenn das Wetter nicht schön ist, dann kommt Maxi mit dem Fahrrad an die Hochschule.',
+          text: '(b) Wenn das Wetter nicht schön ist, dann kommt Maxi Musterfrau mit dem Fahrrad an die Hochschule.',
           hint: h(
             <>
               <p>Aussage (b) „Wenn das Wetter nicht schön ist, dann kommt Maxi mit dem Fahrrad" = <span className="hint-em">¬P ⇒ Q</span>. Das ist keine der drei Standardvarianten (Umkehrung Q⇒P, Inverse ¬P⇒¬Q, Kontraposition ¬Q⇒¬P) — nur die Prämisse ist negiert, Q nicht.</p>
@@ -274,7 +324,7 @@ sonst überall wahr.`}</pre>
         },
         {
           letter: 'c',
-          text: '(c) Das Wetter ist nicht schön oder Maxi ist mit dem Fahrrad an der Hochschule.',
+          text: '(c) Das Wetter ist nicht schön oder Maxi Musterfrau ist mit dem Fahrrad an der Hochschule.',
           hint: h(
             <>
               <p>Die <span className="hint-em">Schlüsseläquivalenz der Implikation</span>: <span className="hint-em">P ⇒ Q ≡ ¬P ∨ Q</span>. In Worten: „Wenn P, dann Q" sagt dasselbe wie „nicht P, oder Q". Eine Implikation ist also nur dann falsch, wenn P wahr und Q falsch ist — in allen anderen Fällen wahr.</p>
@@ -308,7 +358,7 @@ Verletzt nur, wenn es regnet UND ich keinen Schirm nehme.`}</pre>
         },
         {
           letter: 'd',
-          text: '(d) Wenn Maxi ohne Fahrrad an der Hochschule ist, dann ist das Wetter nicht schön.',
+          text: '(d) Wenn Maxi Musterfrau ohne Fahrrad an der Hochschule ist, dann ist das Wetter nicht schön.',
           hint: h(
             <>
               <p>Aussage (d) „Wenn Maxi ohne Fahrrad an der Hochschule ist, dann ist das Wetter nicht schön" = <span className="hint-em">¬Q ⇒ ¬P</span>. Das ist die <span className="hint-em">Kontraposition</span> von P ⇒ Q: beide Teile negiert UND der Pfeil umgedreht.</p>
@@ -356,7 +406,7 @@ P ⇒ Q ≢ ¬P ⇒ ¬Q   (Inverse)         → nicht äquiv. ✗`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Beweisen Sie durch direkten Beweis den Satz A(n) ⇒ B(n) ∀n für die Aussagen:\n  A(n): n ist ungerade\n  B(n): n² ist ungerade\n\nHinweis: Benutzen Sie dafür die Wahrheitstafel des Operators ⇒.',
+          text: 'Beweisen Sie, durch direkten Beweis, den Satz A(n) ⇒ B(n) ∀n für die Aussagen:\n  • A(n): n ist ungerade\n  • B(n): n² ist ungerade\n\nHinweise: Sie müssen die Wahrheit von A ⇒ B für alle n zeigen so in der letzten Vorlesung besprochen. Benutzen Sie dafür die Wahrheitstabelle des Operators ⇒. Eventuell sind nicht alle Zeilen der Tabelle zu zeigen, begründen Sie dies!',
           hint: h(
             <>
               <p>Ein <span className="hint-em">direkter Beweis</span> von „A(n) ⇒ B(n) für alle n" geht so: Man nimmt A(n) als wahr an (Voraussetzung) und leitet daraus durch gültige Umformungen B(n) her. Aus der Wahrheitstafel von ⇒ weiß man: eine Implikation ist nur im Fall A=w, B=f falsch. Zeigt man, dass dieser Fall NIE eintritt (aus A=w folgt immer B=w), ist die Implikation für alle n wahr. Zeilen mit A=f muss man nicht betrachten — dort ist A ⇒ B automatisch wahr.</p>
@@ -406,7 +456,7 @@ n² = (2k)² = 4k² = 2·(2k²) = 2m  (mit m = 2k²)
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Beweisen Sie den Satz A(n) ⇒ B(n) ∀n aus Aufgabe 4 durch Widerspruchsbeweis.\n  A(n): n ist ungerade\n  B(n): n² ist ungerade',
+          text: 'Beweisen Sie den Satz aus der letzten Aufgabe durch Widerspruchsbeweis!',
           hint: h(
             <>
               <p>Beim <span className="hint-em">Widerspruchsbeweis</span> (indirekter Beweis) nimmt man das GEGENTEIL der zu beweisenden Aussage an und leitet daraus einen <span className="hint-em">Widerspruch</span> her (etwas, das gleichzeitig wahr und falsch sein müsste). Da die Annahme zu Unsinn führt, muss sie falsch sein — also gilt die ursprüngliche Aussage.</p>
@@ -458,7 +508,7 @@ n² = (2k)² = 4k² = 2·(2k²) = 2m  (mit m = 2k²)
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Vereinfachen Sie den folgenden logischen Ausdruck:\n\n  A ∨ (¬A ∧ B)',
+          text: 'Vereinfachen Sie die folgenden logischen Ausdrücke:\n\n  A ∨ (¬A ∧ B)',
           hint: h(
             <>
               <p>Logische Ausdrücke kann man mit <span className="hint-em">Booleschen Gesetzen</span> umformen (genau wie Zahlenterme mit Rechenregeln). Hier gebraucht:</p>
@@ -503,7 +553,7 @@ f  f │  f   │    f     │  f   ✓ identisch`}</pre>
         },
         {
           letter: 'b',
-          text: 'Vereinfachen Sie den folgenden logischen Ausdruck\n(aus der digitalen Schaltungstechnik!):\n\n  ¬(A ∧ B) ∨ ¬(¬A ∨ B)',
+          text: 'Vereinfachen Sie die folgenden logischen Ausdrücke:\n\n  ¬(A ∧ B) ∨ ¬(¬A ∨ B)   (aus der digitalen Schaltungstechnik!)',
           hint: h(
             <>
               <p>Hier braucht man zwei Gesetzgruppen:</p>

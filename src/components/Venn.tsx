@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useId, type ReactNode } from 'react'
 
 // Venn-Diagramme mit exakt schattierten Flächen.
 // Idee: Die 2^n Elementarregionen (jede Kombination „in/außerhalb" der Kreise)
@@ -16,7 +16,7 @@ function circleSubpath(cx: number, cy: number, r: number) {
 interface CircleDef { label: string; cx: number; cy: number; r: number; lx: number; ly: number }
 interface Geom { vb: string; rect: { x: number; y: number; w: number; h: number }; circles: CircleDef[] }
 
-function VennBase({ geom, shade, caption }: { geom: Geom; shade: (mem: boolean[]) => boolean; caption?: string }) {
+function VennBase({ geom, shade, caption, name }: { geom: Geom; shade: (mem: boolean[]) => boolean; caption?: ReactNode; name?: string }) {
   const uid = useId().replace(/:/g, '')
   const { rect, circles } = geom
   const n = circles.length
@@ -33,7 +33,7 @@ function VennBase({ geom, shade, caption }: { geom: Geom; shade: (mem: boolean[]
 
   return (
     <figure className="venn">
-      <svg viewBox={geom.vb} className="venn-svg" role="img" aria-label={caption ? `Venn-Diagramm: ${caption}` : 'Venn-Diagramm'}>
+      <svg viewBox={geom.vb} className="venn-svg" role="img" aria-label={`Venn-Diagramm${name ? `: ${name}` : typeof caption === 'string' ? `: ${caption}` : ''}`}>
         <defs>
           {circles.map((c, j) => (
             <clipPath key={`in-${c.label}`} id={clipId(j, true)}>
@@ -70,9 +70,10 @@ function VennBase({ geom, shade, caption }: { geom: Geom; shade: (mem: boolean[]
   )
 }
 
-export function Venn3({ shade, caption, labels = ['A', 'B', 'C'] }: {
+export function Venn3({ shade, caption, name, labels = ['A', 'B', 'C'] }: {
   shade: (a: boolean, b: boolean, c: boolean) => boolean
-  caption?: string
+  caption?: ReactNode
+  name?: string
   labels?: [string, string, string]
 }) {
   const geom: Geom = {
@@ -84,12 +85,13 @@ export function Venn3({ shade, caption, labels = ['A', 'B', 'C'] }: {
       { label: labels[2], cx: 130, cy: 134, r: 56, lx: 130, ly: 178 },
     ],
   }
-  return <VennBase geom={geom} caption={caption} shade={m => shade(m[0], m[1], m[2])} />
+  return <VennBase geom={geom} caption={caption} name={name} shade={m => shade(m[0], m[1], m[2])} />
 }
 
-export function Venn2({ shade, caption, labels = ['A', 'B'] }: {
+export function Venn2({ shade, caption, name, labels = ['A', 'B'] }: {
   shade: (a: boolean, b: boolean) => boolean
-  caption?: string
+  caption?: ReactNode
+  name?: string
   labels?: [string, string]
 }) {
   const geom: Geom = {
@@ -100,5 +102,5 @@ export function Venn2({ shade, caption, labels = ['A', 'B'] }: {
       { label: labels[1], cx: 150, cy: 86, r: 60, lx: 182, ly: 90 },
     ],
   }
-  return <VennBase geom={geom} caption={caption} shade={m => shade(m[0], m[1])} />
+  return <VennBase geom={geom} caption={caption} name={name} shade={m => shade(m[0], m[1])} />
 }

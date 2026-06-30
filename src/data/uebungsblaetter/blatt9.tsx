@@ -66,7 +66,7 @@ Ergebnis: 3 · 3 = 9`}</pre>
         },
         {
           letter: 'b',
-          text: <>{'Σ(k=2 bis ∞) 2·(−0,4)ᵏ'}</>,
+          text: <>{'Σ(k=2 bis ∞) 2·(−0.4)ᵏ'}</>,
           hint: h(
             <>
               <p>Wieder eine <span className="hint-em">geometrische Reihe</span> (jeder Summand = voriger mal festem Quotienten q), aber mit zwei Besonderheiten: (1) der Quotient ist <em>negativ</em>, q = −0,4 = −2/5, und (2) der Index startet nicht bei k = 0, sondern bei <span className="hint-em">k = 2</span>.</p>
@@ -112,7 +112,7 @@ qᵐ/(1−q) = (1/2)³/(1 − 1/2)
           ),
           solution: (
             <>
-              {'−0,4 = −'}<Frac n="2" d="5" />{', Indexshift j=k−2:\n'}
+              {'−0.4 = −'}<Frac n="2" d="5" />{', Indexshift j=k−2:\n'}
               {'2·('}<Frac n="−2" d="5" />{')² · '}<Frac n="1" d="1+2/5" />{' = '}<Frac n="8" d="25" />{' · '}<Frac n="5" d="7" />{' = '}<Frac n="8" d="35" />
             </>
           ),
@@ -509,7 +509,7 @@ lim xₙ = 1 − 0 = 1`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Die Folge (xₙ) sei rekursiv definiert durch x₀ := 1 und xₙ₊₁ := √(2+xₙ), n ∈ ℕ.\n\nZeigen Sie durch vollständige Induktion, dass xₙ₊₁ ≥ xₙ für alle n ∈ ℕ.',
+          text: 'Betrachten Sie die rekursiv definierte Folge (xₙ)ₙ∈ℕ mit\n\nx₀ := 1 und xₙ₊₁ := √(2 + xₙ), n ∈ ℕ.\n\nZeigen Sie durch vollständige Induktion, dass für alle n ∈ ℕ die Ungleichung\n\nxₙ₊₁ ≥ xₙ\n\ngilt.',
           hint: h(
             <>
               <p>Eine <span className="hint-em">rekursiv definierte Folge</span> gibt das erste Glied (x₀ = 1) und eine Vorschrift an, wie man aus xₙ das nächste Glied xₙ₊₁ berechnet (hier xₙ₊₁ = √(2+xₙ)). So entsteht 1, √3, √(2+√3), …</p>
@@ -559,7 +559,7 @@ IS: yₙ₊₁ ≥ yₙ (IV) ⟹ 6+yₙ₊₁ ≥ 6+yₙ
         },
         {
           letter: 'b',
-          text: 'Zeigen Sie durch vollständige Induktion, dass xₙ ≤ 2 für alle n ∈ ℕ.',
+          text: 'Zeigen Sie durch vollständige Induktion, dass für alle n ∈ ℕ\n\nxₙ ≤ 2\n\ngilt.',
           hint: h(
             <>
               <p>Eine Folge heißt <span className="hint-em">nach oben beschränkt</span>, wenn es eine feste Zahl S (eine <span className="hint-em">obere Schranke</span>) gibt, die kein Glied übersteigt: xₙ ≤ S für alle n. Hier ist S = 2; zu zeigen ist xₙ ≤ 2 für alle n ∈ ℕ.</p>
@@ -603,7 +603,7 @@ IS: yₙ ≤ 3 (IV) ⟹ 6+yₙ ≤ 6+3 = 9
         },
         {
           letter: 'c',
-          text: 'Schließen Sie auf die Konvergenz der Folge (xₙ) und bestimmen Sie den Grenzwert.\n\nHinweis: Für eine konvergente Folge (yₙ) mit lim yₙ = y gilt auch lim √yₙ = √y. Die Monotonie der Wurzelfunktion darf verwendet werden.',
+          text: 'Schließen Sie nun auf die Konvergenz der Folge (xₙ)ₙ∈ℕ und bestimmen Sie ihren Grenzwert.\n\nHinweis: Sie dürfen ohne Beweis verwenden, dass für eine konvergente Folge (yₙ) mit limₙ→∞ yₙ = y auch limₙ→∞ √yₙ = √y gilt. Ebenso können Sie die Monotonie der Wurzelfunktion verwenden, d. h., für a, b ∈ [0, ∞) mit a ≤ b gilt auch √a ≤ √b.',
           hint: h(
             <>
               <p><span className="hint-em">Monotoniekriterium (Satz über monotone beschränkte Folgen)</span>: Eine Folge, die monoton wachsend UND nach oben beschränkt ist, konvergiert (besitzt einen Grenzwert). Anschaulich: Sie steigt, kann aber die Schranke nie überschreiten, also „läuft sie gegen eine Decke". Genau diese beiden Eigenschaften haben wir in (a) [wachsend] und (b) [≤ 2] bewiesen — also konvergiert (xₙ).</p>

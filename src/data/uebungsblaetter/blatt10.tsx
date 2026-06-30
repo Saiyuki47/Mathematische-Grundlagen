@@ -303,7 +303,7 @@ x² → +∞ (gerade!), Restbruch → 1/1 = 1
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Sei h: ℝ → ℝ mit h(x) = (x²−1)/(x+1) für x ≠ −1 und h(−1) = −100.\n\nBestimmen Sie lim(x→−1, x<−1) h(x),  lim(x→−1, x>−1) h(x)  und  lim(x→−1) h(x).\nIst h stetig in x = −1?',
+          text: 'Gegeben sei die Funktion\n\nh : ℝ → ℝ,  x ↦ { (x²−1)/(x+1),  x ≠ −1;   −100,  x = −1.\n\nBestimmen Sie\n\nlim(x→−1, x<−1) h(x),   lim(x→−1, x>−1) h(x)   und   lim(x→−1) h(x),\n\nsofern die Grenzwerte existieren. Ist h stetig in x = −1?',
           hint: h(
             <>
               <p>Eine Funktion f ist in einer Stelle x₀ <span className="hint-em">stetig</span>, wenn man sie dort „ohne Absetzen des Stifts" zeichnen kann. Präzise: f ist in x₀ stetig, wenn DREI Dinge gelten: (1) f(x₀) ist definiert, (2) der Grenzwert lim(x→x₀) f(x) existiert, und (3) beide stimmen überein: lim(x→x₀) f(x) = f(x₀).</p>
@@ -360,7 +360,7 @@ lim(x→2) g(x) = 2+2 = 4, aber g(2) = 5
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Sei f(x) = |4−2x|/(x−2) für x ≠ 2 und f(2) = 0.\n\nBestimmen Sie:\n(a) lim'}<sub>{'x→2, x>2'}</sub>{' f(x)\n(b) lim'}<sub>{'x→2, x<2'}</sub>{' f(x)\n(c) lim'}<sub>{'x→2'}</sub>{' f(x)\n(d) lim'}<sub>{'x→0'}</sub>{' f(x)\n\nIst f stetig in x = 2?'}</>,
+          text: <>{'Betrachten Sie die Funktion f : ℝ → ℝ mit\n\nf(x) = { |4−2x|/(x−2),  x ≠ 2;   0,  x = 2\n\nÜberlegen Sie, welche der folgenden Grenzwerte existieren und bestimmen Sie gegebenenfalls den Grenzwert. Ist f stetig in x = 2?\n\n(a) lim'}<sub>{'x→2, x>2'}</sub>{' f(x)   (b) lim'}<sub>{'x→2, x<2'}</sub>{' f(x)   (c) lim'}<sub>{'x→2'}</sub>{' f(x)   (d) lim'}<sub>{'x→0'}</sub>{' f(x).'}</>,
           hint: h(
             <>
               <p>Der <span className="hint-em">Betrag</span> |a| ist der Abstand von a zur 0, also immer ≥ 0: |a| = a, falls a ≥ 0, und |a| = −a, falls a &lt; 0. Wegen dieser Fallunterscheidung muss man bei Betragsfunktionen <span className="hint-em">getrennt nach links und rechts</span> rechnen.</p>
@@ -424,7 +424,7 @@ lim(x→0,x>0)=1, lim(x→0,x<0)=−1 → verschieden
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Sei f: Dᶠ → ℝ mit f(x) = '}<Frac n="x³ − x² − x" d="x² − 1" />{'. Bestimmen Sie den maximalen Definitionsbereich Dᶠ.'}</>,
+          text: <>{'Betrachten Sie die Funktion f : Dᶠ → ℝ mit\n\nf(x) := '}<Frac n="x³ − x² − x" d="x² − 1" />{'.\n\nBestimmen Sie den maximalen Definitionsbereich Dᶠ von f, also die größtmögliche Teilmenge von ℝ, auf der Sie die Funktion f definieren können.'}</>,
           hint: h(
             <>
               <p>Der <span className="hint-em">maximale Definitionsbereich</span> Dᶠ ist die Menge aller x ∈ ℝ, für die der Funktionsterm einen sinnvollen Wert liefert. Man startet bei „ganz ℝ" und schließt nur die Stellen aus, an denen etwas Verbotenes passiert.</p>
@@ -464,7 +464,7 @@ Dᵍ = ℝ \\ {−2, 2}
         },
         {
           letter: 'b',
-          text: <>{'Untersuchen Sie das Verhalten von f(x) = '}<Frac n="x³ − x² − x" d="x² − 1" />{' für x → ±∞.'}</>,
+          text: 'Untersuchen Sie das Verhalten der Funktion für x → ±∞.',
           hint: h(
             <>
               <p>Gefragt ist das <span className="hint-em">Verhalten im Unendlichen</span>: Wohin läuft f(x), wenn x → +∞ bzw. x → −∞? Wieder entscheidet der Gradvergleich der rationalen Funktion.</p>
@@ -508,7 +508,7 @@ x → +∞: x² → +∞;  x → −∞: x² → +∞ (gerade!)
         },
         {
           letter: 'c',
-          text: <>{'Ist f(x) = '}<Frac n="x³ − x² − x" d="x² − 1" />{' in ±∞ asymptotisch linear oder quadratisch? Bestimmen Sie die asymptotische Gerade bzw. Parabel.'}</>,
+          text: 'Ist f in ±∞ asymptotisch linear oder quadratisch? Bestimmen Sie die zugehörige asymptotische Gerade bzw. Parabel.',
           hint: h(
             <>
               <p>Eine <span className="hint-em">Asymptote</span> ist eine einfache Kurve (Gerade oder Parabel), an die sich der Funktionsgraph für x → ±∞ immer enger anschmiegt. <span className="hint-em">Asymptotisch linear</span> = der Graph nähert sich einer Geraden a(x) = mx + b; <span className="hint-em">asymptotisch quadratisch</span> = einer Parabel.</p>
@@ -565,7 +565,7 @@ Asymptote a(x) = x + 1; Rest 2/(x−1) → 0 ✓`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Welche Aussagen sind wahr?\n(i)   n ∈ O(n²) für n → ∞\n(ii)  n + n² ∈ O(n²) für n → ∞\n(iii) 1000n² ∈ O(n²) für n → ∞\n(iv)  f(n) ∈ O(g(n)) ⟺ g(n) ∈ O(f(n)) für n → ∞',
+          text: 'Nachfolgende Funktionen seien alle auf ℕ definiert.\n\nWelche Aussagen sind wahr?\n(i)   n ∈ O(n²) für n → ∞.\n(ii)  n + n² ∈ O(n²) für n → ∞.\n(iii) 1000n² ∈ O(n²) für n → ∞.\n(iv)  f(n) ∈ O(g(n)) für n → ∞ ⇔ g(n) ∈ O(f(n)) für n → ∞.',
           hint: h(
             <>
               <p>Die <span className="hint-em">Landau-/O-Notation</span> beschreibt, wie schnell eine Funktion für große n wächst — Konstanten und kleinere Terme werden ignoriert. Definition: <span className="hint-em">f ∈ O(g)</span> bedeutet, es gibt eine Konstante C &gt; 0 und eine Schwelle N, sodass |f(n)| ≤ C·|g(n)| für alle n ≥ N. Informell: „f wächst höchstens so schnell wie g (bis auf einen konstanten Faktor)".</p>
@@ -607,7 +607,7 @@ C = 6, N = 7 → 5n+7 ∈ O(n). ✓ (linear bleibt linear)`}</pre>
         },
         {
           letter: 'b',
-          text: 'Seien f(n) ∈ O(g(n)) und g(n) ∈ O(h(n)) für n → ∞. Gilt dann f(n) ∈ O(h(n))?',
+          text: 'Seien f(n) ∈ O(g(n)) und g(n) ∈ O(h(n)) für n → ∞. Gilt dann f(n) ∈ O(h(n)) für n → ∞?',
           hint: h(
             <>
               <p>Gefragt ist eine allgemeine Eigenschaft der O-Notation, die <span className="hint-em">Transitivität</span>: „Wenn f höchstens so schnell wie g wächst und g höchstens so schnell wie h, dann wächst f höchstens so schnell wie h." Das ist plausibel — und man beweist es sauber, indem man die beiden Definitions-Ungleichungen <span className="hint-em">verkettet</span>.</p>

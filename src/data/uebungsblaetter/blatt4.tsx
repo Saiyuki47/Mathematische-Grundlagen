@@ -17,7 +17,7 @@ export const blatt4: MatheBlatt = {
           letter: 'a',
           text: (
             <>
-              {'Zeigen Sie mit vollständiger Induktion, dass für jedes n ∈ ℕ* gilt:\n\n'}
+              {'Zeigen Sie mit Hilfe vollständiger Induktion, dass für jedes n ∈ ℕ* gilt:\n\n'}
               {'∏(k=1 bis n) (1 + 1/k) = n + 1'}
             </>
           ),
@@ -91,7 +91,7 @@ IS: ∏(k=1..n+1) 2 = [∏(k=1..n) 2]·2
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Sei x ∈ [−1, ∞). Zeigen Sie mit vollständiger Induktion, dass für jedes n ∈ ℕ die Ungleichung\n\n(1 + x)ⁿ ≥ 1 + nx\n\ngilt. An welcher Stelle haben Sie die Voraussetzung x ≥ −1 verwendet?',
+          text: 'Sei x ∈ [−1, ∞). Zeigen Sie mit Hilfe vollständiger Induktion, dass für jedes n ∈ ℕ die Ungleichung\n\n(1 + x)ⁿ ≥ 1 + nx\n\ngilt. An welcher Stelle haben Sie die Voraussetzung x ≥ −1 verwendet?',
           hint: h(
             <>
               <p>Die <span className="hint-em">Bernoulli-Ungleichung</span> (1+x)ⁿ ≥ 1 + nx wird per <span className="hint-em">vollständiger Induktion</span> über n bewiesen (IA: Basisfall direkt; IV: für festes n angenommen; IS: A(n) ⇒ A(n+1)). A(n): (1+x)ⁿ ≥ 1 + nx.</p>
@@ -168,8 +168,8 @@ Mal −2 (negativ): −6 ≥ −4? FALSCH, richtig: −6 ≤ −4
           letter: 'a',
           text: (
             <>
-              {'Schreiben Sie als Intervall oder Vereinigung von Intervallen:\n\n'}
-              {'A := { x ∈ ℝ\\{9} : 4/(x−9) ≤ 2 }'}
+              {'Schreiben Sie folgende Mengen als Intervalle oder Vereinigung von Intervallen.\n\n'}
+              {'A := { x ∈ ℝ \\ {9} : 4/(x−9) ≤ 2 }'}
             </>
           ),
           hint: h(
@@ -222,7 +222,7 @@ x=11: 4/(11−9) = 4/2 = 2 ≤ 2 ✓ (Randpunkt, gehört dazu)`}</pre>
         },
         {
           letter: 'b',
-          text: 'B := { x ∈ ℝ : |x + 4| ≥ 6 }',
+          text: 'Schreiben Sie folgende Mengen als Intervalle oder Vereinigung von Intervallen.\n\nB := { x ∈ ℝ : |x + 4| ≥ 6 }',
           hint: h(
             <>
               <p>Der <span className="hint-em">Betrag</span> |a| ist der "Abstand von a zur Null", immer ≥ 0: |5| = 5, |−5| = 5. Definition mit Fällen: |a| = a, falls a ≥ 0; und |a| = −a, falls a &lt; 0 (das Minus macht aus der negativen Zahl eine positive). Geometrisch ist |x − c| der <span className="hint-em">Abstand zwischen x und c</span> auf der Zahlengeraden.</p>
@@ -275,7 +275,7 @@ Geometrisch: alle x mit Abstand ≥ 3 von der Zahl 1.`}</pre>
         },
         {
           letter: 'c',
-          text: 'C := { x ∈ ℝ : |x − 2| ≥ |x + 3| }',
+          text: 'Schreiben Sie folgende Mengen als Intervalle oder Vereinigung von Intervallen.\n\nC := { x ∈ ℝ : |x − 2| ≥ |x + 3| }',
           hint: h(
             <>
               <p>Wieder Beträge: |a| = a falls a ≥ 0, sonst |a| = −a (das Minus dreht das Vorzeichen, sodass das Ergebnis ≥ 0 ist). Geometrisch ist |x−c| der Abstand von x zu c.</p>
@@ -346,7 +346,7 @@ x=0:    |−2| = 2 ≥ |3| = 3 ? NEIN ✗ (näher an 2 → nicht in C)`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'M₁ := { x ∈ ℝ : x > 0 und x² ≤ 4 }',
+          text: 'Geben Sie für folgende Teilmengen von ℝ jeweils — falls vorhanden — das Supremum, das Infimum, das Maximum sowie das Minimum an:\n\nM₁ := { x ∈ ℝ : x > 0 und x² ≤ 4 }',
           hint: h(
             <>
               <p>Vier eng verwandte Begriffe für eine Zahlenmenge M:</p>
@@ -397,7 +397,7 @@ sup = 1, aber 1 ∉ N (wegen <)  → kein Maximum.
         },
         {
           letter: 'b',
-          text: 'M₂ := { 1/z : z ∈ ℤ\\{0} }',
+          text: 'Geben Sie für folgende Teilmengen von ℝ jeweils — falls vorhanden — das Supremum, das Infimum, das Maximum sowie das Minimum an:\n\nM₂ := { 1/z : z ∈ ℤ \\ {0} }',
           hint: h(
             <>
               <p>Erinnerung an die Begriffe: <span className="hint-em">sup</span> = kleinste obere Schranke, <span className="hint-em">max</span> = größtes Element, das WIRKLICH in M liegt (max = sup, falls sup ∈ M); spiegelbildlich <span className="hint-em">inf</span> = größte untere Schranke und <span className="hint-em">min</span> = kleinstes Element in M.</p>
@@ -449,7 +449,7 @@ Hier ist 0 das untere Ende: inf = 0, aber 0 ∉ N
         },
         {
           letter: 'c',
-          text: 'M₃ := { 1/n + 1/m : n, m ∈ ℕ* }',
+          text: 'Geben Sie für folgende Teilmengen von ℝ jeweils — falls vorhanden — das Supremum, das Infimum, das Maximum sowie das Minimum an:\n\nM₃ := { 1/n + 1/m : n, m ∈ ℕ* }',
           hint: h(
             <>
               <p>Begriffe wie gehabt: <span className="hint-em">sup</span> = kleinste obere Schranke, <span className="hint-em">max</span> = größtes tatsächlich vorhandenes Element (= sup, falls sup ∈ M); <span className="hint-em">inf</span> = größte untere Schranke, <span className="hint-em">min</span> = kleinstes vorhandenes Element. <span className="hint-em">ℕ*</span> = {'{1, 2, 3, …}'} (natürliche Zahlen ab 1).</p>
@@ -494,7 +494,7 @@ n=m=1000:  0,001+0,001 = 0,002   → immer > 0, aber → 0`}</pre>
         },
         {
           letter: 'd',
-          text: 'M₄ := { 1/n − 1/m : n, m ∈ ℕ* }',
+          text: 'Geben Sie für folgende Teilmengen von ℝ jeweils — falls vorhanden — das Supremum, das Infimum, das Maximum sowie das Minimum an:\n\nM₄ := { 1/n − 1/m : n, m ∈ ℕ* }',
           hint: h(
             <>
               <p>Gleiche Begriffe (<span className="hint-em">sup</span>/<span className="hint-em">max</span>, <span className="hint-em">inf</span>/<span className="hint-em">min</span>), aber jetzt eine <span className="hint-em">Differenz</span> 1/n − 1/m statt einer Summe. Der Unterschied ist entscheidend: Bei einer Summe (M₃) treffen sich beide Extreme bei kleinen Nennern; bei einer Differenz <span className="hint-em">zieht der eine Summand nach oben, der andere nach unten</span>. Die Extreme entstehen daher, wenn der eine Term groß und der andere klein wird — und das geschieht oft nur im Grenzwert (n oder m → ∞), nicht bei konkreten Werten.</p>
@@ -550,7 +550,7 @@ Gleicher Begriff, anderes Verhalten – wegen + vs −.`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: '∀x ∈ ℝ ∃y ∈ ℝ : y = x²',
+          text: 'Welche Aussagen sind wahr?\n\n∀x ∈ ℝ ∃y ∈ ℝ : y = x²',
           hint: h(
             <>
               <p><span className="hint-em">Quantoren</span> sind Symbole für "für alle" und "es gibt": <span className="hint-em">∀</span> (Allquantor) heißt "für alle", <span className="hint-em">∃</span> (Existenzquantor) heißt "es existiert (mindestens) ein". Die Aussage ∀x ∈ ℝ ∃y ∈ ℝ : y = x² liest man: "Für jede reelle Zahl x gibt es (mindestens) eine reelle Zahl y mit y = x²."</p>
@@ -592,7 +592,7 @@ x (bzw. n) ab — das ist bei ∀…∃ erlaubt.`}</pre>
         },
         {
           letter: 'b',
-          text: '∃x ∈ ℝ ∀y ∈ ℝ : y = x²',
+          text: 'Welche Aussagen sind wahr?\n\n∃x ∈ ℝ ∀y ∈ ℝ : y = x²',
           hint: h(
             <>
               <p>∃x ∈ ℝ ∀y ∈ ℝ : y = x² liest man: "Es gibt (mindestens) eine feste reelle Zahl x, sodass für ALLE reellen y gilt y = x²." Hier kommt <span className="hint-em">∃ vor ∀</span> — das x wird also <em>zuerst und ein für alle Mal festgelegt</em> und muss danach mit jedem beliebigen y zusammenpassen.</p>
@@ -635,7 +635,7 @@ Der Wertebereich von x² ist [0,∞), nicht ganz ℝ.`}</pre>
         },
         {
           letter: 'c',
-          text: '∃x ∈ ℝ ∃y ∈ ℝ : y = x²',
+          text: 'Welche Aussagen sind wahr?\n\n∃x ∈ ℝ ∃y ∈ ℝ : y = x²',
           hint: h(
             <>
               <p>∃x ∈ ℝ ∃y ∈ ℝ : y = x² liest man: "Es gibt (mindestens) eine reelle Zahl x UND eine reelle Zahl y mit y = x²." Beide Quantoren sind <span className="hint-em">∃ (es existiert)</span> — das ist die schwächste, am leichtesten erfüllbare Form.</p>
@@ -672,7 +672,7 @@ Das einfachste ist x=0, y=0.`}</pre>
         },
         {
           letter: 'd',
-          text: '∀y ∈ ℝ ∃x ∈ ℝ : y = x²',
+          text: 'Welche Aussagen sind wahr?\n\n∀y ∈ ℝ ∃x ∈ ℝ : y = x²',
           hint: h(
             <>
               <p>∀y ∈ ℝ ∃x ∈ ℝ : y = x² liest man: "Für JEDE reelle Zahl y gibt es eine reelle Zahl x mit y = x²." Anders gesagt: Jedes y soll als Quadrat einer reellen Zahl darstellbar sein (ein "<span className="hint-em">Urbild</span>" x unter dem Quadrieren haben).</p>
@@ -712,7 +712,7 @@ Unterschied: nur der erlaubte Bereich von y.`}</pre>
         },
         {
           letter: 'e',
-          text: '∃y ∈ ℝ ∀x ∈ ℝ : y = x²',
+          text: 'Welche Aussagen sind wahr?\n\n∃y ∈ ℝ ∀x ∈ ℝ : y = x²',
           hint: h(
             <>
               <p>∃y ∈ ℝ ∀x ∈ ℝ : y = x² liest man: "Es gibt EIN festes reelles y, sodass für ALLE reellen x gilt y = x²." Hier kommt <span className="hint-em">∃ vor ∀</span>: das y wird zuerst ein für alle Mal festgelegt und muss dann mit JEDEM x zusammenpassen — also mit allen Quadraten x² gleichzeitig übereinstimmen.</p>
@@ -762,7 +762,7 @@ Merksatz: bei ∃y∀x ist y UNABHÄNGIG von x zu wählen.`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Bestimmen Sie mit Hilfe des euklidischen Algorithmus:\n(i)  ggT(156, −64)\n(ii) ggT(−296, −96)\n(iii) ggT(34, 21). Was fällt auf?',
+          text: 'Bestimmen Sie mit Hilfe des euklidischen Algorithmus\n(i)  ggT(156, −64),\n(ii) ggT(−296, −96),\n(iii) ggT(34, 21). Was fällt auf?',
           hint: h(
             <>
               <p>Der <span className="hint-em">größte gemeinsame Teiler ggT(a, b)</span> ist die größte Zahl, die a UND b ohne Rest teilt (z. B. ggT(12, 8) = 4). Er ist per Definition ≥ 0, deshalb gilt für negative Eingaben <span className="hint-em">ggT(a, b) = ggT(|a|, |b|)</span> — man rechnet mit den Beträgen weiter (|a| = a ohne Vorzeichen).</p>
@@ -880,7 +880,7 @@ Rückwärts:
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Sei n ∈ ℕ*. Welche der folgenden Gleichheiten gelten für jede Wahl von n und aₖ?\n\n(i)   ∑(k=1..n) k³ = ∑(k=2..n+1) (k+1)³\n(ii)  ∑(k=1..n) k³ = ∑(l=3..n+2) (l−2)³\n(iii) (∑aₖ)·(∑aₖ) = ∑aₖ²\n(iv)  (∏aₖ)·(∏aₖ) = ∏aₖ²\n(v)   4·∑aₖ = ∑4aₖ\n(vi)  4·∏aₖ = ∏(4aₖ)',
+          text: 'Sei n ∈ ℕ*. Desweiteren sei aₖ für jedes k ∈ ℕ* eine reelle Zahl. Welche Gleichheiten gelten für jede Wahl von n und aₖ?\n\n(i)   ∑(k=1..n) k³ = ∑(k=2..n+1) (k+1)³\n(ii)  ∑(k=1..n) k³ = ∑(l=3..n+2) (l−2)³\n(iii) (∑aₖ)·(∑aₖ) = ∑aₖ²\n(iv)  (∏aₖ)·(∏aₖ) = ∏aₖ²\n(v)   4·∑aₖ = ∑4aₖ\n(vi)  4·∏aₖ = ∏(4aₖ)',
           hint: h(
             <>
               <p>Zur Erinnerung: <span className="hint-em">Σ(k=1..n) f(k)</span> ist die Summe f(1)+…+f(n), <span className="hint-em">∏(k=1..n) f(k)</span> das Produkt f(1)·…·f(n). Gefragt ist, welche Gleichheiten für JEDES n und JEDE Wahl der aₖ gelten ("allgemeingültig").</p>

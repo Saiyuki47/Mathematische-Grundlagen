@@ -1,6 +1,11 @@
 import type { ReactNode } from 'react'
 import type { HintSection } from '../../types'
 
+/** Überstrich (Komplement) über einen beliebigen Ausdruck, z. B. <Ol>A ∪ B</Ol> = (A∪B)‾. */
+export const Ol = ({ children }: { children: ReactNode }) => (
+  <span style={{ textDecoration: 'overline' }}>{children}</span>
+)
+
 export const h = (
   konzept: ReactNode,
   vorgehensweise: ReactNode,

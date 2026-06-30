@@ -396,6 +396,34 @@
   font-family: var(--font-mono);
   white-space: pre-wrap;
 }
+/* Tabellen im Aufgabentext (Ankreuz-Tabellen, Wahrheitstafeln, Wertetabellen) */
+.aufg-table {
+  border-collapse: collapse;
+  margin: 0.6rem 0 0.2rem;
+  font-size: 13px;
+  white-space: normal;
+}
+.aufg-table caption {
+  caption-side: top;
+  text-align: left;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+.aufg-table th,
+.aufg-table td {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.7rem;
+  vertical-align: middle;
+  text-align: center;
+}
+.aufg-table thead th {
+  font-weight: 700;
+  color: var(--text);
+  background: var(--bg);
+}
+.aufg-table td.aufg-eq { text-align: left; }
+.aufg-table .aufg-nr { color: var(--blue); width: 2.6rem; }
+.aufg-table .aufg-box { width: 6.5rem; color: var(--muted, #8b90a8); }
 .toggle-btn--hint {
   border-color: var(--green);
   color: var(--green);
