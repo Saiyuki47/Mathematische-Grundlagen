@@ -1,5 +1,7 @@
-import { useState, type CSSProperties } from 'react'
-import { useDoneTracker, useTaskDeepLink, getHashDetail } from 'lernseiten-ui'
+import { useState, useMemo, type CSSProperties } from 'react'
+// eslint-disable-next-line react-doctor/no-flush-sync -- offizielles React-Muster: flushSync + scrollIntoView, um nach dem Ansichtswechsel sofort zur Ziel-Aufgabe zu scrollen
+import { flushSync } from 'react-dom'
+import { useDoneTracker, useTaskDeepLink, getHashDetail, setHashDetail, OffeneAufgaben, type OffenItem } from 'lernseiten-ui'
 import { uebungsblaetter } from '../data/uebungsblaetter'
 import { referenzTitelById } from '../data/referenz'
 import LineGraph from './LineGraph'
@@ -24,10 +26,42 @@ export default function Uebungsblaetter() {
     return b && uebungsblaetter.some(x => x.id === b) ? b : (uebungsblaetter[0]?.id ?? '')
   })
   const [open, setOpen] = useState<Set<string>>(new Set())
+  const [view, setView] = useState<'blatt' | 'offen'>('blatt')
   const { done, toggle: toggleDone, ratio } = useDoneTracker()
   const listRef = useTaskDeepLink<HTMLDivElement>(selectedId)
 
   const blatt = uebungsblaetter.find(b => b.id === selectedId)
+
+  // Alle noch nicht als „verstanden" markierten Teilaufgaben (über alle Blätter).
+  const offen = useMemo<OffenItem[]>(() => {
+    const out: OffenItem[] = []
+    for (const b of uebungsblaetter)
+      for (const a of b.aufgaben)
+        for (const sub of a.subaufgaben) {
+          const key = `${b.id}-${a.id}-${sub.letter}`
+          if (!done.has(key)) {
+            out.push({
+              key,
+              blattId: b.id,
+              blattLabel: `Blatt ${b.nr} — ${b.titel}`,
+              aufgabeNr: String(a.nr),
+              label: `Aufgabe ${a.nr} (${sub.letter})${a.title ? ` — ${a.title}` : ''}`,
+            })
+          }
+        }
+    return out
+  }, [done])
+
+  // Aus der „Noch offen"-Liste zur Aufgabe zurückspringen: Blatt wählen + Ansicht
+  // synchron umschalten (flushSync), dann steht die Karte im DOM → direkt scrollen.
+  const goToTask = (blattId: string, aufgabeNr: string) => {
+    flushSync(() => {
+      setSelectedId(blattId)
+      setView('blatt')
+    })
+    setHashDetail(blattId, aufgabeNr, 'uebung')
+    listRef.current?.querySelector(`[data-aufgabe="${aufgabeNr}"]`)?.scrollIntoView({ block: 'start' })
+  }
 
   const toggle = (key: string) => {
     setOpen(prev => {
@@ -51,7 +85,28 @@ export default function Uebungsblaetter() {
         <p>Aufgaben und Musterlösungen nach Übungsblatt geordnet.</p>
       </div>
 
-      {uebungsblaetter.length > 1 && (
+      <div className="filter-row" style={{ marginBottom: '0.6rem' }}>
+        <button
+          type="button"
+          className={`filter-btn${view === 'blatt' ? ' on' : ''}`}
+          onClick={() => setView('blatt')}
+        >
+          📚 Nach Blatt
+        </button>
+        <button
+          type="button"
+          className={`filter-btn${view === 'offen' ? ' on' : ''}`}
+          onClick={() => setView('offen')}
+        >
+          📌 Noch offen{offen.length ? ` (${offen.length})` : ''}
+        </button>
+      </div>
+
+      {view === 'offen' ? (
+        <OffeneAufgaben items={offen} onGo={goToTask} />
+      ) : (
+        <>
+          {uebungsblaetter.length > 1 && (
         <div className="filter-row">
           {uebungsblaetter.map(b => (
             <button
@@ -187,6 +242,8 @@ export default function Uebungsblaetter() {
             </div>
             ))}
           </div>
+        </>
+      )}
         </>
       )}
     </div>
