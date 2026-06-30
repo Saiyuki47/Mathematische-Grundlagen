@@ -236,6 +236,14 @@ const PAGE2: Box[] = [
 ]
 
 const FS_CSS = `
+.hilf-pdf{margin:0 0 1.5rem}
+.hilf-pdf-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;margin-bottom:.6rem}
+.hilf-pdf-head h3{margin:0;font-size:1.05rem}
+.hilf-pdf-open,.hilf-pdf-fallback a{color:var(--blue,#4d9fff);font-weight:600;text-decoration:none}
+.hilf-pdf-open:hover,.hilf-pdf-fallback a:hover{text-decoration:underline}
+.hilf-pdf-frame{width:100%;height:min(82vh,920px);border:1px solid var(--border);border-radius:8px;background:#fff;display:block}
+.hilf-pdf-fallback{margin:.5rem 0 0;font-size:.85rem;opacity:.8}
+.hilf-sub{margin:0 0 .75rem;font-size:1.05rem}
 .fs-print-area{display:flex;flex-direction:column;gap:1.25rem}
 .fs-page{background:#fff;color:#111;border:1px solid var(--border);border-radius:8px;padding:7mm;max-width:210mm;width:100%;margin:0 auto;box-sizing:border-box}
 .fs-page-head{display:flex;justify-content:space-between;font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#555;border-bottom:1px solid #ccc;padding-bottom:3px;margin-bottom:6px}
@@ -292,24 +300,47 @@ function Page({ boxes, nr }: { boxes: Box[]; nr: number }) {
 
 export default function Hilfsmittel() {
   useEffect(() => injectFsCss(), [])
+  const pdfUrl = `${import.meta.env.BASE_URL}Formelsammlung.pdf`
   return (
     <div>
       <div className="hilf-bar">
         <div className="hilf-bar-text">
           <h2>Hilfsmittel</h2>
           <p>
-            Zweiseitige Formelsammlung — deckt alle Übungsblätter (0–13) ab. Im Druckdialog
-            optional „Hintergrundgrafiken" aktivieren.
+            Offizielle Formelsammlung als PDF sowie eine zweiseitige, druckbare Kurzfassung —
+            deckt alle Übungsblätter (0–13) ab.
           </p>
         </div>
         <div className="hilf-bar-actions">
           <span className="hilf-bar-hint">2 Seiten · A4</span>
           <button type="button" className="hilf-print-btn" onClick={() => window.print()}>
-            🖨 Drucken / als PDF
+            🖨 Kurzfassung drucken
           </button>
         </div>
       </div>
 
+      <section className="hilf-pdf">
+        <div className="hilf-pdf-head">
+          <h3>📄 Offizielle Formelsammlung</h3>
+          <a className="hilf-pdf-open" href={pdfUrl} target="_blank" rel="noopener noreferrer">
+            In neuem Tab öffnen ↗
+          </a>
+        </div>
+        <iframe
+          className="hilf-pdf-frame"
+          src={pdfUrl}
+          title="Formelsammlung (PDF)"
+          sandbox="allow-same-origin allow-popups allow-downloads"
+        />
+        <p className="hilf-pdf-fallback">
+          Vorschau lädt nicht?{' '}
+          <a href={pdfUrl} target="_blank" rel="noopener noreferrer">
+            PDF in neuem Tab öffnen ↗
+          </a>
+        </p>
+      </section>
+
+      <h3 className="hilf-sub">✍️ Kompakt-Formelsammlung (2 Seiten, druckbar)</h3>
       <div className="fs-print-area">
         <Page boxes={PAGE1} nr={1} />
         <Page boxes={PAGE2} nr={2} />
