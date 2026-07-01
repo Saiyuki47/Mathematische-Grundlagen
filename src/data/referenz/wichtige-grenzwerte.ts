@@ -61,7 +61,7 @@ export const karte: ReferenzKarte = {
     '• Die Grenzwertsätze auf $\\infty-\\infty$, $\\frac{\\infty}{\\infty}$ oder $0\\cdot\\infty$ anwenden: das sind unbestimmte Ausdrücke, erst umformen (ausklammern, kürzen).',
   beispiele: [
     {
-      szenario: 'Geometrische Folge $q^n$',
+      szenario: 'Geometrische Folge qⁿ',
       beispiele: [
         '**Aufgabe:** Bestimme $\\lim_{n\\to\\infty}\\left(1-\\left(-\\tfrac{1}{5}\\right)^n\\right)$.\n**Lösung:** Der Baustein ist $q^n$ mit $q=-\\tfrac{1}{5}$. Wegen $\\lvert q\\rvert=\\tfrac{1}{5}<1$ ist $\\left(-\\tfrac{1}{5}\\right)^n\\to 0$. Mit dem Summen-Grenzwertsatz: $1-0=1$.\n**Ergebnis:** $\\lim_{n\\to\\infty}\\left(1-\\left(-\\tfrac{1}{5}\\right)^n\\right)=1$.',
         '**Aufgabe:** Konvergiert $q^n$ für $q=\\tfrac{3}{2}$, und wenn ja, wogegen?\n**Lösung:** Hier ist $q=\\tfrac{3}{2}>1$. Nach der Tabelle gilt für $q>1$ stets $q^n\\to+\\infty$ (bestimmte Divergenz).\n**Ergebnis:** $q^n\\to+\\infty$; die Folge konvergiert nicht, sondern divergiert bestimmt gegen $+\\infty$.',
@@ -69,7 +69,7 @@ export const karte: ReferenzKarte = {
       ],
     },
     {
-      szenario: 'Eulerfolge $\\left(1+\\frac{x}{n}\\right)^n$',
+      szenario: 'Eulerfolge (1 + x/n)ⁿ',
       beispiele: [
         '**Aufgabe:** Bestimme $\\lim_{n\\to\\infty}\\left(1+\\tfrac{1}{n}\\right)^{2n-1}$.\n**Lösung:** Schreibe den Exponenten als $2n-1=n+n-1$ und zerlege: $\\left(1+\\tfrac{1}{n}\\right)^{2n-1}=\\dfrac{\\left(1+\\tfrac{1}{n}\\right)^{n}\\left(1+\\tfrac{1}{n}\\right)^{n}}{1+\\tfrac{1}{n}}$. Es gilt $\\left(1+\\tfrac{1}{n}\\right)^n\\to e$ und $1+\\tfrac{1}{n}\\to 1$. Mit den Grenzwertsätzen: $\\dfrac{e\\cdot e}{1}=e^2$.\n**Ergebnis:** $\\lim_{n\\to\\infty}\\left(1+\\tfrac{1}{n}\\right)^{2n-1}=e^2$.',
         '**Aufgabe:** Bestimme $\\lim_{n\\to\\infty}\\left(1+\\tfrac{3}{n}\\right)^{n}$.\n**Lösung:** Das ist direkt die allgemeine Eulerfolge $\\left(1+\\tfrac{x}{n}\\right)^n\\to e^x$ mit $x=3$.\n**Ergebnis:** $\\lim_{n\\to\\infty}\\left(1+\\tfrac{3}{n}\\right)^{n}=e^3$.',
@@ -77,7 +77,7 @@ export const karte: ReferenzKarte = {
       ],
     },
     {
-      szenario: 'Potenzen kombinieren ($\\frac{1}{n^p}$, Ausklammern)',
+      szenario: 'Potenzen kombinieren (1/nᵖ, Ausklammern)',
       beispiele: [
         '**Aufgabe:** Bestimme $\\lim_{n\\to\\infty}\\dfrac{n}{2n+1}$.\n**Lösung:** Höchste Potenz $n$ kürzen: $\\dfrac{n}{2n+1}=\\dfrac{1}{2+\\tfrac{1}{n}}$. Wegen $\\tfrac{1}{n}\\to 0$ wird der Nenner zu $2$.\n**Ergebnis:** $\\lim_{n\\to\\infty}\\dfrac{n}{2n+1}=\\tfrac{1}{2}$.',
         '**Aufgabe:** Bestimme $\\lim_{n\\to\\infty}\\dfrac{n^2-2n^4-2}{2n^3+n^2}$.\n**Lösung:** Höchste Potenzen ausklammern: $\\dfrac{n^4\\left(\\tfrac{1}{n^2}-2-\\tfrac{2}{n^4}\\right)}{n^3\\left(2+\\tfrac{1}{n}\\right)}=n\\cdot\\dfrac{\\tfrac{1}{n^2}-2-\\tfrac{2}{n^4}}{2+\\tfrac{1}{n}}$. Alle $\\tfrac{1}{n^k}\\to 0$, also strebt der Bruch gegen $\\dfrac{-2}{2}=-1$, und $n\\to+\\infty$. Produkt aus $+\\infty$ und einer negativen Zahl.\n**Ergebnis:** $\\lim_{n\\to\\infty}\\dfrac{n^2-2n^4-2}{2n^3+n^2}=-\\infty$.',

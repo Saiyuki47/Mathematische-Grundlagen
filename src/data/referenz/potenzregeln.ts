@@ -45,7 +45,7 @@ export const karte: ReferenzKarte = {
     '• $-a^2$ mit $(-a)^2$ verwechseln.',
   beispiele: [
     {
-      szenario: 'Gleiche Basis: $a^m a^n$ und $\\frac{a^m}{a^n}$',
+      szenario: 'Gleiche Basis: aᵐ·aⁿ und aᵐ/aⁿ',
       beispiele: [
         '**Aufgabe:** Vereinfache $x^3\\cdot x^4\\cdot x$.\n**Lösung:** Gleiche Basis $x$, also Exponenten addieren ($x = x^1$): $3+4+1 = 8$.\n**Ergebnis:** $x^8$.',
         '**Aufgabe:** Vereinfache $\\dfrac{a^7}{a^2}$.\n**Lösung:** Gleiche Basis, Exponenten subtrahieren: $a^{7-2}$.\n**Ergebnis:** $a^5$.',
@@ -53,7 +53,7 @@ export const karte: ReferenzKarte = {
       ],
     },
     {
-      szenario: 'Klammern: $(a^m)^n$, $(ab)^n$, $\\left(\\frac ab\\right)^n$',
+      szenario: 'Klammern: (aᵐ)ⁿ, (ab)ⁿ, (a/b)ⁿ',
       beispiele: [
         '**Aufgabe:** Vereinfache $(x^3)^4$.\n**Lösung:** Potenz einer Potenz – Exponenten multiplizieren: $3\\cdot 4$.\n**Ergebnis:** $x^{12}$.',
         '**Aufgabe:** Vereinfache $(2x)^3$.\n**Lösung:** Produkt hoch $n$: jeder Faktor wird potenziert. $2^3\\cdot x^3 = 8\\cdot x^3$.\n**Ergebnis:** $8x^3$.',
@@ -61,7 +61,7 @@ export const karte: ReferenzKarte = {
       ],
     },
     {
-      szenario: 'Exponent $0$, negativ, Wurzel',
+      szenario: 'Exponent 0, negativ, Wurzel',
       beispiele: [
         '**Aufgabe:** Berechne $5^{-2}\\cdot 100$.\n**Lösung:** Negativer Exponent = Kehrwert: $5^{-2} = \\frac{1}{5^2} = \\frac{1}{25}$. Dann $\\frac{1}{25}\\cdot 100 = \\frac{100}{25}$.\n**Ergebnis:** $4$.',
         '**Aufgabe:** Schreibe $\\sqrt{2}\\cdot\\sqrt{32}$ ohne Wurzel.\n**Lösung:** Als Potenzen: $2^{1/2}\\cdot 32^{1/2} = (2\\cdot 32)^{1/2} = 64^{1/2} = \\sqrt{64}$.\n**Ergebnis:** $8$.',

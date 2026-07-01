@@ -57,7 +57,7 @@ export const karte: ReferenzKarte = {
       ],
     },
     {
-      szenario: 'Folgen-Mengen wie $\\{1/n\\}$',
+      szenario: 'Folgen-Mengen wie {1/n}',
       beispiele: [
         '**Aufgabe:** Bestimme $\\sup$, $\\inf$, $\\max$, $\\min$ von $M = \\left\\{\\frac{1}{n} : n \\in \\mathbb{N}^{*}\\right\\}$.\n**Lösung:** Die Werte sind $1, \\frac{1}{2}, \\frac{1}{3}, \\dots$ Der größte entsteht bei $n = 1$, nämlich $1$ — wird angenommen, also Maximum. Die Werte fallen gegen $0$, erreichen $0$ aber nie ($\\frac{1}{n} > 0$ für alle $n$); zugleich ist nach dem ε-Kriterium $0$ die größte untere Schranke.\n**Ergebnis:** $\\sup M = \\max M = 1$, $\\inf M = 0$; $\\min M$ existiert **nicht**.',
         '**Aufgabe:** Bestimme $\\sup$, $\\inf$, $\\max$, $\\min$ von $M_2 = \\left\\{\\frac{1}{z} : z \\in \\mathbb{Z} \\setminus \\{0\\}\\right\\}$.\n**Lösung:** Für positive $z$ entstehen $1, \\frac{1}{2}, \\frac{1}{3}, \\dots$ (größter Wert $1$ bei $z = 1$), für negative $z$ entstehen $-1, -\\frac{1}{2}, \\dots$ (kleinster Wert $-1$ bei $z = -1$). Beide Extremwerte liegen in $M_2$.\n**Ergebnis:** $\\sup M_2 = \\max M_2 = 1$ und $\\inf M_2 = \\min M_2 = -1$.',

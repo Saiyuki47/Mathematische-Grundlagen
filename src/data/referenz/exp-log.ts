@@ -64,7 +64,7 @@ export const karte: ReferenzKarte = {
     '• $\\dfrac{\\ln x}{x}\\to 0$ verwechseln mit Divergenz: $\\ln$ wächst zwar, aber langsamer als $x$, der Quotient geht gegen $0$.',
   beispiele: [
     {
-      szenario: 'Grenzwerte mit $\\exp$ und $\\ln$',
+      szenario: 'Grenzwerte mit exp und ln',
       beispiele: [
         '**Aufgabe:** Bestimme $\\lim_{x\\to-\\infty} x\\exp(x)$.\n**Lösung:** Substituiere $y=-x$, dann $y\\to\\infty$ und $x\\exp(x)=-\\dfrac{y}{\\exp(y)}$. Nach dem Standard-Grenzwert $\\dfrac{x^{n}}{\\exp(x)}\\to 0$ (hier $n=1$) gilt $\\dfrac{y}{\\exp(y)}\\to 0$.\n**Ergebnis:** $\\lim_{x\\to-\\infty} x\\exp(x)=0$.',
         '**Aufgabe:** Bestimme $\\lim_{x\\to 0} x\\exp(x)$.\n**Lösung:** Es gilt $x\\to 0$, und weil $\\exp$ stetig ist, $\\exp(x)\\to\\exp(0)=1$. Mit dem Produkt-Grenzwertsatz folgt $0\\cdot 1$.\n**Ergebnis:** $\\lim_{x\\to 0} x\\exp(x)=0$.',
@@ -72,7 +72,7 @@ export const karte: ReferenzKarte = {
       ],
     },
     {
-      szenario: 'Allgemeine Potenz $a^x=e^{x\\ln a}$',
+      szenario: 'Allgemeine Potenz a^x = e^(x·ln a)',
       beispiele: [
         '**Aufgabe:** Zeige $a^{x}a^{y}=a^{x+y}$ für $a>0$.\n**Lösung:** Definition einsetzen und die Funktionalgleichung von $\\exp$ nutzen: $a^{x}a^{y}=\\exp(x\\ln a)\\exp(y\\ln a)=\\exp(x\\ln a+y\\ln a)=\\exp((x+y)\\ln a)$.\n**Ergebnis:** $a^{x}a^{y}=a^{x+y}$.',
         '**Aufgabe:** Zeige $(a^{x})^{y}=a^{xy}$ für $a>0$.\n**Lösung:** Wegen $\\ln(a^{x})=\\ln(\\exp(x\\ln a))=x\\ln a$ folgt $(a^{x})^{y}=\\exp(y\\ln(a^{x}))=\\exp(y\\,x\\ln a)=\\exp(xy\\ln a)$.\n**Ergebnis:** $(a^{x})^{y}=a^{xy}$.',

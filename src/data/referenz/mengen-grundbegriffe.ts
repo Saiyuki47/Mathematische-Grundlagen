@@ -49,7 +49,7 @@ export const karte: ReferenzKarte = {
     '• Vergessen, dass $\\emptyset \\subseteq A$ und $A \\subseteq A$ für jede Menge $A$ gelten.',
   beispiele: [
     {
-      szenario: 'Element oder Teilmenge? ($\\in$ vs. $\\subseteq$)',
+      szenario: 'Element oder Teilmenge? (∈ vs. ⊆)',
       beispiele: [
         '**Aufgabe:** Sei $M = \\{1,2,3\\}$. Ist $1 \\in M$ korrekt?\n**Lösung:** Gefragt ist, ob die Zahl $1$ direkt als Element in $M$ steht. Die Liste von $M$ ist $1,2,3$ – die $1$ kommt darin vor.\n**Ergebnis:** korrekt.',
         '**Aufgabe:** Sei $M = \\{1,2,3\\}$. Ist $\\{1\\} \\in M$ korrekt?\n**Lösung:** Hier wird gefragt, ob die Menge $\\{1\\}$ ein Element von $M$ ist. Die Elemente von $M$ sind die Zahlen $1,2,3$ – die Menge $\\{1\\}$ ist keines davon.\n**Ergebnis:** falsch (richtig wäre $\\{1\\} \\subseteq M$).',
@@ -57,7 +57,7 @@ export const karte: ReferenzKarte = {
       ],
     },
     {
-      szenario: 'Geschachtelte Menge $L = \\{\\emptyset,\\{1\\},\\{2\\},\\{1,2\\}\\}$',
+      szenario: 'Geschachtelte Menge L = {∅, {1}, {2}, {1,2}}',
       beispiele: [
         '**Aufgabe:** Ist $2 \\in L$ korrekt?\n**Lösung:** Die Elemente von $L$ sind $\\emptyset$, $\\{1\\}$, $\\{2\\}$ und $\\{1,2\\}$ – allesamt Mengen. Die nackte Zahl $2$ ist keines dieser Elemente.\n**Ergebnis:** falsch.',
         '**Aufgabe:** Ist $\\{2\\} \\in L$ korrekt? Und ist $\\{2\\} \\subseteq L$ korrekt?\n**Lösung:** $\\{2\\} \\in L$: die Menge $\\{2\\}$ steht tatsächlich in der Element-Liste von $L$, also korrekt. $\\{2\\} \\subseteq L$: dafür müsste das Element $2$ von $\\{2\\}$ in $L$ liegen – aber $2 \\notin L$, also falsch.\n**Ergebnis:** $\\{2\\} \\in L$ korrekt, $\\{2\\} \\subseteq L$ falsch.',
@@ -65,7 +65,7 @@ export const karte: ReferenzKarte = {
       ],
     },
     {
-      szenario: 'Mächtigkeit $|A|$ bestimmen',
+      szenario: 'Mächtigkeit |A| bestimmen',
       beispiele: [
         '**Aufgabe:** Bestimme $|\\{1,7,11\\}|$.\n**Lösung:** Alle drei Einträge sind verschieden, es wird nichts doppelt gezählt.\n**Ergebnis:** $|\\{1,7,11\\}| = 3$.',
         '**Aufgabe:** Bestimme $|\\{1,2,2\\}|$.\n**Lösung:** Wiederholungen zählen in einer Menge nicht: $\\{1,2,2\\} = \\{1,2\\}$, also bleiben zwei verschiedene Elemente.\n**Ergebnis:** $|\\{1,2,2\\}| = 2$.',
