@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt8: MatheBlatt = {
@@ -463,11 +464,9 @@ Oben: ≤ 1
           letter: 'a',
           text: (
             <>
-              {'Für n ∈ ℕ sei xₙ = '}
-              {'Σ'}
-              {'(k=1 bis n) 9 · ('}
-              <Frac n="1" d="10" />
-              {')ᵏ. Bestimmen Sie limₙ→∞ xₙ.'}
+              {'Für n ∈ ℕ sei '}
+              <M>{'x_n = \\sum_{k=1}^{n} 9 \\cdot \\left(\\frac{1}{10}\\right)^k'}</M>
+              {'. Bestimmen Sie limₙ→∞ xₙ.'}
             </>
           ),
           hint: h(
@@ -521,9 +520,9 @@ x₂ = 0,9 + 9·(1/100) = 0,9 + 0,09 = 0,99
           text: (
             <>
               <p>Für welche x ∈ ℝ konvergieren jeweils die Reihen:</p>
-              <p>(i) Σ(k=0 bis ∞) ((x−1)/7)ᵏ</p>
-              <p>(ii) Σ(k=0 bis ∞) 3·((x−1)/7)ᵏ</p>
-              <p>(iii) Σ(k=2 bis ∞) ((x−1)/7)ᵏ</p>
+              <p>(i) <M>{'\\sum_{k=0}^{\\infty} \\left(\\frac{x-1}{7}\\right)^k'}</M></p>
+              <p>(ii) <M>{'\\sum_{k=0}^{\\infty} 3 \\cdot \\left(\\frac{x-1}{7}\\right)^k'}</M></p>
+              <p>(iii) <M>{'\\sum_{k=2}^{\\infty} \\left(\\frac{x-1}{7}\\right)^k'}</M></p>
             </>
           ),
           hint: h(
@@ -697,7 +696,7 @@ Weg B — untere Schranke:
         },
         {
           letter: 'b',
-          text: <>{'xₙ = Π(k=1 bis n) '}<Frac n="k+1" d="k" /></>,
+          text: <>{'xₙ = '}<M>{'\\prod_{k=1}^{n} \\frac{k+1}{k}'}</M></>,
           hint: h(
             <>
               <p>Das Zeichen <span className="hint-em">Π (großes Pi)</span> bedeutet ein Produkt: <span className="hint-em">Π(k=1 bis n) aₖ</span> = a₁·a₂·…·aₙ (alle Faktoren multipliziert). Hier ist jeder Faktor (k+1)/k, also (2/1)·(3/2)·(4/3)·…·((n+1)/n).</p>
@@ -777,7 +776,7 @@ Grenzwert = 0.`}</pre>
         },
         {
           letter: 'd',
-          text: <>{'xₙ = Σ(k=0 bis n) ((k+1)² − k²)'}</>,
+          text: <>{'xₙ = '}<M>{'\\sum_{k=0}^{n} \\left((k+1)^2 - k^2\\right)'}</M></>,
           hint: h(
             <>
               <p>Eine <span className="hint-em">Teleskopsumme</span> ist das Gegenstück zum Teleskopprodukt: Jeder Summand ist eine Differenz f(k+1) − f(k), und beim Aufaddieren heben sich aufeinanderfolgende Terme auf — übrig bleibt nur der letzte minus der erste. Hier ist f(k) = k², jeder Summand also (k+1)² − k².</p>

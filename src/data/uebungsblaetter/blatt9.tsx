@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt9: MatheBlatt = {
@@ -15,7 +16,7 @@ export const blatt9: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Σ(k=0 bis ∞) 5·('}<Frac n="1" d="2" />{')ᵏ'}</>,
+          text: <M>{'\\sum_{k=0}^{\\infty} 5\\cdot\\left(\\frac{1}{2}\\right)^k'}</M>,
           hint: h(
             <>
               <p>Eine <span className="hint-em">Reihe</span> ist eine unendliche Summe Σ(k=0..∞) aₖ = a₀ + a₁ + a₂ + … Sie hat genau dann einen Wert (man sagt: sie <span className="hint-em">konvergiert</span>), wenn die <span className="hint-em">Partialsummen</span> sₙ = a₀ + … + aₙ (die abgebrochenen Summen) für n → ∞ gegen eine feste Zahl streben.</p>
@@ -66,7 +67,7 @@ Ergebnis: 3 · 3 = 9`}</pre>
         },
         {
           letter: 'b',
-          text: <>{'Σ(k=2 bis ∞) 2·(−0.4)ᵏ'}</>,
+          text: <M>{'\\sum_{k=2}^{\\infty} 2\\cdot(-0.4)^k'}</M>,
           hint: h(
             <>
               <p>Wieder eine <span className="hint-em">geometrische Reihe</span> (jeder Summand = voriger mal festem Quotienten q), aber mit zwei Besonderheiten: (1) der Quotient ist <em>negativ</em>, q = −0,4 = −2/5, und (2) der Index startet nicht bei k = 0, sondern bei <span className="hint-em">k = 2</span>.</p>
@@ -127,7 +128,7 @@ qᵐ/(1−q) = (1/2)³/(1 − 1/2)
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Σ(k=1 bis ∞) √k'}</>,
+          text: <M>{'\\sum_{k=1}^{\\infty} \\sqrt{k}'}</M>,
           hint: h(
             <>
               <p>Eine Reihe Σaₖ <span className="hint-em">konvergiert</span>, wenn ihre Partialsummen (abgebrochene Summen) gegen eine feste Zahl streben; sonst <span className="hint-em">divergiert</span> sie. Die Summanden aₖ heißen <span className="hint-em">Glieder</span> der Reihe.</p>
@@ -169,7 +170,7 @@ trotzdem divergiert sie (harmonische Reihe)!
         },
         {
           letter: 'b',
-          text: <>{'Σ(k=1 bis ∞) '}<Frac n="1" d="√k" /></>,
+          text: <M>{'\\sum_{k=1}^{\\infty} \\frac{1}{\\sqrt{k}}'}</M>,
           hint: h(
             <>
               <p>Achtung-Falle: Hier gilt aₖ = 1/√k → 0 (die Glieder schrumpfen). Das Nullfolgenkriterium aus (a) ist erfüllt — aber das beweist NICHTS, denn aₖ → 0 ist nur notwendig, nicht hinreichend für Konvergenz. Man braucht ein echtes Konvergenz-/Divergenzkriterium.</p>
@@ -212,7 +213,7 @@ trotzdem divergiert sie (harmonische Reihe)!
         },
         {
           letter: 'c',
-          text: <>{'Σ(k=1 bis ∞) (−1)ᵏ⁺¹ · '}<Frac n="1" d="√k" /></>,
+          text: <M>{'\\sum_{k=1}^{\\infty} (-1)^{k+1} \\cdot \\frac{1}{\\sqrt{k}}'}</M>,
           hint: h(
             <>
               <p>Eine <span className="hint-em">alternierende Reihe</span> ist eine Reihe, deren Glieder abwechselnd positiv und negativ sind. Erkennungszeichen ist ein Faktor (−1)ᵏ oder (−1)ᵏ⁺¹. Hier: (−1)ᵏ⁺¹·(1/√k) ergibt +1/√1, −1/√2, +1/√3, … (für k=1,2,3,…). Den Teil <em>ohne</em> Vorzeichen nennt man aₖ; hier aₖ = 1/√k (immer ≥ 0).</p>
@@ -258,7 +259,7 @@ Ohne Vorzeichen wäre Σ 1/k divergent → nur bedingt.`}</pre>
         },
         {
           letter: 'd',
-          text: <>{'Σ(k=1 bis ∞) ('}<Frac n="1" d="√k" />{')ᵏ'}</>,
+          text: <M>{'\\sum_{k=1}^{\\infty} \\left(\\frac{1}{\\sqrt{k}}\\right)^k'}</M>,
           hint: h(
             <>
               <p>Die <span className="hint-em">k-te Wurzel</span> ᵏ√x ist die Zahl, die k-mal mit sich selbst multipliziert x ergibt (z.B. ³√8 = 2, weil 2³ = 8). Wichtigste Rechenregel hier: <span className="hint-em">ᵏ√(xᵏ) = x</span> für x ≥ 0 — Wurzel und gleichhohe Potenz heben sich auf.</p>
@@ -317,7 +318,7 @@ L = 1/2 < 1 → konvergiert.`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Σ(k=2 bis ∞) '}<Frac n="k" d="3ᵏ" /></>,
+          text: <M>{'\\sum_{k=2}^{\\infty} \\frac{k}{3^k}'}</M>,
           hint: h(
             <>
               <p>Hier ist aₖ = k/3ᵏ: ein Polynomteil (k) geteilt durch einen Exponentialteil (3ᵏ). Solche Reihen prüft man mit dem <span className="hint-em">Wurzel-</span> oder dem <span className="hint-em">Quotientenkriterium</span> — beide funktionieren, das Ergebnis ist dasselbe.</p>
@@ -362,7 +363,7 @@ L = 1/2 < 1 → konvergiert.
         },
         {
           letter: 'b',
-          text: <>{'Σ(k=2 bis ∞) (−1)ᵏ · (1 − '}<Frac n="1" d="k" />{')' }</>,
+          text: <M>{'\\sum_{k=2}^{\\infty} (-1)^k \\cdot \\left(1 - \\frac{1}{k}\\right)'}</M>,
           hint: h(
             <>
               <p>Die Glieder enthalten (−1)ᵏ → die Reihe sieht <span className="hint-em">alternierend</span> aus, also denkt man zuerst an Leibniz. ABER: Bevor man irgendein Kriterium ansetzt, prüft man immer zuerst das einfachste — das <span className="hint-em">Nullfolgenkriterium</span> (notwendige Bedingung): Wenn Σaₖ konvergiert, muss aₖ → 0. Geht aₖ nicht gegen 0, divergiert die Reihe sofort.</p>
@@ -403,7 +404,7 @@ Leibniz greift nicht, obwohl Vorzeichen wechseln.`}</pre>
         },
         {
           letter: 'c',
-          text: <>{'Σ(k=1 bis ∞) '}<Frac n="2ᵏ⁺²" d="k²·5ᵏ" /></>,
+          text: <M>{'\\sum_{k=1}^{\\infty} \\frac{2^{k+2}}{k^2 \\cdot 5^k}'}</M>,
           hint: h(
             <>
               <p>Das Glied aₖ = 2^(k+2)/(k²·5ᵏ) mischt Exponentialterme (2^(k+2), 5ᵏ) mit einem Polynomterm (k²). Wieder eignen sich <span className="hint-em">Wurzel-</span> und <span className="hint-em">Quotientenkriterium</span>; das entscheidende Verhältnis der Exponentialbasen ist 2/5.</p>
@@ -450,7 +451,7 @@ L = 2/5 < 1  ⟹ konvergiert.`}</pre>
         },
         {
           letter: 'd',
-          text: <>{'Σ(k=1 bis ∞) ('}<Frac n="1" d="√(k+1)" />{' − '}<Frac n="1" d="√k" />{')' }</>,
+          text: <M>{'\\sum_{k=1}^{\\infty} \\left(\\frac{1}{\\sqrt{k+1}} - \\frac{1}{\\sqrt{k}}\\right)'}</M>,
           hint: h(
             <>
               <p>Die <span className="hint-em">Partialsumme</span> xₙ ist die abgebrochene Summe der ersten n Glieder: xₙ = Σ(k=1..n) aₖ. Der Reihenwert ist lim(n→∞) xₙ — falls dieser existiert.</p>

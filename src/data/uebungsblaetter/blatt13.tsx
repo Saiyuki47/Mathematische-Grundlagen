@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt13: MatheBlatt = {
@@ -442,10 +443,9 @@ Probe Potenzregel: (x^(1/3))' = (1/3)x^(−2/3) ✓`}</pre>
           letter: '',
           text: (
             <>
-              {'Leiten Sie die Funktionen\n\nf : (−1,1) → ℝ, x ↦ Σ'}
-              <sub>{'k=0'}</sub>
-              <sup>{'∞'}</sup>
-              {' xᵏ   und   g : (−1,1) → ℝ, x ↦ '}
+              {'Leiten Sie die Funktionen\n\nf : (−1,1) → ℝ, x ↦ '}
+              <M>{'\\sum_{k=0}^{\\infty} x^k'}</M>
+              {'   und   g : (−1,1) → ℝ, x ↦ '}
               <Frac n="1" d="1 − x" />
               {'\n\nab. Was ist der Zusammenhang zwischen f\' und g\'?\nHinweis: Denken Sie an die geometrische Reihe.'}
             </>

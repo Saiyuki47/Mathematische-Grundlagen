@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt7: MatheBlatt = {
@@ -215,7 +216,7 @@ Produkt: xₙ·yₙ = n·(1/n) = 1 für alle n ≥ 1
         },
         {
           letter: 'c',
-          text: 'Finden Sie jeweils Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ, so dass nachfolgende Eigenschaften erfüllt sind.\n\nDie Folgen (xₙ) und (yₙ) konvergieren, und es ist xₙ < yₙ für alle n, aber es gilt nicht limₙ→∞ xₙ < limₙ→∞ yₙ.',
+          text: <>{'Finden Sie jeweils Folgen (xₙ) ⊆ ℝ und (yₙ) ⊆ ℝ, so dass nachfolgende Eigenschaften erfüllt sind.\n\nDie Folgen (xₙ) und (yₙ) konvergieren, und es ist xₙ < yₙ für alle n, aber es gilt nicht '}<M>{'\\lim_{n \\to \\infty} x_n < \\lim_{n \\to \\infty} y_n'}</M>{'.'}</>,
           hint: h(
             <>
               <p>Zur Erinnerung: <span className="hint-em">lim xₙ</span> ist die Zahl, gegen die die Folgenglieder streben (der <span className="hint-em">Grenzwert</span>). „xₙ &lt; yₙ für alle n" heißt: in JEDEM einzelnen Glied ist die x-Folge echt kleiner. <span className="hint-em">Strikt</span> (&lt;) bedeutet „echt kleiner, nie gleich", <span className="hint-em">schwach</span> (≤) bedeutet „kleiner oder gleich".</p>
@@ -605,7 +606,7 @@ Probe: n=101 → 1/101 ≈ 0,0099 < 0,01 ✓
         {
           letter: 'b',
           text: <>
-            {'Zeigen Sie direkt mit der Definition von „Konvergenz gegen x", dass\n\nlimₙ→∞ xₙ = 0\n\ngilt.\n\nHinweis: Sie dürfen ohne Beweis verwenden, dass die Wurzelfunktion monoton ist, das heißt, für x, y ∈ [0, ∞) mit x ≤ y gilt auch √x ≤ √y.'}
+            {'Zeigen Sie direkt mit der Definition von „Konvergenz gegen x", dass\n\n'}<M>{'\\lim_{n \\to \\infty} x_n = 0'}</M>{'\n\ngilt.\n\nHinweis: Sie dürfen ohne Beweis verwenden, dass die Wurzelfunktion monoton ist, das heißt, für x, y ∈ [0, ∞) mit x ≤ y gilt auch √x ≤ √y.'}
           </>,
           hint: h(
             <>
@@ -660,7 +661,7 @@ Für n ≥ N: |1/n − 0| = 1/n ≤ 1/N < ε
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Bestimmen Sie mit Hilfe der geometrischen Summenformel (siehe Kapitel II.1) folgende Summen: '}<br />{'Σ(k=0 bis 5) ('}<Frac n="1" d="2" />{')ᵏ'}</>,
+          text: <>{'Bestimmen Sie mit Hilfe der geometrischen Summenformel (siehe Kapitel II.1) folgende Summen: '}<br /><M>{'\\sum_{k=0}^{5}'}</M>{' ('}<Frac n="1" d="2" />{')ᵏ'}</>,
           hint: h(
             <>
               <p>Das Zeichen <span className="hint-em">Σ (Sigma)</span> ist eine Kurzschreibweise für eine Summe. <span className="hint-em">Σ(k=0 bis 5) qᵏ</span> heißt: setze für k nacheinander 0, 1, 2, 3, 4, 5 ein und addiere alles: q⁰ + q¹ + q² + q³ + q⁴ + q⁵. Eine solche Summe von Potenzen mit fester Basis q heißt <span className="hint-em">geometrische Summe</span>.</p>
@@ -705,7 +706,7 @@ Ergebnis = 63/32.`}</pre>
         },
         {
           letter: 'b',
-          text: <>{'Bestimmen Sie: Σ(k=1 bis 5) ('}<Frac n="1" d="2" />{')ᵏ'}</>,
+          text: <>{'Bestimmen Sie: '}<M>{'\\sum_{k=1}^{5}'}</M>{' ('}<Frac n="1" d="2" />{')ᵏ'}</>,
           hint: h(
             <>
               <p>Diese Summe ist fast wie in (a), beginnt aber bei <span className="hint-em">k = 1</span> statt k = 0 — es fehlt also genau das erste Glied (das mit k = 0). Allgemeines Prinzip: Eine Summe, die später startet, ist die volle Summe <span className="hint-em">minus die weggelassenen Anfangsglieder</span>.</p>
@@ -744,7 +745,7 @@ Ergebnis = 31/32.`}</pre>
         },
         {
           letter: 'c',
-          text: <>{'Bestimmen Sie: Σ(k=2 bis 5) ('}<Frac n="1" d="2" />{')ᵏ'}</>,
+          text: <>{'Bestimmen Sie: '}<M>{'\\sum_{k=2}^{5}'}</M>{' ('}<Frac n="1" d="2" />{')ᵏ'}</>,
           hint: h(
             <>
               <p>Wieder dasselbe Prinzip wie in (b), nur startet die Summe jetzt bei <span className="hint-em">k = 2</span>. Es fehlen also ZWEI Anfangsglieder: das bei k = 0 und das bei k = 1. Allgemeine Regel: <span className="hint-em">Σ(k=m bis n) = Σ(k=0 bis n) − Σ(k=0 bis m−1)</span> — die volle Summe minus alle übersprungenen Anfangsglieder.</p>
@@ -784,7 +785,7 @@ Ergebnis = 15/32.`}</pre>
         },
         {
           letter: 'd',
-          text: 'Bestimmen Sie: Σ(k=0 bis 10) (−1)ᵏ',
+          text: <>{'Bestimmen Sie: '}<M>{'\\sum_{k=0}^{10} (-1)^k'}</M></>,
           hint: h(
             <>
               <p>Hier ist die Basis <span className="hint-em">q = −1</span>: Σ(k=0 bis 10)(−1)ᵏ = (−1)⁰ + (−1)¹ + … + (−1)¹⁰ = 1 − 1 + 1 − 1 + … . Es gilt die <span className="hint-em">geometrische Summenformel</span> Σ(k=0 bis n) qᵏ = (1 − q^(n+1))/(1 − q), und sie ist gültig, weil q = −1 ≠ 1 ist.</p>
@@ -820,7 +821,7 @@ plus der erste +1-Term → Summe = 1 ✓`}</pre>
         },
         {
           letter: 'e',
-          text: 'Bestimmen Sie: Σ(k=0 bis 11) (−1)ᵏ',
+          text: <>{'Bestimmen Sie: '}<M>{'\\sum_{k=0}^{11} (-1)^k'}</M></>,
           hint: h(
             <>
               <p>Wie in (d), aber jetzt mit oberer Grenze <span className="hint-em">n = 11</span> statt 10 — also ein Glied mehr. Wieder gilt die geometrische Summenformel Σ(k=0 bis n) qᵏ = (1 − q^(n+1))/(1 − q) mit q = −1 ≠ 1. Entscheidend ist erneut die Parität: <span className="hint-em">(−1)^Exponent = +1 für geraden, −1 für ungeraden Exponenten</span>. Hier ist der Exponent n+1 = 12 — gerade. Schon eine Stelle weiter als (d) kippt das Ergebnis.</p>
@@ -854,7 +855,7 @@ Ergebnis = 0.`}</pre>
         },
         {
           letter: 'f',
-          text: 'Bestimmen Sie: Σ(k=0 bis 2) 3ᵏ',
+          text: <>{'Bestimmen Sie: '}<M>{'\\sum_{k=0}^{2} 3^k'}</M></>,
           hint: h(
             <>
               <p>Jetzt ist die Basis <span className="hint-em">q = 3 &gt; 1</span>: Σ(k=0 bis 2) 3ᵏ = 3⁰ + 3¹ + 3². Es gilt dieselbe <span className="hint-em">geometrische Summenformel</span> Σ(k=0 bis n) qᵏ = (1 − q^(n+1))/(1 − q), gültig weil q = 3 ≠ 1.</p>

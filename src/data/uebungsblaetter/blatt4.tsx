@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt4: MatheBlatt = {
@@ -18,7 +19,7 @@ export const blatt4: MatheBlatt = {
           text: (
             <>
               {'Zeigen Sie mit Hilfe vollständiger Induktion, dass für jedes n ∈ ℕ* gilt:\n\n'}
-              {'∏(k=1 bis n) (1 + 1/k) = n + 1'}
+              <M>{'\\prod_{k=1}^{n} \\left(1 + \\frac{1}{k}\\right) = n + 1'}</M>
             </>
           ),
           hint: h(
@@ -880,7 +881,22 @@ Rückwärts:
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Sei n ∈ ℕ*. Desweiteren sei aₖ für jedes k ∈ ℕ* eine reelle Zahl. Welche Gleichheiten gelten für jede Wahl von n und aₖ?\n\n(i)   ∑(k=1..n) k³ = ∑(k=2..n+1) (k+1)³\n(ii)  ∑(k=1..n) k³ = ∑(l=3..n+2) (l−2)³\n(iii) (∑aₖ)·(∑aₖ) = ∑aₖ²\n(iv)  (∏aₖ)·(∏aₖ) = ∏aₖ²\n(v)   4·∑aₖ = ∑4aₖ\n(vi)  4·∏aₖ = ∏(4aₖ)',
+          text: (
+            <>
+              {'Sei n ∈ ℕ*. Desweiteren sei aₖ für jedes k ∈ ℕ* eine reelle Zahl. Welche Gleichheiten gelten für jede Wahl von n und aₖ?\n\n(i)   '}
+              <M>{'\\sum_{k=1}^{n} k^3 = \\sum_{k=2}^{n+1} (k+1)^3'}</M>
+              {'\n(ii)  '}
+              <M>{'\\sum_{k=1}^{n} k^3 = \\sum_{l=3}^{n+2} (l-2)^3'}</M>
+              {'\n(iii) '}
+              <M>{'\\left(\\sum_{k=1}^{n} a_k\\right) \\cdot \\left(\\sum_{k=1}^{n} a_k\\right) = \\sum_{k=1}^{n} a_k^2'}</M>
+              {'\n(iv)  '}
+              <M>{'\\left(\\prod_{k=1}^{n} a_k\\right) \\cdot \\left(\\prod_{k=1}^{n} a_k\\right) = \\prod_{k=1}^{n} a_k^2'}</M>
+              {'\n(v)   '}
+              <M>{'4 \\cdot \\sum_{k=1}^{n} a_k = \\sum_{k=1}^{n} 4 a_k'}</M>
+              {'\n(vi)  '}
+              <M>{'4 \\cdot \\prod_{k=1}^{n} a_k = \\prod_{k=1}^{n} (4 a_k)'}</M>
+            </>
+          ),
           hint: h(
             <>
               <p>Zur Erinnerung: <span className="hint-em">Σ(k=1..n) f(k)</span> ist die Summe f(1)+…+f(n), <span className="hint-em">∏(k=1..n) f(k)</span> das Produkt f(1)·…·f(n). Gefragt ist, welche Gleichheiten für JEDES n und JEDE Wahl der aₖ gelten ("allgemeingültig").</p>

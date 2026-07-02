@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt12: MatheBlatt = {
@@ -826,18 +827,9 @@ Probe: 8^(1/3) = 2 ✓  (8 = 2³)`}</pre>
           text: (
             <>
               {'Zeigen Sie mit Hilfe des Quotientenkriteriums, dass die Reihen\n\n'}
-              {'sin(x) = '}
-              {'Σ'}
-              <sub>{'k=0'}</sub>
-              <sup>{'∞'}</sup>
-              {' (−1)ᵏ '}
-              <Frac n="x²ᵏ⁺¹" d="(2k+1)!" />
-              {'  und  cos(x) = '}
-              {'Σ'}
-              <sub>{'k=0'}</sub>
-              <sup>{'∞'}</sup>
-              {' (−1)ᵏ '}
-              <Frac n="x²ᵏ" d="(2k)!" />
+              <M>{'\\sin(x) = \\sum_{k=0}^{\\infty} (-1)^k \\frac{x^{2k+1}}{(2k+1)!}'}</M>
+              {'  und  '}
+              <M>{'\\cos(x) = \\sum_{k=0}^{\\infty} (-1)^k \\frac{x^{2k}}{(2k)!}'}</M>
               {'\n\nfür jedes x ∈ ℝ konvergieren.'}
             </>
           ),

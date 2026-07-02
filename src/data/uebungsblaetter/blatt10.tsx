@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt10: MatheBlatt = {
@@ -15,7 +16,7 @@ export const blatt10: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Σ(k=1 bis ∞) (−1)ᵏ',
+          text: <M>{'\\sum_{k=1}^{\\infty} (-1)^k'}</M>,
           hint: h(
             <>
               <p>Eine <span className="hint-em">Reihe</span> Σaₖ ist eine unendliche Summe; sie <span className="hint-em">konvergiert</span>, wenn ihre Partialsummen (abgebrochenen Summen) gegen eine feste Zahl streben, sonst <span className="hint-em">divergiert</span> sie.</p>
@@ -57,7 +58,7 @@ NICHT, hier (1/k) schon.`}</pre>
         },
         {
           letter: 'b',
-          text: <>{'Σ(k=1 bis ∞) (−1)ᵏ · '}<Frac n="1" d="k²" /></>,
+          text: <><M>{'\\sum_{k=1}^{\\infty} (-1)^k \\cdot'}</M>{' '}<Frac n="1" d="k²" /></>,
           hint: h(
             <>
               <p>Die Reihe ist <span className="hint-em">alternierend</span> (Faktor (−1)ᵏ → abwechselnd + und −). Der Teil ohne Vorzeichen ist aₖ = 1/k² ≥ 0. Zwei Wege führen zum Ziel:</p>
@@ -104,7 +105,7 @@ Majorante: 1/k³ ist p-Reihe mit p=3>1 → absolut konv.`}</pre>
         },
         {
           letter: 'c',
-          text: <>{'Σ(k=1 bis ∞) '}<Frac n="k⁵" d="(−4) · k!" /></>,
+          text: <><M>{'\\sum_{k=1}^{\\infty}'}</M>{' '}<Frac n="k⁵" d="(−4) · k!" /></>,
           hint: h(
             <>
               <p>Die <span className="hint-em">Fakultät</span> k! ist das Produkt aller Zahlen von 1 bis k: k! = 1·2·3·…·k (z.B. 4! = 24). Wichtigste Rechenregel: <span className="hint-em">(k+1)! = (k+1)·k!</span> — die nächste Fakultät ist die alte mal (k+1). Daraus folgt (k+1)!/k! = k+1.</p>
@@ -150,7 +151,7 @@ Grenzwert k → ∞:
         },
         {
           letter: 'd',
-          text: <>{'Σ(k=1 bis ∞) ('}<Frac n="k" d="2k+1" />{')ᵏ'}</>,
+          text: <><M>{'\\sum_{k=1}^{\\infty}'}</M>{' ('}<Frac n="k" d="2k+1" />{')ᵏ'}</>,
           hint: h(
             <>
               <p>Das Glied hat die Form aₖ = (etwas)ᵏ, nämlich (k/(2k+1))ᵏ — eine <span className="hint-em">k-te Potenz</span>. Genau dafür ist das <span className="hint-em">Wurzelkriterium</span> gemacht.</p>
@@ -200,7 +201,7 @@ L = 3 > 1 → die Reihe DIVERGIERT.
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'lim'}<sub>{'x→∞'}</sub>{' '}<Frac n="x − 4x³ + 2" d="x + 4x⁴ + 7x²" /></>,
+          text: <><M>{'\\lim_{x \\to \\infty}'}</M>{' '}<Frac n="x − 4x³ + 2" d="x + 4x⁴ + 7x²" /></>,
           hint: h(
             <>
               <p>Ein <span className="hint-em">Grenzwert</span> lim(x→∞) f(x) fragt: Welchem Wert nähert sich f(x), wenn x über alle Grenzen wächst? Bei einer <span className="hint-em">rationalen Funktion</span> (Bruch zweier Polynome) entscheidet der Vergleich der <span className="hint-em">Grade</span> (höchste Exponenten) von Zähler und Nenner.</p>
@@ -246,7 +247,7 @@ durch x³ teilen: (2/x + 1/x³)/(1 − 1/x²) → 0/1 = 0`}</pre>
         },
         {
           letter: 'b',
-          text: <>{'lim'}<sub>{'x→−∞'}</sub>{' '}<Frac n="x⁷ − x" d="x − 3x²" /></>,
+          text: <><M>{'\\lim_{x \\to -\\infty}'}</M>{' '}<Frac n="x⁷ − x" d="x − 3x²" /></>,
           hint: h(
             <>
               <p>Wieder eine rationale Funktion, aber jetzt mit Grad(Z) = 7 &gt; Grad(N) = 2 (Differenz 5). Nach der Grad-Regel ist der Grenzwert <span className="hint-em">±∞</span> (uneigentlich) — der Zähler wächst schneller als der Nenner. Zusätzlich läuft x gegen <span className="hint-em">−∞</span>, deshalb muss man penibel auf <span className="hint-em">Vorzeichen</span> achten.</p>

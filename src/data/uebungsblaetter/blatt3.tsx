@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt3: MatheBlatt = {
@@ -180,7 +181,7 @@ k=0: 1+0=1, k=1: 1+2=3, k=2: 1+4=5, k=3: 1+6=7 ✓
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Zeigen Sie für n ∈ ℕ* folgende Identitäten mit Hilfe des Binomischen Lehrsatzes:\n\nΣ(k=0 bis n) C(n,k) = 2ⁿ',
+          text: <>{'Zeigen Sie für n ∈ ℕ* folgende Identitäten mit Hilfe des Binomischen Lehrsatzes:\n\n'}<M>{'\\sum_{k=0}^{n} \\binom{n}{k} = 2^n'}</M></>,
           hint: h(
             <>
               <p>Ein <span className="hint-em">Binomialkoeffizient</span> C(n,k) (gesprochen "n über k") zählt, auf wie viele Arten man k Dinge aus n Dingen auswählen kann. Formel: C(n,k) = n!/(k!·(n−k)!), wobei n! ("n Fakultät") = 1·2·3·…·n das Produkt aller Zahlen bis n ist (und 0! = 1).</p>
@@ -227,7 +228,7 @@ Für n=2: C(2,0)+C(2,1)+C(2,2) = 1+2+1 = 4 = 2² ✓`}</pre>
         },
         {
           letter: 'b',
-          text: 'Zeigen Sie für n ∈ ℕ* folgende Identitäten mit Hilfe des Binomischen Lehrsatzes:\n\nΣ(k=0 bis n) (−1)ᵏ · C(n,k) = 0',
+          text: <>{'Zeigen Sie für n ∈ ℕ* folgende Identitäten mit Hilfe des Binomischen Lehrsatzes:\n\n'}<M>{'\\sum_{k=0}^{n} (-1)^k \\binom{n}{k} = 0'}</M></>,
           hint: h(
             <>
               <p>Wieder ist eine <span className="hint-em">Identität</span> mit dem <span className="hint-em">Binomischen Lehrsatz</span> (x+y)ⁿ = Σ(k=0 bis n) C(n,k)·x^(n−k)·yᵏ zu zeigen. Die <span className="hint-em">Binomialkoeffizienten</span> C(n,k) = n!/(k!(n−k)!) zählen die Auswahlmöglichkeiten von k aus n.</p>
@@ -568,7 +569,7 @@ zusammen 2+2 = 4 = 2² ✓`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Zeigen Sie folgende Identitäten für die Binomialkoeffizienten:\n\nC(n,1) = n = C(n, n−1),  falls n ∈ ℕ*',
+          text: <>{'Zeigen Sie folgende Identitäten für die Binomialkoeffizienten:\n\n'}<M>{'\\binom{n}{1} = n = \\binom{n}{n-1}'}</M>{',  falls n ∈ ℕ*'}</>,
           hint: h(
             <>
               <p>Die <span className="hint-em">Fakultät</span> n! ("n Fakultät") ist das Produkt aller ganzen Zahlen von 1 bis n: n! = 1·2·3·…·n. Beispiele: 5! = 1·2·3·4·5 = 120, 1! = 1, und per Definition <span className="hint-em">0! = 1</span> (das leere Produkt ist 1 — eine Konvention, die viele Formeln glatt macht).</p>
@@ -615,7 +616,7 @@ C(5,4) = 5!/(4!·1!) = 120/(24·1) = 5 ✓
         },
         {
           letter: 'b',
-          text: 'Zeigen Sie folgende Identitäten für die Binomialkoeffizienten:\n\nC(n,k) = C(n, n−k),  falls n, k ∈ ℕ und k ≤ n.',
+          text: <>{'Zeigen Sie folgende Identitäten für die Binomialkoeffizienten:\n\n'}<M>{'\\binom{n}{k} = \\binom{n}{n-k}'}</M>{',  falls n, k ∈ ℕ und k ≤ n.'}</>,
           hint: h(
             <>
               <p>Der <span className="hint-em">Binomialkoeffizient</span> C(n,k) = n! / (k!·(n−k)!) zählt die Auswahlmöglichkeiten von k aus n (mit der <span className="hint-em">Fakultät</span> m! = 1·2·…·m, 0! = 1). Zu zeigen ist die <span className="hint-em">Symmetrieregel</span> C(n,k) = C(n, n−k) für k ≤ n.</p>
@@ -658,7 +659,7 @@ C(5,5−2) = C(5,3) = 5!/(3!·2!) = 120/(6·2) = 10
         },
         {
           letter: 'c',
-          text: 'Zeigen Sie folgende Identitäten für die Binomialkoeffizienten:\n\nC(n,k) + C(n,k+1) = C(n+1,k+1),  falls n ∈ ℕ*, k ∈ ℕ und k+1 ≤ n.',
+          text: <>{'Zeigen Sie folgende Identitäten für die Binomialkoeffizienten:\n\n'}<M>{'\\binom{n}{k} + \\binom{n}{k+1} = \\binom{n+1}{k+1}'}</M>{',  falls n ∈ ℕ*, k ∈ ℕ und k+1 ≤ n.'}</>,
           hint: h(
             <>
               <p>Das ist die <span className="hint-em">Pascal-Regel</span> (Additionsformel) für <span className="hint-em">Binomialkoeffizienten</span> C(n,k) = n!/(k!(n−k)!). Sie sagt: zwei benachbarte Koeffizienten einer Zeile addieren sich zum Koeffizienten direkt darunter — das ist das Bauprinzip des <span className="hint-em">Pascalschen Dreiecks</span> (jede Zahl = Summe der zwei darüber).</p>

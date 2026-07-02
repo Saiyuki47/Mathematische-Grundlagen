@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 import FunctionPlot from '../../components/FunctionPlot'
 
@@ -515,7 +516,7 @@ x³ = (−0,5)³ = −0,125  (ungerade Potenz → negativ)
         },
         {
           letter: 'b',
-          text: 'Für welche x ∈ [−1, 1] existiert lim(n→∞) fₙ(x)? Geben Sie auch die zugehörigen Grenzwerte an.',
+          text: <>{'Für welche x ∈ [−1, 1] existiert '}<M>{'\\lim_{n \\to \\infty} f_n(x)'}</M>{'? Geben Sie auch die zugehörigen Grenzwerte an.'}</>,
           hint: h(
             <>
               <p>Hier ist x eine <span className="hint-em">feste</span> Zahl aus [−1,1] und nur n läuft gegen ∞. Die Zahlenfolge (xⁿ) = x¹, x², x³, … ist eine <span className="hint-em">geometrische Folge</span> mit Quotient x (jedes Glied = vorheriges · x).</p>
@@ -565,7 +566,7 @@ q = −1:   (−1)ⁿ alterniert → kein Grenzwert`}</pre>
         },
         {
           letter: 'c',
-          text: 'Skizzieren Sie die Funktion\n\nf: D → ℝ, x ↦ lim(n→∞) fₙ(x),\n\nwobei D = {x ∈ [−1, 1] : lim(n→∞) fₙ(x) existiert}.',
+          text: <>{'Skizzieren Sie die Funktion\n\nf: D → ℝ, x ↦ '}<M>{'\\lim_{n \\to \\infty} f_n(x)'}</M>{',\n\nwobei D = {x ∈ [−1, 1] : '}<M>{'\\lim_{n \\to \\infty} f_n(x)'}</M>{' existiert}.'}</>,
           hint: h(
             <>
               <p>Die <span className="hint-em">Grenzfunktion</span> f entsteht, indem man für JEDES feste x den Grenzwert der Folge fₙ(x) = xⁿ bildet: f(x) = lim(n→∞) xⁿ. Definiert ist f nur dort, wo dieser Grenzwert existiert — das ist der <span className="hint-em">Definitionsbereich</span> D aus Teil (b): D = (−1, 1] (alle x in [−1,1] außer −1).</p>
