@@ -424,14 +424,7 @@
 .aufg-table td.aufg-eq { text-align: left; }
 .aufg-table .aufg-nr { color: var(--blue); width: 2.6rem; }
 .aufg-table .aufg-box { width: 6.5rem; color: var(--muted, #8b90a8); }
-.toggle-btn--hint {
-  border-color: var(--green);
-  color: var(--green);
-}
-.toggle-btn--hint:hover {
-  background: var(--green-dim);
-  color: var(--green);
-}
+/* .toggle-btn--hint kommt aus lernseiten-ui/styles.css (geteilt) */
 /* HINT ACCORDION */
 .hint-accordion {
   margin-top: 8px;

@@ -28,10 +28,8 @@ concurrency:
 jobs:
   react-doctor:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: millionco/react-doctor@v2
         # Common configuration knobs — uncomment any to override the default.

@@ -13,13 +13,13 @@
     "doctor": "npx react-doctor@latest"
   },
   "dependencies": {
-    "@types/katex": "^0.16.8",
     "katex": "^0.17.0",
     "lernseiten-ui": "github:Saiyuki47/lernseiten-ui",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@types/katex": "^0.16.8",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.4",

@@ -3,5 +3,5 @@ dist
 .env
 *.local
 .agents/
-.claude/
+.claude/settings.local.json
 src/data/dateien.ts
