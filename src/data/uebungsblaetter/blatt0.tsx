@@ -733,7 +733,11 @@ Faktoren des Nenners mit (1 + k²) vergleichen:
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Erinnerung: Die Wurzel einer reellen Zahl x ∈ ℝ, x ≥ 0, ist eine reelle Zahl y ≥ 0 mit y · y = x (Notation: y = √x oder y = x^(1/2)). (Bemerkung: Die Wurzel einer reellen Zahl x ≥ 0 ist eindeutig.)\n\nBestimmen Sie √2 · √32.',
+          text: (
+            <>
+              {'Erinnerung: Die Wurzel einer reellen Zahl x ∈ ℝ, x ≥ 0, ist eine reelle Zahl y ≥ 0 mit y · y = x (Notation: y = √x oder y = x'}<sup>1/2</sup>{'). (Bemerkung: Die Wurzel einer reellen Zahl x ≥ 0 ist eindeutig.)\n\nBestimmen Sie √2 · √32.'}
+            </>
+          ),
           hint: h(
             <>
               <p>Die <span className="hint-em">Quadratwurzel</span> √a ist die (nicht-negative) Zahl, die mit sich selbst multipliziert a ergibt: √64 = 8, weil 8·8 = 64. Sie ist nur für a ≥ 0 definiert.</p>

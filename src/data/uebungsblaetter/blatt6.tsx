@@ -1,4 +1,5 @@
 import type { MatheBlatt } from '../../types'
+import Frac from '../../utils/Frac'
 import { h } from './shared'
 
 export const blatt6: MatheBlatt = {
@@ -376,7 +377,11 @@ Mindestens eine gerade:  10 000 − 625 = 9 375`}</pre>
             </ul>,
             <p>Selbstkontrolle: Zähle die Faktoren von 60 bis 41: 60−41+1 = 20 Faktoren = 20 Personen ✓. Frage: Warum zählt hier die Reihenfolge (→ Variation), obwohl die Plätze „nur" besetzt werden — und warum sinkt die Faktorenzahl 60, 59, 58, … statt konstant 60 zu bleiben?</p>,
           ),
-          solution: 'Urnenmodell: 60 Kugeln ≅ Plätze im Bus,\n20 Ziehungen ohne Wiederholung mit Reihenfolge.\n\nV(60, 20) = 60! / 40! = 60 · 59 · … · 41',
+          solution: (
+            <>
+              {'Urnenmodell: 60 Kugeln ≅ Plätze im Bus,\n20 Ziehungen ohne Wiederholung mit Reihenfolge.\n\nV(60, 20) = '}<Frac n="60!" d="40!" />{' = 60 · 59 · … · 41'}
+            </>
+          ),
         },
       ],
     },
@@ -572,7 +577,11 @@ Auflistung: OOTT, OTOT, OTTO, TOOT, TOTO, TTOO → 6 ✓
             </ul>,
             <p>Selbstkontrolle: Beide Wege müssen übereinstimmen: C(7,2)·5! = 21·120 = 2520 und 7!/2! = 5040/2 = 2520 ✓. Frage: Warum teilt man durch 2! (=2) und nicht durch 2 „zufällig" — was würde man bei einem Wort mit DREI gleichen Buchstaben teilen müssen?</p>,
           ),
-          solution: 'KLAUSUR hat 7 Buchstaben, U kommt zweimal vor.\n\nUrnenmodell für die U-Positionen:\n  n = 7 Positionen, k = 2 U\'s\n  C(7, 2) = (7 über 2) = 21\n\nPermutation der restlichen 5 Buchstaben:\n  5! = 120\n\nGesamt: C(7, 2) · P(5) = 21 · 120 = 2520\n\n(Alternativ: 7! / 2! = 5040 / 2 = 2520)',
+          solution: (
+            <>
+              {'KLAUSUR hat 7 Buchstaben, U kommt zweimal vor.\n\nUrnenmodell für die U-Positionen:\n  n = 7 Positionen, k = 2 U\'s\n  C(7, 2) = (7 über 2) = 21\n\nPermutation der restlichen 5 Buchstaben:\n  5! = 120\n\nGesamt: C(7, 2) · P(5) = 21 · 120 = 2520\n\n(Alternativ: '}<Frac n="7!" d="2!" />{' = '}<Frac n="5040" d="2" />{' = 2520)'}
+            </>
+          ),
         },
       ],
     },

@@ -70,7 +70,11 @@ Kontrolle: k=1 → 1²=1 ✓, k=4 → 4²=16 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: Setze in Σ(k=1 bis 5) k^(k+1) nacheinander k=1,2,3,4,5 ein — kommen genau 1², 2³, 3⁴, 4⁵, 5⁶ heraus? Frage: Worin unterscheidet sich k² (Index nur als Basis, fester Exponent) von k^(k+1) (Index in Basis UND Exponent), und warum ist k^(k+1) zwar leicht zu schreiben, aber mühsam auszurechnen?</p>,
           ),
-          solution: '5\nΣ k^(k+1) = 1² + 2³ + 3⁴ + 4⁵ + 5⁶\nk=1',
+          solution: (
+            <>
+              <M>{'\\sum_{k=1}^{5} k^{k+1}'}</M>{' = 1² + 2³ + 3⁴ + 4⁵ + 5⁶'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -121,7 +125,11 @@ k=0: 2⁰=1, k=1: 2¹=2, k=2: 2²=4, k=3: 2³=8 ✓
             </ul>,
             <p>Selbstkontrolle: Setze in Σ(k=0 bis 3) (1/3)ᵏ die Indizes 0,1,2,3 ein — kommt 1, 1/3, 1/9, 1/27 heraus? Frage: Warum ist k=0 der natürliche Start für geometrische Folgen (was macht q⁰ = 1 so praktisch), und welchen Term verliert man, wenn man fälschlich bei k=1 beginnt?</p>,
           ),
-          solution: '3\nΣ (1/3)ᵏ = 1 + 1/3 + 1/9 + 1/27\nk=0',
+          solution: (
+            <>
+              <M>{'\\sum_{k=0}^{3} \\left(\\frac{1}{3}\\right)^{k}'}</M>{' = 1 + '}<Frac n="1" d="3" />{' + '}<Frac n="1" d="9" />{' + '}<Frac n="1" d="27" />
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -169,7 +177,11 @@ k=0: 1+0=1, k=1: 1+2=3, k=2: 1+4=5, k=3: 1+6=7 ✓
             </ul>,
             <p>Selbstkontrolle: Setze in Σ(k=0 bis 6) (4 + 3k) die Indizes 0 bis 6 ein — kommt 4,7,10,13,16,19,22 heraus? Frage: Warum hat eine Folge mit Indizes k=0 bis k=n genau n+1 Terme (nicht n), und warum stellt f(k) = 3k ohne den Startterm 4 diese Summe falsch dar?</p>,
           ),
-          solution: '6\nΣ (4 + 3k) = 4 + 7 + 10 + 13 + 16 + 19 + 22\nk=0',
+          solution: (
+            <>
+              <M>{'\\sum_{k=0}^{6} (4 + 3k)'}</M>{' = 4 + 7 + 10 + 13 + 16 + 19 + 22'}
+            </>
+          ),
         },
       ],
     },
@@ -224,7 +236,11 @@ Für n=2: C(2,0)+C(2,1)+C(2,2) = 1+2+1 = 4 = 2² ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: Prüfe für n=1: Σ = C(1,0)+C(1,1) = 1+1 = 2 = 2¹ ✓. Frage: Warum ist die Wahl x=y=1 der Schlüsseltrick — welche kombinatorische Aussage steckt dahinter (jedes der n Elemente ist entweder in einer Teilmenge oder nicht, das sind 2·2·…·2 = 2ⁿ Möglichkeiten)?</p>,
           ),
-          solution: '       n\n2ⁿ = (1+1)ⁿ  binom. Lehrsatz= Σ C(n,k)·1^(n−k)·1ᵏ\n                              k=0\n   n\n = Σ C(n,k)  ✓\n   k=0',
+          solution: (
+            <>
+              {'2ⁿ = (1+1)ⁿ '}<M>{'\\overset{\\text{binom. Lehrsatz}}{=} \\sum_{k=0}^{n} \\binom{n}{k} \\cdot 1^{n-k} \\cdot 1^k'}</M>{'\n\n = '}<M>{'\\sum_{k=0}^{n} \\binom{n}{k}'}</M>{'  ✓'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -269,7 +285,11 @@ Für n=2: 1 − 2 + 1 = 0 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: Rechne n=4 nach: 1 − 4 + 6 − 4 + 1 = 0 ✓. Frage: Die Summe Σ(−1)ᵏC(n,k) zählt Teilmengen mit geradem k mit + und mit ungeradem k mit −; was sagt das Ergebnis 0 darüber, wie viele Teilmengen gerader bzw. ungerader Größe es gibt (nämlich gleich viele)?</p>,
           ),
-          solution: '         n\n0 = (1−1)ⁿ  binom. Lehrsatz= Σ C(n,k)·1^(n−k)·(−1)ᵏ\n                               k=0\n   n\n = Σ (−1)ᵏ C(n,k)  ✓\n   k=0',
+          solution: (
+            <>
+              {'0 = (1−1)ⁿ '}<M>{'\\overset{\\text{binom. Lehrsatz}}{=} \\sum_{k=0}^{n} \\binom{n}{k} \\cdot 1^{n-k} \\cdot (-1)^k'}</M>{'\n\n = '}<M>{'\\sum_{k=0}^{n} (-1)^k \\binom{n}{k}'}</M>{'  ✓'}
+            </>
+          ),
         },
       ],
     },
@@ -283,10 +303,8 @@ Für n=2: 1 − 2 + 1 = 0 ✓`}</pre>
           letter: 'a',
           text: (
             <>
-              {'Zeigen Sie nachfolgende Behauptungen jeweils mit vollständiger Induktion.\n\nFür jedes n ∈ ℕ* gilt:\n\nΣ(k=1 bis n) '}
-              <Frac n="1" d="k(k+1)" />
-              {' = 1 − '}
-              <Frac n="1" d="n+1" />
+              {'Zeigen Sie nachfolgende Behauptungen jeweils mit vollständiger Induktion.\n\nFür jedes n ∈ ℕ* gilt:\n\n'}
+              <M>{'\\sum_{k=1}^{n} \\frac{1}{k(k+1)} = 1 - \\frac{1}{n+1}'}</M>
             </>
           ),
           hint: h(
@@ -356,7 +374,7 @@ IS: Σ(k=1..n+1) k = Σ(k=1..n) k + (n+1)
           solution: (
             <>
               {'IA (n=1): '}<Frac n="1" d="1·2" />{' = '}<Frac n="1" d="2" />{' = 1 − '}<Frac n="1" d="2" />{' ✓\n\n'}
-              {'IS: Σ_{k=1}^{n+1} = Σ_{k=1}^n + '}<Frac n="1" d="(n+1)(n+2)" />{'\n'}
+              {'IS: '}<M>{'\\sum_{k=1}^{n+1}'}</M>{' = '}<M>{'\\sum_{k=1}^{n}'}</M>{' + '}<Frac n="1" d="(n+1)(n+2)" />{'\n'}
               {'  = (1 − '}<Frac n="1" d="n+1" />{') + '}<Frac n="1" d="(n+1)(n+2)" />{'\n'}
               {'  = 1 − '}<Frac n="n+2" d="(n+1)(n+2)" />{' + '}<Frac n="1" d="(n+1)(n+2)" />{'\n'}
               {'  = 1 − '}<Frac n="n+1" d="(n+1)(n+2)" />{' = 1 − '}<Frac n="1" d="n+2" />{' ✓ □'}
@@ -612,7 +630,12 @@ C(5,4) = 5!/(4!·1!) = 120/(24·1) = 5 ✓
             </ul>,
             <p>Selbstkontrolle: Prüfe n=7: C(7,1) = 7 und C(7,6) = 7 ✓. Frage: Was bedeutet C(n,1) = n kombinatorisch (auf wie viele Arten wählt man 1 aus n?), und warum ist "1 auswählen" gleichwertig zu "n−1 weglassen", sodass auch C(n,n−1) = n gilt?</p>,
           ),
-          solution: 'C(n,1) = n!/(1!·(n−1)!) = n·(n−1)!/(n−1)! = n\n\nC(n,n−1) = n!/((n−1)!·1!) = n·(n−1)!/(n−1)! = n',
+          solution: (
+            <>
+              {'C(n,1) = '}<Frac n="n!" d="1!·(n−1)!" />{' = '}<Frac n="n·(n−1)!" d="(n−1)!" />{' = n\n\n'}
+              {'C(n,n−1) = '}<Frac n="n!" d="(n−1)!·1!" />{' = '}<Frac n="n·(n−1)!" d="(n−1)!" />{' = n'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -655,7 +678,11 @@ C(5,5−2) = C(5,3) = 5!/(3!·2!) = 120/(6·2) = 10
             </ul>,
             <p>Selbstkontrolle: Prüfe C(6,2) = 15 und C(6,4) = 15 ✓. Frage: Was sagt C(n,k) = C(n,n−k) kombinatorisch — warum gibt es genauso viele Arten, k Elemente AUSzuwählen, wie n−k Elemente WEGzulassen (jede Auswahl bestimmt eindeutig ihre Reste)?</p>,
           ),
-          solution: 'C(n,n−k) = n! / ((n−k)! · (n−(n−k))!)\n          = n! / ((n−k)! · k!)\n          = C(n,k)  ✓',
+          solution: (
+            <>
+              {'C(n,n−k) = '}<Frac n="n!" d="(n−k)! · (n−(n−k))!" />{'\n\n = '}<Frac n="n!" d="(n−k)! · k!" />{'\n\n = C(n,k)  ✓'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -709,7 +736,12 @@ darunter steht 10.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Prüfe C(5,2) + C(5,3) = 10 + 10 = 20 = C(6,3) ✓. Frage: Welche zwei Einträge erzeugen im Pascal-Dreieck welchen Eintrag darunter, und warum ergibt das kombinatorisch Sinn (eine (k+1)-Auswahl aus n+1 enthält das neue Element oder nicht)?</p>,
           ),
-          solution: 'C(n,k) + C(n,k+1)\n= n!/(k!(n−k)!) + n!/((k+1)!(n−k−1)!)\n\nGem. Nenner (k+1)!(n−k)!:\n= n!(k+1)/((k+1)!(n−k)!) + n!(n−k)/((k+1)!(n−k)!)\n= n!(k+1+n−k) / ((k+1)!(n−k)!)\n= (n+1)! / ((k+1)!(n−k)!)\n= C(n+1,k+1)  ✓',
+          solution: (
+            <>
+              {'C(n,k) + C(n,k+1)\n= '}<Frac n="n!" d="k!(n−k)!" />{' + '}<Frac n="n!" d="(k+1)!(n−k−1)!" />{'\n\n'}
+              {'Gem. Nenner (k+1)!(n−k)!:\n= '}<Frac n="n!(k+1)" d="(k+1)!(n−k)!" />{' + '}<Frac n="n!(n−k)" d="(k+1)!(n−k)!" />{'\n\n= '}<Frac n="n!(k+1+n−k)" d="(k+1)!(n−k)!" />{'\n\n= '}<Frac n="(n+1)!" d="(k+1)!(n−k)!" />{'\n\n= C(n+1,k+1)  ✓'}
+            </>
+          ),
         },
       ],
     },

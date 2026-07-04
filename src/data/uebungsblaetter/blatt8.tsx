@@ -51,7 +51,11 @@ xₙyₙ = n³/n = n² → ∞ ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: Setze n = 100 ein: xₙyₙ = 100²·(1/100) = 100 — wird das mit wachsendem n immer größer? Frage: Warum ist „∞·0" kein fester Wert, und welche Bedingung an die Exponenten a, b sorgt dafür, dass das Produkt nᵃ⁻ᵇ gegen ∞ geht?</p>,
           ),
-          solution: 'xₙ := n², yₙ := 1/n\nxₙyₙ = n² · (1/n) = n → ∞',
+          solution: (
+            <>
+              {'xₙ := n², yₙ := '}<Frac n="1" d="n" />{'\nxₙyₙ = n² · '}<Frac n="1" d="n" />{' = n → ∞'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -88,7 +92,11 @@ xₙyₙ = −n³/n = −n² → −∞ ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: n = 100 → xₙyₙ = 100²·(−1/100) = −100 — wird das mit wachsendem n immer negativer? Frage: Warum ist −1/n trotz durchweg negativer Glieder eine Nullfolge, und wie lautet die genaue Definition „yₙ → 0"?</p>,
           ),
-          solution: 'xₙ := n², yₙ := −1/n\nxₙyₙ = n² · (−1/n) = −n → −∞',
+          solution: (
+            <>
+              {'xₙ := n², yₙ := −'}<Frac n="1" d="n" />{'\nxₙyₙ = n² · (−'}<Frac n="1" d="n" />{') = −n → −∞'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -122,7 +130,11 @@ Produkt = n·0 = 0 → 0 ✓
             </ul>,
             <p>Selbstkontrolle: Nimm c = −5: xₙ = n, yₙ = −5/n → Produkt jedes Glied = −5? Frage: Warum ergibt n·(c/n) für jedes n exakt c, und warum bleibt c/n trotz beliebigem c eine Nullfolge?</p>,
           ),
-          solution: 'xₙ := n, yₙ := c/n\nxₙyₙ = n · (c/n) = c → c',
+          solution: (
+            <>
+              {'xₙ := n, yₙ := '}<Frac n="c" d="n" />{'\nxₙyₙ = n · '}<Frac n="c" d="n" />{' = c → c'}
+            </>
+          ),
         },
         {
           letter: 'd',
@@ -161,7 +173,11 @@ Teilfolgen → +2 und −2 → divergent ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: Schreibe x₀y₀, x₁y₁, x₂y₂, x₃y₃ auf — springt es +1, −1, +1, −1 (beschränkt) und legt sich nie fest? Frage: Warum genügen zwei Teilfolgen mit verschiedenen Grenzwerten, um Nicht-Konvergenz zu beweisen?</p>,
           ),
-          solution: 'xₙ := n, yₙ := (−1)ⁿ · (1/n)\nxₙyₙ = (−1)ⁿ: beschränkt (|xₙyₙ| = 1), aber nicht konvergent\n(Teilfolge x₂ₙy₂ₙ = +1, x₂ₙ₊₁y₂ₙ₊₁ = −1)',
+          solution: (
+            <>
+              {'xₙ := n, yₙ := (−1)ⁿ · '}<Frac n="1" d="n" />{'\nxₙyₙ = (−1)ⁿ: beschränkt (|xₙyₙ| = 1), aber nicht konvergent\n(Teilfolge x₂ₙy₂ₙ = +1, x₂ₙ₊₁y₂ₙ₊₁ = −1)'}
+            </>
+          ),
         },
       ],
     },
@@ -207,7 +223,11 @@ lim (3 + (1/2)ⁿ) = 3 + 0 = 3`}</pre>
             </ul>,
             <p>Selbstkontrolle: n = 3 → 1 − (−1/5)³ = 1 − (−1/125) = 1,008; n = 4 → 1 − 1/625 ≈ 0,9984 — nähert sich 1 von beiden Seiten ✓. Frage: Warum entscheidet bei qⁿ allein |q| über die Konvergenz gegen 0, und warum stört ein negatives q dabei nicht?</p>,
           ),
-          solution: 'lim (−1/5)ⁿ = 0 (geometrische Folge, |q| = 1/5 < 1)\nlim xₙ = 1 − 0 = 1',
+          solution: (
+            <>
+              {'lim (−'}<Frac n="1" d="5" />{')ⁿ = 0 (geometrische Folge, |q| = '}<Frac n="1" d="5" />{' < 1)\nlim xₙ = 1 − 0 = 1'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -249,7 +269,7 @@ Summe → 0 + 3 = 3`}</pre>
           ),
           solution: (
             <>
-              {'(−1)ⁿ/n → 0  (beschränkt · Nullfolge)\n'}
+              <Frac n="(−1)ⁿ" d="n" />{' → 0  (beschränkt · Nullfolge)\n'}
               {'lim '}<Frac n="n" d="2n+1" />{' = lim '}<Frac n="1" d="2 + 1/n" />{' = '}<Frac n="1" d="2" />{'\n'}
               {'lim xₙ = '}<Frac n="1" d="2" />
             </>
@@ -447,8 +467,8 @@ Oben: ≤ 1
             <>
               {'Bernoullische Ungleichung: xₙ = (1−'}<Frac n="1" d="n²" />{')ⁿ ≥ 1 − '}<Frac n="n" d="n²" />{' = 1 − '}<Frac n="1" d="n" />{'\n'}
               {'Außerdem: xₙ ≤ 1\n'}
-              {'→ 1 − 1/n ≤ xₙ ≤ 1\n'}
-              {'Da lim (1−1/n) = 1, folgt mit dem Sandwichtheorem lim xₙ = 1.'}
+              {'→ 1 − '}<Frac n="1" d="n" />{' ≤ xₙ ≤ 1\n'}
+              {'Da lim (1 − '}<Frac n="1" d="n" />{') = 1, folgt mit dem Sandwichtheorem lim xₙ = 1.'}
             </>
           ),
         },
@@ -511,7 +531,7 @@ x₂ = 0,9 + 9·(1/100) = 0,9 + 0,09 = 0,99
           solution: (
             <>
               {'xₙ = 9 · '}<Frac n="1" d="10" />{' · '}<Frac n="1 − (1/10)ⁿ" d="1 − 1/10" />{' = '}<Frac n="9" d="10" />{' · '}<Frac n="1 − (1/10)ⁿ" d="9/10" />{' = 1 − ('}<Frac n="1" d="10" />{')ⁿ\n'}
-              {'Da |1/10| < 1: lim (1/10)ⁿ = 0, also lim xₙ = 1.'}
+              {'Da |'}<Frac n="1" d="10" />{'| < 1: lim ('}<Frac n="1" d="10" />{')ⁿ = 0, also lim xₙ = 1.'}
             </>
           ),
         },
@@ -564,7 +584,7 @@ x₂ = 0,9 + 9·(1/100) = 0,9 + 0,09 = 0,99
           ),
           solution: (
             <>
-              {'|(x−1)/7| < 1  ⟺  |x−1| < 7  ⟺  x ∈ (−6, 8)\n\n'}
+              {'|'}<Frac n="x−1" d="7" />{'| < 1  ⟺  |x−1| < 7  ⟺  x ∈ (−6, 8)\n\n'}
               {'(i)  Konvergiert für x ∈ (−6, 8)\n'}
               {'(ii) 3·Σ qᵏ konvergiert genau dann wenn Σ qᵏ konvergiert → x ∈ (−6, 8)\n'}
               {'(iii) Endlich viele Anfangsglieder weglassen ändert Konvergenz nicht → x ∈ (−6, 8)'}
@@ -581,7 +601,11 @@ x₂ = 0,9 + 9·(1/100) = 0,9 + 0,09 = 0,99
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Die Folge (aₙ) sei rekursiv definiert durch\n\na₀ := 2, aₙ₊₁ := 2aₙ/(2+aₙ), n ≥ 0.\n\nZeigen Sie zunächst mit vollständiger Induktion, dass aₙ > 0 für alle n ∈ ℕ. Überlegen Sie dann, ob die Folge (aₙ) konvergiert und bestimmen Sie gegebenenfalls den Grenzwert.',
+          text: (
+            <>
+              {'Die Folge (aₙ) sei rekursiv definiert durch\n\na₀ := 2, aₙ₊₁ := '}<Frac n="2aₙ" d="2+aₙ" />{', n ≥ 0.\n\nZeigen Sie zunächst mit vollständiger Induktion, dass aₙ > 0 für alle n ∈ ℕ. Überlegen Sie dann, ob die Folge (aₙ) konvergiert und bestimmen Sie gegebenenfalls den Grenzwert.'}
+            </>
+          ),
           hint: h(
             <>
               <p>Die <span className="hint-em">vollständige Induktion</span> beweist eine Aussage A(n) für ALLE n ∈ ℕ in zwei Schritten:</p>
@@ -637,11 +661,11 @@ a(1+a) = a → a + a² = a → a² = 0 → a = 0
           solution: (
             <>
               {'IA: a₀ = 2 > 0 ✓\n'}
-              {'IS: aₙ > 0 → aₙ₊₁ = 2aₙ/(2+aₙ) > 0 (Zähler und Nenner positiv) ✓\n\n'}
+              {'IS: aₙ > 0 → aₙ₊₁ = '}<Frac n="2aₙ" d="2+aₙ" />{' > 0 (Zähler und Nenner positiv) ✓\n\n'}
               {'Monotonie: aₙ₊₁ ≤ aₙ ⟺ 0 ≤ aₙ² (immer wahr) → (aₙ) monoton fallend.\n'}
               {'Beschränktheit: aₙ ∈ [0, 2] für alle n ∈ ℕ.\n'}
               {'→ (aₙ) konvergiert nach Folie 138.\n\n'}
-              {'Grenzwert: a = 2a/(2+a) → a² = 0 → a = 0'}
+              {'Grenzwert: a = '}<Frac n="2a" d="2+a" />{' → a² = 0 → a = 0'}
             </>
           ),
         },
@@ -732,7 +756,11 @@ inneres kürzt sich → erster Zähler 1, letzter Nenner n
             </ul>,
             <p>Selbstkontrolle: n = 3 → (2/1)(3/2)(4/3) = 4 = 3+1 ✓; n = 4 → ·(5/4) = 5 = 4+1 ✓. Frage: Warum überleben beim Teleskopprodukt nur der erste Nenner und der letzte Zähler, und warum divergiert das Produkt hier gegen ∞?</p>,
           ),
-          solution: 'xₙ = (2/1)·(3/2)·(4/3)·…·((n+1)/n) = n+1 (Teleskopprodukt)\nxₙ = n+1 → ∞',
+          solution: (
+            <>
+              {'xₙ = '}<Frac n="2" d="1" />{' · '}<Frac n="3" d="2" />{' · '}<Frac n="4" d="3" />{' · … · '}<Frac n="n+1" d="n" />{' = n+1 (Teleskopprodukt)\nxₙ = n+1 → ∞'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -772,7 +800,11 @@ Grenzwert = 0.`}</pre>
             </ul>,
             <p>Selbstkontrolle: n = 100 → √101 − √100 ≈ 10,0499 − 10 = 0,0499; n = 10 000 → ≈ 0,005 — geht gegen 0 ✓. Frage: Warum ist „∞ − ∞" unbestimmt, und wieso macht die Multiplikation mit dem konjugierten Ausdruck die Wurzeln im Zähler weg?</p>,
           ),
-          solution: 'xₙ = 1/(√(n+1)+√n) ≤ 1/√n → 0\nMit 0 ≤ xₙ und Einschnürungssatz: lim xₙ = 0',
+          solution: (
+            <>
+              {'xₙ = '}<Frac n="1" d="√(n+1)+√n" />{' ≤ '}<Frac n="1" d="√n" />{' → 0\nMit 0 ≤ xₙ und Einschnürungssatz: lim xₙ = 0'}
+            </>
+          ),
         },
         {
           letter: 'd',
@@ -874,7 +906,11 @@ Zu ε wähle N > 1/ε: für n ≥ N gilt 1/n < ε ✓
         },
         {
           letter: 'b',
-          text: 'Zeigen Sie: Divergiert die Folge (xₙ) ⊆ ℝ \\ {0} bestimmt gegen ∞, so konvergiert die Folge (1/xₙ) gegen 0.',
+          text: (
+            <>
+              {'Zeigen Sie: Divergiert die Folge (xₙ) ⊆ ℝ \\ {0} bestimmt gegen ∞, so konvergiert die Folge ('}<Frac n="1" d="xₙ" />{') gegen 0.'}
+            </>
+          ),
           hint: h(
             <>
               <p>Zu beweisen: aus <span className="hint-em">bestimmter Divergenz</span> xₙ → ∞ folgt 1/xₙ → 0. Die beiden Definitionen, die man verbindet:</p>
@@ -921,10 +957,10 @@ Sei ε > 0 beliebig.
           ),
           solution: (
             <>
-              {'Sei ε > 0. Setze M := 1/ε.\n'}
-              {'Da xₙ → ∞: ∃N ∈ ℕ mit xₙ > 1/ε für alle n ≥ N.\n\n'}
-              {'Für n ≥ N: |1/xₙ − 0| = 1/xₙ < ε\n'}
-              {'→ lim 1/xₙ = 0 □'}
+              {'Sei ε > 0. Setze M := '}<Frac n="1" d="ε" />{'.\n'}
+              {'Da xₙ → ∞: ∃N ∈ ℕ mit xₙ > '}<Frac n="1" d="ε" />{' für alle n ≥ N.\n\n'}
+              {'Für n ≥ N: |'}<Frac n="1" d="xₙ" />{' − 0| = '}<Frac n="1" d="xₙ" />{' < ε\n'}
+              {'→ lim '}<Frac n="1" d="xₙ" />{' = 0 □'}
             </>
           ),
         },

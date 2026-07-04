@@ -937,9 +937,9 @@ ungerade: (−x)³ = −x³, (−x)⁵ = −x⁵  (Vorzeichen dreht)
           solution: (
             <>
               {'Da (−x)²ᵏ = x²ᵏ für jedes k ∈ ℕ:\n\n'}
-              {'cos(−x) = Σ (−1)ᵏ '}<Frac n="(−x)²ᵏ" d="(2k)!" />{' = Σ (−1)ᵏ '}<Frac n="x²ᵏ" d="(2k)!" />{' = cos(x). ✓\n\n'}
+              <M>{'\\cos(-x) = \\sum_{k=0}^{\\infty} (-1)^k \\frac{(-x)^{2k}}{(2k)!} = \\sum_{k=0}^{\\infty} (-1)^k \\frac{x^{2k}}{(2k)!} = \\cos(x)'}</M>{' ✓\n\n'}
               {'Da (−x)²ᵏ⁺¹ = −x²ᵏ⁺¹:\n\n'}
-              {'sin(−x) = Σ (−1)ᵏ '}<Frac n="(−x)²ᵏ⁺¹" d="(2k+1)!" />{' = −Σ (−1)ᵏ '}<Frac n="x²ᵏ⁺¹" d="(2k+1)!" />{' = −sin(x). ✓'}
+              <M>{'\\sin(-x) = \\sum_{k=0}^{\\infty} (-1)^k \\frac{(-x)^{2k+1}}{(2k+1)!} = -\\sum_{k=0}^{\\infty} (-1)^k \\frac{x^{2k+1}}{(2k+1)!} = -\\sin(x)'}</M>{' ✓'}
             </>
           ),
         },

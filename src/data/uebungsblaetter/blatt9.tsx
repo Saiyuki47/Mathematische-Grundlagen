@@ -61,7 +61,7 @@ Ergebnis: 3 · 3 = 9`}</pre>
           ),
           solution: (
             <>
-              {'Σ(k=0..∞) 5·('}<Frac n="1" d="2" />{')ᵏ = 5 · '}<Frac n="1" d="1−1/2" />{' = 5 · 2 = 10'}
+              <M>{'\\sum_{k=0}^{\\infty} 5 \\cdot \\left(\\frac{1}{2}\\right)^{k}'}</M>{' = 5 · '}<Frac n="1" d="1−1/2" />{' = 5 · 2 = 10'}
             </>
           ),
         },
@@ -255,7 +255,11 @@ Ohne Vorzeichen wäre Σ 1/k divergent → nur bedingt.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Partialsummen 1; 1−0,707=0,293; +0,577=0,870; −0,5=0,370 … pendeln mit kleiner werdenden Sprüngen. Frage: Welche zwei Bedingungen verlangt Leibniz, und warum konvergiert diese Reihe, obwohl die Betragsreihe Σ 1/√k aus (b) divergiert?</p>,
           ),
-          solution: 'aₖ := 1/√k ist monoton fallend und lim aₖ = 0.\nNach dem Leibnizkriterium konvergiert die Reihe.',
+          solution: (
+            <>
+              {'aₖ := '}<Frac n="1" d="√k" />{' ist monoton fallend und lim aₖ = 0.\nNach dem Leibnizkriterium konvergiert die Reihe.'}
+            </>
+          ),
         },
         {
           letter: 'd',
@@ -400,7 +404,11 @@ Leibniz greift nicht, obwohl Vorzeichen wechseln.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Glieder (k=2..) +0,5; −0,667; +0,75; −0,8 … wachsen betragsmäßig gegen 1, schrumpfen nicht. Frage: Warum scheitert hier das Leibnizkriterium trotz wechselnder Vorzeichen, und welcher Grenzwert von 1 − 1/k entscheidet das?</p>,
           ),
-          solution: '|aₖ| = |1 − 1/k| → 1 ≠ 0 (keine Nullfolge)\n→ Reihe divergiert.',
+          solution: (
+            <>
+              {'|aₖ| = |1 − '}<Frac n="1" d="k" />{'| → 1 ≠ 0 (keine Nullfolge)\n→ Reihe divergiert.'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -444,8 +452,8 @@ L = 2/5 < 1  ⟹ konvergiert.`}</pre>
           ),
           solution: (
             <>
-              {'Wurzelkrit.: ᵏ√|aₖ| = '}<Frac n="2" d="5" />{' · ᵏ√4 / k^(2/k) → '}<Frac n="2" d="5" />{' < 1 → konvergiert\n\n'}
-              {'Quotientenkrit.: '}<Frac n="a_{k+1}" d="aₖ" />{' = '}<Frac n="2" d="5" />{' · ('}<Frac n="k" d="k+1" />{')² → '}<Frac n="2" d="5" />{' < 1 → konvergiert'}
+              {'Wurzelkrit.: ᵏ√|aₖ| = '}<Frac n="2" d="5" />{' · '}<Frac n="ᵏ√4" d="k^(2/k)" />{' → '}<Frac n="2" d="5" />{' < 1 → konvergiert\n\n'}
+              {'Quotientenkrit.: '}<Frac n="aₖ₊₁" d="aₖ" />{' = '}<Frac n="2" d="5" />{' · ('}<Frac n="k" d="k+1" />{')² → '}<Frac n="2" d="5" />{' < 1 → konvergiert'}
             </>
           ),
         },
@@ -496,7 +504,7 @@ lim xₙ = 1 − 0 = 1`}</pre>
             <>
               {'xₙ = '}<Frac n="1" d="√(n+1)" />{' − 1  (Teleskopsumme)\n'}
               {'lim xₙ = 0 − 1 = −1\n'}
-              {'→ Σ('}<Frac n="1" d="√(k+1)" />{' − '}<Frac n="1" d="√k" />{') = −1'}
+              {'→ '}<M>{'\\sum_{k=1}^{\\infty} \\left(\\frac{1}{\\sqrt{k+1}} - \\frac{1}{\\sqrt{k}}\\right)'}</M>{' = −1'}
             </>
           ),
         },

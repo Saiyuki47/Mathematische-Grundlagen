@@ -491,23 +491,12 @@ h'(x) = −(1−2x)⁻² · (−2) = 2/(1−2x)²`}</pre>
           ),
           solution: (
             <>
-              {"f'(x) = Σ"}
-              <sub>{'k=1'}</sub>
-              <sup>{'∞'}</sup>
-              {' k·x'}
-              <sup>{'k−1'}</sup>
-              {' = Σ'}
-              <sub>{'k=0'}</sub>
-              <sup>{'∞'}</sup>
-              {' (k+1)xᵏ  (Indexshift).\n\n'}
+              {"f'(x) = "}<M>{'\\sum_{k=1}^{\\infty} k \\cdot x^{k-1}'}</M>{' = '}<M>{'\\sum_{k=0}^{\\infty} (k+1)x^{k}'}</M>{'  (Indexshift).\n\n'}
               {"g'(x) = −(1 − x)⁻² · (−1) = "}
               <Frac n="1" d="(1 − x)²" />
               {'.\n\n'}
-              {'Da Σxᵏ = '}<Frac n="1" d="1−x" />{' für x ∈ (−1,1), gilt f = g und damit f\' = g\'.\n\n'}
-              {'Das heißt: Σ'}
-              <sub>{'k=0'}</sub>
-              <sup>{'∞'}</sup>
-              {' (k+1)xᵏ konvergiert gegen '}
+              {'Da '}<M>{'\\sum_{k=0}^{\\infty} x^k = \\frac{1}{1-x}'}</M>{' für x ∈ (−1,1), gilt f = g und damit f\' = g\'.\n\n'}
+              {'Das heißt: '}<M>{'\\sum_{k=0}^{\\infty} (k+1)x^{k}'}</M>{' konvergiert gegen '}
               <Frac n="1" d="(1−x)²" />
               {' für x ∈ (−1,1).'}
             </>

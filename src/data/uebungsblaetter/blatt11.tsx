@@ -323,7 +323,11 @@ Beide 0 → lim(x→0) g = 0 existiert
             </ul>,
             <p>Selbst-Probe: f(0,1) = 0,3/(2·0,1) = 1,5 und f(−0,1) = −0,3/(2·0,1) = −1,5 — verschiedene Niveaus rechts/links. Frage: Warum kann kein c die Stetigkeit in x = 0 herstellen, wenn der links- und der rechtsseitige Grenzwert verschieden sind (was würde mit dem jeweils „anderen" Ast passieren)?</p>,
           ),
-          solution: 'x > 0: f(x) = 3/2\nx < 0: f(x) = −3/2\n\nlim(x→0, x<0) f(x) = −3/2 ≠ lim(x→0, x>0) f(x) = 3/2\n→ Grenzwert existiert nicht → kein c möglich.',
+          solution: (
+            <>
+              {'x > 0: f(x) = '}<Frac n="3" d="2" />{'\nx < 0: f(x) = −'}<Frac n="3" d="2" />{'\n\nlim(x→0, x<0) f(x) = −'}<Frac n="3" d="2" />{' ≠ lim(x→0, x>0) f(x) = '}<Frac n="3" d="2" />{'\n→ Grenzwert existiert nicht → kein c möglich.'}
+            </>
+          ),
         },
         {
           letter: 'd',

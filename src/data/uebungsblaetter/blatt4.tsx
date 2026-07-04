@@ -80,7 +80,16 @@ IS: ∏(k=1..n+1) 2 = [∏(k=1..n) 2]·2
             </ul>,
             <p>Selbstkontrolle: Prüfe n=2 direkt: (1+1/1)(1+1/2) = 2·(3/2) = 3 = 2+1 ✓. Frage: Warum ist der IS bei diesem Produkt so direkt — welche Eigenschaft (das ∏ bis n+1 ist ∏ bis n mal genau einem neuen Faktor) macht das Einsetzen der IV so glatt?</p>,
           ),
-          solution: 'A(n): ∏(k=1..n)(1+1/k) = n+1\n\nIA (n=1): ∏(k=1..1)(1+1/k) = 1+1 = 2 = 1+1 ✓\n\nIS (n → n+1): Sei n ∈ ℕ*. Angenommen ∏(k=1..n)(1+1/k) = n+1 (IV).\n\n∏(k=1..n+1)(1+1/k)\n= (1+1/(n+1)) · ∏(k=1..n)(1+1/k)\n=(IV) (1+1/(n+1)) · (n+1)\n= n+1+1 = n+2  ✓  □',
+          solution: (
+            <>
+              {'A(n): '}<M>{'\\prod_{k=1}^{n}\\left(1+\\frac{1}{k}\\right) = n+1'}</M>{'\n\n'}
+              {'IA (n=1): '}<M>{'\\prod_{k=1}^{1}\\left(1+\\frac{1}{k}\\right)'}</M>{' = 1+1 = 2 = 1+1 ✓\n\n'}
+              {'IS (n → n+1): Sei n ∈ ℕ*. Angenommen '}<M>{'\\prod_{k=1}^{n}\\left(1+\\frac{1}{k}\\right) = n+1'}</M>{' (IV).\n\n'}
+              <M>{'\\prod_{k=1}^{n+1}\\left(1+\\frac{1}{k}\\right)'}</M>{'\n\n= '}<M>{'\\left(1+\\frac{1}{n+1}\\right) \\cdot \\prod_{k=1}^{n}\\left(1+\\frac{1}{k}\\right)'}</M>{'\n\n'}
+              {'=(IV) '}<M>{'\\left(1+\\frac{1}{n+1}\\right) \\cdot (n+1)'}</M>{'\n\n'}
+              {'= n+1+1 = n+2  ✓  □'}
+            </>
+          ),
         },
       ],
     },
@@ -170,7 +179,7 @@ Mal −2 (negativ): −6 ≥ −4? FALSCH, richtig: −6 ≤ −4
           text: (
             <>
               {'Schreiben Sie folgende Mengen als Intervalle oder Vereinigung von Intervallen.\n\n'}
-              {'A := { x ∈ ℝ \\ {9} : 4/(x−9) ≤ 2 }'}
+              {'A := { x ∈ ℝ \\ {9} : '}<Frac n="4" d="x−9" />{' ≤ 2 }'}
             </>
           ),
           hint: h(
@@ -331,7 +340,7 @@ x=0:    |−2| = 2 ≥ |3| = 3 ? NEIN ✗ (näher an 2 → nicht in C)`}</pre>
           solution: (
             <>
               {'Fall 1 (x ≥ 2): x−2 ≥ x+3 ⟺ −2 ≥ 3 → ∅\n'}
-              {'Fall 2 (−3 ≤ x < 2): 2−x ≥ x+3 ⟺ −1/2 ≥ x → [−3, −1/2]\n'}
+              {'Fall 2 (−3 ≤ x < 2): 2−x ≥ x+3 ⟺ −'}<Frac n="1" d="2" />{' ≥ x → [−3, −'}<Frac n="1" d="2" />{']\n'}
               {'Fall 3 (x < −3): 2−x ≥ −x−3 ⟺ 2 ≥ −3 → immer wahr → (−∞, −3)\n\n'}
               {'C = (−∞, −3) ∪ [−3, −'}<Frac n="1" d="2" />{'] = (−∞, −'}<Frac n="1" d="2" />{']'}
             </>
@@ -398,7 +407,11 @@ sup = 1, aber 1 ∉ N (wegen <)  → kein Maximum.
         },
         {
           letter: 'b',
-          text: 'Geben Sie für folgende Teilmengen von ℝ jeweils — falls vorhanden — das Supremum, das Infimum, das Maximum sowie das Minimum an:\n\nM₂ := { 1/z : z ∈ ℤ \\ {0} }',
+          text: (
+            <>
+              {'Geben Sie für folgende Teilmengen von ℝ jeweils — falls vorhanden — das Supremum, das Infimum, das Maximum sowie das Minimum an:\n\nM₂ := { '}<Frac n="1" d="z" />{' : z ∈ ℤ \\ {0} }'}
+            </>
+          ),
           hint: h(
             <>
               <p>Erinnerung an die Begriffe: <span className="hint-em">sup</span> = kleinste obere Schranke, <span className="hint-em">max</span> = größtes Element, das WIRKLICH in M liegt (max = sup, falls sup ∈ M); spiegelbildlich <span className="hint-em">inf</span> = größte untere Schranke und <span className="hint-em">min</span> = kleinstes Element in M.</p>
@@ -446,11 +459,19 @@ Hier ist 0 das untere Ende: inf = 0, aber 0 ∉ N
             </ul>,
             <p>Selbstkontrolle: Gibt es ein Element von M₂ größer als 1 oder kleiner als −1? (Nein, da |z| ≥ 1 ⇒ |1/z| ≤ 1.) Frage: Warum kommt 1/z für große |z| zwar beliebig nahe an 0, aber 0 ist hier weder Schranke noch Element — und warum existiert dennoch sowohl ein Maximum als auch ein Minimum?</p>,
           ),
-          solution: 'M₂ enthält Werte 1, −1, 1/2, −1/2, 1/3, −1/3, …\n\nsup = 1 = max  (bei z=1)\ninf = −1 = min  (bei z=−1)',
+          solution: (
+            <>
+              {'M₂ enthält Werte 1, −1, '}<Frac n="1" d="2" />{', −'}<Frac n="1" d="2" />{', '}<Frac n="1" d="3" />{', −'}<Frac n="1" d="3" />{', …\n\nsup = 1 = max  (bei z=1)\ninf = −1 = min  (bei z=−1)'}
+            </>
+          ),
         },
         {
           letter: 'c',
-          text: 'Geben Sie für folgende Teilmengen von ℝ jeweils — falls vorhanden — das Supremum, das Infimum, das Maximum sowie das Minimum an:\n\nM₃ := { 1/n + 1/m : n, m ∈ ℕ* }',
+          text: (
+            <>
+              {'Geben Sie für folgende Teilmengen von ℝ jeweils — falls vorhanden — das Supremum, das Infimum, das Maximum sowie das Minimum an:\n\nM₃ := { '}<Frac n="1" d="n" />{' + '}<Frac n="1" d="m" />{' : n, m ∈ ℕ* }'}
+            </>
+          ),
           hint: h(
             <>
               <p>Begriffe wie gehabt: <span className="hint-em">sup</span> = kleinste obere Schranke, <span className="hint-em">max</span> = größtes tatsächlich vorhandenes Element (= sup, falls sup ∈ M); <span className="hint-em">inf</span> = größte untere Schranke, <span className="hint-em">min</span> = kleinstes vorhandenes Element. <span className="hint-em">ℕ*</span> = {'{1, 2, 3, …}'} (natürliche Zahlen ab 1).</p>
@@ -491,11 +512,19 @@ n=m=1000:  0,001+0,001 = 0,002   → immer > 0, aber → 0`}</pre>
             </ul>,
             <p>Selbstkontrolle: Nenne ein Element von M₃ kleiner als 0,01 (z. B. n=m=1000 → 0,002) und ein Element gleich 0 (gibt es nicht!). Frage: Warum kann 0 kein Minimum sein, obwohl die Elemente beliebig nahe an 0 herankommen — was ist der Unterschied zwischen "Grenzwert von Elementen" und "Element der Menge"?</p>,
           ),
-          solution: 'Größter Wert: n=m=1 → 1+1=2, also max = sup = 2\nKleinste Werte: 1/n+1/m → 0 für n,m → ∞, aber nie = 0\n\nsup = 2 = max,  inf = 0,  min existiert nicht',
+          solution: (
+            <>
+              {'Größter Wert: n=m=1 → 1+1=2, also max = sup = 2\nKleinste Werte: '}<Frac n="1" d="n" />{' + '}<Frac n="1" d="m" />{' → 0 für n,m → ∞, aber nie = 0\n\nsup = 2 = max,  inf = 0,  min existiert nicht'}
+            </>
+          ),
         },
         {
           letter: 'd',
-          text: 'Geben Sie für folgende Teilmengen von ℝ jeweils — falls vorhanden — das Supremum, das Infimum, das Maximum sowie das Minimum an:\n\nM₄ := { 1/n − 1/m : n, m ∈ ℕ* }',
+          text: (
+            <>
+              {'Geben Sie für folgende Teilmengen von ℝ jeweils — falls vorhanden — das Supremum, das Infimum, das Maximum sowie das Minimum an:\n\nM₄ := { '}<Frac n="1" d="n" />{' − '}<Frac n="1" d="m" />{' : n, m ∈ ℕ* }'}
+            </>
+          ),
           hint: h(
             <>
               <p>Gleiche Begriffe (<span className="hint-em">sup</span>/<span className="hint-em">max</span>, <span className="hint-em">inf</span>/<span className="hint-em">min</span>), aber jetzt eine <span className="hint-em">Differenz</span> 1/n − 1/m statt einer Summe. Der Unterschied ist entscheidend: Bei einer Summe (M₃) treffen sich beide Extreme bei kleinen Nennern; bei einer Differenz <span className="hint-em">zieht der eine Summand nach oben, der andere nach unten</span>. Die Extreme entstehen daher, wenn der eine Term groß und der andere klein wird — und das geschieht oft nur im Grenzwert (n oder m → ∞), nicht bei konkreten Werten.</p>
@@ -539,7 +568,11 @@ Gleicher Begriff, anderes Verhalten – wegen + vs −.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Finde ein Element von M₄ größer als 0,99 (n=1, m=1000) und überlege, ob je ein Element genau 1 sein kann (nein). Frage: M₃ und M₄ sind beide beschränkt (durch 2 bzw. 1), aber nur M₃ hat ein Maximum — woran liegt das (wann ist die obere Schranke ein erreichbares Element)?</p>,
           ),
-          solution: 'n=1, m→∞: 1/n−1/m → 1 (nie genau 1)\nn→∞, m=1: 1/n−1/m → −1 (nie genau −1)\n\nsup = 1,  inf = −1,  max und min existieren nicht',
+          solution: (
+            <>
+              {'n=1, m→∞: '}<Frac n="1" d="n" />{' − '}<Frac n="1" d="m" />{' → 1 (nie genau 1)\nn→∞, m=1: '}<Frac n="1" d="n" />{' − '}<Frac n="1" d="m" />{' → −1 (nie genau −1)\n\nsup = 1,  inf = −1,  max und min existieren nicht'}
+            </>
+          ),
         },
       ],
     },

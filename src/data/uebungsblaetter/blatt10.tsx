@@ -144,7 +144,7 @@ Grenzwert k → ∞:
           ),
           solution: (
             <>
-              {'Quotientenkriterium: |aₖ₊₁/aₖ| = '}<Frac n="(k+1)⁵ · k!" d="k⁵ · (k+1)!" />{' = ((k+1)/k)⁵ · '}<Frac n="1" d="k+1" />{' → 0 < 1\n\n'}
+              {'Quotientenkriterium: |'}<Frac n="aₖ₊₁" d="aₖ" />{'| = '}<Frac n="(k+1)⁵ · k!" d="k⁵ · (k+1)!" />{' = ('}<Frac n="k+1" d="k" />{')⁵ · '}<Frac n="1" d="k+1" />{' → 0 < 1\n\n'}
               {'Wurzelkriterium: ᵏ√|aₖ| = '}<Frac n="k" d="ᵏ√(4·k!)" />{' → 0 < 1\n→ Reihe konvergiert.'}
             </>
           ),
@@ -304,7 +304,11 @@ x² → +∞ (gerade!), Restbruch → 1/1 = 1
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Gegeben sei die Funktion\n\nh : ℝ → ℝ,  x ↦ { (x²−1)/(x+1),  x ≠ −1;   −100,  x = −1.\n\nBestimmen Sie\n\nlim(x→−1, x<−1) h(x),   lim(x→−1, x>−1) h(x)   und   lim(x→−1) h(x),\n\nsofern die Grenzwerte existieren. Ist h stetig in x = −1?',
+          text: (
+            <>
+              {'Gegeben sei die Funktion\n\nh : ℝ → ℝ,  x ↦ { '}<Frac n="x²−1" d="x+1" />{',  x ≠ −1;   −100,  x = −1.\n\nBestimmen Sie\n\nlim(x→−1, x<−1) h(x),   lim(x→−1, x>−1) h(x)   und   lim(x→−1) h(x),\n\nsofern die Grenzwerte existieren. Ist h stetig in x = −1?'}
+            </>
+          ),
           hint: h(
             <>
               <p>Eine Funktion f ist in einer Stelle x₀ <span className="hint-em">stetig</span>, wenn man sie dort „ohne Absetzen des Stifts" zeichnen kann. Präzise: f ist in x₀ stetig, wenn DREI Dinge gelten: (1) f(x₀) ist definiert, (2) der Grenzwert lim(x→x₀) f(x) existiert, und (3) beide stimmen überein: lim(x→x₀) f(x) = f(x₀).</p>
@@ -406,7 +410,7 @@ lim(x→0,x>0)=1, lim(x→0,x<0)=−1 → verschieden
           solution: (
             <>
               {'|4−2x|/(x−2) = 2|2−x|/(x−2)\n\n'}
-              {'x > 2: 2(x−2)/(x−2) = 2\nx < 2: −2(x−2)/(x−2) = −2\n\n'}
+              {'x > 2: '}<Frac n="2(x−2)" d="x−2" />{' = 2\nx < 2: '}<Frac n="−2(x−2)" d="x−2" />{' = −2\n\n'}
               {'(a) lim(x→2, x>2) f(x) = 2\n'}
               {'(b) lim(x→2, x<2) f(x) = −2\n'}
               {'(c) lim(x→2) f(x) existiert nicht (2 ≠ −2)\n'}

@@ -16,7 +16,13 @@ export const blatt7: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Geben Sie zu nachstehenden Folgen jeweils die Abbildungsvorschrift ℕ → ℝ, n ↦ xₙ an:\n\n(i)   (xₙ) = (0, 3, 6, 9, 12, …)\n(ii)  (xₙ) = (−4, −1, 2, 5, 8, …)\n(iii) (xₙ) = (0, −1, 2, −3, 4, …)\n(iv)  (xₙ) = (0, 1, −2, 3, −4, …)\n(v)   (xₙ) = (1/2, 1/4, 1/8, 1/16, 1/32, …)\n(vi)  (xₙ) = (1, 1/3, 1/7, 1/15, 1/31, …)',
+          text: (
+            <>
+              {'Geben Sie zu nachstehenden Folgen jeweils die Abbildungsvorschrift ℕ → ℝ, n ↦ xₙ an:\n\n(i)   (xₙ) = (0, 3, 6, 9, 12, …)\n(ii)  (xₙ) = (−4, −1, 2, 5, 8, …)\n(iii) (xₙ) = (0, −1, 2, −3, 4, …)\n(iv)  (xₙ) = (0, 1, −2, 3, −4, …)\n(v)   (xₙ) = ('}
+              <Frac n="1" d="2" />{', '}<Frac n="1" d="4" />{', '}<Frac n="1" d="8" />{', '}<Frac n="1" d="16" />{', '}<Frac n="1" d="32" />{', …)\n(vi)  (xₙ) = (1, '}
+              <Frac n="1" d="3" />{', '}<Frac n="1" d="7" />{', '}<Frac n="1" d="15" />{', '}<Frac n="1" d="31" />{', …)'}
+            </>
+          ),
           hint: h(
             <>
               <p>Eine <span className="hint-em">Folge</span> ist eine durchnummerierte Liste von Zahlen x₀, x₁, x₂, … . Die Nummer heißt <span className="hint-em">Index</span> n; hier beginnt er bei n = 0 (weil ℕ = {'{0, 1, 2, …}'}). Eine <span className="hint-em">Abbildungsvorschrift</span> n ↦ xₙ ist eine Formel, die aus dem Index n direkt das zugehörige Glied xₙ ausrechnet — man setzt n = 0, 1, 2, … ein und muss genau die vorgegebene Liste herausbekommen.</p>
@@ -76,7 +82,11 @@ Probe: n=0 → 3 ✓, n=1 → 6 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: Setze in deine gefundene Formel n=0 UND n=1 ein — kommen die ersten beiden Listenglieder heraus (richtige Zahl, richtiges Vorzeichen)? Frage: Wie erkennt man am Vorzeichen des Glieds n=0, ob man (−1)ⁿ oder (−1)ⁿ⁺¹ braucht, und warum verschiebt der Exponent +1 das ganze Vorzeichenmuster?</p>,
           ),
-          solution: '(i)   f: ℕ→ℝ, n ↦ 3n\n(ii)  f: ℕ→ℝ, n ↦ −4 + 3n\n(iii) f: ℕ→ℝ, n ↦ (−1)ⁿ n\n(iv)  f: ℕ→ℝ, n ↦ (−1)ⁿ⁺¹ n\n(v)   f: ℕ→ℝ, n ↦ 1 / 2ⁿ⁺¹\n(vi)  f: ℕ→ℝ, n ↦ 1 / (2ⁿ⁺¹ − 1)',
+          solution: (
+            <>
+              {'(i)   f: ℕ→ℝ, n ↦ 3n\n(ii)  f: ℕ→ℝ, n ↦ −4 + 3n\n(iii) f: ℕ→ℝ, n ↦ (−1)ⁿ n\n(iv)  f: ℕ→ℝ, n ↦ (−1)ⁿ⁺¹ n\n(v)   f: ℕ→ℝ, n ↦ '}<Frac n="1" d="2ⁿ⁺¹" />{'\n(vi)  f: ℕ→ℝ, n ↦ '}<Frac n="1" d="2ⁿ⁺¹ − 1" />
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -212,7 +222,11 @@ Produkt: xₙ·yₙ = n·(1/n) = 1 für alle n ≥ 1
             </ul>,
             <p>Selbstkontrolle: Liste die ersten vier Produktglieder deines Beispiels auf — sind sie alle gleich (konvergent)? Frage: Warum macht ein einziger Faktor 0 das ganze Produkt unabhängig vom Verhalten des zweiten Faktors konvergent?</p>,
           ),
-          solution: 'Zum Beispiel (xₙ) = (0,0,0,…), (yₙ) = ((−1)ⁿ):\nxₙ · yₙ = 0 für alle n → konvergiert gegen 0.\n(yₙ) divergiert.\n\nAlternativ: (xₙ) = (n), (yₙ) = (1/n).',
+          solution: (
+            <>
+              {'Zum Beispiel (xₙ) = (0,0,0,…), (yₙ) = ((−1)ⁿ):\nxₙ · yₙ = 0 für alle n → konvergiert gegen 0.\n(yₙ) divergiert.\n\nAlternativ: (xₙ) = (n), (yₙ) = ('}<Frac n="1" d="n" />{').'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -246,7 +260,11 @@ lim xₙ = 0 = lim yₙ ✓ (beide gehen gegen 0)`}</pre>
             </ul>,
             <p>Selbstkontrolle: Prüfe für n = 1, 2, 3, dass 0 &lt; 1/n wirklich gilt, und dass 1/n trotzdem gegen denselben Grenzwert 0 wie die 0-Folge läuft. Frage: Warum kann der echte Abstand yₙ − xₙ = 1/n &gt; 0 für jedes n positiv sein und im Grenzwert trotzdem 0 werden?</p>,
           ),
-          solution: '(xₙ) = (0,0,0,…), (yₙ) = (1/n):\nxₙ = 0 < 1/n = yₙ für alle n ≥ 1 ✓\nlim xₙ = 0 = lim yₙ ✓\n\nAus xₙ < yₙ folgt für Grenzwerte nur lim xₙ ≤ lim yₙ (keine strikte Ungleichung).',
+          solution: (
+            <>
+              {'(xₙ) = (0,0,0,…), (yₙ) = ('}<Frac n="1" d="n" />{'):\nxₙ = 0 < '}<Frac n="1" d="n" />{' = yₙ für alle n ≥ 1 ✓\nlim xₙ = 0 = lim yₙ ✓\n\nAus xₙ < yₙ folgt für Grenzwerte nur lim xₙ ≤ lim yₙ (keine strikte Ungleichung).'}
+            </>
+          ),
         },
         {
           letter: 'd',
@@ -429,7 +447,11 @@ lim (5 − 1/n)³ = 5³ = 125`}</pre>
             </ul>,
             <p>Selbstkontrolle: n = 10 000 → (2 + 0,0003)⁵ ≈ 2,0003⁵ ≈ 32,01, sehr nah an 32 ✓. Frage: Warum darf man hier lim und „hoch 5" vertauschen, und warum wäre dasselbe bei einem Exponenten, der mit n wächst (wie in Aufgabe e), nicht erlaubt?</p>,
           ),
-          solution: 'lim (3/n) = 0\nlim xₙ = (2 + 0)⁵ = 2⁵ = 32',
+          solution: (
+            <>
+              {'lim '}<Frac n="3" d="n" />{' = 0\nlim xₙ = (2 + 0)⁵ = 2⁵ = 32'}
+            </>
+          ),
         },
         {
           letter: 'd',
@@ -464,7 +486,11 @@ Allgemein: ⁿ√c → 1 für jede feste Zahl c > 0`}</pre>
             </ul>,
             <p>Selbstkontrolle: n = 1000 → 2^(500/1000) = 2^0,5 = √2 ≈ 1,414; n = 10⁶ → 2^(0,0005) ≈ 1,00035 — die Folge sinkt Richtung 1 ✓. Frage: Warum geht 500/n gegen 0 (nicht ∞), und warum ist a⁰ = 1 für jede Basis a &gt; 0?</p>,
           ),
-          solution: 'xₙ = ²ⁿ√(2¹⁰⁰⁰) = 2^(1000/(2n)) = 2^(500/n)\n\nlim 500/n = 0\n\nlim xₙ = 2⁰ = 1',
+          solution: (
+            <>
+              {'xₙ = ²ⁿ√(2¹⁰⁰⁰) = 2'}<sup>1000/(2n)</sup>{' = 2'}<sup>500/n</sup>{'\n\nlim '}<Frac n="500" d="n" />{' = 0\n\nlim xₙ = 2⁰ = 1'}
+            </>
+          ),
         },
         {
           letter: 'e',
@@ -502,7 +528,11 @@ Es gilt der erweiterte Standard: lim (1 + a/n)ⁿ = eᵃ
             </ul>,
             <p>Selbstkontrolle: n = 1000 → (1,001)¹⁰⁰⁰ ≈ 2,7169, schon nah an e ≈ 2,71828 ✓. Frage: Warum ist 1^∞ ein unbestimmter Ausdruck und nicht einfach 1 — was „kämpft" hier gegeneinander?</p>,
           ),
-          solution: 'xₙ = ((n+1)/n)ⁿ = (1 + 1/n)ⁿ\n\nlim (1 + 1/n)ⁿ = e\n\nDaher: lim xₙ = e',
+          solution: (
+            <>
+              {'xₙ = ('}<Frac n="n+1" d="n" />{')ⁿ = (1 + '}<Frac n="1" d="n" />{')ⁿ\n\nlim (1 + '}<Frac n="1" d="n" />{')ⁿ = e\n\nDaher: lim xₙ = e'}
+            </>
+          ),
         },
         {
           letter: 'f',
@@ -598,8 +628,8 @@ Probe: n=101 → 1/101 ≈ 0,0099 < 0,01 ✓
               {'|'}<Frac n="1" d="√n" />{' − 0| < ε  ⟺  n > '}<Frac n="1" d="ε²" />{'\n\n'}
               {'ε = 10:     '}<Frac n="1" d="ε²" />{' = '}<Frac n="1" d="100" />{',  N = 1\n'}
               {'ε = 1:      '}<Frac n="1" d="ε²" />{' = 1,          N = 2\n'}
-              {'ε = 1/10:   '}<Frac n="1" d="ε²" />{' = 100,        N = 101\n'}
-              {'ε = 1/10⁶:  '}<Frac n="1" d="ε²" />{' = 10¹²,      N = 10¹² + 1'}
+              {'ε = '}<Frac n="1" d="10" />{':   '}<Frac n="1" d="ε²" />{' = 100,        N = 101\n'}
+              {'ε = '}<Frac n="1" d="10⁶" />{':  '}<Frac n="1" d="ε²" />{' = 10¹²,      N = 10¹² + 1'}
             </>
           ),
         },
@@ -700,7 +730,7 @@ Ergebnis = 63/32.`}</pre>
           ),
           solution: (
             <>
-              {'Σ(k=0..5) ('}<Frac n="1" d="2" />{')ᵏ = '}<Frac n="1 − (1/2)⁶" d="1 − 1/2" />{' = '}<Frac n="1 − 1/64" d="1/2" />{' = '}<Frac n="63/64" d="1/2" />{' = '}<Frac n="63" d="32" />
+              <M>{'\\sum_{k=0}^{5} \\left(\\frac{1}{2}\\right)^{k}'}</M>{' = '}<Frac n="1 − (1/2)⁶" d="1 − 1/2" />{' = '}<Frac n="1 − 1/64" d="1/2" />{' = '}<Frac n="63/64" d="1/2" />{' = '}<Frac n="63" d="32" />
             </>
           ),
         },
@@ -739,7 +769,7 @@ Ergebnis = 31/32.`}</pre>
           ),
           solution: (
             <>
-              {'Σ(k=1..5) ('}<Frac n="1" d="2" />{')ᵏ = Σ(k=0..5) ('}<Frac n="1" d="2" />{')ᵏ − ('}<Frac n="1" d="2" />{')⁰ = '}<Frac n="63" d="32" />{' − 1 = '}<Frac n="31" d="32" />
+              <M>{'\\sum_{k=1}^{5} \\left(\\frac{1}{2}\\right)^{k}'}</M>{' = '}<M>{'\\sum_{k=0}^{5} \\left(\\frac{1}{2}\\right)^{k}'}</M>{' − ('}<Frac n="1" d="2" />{')⁰ = '}<Frac n="63" d="32" />{' − 1 = '}<Frac n="31" d="32" />
             </>
           ),
         },
@@ -779,7 +809,7 @@ Ergebnis = 15/32.`}</pre>
           ),
           solution: (
             <>
-              {'Σ(k=2..5) ('}<Frac n="1" d="2" />{')ᵏ = Σ(k=0..5) ('}<Frac n="1" d="2" />{')ᵏ − ('}<Frac n="1" d="2" />{')⁰ − ('}<Frac n="1" d="2" />{')¹\n= '}<Frac n="63" d="32" />{' − 1 − '}<Frac n="1" d="2" />{' = '}<Frac n="63" d="32" />{' − '}<Frac n="32" d="32" />{' − '}<Frac n="16" d="32" />{' = '}<Frac n="15" d="32" />
+              <M>{'\\sum_{k=2}^{5} \\left(\\frac{1}{2}\\right)^{k}'}</M>{' = '}<M>{'\\sum_{k=0}^{5} \\left(\\frac{1}{2}\\right)^{k}'}</M>{' − ('}<Frac n="1" d="2" />{')⁰ − ('}<Frac n="1" d="2" />{')¹\n= '}<Frac n="63" d="32" />{' − 1 − '}<Frac n="1" d="2" />{' = '}<Frac n="63" d="32" />{' − '}<Frac n="32" d="32" />{' − '}<Frac n="16" d="32" />{' = '}<Frac n="15" d="32" />
             </>
           ),
         },
@@ -817,7 +847,11 @@ plus der erste +1-Term → Summe = 1 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: Zähle die +1- und −1-Glieder (6 gegen 5) — Differenz 1, passt zum Formel-Ergebnis. Frage: Wann ist (−1)^m gleich +1 und wann −1, und warum entscheidet die Parität (gerade/ungerade) des Exponenten?</p>,
           ),
-          solution: 'Σ(k=0..10) (−1)ᵏ = (1 − (−1)¹¹) / (1 − (−1))\n= (1 − (−1)) / 2\n= 2/2 = 1',
+          solution: (
+            <>
+              <M>{'\\sum_{k=0}^{10} (-1)^k'}</M>{' = '}<Frac n="1 − (−1)¹¹" d="1 − (−1)" />{'\n= '}<Frac n="1 − (−1)" d="2" />{'\n= '}<Frac n="2" d="2" />{' = 1'}
+            </>
+          ),
         },
         {
           letter: 'e',
@@ -851,7 +885,11 @@ Ergebnis = 0.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Bei gerader oberer Grenze n=10 → Summe 1, bei ungerader n=11 → Summe 0 — erkennst du das Muster (Summe = 1 falls n gerade, 0 falls n ungerade)? Frage: Warum hebt sich die Summe bei einer geraden Anzahl von ±1-Gliedern komplett auf, bei einer ungeraden aber nicht?</p>,
           ),
-          solution: 'Σ(k=0..11) (−1)ᵏ = (1 − (−1)¹²) / (1 − (−1))\n= (1 − 1) / 2\n= 0',
+          solution: (
+            <>
+              <M>{'\\sum_{k=0}^{11} (-1)^k'}</M>{' = '}<Frac n="1 − (−1)¹²" d="1 − (−1)" />{'\n= '}<Frac n="1 − 1" d="2" />{'\n= 0'}
+            </>
+          ),
         },
         {
           letter: 'f',
@@ -887,7 +925,11 @@ Ergebnis = 13.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Vergleiche Formel-Ergebnis 13 mit der direkten Summe 1+3+9 = 13. Frage: Warum ist das Ergebnis positiv, obwohl Zähler (1−27) und Nenner (1−3) beide negativ sind, und warum ist der Exponent n+1?</p>,
           ),
-          solution: 'Σ(k=0..2) 3ᵏ = (1 − 3³) / (1 − 3) = (1 − 27) / (−2) = (−26)/(−2) = 13',
+          solution: (
+            <>
+              <M>{'\\sum_{k=0}^{2} 3^k'}</M>{' = '}<Frac n="1 − 3³" d="1 − 3" />{' = '}<Frac n="1 − 27" d="−2" />{' = '}<Frac n="−26" d="−2" />{' = 13'}
+            </>
+          ),
         },
       ],
     },
