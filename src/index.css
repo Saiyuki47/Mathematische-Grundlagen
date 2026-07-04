@@ -496,17 +496,15 @@
 .hint-section-body li {
   margin-bottom: 4px;
 }
+/* Rechenwege in den Tipps: gleiche Optik wie der Fließtext (kein Kasten,
+   keine Monospace-Schrift), Zeilenstruktur bleibt über pre-wrap erhalten. */
 .hint-code-block {
   margin: 8px 0 4px;
-  padding: 10px 14px;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text2);
   white-space: pre-wrap;
-  line-height: 1.65;
+  line-height: 1.75;
 }
 .hint-code-block:last-child {
   margin-bottom: 0;
