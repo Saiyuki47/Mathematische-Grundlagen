@@ -4,6 +4,7 @@ import { flushSync } from 'react-dom'
 import { useDoneTracker, useTaskDeepLink, getHashDetail, setHashDetail, OffeneAufgaben, type OffenItem } from 'lernseiten-ui'
 import { uebungsblaetter } from '../data/uebungsblaetter'
 import { referenzTitelById } from '../data/referenz'
+import { mathRich } from '../utils/MathRich'
 import LineGraph from './LineGraph'
 
 const refLinksRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.4rem', margin: '0.5rem 0 0' }
@@ -199,7 +200,7 @@ export default function Uebungsblaetter() {
                                       <span className={`hint-section-arrow${sOpen ? ' hint-section-arrow--open' : ''}`}>▶</span>
                                     </button>
                                     {sOpen && (
-                                      <div className="hint-section-body">{section.content}</div>
+                                      <div className="hint-section-body">{mathRich(section.content)}</div>
                                     )}
                                   </div>
                                 )
