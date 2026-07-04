@@ -2,6 +2,7 @@ import type { SearchItem } from 'lernseiten-ui'
 import { quizFragen } from './quiz'
 import { uebungsblaetter } from './uebungsblaetter'
 import { referenzKarten } from './referenz'
+import { begriffGruppen } from './begriffe'
 import { dateienTree, type DateiFolder } from './dateien'
 
 // Such-Index aus den Inhalten der Seite. Jeder Treffer kennt seinen Ziel-Tab
@@ -40,6 +41,15 @@ export const searchIndex: SearchItem[] = [
     tab: 'referenz',
     keywords: 'Formelsammlung Referenz',
   })),
+  // Begriffs-Glossar → Tab "referenz" (Untertab „Begriffe lernen")
+  ...begriffGruppen.flatMap(g =>
+    g.begriffe.map(b => ({
+      label: `Begriff: ${b.begriff.replace(/\$[^$]*\$/g, '').trim()}`,
+      snippet: g.titel,
+      tab: 'referenz',
+      keywords: 'Begriff Definition auswendig lernen',
+    })),
+  ),
   // Moodle-Materialien (Folien, Übungsblätter, Lösungen) → Tab "moodle"
   ...moodleDateien().map(d => ({
     label: d.name,
