@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react'
-import Tabs from './components/Tabs'
-import { Header, GlobalSearch, useTheme, useHashTab } from 'lernseiten-ui'
+import { Header, GlobalSearch, Tabs, tabDefs, STANDARD_TAB_REIHENFOLGE, useTheme, useHashTab } from 'lernseiten-ui'
 import { quizFragen } from './data/quiz'
 import { karteikarten } from './data/karteikarten'
 import { dateienTree } from './data/dateien'
@@ -12,9 +11,11 @@ const Quiz = lazy(() => import('lernseiten-ui').then(m => ({ default: m.Quiz }))
 const Flashcards = lazy(() => import('lernseiten-ui').then(m => ({ default: m.Flashcards })))
 const Moodle = lazy(() => import('lernseiten-ui').then(m => ({ default: m.Moodle })))
 
-export type TabId = 'uebung' | 'referenz' | 'hilfsmittel' | 'moodle' | 'quiz' | 'karten'
-
-const TABS: readonly TabId[] = ['uebung', 'referenz', 'hilfsmittel', 'moodle', 'quiz', 'karten']
+// Tab-IDs, -Reihenfolge und -Icons sind über alle Lernseiten vereinheitlicht;
+// die Tab-Leiste kommt zentral aus lernseiten-ui (tabDefs).
+const TABS = STANDARD_TAB_REIHENFOLGE
+export type TabId = (typeof TABS)[number]
+const tabs = tabDefs(TABS)
 
 function App() {
   const [activeTab, setActiveTab] = useHashTab(TABS, 'uebung')
@@ -30,7 +31,7 @@ function App() {
         onToggleTheme={toggle}
       />
       <div className="container">
-        <Tabs activeTab={activeTab} onTabChange={setActiveTab} />
+        <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '0.75rem' }}>
           <GlobalSearch loadIndex={() => import('./data/searchIndex').then(m => m.searchIndex)} onNavigate={t => setActiveTab(t as TabId)} />
         </div>
