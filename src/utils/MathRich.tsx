@@ -11,10 +11,17 @@ const SKIP_TAGS = new Set(['sup', 'sub', 'a'])
 function renderString(s: string): ReactNode {
   const tokens = tokenize(s)
   if (tokens.length === 1 && tokens[0].kind === 'text') return s
-  return tokens.map((t, i) => {
+  // Stabile Schlüssel aus dem Token-Inhalt (+ Zähler für Duplikate) statt des
+  // Array-Index.
+  const gesehen = new Map<string, number>()
+  return tokens.map(t => {
     if (t.kind === 'text') return t.value
-    if (t.kind === 'frac') return <Frac key={i} n={t.num} d={t.den} />
-    return <M key={i}>{t.latex}</M>
+    const inhalt = t.kind === 'frac' ? `${t.num}/${t.den}` : t.latex
+    const n = (gesehen.get(inhalt) ?? 0) + 1
+    gesehen.set(inhalt, n)
+    const key = `${t.kind}:${inhalt}:${n}`
+    if (t.kind === 'frac') return <Frac key={key} n={t.num} d={t.den} />
+    return <M key={key}>{t.latex}</M>
   })
 }
 

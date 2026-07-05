@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type KeyboardEvent } from 'react'
 import { MathText } from 'lernseiten-ui'
 import { begriffGruppen } from '../data/begriffe'
 
@@ -13,14 +13,15 @@ export default function Begriffe() {
   const gruppen = useMemo(() => {
     const q = filter.trim().toLowerCase()
     if (!q) return begriffGruppen
-    return begriffGruppen
-      .map(g => ({
-        ...g,
-        begriffe: g.begriffe.filter(
-          b => b.begriff.toLowerCase().includes(q) || b.definition.toLowerCase().includes(q),
-        ),
-      }))
-      .filter(g => g.begriffe.length > 0)
+    // Ein Durchlauf: Gruppen filtern und leere direkt verwerfen.
+    const treffer: typeof begriffGruppen = []
+    for (const g of begriffGruppen) {
+      const begriffe = g.begriffe.filter(
+        b => b.begriff.toLowerCase().includes(q) || b.definition.toLowerCase().includes(q),
+      )
+      if (begriffe.length > 0) treffer.push({ ...g, begriffe })
+    }
+    return treffer
   }, [filter])
 
   const anzahl = begriffGruppen.reduce((a, g) => a + g.begriffe.length, 0)
@@ -73,19 +74,26 @@ export default function Begriffe() {
             {g.begriffe.map(b => {
               const key = `${g.titel}|${b.begriff}`
               const verdeckt = lernmodus && !aufgedeckt.has(key)
+              // Interaktiv nur im Lernmodus – dann aber vollständig (Klick,
+              // Rolle, Fokus, Tastatur); sonst eine rein statische Liste.
+              const interaktiv = lernmodus
+                ? {
+                    onClick: () => aufdecken(key),
+                    role: 'button' as const,
+                    tabIndex: 0,
+                    onKeyDown: (e: KeyboardEvent<HTMLDivElement>) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        aufdecken(key)
+                      }
+                    },
+                  }
+                : undefined
               return (
                 <div
+                  {...interaktiv}
                   key={b.begriff}
                   className={`beg-item${verdeckt ? ' beg-item--verdeckt' : ''}`}
-                  onClick={() => aufdecken(key)}
-                  role={lernmodus ? 'button' : undefined}
-                  tabIndex={lernmodus ? 0 : undefined}
-                  onKeyDown={e => {
-                    if (lernmodus && (e.key === 'Enter' || e.key === ' ')) {
-                      e.preventDefault()
-                      aufdecken(key)
-                    }
-                  }}
                 >
                   <dt className="beg-begriff">
                     <MathText>{b.begriff}</MathText>
