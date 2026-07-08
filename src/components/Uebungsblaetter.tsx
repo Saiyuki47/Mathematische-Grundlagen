@@ -208,14 +208,16 @@ export default function Uebungsblaetter() {
                             </div>
                           )}
                         </div>
-                        <button
-                          type="button"
-                          className="toggle-btn"
-                          onClick={() => toggle(solKey)}
-                        >
-                          {solOpen ? '▼ Lösung verbergen' : '▶ Lösung anzeigen'}
-                        </button>
-                        {solOpen && (
+                        {sub.solution && (
+                          <button
+                            type="button"
+                            className="toggle-btn"
+                            onClick={() => toggle(solKey)}
+                          >
+                            {solOpen ? '▼ Lösung verbergen' : '▶ Lösung anzeigen'}
+                          </button>
+                        )}
+                        {sub.solution && solOpen && (
                           <div className="solution-wrap">
                             <pre className="solution-block">{sub.solution}</pre>
                             {sub.graph && (

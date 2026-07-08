@@ -57,7 +57,7 @@ export interface MatheSubaufgabe {
   letter: string
   text: ReactNode
   hint: HintSection[]
-  solution: ReactNode
+  solution?: ReactNode
   graph?: LineGraphData
   taskGraph?: LineGraphData
   /** Frei gerenderte Abbildung (z. B. Venn-Diagramm, Funktionsskizze) unter der Lösung. */
