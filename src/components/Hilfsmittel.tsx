@@ -3,10 +3,10 @@ import katex from 'katex'
 import 'katex/dist/katex.min.css'
 
 // Hilfsmittel mit drei Formelsammlungen, je in einem eigenen Untertab:
-// „Madis Formelsammlung“ — zweiseitig, druckbar, abgeleitet aus allen Übungsblättern
-// (0–13) und ergänzt um die Formeln der offiziellen Formelsammlung (PDF) —,
-// die offizielle Formelsammlung selbst als eingebettetes PDF sowie die
-// „Lösungsrezepte“: eine zweiseitige, druckbare Gebrauchsanleitung mit einem
+// „Madis Formelsammlung“ als eingebettetes PDF, die „Claude-Formelsammlung“ —
+// zweiseitig, druckbar, abgeleitet aus allen Übungsblättern (0–13) und ergänzt
+// um die Formeln aus Madis Formelsammlung — sowie die „Lösungsrezepte“:
+// eine zweiseitige, druckbare Gebrauchsanleitung mit einem
 // Schritt-für-Schritt-Rezept für jede Aufgabenart der Übungsblätter 0–13.
 
 const m = String.raw // KaTeX-Quelle ohne Backslash-Escaping
@@ -672,7 +672,7 @@ function Page({ boxes, nr }: { boxes: Box[]; nr: number }) {
   return (
     <div className="fs-page">
       <div className="fs-page-head">
-        <span>Madis Formelsammlung — Mathematische Grundlagen</span>
+        <span>Claude-Formelsammlung — Mathematische Grundlagen</span>
         <span>Seite {nr}/2</span>
       </div>
       <div className="fs-cols">
@@ -717,8 +717,8 @@ function RezeptPage({ boxes, nr }: { boxes: RezeptBox[]; nr: number }) {
 }
 
 const SAMMLUNGEN = [
-  { id: 'madis', label: '✍️ Madis Formelsammlung' },
-  { id: 'offiziell', label: '📄 Offizielle Formelsammlung' },
+  { id: 'madis', label: '📄 Madis Formelsammlung' },
+  { id: 'claude', label: '✍️ Claude-Formelsammlung' },
   { id: 'rezepte', label: '🧭 Lösungsrezepte' },
 ] as const
 
@@ -734,13 +734,13 @@ export default function Hilfsmittel() {
         <div className="hilf-bar-text">
           <h2>Hilfsmittel</h2>
           <p>
-            Madis Formelsammlung (zweiseitig, druckbar), die offizielle Formelsammlung als PDF
+            Madis Formelsammlung als PDF, die Claude-Formelsammlung (zweiseitig, druckbar)
             und die Lösungsrezepte — eine zweiseitige Gebrauchsanleitung mit einem Rezept für
             jede Aufgabenart der Übungsblätter 0–13.
           </p>
         </div>
         <div className="hilf-bar-actions">
-          {active === 'offiziell' ? (
+          {active === 'madis' ? (
             <>
               <span className="hilf-bar-hint">PDF · A4</span>
               <a className="hilf-print-btn" href={pdfUrl} target="_blank" rel="noopener noreferrer">
@@ -773,7 +773,7 @@ export default function Hilfsmittel() {
         ))}
       </div>
 
-      {active === 'madis' && (
+      {active === 'claude' && (
         <div className="fs-print-area">
           <Page boxes={PAGE1} nr={1} />
           <Page boxes={PAGE2} nr={2} />
@@ -785,12 +785,12 @@ export default function Hilfsmittel() {
           <RezeptPage boxes={REZEPTE2} nr={2} />
         </div>
       )}
-      {active === 'offiziell' && (
+      {active === 'madis' && (
         <section className="hilf-pdf">
           <iframe
             className="hilf-pdf-frame"
             src={pdfUrl}
-            title="Offizielle Formelsammlung (PDF)"
+            title="Madis Formelsammlung (PDF)"
             sandbox="allow-same-origin allow-popups allow-downloads"
           />
           <p className="hilf-pdf-fallback">

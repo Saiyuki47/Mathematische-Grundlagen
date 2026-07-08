@@ -12,7 +12,7 @@ Formeln werden mit [KaTeX](https://katex.org/) gesetzt.
 |-----|-------------|
 | **Übungsblätter** | Aufgaben (Blatt 0–13) mit Tipps und aufklappbaren Musterlösungen, verlinkt auf passende Referenz-Themen |
 | **Referenz** | Erklärte Nachschlage-Karten zu allen Themen, je mit durchgerechneten Beispielen |
-| **Hilfsmittel** | Madis Formelsammlung (zweiseitig, druckbar), offizielle Formelsammlung (PDF) und Lösungsrezepte (zweiseitige Gebrauchsanleitung je Aufgabenart), je in einem eigenen Tab |
+| **Hilfsmittel** | Madis Formelsammlung (PDF), Claude-Formelsammlung (zweiseitig, druckbar) und Lösungsrezepte (zweiseitige Gebrauchsanleitung je Aufgabenart), je in einem eigenen Tab |
 | **Moodle** | Datei-Browser über die Kursmaterialien mit Inline-Vorschau |
 | **Quiz** | Quiz mit Fortschritt, Feedback und Auswertung |
 | **Karteikarten** | Spaced-Repetition-Lernkarten (SM-2) |
