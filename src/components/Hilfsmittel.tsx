@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
+import { useHashSubTab } from 'lernseiten-ui'
 import katex from 'katex'
 import 'katex/dist/katex.min.css'
 
@@ -623,12 +624,9 @@ const REZEPTE2: RezeptBox[] = [
   },
 ]
 
+// Der Untertab-Umschalter (.hilf-fs-switch/.hilf-fs-tab) kommt aus lernseiten-ui/
+// styles.css (einheitlich über alle Lernseiten). Hier nur die PDF-/Druckseiten.
 const FS_CSS = `
-.hilf-fs-switch{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.9rem}
-.hilf-fs-tab{padding:.4rem .85rem;border:1px solid var(--border);border-radius:7px;background:var(--bg2,#1e1e1e);color:var(--text,#eee);cursor:pointer;font-size:.9rem;font-weight:600}
-.hilf-fs-tab:hover{border-color:var(--blue,#4d9fff)}
-.hilf-fs-tab.active{background:var(--blue,#4d9fff);color:#fff;border-color:var(--blue,#4d9fff)}
-@media print{.hilf-fs-switch{display:none!important}}
 .hilf-pdf{margin:0 0 1.5rem}
 .hilf-pdf-fallback a{color:var(--blue,#4d9fff);font-weight:600;text-decoration:none}
 .hilf-pdf-fallback a:hover{text-decoration:underline}
@@ -717,16 +715,18 @@ function RezeptPage({ boxes, nr }: { boxes: RezeptBox[]; nr: number }) {
 }
 
 const SAMMLUNGEN = [
-  { id: 'madis', label: '📄 Madis Formelsammlung' },
   { id: 'claude', label: '✍️ Claude-Formelsammlung' },
+  { id: 'madis', label: '📄 Madis Formelsammlung' },
   { id: 'rezepte', label: '🧭 Lösungsrezepte' },
 ] as const
 
 type SammlungId = (typeof SAMMLUNGEN)[number]['id']
+const SAMMLUNG_IDS: SammlungId[] = SAMMLUNGEN.map(s => s.id)
 
 export default function Hilfsmittel() {
   useEffect(() => injectFsCss(), [])
-  const [active, setActive] = useState<SammlungId>('madis')
+  // Offener Untertab steckt im Hash (#hilfsmittel/<id>) → teilbar; Standard: Claude.
+  const [active, setActive] = useHashSubTab(SAMMLUNG_IDS, 'claude')
   const pdfUrl = `${import.meta.env.BASE_URL}Formelsammlung.pdf`
   return (
     <div>
@@ -734,7 +734,7 @@ export default function Hilfsmittel() {
         <div className="hilf-bar-text">
           <h2>Hilfsmittel</h2>
           <p>
-            Madis Formelsammlung als PDF, die Claude-Formelsammlung (zweiseitig, druckbar)
+            Die Claude-Formelsammlung (zweiseitig, druckbar), Madis Formelsammlung als PDF
             und die Lösungsrezepte — eine zweiseitige Gebrauchsanleitung mit einem Rezept für
             jede Aufgabenart der Übungsblätter 0–13.
           </p>
