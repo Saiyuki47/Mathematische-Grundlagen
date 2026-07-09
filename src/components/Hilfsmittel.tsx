@@ -44,6 +44,7 @@ const PAGE1: Box[] = [
       { f: m`(a\pm b)^2=a^2\pm2ab+b^2` },
       { f: m`(a+b)(a-b)=a^2-b^2` },
       { f: m`(a\pm b)^3=a^3\pm3a^2b+3ab^2\pm b^3` },
+      { l: 'konjugiert', f: m`\sqrt a-\sqrt b=\tfrac{a-b}{\sqrt a+\sqrt b}` },
     ],
   },
   {
@@ -69,6 +70,7 @@ const PAGE1: Box[] = [
       { l: 'distributiv', f: m`A\cap(B\cup C)=(A\cap B)\cup(A\cap C)` },
       { f: m`|A\cup B|=|A|+|B|-|A\cap B|` },
       { f: m`|\mathcal P(A)|=2^{|A|},\;\; |A\times B|=|A|\,|B|` },
+      { f: m`|M_1\times\cdots\times M_n|=|M_1|\cdots|M_n|` },
     ],
   },
   {
@@ -79,6 +81,9 @@ const PAGE1: Box[] = [
       { l: 'Kontraposition', f: m`p\Rightarrow q\;\equiv\;\neg q\Rightarrow\neg p\;\equiv\;\neg p\vee q` },
       { f: m`p\Leftrightarrow q\equiv(p\Rightarrow q)\wedge(q\Rightarrow p)` },
       { l: 'Quantoren', f: m`\neg\forall x\,P\equiv\exists x\,\neg P;\;\; \neg\exists x\,P\equiv\forall x\,\neg P` },
+      { l: 'distributiv', f: m`p\wedge(q\vee r)\equiv(p\wedge q)\vee(p\wedge r)` },
+      { l: 'Komplement', f: m`p\vee\neg p\equiv w,\;\; p\wedge\neg p\equiv f;\;\; p\wedge w\equiv p,\;\; p\vee f\equiv p` },
+      { l: 'Absorption', f: m`p\vee(p\wedge q)\equiv p,\;\; p\vee p\equiv p` },
     ],
   },
   {
@@ -116,6 +121,8 @@ const PAGE1: Box[] = [
       { l: 'sup', f: m`\sup M=\text{kleinste obere Schranke}` },
       { l: 'inf', f: m`\inf M=\text{größte untere Schranke}` },
       { f: m`\max\in M\;(\text{falls ex.});\;\; \min\in M` },
+      { l: 'Betrag', f: m`|x-a|\le r\Leftrightarrow x\in[a-r,a+r];\;\;\ge r{:}\text{ zwei Strahlen}` },
+      { f: m`|A|\le|B|\Leftrightarrow A^2\le B^2\;(\text{quadrieren})` },
     ],
   },
   {
@@ -129,6 +136,15 @@ const PAGE1: Box[] = [
     ],
   },
   {
+    t: 'Teilbarkeit & ggT (Euklid)',
+    r: [
+      { l: 'Division m. Rest', f: m`a=q\,b+r,\;\;0\le r<|b|` },
+      { l: 'Euklid', f: m`\gcd(a,b)=\gcd(b,\,a\bmod b),\;\text{letzter Rest}\ne0` },
+      { l: 'erweitert', f: m`s\,a+t\,b=\gcd(a,b)\;(\text{rückwärts einsetzen})` },
+      { f: m`d\mid a\Leftrightarrow a=d\,k\;(k\in\mathbb Z)` },
+    ],
+  },
+  {
     t: 'Funktionen & Relationen',
     r: [
       { l: 'injektiv', f: m`f(x_1)=f(x_2)\Rightarrow x_1=x_2` },
@@ -137,6 +153,8 @@ const PAGE1: Box[] = [
       { l: 'Verkettung', f: m`(g\circ f)(x)=g(f(x))` },
       { f: m`f(A)=\{f(x):x\in A\},\; f^{-1}(B)=\{x:f(x)\in B\}` },
       { l: 'Äquiv.rel.', f: m`\text{reflexiv}+\text{symm.}+\text{transitiv}` },
+      { l: 'Relation', f: m`\text{linkstotal, rechtstotal, links-/rechtseindeutig}` },
+      { f: m`\text{Funktion}\Leftrightarrow\text{linkstotal}\wedge\text{rechtseindeutig}` },
     ],
   },
   {
@@ -145,6 +163,8 @@ const PAGE1: Box[] = [
       { f: m`\text{abzählbar}\Leftrightarrow\text{Bijektion mit }\mathbb N` },
       { f: m`\mathbb Z,\,\mathbb Q\text{ abzählbar};\;\;\mathbb R\text{ überabzählbar}` },
       { f: m`\text{abz. Vereinigung abz. Mengen ist abz.}` },
+      { l: 'Cantor', f: m`\mathbb N\times\mathbb N\text{ abzählbar (Diagonalabzählung)}` },
+      { l: 'Dedekind', f: m`\text{unendlich}\Leftrightarrow\text{Bijektion auf echte Teilmenge}` },
     ],
   },
 ]
@@ -160,6 +180,7 @@ const PAGE2: Box[] = [
       { l: 'Sandwich', f: m`a_n\le c_n\le b_n,\,\lim a_n=\lim b_n=L\Rightarrow\lim c_n=L` },
       { l: 'best. divergent', f: m`a_n\to\infty\text{ oder }a_n\to-\infty` },
       { l: 'unbest. divergent', f: m`\text{kein fester GW, z.B. }a_n=(-2)^n` },
+      { l: 'rekursiv', f: m`x_{n+1}=f(x_n)\text{ (mon.+beschr.)}:\;\text{GW }x\text{ löst }x=f(x)` },
     ],
   },
   {
@@ -178,6 +199,8 @@ const PAGE2: Box[] = [
       { l: 'geometrisch', f: m`\sum_{k=0}^\infty q^{k}=\tfrac1{1-q}\;(|q|<1)` },
       { f: m`\textstyle\sum\tfrac1k\text{ divergiert},\;\; \sum\tfrac1{k^2}=\tfrac{\pi^2}6` },
       { f: m`\textstyle\sum\tfrac1{k^{s}}\text{ konv.}\Leftrightarrow s>1` },
+      { l: 'Startindex m', f: m`\sum_{k=m}^\infty q^{k}=\tfrac{q^{m}}{1-q}\;(|q|<1)` },
+      { l: 'Teleskop', f: m`\sum_{k=1}^n(b_{k+1}-b_k)=b_{n+1}-b_1` },
     ],
   },
   {
