@@ -315,7 +315,12 @@ x² → +∞ (gerade!), Restbruch → 1/1 = 1
           letter: 'a',
           text: (
             <>
-              {'Gegeben sei die Funktion\n\nh : ℝ → ℝ,  x ↦ { '}<Frac n="x²−1" d="x+1" />{',  x ≠ −1;   −100,  x = −1.\n\nBestimmen Sie\n\nlim(x→−1, x<−1) h(x),   lim(x→−1, x>−1) h(x)   und   lim(x→−1) h(x),\n\nsofern die Grenzwerte existieren. Ist h stetig in x = −1?'}
+              {'Gegeben sei die Funktion\n\n'}
+              <M>{'h : \\mathbb{R} \\to \\mathbb{R},\\quad x \\mapsto \\begin{cases} \\dfrac{x^{2}-1}{x+1}, & x \\neq -1,\\\\[4pt] -100, & x = -1.\\end{cases}'}</M>
+              {'\n\nBestimmen Sie\n\n'}
+              <M>{'\\lim_{\\substack{x\\to-1\\\\x<-1}} h(x)'}</M>{',   '}
+              <M>{'\\lim_{\\substack{x\\to-1\\\\x>-1}} h(x)'}</M>{'   und   '}
+              <M>{'\\lim_{x\\to-1} h(x)'}</M>{',\n\nsofern die Grenzwerte existieren. Ist '}<M>{'h'}</M>{' stetig in '}<M>{'x = -1'}</M>{'?'}
             </>
           ),
           hint: h(
@@ -379,7 +384,14 @@ lim(x→2) g(x) = 2+2 = 4, aber g(2) = 5
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Betrachten Sie die Funktion f : ℝ → ℝ mit\n\nf(x) = { |4−2x|/(x−2),  x ≠ 2;   0,  x = 2\n\nÜberlegen Sie, welche der folgenden Grenzwerte existieren und bestimmen Sie gegebenenfalls den Grenzwert. Ist f stetig in x = 2?\n\n(a) lim'}<sub>{'x→2, x>2'}</sub>{' f(x)   (b) lim'}<sub>{'x→2, x<2'}</sub>{' f(x)   (c) lim'}<sub>{'x→2'}</sub>{' f(x)   (d) lim'}<sub>{'x→0'}</sub>{' f(x).'}</>,
+          text: (
+            <>
+              {'Betrachten Sie die Funktion\n\n'}
+              <M>{'f : \\mathbb{R} \\to \\mathbb{R},\\quad f(x) = \\begin{cases} \\dfrac{|4-2x|}{x-2}, & x \\neq 2,\\\\[4pt] 0, & x = 2.\\end{cases}'}</M>
+              {'\n\nÜberlegen Sie, welche der folgenden Grenzwerte existieren und bestimmen Sie gegebenenfalls den Grenzwert. Ist '}<M>{'f'}</M>{' stetig in '}<M>{'x = 2'}</M>{'?\n\n'}
+              {'(a) '}<M>{'\\lim_{\\substack{x\\to2\\\\x>2}} f(x)'}</M>{'   (b) '}<M>{'\\lim_{\\substack{x\\to2\\\\x<2}} f(x)'}</M>{'   (c) '}<M>{'\\lim_{x\\to2} f(x)'}</M>{'   (d) '}<M>{'\\lim_{x\\to0} f(x)'}</M>{'.'}
+            </>
+          ),
           hint: h(
             <>
               <p>Der <span className="hint-em">Betrag</span> |a| ist der Abstand von a zur 0, also immer ≥ 0: |a| = a, falls a ≥ 0, und |a| = −a, falls a &lt; 0. Wegen dieser Fallunterscheidung muss man bei Betragsfunktionen <span className="hint-em">getrennt nach links und rechts</span> rechnen.</p>

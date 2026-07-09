@@ -17,7 +17,7 @@ export const blatt11: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Überprüfen Sie, ob folgende Funktionen in ℝ stetig sind:\n\nf: ℝ → ℝ,  x ↦ exp('}<Frac n="x" d="(cos x)² + 1" />{')'}
+          text: <>{'Überprüfen Sie, ob folgende Funktionen in ℝ stetig sind:\n\n'}<M>{'f: \\mathbb{R} \\to \\mathbb{R},\\quad x \\mapsto \\exp\\!\\left(\\frac{x}{(\\cos x)^{2} + 1}\\right)'}</M>
           </>,
           hint: h(
             <>
@@ -78,7 +78,7 @@ export const blatt11: MatheBlatt = {
         },
         {
           letter: 'b',
-          text: 'g: ℝ → ℝ,  x ↦ √|x · sin(x)|',
+          text: <M>{'g: \\mathbb{R} \\to \\mathbb{R},\\quad x \\mapsto \\sqrt{|x \\cdot \\sin(x)|}'}</M>,
           hint: h(
             <>
               <p>Eine <span className="hint-em">Verkettung</span> (Komposition) ist eine „Funktion in einer Funktion": man steckt das Ergebnis der inneren in die äußere. g(x) = √|sin x| ist dreifach verkettet: <span className="hint-em">zuerst</span> sin x, <span className="hint-em">dann</span> der Betrag |·| davon, <span className="hint-em">zuletzt</span> die Wurzel √. Man schreibt das als g = √ ∘ |·| ∘ sin (von rechts nach links lesen: sin zuerst).</p>
@@ -139,7 +139,14 @@ cos x ≥ −1 für alle x  ⇒ cos x + 1 ≥ −1 + 1 = 0.
       subaufgaben: [
         {
           letter: 'a',
-          text: 'Gegeben seien die Funktionen\n\nf: ℝ → ℝ, x ↦ x,   g: ℝ → ℝ, x ↦ {4, x ≥ 0; −4, x < 0}   und   h: ℝ → ℝ, x ↦ f(x) · g(x).\n\nWelche der Funktionen f, g und h sind stetig?',
+          text: (
+            <>
+              {'Gegeben seien die Funktionen\n\n'}
+              <M>{'f: \\mathbb{R}\\to\\mathbb{R},\\ x\\mapsto x'}</M>{',   '}
+              <M>{'g: \\mathbb{R}\\to\\mathbb{R},\\ x\\mapsto \\begin{cases} 4, & x \\ge 0\\\\ -4, & x < 0\\end{cases}'}</M>{'   und   '}
+              <M>{'h: \\mathbb{R}\\to\\mathbb{R},\\ x\\mapsto f(x)\\cdot g(x)'}</M>{'.\n\nWelche der Funktionen f, g und h sind stetig?'}
+            </>
+          ),
           hint: h(
             <>
               <p>Drei Stetigkeits-Werkzeuge braucht man hier:</p>
@@ -372,7 +379,7 @@ Beide 0 → lim(x→0) g = 0 existiert
         },
         {
           letter: 'd',
-          text: 'f: ℝ → ℝ,  x ↦ {|x| für x < 0,  c für x = 0,  √x für x > 0}',
+          text: <M>{'f: \\mathbb{R} \\to \\mathbb{R},\\quad x \\mapsto \\begin{cases} |x|, & x < 0,\\\\ c, & x = 0,\\\\ \\sqrt{x}, & x > 0.\\end{cases}'}</M>,
           hint: h(
             <>
               <p>f ist <span className="hint-em">stückweise definiert</span>: links von 0 (x &lt; 0) gilt f = |x|, rechts (x &gt; 0) gilt f = √x, und genau im Punkt 0 ist f(0) = c die gesuchte Zahl. Solche Funktionen prüft man an der Nahtstelle 0 mit einseitigen Grenzwerten.</p>

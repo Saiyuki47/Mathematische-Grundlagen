@@ -524,7 +524,15 @@ p ∘ q: Bild(q) = [0,∞) ⊆ Dom(p) = ℝ ✓ → definierbar.
         },
         {
           letter: 'b',
-          text: 'Betrachten Sie die Funktionen\n\nf : [0,∞) → [0,∞),  x ↦ x + 1,\n\nund\n\ng : [0,∞) → [0,∞),  x ↦ { x − 1,  x ≥ 1,\n                         { 0,       sonst.\n\nUntersuchen Sie f, g, g ∘ f und f ∘ g jeweils auf Injektivität, Surjektivität und Bijektivität. Skizzieren Sie zunächst die jeweiligen Funktionsgraphen.',
+          text: (
+            <>
+              {'Betrachten Sie die Funktionen\n\n'}
+              <M>{'f : [0,\\infty) \\to [0,\\infty),\\quad x \\mapsto x + 1,'}</M>
+              {'\n\nund\n\n'}
+              <M>{'g : [0,\\infty) \\to [0,\\infty),\\quad x \\mapsto \\begin{cases} x - 1, & x \\ge 1,\\\\ 0, & \\text{sonst.}\\end{cases}'}</M>
+              {'\n\nUntersuchen Sie '}<M>{'f'}</M>{', '}<M>{'g'}</M>{', '}<M>{'g \\circ f'}</M>{' und '}<M>{'f \\circ g'}</M>{' jeweils auf Injektivität, Surjektivität und Bijektivität. Skizzieren Sie zunächst die jeweiligen Funktionsgraphen.'}
+            </>
+          ),
           hint: h(
             <>
               <p>Drei Eigenschaften (jeweils auf dem angegebenen Definitions- und Zielbereich [0,∞)):</p>

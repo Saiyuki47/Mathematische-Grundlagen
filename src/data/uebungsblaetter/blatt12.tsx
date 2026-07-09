@@ -1,5 +1,4 @@
 import type { MatheBlatt } from '../../types'
-import Frac from '../../utils/Frac'
 import M from '../../utils/M'
 import { h } from './shared'
 
@@ -16,7 +15,7 @@ export const blatt12: MatheBlatt = {
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Welche der folgenden Funktionsgrenzwerte existieren? Bestimmen Sie gegebenenfalls den Grenzwert.\n\n'}{'lim'}<sub>{'x→∞'}</sub>{' '}<Frac n="1" d="x" />{' cos('}<Frac n="1" d="x" />{')'}</>,
+          text: <>{'Welche der folgenden Funktionsgrenzwerte existieren? Bestimmen Sie gegebenenfalls den Grenzwert.\n\n'}<M>{'\\lim_{x\\to\\infty} \\frac{1}{x}\\,\\cos\\!\\left(\\frac{1}{x}\\right)'}</M></>,
           hint: h(
             <>
               <p>Ein <span className="hint-em">Funktionsgrenzwert</span> lim(x→∞) … fragt: Welchem Wert nähert sich der Ausdruck, wenn x immer größer wird? Eine <span className="hint-em">Nullfolge</span> ist ein Ausdruck, der dabei gegen 0 geht — z. B. 1/x → 0, weil „1 geteilt durch etwas sehr Großes" winzig wird.</p>
@@ -69,7 +68,7 @@ Produkt: 0 · 0 = 0.
         },
         {
           letter: 'b',
-          text: <>{'lim'}<sub>{'x→∞'}</sub>{' '}<Frac n="1" d="x" />{' cos(x)'}</>,
+          text: <><M>{'\\lim_{x\\to\\infty} \\frac{1}{x}\\,\\cos(x)'}</M></>,
           hint: h(
             <>
               <p>Achtung — anders als bei (a)! Hier steht cos(<span className="hint-em">x</span>), nicht cos(1/x). Für x → ∞ <span className="hint-em">existiert lim cos(x) NICHT</span>: der Kosinus schwingt für immer zwischen −1 und 1 hin und her, er nähert sich keiner einzigen Zahl. Man darf hier also NICHT „cos ins Argument ziehen".</p>
@@ -115,7 +114,7 @@ Produkt: 0 · 0 = 0.
         },
         {
           letter: 'c',
-          text: <>{'lim'}<sub>{'x→0'}</sub>{' x · exp(x)'}</>,
+          text: <><M>{'\\lim_{x\\to 0} x\\,\\exp(x)'}</M></>,
           hint: h(
             <>
               <p>Die <span className="hint-em">Exponentialfunktion</span> exp(x) = eˣ (mit der Eulerschen Zahl e ≈ 2,718) ist auf ganz ℝ stetig. Ein wichtiger Funktionswert: <span className="hint-em">exp(0) = e⁰ = 1</span> (jede Basis hoch 0 ist 1).</p>
@@ -156,7 +155,7 @@ Produktregel:
         },
         {
           letter: 'd',
-          text: <>{'lim'}<sub>{'x→−∞'}</sub>{' x · exp(x)'}</>,
+          text: <><M>{'\\lim_{x\\to-\\infty} x\\,\\exp(x)'}</M></>,
           hint: h(
             <>
               <p>Bei x → −∞ schauen wir auf x·exp(x): der Faktor x geht gegen −∞ (unendlich groß negativ), der Faktor exp(x) gegen 0 (denn e hoch sehr negativ ist winzig, exp(−10) ≈ 0,000045). Das Produkt ist also „(−∞)·0" — ein <span className="hint-em">unbestimmter Ausdruck</span>: Man kann das Ergebnis NICHT direkt ablesen, weil zwei gegenläufige Tendenzen kämpfen. Man muss umformen.</p>
@@ -217,7 +216,7 @@ Aus der Hierarchie: lim(y→∞) y²/exp(y) = 0
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Welche der folgenden Folgengrenzwerte existieren? Bestimmen Sie gegebenenfalls den Grenzwert.\n\n'}{'lim'}<sub>{'n→∞'}</sub>{' '}<Frac n="cos(n)" d="ln(n)" /></>,
+          text: <>{'Welche der folgenden Folgengrenzwerte existieren? Bestimmen Sie gegebenenfalls den Grenzwert.\n\n'}<M>{'\\lim_{n\\to\\infty} \\frac{\\cos(n)}{\\ln(n)}'}</M></>,
           hint: h(
             <>
               <p>Eine <span className="hint-em">Folge</span> ist eine durchnummerierte Liste von Zahlen a₁, a₂, a₃, … (Index n = 1,2,3,…); lim(n→∞) fragt nach dem Wert, dem sie sich nähert. Hier ist aₙ = cos(n)/ln(n).</p>
@@ -265,7 +264,7 @@ Aus der Hierarchie: lim(y→∞) y²/exp(y) = 0
         },
         {
           letter: 'b',
-          text: <>{'lim'}<sub>{'n→∞'}</sub>{' sin('}<Frac n="1" d="n" />{') · cos(n)'}</>,
+          text: <><M>{'\\lim_{n\\to\\infty} \\sin\\!\\left(\\frac{1}{n}\\right)\\cos(n)'}</M></>,
           hint: h(
             <>
               <p>Wieder das Muster „<span className="hint-em">Nullfolge · Beschränkte = Nullfolge</span>" — man muss nur erkennen, welcher Faktor was ist:</p>
@@ -315,7 +314,7 @@ Aus der Hierarchie: lim(y→∞) y²/exp(y) = 0
         },
         {
           letter: 'c',
-          text: <>{'lim'}<sub>{'n→∞'}</sub>{' '}<Frac n="n⁴ − 3n²" d="n³ − 3n⁴" />{' · exp('}<Frac n="2" d="n³ + 1" />{')'}</>,
+          text: <><M>{'\\lim_{n\\to\\infty} \\frac{n^{4}-3n^{2}}{n^{3}-3n^{4}}\\cdot\\exp\\!\\left(\\frac{2}{n^{3}+1}\\right)'}</M></>,
           hint: h(
             <>
               <p>Der Ausdruck ist ein Produkt aus einem <span className="hint-em">rationalen Bruch</span> (Polynom durch Polynom) und einem exp-Term. Man behandelt beide Faktoren getrennt und multipliziert die Grenzwerte (<span className="hint-em">Produktregel</span>: lim(a·b) = lim a · lim b, sofern beide existieren).</p>
@@ -372,7 +371,7 @@ Produktregel:
         },
         {
           letter: 'd',
-          text: <>{'lim'}<sub>{'n→∞'}</sub>{' n · ln(1 + '}<Frac n="1" d="n" />{')'}</>,
+          text: <><M>{'\\lim_{n\\to\\infty} n\\,\\ln\\!\\left(1+\\frac{1}{n}\\right)'}</M></>,
           hint: h(
             <>
               <p>Form prüfen: n → ∞, und ln(1+1/n) → ln(1) = 0 (da 1/n → 0 und ln stetig, ln(1) = 0). Also „∞ · 0" — ein <span className="hint-em">unbestimmter Ausdruck</span>, nicht direkt auswertbar. Man muss umformen.</p>
@@ -489,7 +488,7 @@ exp(...)        → stetig
         },
         {
           letter: 'b',
-          text: <>{'Sei k ∈ ℕ, k ≥ 2. Bestimmen Sie lim'}<sub>{'k→∞'}</sub>{' ᵏ√k.\n\nHinweis: ᵏ√k = k'}<sup>{'1/k'}</sup>{'.'}</>,
+          text: <>{'Sei '}<M>{'k \\in \\mathbb{N},\\ k \\ge 2'}</M>{'. Bestimmen Sie '}<M>{'\\lim_{k\\to\\infty} \\sqrt[k]{k}'}</M>{'.\n\nHinweis: '}<M>{'\\sqrt[k]{k} = k^{1/k}'}</M>{'.'}</>,
           hint: h(
             <>
               <p>Gesucht ist der Grenzwert der k-ten Wurzel aus k, also ᵏ√k, für k → ∞. Die Schreibweise als Potenz (Hinweis): <span className="hint-em">ᵏ√k = k^(1/k)</span> (n-te Wurzel = Hochzahl 1/n).</p>
@@ -705,7 +704,7 @@ Damit z.B. ln(2⁵) = 5·ln 2.`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Berechnen Sie folgende Ausdrücke:\n\n'}(i) log₁₀(10),{'  '}(ii) log₁₀(10000),{'  '}(iii) log₁₀(1),{'  '}(iv) log₁₀(0,01)</>,
+          text: <>{'Berechnen Sie folgende Ausdrücke:\n\n'}{'(i) '}<M>{'\\log_{10}(10)'}</M>{',  (ii) '}<M>{'\\log_{10}(10000)'}</M>{',  (iii) '}<M>{'\\log_{10}(1)'}</M>{',  (iv) '}<M>{'\\log_{10}(0{,}01)'}</M></>,
           hint: h(
             <>
               <p>Der <span className="hint-em">Logarithmus</span> log_a(z) beantwortet die Frage: „Mit welcher Hochzahl muss ich die Basis a potenzieren, um z zu erhalten?" Also log_a(z) = c bedeutet a^c = z. Beispiel: log₁₀(1000) = 3, weil 10³ = 1000.</p>
@@ -746,7 +745,7 @@ log₂(1/4) : 1/4 = 2⁻²   ⇒ −2  (4 = 2², Kehrwert ⇒ −2)`}</pre>
         },
         {
           letter: 'b',
-          text: <>(i) log₂(<Frac n="2" d="64" />),{'  '}(ii) log₄(<Frac n="2" d="64" />),{'  '}(iii) log₃₂(<Frac n="2" d="64" />),{'  '}(iv) log₆₄(<Frac n="2" d="64" />)</>,
+          text: <>{'(i) '}<M>{'\\log_{2}\\!\\left(\\tfrac{2}{64}\\right)'}</M>{',  (ii) '}<M>{'\\log_{4}\\!\\left(\\tfrac{2}{64}\\right)'}</M>{',  (iii) '}<M>{'\\log_{32}\\!\\left(\\tfrac{2}{64}\\right)'}</M>{',  (iv) '}<M>{'\\log_{64}\\!\\left(\\tfrac{2}{64}\\right)'}</M></>,
           hint: h(
             <>
               <p>Wieder gilt log_a(z) = c ⟺ a^c = z, und die Grundregel log_a(a^k) = k. Trick: Erst das Argument vereinfachen, dann als Potenz der jeweiligen Basis ausdrücken.</p>
@@ -803,7 +802,7 @@ log₉(3) = 1/2 (9^(1/2)=3)  ⇒ −1·(1/2) = −1/2.`}</pre>
         },
         {
           letter: 'c',
-          text: <>(i) log₂(64),{'  '}(ii) <Frac n="log₂(2/64)" d="log₂(64)" />. Vergleichen Sie das Ergebnis mit log₆₄(<Frac n="2" d="64" />).</>,
+          text: <>{'(i) '}<M>{'\\log_{2}(64)'}</M>{',  (ii) '}<M>{'\\dfrac{\\log_{2}(2/64)}{\\log_{2}(64)}'}</M>{'. Vergleichen Sie das Ergebnis mit '}<M>{'\\log_{64}\\!\\left(\\tfrac{2}{64}\\right)'}</M>{'.'}</>,
           hint: h(
             <>
               <p>Kern dieser Aufgabe ist der <span className="hint-em">Basiswechselsatz</span>: log_b(x) = log_a(x) / log_a(b). Er erlaubt, einen Logarithmus zur Basis b über eine BELIEBIGE andere Basis a auszudrücken — man teilt einfach log_a(x) durch log_a(b). (Deshalb genügt am Taschenrechner ln oder log₁₀ für jede Basis.)</p>

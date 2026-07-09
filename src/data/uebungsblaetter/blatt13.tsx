@@ -251,7 +251,7 @@ Im Gegensatz dazu passt bei x|x| beides zu 0.`}</pre>
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Skizzieren Sie zunächst folgende Funktionen und überprüfen Sie dann, ob sie in 0 differenzierbar sind.\n\nf : ℝ → ℝ,  x ↦ { x, x ≥ 0;  x², x < 0 }'}</>,
+          text: <>{'Skizzieren Sie zunächst folgende Funktionen und überprüfen Sie dann, ob sie in 0 differenzierbar sind.\n\n'}<M>{'f : \\mathbb{R} \\to \\mathbb{R},\\quad x \\mapsto \\begin{cases} x, & x \\ge 0,\\\\ x^{2}, & x < 0.\\end{cases}'}</M></>,
           hint: h(
             <>
               <p>Die Funktion ist <span className="hint-em">stückweise definiert</span>: für x ≥ 0 gilt f(x) = x (eine Gerade), für x {'<'} 0 gilt f(x) = x² (eine Parabel). An der Nahtstelle x = 0 treffen beide Teile aufeinander; beide ergeben dort f(0) = 0, die Funktion ist also lückenlos (stetig). Die Frage ist, ob sie dort auch eine eindeutige Steigung hat — ob sie <span className="hint-em">differenzierbar</span> ist.</p>
@@ -301,7 +301,7 @@ links:  lim (x³−0)/x = lim x² = 0
         },
         {
           letter: 'b',
-          text: <>{'g : ℝ → ℝ,  x ↦ { x³, x ≥ 0;  x², x < 0 }'}</>,
+          text: <M>{'g : \\mathbb{R} \\to \\mathbb{R},\\quad x \\mapsto \\begin{cases} x^{3}, & x \\ge 0,\\\\ x^{2}, & x < 0.\\end{cases}'}</M>,
           hint: h(
             <>
               <p>Wieder eine <span className="hint-em">stückweise definierte</span> Funktion: für x ≥ 0 gilt g(x) = x³, für x {'<'} 0 gilt g(x) = x². Beide ergeben in 0 den Wert g(0) = 0 (lückenlos). Wir prüfen die <span className="hint-em">Differenzierbarkeit</span> in der Nahtstelle x = 0.</p>
@@ -349,7 +349,7 @@ Bei x³/x² dagegen kommt 0 = 0 heraus → differenzierbar.`}</pre>
         },
         {
           letter: 'c',
-          text: <>{'h : ℝ → ℝ,  x ↦ { x³ + 1, x ≥ 0;  x², x < 0 }'}</>,
+          text: <M>{'h : \\mathbb{R} \\to \\mathbb{R},\\quad x \\mapsto \\begin{cases} x^{3} + 1, & x \\ge 0,\\\\ x^{2}, & x < 0.\\end{cases}'}</M>,
           hint: h(
             <>
               <p>Wieder stückweise: für x ≥ 0 gilt h(x) = x³ + 1, für x {'<'} 0 gilt h(x) = x². Achtung — diesmal steht im oberen Teil ein „+1". Bevor man überhaupt über die Steigung nachdenkt, prüft man die <span className="hint-em">Stetigkeit</span>: Passt der Funktionswert an der Nahtstelle zusammen?</p>

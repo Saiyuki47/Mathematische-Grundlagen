@@ -169,7 +169,7 @@ export default function Uebungsblaetter() {
                     <div key={sub.letter} className="sub-aufgabe">
                       <p className="sub-letter">({sub.letter})</p>
                       <div className="sub-body">
-                        <div className="sub-text">{sub.text}</div>
+                        <div className="sub-text">{mathRich(sub.text)}</div>
                         {sub.taskGraph && (
                           <div className="graph-wrap graph-wrap--task">
                             <LineGraph data={sub.taskGraph} />
