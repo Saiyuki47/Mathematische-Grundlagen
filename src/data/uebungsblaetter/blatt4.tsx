@@ -82,12 +82,15 @@ IS: ∏(k=1..n+1) 2 = [∏(k=1..n) 2]·2
           ),
           solution: (
             <>
-              {'A(n): '}<M>{'\\prod_{k=1}^{n}\\left(1+\\frac{1}{k}\\right) = n+1'}</M>{'\n\n'}
-              {'IA (n=1): '}<M>{'\\prod_{k=1}^{1}\\left(1+\\frac{1}{k}\\right)'}</M>{' = 1+1 = 2 = 1+1 ✓\n\n'}
-              {'IS (n → n+1): Sei n ∈ ℕ*. Angenommen '}<M>{'\\prod_{k=1}^{n}\\left(1+\\frac{1}{k}\\right) = n+1'}</M>{' (IV).\n\n'}
-              <M>{'\\prod_{k=1}^{n+1}\\left(1+\\frac{1}{k}\\right)'}</M>{'\n\n= '}<M>{'\\left(1+\\frac{1}{n+1}\\right) \\cdot \\prod_{k=1}^{n}\\left(1+\\frac{1}{k}\\right)'}</M>{'\n\n'}
-              {'=(IV) '}<M>{'\\left(1+\\frac{1}{n+1}\\right) \\cdot (n+1)'}</M>{'\n\n'}
-              {'= n+1+1 = n+2  ✓  □'}
+              <M>{'A(n): \\prod_{k=1}^{n}\\left(1 + \\frac{1}{k}\\right) = n+1'}</M>{'\n'}
+              {'Behauptung: Für alle '}<M>{'n\\in\\mathbb{N},\\; n\\ge 1'}</M>{', gilt A(n).\n\n'}
+              {'IA (n=1): Linke Seite: '}<M>{'\\prod_{k=1}^{1}\\left(1 + \\frac{1}{k}\\right) = 1 + \\frac{1}{1} = 2'}</M>{'.\n'}
+              {'Rechte Seite: '}<M>{'1 + 1 = 2'}</M>{'.\n'}
+              {'Linke und rechte Seite stimmen überein. Also ist A(1) wahr.\n\n'}
+              {'IS (n→n+1): Sei '}<M>{'n\\in\\mathbb{N}^{*}'}</M>{'. Angenommen, es gilt '}<M>{'\\prod_{k=1}^{n}\\left(1 + \\frac{1}{k}\\right) = n+1'}</M>{' (IV). Dann ist\n'}
+              <M>{'\\prod_{k=1}^{n+1}\\left(1 + \\frac{1}{k}\\right) = \\left(1 + \\frac{1}{n+1}\\right)\\prod_{k=1}^{n}\\left(1 + \\frac{1}{k}\\right)'}</M>{'\n'}
+              <M>{'\\overset{\\text{(IV)}}{=} \\left(1 + \\frac{1}{n+1}\\right)(n+1) = n+1+1 = n+2.'}</M>{'\n'}
+              {'Somit ist A(n+1) wahr. '}<M>{'\\square'}</M>
             </>
           ),
         },
@@ -164,7 +167,19 @@ Mal −2 (negativ): −6 ≥ −4? FALSCH, richtig: −6 ≤ −4
             </ul>,
             <p>Selbstkontrolle: Prüfe x=0,5, n=2: (1,5)² = 2,25 ≥ 1 + 2·0,5 = 2 ✓. Frage: Warum darf man die IV mit (1+x) multiplizieren, ohne das Ungleichungszeichen umzukehren — und an welcher Stelle genau scheitert das Argument, wenn x &lt; −1 wäre?</p>,
           ),
-          solution: 'IA (n=0): (1+x)⁰ = 1 ≥ 1+0·x = 1  ✓\n\nIS: Sei n ∈ ℕ. Angenommen (1+x)ⁿ ≥ 1+nx (IV).\n\n(1+x)^(n+1) = (1+x)(1+x)ⁿ\n            ≥ (1+x)(1+nx)   [IV und x ≥ −1 → 1+x ≥ 0, (*) ]\n            = 1 + (n+1)x + nx²\n            ≥ 1 + (n+1)x    [da nx² ≥ 0]  ✓  □\n\nVoraussetzung x ≥ −1 wurde bei (*) verwendet: Wäre 1+x < 0, würde sich die Ungleichungsrichtung umkehren.',
+          solution: (
+            <>
+              <M>{'A(n): (1+x)^n \\ge 1 + nx'}</M>{'\n'}
+              {'Behauptung: Für alle '}<M>{'n\\in\\mathbb{N}'}</M>{' gilt A(n), sofern '}<M>{'x \\ge -1'}</M>{'.\n\n'}
+              {'IA (n=0): Linke Seite: '}<M>{'(1+x)^0 = 1'}</M>{'. Rechte Seite: '}<M>{'1 + 0x = 1'}</M>{'.\n'}
+              <M>{'1 \\ge 1'}</M>{' ist wahr, also ist A(0) wahr.\n\n'}
+              {'IS (n→n+1): Sei '}<M>{'n\\in\\mathbb{N}'}</M>{'. Angenommen, es gilt '}<M>{'(1+x)^n \\ge 1 + nx'}</M>{' (IV). Dann ist\n'}
+              <M>{'(1+x)^{n+1} = (1+x)(1+x)^n \\;\\overset{\\text{(IV)},(*)}{\\ge}\\; (1+x)(1+nx)'}</M>{'\n'}
+              <M>{'= 1 + nx + x + nx^2 = 1 + (n+1)x + \\underbrace{nx^2}_{\\ge 0} \\ge 1 + (n+1)x.'}</M>{'\n'}
+              {'Somit ist auch A(n+1) erfüllt. '}<M>{'\\square'}</M>{'\n\n'}
+              {'Die Voraussetzung '}<M>{'x \\ge -1'}</M>{' wurde bei der ersten Ungleichung '}<M>{'(*)'}</M>{' verwendet. Wäre '}<M>{'1 + x < 0'}</M>{', dann würde sich das Ungleichheitszeichen umdrehen.'}
+            </>
+          ),
         },
       ],
     },
@@ -228,7 +243,16 @@ x=11: 4/(11−9) = 4/2 = 2 ≤ 2 ✓ (Randpunkt, gehört dazu)`}</pre>
             </ul>,
             <p>Selbstkontrolle: Setze einen Punkt aus jedem Intervall und einen aus der Lücke ein (z. B. x=0 ✓, x=12 ✓, x=10 ✗). Frage: Warum darf man eine Bruchungleichung nicht ohne Fallunterscheidung mit dem Nenner durchmultiplizieren, und welches Zeichen-Verhalten (drehen/bleiben) entscheidet über die beiden Fälle?</p>,
           ),
-          solution: 'Fall 1 (x > 9): 4 ≤ 2(x−9) ⟺ 11 ≤ x → [11, ∞)\nFall 2 (x < 9): 4 ≥ 2(x−9) ⟺ 11 ≥ x, zusammen x < 9 → (−∞, 9)\n\nA = [11, ∞) ∪ (−∞, 9)',
+          solution: (
+            <>
+              {'Fall 1: '}<M>{'x > 9'}</M>{'\n'}
+              <M>{'\\frac{4}{x-9} \\le 2 \\Leftrightarrow 4 \\le 2(x-9) \\Leftrightarrow 2 \\le x-9 \\Leftrightarrow 11 \\le x.'}</M>{'\n\n'}
+              {'Fall 2: '}<M>{'x < 9'}</M>{'\n'}
+              <M>{'\\frac{4}{x-9} \\le 2 \\Leftrightarrow 4 \\ge 2(x-9) \\Leftrightarrow 2 \\ge x-9 \\Leftrightarrow 11 \\ge x.'}</M>{'\n\n'}
+              {'Somit erhalten wir\n'}
+              <M>{'A = [11, \\infty) \\cup (-\\infty, 9).'}</M>
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -281,7 +305,16 @@ Geometrisch: alle x mit Abstand ≥ 3 von der Zahl 1.`}</pre>
             </ul>,
             <p>Selbstkontrolle: x=−5 liegt zwischen −10 und 2: |−5+4| = |−1| = 1 ≥ 6? Nein → −5 ∉ B ✓. Frage: |x+4| ≥ 6 ist der Abstand von x zur Zahl −4; welche zwei Punkte haben genau Abstand 6 von −4 (nämlich −10 und 2), und warum sind das die Ränder der Lösung?</p>,
           ),
-          solution: 'Fall 1 (x ≥ −4): x+4 ≥ 6 ⟺ x ≥ 2 → [2, ∞)\nFall 2 (x < −4): −(x+4) ≥ 6 ⟺ −10 ≥ x → (−∞, −10]\n\nB = (−∞, −10] ∪ [2, ∞)',
+          solution: (
+            <>
+              {'Fall 1: '}<M>{'x \\ge -4'}</M>{'\n'}
+              <M>{'|x - (-4)| \\ge 6 \\Leftrightarrow x - (-4) \\ge 6 \\Leftrightarrow x \\ge 2.'}</M>{'\n\n'}
+              {'Fall 2: '}<M>{'x < -4'}</M>{'\n'}
+              <M>{'|x - (-4)| \\ge 6 \\Leftrightarrow -4 - x \\ge 6 \\Leftrightarrow -10 \\ge x.'}</M>{'\n\n'}
+              {'Somit erhalten wir\n'}
+              <M>{'B = (-\\infty, -10] \\cup [2, \\infty).'}</M>
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -339,10 +372,14 @@ x=0:    |−2| = 2 ≥ |3| = 3 ? NEIN ✗ (näher an 2 → nicht in C)`}</pre>
           ),
           solution: (
             <>
-              {'Fall 1 (x ≥ 2): x−2 ≥ x+3 ⟺ −2 ≥ 3 → ∅\n'}
-              {'Fall 2 (−3 ≤ x < 2): 2−x ≥ x+3 ⟺ −'}<Frac n="1" d="2" />{' ≥ x → [−3, −'}<Frac n="1" d="2" />{']\n'}
-              {'Fall 3 (x < −3): 2−x ≥ −x−3 ⟺ 2 ≥ −3 → immer wahr → (−∞, −3)\n\n'}
-              {'C = (−∞, −3) ∪ [−3, −'}<Frac n="1" d="2" />{'] = (−∞, −'}<Frac n="1" d="2" />{']'}
+              {'Fall 1: '}<M>{'x \\ge 2'}</M>{'\n'}
+              <M>{'|x - 2| \\ge |x + 3| \\Leftrightarrow x - 2 \\ge x + 3 \\Leftrightarrow -2 \\ge 3.'}</M>{'\n\n'}
+              {'Fall 2: '}<M>{'-3 \\le x < 2'}</M>{'\n'}
+              <M>{'|x - 2| \\ge |x + 3| \\Leftrightarrow 2 - x \\ge x + 3 \\Leftrightarrow -1 \\ge 2x \\Leftrightarrow -\\frac{1}{2} \\ge x'}</M>{'\n\n'}
+              {'Fall 3: '}<M>{'x < -3'}</M>{'\n'}
+              <M>{'|x - 2| \\ge |x + 3| \\Leftrightarrow 2 - x \\ge -x - 3 \\Leftrightarrow 2 \\ge -3.'}</M>{'\n\n'}
+              {'Somit erhalten wir\n'}
+              <M>{'C = \\emptyset \\cup \\left[-3, -\\frac{1}{2}\\right] \\cup (-\\infty, -3) = \\left(-\\infty, -\\frac{1}{2}\\right].'}</M>
             </>
           ),
         },
@@ -403,7 +440,11 @@ sup = 1, aber 1 ∉ N (wegen <)  → kein Maximum.
             </ul>,
             <p>Selbstkontrolle: Ist 1,9 ∈ M₁? (1,9 &gt; 0 ✓, 1,9² = 3,61 ≤ 4 ✓ → ja). Gibt es ein kleinstes Element? Frage: Worin unterscheiden sich sup und max begrifflich, und welches Zeichen (strikt x &gt; 0 vs. nicht-strikt x² ≤ 4) sorgt dafür, dass hier ein Maximum, aber kein Minimum existiert?</p>,
           ),
-          solution: 'M₁ = (0, 2]\n\nsup = 2 = max  (2 ∈ M₁)\ninf = 0,  min existiert nicht  (0 ∉ M₁)',
+          solution: (
+            <>
+              <M>{'\\sup M_1 = 2, \\quad \\inf M_1 = 0, \\quad \\max M_1 = 2'}</M>{'; '}<M>{'\\min M_1'}</M>{' existiert nicht.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -461,7 +502,7 @@ Hier ist 0 das untere Ende: inf = 0, aber 0 ∉ N
           ),
           solution: (
             <>
-              {'M₂ enthält Werte 1, −1, '}<Frac n="1" d="2" />{', −'}<Frac n="1" d="2" />{', '}<Frac n="1" d="3" />{', −'}<Frac n="1" d="3" />{', …\n\nsup = 1 = max  (bei z=1)\ninf = −1 = min  (bei z=−1)'}
+              <M>{'\\sup M_2 = 1, \\quad \\inf M_2 = -1, \\quad \\max M_2 = 1, \\quad \\min M_2 = -1.'}</M>
             </>
           ),
         },
@@ -514,7 +555,7 @@ n=m=1000:  0,001+0,001 = 0,002   → immer > 0, aber → 0`}</pre>
           ),
           solution: (
             <>
-              {'Größter Wert: n=m=1 → 1+1=2, also max = sup = 2\nKleinste Werte: '}<Frac n="1" d="n" />{' + '}<Frac n="1" d="m" />{' → 0 für n,m → ∞, aber nie = 0\n\nsup = 2 = max,  inf = 0,  min existiert nicht'}
+              <M>{'\\sup M_3 = 2, \\quad \\inf M_3 = 0, \\quad \\max M_3 = 2'}</M>{'; '}<M>{'\\min M_3'}</M>{' existiert nicht.'}
             </>
           ),
         },
@@ -570,7 +611,7 @@ Gleicher Begriff, anderes Verhalten – wegen + vs −.`}</pre>
           ),
           solution: (
             <>
-              {'n=1, m→∞: '}<Frac n="1" d="n" />{' − '}<Frac n="1" d="m" />{' → 1 (nie genau 1)\nn→∞, m=1: '}<Frac n="1" d="n" />{' − '}<Frac n="1" d="m" />{' → −1 (nie genau −1)\n\nsup = 1,  inf = −1,  max und min existieren nicht'}
+              <M>{'\\sup M_4 = 1, \\quad \\inf M_4 = -1'}</M>{'; '}<M>{'\\max M_4'}</M>{' und '}<M>{'\\min M_4'}</M>{' existieren nicht.'}
             </>
           ),
         },
@@ -622,7 +663,7 @@ x (bzw. n) ab — das ist bei ∀…∃ erlaubt.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Setze x = −3: y := (−3)² = 9 ∈ ℝ und 9 = (−3)² ✓. Frage: Was erlaubt die Reihenfolge ∀x∃y, das ∃y∀x nicht erlaubt — und warum macht gerade die Abhängigkeit von y von x die Aussage wahr?</p>,
           ),
-          solution: 'Wahr. Für jedes x ∈ ℝ wähle y := x². Dann gilt y = x².',
+          solution: 'wahr',
         },
         {
           letter: 'b',
@@ -665,7 +706,7 @@ Der Wertebereich von x² ist [0,∞), nicht ganz ℝ.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Gibt es ein x mit x² = 0 UND x² = 1 gleichzeitig? (Nein.) Frage: Warum ist ∃x∀y so viel stärker als ∀x∃y, und an welcher Eigenschaft von x² (Wertebereich [0,∞), nur ein Wert pro x) scheitert die Behauptung?</p>,
           ),
-          solution: 'Falsch. Für jedes fixe x gilt x² ≥ 0, also kann y = −1 nicht erfüllt werden.',
+          solution: 'falsch',
         },
         {
           letter: 'c',
@@ -702,7 +743,7 @@ Das einfachste ist x=0, y=0.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Erfüllt dein Paar wirklich y = x²? (Setze ein und vergleiche.) Frage: Warum ist ∃x∃y die schwächste der fünf Quantor-Varianten, und wie sähe eine Existenzaussage aus, die trotzdem falsch wäre (z. B. ∃x ∈ ℝ : x² = −1)?</p>,
           ),
-          solution: 'Wahr. Beispiel: x = 1, y = 1, dann y = 1 = 1².',
+          solution: 'wahr',
         },
         {
           letter: 'd',
@@ -742,7 +783,7 @@ Unterschied: nur der erlaubte Bereich von y.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Gibt es ein reelles x mit x² = −4? (Nein.) Frage: Der Wertebereich von x² ist [0, ∞) — für welche y scheitert "y = x²" deshalb, und warum reicht ein einziges solches y, um die ∀-Aussage zu kippen?</p>,
           ),
-          solution: 'Falsch. Gegenbeispiel: y = −1. Es gibt kein x ∈ ℝ mit x² = −1.',
+          solution: 'falsch',
         },
         {
           letter: 'e',
@@ -784,7 +825,7 @@ Merksatz: bei ∃y∀x ist y UNABHÄNGIG von x zu wählen.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Kann eine einzige Zahl y₀ gleichzeitig 1 und 4 sein? (Nein.) Frage: Warum kann kein festes y zugleich 1² und 2² sein, und wann wäre ∃y∀x : y = x² ausnahmsweise wahr (etwa wenn der x-Bereich nur aus einem einzigen Wert bestünde)?</p>,
           ),
-          solution: 'Falsch. x=1 liefert y=1, x=2 liefert y=4. Kein festes y passt zu allen x.',
+          solution: 'falsch',
         },
       ],
     },
@@ -843,7 +884,29 @@ Merksatz: bei ∃y∀x ist y UNABHÄNGIG von x zu wählen.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Teilt der gefundene ggT wirklich beide Zahlen? (z. B. 156/4 = 39, 64/4 = 16 ✓.) Frage: Warum endet der Algorithmus immer (was passiert mit den Resten in jedem Schritt), und warum kosten ausgerechnet Fibonacci-Zahlen wie 34 und 21 die meisten Schritte (Quotient immer 1)?</p>,
           ),
-          solution: '(i) ggT(156,−64) = ggT(156,64) = 4\n  156 = 2·64+28,  64 = 2·28+8,  28 = 3·8+4,  8 = 2·4+0\n\n(ii) ggT(−296,−96) = ggT(296,96) = 8\n  296 = 3·96+8,  96 = 12·8+0\n\n(iii) ggT(34,21) = 1\n  34=1·21+13, 21=1·13+8, 13=1·8+5, 8=1·5+3, 5=1·3+2, 3=1·2+1, 2=2·1+0\n  Die Reste 13,8,5,3,2,1 sind gerade die ersten Fibonacci-Zahlen.',
+          solution: (
+            <>
+              {'(i) Es ist '}<M>{'\\operatorname{ggT}(156, -64) = \\operatorname{ggT}(156, 64)'}</M>{'. Wir berechnen\n'}
+              <M>{'156 = 2\\cdot 64 + 28'}</M>{'  (1)\n'}
+              <M>{'64 = 2\\cdot 28 + 8'}</M>{'  (2)\n'}
+              <M>{'28 = 3\\cdot 8 + 4'}</M>{'  (3)\n'}
+              <M>{'8 = 2\\cdot 4 + 0'}</M>{'  (4)\n'}
+              {'und erhalten '}<M>{'\\operatorname{ggT}(156, -64) = 4'}</M>{'.\n\n'}
+              {'(ii) Es ist '}<M>{'\\operatorname{ggT}(-296, -96) = \\operatorname{ggT}(296, 96)'}</M>{'. Wir berechnen\n'}
+              <M>{'296 = 3\\cdot 96 + 8'}</M>{'\n'}
+              <M>{'96 = 12\\cdot 8 + 0'}</M>{'\n'}
+              {'und erhalten '}<M>{'\\operatorname{ggT}(-296, -96) = 8'}</M>{'.\n\n'}
+              {'(iii) Wir berechnen\n'}
+              <M>{'34 = 1\\cdot 21 + 13'}</M>{'\n'}
+              <M>{'21 = 1\\cdot 13 + 8'}</M>{'\n'}
+              <M>{'13 = 1\\cdot 8 + 5'}</M>{'\n'}
+              <M>{'8 = 1\\cdot 5 + 3'}</M>{'\n'}
+              <M>{'5 = 1\\cdot 3 + 2'}</M>{'\n'}
+              <M>{'3 = 1\\cdot 2 + 1'}</M>{'\n'}
+              <M>{'2 = 2\\cdot 1 + 0'}</M>{'\n'}
+              {'und erhalten '}<M>{'\\operatorname{ggT}(34, 21) = 1'}</M>{'. Es fällt auf, dass die Reste gerade die ersten Fibonacci-Zahlen sind.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -902,7 +965,15 @@ Rückwärts:
             </ul>,
             <p>Selbstkontrolle: Rechne die Probe selbst: 7·156 = 1092, 17·64 = 1088, Differenz = 4 ✓. Frage: Was garantiert der Satz von Bézout (gibt es immer solche s, t für d = ggT(a,b)?), und warum ist d die kleinste positive Zahl, die sich als s·a + t·b schreiben lässt?</p>,
           ),
-          solution: 'Rückwärts durch (a)(i):\n  4 = 28 − 3·8\n    = 28 − 3·(64 − 2·28) = 7·28 − 3·64\n    = 7·(156 − 2·64) − 3·64 = 7·156 − 17·64\n    = 7·156 + 17·(−64)\n\ns = 7,  t = 17\nProbe: 7·156 + 17·(−64) = 1092 − 1088 = 4 ✓',
+          solution: (
+            <>
+              {'Wir gehen die Rechenschritte aus Teil (a)(i) nun in umgekehrter Reihenfolge durch und erhalten\n'}
+              <M>{'4 \\overset{(3)}{=} 28 - 3\\cdot 8'}</M>{'\n'}
+              <M>{'\\overset{(2)}{=} 28 - 3\\cdot(64 - 2\\cdot 28) = 7\\cdot 28 - 3\\cdot 64'}</M>{'\n'}
+              <M>{'\\overset{(1)}{=} 7\\cdot(156 - 2\\cdot 64) - 3\\cdot 64 = 7\\cdot 156 - 17\\cdot 64'}</M>{'\n'}
+              <M>{'= 7\\cdot 156 + 17\\cdot(-64).'}</M>
+            </>
+          ),
         },
       ],
     },
@@ -989,7 +1060,11 @@ Nur wenn a₁a₂ = 0 wären beide gleich — nicht "für jede Wahl".`}</pre>
             </ul>,
             <p>Selbstkontrolle: Teste (iv) und (v) auch mit n=2, a₁=2, a₂=3: (iv) (2·3)² = 36 = 2²·3² ✓; (v) 4·(2+3) = 20 = 4·2 + 4·3 ✓. Frage: Welche Operation (Summe oder Produkt) "verträgt sich" mit dem Quadrieren bzw. mit dem Herausziehen einer Konstanten, und warum macht der Unterschied (Kreuzterme bzw. Faktor 4ⁿ) genau (iii) und (vi) falsch?</p>,
           ),
-          solution: '(i)  falsch: Index­shift ergibt (k+2)³, nicht k³.\n(ii) wahr: Substitution l=k+2 liefert exakt dieselbe Summe.\n(iii) falsch: (∑aₖ)² enthält Kreuzterme. Gegenbeispiel: a₁=a₂=1 → 4 ≠ 2.\n(iv) wahr: (a₁·…·aₙ)² = a₁²·…·aₙ².\n(v)  wahr: Konstante kann aus der Summe gezogen werden.\n(vi) falsch: ∏(4aₖ) = 4ⁿ·∏aₖ. Gegenbeispiel n=2, a₁=a₂=1 → 4 ≠ 16.\n\nNur (ii), (iv), (v) gelten allgemein.',
+          solution: (
+            <>
+              {'Nur die Gleichheiten in (ii), (iv) und (v) gelten für jede Wahl von '}<M>{'n'}</M>{' und '}<M>{'a_k'}</M>{'.'}
+            </>
+          ),
         },
       ],
     },

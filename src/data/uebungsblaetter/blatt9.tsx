@@ -1,5 +1,4 @@
 import type { MatheBlatt } from '../../types'
-import Frac from '../../utils/Frac'
 import M from '../../utils/M'
 import { h } from './shared'
 
@@ -61,7 +60,7 @@ Ergebnis: 3 · 3 = 9`}</pre>
           ),
           solution: (
             <>
-              <M>{'\\sum_{k=0}^{\\infty} 5 \\cdot \\left(\\frac{1}{2}\\right)^{k}'}</M>{' = 5 · '}<Frac n="1" d="1−1/2" />{' = 5 · 2 = 10'}
+              <M>{'\\sum_{k=0}^{\\infty} 5\\left(\\tfrac{1}{2}\\right)^{k} = 5\\sum_{k=0}^{\\infty}\\left(\\tfrac{1}{2}\\right)^{k} = 5\\cdot\\frac{1}{1-\\frac{1}{2}} = 5\\cdot\\frac{1}{\\frac{1}{2}} = 5\\cdot 2 = 10'}</M>
             </>
           ),
         },
@@ -113,8 +112,9 @@ qᵐ/(1−q) = (1/2)³/(1 − 1/2)
           ),
           solution: (
             <>
-              {'−0.4 = −'}<Frac n="2" d="5" />{', Indexshift j=k−2:\n'}
-              {'2·('}<Frac n="−2" d="5" />{')² · '}<Frac n="1" d="1+2/5" />{' = '}<Frac n="8" d="25" />{' · '}<Frac n="5" d="7" />{' = '}<Frac n="8" d="35" />
+              <M>{'\\sum_{k=2}^{\\infty} 2(-0.4)^{k} = \\sum_{k=2}^{\\infty} 2\\left(-\\tfrac{2}{5}\\right)^{k} = \\sum_{k=0}^{\\infty} 2\\left(-\\tfrac{2}{5}\\right)^{k+2}'}</M>
+              {'\n'}
+              <M>{'= 2\\left(-\\tfrac{2}{5}\\right)^{2}\\sum_{k=0}^{\\infty}\\left(-\\tfrac{2}{5}\\right)^{k} = \\frac{8}{25}\\cdot\\frac{1}{1-\\left(-\\frac{2}{5}\\right)} = \\frac{8}{25}\\cdot\\frac{1}{\\frac{7}{5}} = \\frac{8}{25}\\cdot\\frac{5}{7} = \\frac{8}{35}'}</M>
             </>
           ),
         },
@@ -166,7 +166,11 @@ trotzdem divergiert sie (harmonische Reihe)!
             </ul>,
             <p>Selbstkontrolle: Schon die Partialsumme √1+√2+√3+√4 ≈ 1+1,41+1,73+2 = 6,14 wächst schnell und unbegrenzt. Frage: Warum ist aₖ → 0 nur notwendig und nicht hinreichend — und welches berühmte Beispiel (aus dem 📝-Kasten) zeigt das?</p>,
           ),
-          solution: 'aₖ = √k → ∞ (keine Nullfolge)\n→ Reihe divergiert.',
+          solution: (
+            <>
+              {'Diese Reihe kann nicht konvergieren, da '}<M>{'(\\sqrt{k})_{k\\in\\mathbb{N}}'}</M>{' keine Nullfolge ist (die Summanden bilden keine Nullfolge).'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -207,7 +211,7 @@ trotzdem divergiert sie (harmonische Reihe)!
           ),
           solution: (
             <>
-              <Frac n="1" d="√k" />{' ≥ '}<Frac n="1" d="k" />{' für alle k ≥ 1.\nDa Σ '}<Frac n="1" d="k" />{' divergiert, divergiert nach dem Minorantenkriterium auch Σ '}<Frac n="1" d="√k" />{'.'}
+              {'Es ist '}<M>{'\\frac{1}{\\sqrt{k}} \\ge \\frac{1}{k}'}</M>{' für alle '}<M>{'k\\in\\mathbb{N}^{*}'}</M>{'. Da '}<M>{'\\sum_{k=1}^{\\infty}\\frac{1}{k}'}</M>{' divergiert (harmonische Reihe), divergiert nach dem Minorantenkriterium auch die Reihe '}<M>{'\\sum_{k=1}^{\\infty}\\frac{1}{\\sqrt{k}}'}</M>{'.'}
             </>
           ),
         },
@@ -257,7 +261,7 @@ Ohne Vorzeichen wäre Σ 1/k divergent → nur bedingt.`}</pre>
           ),
           solution: (
             <>
-              {'aₖ := '}<Frac n="1" d="√k" />{' ist monoton fallend und lim aₖ = 0.\nNach dem Leibnizkriterium konvergiert die Reihe.'}
+              {'Definiere '}<M>{'a_k := \\frac{1}{\\sqrt{k}}'}</M>{' für '}<M>{'k\\in\\mathbb{N}^{*}'}</M>{'. Es ist '}<M>{'a_{k+1} \\le a_k'}</M>{' für alle '}<M>{'k\\in\\mathbb{N}'}</M>{' und '}<M>{'\\lim_{k\\to\\infty} a_k = 0'}</M>{'.\nNach dem Leibnizkriterium konvergiert die Reihe.'}
             </>
           ),
         },
@@ -308,7 +312,7 @@ L = 1/2 < 1 → konvergiert.`}</pre>
           ),
           solution: (
             <>
-              {'ᵏ√('}<Frac n="1" d="√k" />{')ᵏ = '}<Frac n="1" d="√k" />{' → 0 < 1\nNach dem Wurzelkriterium konvergiert die Reihe.'}
+              {'Es ist '}<M>{'\\sqrt[k]{\\left(\\frac{1}{\\sqrt{k}}\\right)^{k}} = \\frac{1}{\\sqrt{k}}'}</M>{' und somit '}<M>{'\\lim_{k\\to\\infty}\\sqrt[k]{\\left(\\frac{1}{\\sqrt{k}}\\right)^{k}} = 0 < 1'}</M>{'.\nNach dem Wurzelkriterium konvergiert die Reihe.'}
             </>
           ),
         },
@@ -360,8 +364,9 @@ L = 1/2 < 1 → konvergiert.
           ),
           solution: (
             <>
-              {'Wurzelkrit.: ᵏ√('}<Frac n="k" d="3ᵏ" />{') = '}<Frac n="ᵏ√k" d="3" />{' → '}<Frac n="1" d="3" />{' < 1 → konvergiert\n\n'}
-              {'Quotientenkrit.: '}<Frac n="a_{k+1}" d="aₖ" />{' = '}<Frac n="k+1" d="3k" />{' → '}<Frac n="1" d="3" />{' < 1 → konvergiert'}
+              {'Definiere '}<M>{'a_k := \\frac{k}{3^{k}}'}</M>{' für '}<M>{'k\\in\\mathbb{N},\\,k\\ge 2'}</M>{'.\n'}
+              {'Mit Wurzelkriterium: '}<M>{'\\sqrt[k]{|a_k|} = \\sqrt[k]{\\frac{k}{3^{k}}} = \\frac{\\sqrt[k]{k}}{3} \\to \\frac{1}{3} < 1'}</M>{' für '}<M>{'k\\to\\infty'}</M>{'. Nach Wurzelkriterium konvergiert die Reihe.\n'}
+              {'Mit Quotientenkriterium: '}<M>{'\\left|\\frac{a_{k+1}}{a_k}\\right| = \\left|\\frac{k+1}{3^{k+1}}\\cdot\\frac{3^{k}}{k}\\right| = \\frac{1}{3}\\left(1+\\frac{1}{k}\\right) \\to \\frac{1}{3} < 1'}</M>{' für '}<M>{'k\\to\\infty'}</M>{'. Nach Quotientenkriterium konvergiert die Reihe.'}
             </>
           ),
         },
@@ -404,11 +409,7 @@ Leibniz greift nicht, obwohl Vorzeichen wechseln.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Glieder (k=2..) +0,5; −0,667; +0,75; −0,8 … wachsen betragsmäßig gegen 1, schrumpfen nicht. Frage: Warum scheitert hier das Leibnizkriterium trotz wechselnder Vorzeichen, und welcher Grenzwert von 1 − 1/k entscheidet das?</p>,
           ),
-          solution: (
-            <>
-              {'|aₖ| = |1 − '}<Frac n="1" d="k" />{'| → 1 ≠ 0 (keine Nullfolge)\n→ Reihe divergiert.'}
-            </>
-          ),
+          solution: 'Die Summanden bilden keine Nullfolge. Also konvergiert die Reihe nicht.',
         },
         {
           letter: 'c',
@@ -452,8 +453,9 @@ L = 2/5 < 1  ⟹ konvergiert.`}</pre>
           ),
           solution: (
             <>
-              {'Wurzelkrit.: ᵏ√|aₖ| = '}<Frac n="2" d="5" />{' · '}<Frac n="ᵏ√4" d="k^(2/k)" />{' → '}<Frac n="2" d="5" />{' < 1 → konvergiert\n\n'}
-              {'Quotientenkrit.: '}<Frac n="aₖ₊₁" d="aₖ" />{' = '}<Frac n="2" d="5" />{' · ('}<Frac n="k" d="k+1" />{')² → '}<Frac n="2" d="5" />{' < 1 → konvergiert'}
+              {'Definiere '}<M>{'a_k := \\frac{2^{k+2}}{k^{2}5^{k}}'}</M>{' für '}<M>{'k\\in\\mathbb{N},\\,k\\ge 1'}</M>{'.\n'}
+              {'Mit Wurzelkriterium: '}<M>{'\\sqrt[k]{|a_k|} = \\sqrt[k]{\\frac{2^{k}\\cdot 2^{2}}{k\\cdot k\\cdot 5^{k}}} = \\frac{2\\,\\sqrt[k]{4}}{\\sqrt[k]{k}\\cdot\\sqrt[k]{k}\\cdot 5} \\to \\frac{2}{5} < 1'}</M>{' für '}<M>{'k\\to\\infty'}</M>{'. Nach Wurzelkriterium konvergiert die Reihe.\n'}
+              {'Mit Quotientenkriterium: '}<M>{'\\left|\\frac{a_{k+1}}{a_k}\\right| = \\left|\\frac{2^{k+3}}{(k+1)^{2}5^{k+1}}\\cdot\\frac{k^{2}5^{k}}{2^{k+2}}\\right| = \\frac{2}{5}\\left(\\frac{k}{k+1}\\right)^{2} \\to \\frac{2}{5} < 1'}</M>{' für '}<M>{'k\\to\\infty'}</M>{'. Nach Quotientenkriterium konvergiert die Reihe.'}
             </>
           ),
         },
@@ -502,9 +504,8 @@ lim xₙ = 1 − 0 = 1`}</pre>
           ),
           solution: (
             <>
-              {'xₙ = '}<Frac n="1" d="√(n+1)" />{' − 1  (Teleskopsumme)\n'}
-              {'lim xₙ = 0 − 1 = −1\n'}
-              {'→ '}<M>{'\\sum_{k=1}^{\\infty} \\left(\\frac{1}{\\sqrt{k+1}} - \\frac{1}{\\sqrt{k}}\\right)'}</M>{' = −1'}
+              {'Definiere '}<M>{'x_n := \\sum_{k=1}^{n}\\left(\\frac{1}{\\sqrt{k+1}}-\\frac{1}{\\sqrt{k}}\\right) = \\frac{1}{\\sqrt{n+1}}-1'}</M>{'. Es gilt '}<M>{'\\lim_{n\\to\\infty} x_n = -1'}</M>{'. Die Reihe konvergiert also und\n'}
+              <M>{'\\sum_{k=1}^{\\infty}\\left(\\frac{1}{\\sqrt{k+1}}-\\frac{1}{\\sqrt{k}}\\right) = \\lim_{n\\to\\infty}\\sum_{k=1}^{n}\\left(\\frac{1}{\\sqrt{k+1}}-\\frac{1}{\\sqrt{k}}\\right) = \\lim_{n\\to\\infty} x_n = -1'}</M>
             </>
           ),
         },
@@ -564,7 +565,14 @@ IS: yₙ₊₁ ≥ yₙ (IV) ⟹ 6+yₙ₊₁ ≥ 6+yₙ
             </ul>,
             <p>Selbstkontrolle: x₀=1, x₁=√3≈1,73, x₂=√(2+√3)≈1,93 — tatsächlich steigend. Frage: Wozu dient die Induktionsvoraussetzung im Schritt, und an welcher Stelle der Rechnung geht die Monotonie der Wurzel ein?</p>,
           ),
-          solution: 'IA (n=0): x₀=1, x₁=√3; somit x₁≥x₀ ✓\n\nIS (n→n+1): Sei xₙ ≤ xₙ₊₁ (IV). Dann:\nxₙ₊₂ = √(2+xₙ₊₁) ≥^(IV) √(2+xₙ) = xₙ₊₁  □',
+          solution: (
+            <>
+              {'Beweis durch vollständige Induktion.\n'}
+              {'IA (n=0): '}<M>{'x_0 = 1,\\; x_1 = \\sqrt{2+1} = \\sqrt{3}'}</M>{'; somit '}<M>{'x_1 \\ge x_0'}</M>{'.\n'}
+              {'IS (n→n+1): Sei '}<M>{'n\\in\\mathbb{N}'}</M>{' so, dass '}<M>{'x_n \\le x_{n+1}'}</M>{' gilt (IV). Dann folgt\n'}
+              <M>{'x_{n+2} = \\sqrt{2+x_{n+1}} \\;\\overset{\\text{(IV)}}{\\ge}\\; \\sqrt{2+x_n} = x_{n+1}. \\quad\\square'}</M>
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -608,7 +616,14 @@ IS: yₙ ≤ 3 (IV) ⟹ 6+yₙ ≤ 6+3 = 9
             </ul>,
             <p>Selbstkontrolle: x₀=1, x₁≈1,73, x₂≈1,93, x₃≈1,98 — alle Glieder bleiben unter 2 und nähern sich an. Frage: Warum erlaubt die IV den Schritt 2 + xₙ ≤ 4, und welche Eigenschaft der Wurzel überträgt diese Schranke auf xₙ₊₁?</p>,
           ),
-          solution: 'IA (n=0): x₀=1 ≤ 2 ✓\n\nIS (n→n+1): Sei xₙ ≤ 2 (IV). Dann:\nxₙ₊₁ = √(2+xₙ) ≤^(IV) √(2+2) = √4 = 2  □',
+          solution: (
+            <>
+              {'Beweis durch vollständige Induktion.\n'}
+              {'IA (n=0): '}<M>{'x_0 = 1 \\le 2'}</M>{' ✓\n'}
+              {'IS (n→n+1): Sei '}<M>{'n\\in\\mathbb{N}'}</M>{' so, dass '}<M>{'x_n \\le 2'}</M>{' gilt (IV). Dann folgt\n'}
+              <M>{'x_{n+1} = \\sqrt{2+x_n} \\;\\overset{\\text{(IV)}}{\\le}\\; \\sqrt{2+2} = \\sqrt{4} = 2. \\quad\\square'}</M>
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -657,7 +672,13 @@ yₙ ∈ [0,3] → y = −2 verwerfen → Grenzwert = 3.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Setze x=2 in die Fixpunktgleichung ein: √(2+2) = √4 = 2 = x ✓ (x=−1 ergäbe √1 = 1 ≠ −1). Frage: Warum darf man lim xₙ₊₁ durch lim xₙ ersetzen, und nach welchem Kriterium scheidet x = −1 als Grenzwert aus?</p>,
           ),
-          solution: '(xₙ) monoton wachsend (a) und beschränkt durch 2 (b) → konvergiert.\n\nSei x = lim xₙ:\nx = √(2+x)  →  x²−x−2 = 0  →  (x−2)(x+1) = 0\nx=2 oder x=−1. Da xₙ ∈ [1,2]: Grenzwert = 2.',
+          solution: (
+            <>
+              {'Die Folge '}<M>{'(x_n)'}</M>{' ist nach (a) monoton wachsend und nach (b) durch 2 nach oben beschränkt. Da sie monoton wachsend ist, ist sie durch '}<M>{'x_0 = 1'}</M>{' nach unten beschränkt. Nach dem Satz über die Konvergenz monotoner, beschränkter Folgen konvergiert '}<M>{'(x_n)'}</M>{' gegen eine Zahl '}<M>{'x\\in[1,2]'}</M>{'. Es ist nach dem Hinweis\n'}
+              <M>{'x = \\lim_{n\\to\\infty} x_n = \\lim_{n\\to\\infty} x_{n+1} = \\lim_{n\\to\\infty}\\sqrt{2+x_n} = \\sqrt{2+\\lim_{n\\to\\infty} x_n} = \\sqrt{2+x}.'}</M>
+              {'\nDamit erfüllt '}<M>{'x'}</M>{' die Gleichung '}<M>{'x^{2} = 2+x'}</M>{' bzw. '}<M>{'x^{2}-x-2 = 0'}</M>{'. Lösungen sind (mit p-q-Formel) '}<M>{'x = 2'}</M>{' oder '}<M>{'x = -1'}</M>{'. Da aber '}<M>{'x\\in[1,2]'}</M>{', kommt nur '}<M>{'x = 2'}</M>{' als Grenzwert in Frage. Somit konvergiert '}<M>{'(x_n)'}</M>{' gegen 2.'}
+            </>
+          ),
         },
       ],
     },
@@ -714,7 +735,12 @@ Ergebnis: x + 3  (Rest 0).`}</pre>
             </ul>,
             <p>Selbstkontrolle (Probe durch Rückmultiplikation): (x−2)·(−x²+2x+3) = −x³+2x²+3x +2x²−4x−6 = −x³+4x²−x−6 ✓. Frage: Warum muss der Grad des Rests am Ende kleiner als der des Divisors sein, und warum dreht das Subtrahieren alle Vorzeichen des Zwischenterms?</p>,
           ),
-          solution: '(−x³+4x²−x−6) : (x−2) = −x²+2x+3\n\nProbe: (x−2)·(−x²+2x+3) = −x³+4x²−x−6 ✓',
+          solution: (
+            <>
+              {'Polynomdivision liefert\n'}
+              <M>{'(-x^{3}+4x^{2}-x-6):(x-2) = -x^{2}+2x+3'}</M>{'  (Rest 0).'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -757,7 +783,12 @@ Ergebnis: 2x + 1, Rest 1 → 2x+1 + 1/(x²+x+1).`}</pre>
             </ul>,
             <p>Selbstkontrolle (Probe): (3x²−2x+1)·(x+4) = 3x³−2x²+x +12x²−8x+4 = 3x³+10x²−7x+4 ✓. Frage: Warum ist das Ergebnis hier vom Grad 1, und an welcher Stelle muss man besonders auf das Vorzeichen beim Subtrahieren achten?</p>,
           ),
-          solution: '(3x³+10x²−7x+4) : (3x²−2x+1) = x+4\n\nProbe: (3x²−2x+1)·(x+4) = 3x³+10x²−7x+4 ✓',
+          solution: (
+            <>
+              {'Polynomdivision liefert\n'}
+              <M>{'(3x^{3}+10x^{2}-7x+4):(3x^{2}-2x+1) = x+4'}</M>{'  (Rest 0).'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -805,8 +836,8 @@ Ergebnis: x + (−x+1)/(x²+1).`}</pre>
           ),
           solution: (
             <>
-              {'(x⁵−2x³−x²+1) : (2x³−2) = '}<Frac n="1" d="2" />{'x² − 1 + '}<Frac n="−1" d="2x³−2" />{'\n\n'}
-              {'Probe: (2x³−2)·('}<Frac n="1" d="2" />{'x²−1)+(−1) = x⁵−2x³−x²+1 ✓'}
+              {'Polynomdivision liefert\n'}
+              <M>{'(x^{5}-2x^{3}-x^{2}+1):(2x^{3}-2) = \\tfrac{1}{2}x^{2}-1+\\frac{-1}{2x^{3}-2}.'}</M>
             </>
           ),
         },

@@ -1,4 +1,5 @@
 import type { MatheBlatt } from '../../types'
+import M from '../../utils/M'
 import { h } from './shared'
 import FunctionPlot from '../../components/FunctionPlot'
 
@@ -58,7 +59,15 @@ Kandidat {(n, 2n) : n≥1}?  fehlt (0,0) → zu klein → NEIN`}</pre>
             </ul>,
             <p>Selbstkontrolle: Setze z=−3 ein. Liegt (−3, 3) in jedem „Ja"-Kandidaten? In (ii): −3=−n mit n=3 → (−3,3) ✓; in (iii): (−3,|−3|)=(−3,3) ✓; in ℤ×ℕ liegt es auch, aber ℤ×ℕ enthält zusätzlich falsche Paare. Frage: Warum reicht es nicht, dass eine Menge alle RICHTIGEN Paare enthält — welche zweite Bedingung (über falsche Paare) muss zusätzlich gelten?</p>,
           ),
-          solution: '(i)  nein – ℤ × ℕ enthält Paare wie (1, 5), die nicht auf dem Graph liegen.\n(ii) ja   – für z < 0: (−n, n); für z = 0: (0, 0) ∈ erste Menge; für z > 0: (n, n) ∈ zweite Menge.\n(iii) ja  – exakt die mengentheoretische Definition des Graphen von f.',
+          solution: (
+            <>
+              {'(i) '}<M>{'\\mathbb{Z} \\times \\mathbb{N}'}</M>{': nein'}
+              {'\n'}
+              {'(ii) '}<M>{'\\{(-n, n) : n \\in \\mathbb{N}\\} \\cup \\{(n, n) : n \\in \\mathbb{N}^{*}\\}'}</M>{': ja'}
+              {'\n'}
+              {'(iii) '}<M>{'\\{(z, |z|) : z \\in \\mathbb{Z}\\}'}</M>{': ja'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -100,7 +109,15 @@ Kandidat ℝ × ℝ?  (0, 9): f(0)=0≠9 → zu groß → NEIN`}</pre>
             </ul>,
             <p>Selbstkontrolle: Liegt (2, 1) in (ii)? Setze x=1 in (x+1, x) → (2, 1) ✓, und f(2)=2−1=1 ✓. Frage: Warum beschreiben {'{(x+1, x):x∈ℝ}'} und {'{(x, x−1):x∈ℝ}'} dieselbe Menge, obwohl „x" in beiden Ausdrücken eine andere Rolle spielt — was genau ändert die Umbenennung der gebundenen Variable?</p>,
           ),
-          solution: '(i)  nein – zu groß.\n(ii) ja   – Umsubstitution t = x+1 liefert {(t, t−1) : t ∈ ℝ} = Graph(f).\n(iii) ja  – exakt die Definition.',
+          solution: (
+            <>
+              {'(i) '}<M>{'\\mathbb{R} \\times \\mathbb{R}'}</M>{': nein'}
+              {'\n'}
+              {'(ii) '}<M>{'\\{(x + 1, x) : x \\in \\mathbb{R}\\}'}</M>{': ja'}
+              {'\n'}
+              {'(iii) '}<M>{'\\{(x, x - 1) : x \\in \\mathbb{R}\\}'}</M>{': ja'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -140,7 +157,15 @@ Kandidat ℝ × ℝ?  (0, 9): f(0)=0≠9 → zu groß → NEIN`}</pre>
             </ul>,
             <p>Selbstkontrolle: Liegt (3, 1) im Graphen? Ja, f(3)=1 → (3,1). Liegt (3,1) in {'{1}×ℕ'}? Nein, dort ist die erste Komponente immer 1, nie 3. Frage: Warum ist {'ℕ × {1}'} der Graph, aber {'{1} × ℕ'} nicht — obwohl beide aus „1" und „allen natürlichen Zahlen" gebaut sind? Worauf kommt es bei der Reihenfolge der Komponenten an?</p>,
           ),
-          solution: '(i)  ja   – ℕ × {1} = {(n, 1) : n ∈ ℕ} = Graph(f).\n(ii) ja   – exakt die Definition.\n(iii) nein – {1} × ℕ = {(1, n) : n ∈ ℕ} vertauscht Input und Output.',
+          solution: (
+            <>
+              {'(i) '}<M>{'\\mathbb{N} \\times \\{1\\}'}</M>{': ja'}
+              {'\n'}
+              {'(ii) '}<M>{'\\{(n, 1) : n \\in \\mathbb{N}\\}'}</M>{': ja'}
+              {'\n'}
+              {'(iii) '}<M>{'\\{1\\} \\times \\mathbb{N}'}</M>{': nein'}
+            </>
+          ),
         },
       ],
     },
@@ -215,7 +240,23 @@ g⁻¹([1, 4]) = {x : 1 ≤ x² ≤ 4}
             </ul>,
             <p>Selbstkontrolle (v) vs. (vi): Beide ergeben [−5,5]. Probe x=−4: |−4|=4 ∈ [0,5] ✓ und ∈ [−5,5] ✓ → −4 in beiden Urbildern. Probe x=6: |6|=6 ∉ [0,5] und ∉ [−5,5] → 6 in keinem. Frage: Warum ist h⁻¹([−5,5]) genau dasselbe wie h⁻¹([0,5]), obwohl die Zielmengen verschieden sind — was sagt das darüber, welcher Teil einer Zielmenge beim Urbild von |x| überhaupt „wirkt"?</p>,
           ),
-          solution: '(i)   f(ℝ \\ {2}) = [0, ∞)   (4 = (−2)² wird trotz x=2 ∉ Domain erreicht)\n(ii)  f⁻¹({4, 9}) = {−2, 3, −3}   (x=2 ist ausgeschlossen)\n(iii) h([0, 5]) = [0, 5]\n(iv)  h([−5, 5]) = [0, 5]\n(v)   h⁻¹([0, 5]) = [−5, 5]\n(vi)  h⁻¹([−5, 5]) = [−5, 5]   (da |x| ≥ 0, wirkt nur der Teil [0,5])\n(vii) h(ℤ) = ℕ',
+          solution: (
+            <>
+              {'(i) '}<M>{'f(\\mathbb{R} \\setminus \\{2\\}) = [0, \\infty)'}</M>
+              {'\n'}
+              {'(ii) '}<M>{'f^{-1}(\\{4, 9\\}) = \\{-2, 3, -3\\}'}</M>
+              {'\n'}
+              {'(iii) '}<M>{'h([0, 5]) = [0, 5]'}</M>
+              {'\n'}
+              {'(iv) '}<M>{'h([-5, 5]) = [0, 5]'}</M>
+              {'\n'}
+              {'(v) '}<M>{'h^{-1}([0, 5]) = [-5, 5]'}</M>
+              {'\n'}
+              {'(vi) '}<M>{'h^{-1}([-5, 5]) = [-5, 5]'}</M>
+              {'\n'}
+              {'(vii) '}<M>{'h(\\mathbb{Z}) = \\mathbb{N}'}</M>
+            </>
+          ),
         },
       ],
     },
@@ -275,7 +316,11 @@ Ziel 1: a oder c.   Ziel 2: b oder d.
             </ul>,
             <p>Selbstkontrolle für M={'{1,3,4}'}: Sind die drei Bilder φ(1)=3, φ(3)=2, φ(4)=1 alle verschieden (injektiv)? Decken sie {'{1,2,3}'} vollständig ab (surjektiv)? Beides ja → bijektiv. Frage: Warum muss bei endlichem M und Y für eine Bijektion zwingend |M|=|Y| gelten, und was geht schief, wenn M ein Element zu viel oder zu wenig hat?</p>,
           ),
-          solution: 'M = {1, 3, 4}: φ(1)=3, φ(3)=2, φ(4)=1 – injektiv (alle Bilder verschieden) und surjektiv (trifft 1, 2, 3).',
+          solution: (
+            <>
+              {'Zum Beispiel '}<M>{'M = \\{1, 3, 4\\}'}</M>{'.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -321,7 +366,11 @@ surjektiv (1,2 da) ✓; nicht injektiv (b,c↦2) ✓.`}</pre>
             </ul>,
             <p>Selbstkontrolle für M={'{1,2,3,4}'}: Kommen 1, 2, 3 alle als Bild vor (surjektiv)? Ja. Gibt es zwei Inputs mit gleichem Bild (nicht injektiv)? Ja: φ(1)=φ(2)=3. Frage: Warum kann eine surjektive, aber nicht injektive Abbildung φ : M → Y mit |Y|=3 niemals nur 3 Elemente in M haben — wie viele braucht sie mindestens?</p>,
           ),
-          solution: 'M = X = {1,2,3,4,5}: surjektiv (alle Werte 1,2,3 getroffen), nicht injektiv (z. B. φ(1)=φ(2)=φ(5)=3).',
+          solution: (
+            <>
+              {'zum Beispiel '}<M>{'M = X'}</M>{'.'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -358,7 +407,11 @@ M = {a, b} wäre falsch: ψ(a)=ψ(b)=1 → Kollision → nicht injektiv`}</pre>
             </ul>,
             <p>Selbstkontrolle für M={'{1}'}: Gibt es zwei Inputs mit gleichem Bild (Kollision)? Nein (nur ein Element) → injektiv. Werden alle Ziele 1,2,3 getroffen? Nein, nur 3 → nicht surjektiv. Frage: Warum ist jede einelementige Teilmenge automatisch injektiv, und warum kann sie (bei |Y|≥2) niemals surjektiv sein?</p>,
           ),
-          solution: 'M = {1}: φ(1)=3 – injektiv (nur ein Element), nicht surjektiv (1 und 2 nicht getroffen).',
+          solution: (
+            <>
+              {'zum Beispiel '}<M>{'M = \\{1\\}'}</M>{'.'}
+            </>
+          ),
         },
         {
           letter: 'd',
@@ -404,7 +457,11 @@ weder noch (d)       | Kollision UND ein Ziel fehlt`}</pre>
             </ul>,
             <p>Selbstkontrolle für M={'{1,2}'}: Gibt es eine Kollision (nicht injektiv)? Ja, φ(1)=φ(2)=3. Fehlt ein Y-Wert (nicht surjektiv)? Ja, 1 und 2 werden nie getroffen. Frage: Warum genügt es, zwei Inputs mit gleichem Bild zu wählen, um „weder injektiv noch surjektiv" auf einen Schlag zu erreichen — welche beiden Defekte erzeugt diese eine Wahl gleichzeitig?</p>,
           ),
-          solution: 'M = {1, 2}: φ(1)=φ(2)=3 – nicht injektiv (Kollision bei 3), nicht surjektiv (1 und 2 nicht getroffen).',
+          solution: (
+            <>
+              {'zum Beispiel '}<M>{'M = \\{1, 2\\}'}</M>{'.'}
+            </>
+          ),
         },
       ],
     },
@@ -457,7 +514,13 @@ p ∘ q: Bild(q) = [0,∞) ⊆ Dom(p) = ℝ ✓ → definierbar.
             </ul>,
             <p>Selbstkontrolle: Berechne (f∘g)(0) = (√0+2)³−1 = 2³−1 = 7. Und g∘f bei x=0 bräuchte g(f(0)) = g(−1) = √(−1)+2 — die Wurzel aus −1 existiert in ℝ nicht → bestätigt: g∘f undefinierbar. Frage: Welche Werte nimmt f(x)=x³−1 an, und warum scheitert g∘f genau daran, dass g eine Wurzel enthält?</p>,
           ),
-          solution: 'f ∘ g : [0,∞) → ℝ,  x ↦ (√x + 2)³ − 1\n\ng ∘ f ist nicht möglich, da f(ℝ) = ℝ ⊄ [0,∞) = Dom(g).',
+          solution: (
+            <>
+              <M>{'f \\circ g : [0, \\infty) \\to \\mathbb{R},\\quad x \\mapsto (\\sqrt{x} + 2)^{3} - 1'}</M>
+              {'\n'}
+              <M>{'g \\circ f'}</M>{' ist nicht möglich, da '}<M>{'f(\\mathbb{R}) = \\mathbb{R} \\not\\subseteq [0, \\infty)'}</M>{'.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -524,7 +587,25 @@ f∘g (= x für x≥1, =1 für x<1):
             </ul>,
             <p>Selbstkontrolle: Prüfe (g∘f)(3)=g(4)=3 und (f∘g)(0.5)=f(0)=1=(f∘g)(0) (gleicher Output → f∘g nicht injektiv). Frage: Warum ist g∘f bijektiv, obwohl weder f (nicht surjektiv) noch g (nicht injektiv) für sich bijektiv ist — wie ergänzen sich ihre Defekte beim Verketten?</p>,
           ),
-          solution: 'f: injektiv, nicht surjektiv, nicht bijektiv  (0 ∉ Bild f)\ng: nicht injektiv, surjektiv, nicht bijektiv  (g(0)=g(0.5)=0)\n\ng∘f: [0,∞)→[0,∞), x↦x  → bijektiv\n\nf∘g: [0,∞)→[0,∞), x↦{ x falls x≥1; 1 sonst }\n  → nicht injektiv, nicht surjektiv, nicht bijektiv',
+          solution: (
+            <>
+              {'Es ist'}
+              {'\n'}
+              <M>{'g \\circ f : [0, \\infty) \\to [0, \\infty),\\quad x \\mapsto x'}</M>
+              {'\n'}
+              {'und'}
+              {'\n'}
+              <M>{'f \\circ g : [0, \\infty) \\to [0, \\infty),\\quad x \\mapsto \\begin{cases} x, & x \\ge 1 \\\\ 1, & \\text{sonst} \\end{cases}'}</M>
+              {'\n\n'}
+              {'f: injektiv, nicht surjektiv, nicht bijektiv'}
+              {'\n'}
+              {'g: nicht injektiv, surjektiv, nicht bijektiv'}
+              {'\n'}
+              <M>{'g \\circ f'}</M>{': injektiv, surjektiv, bijektiv'}
+              {'\n'}
+              <M>{'f \\circ g'}</M>{': nicht injektiv, nicht surjektiv, nicht bijektiv'}
+            </>
+          ),
           abbildung: (
             <div className="venn-grid">
               <FunctionPlot
@@ -629,7 +710,31 @@ linkseindeutig? n+1 = k+1 ⟹ n=k → JA
             </ul>,
             <p>Selbstkontrolle: Für R₁ ist (1, −1) ein Element (x=−1: ((−1)², (−1)³)=(1,−1)) und (1, 1) auch (x=1). Gleiche linke 1, zwei rechte → nicht rechtseindeutig → keine Funktion. Frage: Warum reicht Rechtseindeutigkeit allein nicht für eine Funktion, und welche zweite Eigenschaft muss zusätzlich gelten?</p>,
           ),
-          solution: 'R₁ ist:\n  – nicht linkstotal  (negative Zahlen sind kein Quadrat)\n  – rechtstotal       (x³ : ℝ → ℝ ist surjektiv)\n  – linkseindeutig    (x³ = y³ ⟹ x = y ⟹ x² = y²)\n  – nicht rechtseindeutig  (x=1 und x=−1 liefern (1,1) und (1,−1))\n\nR₂ ist:\n  – linkstotal        (m | m für alle m)\n  – rechtstotal       (1 | n für alle n)\n  – nicht linkseindeutig  (2|4 und 4|4)\n  – nicht rechtseindeutig (2|4 und 2|6)\n\nEine Funktion ist nicht dabei.',
+          solution: (
+            <>
+              <M>{'R_1'}</M>{' ist'}
+              {'\n'}
+              {'– nicht linkstotal,'}
+              {'\n'}
+              {'– rechtstotal,'}
+              {'\n'}
+              {'– linkseindeutig,'}
+              {'\n'}
+              {'– nicht rechtseindeutig.'}
+              {'\n\n'}
+              <M>{'R_2'}</M>{' ist'}
+              {'\n'}
+              {'– linkstotal,'}
+              {'\n'}
+              {'– rechtstotal,'}
+              {'\n'}
+              {'– nicht linkseindeutig,'}
+              {'\n'}
+              {'– nicht rechtseindeutig.'}
+              {'\n\n'}
+              {'Eine Funktion ist nicht dabei.'}
+            </>
+          ),
         },
       ],
     },
@@ -684,7 +789,17 @@ Allgemein: jedes endliche Produkt abzählbarer Mengen ist abzählbar.`}</pre>
             </ul>,
             <p>Selbstkontrolle: In welcher Diagonale liegt (3,2)? Summe 3+2=5 → Diagonale 5 (die 6 Paare (5,0),(4,1),(3,2),(2,3),(1,4),(0,5)). Sie wird nach endlich vielen Schritten erreicht. Frage: Warum garantiert das Sortieren nach der Summe m+n, dass jedes Paar eine endliche Nummer bekommt — und warum scheitert das zeilenweise Aufzählen genau daran?</p>,
           ),
-          solution: 'Ja, ℕ × ℕ ist abzählbar.\n\nDie Diagonalen-Aufzählung liefert eine Bijektion f : ℕ → ℕ×ℕ:\n(0,0), (1,0), (0,1), (2,0), (1,1), (0,2), (3,0), ...\n\nPaar (m,n) liegt in Diagonale m+n und ist eindeutig aufzählbar.',
+          solution: (
+            <>
+              {'Ja, '}<M>{'\\mathbb{N} \\times \\mathbb{N}'}</M>{' ist abzählbar.'}
+              {'\n\n'}
+              {'Betrachte das Schema'}
+              {'\n'}
+              <M>{'\\begin{matrix} (0,0) & (0,1) & (0,2) & (0,3) & \\cdots \\\\ (1,0) & (1,1) & (1,2) & (1,3) & \\cdots \\\\ (2,0) & (2,1) & (2,2) & (2,3) & \\cdots \\\\ (3,0) & (3,1) & (3,2) & (3,3) & \\cdots \\\\ \\vdots & \\vdots & \\vdots & \\vdots & \\vdots \\end{matrix}'}</M>
+              {'\n\n'}
+              {'und zähle der Reihe nach die Diagonalen in obigem Schema auf, also '}<M>{'(0,0)'}</M>{', dann '}<M>{'(0,1), (1,0)'}</M>{', dann '}<M>{'(0,2), (1,1), (2,0)'}</M>{' usw.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -732,7 +847,11 @@ surjektiv: zu k∈ℕ wähle n = 2k ∈ K, dann f(2k) = k ✓
             </ul>,
             <p>Selbstkontrolle: Ist K=ℕ\{'{0}'} wirklich echt? Ja, 0∈ℕ aber 0∉K. Triff k=5: n=6∈K, f(6)=5 ✓. Sind zwei verschiedene n,m je auf dasselbe abgebildet? Nein (n−1=m−1 ⟹ n=m). Frage: Warum funktioniert dieser „Verschiebe-Trick" bei ℕ, aber niemals bei einer endlichen Menge wie {'{1,2,3}'} — was unterscheidet endlich von unendlich?</p>,
           ),
-          solution: 'Wähle K := ℕ \\ {0} und f : K → ℕ, n ↦ n − 1.\n\nK ⊆ ℕ und K ≠ ℕ (da 0 ∉ K).\n\nf ist bijektiv:\n  – injektiv:  n−1 = m−1 ⟹ n = m\n  – surjektiv: für k ∈ ℕ gilt f(k+1) = k\n\nDamit existiert eine Bijektion von einer echten Teilmenge K auf ℕ → ℕ ist nach Dedekind unendlich. □',
+          solution: (
+            <>
+              <M>{'K := \\mathbb{N} \\setminus \\{0\\}'}</M>{', '}<M>{'M := \\mathbb{N}'}</M>{', '}<M>{'f : \\mathbb{N} \\setminus \\{0\\} \\to \\mathbb{N},\\ n \\mapsto n - 1'}</M>{'.'}
+            </>
+          ),
         },
       ],
     },

@@ -72,7 +72,7 @@ Kontrolle: k=1 → 1²=1 ✓, k=4 → 4²=16 ✓`}</pre>
           ),
           solution: (
             <>
-              <M>{'\\sum_{k=1}^{5} k^{k+1}'}</M>{' = 1² + 2³ + 3⁴ + 4⁵ + 5⁶'}
+              <M>{'1^2 + 2^3 + 3^4 + 4^5 + 5^6 = \\sum_{k=1}^{5} k^{k+1}'}</M>
             </>
           ),
         },
@@ -127,7 +127,7 @@ k=0: 2⁰=1, k=1: 2¹=2, k=2: 2²=4, k=3: 2³=8 ✓
           ),
           solution: (
             <>
-              <M>{'\\sum_{k=0}^{3} \\left(\\frac{1}{3}\\right)^{k}'}</M>{' = 1 + '}<Frac n="1" d="3" />{' + '}<Frac n="1" d="9" />{' + '}<Frac n="1" d="27" />
+              <M>{'1 + \\frac{1}{3} + \\frac{1}{9} + \\frac{1}{27} = \\sum_{k=0}^{3} \\left(\\frac{1}{3}\\right)^{k}'}</M>
             </>
           ),
         },
@@ -179,7 +179,7 @@ k=0: 1+0=1, k=1: 1+2=3, k=2: 1+4=5, k=3: 1+6=7 ✓
           ),
           solution: (
             <>
-              <M>{'\\sum_{k=0}^{6} (4 + 3k)'}</M>{' = 4 + 7 + 10 + 13 + 16 + 19 + 22'}
+              <M>{'4 + 7 + 10 + 13 + 16 + 19 + 22 = \\sum_{k=0}^{6} (4 + 3k)'}</M>
             </>
           ),
         },
@@ -238,7 +238,7 @@ Für n=2: C(2,0)+C(2,1)+C(2,2) = 1+2+1 = 4 = 2² ✓`}</pre>
           ),
           solution: (
             <>
-              {'2ⁿ = (1+1)ⁿ '}<M>{'\\overset{\\text{binom. Lehrsatz}}{=} \\sum_{k=0}^{n} \\binom{n}{k} \\cdot 1^{n-k} \\cdot 1^k'}</M>{'\n\n = '}<M>{'\\sum_{k=0}^{n} \\binom{n}{k}'}</M>{'  ✓'}
+              <M>{'2^n = (1+1)^n \\overset{\\text{binom. Lehrsatz}}{=} \\sum_{k=0}^{n} \\binom{n}{k} 1^{n-k} 1^k = \\sum_{k=0}^{n} \\binom{n}{k}'}</M>
             </>
           ),
         },
@@ -287,7 +287,7 @@ Für n=2: 1 − 2 + 1 = 0 ✓`}</pre>
           ),
           solution: (
             <>
-              {'0 = (1−1)ⁿ '}<M>{'\\overset{\\text{binom. Lehrsatz}}{=} \\sum_{k=0}^{n} \\binom{n}{k} \\cdot 1^{n-k} \\cdot (-1)^k'}</M>{'\n\n = '}<M>{'\\sum_{k=0}^{n} (-1)^k \\binom{n}{k}'}</M>{'  ✓'}
+              <M>{'0 = (1-1)^n \\overset{\\text{binom. Lehrsatz}}{=} \\sum_{k=0}^{n} \\binom{n}{k} 1^{n-k} (-1)^k = \\sum_{k=0}^{n} (-1)^k \\binom{n}{k}'}</M>
             </>
           ),
         },
@@ -373,11 +373,17 @@ IS: Σ(k=1..n+1) k = Σ(k=1..n) k + (n+1)
           ),
           solution: (
             <>
-              {'IA (n=1): '}<Frac n="1" d="1·2" />{' = '}<Frac n="1" d="2" />{' = 1 − '}<Frac n="1" d="2" />{' ✓\n\n'}
-              {'IS: '}<M>{'\\sum_{k=1}^{n+1}'}</M>{' = '}<M>{'\\sum_{k=1}^{n}'}</M>{' + '}<Frac n="1" d="(n+1)(n+2)" />{'\n'}
-              {'  = (1 − '}<Frac n="1" d="n+1" />{') + '}<Frac n="1" d="(n+1)(n+2)" />{'\n'}
-              {'  = 1 − '}<Frac n="n+2" d="(n+1)(n+2)" />{' + '}<Frac n="1" d="(n+1)(n+2)" />{'\n'}
-              {'  = 1 − '}<Frac n="n+1" d="(n+1)(n+2)" />{' = 1 − '}<Frac n="1" d="n+2" />{' ✓ □'}
+              <M>{'A(n): \\sum_{k=1}^{n} \\frac{1}{k(k+1)} = 1 - \\frac{1}{n+1}'}</M>{'\n'}
+              {'Behauptung: Für alle '}<M>{'n\\in\\mathbb{N},\\; n\\ge 1'}</M>{', gilt A(n).\n\n'}
+              {'IA (n=1): Linke Seite: '}<M>{'\\sum_{k=1}^{1} \\frac{1}{k(k+1)} = \\frac{1}{1\\cdot(1+1)} = \\frac{1}{2}'}</M>{'.\n'}
+              {'Rechte Seite: '}<M>{'1 - \\frac{1}{1+1} = 1 - \\frac{1}{2} = \\frac{1}{2}'}</M>{'.\n'}
+              {'Linke und rechte Seite stimmen überein. Also ist A(1) wahr.\n\n'}
+              {'IS (n→n+1): Sei '}<M>{'n\\in\\mathbb{N}^{*}'}</M>{'. Angenommen, es gilt '}<M>{'\\sum_{k=1}^{n} \\frac{1}{k(k+1)} = 1 - \\frac{1}{n+1}'}</M>{' (IV). Dann ist\n'}
+              <M>{'\\sum_{k=1}^{n+1} \\frac{1}{k(k+1)} = \\sum_{k=1}^{n} \\frac{1}{k(k+1)} + \\frac{1}{(n+1)(n+1+1)}'}</M>{'\n'}
+              <M>{'\\overset{\\text{(IV)}}{=} 1 - \\frac{1}{n+1} + \\frac{1}{(n+1)(n+2)}'}</M>{'\n'}
+              <M>{'= 1 + \\frac{1-(n+2)}{(n+1)(n+2)} = 1 + \\frac{-(n+1)}{(n+1)(n+2)}'}</M>{'\n'}
+              <M>{'= 1 - \\frac{1}{n+2}.'}</M>{'\n'}
+              {'Somit ist A(n+1) wahr. '}<M>{'\\square'}</M>
             </>
           ),
         },
@@ -440,7 +446,17 @@ IS: 2^(n+1) = 2·2ⁿ ≥(IV) 2·2n = 4n
             </ul>,
             <p>Selbstkontrolle: Prüfe n=3: 2³ = 8 ≥ 3+1 = 4 ✓. Frage: An welcher Stelle wird die IV benutzt und warum dreht sich das Ungleichungszeichen beim Multiplizieren mit 2 nicht — und was bedeutet die Aussage über exponentielles (2ⁿ) gegenüber linearem (n+1) Wachstum?</p>,
           ),
-          solution: 'IA (n=0): 2⁰ = 1 ≥ 1 ✓\n\nIS: Sei n ∈ ℕ, angenommen 2ⁿ ≥ n+1 (IV).\n\n2^(n+1) = 2·2ⁿ ≥(IV) 2(n+1) = 2n+2 ≥(n≥0) n+2 ✓\n\nSomit ist A(n+1) wahr. □',
+          solution: (
+            <>
+              <M>{'A(n): 2^n \\ge n+1'}</M>{'\n'}
+              {'Behauptung: Für alle '}<M>{'n\\in\\mathbb{N}'}</M>{' gilt A(n).\n\n'}
+              {'IA (n=0): Linke Seite: '}<M>{'2^0 = 1'}</M>{'. Rechte Seite: '}<M>{'0 + 1 = 1'}</M>{'.\n'}
+              <M>{'1 \\ge 1'}</M>{' ist wahr, also ist A(0) wahr.\n\n'}
+              {'IS (n→n+1): Sei '}<M>{'n\\in\\mathbb{N}'}</M>{'. Angenommen, es gilt '}<M>{'2^n \\ge n+1'}</M>{' (IV). Dann ist\n'}
+              <M>{'2^{n+1} = 2\\cdot 2^n \\;\\overset{\\text{(IV)}}{\\ge}\\; 2(n+1) = n+n+1+1 \\;\\overset{n\\ge 0}{\\ge}\\; n+1+1 = n+2.'}</M>{'\n'}
+              {'Somit ist A(n+1) wahr. '}<M>{'\\square'}</M>
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -503,7 +519,16 @@ IS: (n+1)³ − (n+1)
             </ul>,
             <p>Selbstkontrolle: Prüfe n=2: 3² − 3 = 9 − 3 = 6, 6 | 6 ✓; n=3: 27 − 3 = 24 = 6·4 ✓. Frage: Warum ist der "+0"-Trick (3ⁿ−1 = (3ⁿ−3)+2) erlaubt (was hat man dem Term wirklich hinzugefügt), und wie macht er die IV-Struktur 3ⁿ−3 sichtbar?</p>,
           ),
-          solution: 'IA (n=1): 3¹ − 3 = 0, 6 | 0 ✓\n\nIS: Sei n ∈ ℕ*, angenommen 6 | (3ⁿ−3) (IV).\n\n3^(n+1) − 3 = 3·3ⁿ − 3 = 3(3ⁿ−1)\n            = 3(3ⁿ−3+2) = 3(3ⁿ−3) + 6\n\nNach IV: 6 | (3ⁿ−3), also 6 | 3(3ⁿ−3).\nZusammen mit 6 | 6 folgt: 6 | (3^(n+1)−3). ✓ □',
+          solution: (
+            <>
+              {'A(n): '}<M>{'3^n - 3'}</M>{' ist durch 6 ohne Rest teilbar.\n'}
+              {'Behauptung: Für alle '}<M>{'n\\in\\mathbb{N},\\; n\\ge 1'}</M>{', gilt A(n).\n\n'}
+              {'IA (n=1): '}<M>{'3^1 - 3 = 0'}</M>{' ist durch 6 ohne Rest teilbar. Also ist A(1) wahr.\n\n'}
+              {'IS (n→n+1): Sei '}<M>{'n\\in\\mathbb{N}^{*}'}</M>{'. Angenommen, es ist '}<M>{'3^n - 3'}</M>{' ohne Rest durch 6 teilbar (IV). Es ist\n'}
+              <M>{'3^{n+1} - 3 = 3(3^n - 1) = 3(3^n - 3 + 2) = 3(3^n - 3) + 6.'}</M>{'\n'}
+              {'Da '}<M>{'3^n - 3'}</M>{' nach (IV) ohne Rest durch 6 teilbar ist, ist auch '}<M>{'3(3^n - 3)'}</M>{' ohne Rest durch 6 teilbar. Die Summe zweier solcher Zahlen ist wiederum ohne Rest durch 6 teilbar. Somit ist '}<M>{'3(3^n - 3) + 6'}</M>{' bzw. '}<M>{'3^{n+1} - 3'}</M>{' ohne Rest durch 6 teilbar. Also ist A(n+1) wahr. '}<M>{'\\square'}</M>
+            </>
+          ),
         },
       ],
     },
@@ -575,7 +600,18 @@ zusammen 2+2 = 4 = 2² ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: Zähle 𝒫({'{1,2,3}'}) — es sind ∅,{'{1}'},{'{2}'},{'{3}'},{'{1,2}'},{'{1,3}'},{'{2,3}'},{'{1,2,3}'} = 8 = 2³ ✓. Frage: Welche Bijektion verbindet "Teilmengen ohne n+1" mit "Teilmengen mit n+1", und warum ist 2ⁿ nicht überraschend (für jedes der n Elemente trifft man die binäre Entscheidung drin/draußen → 2·2·…·2)?</p>,
           ),
-          solution: 'IA (n=1): 𝒫({1}) = {∅,{1}}, |𝒫({1})| = 2 = 2¹ ✓\n\nIS: Sei n ∈ ℕ*, angenommen |𝒫({1,…,n})| = 2ⁿ (IV).\n\n𝒫({1,…,n+1}) = 𝒫({1,…,n}) ∪ {M ∪{n+1} : M ∈ 𝒫({1,…,n})}\n\nDiese Vereinigung ist disjunkt, beide Teile haben 2ⁿ Elemente.\n→ |𝒫({1,…,n+1})| = 2ⁿ + 2ⁿ = 2·2ⁿ = 2^(n+1) ✓ □',
+          solution: (
+            <>
+              {'Beweis durch vollständige Induktion.\n\n'}
+              {'IA (n=1): Die Behauptung stimmt für '}<M>{'n = 1'}</M>{', denn '}<M>{'|\\mathbb{P}(\\{1\\})| = |\\{\\emptyset, \\{1\\}\\}| = 2 = 2^1'}</M>{'.\n\n'}
+              {'IS (n→n+1): Angenommen, für ein '}<M>{'n\\in\\mathbb{N}^{*}'}</M>{' gilt '}<M>{'|\\mathbb{P}(\\{1,\\dots,n\\})| = 2^n'}</M>{' (IV). Wir zeigen, dass dann '}<M>{'|\\mathbb{P}(\\{1,\\dots,n+1\\})| = 2^{n+1}'}</M>{' gilt.\n'}
+              {'Es ist '}<M>{'\\mathbb{P}(\\{1,\\dots,n,n+1\\})'}</M>{' die disjunkte Vereinigung von '}<M>{'\\mathbb{P}(\\{1,\\dots,n\\})'}</M>{' und allen Teilmengen von '}<M>{'\\{1,\\dots,n,n+1\\}'}</M>{', die '}<M>{'n+1'}</M>{' als Element enthalten, also\n'}
+              <M>{'\\mathbb{P}(\\{1,\\dots,n,n+1\\}) = \\mathbb{P}(\\{1,\\dots,n\\}) \\;\\dot{\\cup}\\; \\{M \\,\\dot{\\cup}\\, \\{n+1\\} : M \\in \\mathbb{P}(\\{1,\\dots,n\\})\\}.'}</M>{'\n'}
+              {'Nach Induktionsvoraussetzung (IV) gilt '}<M>{'|\\mathbb{P}(\\{1,\\dots,n\\})| = 2^n'}</M>{' und '}<M>{'|\\{M \\,\\dot{\\cup}\\, \\{n+1\\} : M \\in \\mathbb{P}(\\{1,\\dots,n\\})\\}| = 2^n'}</M>{'. Somit ist\n'}
+              <M>{'|\\mathbb{P}(\\{1,\\dots,n,n+1\\})| = |\\mathbb{P}(\\{1,\\dots,n\\})| + |\\{M \\,\\dot{\\cup}\\, \\{n+1\\} : M \\in \\mathbb{P}(\\{1,\\dots,n\\})\\}|'}</M>{'\n'}
+              <M>{'= 2^n + 2^n = 2\\cdot 2^n = 2^{n+1}. \\quad\\square'}</M>
+            </>
+          ),
         },
       ],
     },
@@ -632,8 +668,8 @@ C(5,4) = 5!/(4!·1!) = 120/(24·1) = 5 ✓
           ),
           solution: (
             <>
-              {'C(n,1) = '}<Frac n="n!" d="1!·(n−1)!" />{' = '}<Frac n="n·(n−1)!" d="(n−1)!" />{' = n\n\n'}
-              {'C(n,n−1) = '}<Frac n="n!" d="(n−1)!·1!" />{' = '}<Frac n="n·(n−1)!" d="(n−1)!" />{' = n'}
+              <M>{'\\binom{n}{1} = \\frac{n!}{1!(n-1)!} = \\frac{n!}{(n-1)!} = n'}</M>{'\n'}
+              <M>{'\\binom{n}{n-1} = \\frac{n!}{(n-1)!\\,(n-(n-1))!} = \\frac{n!}{(n-1)!\\,1!} = n'}</M>
             </>
           ),
         },
@@ -680,7 +716,7 @@ C(5,5−2) = C(5,3) = 5!/(3!·2!) = 120/(6·2) = 10
           ),
           solution: (
             <>
-              {'C(n,n−k) = '}<Frac n="n!" d="(n−k)! · (n−(n−k))!" />{'\n\n = '}<Frac n="n!" d="(n−k)! · k!" />{'\n\n = C(n,k)  ✓'}
+              <M>{'\\binom{n}{k} = \\frac{n!}{k!\\,(n-k)!} = \\frac{n!}{(n-k)!\\,k!} = \\binom{n}{n-k}'}</M>
             </>
           ),
         },
@@ -738,8 +774,12 @@ darunter steht 10.`}</pre>
           ),
           solution: (
             <>
-              {'C(n,k) + C(n,k+1)\n= '}<Frac n="n!" d="k!(n−k)!" />{' + '}<Frac n="n!" d="(k+1)!(n−k−1)!" />{'\n\n'}
-              {'Gem. Nenner (k+1)!(n−k)!:\n= '}<Frac n="n!(k+1)" d="(k+1)!(n−k)!" />{' + '}<Frac n="n!(n−k)" d="(k+1)!(n−k)!" />{'\n\n= '}<Frac n="n!(k+1+n−k)" d="(k+1)!(n−k)!" />{'\n\n= '}<Frac n="(n+1)!" d="(k+1)!(n−k)!" />{'\n\n= C(n+1,k+1)  ✓'}
+              <M>{'\\binom{n}{k} + \\binom{n}{k+1} = \\frac{n!}{k!\\,(n-k)!} + \\frac{n!}{(k+1)!\\,(n-(k+1))!}'}</M>{'\n'}
+              <M>{'= \\frac{n!}{k!\\,(n-k)!} + \\frac{n!}{(k+1)!\\,(n-k-1)!}'}</M>{'\n'}
+              <M>{'= \\frac{n!}{k!\\,(n-k)!}\\cdot\\frac{k+1}{k+1} + \\frac{n!}{(k+1)!\\,(n-k-1)!}\\cdot\\frac{n-k}{n-k}'}</M>{'\n'}
+              <M>{'= \\frac{n!\\,(k+1)}{(k+1)!\\,(n-k)!} + \\frac{n!\\cdot(n-k)}{(k+1)!\\,(n-k)!}'}</M>{'\n'}
+              <M>{'= \\frac{n!\\,(k+1+n-k)}{(k+1)!\\,(n-k)!} = \\frac{(n+1)!}{(k+1)!\\,(n+1-(k+1))!}'}</M>{'\n'}
+              <M>{'= \\binom{n+1}{k+1}'}</M>
             </>
           ),
         },

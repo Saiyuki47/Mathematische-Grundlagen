@@ -53,7 +53,8 @@ xₙyₙ = n³/n = n² → ∞ ✓`}</pre>
           ),
           solution: (
             <>
-              {'xₙ := n², yₙ := '}<Frac n="1" d="n" />{'\nxₙyₙ = n² · '}<Frac n="1" d="n" />{' = n → ∞'}
+              {'Für '}<M>{'n \\in \\mathbb{N}^{*}'}</M>{' definiere '}<M>{'x_n := n^{2}, \\quad y_n := \\frac{1}{n}'}</M>{'.\n'}
+              {'Die Folgen '}<M>{'(x_n)_{n\\in\\mathbb{N}^{*}}'}</M>{' und '}<M>{'(y_n)_{n\\in\\mathbb{N}^{*}}'}</M>{' leisten jeweils das Gewünschte.'}
             </>
           ),
         },
@@ -94,7 +95,8 @@ xₙyₙ = −n³/n = −n² → −∞ ✓`}</pre>
           ),
           solution: (
             <>
-              {'xₙ := n², yₙ := −'}<Frac n="1" d="n" />{'\nxₙyₙ = n² · (−'}<Frac n="1" d="n" />{') = −n → −∞'}
+              {'Für '}<M>{'n \\in \\mathbb{N}^{*}'}</M>{' definiere '}<M>{'x_n := n^{2}, \\quad y_n := -\\frac{1}{n}'}</M>{'.\n'}
+              {'Die Folgen '}<M>{'(x_n)_{n\\in\\mathbb{N}^{*}}'}</M>{' und '}<M>{'(y_n)_{n\\in\\mathbb{N}^{*}}'}</M>{' leisten jeweils das Gewünschte.'}
             </>
           ),
         },
@@ -132,7 +134,8 @@ Produkt = n·0 = 0 → 0 ✓
           ),
           solution: (
             <>
-              {'xₙ := n, yₙ := '}<Frac n="c" d="n" />{'\nxₙyₙ = n · '}<Frac n="c" d="n" />{' = c → c'}
+              {'Für '}<M>{'n \\in \\mathbb{N}^{*}'}</M>{' definiere '}<M>{'x_n := n, \\quad y_n := \\frac{c}{n}'}</M>{'.\n'}
+              {'Die Folgen '}<M>{'(x_n)_{n\\in\\mathbb{N}^{*}}'}</M>{' und '}<M>{'(y_n)_{n\\in\\mathbb{N}^{*}}'}</M>{' leisten jeweils das Gewünschte.'}
             </>
           ),
         },
@@ -175,7 +178,8 @@ Teilfolgen → +2 und −2 → divergent ✓`}</pre>
           ),
           solution: (
             <>
-              {'xₙ := n, yₙ := (−1)ⁿ · '}<Frac n="1" d="n" />{'\nxₙyₙ = (−1)ⁿ: beschränkt (|xₙyₙ| = 1), aber nicht konvergent\n(Teilfolge x₂ₙy₂ₙ = +1, x₂ₙ₊₁y₂ₙ₊₁ = −1)'}
+              {'Für '}<M>{'n \\in \\mathbb{N}^{*}'}</M>{' definiere '}<M>{'x_n := n, \\quad y_n := (-1)^{n}\\cdot\\frac{1}{n}'}</M>{'.\n'}
+              {'Die Folgen '}<M>{'(x_n)_{n\\in\\mathbb{N}^{*}}'}</M>{' und '}<M>{'(y_n)_{n\\in\\mathbb{N}^{*}}'}</M>{' leisten jeweils das Gewünschte.'}
             </>
           ),
         },
@@ -225,7 +229,7 @@ lim (3 + (1/2)ⁿ) = 3 + 0 = 3`}</pre>
           ),
           solution: (
             <>
-              {'lim (−'}<Frac n="1" d="5" />{')ⁿ = 0 (geometrische Folge, |q| = '}<Frac n="1" d="5" />{' < 1)\nlim xₙ = 1 − 0 = 1'}
+              <M>{'\\lim_{n\\to\\infty}\\left(\\frac{-1}{5}\\right)^{n} = 0'}</M>{' (geometrische Folge mit '}<M>{'|q| < 1'}</M>{'); somit '}<M>{'\\lim_{n\\to\\infty} x_n = 1'}</M>{'.'}
             </>
           ),
         },
@@ -269,9 +273,7 @@ Summe → 0 + 3 = 3`}</pre>
           ),
           solution: (
             <>
-              <Frac n="(−1)ⁿ" d="n" />{' → 0  (beschränkt · Nullfolge)\n'}
-              {'lim '}<Frac n="n" d="2n+1" />{' = lim '}<Frac n="1" d="2 + 1/n" />{' = '}<Frac n="1" d="2" />{'\n'}
-              {'lim xₙ = '}<Frac n="1" d="2" />
+              {'Es ist '}<M>{'((-1)^{n})'}</M>{' eine beschränkte Folge und '}<M>{'\\left(\\frac{1}{n}\\right)'}</M>{' eine Nullfolge. Nach Folie 136 der Vorlesung („beschränkte Folge mal Nullfolge ist Nullfolge") ist '}<M>{'\\lim\\frac{(-1)^{n}}{n} = 0'}</M>{'. Außerdem folgt mit den Rechenregeln für konvergente Folgen, dass '}<M>{'\\lim_{n\\to\\infty}\\frac{n}{2n+1} = \\lim_{n\\to\\infty}\\frac{1}{2+\\frac{1}{n}} = \\frac{1}{2}'}</M>{'. Insgesamt ergibt sich '}<M>{'\\lim_{n\\to\\infty} x_n = \\frac{1}{2}'}</M>{'.'}
             </>
           ),
         },
@@ -316,9 +318,11 @@ ungerade n: −1·(1+1/n) → −1
           ),
           solution: (
             <>
-              {'lim x₂ₙ = lim '}<Frac n="2n" d="4n+1" />{' = '}<Frac n="1" d="2" />{'\n'}
-              {'lim x₂ₙ₊₁ = −lim '}<Frac n="2n+1" d="4n+3" />{' = −'}<Frac n="1" d="2" />{'\n'}
-              {'Zwei verschiedene Häufungswerte → Folge ist unbestimmt divergent.'}
+              {'Die Folge ist unbestimmt divergent. Begründung: Betrachtet man die Folge '}<M>{'(x_{2n})'}</M>{', so ist\n'}
+              <M>{'\\lim_{n\\to\\infty} x_{2n} = \\underbrace{(-1)^{2n}}_{=1}\\,\\frac{2n}{4n+1} = \\frac{1}{2}'}</M>{'.\n'}
+              {'Wenn '}<M>{'(x_n)'}</M>{' konvergieren würde, müsste also '}<M>{'\\frac{1}{2}'}</M>{' der Grenzwert sein. Betrachtet man andererseits die Folge '}<M>{'(x_{2n+1})'}</M>{', so ist\n'}
+              <M>{'\\lim_{n\\to\\infty} x_{2n+1} = \\underbrace{(-1)^{2n+1}}_{=-1}\\,\\frac{2n+1}{4n+3} = -\\frac{1}{2}'}</M>{',\n'}
+              {'das heißt, auch '}<M>{'-\\frac{1}{2}'}</M>{' müsste der Grenzwert sein. Eine Folge kann aber keine zwei Grenzwerte haben.'}
             </>
           ),
         },
@@ -363,8 +367,8 @@ Grenzwert = −∞.`}</pre>
           ),
           solution: (
             <>
-              <Frac n="n²−2n⁴−2" d="2n³+n²" />{' = '}<Frac n="n⁴(1/n² − 2 − 2/n⁴)" d="n³(2 + 1/n)" />
-              {'\n= n · '}<Frac n="1/n² − 2 − 2/n⁴" d="2 + 1/n" />{'\n\nn → ∞ und '}<Frac n="1/n² − 2 − 2/n⁴" d="2 + 1/n" />{' → '}<Frac n="0 − 2 − 0" d="2 + 0" />{' = −1\n\nsomit lim xₙ = −∞'}
+              {'Ausklammern von '}<M>{'n^{4}'}</M>{' im Zähler und '}<M>{'n^{3}'}</M>{' im Nenner und Verwendung von '}<M>{'\\lim_{n\\to\\infty}\\frac{1}{n^{k}} = 0,\\; k\\in\\mathbb{N}'}</M>{', liefert mit den Rechenregeln für den Limes und bestimmte Divergenz\n'}
+              <M>{'\\lim_{n\\to\\infty}\\frac{n^{2}-2n^{4}-2}{2n^{3}+n^{2}} = \\lim_{n\\to\\infty}\\frac{n^{4}\\left(\\frac{1}{n^{2}}-2-\\frac{2}{n^{4}}\\right)}{n^{3}\\left(2+\\frac{1}{n}\\right)} = \\lim_{n\\to\\infty}\\underbrace{n}_{\\to\\infty}\\cdot\\underbrace{\\frac{\\frac{1}{n^{2}}-2-\\frac{2}{n^{4}}}{2+\\frac{1}{n}}}_{\\to -1} = -\\infty'}</M>
             </>
           ),
         },
@@ -413,8 +417,8 @@ Grenzwert = e² ≈ 7,389.`}</pre>
           ),
           solution: (
             <>
-              {'xₙ = (1+'}<Frac n="1" d="n" />{')^(2n−1) = '}<Frac n="(1+1/n)ⁿ · (1+1/n)ⁿ" d="(1+1/n)" />{'\n'}
-              {'lim xₙ = '}<Frac n="e · e" d="1" />{' = e²'}
+              {'Erinnerung: '}<M>{'\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n} = e'}</M>{'.\n'}
+              {'Es ist '}<M>{'x_n = \\left(1+\\frac{1}{n}\\right)^{2n-1} = \\frac{\\left(1+\\frac{1}{n}\\right)^{n}\\left(1+\\frac{1}{n}\\right)^{n}}{1+\\frac{1}{n}}'}</M>{' und somit mit den Rechenregeln für Folgen '}<M>{'\\lim_{n\\to\\infty} x_n = \\frac{e\\cdot e}{1+0} = e^{2}'}</M>{'.'}
             </>
           ),
         },
@@ -465,10 +469,11 @@ Oben: ≤ 1
           ),
           solution: (
             <>
-              {'Bernoullische Ungleichung: xₙ = (1−'}<Frac n="1" d="n²" />{')ⁿ ≥ 1 − '}<Frac n="n" d="n²" />{' = 1 − '}<Frac n="1" d="n" />{'\n'}
-              {'Außerdem: xₙ ≤ 1\n'}
-              {'→ 1 − '}<Frac n="1" d="n" />{' ≤ xₙ ≤ 1\n'}
-              {'Da lim (1 − '}<Frac n="1" d="n" />{') = 1, folgt mit dem Sandwichtheorem lim xₙ = 1.'}
+              {'Mit der Bernoullischen Ungleichung ergibt sich\n'}
+              <M>{'x_n = \\left(1-\\frac{1}{n^{2}}\\right)^{n} \\ge 1 - n\\cdot\\frac{1}{n^{2}} = 1 - \\frac{1}{n}'}</M>{'.\n'}
+              {'Desweiteren ist '}<M>{'x_n \\le 1'}</M>{' für alle '}<M>{'n \\in \\mathbb{N}^{*}'}</M>{'. Insgesamt also\n'}
+              <M>{'1 - \\frac{1}{n} \\le x_n \\le 1'}</M>{'.\n'}
+              {'Mit dem Sandwichttheorem folgt '}<M>{'\\lim_{n\\to\\infty} x_n = 1'}</M>{'.'}
             </>
           ),
         },
@@ -530,8 +535,10 @@ x₂ = 0,9 + 9·(1/100) = 0,9 + 0,09 = 0,99
           ),
           solution: (
             <>
-              {'xₙ = 9 · '}<Frac n="1" d="10" />{' · '}<Frac n="1 − (1/10)ⁿ" d="1 − 1/10" />{' = '}<Frac n="9" d="10" />{' · '}<Frac n="1 − (1/10)ⁿ" d="9/10" />{' = 1 − ('}<Frac n="1" d="10" />{')ⁿ\n'}
-              {'Da |'}<Frac n="1" d="10" />{'| < 1: lim ('}<Frac n="1" d="10" />{')ⁿ = 0, also lim xₙ = 1.'}
+              {'Mit einem Indexshift und der geometrischen Summenformel erhalten wir\n'}
+              <M>{'x_n = \\sum_{k=1}^{n} 9\\cdot\\frac{1}{10^{k}} = 9\\sum_{k=1}^{n}\\frac{1}{10^{k}} = 9\\sum_{k=0}^{n-1}\\frac{1}{10^{k+1}} = 9\\sum_{k=0}^{n-1}\\frac{1}{10}\\cdot\\frac{1}{10^{k}} = \\frac{9}{10}\\sum_{k=0}^{n-1}\\frac{1}{10^{k}}'}</M>{'\n'}
+              <M>{'= \\frac{9}{10}\\cdot\\frac{1-\\frac{1}{10^{n}}}{1-\\frac{1}{10}} = \\frac{9}{10}\\cdot\\frac{1-\\frac{1}{10^{n}}}{\\frac{9}{10}} = 1 - \\frac{1}{10^{n}}'}</M>{'\n'}
+              {'Da '}<M>{'\\left|\\frac{1}{10}\\right| < 1'}</M>{', ist '}<M>{'\\lim_{n\\to\\infty}\\frac{1}{10^{n}} = 0'}</M>{' und somit nach den Rechenregeln für Folgen '}<M>{'\\lim_{n\\to\\infty} x_n = 1'}</M>{'.'}
             </>
           ),
         },
@@ -584,10 +591,11 @@ x₂ = 0,9 + 9·(1/100) = 0,9 + 0,09 = 0,99
           ),
           solution: (
             <>
-              {'|'}<Frac n="x−1" d="7" />{'| < 1  ⟺  |x−1| < 7  ⟺  x ∈ (−6, 8)\n\n'}
-              {'(i)  Konvergiert für x ∈ (−6, 8)\n'}
-              {'(ii) 3·Σ qᵏ konvergiert genau dann wenn Σ qᵏ konvergiert → x ∈ (−6, 8)\n'}
-              {'(iii) Endlich viele Anfangsglieder weglassen ändert Konvergenz nicht → x ∈ (−6, 8)'}
+              {'(i) Laut Vorlesung konvergiert die geometrische Reihe '}<M>{'\\sum_{k=0}^{\\infty} q^{k}'}</M>{' genau dann, wenn '}<M>{'|q| < 1'}</M>{' gilt. Das heißt, wir müssen uns überlegen, für welche '}<M>{'x \\in \\mathbb{R}'}</M>{' die Ungleichung '}<M>{'\\left|\\frac{x-1}{7}\\right| < 1'}</M>{' erfüllt ist. Es ist\n'}
+              <M>{'\\left|\\frac{x-1}{7}\\right| < 1 \\;\\Leftrightarrow\\; |x-1| < 7 \\;\\Leftrightarrow\\; -7 < x-1 < 7 \\;\\Leftrightarrow\\; x \\in (-6,8)'}</M>{'.\n'}
+              {'Somit konvergiert die Reihe für alle '}<M>{'x \\in (-6,8)'}</M>{'.\n\n'}
+              {'(ii) Sei '}<M>{'x_n = \\sum_{k=0}^{n}\\left(\\frac{x-1}{7}\\right)^{k}'}</M>{'. Es ist '}<M>{'\\sum_{k=0}^{n} 3\\left(\\frac{x-1}{7}\\right)^{k} = 3\\sum_{k=0}^{n}\\left(\\frac{x-1}{7}\\right)^{k} = 3x_n'}</M>{'. Die Folge '}<M>{'(3x_n)'}</M>{' konvergiert genau dann, wenn die Folge '}<M>{'(x_n)'}</M>{' konvergiert. Nach Teil (a) wissen wir, dass die Folge '}<M>{'(x_n)'}</M>{' für jedes '}<M>{'x \\in (-6,8)'}</M>{' konvergiert. Also konvergiert Folge '}<M>{'(3x_n)'}</M>{' bzw. die Reihe '}<M>{'\\sum_{k=0}^{\\infty} 3\\left(\\frac{x-1}{7}\\right)^{k}'}</M>{' ebenfalls für jedes '}<M>{'x \\in (-6,8)'}</M>{'.\n\n'}
+              {'(iii) Sei '}<M>{'y_n = \\sum_{k=0}^{n} 3\\left(\\frac{x-1}{7}\\right)^{k}'}</M>{'. Die Folge '}<M>{'(y_n)_{n\\in\\mathbb{N}}'}</M>{' konvergiert genau dann, wenn die Folge '}<M>{'(y_n)_{n\\ge 2}'}</M>{' konvergiert. (Auf den Anfang einer Folge kommt es für die Konvergenz nicht an.) Nach Teil (b) wissen wir, dass die Folge '}<M>{'(y_n)'}</M>{' für jedes '}<M>{'x \\in (-6,8)'}</M>{' konvergiert. Also konvergiert die Folge '}<M>{'(y_n)_{n\\ge 2}'}</M>{' bzw. die Reihe '}<M>{'\\sum_{k=2}^{\\infty} 3\\left(\\frac{x-1}{7}\\right)^{k}'}</M>{' ebenfalls für jedes '}<M>{'x \\in (-6,8)'}</M>{'.'}
             </>
           ),
         },
@@ -660,12 +668,22 @@ a(1+a) = a → a + a² = a → a² = 0 → a = 0
           ),
           solution: (
             <>
-              {'IA: a₀ = 2 > 0 ✓\n'}
-              {'IS: aₙ > 0 → aₙ₊₁ = '}<Frac n="2aₙ" d="2+aₙ" />{' > 0 (Zähler und Nenner positiv) ✓\n\n'}
-              {'Monotonie: aₙ₊₁ ≤ aₙ ⟺ 0 ≤ aₙ² (immer wahr) → (aₙ) monoton fallend.\n'}
-              {'Beschränktheit: aₙ ∈ [0, 2] für alle n ∈ ℕ.\n'}
-              {'→ (aₙ) konvergiert nach Folie 138.\n\n'}
-              {'Grenzwert: a = '}<Frac n="2a" d="2+a" />{' → a² = 0 → a = 0'}
+              {'Behauptung: '}<M>{'a_n > 0'}</M>{' für alle '}<M>{'n \\in \\mathbb{N}'}</M>{'.\n\n'}
+              {'Beweis durch vollständige Induktion:\n'}
+              {'I.A.: '}<M>{'n=0'}</M>{': Da '}<M>{'a_0 = 2 > 0'}</M>{' ist, ist '}<M>{'A(0)'}</M>{' erfüllt.\n'}
+              {'I.S. '}<M>{'(n \\to n+1)'}</M>{': Sei '}<M>{'A(n)'}</M>{', also '}<M>{'a_n > 0'}</M>{', für ein '}<M>{'n \\in \\mathbb{N}'}</M>{' erfüllt. (IV) Dann ist '}<M>{'2a_n > 0'}</M>{' und '}<M>{'2+a_n > 0'}</M>{' und damit auch\n'}
+              <M>{'a_{n+1} = \\frac{2a_n}{2+a_n} > 0'}</M>{'.\n'}
+              {'Also ist '}<M>{'A(n+1)'}</M>{' erfüllt. □\n\n'}
+              {'Zur Konvergenz:\n'}
+              {'Monotonie: Es gilt für '}<M>{'n \\in \\mathbb{N}'}</M>{'\n'}
+              <M>{'a_{n+1} \\le a_n \\;\\Leftrightarrow\\; \\frac{2a_n}{2+a_n} \\le a_n \\;\\overset{2+a_n>0}{\\Leftrightarrow}\\; 2a_n \\le a_n(2+a_n) \\;\\Leftrightarrow\\; 2a_n \\le 2a_n + a_n^{2} \\;\\Leftrightarrow\\; 0 \\le a_n^{2}'}</M>{'.\n'}
+              {'Somit ist '}<M>{'(a_n)'}</M>{' eine monoton fallende Folge.\n'}
+              {'Beschränktheit: Da '}<M>{'(a_n)'}</M>{' monoton fallend ist, ist '}<M>{'a_0 = 2'}</M>{' das größte Folgenglied. Nach Teil (a) ist '}<M>{'a_n \\ge 0'}</M>{' für alle '}<M>{'n \\in \\mathbb{N}'}</M>{'. Damit ist '}<M>{'a_n \\in [0,2]'}</M>{' für alle '}<M>{'n \\in \\mathbb{N}'}</M>{'.\n'}
+              {'Nach Folie 138 der Vorlesung sind monotone und beschränkte Folgen konvergent.\n'}
+              {'Grenzwert:\n'}
+              {'Sei '}<M>{'a = \\lim_{n\\to\\infty} a_n'}</M>{'. Nun gilt\n'}
+              <M>{'a = \\lim_{n\\to\\infty} a_n = \\lim_{n\\to\\infty} a_{n+1} = \\lim_{n\\to\\infty}\\frac{2a_n}{2+a_n} = \\frac{2\\lim_{n\\to\\infty} a_n}{2 + \\lim_{n\\to\\infty} a_n} = \\frac{2a}{2+a}'}</M>{'.\n'}
+              {'Damit erfüllt '}<M>{'a'}</M>{' die Gleichung '}<M>{'a = \\frac{2a}{2+a}'}</M>{' bzw. '}<M>{'(2+a)a = 2a'}</M>{' bzw. '}<M>{'a^{2} = 0'}</M>{'. Also ist der Grenzwert '}<M>{'a = 0'}</M>{'.'}
             </>
           ),
         },
@@ -679,42 +697,43 @@ a(1+a) = a → a + a² = a → a² = 0 → a = 0
       subaufgaben: [
         {
           letter: 'a',
-          text: <>{'Betrachten Sie die Folgen (xₙ)ₙ∈ℕ* ⊆ ℝ. Bestimmen Sie die (eventuell uneigentlichen) Grenzwerte der Folgen (xₙ), sofern vorhanden.\n\nxₙ = '}<Frac n="2n" d="√(n+1)" /></>,
+          text: <>{'Betrachten Sie die Folgen (xₙ)ₙ∈ℕ* ⊆ ℝ. Bestimmen Sie die (eventuell uneigentlichen) Grenzwerte der Folgen (xₙ), sofern vorhanden.\n\n'}<M>{'x_n = \\frac{2n}{\\sqrt{n}+1}'}</M></>,
           hint: h(
             <>
-              <p>Gesucht ist das Verhalten von 2n/√(n+1) für n → ∞. Idee: vergleichen, wie schnell Zähler und Nenner wachsen. Der Zähler wächst wie n (linear), der Nenner wie √n (Wurzel, langsamer). Quotient also etwa n/√n = √n → ∞ — die Folge <span className="hint-em">divergiert bestimmt gegen ∞</span>.</p>
-              <p>Hilfsmittel 1 — <span className="hint-em">Wurzel-Faktorisieren</span>: √(n+1) = √(n·(1+1/n)) = √n·√(1+1/n) (Wurzel eines Produkts = Produkt der Wurzeln). Hilfsmittel 2 — <span className="hint-em">untere Abschätzung</span>: Findet man eine Folge yₙ mit xₙ ≥ yₙ und yₙ → ∞, dann muss auch xₙ → ∞ (was über eine ins Unendliche laufende Schranke liegt, läuft selbst ins Unendliche). Nützlich: für n ≥ 1 ist n+1 ≤ 2n, also √(n+1) ≤ √(2n).</p>
+              <p>Gesucht ist das Verhalten von 2n/(√n+1) für n → ∞. Idee: vergleichen, wie schnell Zähler und Nenner wachsen. Der Zähler wächst wie n (linear), der Nenner wie √n (Wurzel, langsamer). Quotient also etwa n/√n = √n → ∞ — die Folge <span className="hint-em">divergiert bestimmt gegen ∞</span>.</p>
+              <p>Hilfsmittel 1 — <span className="hint-em">√n ausklammern</span>: √n+1 = √n·(1+1/√n). Hilfsmittel 2 — <span className="hint-em">untere Abschätzung</span>: Findet man eine Folge yₙ mit xₙ ≥ yₙ und yₙ → ∞, dann muss auch xₙ → ∞ (was über eine ins Unendliche laufende Schranke liegt, läuft selbst ins Unendliche). Nützlich: für n ≥ 1 ist 1 ≤ √n, also √n+1 ≤ 2√n.</p>
             </>,
             <>
               <p>So zeigt man lim 2n/√(n+1) = ∞ (zwei Wege):</p>
               <pre className="hint-code-block">{`Weg A — Faktorisieren:
- √(n+1) = √n · √(1+1/n)
- xₙ = 2n/(√n·√(1+1/n))
-    = 2·(n/√n)·1/√(1+1/n)
-    = 2√n · 1/√(1+1/n)     (denn n/√n = √n)
- Für n→∞: √(1+1/n) → √1 = 1, also der zweite Faktor → 1
+ √n + 1 = √n · (1 + 1/√n)
+ xₙ = 2n/(√n·(1+1/√n))
+    = 2·(n/√n)·1/(1+1/√n)
+    = 2√n · 1/(1+1/√n)     (denn n/√n = √n)
+ Für n→∞: 1/(1+1/√n) → 1, also der zweite Faktor → 1
  und 2√n → ∞  →  xₙ → ∞.
 
 Weg B — untere Schranke:
- Für n ≥ 1: n+1 ≤ 2n ⟹ √(n+1) ≤ √(2n)
- ⟹ xₙ = 2n/√(n+1) ≥ 2n/√(2n)
- 2n/√(2n) = 2n/(√2·√n) = (2/√2)·√n = √2·√n = √(2n)
- √(2n) → ∞  ⟹  xₙ → ∞.`}</pre>
-              <p>Warum reicht Weg B? xₙ ist mindestens so groß wie √(2n), und √(2n) wächst unbegrenzt — also kann xₙ nicht beschränkt bleiben.</p>
+ Für n ≥ 1: 1 ≤ √n ⟹ √n+1 ≤ 2√n
+ ⟹ xₙ = 2n/(√n+1) ≥ 2n/(2√n)
+ 2n/(2√n) = n/√n = √n
+ √n → ∞  ⟹  xₙ → ∞.`}</pre>
+              <p>Warum reicht Weg B? xₙ ist mindestens so groß wie √n, und √n wächst unbegrenzt — also kann xₙ nicht beschränkt bleiben.</p>
             </>,
             <>
               <p>Anderes Beispiel: lim n/√n</p>
               <pre className="hint-code-block">{`n/√n = √n·√n/√n = √n → ∞ (Zähler dominiert Wurzel-Nenner)`}</pre>
             </>,
             <ul>
-              <li><strong>❌ Falsch:</strong> Grenzwert = 2 (nur die 2 vorm Bruch betrachtet) → <strong>✅ Richtig:</strong> der n-Anteil wächst: xₙ ≥ √(2n) → ∞, also bestimmt divergent.</li>
+              <li><strong>❌ Falsch:</strong> Grenzwert = 2 (nur die 2 vorm Bruch betrachtet) → <strong>✅ Richtig:</strong> der n-Anteil wächst: xₙ ≥ √n → ∞, also bestimmt divergent.</li>
               <li><strong>❌ Falsch:</strong> Zähler n und Nenner √n „gleich schnell" annehmen → <strong>✅ Richtig:</strong> n wächst schneller als √n; n/√n = √n → ∞.</li>
             </ul>,
-            <p>Selbstkontrolle: n = 100 → 200/√101 ≈ 200/10,05 ≈ 19,9; n = 10 000 → 20 000/√10 001 ≈ 200 — wird immer größer ✓. Frage: Warum genügt eine untere Schranke yₙ → ∞, um xₙ → ∞ zu beweisen, und welche Eigenschaft der Ungleichung ≥ wird dabei benutzt?</p>,
+            <p>Selbstkontrolle: n = 100 → 200/(√100+1) = 200/11 ≈ 18,2; n = 10 000 → 20 000/(√10 000+1) = 20 000/101 ≈ 198 — wird immer größer ✓. Frage: Warum genügt eine untere Schranke yₙ → ∞, um xₙ → ∞ zu beweisen, und welche Eigenschaft der Ungleichung ≥ wird dabei benutzt?</p>,
           ),
           solution: (
             <>
-              {'xₙ = '}<Frac n="2n" d="√n · √(1+1/n)" />{' = 2√n · '}<Frac n="1" d="√(1+1/n)" />{' → ∞'}
+              {'Mit den Rechenregeln für bestimmte Divergenz ergibt sich\n'}
+              <M>{'x_n = \\frac{n\\cdot 2}{n^{\\frac{1}{2}}\\left(1+\\frac{1}{\\sqrt{n}}\\right)} = \\underbrace{n^{\\frac{1}{2}}}_{\\to\\infty,\\, n\\to\\infty}\\cdot\\underbrace{\\frac{2}{1+\\frac{1}{\\sqrt{n}}}}_{\\to 2,\\, n\\to\\infty} \\to \\infty,\\; n\\to\\infty'}</M>{'.'}
             </>
           ),
         },
@@ -758,7 +777,7 @@ inneres kürzt sich → erster Zähler 1, letzter Nenner n
           ),
           solution: (
             <>
-              {'xₙ = '}<Frac n="2" d="1" />{' · '}<Frac n="3" d="2" />{' · '}<Frac n="4" d="3" />{' · … · '}<Frac n="n+1" d="n" />{' = n+1 (Teleskopprodukt)\nxₙ = n+1 → ∞'}
+              {'Mit Übungsaufgabe 4.1 erhält man '}<M>{'x_n = n+1'}</M>{'. Da '}<M>{'x_n \\ge n'}</M>{' für alle '}<M>{'n \\in \\mathbb{N}'}</M>{' und '}<M>{'\\lim_{n\\to\\infty} n = \\infty'}</M>{', ergibt sich mit den Rechenregeln für bestimmte Divergenz '}<M>{'\\lim_{n\\to\\infty} x_n = \\infty'}</M>{'.'}
             </>
           ),
         },
@@ -802,7 +821,9 @@ Grenzwert = 0.`}</pre>
           ),
           solution: (
             <>
-              {'xₙ = '}<Frac n="1" d="√(n+1)+√n" />{' ≤ '}<Frac n="1" d="√n" />{' → 0\nMit 0 ≤ xₙ und Einschnürungssatz: lim xₙ = 0'}
+              {'Für '}<M>{'n \\ge 1'}</M>{' ergibt sich\n'}
+              <M>{'0 \\le x_n = (\\sqrt{n+1}-\\sqrt{n})\\frac{\\sqrt{n+1}+\\sqrt{n}}{\\sqrt{n+1}+\\sqrt{n}} = \\frac{n+1-n}{\\sqrt{n+1}+\\sqrt{n}} = \\frac{1}{\\sqrt{n+1}+\\sqrt{n}} \\le \\frac{1}{\\sqrt{n}} \\to 0,\\; n\\to\\infty'}</M>{'.\n'}
+              {'Nach Einschnürungssatz ist '}<M>{'\\lim_{n\\to\\infty} x_n = 0'}</M>{'.'}
             </>
           ),
         },
@@ -843,7 +864,13 @@ Summe der ersten (n+1) ungeraden Zahlen = (n+1)²
             </ul>,
             <p>Selbstkontrolle: n = 2 → (1−0)+(4−1)+(9−4) = 1+3+5 = 9 = (2+1)² ✓. Frage: Warum bleibt bei einer Teleskopsumme nur f(n+1) − f(0) übrig, und warum divergiert (n+1)² gegen ∞?</p>,
           ),
-          solution: 'xₙ = (1²−0²)+(2²−1²)+…+((n+1)²−n²) = (n+1)² (Teleskopsumme)\n(n+1)² ≥ n → lim xₙ = ∞',
+          solution: (
+            <>
+              {'Es ist\n'}
+              <M>{'x_n = \\sum_{k=0}^{n}\\left((k+1)^{2}-k^{2}\\right) = (1^{2}-0^{2}) + (2^{2}-1^{2}) + (3^{2}-2^{2}) + \\dots + ((n+1)^{2}-n^{2}) = (n+1)^{2} - 0^{2} = (n+1)^{2}'}</M>{'.\n'}
+              {'Da '}<M>{'x_n \\ge n'}</M>{' und '}<M>{'\\lim_{n\\to\\infty} n = \\infty'}</M>{', gilt mit den Regeln für bestimmte Divergenz, dass '}<M>{'\\lim_{n\\to\\infty} x_n = \\infty'}</M>{'.'}
+            </>
+          ),
         },
       ],
     },
@@ -897,10 +924,13 @@ Zu ε wähle N > 1/ε: für n ≥ N gilt 1/n < ε ✓
           ),
           solution: (
             <>
-              {'Sei ε > 0. Da (xₙ) beschränkt: ∃M > 0 mit |xₙ| ≤ M für alle n.\n'}
-              {'Da yₙ → 0: ∃N ∈ ℕ mit |yₙ| < ε/M für alle n ≥ N.\n\n'}
-              {'Für n ≥ N: |xₙyₙ| = |xₙ|·|yₙ| ≤ M · ε/M = ε\n'}
-              {'→ lim xₙyₙ = 0 □'}
+              {'Behauptung: '}<M>{'\\lim_{n\\to\\infty} x_n y_n = 0'}</M>{', falls '}<M>{'(x_n)'}</M>{' eine beschränkte Folge ist und '}<M>{'(y_n)'}</M>{' eine Nullfolge.\n\n'}
+              {'Beweis:\n'}
+              {'Sei '}<M>{'(x_n)'}</M>{' eine beschränkte Folge und '}<M>{'(y_n)'}</M>{' eine Nullfolge. Da '}<M>{'(x_n)'}</M>{' beschränkt ist, existiert ein '}<M>{'M > 0'}</M>{', sodass '}<M>{'|x_n| \\le M'}</M>{' für alle '}<M>{'n \\in \\mathbb{N}'}</M>{'. Da '}<M>{'(y_n)'}</M>{' gegen 0 konvergiert, existiert zu jedem '}<M>{'\\varepsilon > 0'}</M>{' ein '}<M>{'N \\in \\mathbb{N}'}</M>{', so dass für alle '}<M>{'n \\ge N'}</M>{' gilt\n'}
+              <M>{'|y_n| = |y_n - 0| < \\frac{\\varepsilon}{M}'}</M>{'.\n'}
+              {'Für '}<M>{'n \\ge N'}</M>{' gilt nun\n'}
+              <M>{'|x_n y_n - 0| = |x_n y_n| = \\underbrace{|x_n|}_{\\le M}\\,\\underbrace{|y_n|}_{< \\frac{\\varepsilon}{M}} < \\varepsilon'}</M>{'.\n'}
+              {'Somit konvergiert die Folge '}<M>{'(x_n y_n)'}</M>{' gegen 0. □'}
             </>
           ),
         },
@@ -957,10 +987,13 @@ Sei ε > 0 beliebig.
           ),
           solution: (
             <>
-              {'Sei ε > 0. Setze M := '}<Frac n="1" d="ε" />{'.\n'}
-              {'Da xₙ → ∞: ∃N ∈ ℕ mit xₙ > '}<Frac n="1" d="ε" />{' für alle n ≥ N.\n\n'}
-              {'Für n ≥ N: |'}<Frac n="1" d="xₙ" />{' − 0| = '}<Frac n="1" d="xₙ" />{' < ε\n'}
-              {'→ lim '}<Frac n="1" d="xₙ" />{' = 0 □'}
+              {'Behauptung: '}<M>{'\\lim_{n\\to\\infty}\\frac{1}{x_n} = 0'}</M>{', falls '}<M>{'\\lim_{n\\to\\infty} x_n = \\infty'}</M>{', wobei '}<M>{'x_n \\neq 0'}</M>{' für alle '}<M>{'n \\in \\mathbb{N}'}</M>{'.\n\n'}
+              {'Beweis:\n'}
+              {'Sei '}<M>{'(x_n) \\subseteq \\mathbb{R}\\setminus\\{0\\}'}</M>{' eine Folge, die bestimmt gegen '}<M>{'\\infty'}</M>{' divergiert. Sei '}<M>{'\\varepsilon > 0'}</M>{'. Da '}<M>{'\\lim_{n\\to\\infty} x_n = \\infty'}</M>{', gibt es zu '}<M>{'M := \\frac{1}{\\varepsilon}'}</M>{' ein '}<M>{'N \\in \\mathbb{N}'}</M>{', so dass für alle '}<M>{'n \\ge N'}</M>{' gilt:\n'}
+              <M>{'x_n > M'}</M>{'.\n'}
+              {'Für '}<M>{'n \\ge N'}</M>{' gilt nun\n'}
+              <M>{'\\left|\\frac{1}{x_n}-0\\right| \\overset{x_n>0}{=} \\frac{1}{x_n} \\overset{x_n>M}{<} \\frac{1}{M} = \\varepsilon'}</M>{'.\n'}
+              {'Somit konvergiert die Folge '}<M>{'\\left(\\frac{1}{x_n}\\right)'}</M>{' gegen 0. □'}
             </>
           ),
         },

@@ -54,7 +54,7 @@ NICHT, hier (1/k) schon.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Die Partialsummen sind −1, 0, −1, 0, … — sie nähern sich keiner einzigen Zahl. Frage: Welche zusätzliche Bedingung neben dem Vorzeichenwechsel braucht das Leibnizkriterium, und warum bildet (−1)ᵏ keine Nullfolge?</p>,
           ),
-          solution: 'aₖ = (−1)ᵏ bildet keine Nullfolge (pendelt zwischen ±1).\n→ Reihe divergiert.',
+          solution: 'Die Summanden bilden keine Nullfolge. Also konvergiert die Reihe nicht.',
         },
         {
           letter: 'b',
@@ -98,8 +98,10 @@ Majorante: 1/k³ ist p-Reihe mit p=3>1 → absolut konv.`}</pre>
           ),
           solution: (
             <>
-              {'Leibniz: aₖ = '}<Frac n="1" d="k²" />{', aₖ₊₁ = '}<Frac n="1" d="(k+1)²" />{' ≤ aₖ (monoton fallend), lim aₖ = 0 → konvergiert.\n\n'}
-              {'Majorante: bₖ = '}<Frac n="1" d="k²" />{', Σbₖ konvergiert (p=2), |(−1)ᵏ/k²| ≤ bₖ → konvergiert.'}
+              {'Mit Leibnizkriterium:\n'}
+              {'Definiere '}<M>{'a_k := \\frac{1}{k^{2}}'}</M>{' für '}<M>{'k\\in\\mathbb{N}^{*}'}</M>{'. Es ist '}<M>{'\\lim_{k\\to\\infty} a_k = 0'}</M>{', also '}<M>{'(a_k)'}</M>{' eine Nullfolge. Desweiteren ist '}<M>{'a_{k+1} = \\frac{1}{(k+1)^{2}} \\le \\frac{1}{k^{2}} = a_k'}</M>{', also '}<M>{'(a_k)'}</M>{' monoton fallend. Somit konvergiert die Reihe '}<M>{'\\sum_{k=1}^{\\infty} (-1)^{k}\\frac{1}{k^{2}}'}</M>{' nach dem Leibnizkriterium.\n\n'}
+              {'Mit Majorantenkriterium:\n'}
+              {'Definiere '}<M>{'a_k := \\frac{(-1)^{k}}{k^{2}}'}</M>{' und '}<M>{'b_k := \\frac{1}{k^{2}}'}</M>{'. Nach Vorlesung konvergiert die Reihe '}<M>{'\\sum_{k=1}^{\\infty} b_k'}</M>{'. Da '}<M>{'|a_k| \\le b_k'}</M>{' für alle '}<M>{'k\\in\\mathbb{N}^{*}'}</M>{' konvergiert nach dem Majorantenkriterium auch die Reihe '}<M>{'\\sum_{k=1}^{\\infty} a_k'}</M>{'.'}
             </>
           ),
         },
@@ -144,8 +146,13 @@ Grenzwert k → ∞:
           ),
           solution: (
             <>
-              {'Quotientenkriterium: |'}<Frac n="aₖ₊₁" d="aₖ" />{'| = '}<Frac n="(k+1)⁵ · k!" d="k⁵ · (k+1)!" />{' = ('}<Frac n="k+1" d="k" />{')⁵ · '}<Frac n="1" d="k+1" />{' → 0 < 1\n\n'}
-              {'Wurzelkriterium: ᵏ√|aₖ| = '}<Frac n="k" d="ᵏ√(4·k!)" />{' → 0 < 1\n→ Reihe konvergiert.'}
+              {'Definiere '}<M>{'a_k := \\frac{k^{5}}{(-4)\\cdot k!}'}</M>{' für '}<M>{'k\\in\\mathbb{N}^{*}'}</M>{'.\n'}
+              {'Mit Quotientenkriterium:\n'}
+              <M>{'\\left|\\frac{a_{k+1}}{a_k}\\right| = \\left|\\frac{\\frac{(k+1)^{5}}{(-4)\\cdot(k+1)!}}{\\frac{k^{5}}{(-4)\\cdot k!}}\\right| = \\frac{4\\cdot(k+1)^{5}\\cdot k!}{4\\cdot k^{5}\\cdot(k+1)!} = \\left(\\frac{k+1}{k}\\right)^{5}\\cdot\\frac{1}{k+1} \\to 0 < 1'}</M>{', für '}<M>{'k\\to\\infty'}</M>{'.\n'}
+              {'Nach Quotientenkriterium konvergiert die Reihe.\n\n'}
+              {'Mit Wurzelkriterium:\n'}
+              <M>{'\\sqrt[k]{|a_k|} = \\frac{\\sqrt[k]{k^{5}}}{\\sqrt[k]{4}\\,\\sqrt[k]{k!}} = \\frac{(\\sqrt[k]{k})^{5}}{\\sqrt[k]{4}\\,\\sqrt[k]{k!}} \\to 0 < 1'}</M>{', für '}<M>{'k\\to\\infty'}</M>{', wobei wir verwendet haben, dass '}<M>{'\\lim_{k\\to\\infty}\\frac{1}{\\sqrt[k]{k!}} = 0'}</M>{', '}<M>{'\\lim_{k\\to\\infty}\\sqrt[k]{a} = 1'}</M>{' für '}<M>{'a > 0'}</M>{' und '}<M>{'\\lim_{k\\to\\infty}\\sqrt[k]{k} = 1'}</M>{'.\n'}
+              {'Nach Wurzelkriterium konvergiert die Reihe.'}
             </>
           ),
         },
@@ -187,7 +194,10 @@ L = 3 > 1 → die Reihe DIVERGIERT.
           ),
           solution: (
             <>
-              {'ᵏ√|aₖ| = '}<Frac n="k" d="2k+1" />{' → '}<Frac n="1" d="2" />{' < 1\n→ Reihe konvergiert nach Wurzelkriterium.'}
+              {'Definiere '}<M>{'a_k := \\left(\\frac{k}{2k+1}\\right)^{k}'}</M>{'.\n'}
+              {'Mit Wurzelkriterium:\n'}
+              <M>{'\\sqrt[k]{|a_k|} = \\frac{k}{2k+1} \\to \\frac{1}{2} < 1'}</M>{' für '}<M>{'k\\to\\infty'}</M>{'.\n'}
+              {'Nach Wurzelkriterium konvergiert die Reihe.'}
             </>
           ),
         },
@@ -241,7 +251,8 @@ durch x³ teilen: (2/x + 1/x³)/(1 − 1/x²) → 0/1 = 0`}</pre>
           ),
           solution: (
             <>
-              {'lim '}<Frac n="x − 4x³ + 2" d="x + 4x⁴ + 7x²" />{' = lim '}<Frac n="1" d="x" />{' · '}<Frac n="1/x² − 4 + 2/x³" d="1/x³ + 4 + 7/x²" />{' = 0 · '}<Frac n="−4" d="4" />{' = 0'}
+              {'Mit den Rechenregeln für (uneigentliche) Grenzwerte erhalten wir:\n'}
+              <M>{'\\lim_{x\\to\\infty}\\frac{x-4x^{3}+2}{x+4x^{4}+7x^{2}} = \\lim_{x\\to\\infty}\\frac{x^{3}}{x^{4}}\\cdot\\frac{\\frac{1}{x^{2}}-4+\\frac{2}{x^{3}}}{\\frac{1}{x^{3}}+4+\\frac{7}{x^{2}}} = \\lim_{x\\to\\infty}\\frac{1}{x}\\cdot\\frac{\\frac{1}{x^{2}}-4+\\frac{2}{x^{3}}}{\\frac{1}{x^{3}}+4+\\frac{7}{x^{2}}} = 0'}</M>
             </>
           ),
         },
@@ -288,9 +299,7 @@ x² → +∞ (gerade!), Restbruch → 1/1 = 1
           ),
           solution: (
             <>
-              {'lim '}<Frac n="x⁷ − x" d="x − 3x²" />{' = lim x⁵ · '}<Frac n="1 − 1/x⁶" d="1/x − 3" />{'\n'}
-              {'x → −∞: x⁵ → −∞, '}<Frac n="1 − 1/x⁶" d="1/x − 3" />{' → '}<Frac n="1" d="−3" />{'\n'}
-              {'→ (−∞) · (−'}<Frac n="1" d="3" />{') = +∞'}
+              <M>{'\\lim_{x\\to-\\infty}\\frac{x^{7}-x}{x-3x^{2}} = \\lim_{x\\to-\\infty}\\frac{x^{7}}{x^{2}}\\cdot\\frac{1-\\frac{1}{x^{6}}}{\\frac{1}{x}-3} = \\lim_{x\\to-\\infty}\\underbrace{x^{5}}_{\\to-\\infty,\\,x\\to-\\infty}\\cdot\\underbrace{\\frac{1-\\frac{1}{x^{6}}}{\\frac{1}{x}-3}}_{\\to-\\frac{1}{3},\\,x\\to-\\infty} = \\infty'}</M>
             </>
           ),
         },
@@ -347,11 +356,16 @@ lim(x→2) g(x) = 2+2 = 4, aber g(2) = 5
           ),
           solution: (
             <>
-              {'Für x ≠ −1: h(x) = '}<Frac n="(x+1)(x−1)" d="x+1" />{' = x − 1\n\n'}
-              {'lim(x→−1, x<−1) h(x) = −2\n'}
-              {'lim(x→−1, x>−1) h(x) = −2\n'}
-              {'→ lim(x→−1) h(x) = −2\n\n'}
-              {'h(−1) = −100 ≠ −2 → h ist nicht stetig in x = −1.'}
+              {'Für '}<M>{'x\\neq -1'}</M>{' ist\n'}
+              <M>{'h(x) = \\frac{x^{2}-1}{x+1} = \\frac{(x+1)(x-1)}{x+1} = x-1.'}</M>
+              {'\n'}
+              {'Es ist also\n'}
+              <M>{'h(x) = \\begin{cases} x-1, & x\\neq -1,\\\\ -100, & x=-1.\\end{cases}'}</M>
+              {'\n'}
+              {'Damit ergibt sich\n'}
+              <M>{'\\lim_{\\substack{x\\to-1\\\\x<-1}} h(x) = -2,\\quad \\lim_{\\substack{x\\to-1\\\\x>-1}} h(x) = -2.'}</M>
+              {'\n'}
+              {'Da links- und rechtsseitige Grenzwerte existieren und übereinstimmen, ist auch '}<M>{'\\lim_{x\\to-1} h(x) = -2'}</M>{'. Da '}<M>{'h(-1) = -100 \\neq \\lim_{x\\to-1} h(x)'}</M>{', ist '}<M>{'h'}</M>{' nicht stetig in '}<M>{'x=-1'}</M>{'.'}
             </>
           ),
         },
@@ -409,13 +423,24 @@ lim(x→0,x>0)=1, lim(x→0,x<0)=−1 → verschieden
           ),
           solution: (
             <>
-              {'|4−2x|/(x−2) = 2|2−x|/(x−2)\n\n'}
-              {'x > 2: '}<Frac n="2(x−2)" d="x−2" />{' = 2\nx < 2: '}<Frac n="−2(x−2)" d="x−2" />{' = −2\n\n'}
-              {'(a) lim(x→2, x>2) f(x) = 2\n'}
-              {'(b) lim(x→2, x<2) f(x) = −2\n'}
-              {'(c) lim(x→2) f(x) existiert nicht (2 ≠ −2)\n'}
-              {'(d) lim(x→0) f(x) = '}<Frac n="4−0" d="0−2" />{' = '}<Frac n="4" d="−2" />{' = −2\n\n'}
-              {'Da lim(x→2) f(x) nicht existiert, ist f nicht stetig in x = 2.'}
+              {'Es ist\n'}
+              <M>{'\\frac{|4-2x|}{x-2} = \\frac{2\\,|2-x|}{x-2}.'}</M>
+              {'\n'}
+              {'Für '}<M>{'x>2'}</M>{' ergibt sich\n'}
+              <M>{'\\frac{|4-2x|}{x-2} = \\frac{2\\cdot(-(2-x))}{x-2} = \\frac{2\\cdot(x-2)}{x-2} = 2'}</M>
+              {'\n'}
+              {'und für '}<M>{'x<2'}</M>{' ergibt sich\n'}
+              <M>{'\\frac{|4-2x|}{x-2} = \\frac{2\\cdot(2-x)}{x-2} = \\frac{-2(x-2)}{x-2} = -2.'}</M>
+              {'\n'}
+              {'Damit ist\n'}
+              <M>{'f(x) = \\begin{cases} 2, & x>2\\\\ 0, & x=2\\\\ -2, & x<2.\\end{cases}'}</M>
+              {'\n'}
+              {'Man erhält nun\n'}
+              {'(a) '}<M>{'\\lim_{\\substack{x\\to2\\\\x>2}} f(x) = 2.'}</M>{'\n'}
+              {'(b) '}<M>{'\\lim_{\\substack{x\\to2\\\\x<2}} f(x) = -2.'}</M>{'\n'}
+              {'(c) Da links- und rechtsseitiger Grenzwert nicht übereinstimmen, existiert der Grenzwert '}<M>{'\\lim_{x\\to2} f(x)'}</M>{' nicht.\n'}
+              {'(d) '}<M>{'\\lim_{x\\to0} f(x) = \\frac{4-2\\cdot0}{0-2} = \\frac{4}{-2} = -2.'}</M>{'\n'}
+              {'Da '}<M>{'\\lim_{x\\to2} f(x)'}</M>{' nicht existiert, ist '}<M>{'f'}</M>{' nicht stetig in '}<M>{'x=2'}</M>{'.'}
             </>
           ),
         },
@@ -465,7 +490,11 @@ Dᵍ = ℝ \\ {−2, 2}
             </ul>,
             <p>Selbstkontrolle: Setze x = 1: Nenner 1−1 = 0 → verboten ✓; x = 0: Nenner −1 ≠ 0 → erlaubt (Zähler auch 0, f(0)=0). Frage: Warum verbietet nur die Nullstelle des Nenners (und nicht die des Zählers) eine Stelle, und warum liefert x² = 1 zwei ausgeschlossene Werte?</p>,
           ),
-          solution: 'x² − 1 ≠ 0  ⟺  x ≠ ±1\nDᶠ = ℝ \\ {−1, 1}',
+          solution: (
+            <>
+              <M>{'D_f = \\{x\\in\\mathbb{R} : x^{2}-1 \\neq 0\\} = \\{x\\in\\mathbb{R} : x\\neq 1,\\, x\\neq -1\\} = \\mathbb{R}\\setminus\\{-1,1\\}'}</M>{' (Nenner darf nicht 0 sein.)'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -507,7 +536,11 @@ x → +∞: x² → +∞;  x → −∞: x² → +∞ (gerade!)
           ),
           solution: (
             <>
-              {'f(x) = x · '}<Frac n="1 − 1/x − 1/x²" d="1 − 1/x²" />{'\n\nlim(x→∞) f(x) = ∞,  lim(x→−∞) f(x) = −∞'}
+              {'Es ist\n'}
+              <M>{'f(x) = \\frac{x^{3}-x^{2}-x}{x^{2}-1} = \\frac{x^{3}}{x^{2}}\\cdot\\frac{1-\\frac{1}{x}-\\frac{1}{x^{2}}}{1-\\frac{1}{x^{2}}} = x\\cdot\\frac{1-\\frac{1}{x}-\\frac{1}{x^{2}}}{1-\\frac{1}{x^{2}}}.'}</M>
+              {'\n'}
+              {'Damit ergibt sich\n'}
+              <M>{'\\lim_{x\\to\\infty} f(x) = \\infty'}</M>{' und '}<M>{'\\lim_{x\\to-\\infty} f(x) = -\\infty.'}</M>
             </>
           ),
         },
@@ -554,9 +587,11 @@ Asymptote a(x) = x + 1; Rest 2/(x−1) → 0 ✓`}</pre>
           ),
           solution: (
             <>
-              {'Polynomdivision: '}<Frac n="x³−x²−x" d="x²−1" />{' = x − 1 − '}<Frac n="1" d="x²−1" />{'\n\n'}
-              {'Asymptotische Gerade: a(x) = x − 1\n\n'}
-              {'Probe: lim(x→±∞) (f(x) − (x−1)) = lim (−'}<Frac n="1" d="x²−1" />{') = 0 ✓'}
+              {'Da der Grad des Polynoms im Zähler (nämlich 3) um eins größer ist als der Grad des Polynoms im Nenner (nämlich 2), liegt asymptotisch lineares Verhalten vor.\n'}
+              {'Polynomdivision liefert\n'}
+              <M>{'f(x) = \\frac{x^{3}-x^{2}-x}{x^{2}-1} = \\underbrace{x-1}_{=:a(x)} - \\frac{1}{x^{2}-1}.'}</M>
+              {'\n'}
+              {'Die Gerade '}<M>{'a:\\mathbb{R}\\to\\mathbb{R},\\ x\\mapsto x-1'}</M>{' ist eine asymptotische Gerade der Funktion, da '}<M>{'\\lim_{x\\to\\pm\\infty}(f(x)-a(x)) = 0.'}</M>
             </>
           ),
         },
@@ -608,7 +643,7 @@ C = 6, N = 7 → 5n+7 ∈ O(n). ✓ (linear bleibt linear)`}</pre>
             </ul>,
             <p>Selbstkontrolle: Für (iv) teste n = C+1: dann n² = (C+1)·n &gt; C·n, die Ungleichung n² ≤ C·n bricht — kein C reicht. Frage: Was unterscheidet O (obere Schranke) von Θ (gleiche Größenordnung), und warum darf O konstante Faktoren wie 1000 ignorieren?</p>,
           ),
-          solution: '(i)   wahr: n ≤ 1·n² für n ≥ 1\n(ii)  wahr: n + n² ≤ 2n² für n ≥ 1\n(iii) wahr: 1000n² ≤ 1000·n²\n(iv)  falsch: n ∈ O(n²) aber n² ∉ O(n)',
+          solution: '(i)   wahr\n(ii)  wahr\n(iii) wahr\n(iv)  falsch',
         },
         {
           letter: 'b',
@@ -650,7 +685,7 @@ Verkettet: 3n ≤ 3·n³ (C=3·1=3, N=1) → f ∈ O(h) ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: Prüfe, dass bei n ≥ max(N₁,N₂) wirklich beide Ausgangsungleichungen greifen — sonst bricht die Kette. Frage: Warum ist N = max(N₁,N₂) (nicht min) nötig, und woher kommt die neue Konstante C = C₁·C₂?</p>,
           ),
-          solution: 'Ja.\n∃C₁,N₁: |f(n)| ≤ C₁|g(n)| für n ≥ N₁\n∃C₂,N₂: |g(n)| ≤ C₂|h(n)| für n ≥ N₂\n→ |f(n)| ≤ C₁C₂·|h(n)| für n ≥ max(N₁,N₂)\n→ f(n) ∈ O(h(n)) ✓',
+          solution: 'Ja, das gilt.',
         },
       ],
     },

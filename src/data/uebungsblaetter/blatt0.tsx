@@ -1,5 +1,6 @@
 import type { MatheBlatt } from '../../types'
 import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt0: MatheBlatt = {
@@ -57,7 +58,7 @@ ggT(5,12) = 1 → fertig`}</pre>
             </ul>,
             <p>Probe: 3/7 ≈ 0,43 und 7/3 ≈ 2,33, zusammen ≈ 2,76 — passt 58/21 ≈ 2,76 dazu? Frage: Warum muss vor der Addition zwingend der Nenner gleich sein, und warum ändert das Erweitern (mal 3, mal 7) den Wert eines Bruchs nicht?</p>,
           ),
-          solution: <><Frac n="3" d="7" />{' + '}<Frac n="7" d="3" />{' = '}<Frac n="9" d="21" />{' + '}<Frac n="49" d="21" />{' = '}<Frac n="58" d="21" /></>,
+          solution: <M>{'\\frac{3}{7} + \\frac{7}{3} = \\frac{58}{21}'}</M>,
         },
         {
           letter: 'b',
@@ -99,13 +100,7 @@ Rechte Klammer: 3/4 − 1/4 = 2/4 = 1/2
             </ul>,
             <p>Probe mit Dezimalzahlen: linke Klammer 5/9 ≈ 0,56, rechte 9/8 = 1,125, Produkt ≈ 0,625 — passt 5/8 = 0,625? Frage: Warum darf man querkürzen, bevor man ausmultipliziert (was passiert dabei mit dem Wert des Produkts)?</p>,
           ),
-          solution: (
-            <>
-              {'('}<Frac n="1" d="3" />{' + '}<Frac n="2" d="9" />{') = '}<Frac n="3" d="9" />{' + '}<Frac n="2" d="9" />{' = '}<Frac n="5" d="9" />{'\n'}
-              {'('}<Frac n="11" d="8" />{' − '}<Frac n="1" d="4" />{') = '}<Frac n="11" d="8" />{' − '}<Frac n="2" d="8" />{' = '}<Frac n="9" d="8" />{'\n'}
-              <Frac n="5" d="9" />{' · '}<Frac n="9" d="8" />{' = '}<Frac n="45" d="72" />{' = '}<Frac n="5" d="8" />
-            </>
-          ),
+          solution: <M>{'\\left(\\frac{1}{3} + \\frac{2}{9}\\right)\\cdot\\left(\\frac{11}{8} - \\frac{1}{4}\\right) = \\frac{5}{8}'}</M>,
         },
         {
           letter: 'c',
@@ -144,12 +139,7 @@ Endergebnis: 4 (eine ganze Zahl).`}</pre>
             </ul>,
             <p>Probe: 4 · (3/26) sollte 13/2 : 169/12 ergeben, also 6/13 — stimmt das mit Schritt 1 überein? Frage: Warum ist Dividieren durch c/d dasselbe wie Multiplizieren mit d/c — was bedeutet "durch 1/2 teilen" anschaulich?</p>,
           ),
-          solution: (
-            <>
-              <Frac n="13" d="2" />{' : '}<Frac n="169" d="12" />{' = '}<Frac n="13" d="2" />{' · '}<Frac n="12" d="169" />{' = '}<Frac n="156" d="338" />{' = '}<Frac n="12" d="26" />{'\n'}
-              <Frac n="12" d="26" />{' : '}<Frac n="3" d="26" />{' = '}<Frac n="12" d="26" />{' · '}<Frac n="26" d="3" />{' = '}<Frac n="12" d="3" />{' = 4'}
-            </>
-          ),
+          solution: <M>{'\\left(\\frac{13}{2} : \\frac{169}{12}\\right) : \\frac{3}{26} = 4'}</M>,
         },
         {
           letter: 'd',
@@ -185,7 +175,7 @@ Endergebnis: 4 (eine ganze Zahl).`}</pre>
             </ul>,
             <p>Selbstkontrolle: 5⁻² · 100 = 100/25 = 4 — multipliziere zur Probe zurück 4·25 = 100. Frage: Was unterscheidet 5⁻² (= 1/25), −5² (= −25) und (−5)² (= 25), und warum ist nur 5⁻² ein Kehrwert?</p>,
           ),
-          solution: <>{'5⁻² · 100 = ('}<Frac n="1" d="25" />{') · 100 = '}<Frac n="100" d="25" />{' = 4'}</>,
+          solution: <M>{'5^{-2}\\cdot 100 = 4'}</M>,
         },
         {
           letter: 'e',
@@ -234,7 +224,7 @@ Summe: (−3x + 6) + (−x² − x)
             </ul>,
             <p>Selbstkontrolle: Setze x = 1 in Aufgabe und Ergebnis ein — beide sollten dieselbe Zahl ergeben (−x²−5x+8 = −1−5+8 = 2). Frage: Was macht zwei Terme "gleichartig", und warum darf man x² und x trotz gemeinsamem x nicht addieren?</p>,
           ),
-          solution: '−2(2x−4) = −4x + 8\nx(1+x)·(−1) = −x − x²\n−4x + 8 − x − x² = −x² − 5x + 8',
+          solution: <M>{'-2(2x - 4) + x(1 + x)\\cdot(-1) = -x^{2} - 5x + 8'}</M>,
         },
         {
           letter: 'f',
@@ -287,8 +277,7 @@ Summe: (−3x + 6) + (−x² − x)
             </ul>,
             <p>Selbstkontrolle: Setze a = b = 1 ein: Aufgabe −121 − 121·(−2) = −121 + 242 = 121, Ergebnis 121·1·1 = 121 ✓. Frage: Bei welcher Regel addiert man Exponenten (aᵐ·aⁿ) und bei welcher multipliziert man sie ((aᵐ)ⁿ)?</p>,
           ),
-          solution:
-            '(11a²b)² = 121a⁴b²\n121a⁴b² · (−2a⁻³b) = −242a⁴⁻³b²⁺¹ = −242ab³\n−121ab³ − (−242ab³) = −121ab³ + 242ab³ = 121ab³',
+          solution: <M>{'-121ab^{3} - (11a^{2}b)^{2}\\cdot(-2a^{-3}b) = 121ab^{3}'}</M>,
         },
         {
           letter: 'g',
@@ -329,13 +318,7 @@ Summe: (−3x + 6) + (−x² − x)
             </ul>,
             <p>Selbstkontrolle: Setze a = 3, b = 1, c = 2 ein: Aufgabe −4/2 − 2/2 = −3, Ergebnis −2·3/2 = −3 ✓. Frage: Warum dreht das Minus vor der Klammer das Vorzeichen ALLER Terme um (nicht nur des ersten)?</p>,
           ),
-          solution: (
-            <>
-              {'= '}<Frac n="−(a+b) − (a−b)" d="c" />{'\n'}
-              {'= '}<Frac n="−a − b − a + b" d="c" />{'\n'}
-              {'= '}<Frac n="−2a" d="c" />
-            </>
-          ),
+          solution: <M>{'-\\frac{a+b}{c} - \\frac{a-b}{c} = -\\frac{2a}{c}'}</M>,
         },
       ],
     },
@@ -380,8 +363,13 @@ Probe: (−1)·(−3x + 2) = 3x − 2 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: rechne die ausgeklammerte Form wieder mit (−1) aus — kommt der Originalausdruck heraus? Frage: Warum bleibt der Wert gleich, obwohl man (−1) ausklammert, und wozu braucht man diese Umformung (etwa um Brüche vergleichbar zu machen)?</p>,
           ),
-          solution:
-            'b(a−b) + b − a\n= (−1) · (−b(a−b) − b + a)\n= (−1) · (b(b−a) − b + a)',
+          solution: (
+            <>
+              <M>{'b(a - b) + b - a = (-1)\\cdot((-b)(a - b) - b + a)'}</M>
+              {'\n'}
+              <M>{'= (-1)\\cdot(b(b - a) - b + a)'}</M>
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -418,8 +406,7 @@ Probe: (−1)·(−3x + 2) = 3x − 2 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: multipliziere (a−b)(b−1) wieder aus — kommt der Originalausdruck heraus? Frage: Woran erkennt man am ersten Term b(a−b) schon, dass (a−b) ein gemeinsamer Faktor sein könnte?</p>,
           ),
-          solution:
-            'b(a−b) + b − a\n= b(a−b) − (a−b)\n= (a−b) · (b − 1)',
+          solution: <M>{'b(a - b) + b - a = (a - b)\\cdot(b - 1)'}</M>,
         },
         {
           letter: 'c',
@@ -459,8 +446,7 @@ Probe: (−1)·(−3x + 2) = 3x − 2 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: multipliziere (b−a)(1−b) aus — Originalausdruck? Frage: Worin unterscheiden sich die Ergebnisse aus (b) und (c) nur — und warum sind sie trotzdem gleichwertig?</p>,
           ),
-          solution:
-            'b(a−b) + b − a\n= −b(b−a) + (b−a)\n= (b−a) · (−b + 1)',
+          solution: <M>{'b(a - b) + b - a = (b - a)\\cdot(-b + 1)'}</M>,
         },
       ],
     },
@@ -496,7 +482,7 @@ Probe: (−1)·(−3x + 2) = 3x − 2 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: setze a=7, b=4 ein → (7−4)/(7−4) = 1 ✓. Frage: Warum gilt x/x = 1 nur für x ≠ 0, und was wäre 0/0 — definiert oder nicht?</p>,
           ),
-          solution: <><Frac n="a−b" d="a−b" />{' = 1'}</>,
+          solution: <M>{'\\frac{a - b}{a - b} = 1'}</M>,
         },
         {
           letter: 'b',
@@ -530,7 +516,7 @@ Probe: (−1)·(−3x + 2) = 3x − 2 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: setze a=5, b=2 ein → (5−2)/(2−5) = 3/(−3) = −1 ✓. Frage: Warum ergibt (a−b)/(b−a) genau −1 und nicht +1 — welcher Faktor bleibt nach dem Kürzen übrig?</p>,
           ),
-          solution: <><Frac n="a−b" d="b−a" />{' = '}<Frac n="a−b" d="−(a−b)" />{' = −1'}</>,
+          solution: <M>{'\\frac{a - b}{b - a} = -1'}</M>,
         },
         {
           letter: 'c',
@@ -560,7 +546,7 @@ Test: (a+b)·(a−b) = a² − b²   → Minus, nicht Plus
             </ul>,
             <p>Selbstkontrolle: setze a=1, b=2 ein → (1+4)/(1+2) = 5/3, keine ganze Zahl, kein Wegkürzen — bestätigt "nicht kürzbar". Frage: Was müsste im Zähler stehen, damit man mit (a+b) kürzen dürfte, und welche binomische Formel liefert genau das?</p>,
           ),
-          solution: 'Nicht weiter kürzbar – Zähler und Nenner haben keine gemeinsamen Faktoren.',
+          solution: 'Die Ausdrücke in (c), (e) und (h) sind nicht weiter kürzbar.',
         },
         {
           letter: 'd',
@@ -590,7 +576,7 @@ Test: (a+b)·(a−b) = a² − b²   → Minus, nicht Plus
             </ul>,
             <p>Selbstkontrolle: setze a=5, b=2 ein → (25−4)/(5−2) = 21/3 = 7, und a+b = 7 ✓. Frage: Welche Form muss der Zähler haben, damit er sich mit (a−b) kürzen lässt, und welche binomische Formel liefert genau diese Zerlegung?</p>,
           ),
-          solution: <><Frac n="a²−b²" d="a−b" />{' = '}<Frac n="(a+b)(a−b)" d="a−b" />{' = a+b'}</>,
+          solution: <M>{'\\frac{a^{2} - b^{2}}{a - b} = a + b'}</M>,
         },
         {
           letter: 'e',
@@ -620,7 +606,7 @@ Nenner: 2c + 6d = 2·(c + 3d)   ← Faktor 2 ausklammerbar
             </ul>,
             <p>Selbstkontrolle: setze a=1,b=1,c=1,d=1 ein → 5/5 = 1 (Spezialfall), aber a=1,b=2,c=3,d=1 → 8/9 ≠ vereinfachbar — kein einheitliches Wegkürzen möglich. Frage: Formuliere die Merkregel — wann genau darf man einen Bruch kürzen?</p>,
           ),
-          solution: 'Nicht weiter kürzbar – keine gemeinsamen Faktoren.',
+          solution: 'Die Ausdrücke in (c), (e) und (h) sind nicht weiter kürzbar.',
         },
         {
           letter: 'f',
@@ -655,7 +641,7 @@ x³(1 + x²)/x³ = 1 + x²`}</pre>
             </ul>,
             <p>Selbstkontrolle: setze k=2 ein → (4+8)/4 = 12/4 = 3, und 1+k = 3 ✓. Frage: Warum darf man k² aus k²+k³ ausklammern, obwohl es ein Summand ist — und wie hängt Ausklammern mit dem anschließenden Kürzen zusammen?</p>,
           ),
-          solution: <><Frac n="k²+k³" d="k²" />{' = '}<Frac n="k²(1+k)" d="k²" />{' = 1+k'}</>,
+          solution: <M>{'\\frac{k^{2} + k^{3}}{k^{2}} = 1 + k'}</M>,
         },
         {
           letter: 'g',
@@ -691,7 +677,7 @@ x³(1 + x²)/x³ = 1 + x²`}</pre>
             </ul>,
             <p>Selbstkontrolle: setze k=1 ein → 2/(4+6) = 2/10 = 1/5, und 1/(2+3) = 1/5 ✓. Frage: Warum darf man bei 2k²/(4k²+6k³) nicht direkt 2k² kürzen, ohne den Nenner vorher zu faktorisieren?</p>,
           ),
-          solution: <><Frac n="2k²" d="4k²+6k³" />{' = '}<Frac n="2k²" d="2k²(2+3k)" />{' = '}<Frac n="1" d="2+3k" /></>,
+          solution: <M>{'\\frac{2k^{2}}{4k^{2} + 6k^{3}} = \\frac{1}{2 + 3k}'}</M>,
         },
         {
           letter: 'h',
@@ -721,7 +707,7 @@ Faktoren des Nenners mit (1 + k²) vergleichen:
             </ul>,
             <p>Selbstkontrolle: k=2 → (1+4)/(1+8) = 5/9, keine Vereinfachung möglich → "nicht kürzbar" bestätigt. Frage: Die Faktorisierung 1+k³ = (1+k)(1−k+k²) ist korrekt — warum hilft sie trotzdem nicht, und welchen Faktor müsste der Zähler enthalten?</p>,
           ),
-          solution: 'Nicht weiter kürzbar.',
+          solution: 'Die Ausdrücke in (c), (e) und (h) sind nicht weiter kürzbar.',
         },
       ],
     },
@@ -761,7 +747,7 @@ Faktoren des Nenners mit (1 + k²) vergleichen:
             </ul>,
             <p>Selbstkontrolle: 8² = 64 zurückrechnen, und √2 ≈ 1,41 · √32 ≈ 5,66 ≈ 8 ✓. Frage: Warum gilt √a·√b = √(ab), aber √a+√b ≠ √(a+b)? (Tipp: rechne (√a+√b)² aus und vergleiche mit a+b.)</p>,
           ),
-          solution: '√2 · √32 = √(2·32) = √64 = 8',
+          solution: <M>{'\\sqrt{2}\\cdot\\sqrt{32} = 8'}</M>,
         },
         {
           letter: 'b',
@@ -791,8 +777,11 @@ Der Extra-Term 2√(ab) ist > 0, sobald a,b > 0
             </ul>,
             <p>Selbstkontrolle: prüfe dein Gegenbeispiel, indem du beide Seiten als Dezimalzahl ausrechnest — sie müssen verschieden sein. Frage: Warum reicht ein einziges Gegenbeispiel zum Widerlegen, und warum taugt a=b=0 nicht dafür?</p>,
           ),
-          solution:
-            'Nein – nicht allgemein gültig.\nGegenbeispiel a=9, b=16:\n√(9+16) = √25 = 5\n√9 + √16 = 3 + 4 = 7\n5 ≠ 7',
+          solution: (
+            <>
+              {'Nein, hier gilt nicht für alle '}<M>{'a, b \\ge 0'}</M>{' Gleichheit; zum Beispiel ist für '}<M>{'a = 9'}</M>{' und '}<M>{'b = 16'}</M>{' die Gleichung nicht erfüllt.'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -835,11 +824,13 @@ Teil 2 — 1/(√3 + √5):
           ),
           solution: (
             <>
-              <Frac n="1" d="√5" />{' = '}<Frac n="1·√5" d="√5·√5" />{' = '}<Frac n="√5" d="5" />{'\n\n'}
-              <Frac n="1" d="√3+√5" />{'\n= '}
-              <Frac n="1" d="√3+√5" />{' · '}<Frac n="√3−√5" d="√3−√5" />{'\n= '}
-              <Frac n="√3−√5" d="3−5" />{'\n= '}
-              <Frac n="√3−√5" d="−2" />
+              {'Wir erweitern mit '}<M>{'\\frac{\\sqrt{5}}{\\sqrt{5}}'}</M>{' und erhalten'}
+              {'\n'}
+              <M>{'\\frac{1}{\\sqrt{5}} = \\frac{1}{\\sqrt{5}}\\cdot\\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{\\sqrt{5}}{5}'}</M>
+              {'\n'}
+              {'Mit Hilfe der 3. binomischen Formel berechnen wir'}
+              {'\n'}
+              <M>{'\\frac{1}{\\sqrt{3}+\\sqrt{5}} = \\frac{1}{\\sqrt{3}+\\sqrt{5}}\\cdot\\frac{\\sqrt{3}-\\sqrt{5}}{\\sqrt{3}-\\sqrt{5}} = \\frac{\\sqrt{3}-\\sqrt{5}}{3-5} = \\frac{\\sqrt{3}-\\sqrt{5}}{-2}'}</M>{'.'}
             </>
           ),
         },
@@ -1025,9 +1016,7 @@ y = 1   → Schnittpunkt (1, 1)`}</pre>
           ),
           solution: (
             <>
-              {'−2x + 1 = ('}<Frac n="1" d="2" />{')x − 2\n3 = ('}<Frac n="5" d="2" />{')x\nx = '}<Frac n="6" d="5" />{'\n'}
-              {'y = −2·('}<Frac n="6" d="5" />{') + 1 = −'}<Frac n="12" d="5" />{' + '}<Frac n="5" d="5" />{' = −'}<Frac n="7" d="5" />{'\n'}
-              {'Schnittpunkt: ('}<Frac n="6" d="5" />{', −'}<Frac n="7" d="5" />{')'}
+              {'Die Geraden schneiden sich im Punkt '}<M>{'\\left(\\frac{6}{5}, -\\frac{7}{5}\\right)'}</M>{'.'}
             </>
           ),
           graph: {
@@ -1080,12 +1069,7 @@ y = −(1/2)x + 5`}</pre>
             </ul>,
             <p>Selbstkontrolle: setze x=8 in y = −(1/4)x + 2 ein → y = −2 + 2 = 0 ✓ (zweiter Punkt liegt drauf). Frage: Welche zwei Informationen legen eine Gerade fest, warum reicht ein Punkt nicht, und welche Größe (m oder b) konnte man hier sofort ablesen?</p>,
           ),
-          solution: (
-            <>
-              {'m = '}<Frac n="0−2" d="8−0" />{' = −'}<Frac n="2" d="8" />{' = −'}<Frac n="1" d="4" />{'\n'}
-              {'b = 2  (y-Achsenabschnitt)\ny = −('}<Frac n="1" d="4" />{')x + 2'}
-            </>
-          ),
+          solution: <M>{'y = -\\frac{1}{4}x + 2'}</M>,
           taskGraph: {
             lines: [{ m: -0.25, b: 2, label: 'y = ?' }],
             points: [
@@ -1125,12 +1109,7 @@ y = 2x`}</pre>
             </ul>,
             <p>Selbstkontrolle: setze x=2 in y = −(1/2)x ein → y = −1 ✓ (gegebener Punkt liegt drauf). Frage: Welche Vereinfachung bringt der Ursprung für y = mx + b, und warum genügt danach ein einziger weiterer Punkt zur Bestimmung der Gleichung?</p>,
           ),
-          solution: (
-            <>
-              {'m = '}<Frac n="−1−0" d="2−0" />{' = −'}<Frac n="1" d="2" />{'\n'}
-              {'b = 0  (Ursprungsgerade)\ny = −('}<Frac n="1" d="2" />{')x'}
-            </>
-          ),
+          solution: <M>{'y = -\\frac{1}{2}x'}</M>,
           taskGraph: {
             lines: [{ m: -0.5, b: 0, label: 'y = ?' }],
             points: [

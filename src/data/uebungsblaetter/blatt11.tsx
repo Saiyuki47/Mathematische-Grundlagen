@@ -69,7 +69,12 @@ export const blatt11: MatheBlatt = {
             </ul>,
             <p>Selbst-Probe: Setze zwei Extremfälle ein — cos x = 0 (Nenner = 1) und cos x = ±1 (Nenner = 2). In beiden Fällen ist der Nenner ≥ 1, der Bruch also definiert. Frage: Welche untere Schranke hat (cos x)² + 1 für alle x, und warum genügt allein diese Schranke (ohne ein einziges x auszuschließen), um die Stetigkeit des ganzen Bruchs zu sichern?</p>,
           ),
-          solution: '(cos x)² + 1 ≥ 1 > 0 für alle x ∈ ℝ → kein Ausschluss nötig.\nf ist Verkettung/Quotient stetiger Funktionen → f stetig auf ℝ.',
+          solution: (
+            <>
+              {'Laut Vorlesung sind durch Reihen definierte Funktionen wie exp, sin, cos stetig in '}<M>{'\\mathbb{R}'}</M>{'. Außerdem sind laut Vorlesung die Betragsfunktion in '}<M>{'\\mathbb{R}'}</M>{' und die Wurzelfunktion in '}<M>{'[0,\\infty)'}</M>{' stetig. Desweiteren liefern Verkettungen, Multiplikationen und Additionen stetiger Funktionen wieder stetige Funktionen, ebenso die Division stetiger Funktionen, wobei man gegebenenfalls den Definitionsbereich einschränken muss. In Teilaufgabe (a) ist aber '}<M>{'(\\cos(x))^{2}+1 \\ge 1 > 0'}</M>{' für alle '}<M>{'x\\in\\mathbb{R}'}</M>{', so dass es keine Einschränkungen gibt.\n'}
+              {'Die Funktionen '}<M>{'f'}</M>{' und '}<M>{'g'}</M>{' setzen sich jeweils aus stetigen Funktionen durch die genannten Operationen zusammen und sind somit stetig.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -117,7 +122,12 @@ cos x ≥ −1 für alle x  ⇒ cos x + 1 ≥ −1 + 1 = 0.
             </ul>,
             <p>Selbst-Probe: Setze x = π ein → sin π = 0 → |0| = 0 → √0 = 0, definiert. Und x = π/2 → sin = 1 → √1 = 1. Beide klappen, weil das Argument ≥ 0 ist. Frage: Warum genügt es bei einer Verkettung NICHT, nur die äußerste Funktion (√) auf Stetigkeit zu prüfen — welche Bedingung muss das Argument der Wurzel zusätzlich erfüllen, und welcher Baustein sorgt hier dafür?</p>,
           ),
-          solution: '|x · sin x| ≥ 0 für alle x → Argument von √ immer ≥ 0.\ng = √ ∘ |·| ∘ (x·sin x) ist Verkettung/Produkt stetiger Funktionen → g stetig auf ℝ.',
+          solution: (
+            <>
+              {'Laut Vorlesung sind durch Reihen definierte Funktionen wie exp, sin, cos stetig in '}<M>{'\\mathbb{R}'}</M>{'. Außerdem sind laut Vorlesung die Betragsfunktion in '}<M>{'\\mathbb{R}'}</M>{' und die Wurzelfunktion in '}<M>{'[0,\\infty)'}</M>{' stetig. Desweiteren liefern Verkettungen, Multiplikationen und Additionen stetiger Funktionen wieder stetige Funktionen, ebenso die Division stetiger Funktionen, wobei man gegebenenfalls den Definitionsbereich einschränken muss.\n'}
+              {'Die Funktionen '}<M>{'f'}</M>{' und '}<M>{'g'}</M>{' setzen sich jeweils aus stetigen Funktionen durch die genannten Operationen zusammen und sind somit stetig.'}
+            </>
+          ),
         },
       ],
     },
@@ -175,7 +185,18 @@ obwohl der Faktor s unstetig ist.`}</pre>
             </ul>,
             <p>Selbst-Probe: Rechne h für x = 0,5 und x = −0,5: 0,5·4 = 2 und (−0,5)·(−4) = 2 — beide Äste ergeben 4·0,5 = 2, also h = 4|x|. Frage: Warum kann ein Produkt zweier Funktionen stetig sein, obwohl ein Faktor (g) einen Sprung hat — was macht der Faktor x genau an der Sprungstelle x = 0?</p>,
           ),
-          solution: 'f ist als Polynom stetig.\n\ng ist in 0 nicht stetig (lim(x→0) g(x) existiert nicht: −4 ≠ 4).\n\nh(x) = x·g(x) = 4|x|: Betragsfunktion stetig → h stetig auf ℝ.\n(Probe: lim(x→0) h(x) = 0 = h(0) ✓)',
+          solution: (
+            <>
+              <M>{'f'}</M>{' ist als Polynom stetig.\n\n'}
+              <M>{'g'}</M>{' ist in 0 nicht stetig, da '}<M>{'\\lim_{x\\to0} g(x)'}</M>{' nicht existiert.\n\n'}
+              {'Die Funktion '}<M>{'h'}</M>{' ist gegeben durch\n'}
+              <M>{'h:\\mathbb{R}\\to\\mathbb{R},\\ x\\mapsto \\begin{cases} 4x, & x\\ge 0,\\\\ -4x, & x<0.\\end{cases}'}</M>
+              {'\n'}
+              {'Somit ist '}<M>{'h(x) = 4\\,|x|'}</M>{'. Da die Betragsfunktion stetig ist, ist auch '}<M>{'h'}</M>{' stetig.\n\n'}
+              {'Andere Möglichkeit:\n'}
+              <M>{'\\lim_{\\substack{x\\to0\\\\x>0}} h(x) = 0 = \\lim_{\\substack{x\\to0\\\\x<0}} h(x)'}</M>{', also '}<M>{'\\lim_{x\\to0} h(x) = 0'}</M>{' und '}<M>{'h(0) = 0'}</M>{'. Also stimmt der Funktionswert an der Stelle 0 mit dem Grenzwert überein. Somit ist '}<M>{'h'}</M>{' stetig in 0. In '}<M>{'\\mathbb{R}\\setminus\\{0\\}'}</M>{' ist '}<M>{'h'}</M>{' ebenfalls stetig als Polynom. Somit ist '}<M>{'h'}</M>{' stetig in '}<M>{'\\mathbb{R}'}</M>{'.'}
+            </>
+          ),
         },
       ],
     },
@@ -228,7 +249,14 @@ lim(x→3) (x + 3) = 6
           ),
           solution: (
             <>
-              {'f(x) = '}<Frac n="(x+1)(x−1)" d="x−1" />{' = x+1 für x ≠ 1\n\nlim(x→1) f(x) = 2\n\n→ c = 2, dann f stetig auf ℝ.'}
+              {'Stetigkeit von '}<M>{'f'}</M>{' in '}<M>{'\\mathbb{R}\\setminus\\{1\\}'}</M>{' klar, da rationale Funktion.\n'}
+              {'Für '}<M>{'x\\neq 1'}</M>{' ist\n'}
+              <M>{'f(x) = \\frac{x^{2}-1}{x-1} = \\frac{(x+1)\\cdot(x-1)}{x-1} = x+1.'}</M>
+              {'\n'}
+              {'Somit ergibt sich\n'}
+              <M>{'\\lim_{x\\to1} f(x) = 2.'}</M>
+              {'\n'}
+              {'Ist '}<M>{'c = 2'}</M>{', so ist '}<M>{'f'}</M>{' auch in 1 stetig und damit im gesamten Definitionsbereich.'}
             </>
           ),
         },
@@ -279,7 +307,14 @@ lim(x→0) = 1/(√4 + 2) = 1/(2+2) = 1/4`}</pre>
           ),
           solution: (
             <>
-              <Frac n="√(1+x)−1" d="x" />{' = '}<Frac n="√(1+x)−1" d="x" />{' · '}<Frac n="√(1+x)+1" d="√(1+x)+1" />{' = '}<Frac n="x" d="x(√(1+x)+1)" />{' = '}<Frac n="1" d="√(1+x)+1" />{'\n\nlim(x→0) = '}<Frac n="1" d="√1+1" />{' = '}<Frac n="1" d="2" />{'\n\n→ c = '}<Frac n="1" d="2" />
+              {'Da Wurzelfunktion und Polynome stetig sind, sind auch die Funktionen '}<M>{'h_1:(-1,\\infty)\\to\\mathbb{R},\\ x\\mapsto \\sqrt{1+x}-1'}</M>{' und '}<M>{'h_2:(-1,\\infty)\\to\\mathbb{R},\\ x\\mapsto x'}</M>{' stetig. Nach Vorlesung ist auch '}<M>{'\\frac{h_1}{h_2}'}</M>{' stetig in '}<M>{'(-1,\\infty)\\setminus\\{x\\in(-1,\\infty) : h_2(x)=0\\} = (-1,\\infty)\\setminus\\{0\\}'}</M>{'.\n'}
+              {'Für '}<M>{'x\\neq 0'}</M>{' ist\n'}
+              <M>{'f(x) = \\frac{\\sqrt{1+x}-1}{x} = \\frac{\\sqrt{1+x}-1}{x}\\cdot\\frac{\\sqrt{1+x}+1}{\\sqrt{1+x}+1} = \\frac{1+x-1}{x(\\sqrt{1+x}+1)} = \\frac{x}{x(\\sqrt{1+x}+1)} = \\frac{1}{\\sqrt{1+x}+1}.'}</M>
+              {'\n'}
+              {'Somit ergibt sich\n'}
+              <M>{'\\lim_{x\\to0} f(x) = \\frac{1}{\\sqrt{1+0}+1} = \\frac{1}{2}.'}</M>
+              {'\n'}
+              {'Ist '}<M>{'c = \\frac{1}{2}'}</M>{', so ist '}<M>{'f'}</M>{' auch in 0 stetig und damit im gesamten Definitionsbereich.'}
             </>
           ),
         },
@@ -325,7 +360,13 @@ Beide 0 → lim(x→0) g = 0 existiert
           ),
           solution: (
             <>
-              {'x > 0: f(x) = '}<Frac n="3" d="2" />{'\nx < 0: f(x) = −'}<Frac n="3" d="2" />{'\n\nlim(x→0, x<0) f(x) = −'}<Frac n="3" d="2" />{' ≠ lim(x→0, x>0) f(x) = '}<Frac n="3" d="2" />{'\n→ Grenzwert existiert nicht → kein c möglich.'}
+              {'Für '}<M>{'x>0'}</M>{' ist\n'}
+              <M>{'f(x) = \\frac{3x}{2\\,|x|} = \\frac{3x}{2x} = \\frac{3}{2}'}</M>
+              {'\n'}
+              {'und für '}<M>{'x<0'}</M>{' ist\n'}
+              <M>{'f(x) = \\frac{3x}{2\\,|x|} = \\frac{3x}{2\\cdot(-x)} = -\\frac{3}{2}.'}</M>
+              {'\n'}
+              {'Damit ist '}<M>{'\\lim_{\\substack{x\\to0\\\\x<0}} f(x) = -\\frac{3}{2}'}</M>{' und '}<M>{'\\lim_{\\substack{x\\to0\\\\x>0}} f(x) = \\frac{3}{2}'}</M>{'. Da links- und rechtsseitiger Grenzwert nicht übereinstimmen, existiert '}<M>{'\\lim_{x\\to0} f(x)'}</M>{' nicht. Die Funktion kann somit nicht stetig nach 0 fortgesetzt werden.'}
             </>
           ),
         },
@@ -372,7 +413,20 @@ beide = 1 → lim(x→0) g = 1
             </ul>,
             <p>Selbst-Probe: f(−0,01) = |−0,01| = 0,01 und f(0,01) = √0,01 = 0,1 — beide klein und Richtung 0; nähere x weiter an 0, beide Seiten gehen gegen 0. Frage: Was ist die Stetigkeitsbedingung in x = 0 — welche drei Dinge müssen gelten, und welches davon legt den Wert c eindeutig fest?</p>,
           ),
-          solution: 'lim(x→0, x<0) f(x) = lim |x| = 0\nlim(x→0, x>0) f(x) = lim √x = 0\n\n→ lim(x→0) f(x) = 0  →  c = 0\n\nMit c = 0 ist f stetig auf ℝ.',
+          solution: (
+            <>
+              {'Die Betragsfunktion ist in '}<M>{'\\mathbb{R}'}</M>{' stetig und die Wurzelfunktion in '}<M>{'[0,\\infty)'}</M>{'. Somit ist '}<M>{'f'}</M>{' in '}<M>{'\\mathbb{R}\\setminus\\{0\\}'}</M>{' stetig. Desweiteren ist\n'}
+              <M>{'\\lim_{\\substack{x\\to0\\\\x<0}} f(x) = \\lim_{\\substack{x\\to0\\\\x<0}} |x| = 0'}</M>
+              {'\n'}
+              {'und\n'}
+              <M>{'\\lim_{\\substack{x\\to0\\\\x>0}} f(x) = \\lim_{\\substack{x\\to0\\\\x>0}} \\sqrt{x} = 0.'}</M>
+              {'\n'}
+              {'Somit ergibt sich\n'}
+              <M>{'\\lim_{x\\to0} f(x) = 0.'}</M>
+              {'\n'}
+              {'Ist '}<M>{'c = 0'}</M>{', so ist '}<M>{'f'}</M>{' auch in 0 stetig und damit im gesamten Definitionsbereich.'}
+            </>
+          ),
         },
       ],
     },
@@ -435,15 +489,17 @@ f(1,5)<0, f(2)>0 → Nullstelle in [1,5; 2].`}</pre>
           ),
           solution: (
             <>
-              {'f(x) = '}<Frac n="1" d="1+x²" />{' − √x stetig auf [0,4].\n\n'}
-              {'f(0) = 1 > 0,  f(4) = '}<Frac n="1" d="17" />{' − 2 < 0\n'}
-              {'→ ZWS: Nullstelle in (0,4).\n\n'}
-              {'Bisektionsverfahren:\n'}
-              {'n=0: mid=2, f(2)='}<Frac n="1" d="5" />{' − √2 < 0  → [0,2]\n'}
-              {'n=1: mid=1, f(1)='}<Frac n="1" d="2" />{' − 1 < 0      → [0,1]\n'}
-              {'n=2: mid=½, f(½)='}<Frac n="4" d="5" />{' − '}<Frac n="1" d="√2" />{' > 0 → [½,1]\n'}
-              {'n=3: mid=¾, f(¾)='}<Frac n="16" d="25" />{' − '}<Frac n="√3" d="2" />{' < 0 → [½,¾]\n\n'}
-              {'Nullstelle liegt in [½, ¾],  Länge = '}<Frac n="1" d="4" />{'. ✓'}
+              {'Definiere\n'}
+              <M>{'f:[0,4]\\to\\mathbb{R},\\ x\\mapsto \\frac{1}{1+x^{2}}-\\sqrt{x}.'}</M>
+              {'\n'}
+              {'Die Funktion '}<M>{'f'}</M>{' ist stetig und auf einem Intervall definiert. Desweiteren ist '}<M>{'f(0) = \\frac{1}{1+0}-\\sqrt{0} = 1 > 0'}</M>{' und '}<M>{'f(4) = \\frac{1}{1+4^{2}}-\\sqrt{4} = \\frac{1}{17}-2 < 0'}</M>{'. Nach dem Zwischenwertsatz existiert mindestens eine Nullstelle in '}<M>{'[0,4]'}</M>{'.\n\n'}
+              {'Das Bisektionsverfahren liefert:\n\n'}
+              {'n = 0:  '}<M>{'a_n=0,\\ f(a_n)>0,\\ b_n=4,\\ f(b_n)<0,\\ \\tfrac{a_n+b_n}{2}=2,\\ f\\left(\\tfrac{a_n+b_n}{2}\\right)=\\tfrac{1}{5}-\\sqrt{2}<0'}</M>{'\n'}
+              {'n = 1:  '}<M>{'a_n=0,\\ f(a_n)>0,\\ b_n=2,\\ f(b_n)<0,\\ \\tfrac{a_n+b_n}{2}=1,\\ f\\left(\\tfrac{a_n+b_n}{2}\\right)=-\\tfrac{1}{2}<0'}</M>{'\n'}
+              {'n = 2:  '}<M>{'a_n=0,\\ f(a_n)>0,\\ b_n=1,\\ f(b_n)<0,\\ \\tfrac{a_n+b_n}{2}=\\tfrac{1}{2},\\ f\\left(\\tfrac{a_n+b_n}{2}\\right)=\\tfrac{4}{5}-\\sqrt{\\tfrac{1}{2}}>0'}</M>{'\n'}
+              {'n = 3:  '}<M>{'a_n=\\tfrac{1}{2},\\ f(a_n)>0,\\ b_n=1,\\ f(b_n)<0,\\ \\tfrac{a_n+b_n}{2}=\\tfrac{3}{4},\\ f\\left(\\tfrac{a_n+b_n}{2}\\right)=\\tfrac{16}{25}-\\tfrac{\\sqrt{3}}{2}<0'}</M>{'\n'}
+              {'n = 4:  '}<M>{'a_n=\\tfrac{1}{2},\\ f(a_n)>0,\\ b_n=\\tfrac{3}{4},\\ f(b_n)<0,\\ \\tfrac{a_n+b_n}{2}=\\tfrac{5}{8},\\ \\dots'}</M>{'\n\n'}
+              {'Somit befindet sich in dem Intervall '}<M>{'\\left[\\tfrac{1}{2},\\tfrac{3}{4}\\right]'}</M>{' eine Nullstelle.'}
             </>
           ),
         },
@@ -566,7 +622,12 @@ q = −1:   (−1)ⁿ alterniert → kein Grenzwert`}</pre>
             </ul>,
             <p>Selbst-Probe: x = −0,5 → −0,5; 0,25; −0,125; … die Beträge schrumpfen gegen 0, also Grenzwert 0; x = −1 → −1; 1; −1; … kein Trend. Frage: Wie lautet das Konvergenzkriterium für eine geometrische Folge qⁿ, und welche Werte in [−1,1] erfüllen es (warum fällt genau x = −1 heraus)?</p>,
           ),
-          solution: 'lim(n→∞) xⁿ existiert für x ∈ (−1,1]:\n\n  0,  |x| < 1\n  1,  x = 1\n\nFür x = −1: (−1)ⁿ alterniert → kein Grenzwert.',
+          solution: (
+            <>
+              {'Die geometrische Folge '}<M>{'(x^{n})_{n\\in\\mathbb{N}}'}</M>{' konvergiert genau dann, wenn '}<M>{'x\\in(-1,1]'}</M>{'. Es ist\n'}
+              <M>{'\\lim_{n\\to\\infty} x^{n} = \\begin{cases} 0, & |x| < 1,\\\\ 1, & x = 1\\end{cases}'}</M>
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -609,7 +670,14 @@ obwohl alle gₙ stetig sind. (gleiches Phänomen)`}</pre>
             </ul>,
             <p>Selbst-Probe: Für x = 0,99 ist 0,99ⁿ → 0 (sehr langsam, aber gegen 0), für x = 1 bleibt 1ⁿ = 1 — direkt nebeneinander liegen Wert 0 und Wert 1, daher der Sprung. Frage: Alle fₙ sind stetig — warum kann die punktweise gebildete Grenzfunktion trotzdem unstetig sein (was passiert genau zwischen x knapp unter 1 und x = 1)?</p>,
           ),
-          solution: 'D = (−1,1]\n\nf: (−1,1] → ℝ,  x ↦ {0 für x ∈ (−1,1),  1 für x = 1}\n\nSkizze: y=0 auf (−1,1) (offenes Intervall), isolierter Punkt (1,1).\nHinweis: f ist nicht stetig in x=1, obwohl alle fₙ stetig sind.',
+          solution: (
+            <>
+              {'Nach Teil (b) ist\n'}
+              <M>{'f:(-1,1]\\to\\mathbb{R},\\ x\\mapsto \\begin{cases} 0, & x\\in(-1,1),\\\\ 1, & x=1.\\end{cases}'}</M>
+              {'\n'}
+              {'Skizze:'}
+            </>
+          ),
           abbildung: (
             <FunctionPlot
               data={{

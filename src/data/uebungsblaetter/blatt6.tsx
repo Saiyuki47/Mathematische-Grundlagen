@@ -1,5 +1,5 @@
 import type { MatheBlatt } from '../../types'
-import Frac from '../../utils/Frac'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt6: MatheBlatt = {
@@ -60,7 +60,11 @@ surjektiv: zu geradem k∈K wähle n = k/2, dann g(k/2) = k ✓
             </ul>,
             <p>Selbstkontrolle: Ist K=ℕ\{'{0}'} echt? Ja, 0∈ℕ aber 0∉K. Triff k=5: n=6∈K, f(6)=5 ✓. Werden zwei verschiedene n,m je gleich abgebildet? Nein (n−1=m−1 ⟹ n=m). Frage: Warum funktioniert dieser „Verschiebe-Trick" bei ℕ, aber niemals bei einer endlichen Menge wie {'{1,2,3}'} — was unterscheidet endlich von unendlich?</p>,
           ),
-          solution: 'Wähle K := ℕ \\ {0} und f : K → ℕ, n ↦ n − 1.\n\nK ⊆ ℕ und K ≠ ℕ (da 0 ∉ K).\n\nf ist bijektiv:\n  – injektiv:  n−1 = m−1 ⟹ n = m\n  – surjektiv: für k ∈ ℕ gilt f(k+1) = k\n\nDamit existiert eine Bijektion von einer echten Teilmenge K auf ℕ → ℕ ist nach Dedekind unendlich. □',
+          solution: (
+            <>
+              <M>{'K := \\mathbb{N} \\setminus \\{0\\}'}</M>{', '}<M>{'M := \\mathbb{N}'}</M>{', '}<M>{'f : \\mathbb{N} \\setminus \\{0\\} \\to \\mathbb{N},\\ n \\mapsto n - 1'}</M>{'.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -107,7 +111,17 @@ Allgemein: jedes endliche Produkt abzählbarer Mengen ist abzählbar.`}</pre>
             </ul>,
             <p>Selbstkontrolle: In welcher Diagonale liegt (2,3)? Summe 2+3=5 → Diagonale 5 (6 Paare). Sie wird nach endlich vielen Schritten erreicht. Frage: Warum garantiert das Sortieren nach m+n, dass jedes Paar eine endliche Nummer bekommt — und warum scheitert genau daran die zeilenweise Aufzählung?</p>,
           ),
-          solution: 'Ja, ℕ × ℕ ist abzählbar.\n\nDie Diagonalen-Aufzählung liefert eine Bijektion ℕ → ℕ×ℕ:\n(0,0), (0,1), (1,0), (0,2), (1,1), (2,0), (3,0), ...\n\nPaar (m,n) liegt in Diagonale m+n und ist eindeutig aufzählbar.',
+          solution: (
+            <>
+              {'Ja, '}<M>{'\\mathbb{N} \\times \\mathbb{N}'}</M>{' ist abzählbar.'}
+              {'\n\n'}
+              {'Betrachte das Schema'}
+              {'\n'}
+              <M>{'\\begin{matrix} (0,0) & (0,1) & (0,2) & (0,3) & \\cdots \\\\ (1,0) & (1,1) & (1,2) & (1,3) & \\cdots \\\\ (2,0) & (2,1) & (2,2) & (2,3) & \\cdots \\\\ (3,0) & (3,1) & (3,2) & (3,3) & \\cdots \\\\ \\vdots & \\vdots & \\vdots & \\vdots & \\vdots \\end{matrix}'}</M>
+              {'\n\n'}
+              {'und zähle der Reihe nach die Diagonalen in obigem Schema auf, also '}<M>{'(0,0)'}</M>{', dann '}<M>{'(0,1), (1,0)'}</M>{', dann '}<M>{'(0,2), (1,1), (2,0)'}</M>{' usw.'}
+            </>
+          ),
         },
       ],
     },
@@ -155,7 +169,13 @@ Drei Mengen: |{1,2} × {a,b} × {x,y,z}| = 2·2·3 = 12.`}</pre>
             </ul>,
             <p>Selbstkontrolle: Schreibe alle Paare von {'{1,2}'} × {'{a,b,c}'} auf und zähle — kommen 2·3=6 heraus? Frage: Warum MULTIPLIZIERT man die Anzahlen (statt zu addieren), wenn man ein Tupel aus mehreren unabhängigen Komponenten baut?</p>,
           ),
-          solution: '|M₁ × ⋯ × Mₙ| = |M₁| · ⋯ · |Mₙ|\n\n(Formal kann die Formel über vollständige Induktion nach n gezeigt werden.)',
+          solution: (
+            <>
+              <M>{'|M_1 \\times \\cdots \\times M_n| = |M_1| \\cdot \\ldots \\cdot |M_n|'}</M>{'.'}
+              {'\n\n'}
+              {'(Formal kann die Formel über vollständige Induktion nach '}<M>{'n'}</M>{' gezeigt werden.)'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -199,7 +219,19 @@ Drei Mengen: |{1,2} × {a,b} × {x,y,z}| = 2·2·3 = 12.`}</pre>
             </ul>,
             <p>Selbstkontrolle: 26·26·9·10·10 — rechne in anderer Reihenfolge nach (9·100=900; 676·900=608 400) und prüfe, ob dasselbe herauskommt. Frage: Warum startet z₁ bei 1 (9 Möglichkeiten) und nicht bei 0, und warum werden die Stellen multipliziert statt addiert?</p>,
           ),
-          solution: '|Menge der Autonummern|\n= |{(b₁, b₂, z₁, z₂, z₃) : b₁,b₂ ∈ {A,...,Z}, z₁ ∈ {1,...,9}, z₂,z₃ ∈ {0,...,9}}|\n= |{A,...,Z}| · |{A,...,Z}| · |{1,...,9}| · |{0,...,9}| · |{0,...,9}|\n= 26 · 26 · 9 · 10 · 10\n= 608 400',
+          solution: (
+            <>
+              <M>{'|\\text{Menge der Autonummern}|'}</M>
+              {'\n'}
+              <M>{'= |\\{(b_1, b_2, z_1, z_2, z_3) : b_1, b_2 \\in \\{A, \\ldots, Z\\}, z_1 \\in \\{1, \\ldots, 9\\}, z_2, z_3 \\in \\{0, \\ldots, 9\\}\\}|'}</M>
+              {'\n'}
+              <M>{'= |\\{A, \\ldots, Z\\} \\times \\{A, \\ldots, Z\\} \\times \\{1, \\ldots, 9\\} \\times \\{0, \\ldots, 9\\} \\times \\{0, \\ldots, 9\\}|'}</M>
+              {'\n'}
+              <M>{'\\overset{(a)}{=} |\\{A, \\ldots, Z\\}| \\cdot |\\{A, \\ldots, Z\\}| \\cdot |\\{1, \\ldots, 9\\}| \\cdot |\\{0, \\ldots, 9\\}| \\cdot |\\{0, \\ldots, 9\\}|'}</M>
+              {'\n'}
+              <M>{'= 26 \\cdot 26 \\cdot 9 \\cdot 10 \\cdot 10 = 608400'}</M>
+            </>
+          ),
         },
       ],
     },
@@ -249,7 +281,15 @@ A∩B: 1 _ _ 0 → 2 frei → 2² = 4
             </ul>,
             <p>Selbstkontrolle: A∩B-Zahlen explizit hinschreiben: 11000 und 11100 → genau 2 ✓. Zur Not alle 32 fünfstelligen Dualzahlen durchgehen und „beginnt 11 oder endet 00" zählen — es sind 14. Frage: Warum muss man |A∩B| genau EINMAL abziehen (nicht zweimal, nicht gar nicht), und welche Zahlen wären sonst doppelt gezählt?</p>,
           ),
-          solution: 'A = {mit 11 anfangend}: |A| = 2³ = 8\nB = {mit 00 endend}:    |B| = 2³ = 8\nA ∩ B = {11?00}:       |A∩B| = 2¹ = 2\n\n|A ∪ B| = 8 + 8 − 2 = 14',
+          solution: (
+            <>
+              {'Es gibt '}<M>{'2^{3}'}</M>{' fünfstellige Dualzahlen, die mit 11 beginnen und '}<M>{'2^{3}'}</M>{' Dualzahlen, die mit 00 enden. Es gibt genau zwei fünfstellige Dualzahlen, die mit 11 beginnen und auf 00 enden. Diese darf man nicht doppelt zählen. Insgesamt gibt es'}
+              {'\n'}
+              <M>{'2^{3} + 2^{3} - 2 = 14'}</M>
+              {'\n'}
+              {'fünfstellige Dualzahlen, die mit 11 beginnen und mit 00 enden.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -284,7 +324,11 @@ A∩B: 1 _ _ 0 → 2 frei → 2² = 4
             </ul>,
             <p>Selbstkontrolle: Für 1 Stelle 36¹ = 36, für 2 Stellen 36² = 1296 (jedes der 36 ersten mit jedem der 36 zweiten Zeichen). Passt die Verallgemeinerung auf 36⁶? Frage: Warum ist das Ergebnis eine POTENZ 36⁶ und nicht ein Produkt 36·6 — und warum ist die Basis 36 und nicht 26 oder 10?</p>,
           ),
-          solution: '(26 + 10)⁶ = 36⁶',
+          solution: (
+            <>
+              <M>{'(26 + 10)^{6} = 36^{6}'}</M>
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -324,7 +368,15 @@ Mindestens eine gerade:  10 000 − 625 = 9 375`}</pre>
             </ul>,
             <p>Selbstkontrolle (kleiner Fall, 1-stellig): „mindestens eine Ziffer" = genau die 10 Ziffern. Formel: 36¹ − 26¹ = 36 − 26 = 10 ✓. Frage: Warum ist „keine Ziffer" (26⁶) das richtige Komplement — und welchen Fehler macht man, wenn man stattdessen „nur Ziffern" (10⁶) abzieht?</p>,
           ),
-          solution: 'Komplementärmethode:\nAlle 6-stelligen Passwörter:      36⁶\nPasswörter nur aus Buchstaben:    26⁶\n\nMindestens eine Ziffer: 36⁶ − 26⁶',
+          solution: (
+            <>
+              {'Es gibt '}<M>{'26^{6}'}</M>{' Passwörter, die nur aus Buchstaben bestehen. Die restlichen enthalten mindestens eine Ziffer. Somit gibt es'}
+              {'\n'}
+              <M>{'36^{6} - 26^{6}'}</M>
+              {'\n'}
+              {'Passwörter, in denen mindestens eine Ziffer vorkommt.'}
+            </>
+          ),
         },
       ],
     },
@@ -379,7 +431,13 @@ Mindestens eine gerade:  10 000 − 625 = 9 375`}</pre>
           ),
           solution: (
             <>
-              {'Urnenmodell: 60 Kugeln ≅ Plätze im Bus,\n20 Ziehungen ohne Wiederholung mit Reihenfolge.\n\nV(60, 20) = '}<Frac n="60!" d="40!" />{' = 60 · 59 · … · 41'}
+              {'• 60 Kugeln '}<M>{'\\widehat{=}'}</M>{' Plätze im Bus'}
+              {'\n'}
+              {'• 20 Ziehungen ohne Wiederholung mit Reihenfolge '}<M>{'\\widehat{=}'}</M>{' Jede Person „zieht" einen Sitzplatz.'}
+              {'\n\n'}
+              {'Dies ist das Urnenmodell für eine '}<M>{'k'}</M>{'-Variation ohne Wiederholung.'}
+              {'\n'}
+              {'Somit gibt es '}<M>{'V(60, 20) = \\frac{60!}{(60-20)!} = \\frac{60!}{40!} = 60 \\cdot 59 \\cdot \\ldots \\cdot 41'}</M>{' Arten der Verteilung im Bus.'}
             </>
           ),
         },
@@ -436,7 +494,17 @@ Auflistung (Anzahl in Schublade1, Schublade2):
             </ul>,
             <p>Selbstkontrolle: Zähle die aufgelisteten Paare oben — es sind 10, passend zu C(5,2)=10. Frage: Warum „mit Wiederholung" (mehrere Spatzen pro Leitung erlaubt) UND „ohne Reihenfolge" (Spatzen gleich) — und woran erkennt man das jeweils in der Aufgabenstellung?</p>,
           ),
-          solution: 'Urnenmodell: 4 Kugeln ≅ Telegraphenleitungen,\n2 Ziehungen mit Wiederholung ohne Reihenfolge.\n\nC*(4, 2) = C(4+2−1, 2) = C(5, 2) = 10 Möglichkeiten.',
+          solution: (
+            <>
+              {'• '}<M>{'n = 4'}</M>{' Kugeln '}<M>{'\\widehat{=}'}</M>{' Telegraphenleitungen'}
+              {'\n'}
+              {'• '}<M>{'k = 2'}</M>{' Ziehungen mit Zurücklegen ohne Reihenfolge (Leitung darf mehrfach besetzt werden, und Spatzen sind nicht unterscheidbar.)'}
+              {'\n\n'}
+              {'Dies ist das Urnenmodell für eine Kombination mit Wiederholung.'}
+              {'\n'}
+              {'Somit gibt es '}<M>{'C^{*}(4, 2) = \\binom{4-1+2}{2} = \\binom{5}{2} = 10'}</M>{' Möglichkeiten der Verteilung.'}
+            </>
+          ),
         },
       ],
     },
@@ -485,7 +553,17 @@ Kontrolle über die Symmetrie:
             </ul>,
             <p>Selbstkontrolle: Rechne C(8,5) = 8·7·6·5·4/(5·4·3·2·1) und prüfe, ob ebenfalls 56 herauskommt (Symmetrie). Frage: Warum liefern C(8,3) und C(8,5) dasselbe Ergebnis — was bedeutet das intuitiv (1.-Klasse-Plätze wählen ↔ 2.-Klasse-Plätze wählen)?</p>,
           ),
-          solution: 'Urnenmodell: 8 Kugeln ≅ 8 Wagenpositionen,\n3 Ziehungen ohne Wiederholung ohne Reihenfolge.\n\nC(8, 3) = (8 über 3) = 56 mögliche Wagenreihungen.',
+          solution: (
+            <>
+              {'• '}<M>{'n = 8'}</M>{' Kugeln '}<M>{'\\widehat{=}'}</M>{' 8 Wagenpositionen'}
+              {'\n'}
+              {'• '}<M>{'k = 3'}</M>{' Ziehungen '}<M>{'\\widehat{=}'}</M>{' Ziehe die Positionen, an denen sich die Wagen der 1. Klasse befinden. Ohne Zurücklegen und ohne Reihenfolge.'}
+              {'\n\n'}
+              {'Dies ist das Urnenmodell für eine Kombination ohne Wiederholung.'}
+              {'\n'}
+              {'Somit gibt es '}<M>{'C(8, 3) = \\binom{8}{3} = 56'}</M>{' mögliche Wagenreihungen.'}
+            </>
+          ),
         },
       ],
     },
@@ -533,7 +611,11 @@ Kontrolle über die Symmetrie:
             </ul>,
             <p>Selbstkontrolle: 5! = 5·4·3·2·1 — Schritt für Schritt: 5·4=20, ·3=60, ·2=120, ·1=120. Frage: Warum 5·4·3·2·1 (jeder Faktor um 1 kleiner) statt 5·5·5·5·5 — was passiert nach jeder gesetzten Position mit dem Vorrat?</p>,
           ),
-          solution: 'Alle 5 Buchstaben von MATHE sind verschieden.\nP(5) = 5! = 120 verschiedene Anordnungen.',
+          solution: (
+            <>
+              {'Es gibt '}<M>{'P(5) = 5!'}</M>{' verschiedene Anordnungen.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -579,7 +661,23 @@ Auflistung: OOTT, OTOT, OTTO, TOOT, TOTO, TTOO → 6 ✓
           ),
           solution: (
             <>
-              {'KLAUSUR hat 7 Buchstaben, U kommt zweimal vor.\n\nUrnenmodell für die U-Positionen:\n  n = 7 Positionen, k = 2 U\'s\n  C(7, 2) = (7 über 2) = 21\n\nPermutation der restlichen 5 Buchstaben:\n  5! = 120\n\nGesamt: C(7, 2) · P(5) = 21 · 120 = 2520\n\n(Alternativ: '}<Frac n="7!" d="2!" />{' = '}<Frac n="5040" d="2" />{' = 2520)'}
+              {'Idee: Zuerst muss man die Positionen der beiden '}<M>{'U'}</M>{' festlegen und dann überlegen, auf wie viele Arten die restlichen 5 (unterschiedlichen) Buchstaben auf die verbleibenden 5 Positionen verteilt werden können.'}
+              {'\n\n'}
+              {'Möglichkeiten für die Positionen der '}<M>{'U'}</M>{':'}
+              {'\n'}
+              {'• '}<M>{'n = 7'}</M>{' Kugeln '}<M>{'\\widehat{=}'}</M>{' 7 mögliche Positionen für ein '}<M>{'U'}</M>
+              {'\n'}
+              {'• '}<M>{'k = 2'}</M>{' Ziehungen '}<M>{'\\widehat{=}'}</M>{' Ziehe die Positionen der '}<M>{'U'}</M>{'. Ohne Zurücklegen und ohne Reihenfolge.'}
+              {'\n\n'}
+              {'Dies ist das Urnenmodell für eine Kombination ohne Wiederholung. Somit gibt es '}<M>{'C(7, 2) = \\binom{7}{2}'}</M>{' mögliche Positionen für die beiden '}<M>{'U'}</M>{'.'}
+              {'\n\n'}
+              {'Anordnung von 5 Buchstaben auf 5 Positionen entspricht einer Permutation. Dafür gibt es noch '}<M>{'5!'}</M>{' Möglichkeiten.'}
+              {'\n\n'}
+              {'Insgesamt erhält man'}
+              {'\n'}
+              <M>{'C(7, 2) \\cdot P(5) = \\binom{7}{2} 5! = 2520'}</M>
+              {'\n'}
+              {'mögliche Anagramme.'}
             </>
           ),
         },
@@ -633,7 +731,19 @@ Alle aufschreiben (Position des O-Schritts):
             </ul>,
             <p>Selbstkontrolle: Im 2-rechts-1-oben-Beispiel passen die 3 ausgeschriebenen Wege zu C(3,1)=3. Prüfe für die Aufgabe: C(13,5) und C(13,8) sollten beide 1287 sein (Symmetrie). Frage: Warum ist es eine Kombination (Auswahl der O-Positionen) und keine freie Wahl 2¹³ — was liegt an den Schrittzahlen 8 und 5 fest?</p>,
           ),
-          solution: 'Um von A nach B zu kommen: genau 8 Schritte rechts + 5 Schritte oben.\n\nUrnenmodell:\n  n = 13 Schritte, k = 5 nach-oben-Schritte auswählen\n  Ohne Zurücklegen, ohne Reihenfolge:\n\nC(13, 5) = (13 über 5) = 1287 unterschiedliche Wege.',
+          solution: (
+            <>
+              {'Um in 13 Schritten von '}<M>{'A'}</M>{' nach '}<M>{'B'}</M>{' zu kommen, muss man genau 8 Mal nach rechts und genau 5 Mal nach oben gehen. Von insgesamt 13 Schritten muss man sich also 5 Schritte aussuchen, bei denen man nach oben geht.'}
+              {'\n\n'}
+              {'Dies führt auf folgendes Urnenmodell:'}
+              {'\n'}
+              {'• '}<M>{'n = 13'}</M>{' Kugeln '}<M>{'\\widehat{=}'}</M>{' 13 Schritte'}
+              {'\n'}
+              {'• '}<M>{'k = 5'}</M>{' Ziehungen '}<M>{'\\widehat{=}'}</M>{' Welche Schritte geht man nach oben? Ohne Zurücklegen und ohne Reihenfolge.'}
+              {'\n\n'}
+              {'Dies ist das Urnenmodell für eine Kombination ohne Wiederholung. Somit gibt es '}<M>{'C(13, 5) = \\binom{13}{5} = 1287'}</M>{' unterschiedliche Wege.'}
+            </>
+          ),
         },
       ],
     },

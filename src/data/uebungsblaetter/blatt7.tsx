@@ -84,7 +84,13 @@ Probe: n=0 → 3 ✓, n=1 → 6 ✓`}</pre>
           ),
           solution: (
             <>
-              {'(i)   f: ℕ→ℝ, n ↦ 3n\n(ii)  f: ℕ→ℝ, n ↦ −4 + 3n\n(iii) f: ℕ→ℝ, n ↦ (−1)ⁿ n\n(iv)  f: ℕ→ℝ, n ↦ (−1)ⁿ⁺¹ n\n(v)   f: ℕ→ℝ, n ↦ '}<Frac n="1" d="2ⁿ⁺¹" />{'\n(vi)  f: ℕ→ℝ, n ↦ '}<Frac n="1" d="2ⁿ⁺¹ − 1" />
+              {'Wir erhalten folgende Abbildungsvorschriften.\n'}
+              {'(i)   '}<M>{'f:\\mathbb{N}\\to\\mathbb{R},\\; n\\mapsto 3n'}</M>{'\n'}
+              {'(ii)  '}<M>{'f:\\mathbb{N}\\to\\mathbb{R},\\; n\\mapsto -4+3n'}</M>{'\n'}
+              {'(iii) '}<M>{'f:\\mathbb{N}\\to\\mathbb{R},\\; n\\mapsto (-1)^{n}\\,n'}</M>{'\n'}
+              {'(iv)  '}<M>{'f:\\mathbb{N}\\to\\mathbb{R},\\; n\\mapsto (-1)^{n+1}\\,n'}</M>{'\n'}
+              {'(v)   '}<M>{'f:\\mathbb{N}\\to\\mathbb{R},\\; n\\mapsto \\dfrac{1}{2^{n+1}}'}</M>{'\n'}
+              {'(vi)  '}<M>{'f:\\mathbb{N}\\to\\mathbb{R},\\; n\\mapsto \\dfrac{1}{2^{n+1}-1}'}</M>
             </>
           ),
         },
@@ -134,9 +140,9 @@ b₂: setze bₙ = b₁ = 3/4 ein:
           ),
           solution: (
             <>
-              {'a₁ = '}<Frac n="2·2" d="2+2" />{' = '}<Frac n="4" d="4" />{' = 1\n'}
-              {'a₂ = '}<Frac n="2·1" d="2+1" />{' = '}<Frac n="2" d="3" />{'\n'}
-              {'a₃ = '}<Frac n="2·⅔" d="2+⅔" />{' = '}<Frac n="⁴⁄₃" d="⁸⁄₃" />{' = '}<Frac n="1" d="2" />
+              <M>{'a_1 = \\frac{2a_0}{2+a_0} = \\frac{2\\cdot 2}{2+2} = \\frac{4}{4} = 1'}</M>{'\n'}
+              <M>{'a_2 = \\frac{2a_1}{2+a_1} = \\frac{2\\cdot 1}{2+1} = \\frac{2}{3}'}</M>{'\n'}
+              <M>{'a_3 = \\frac{2a_2}{2+a_2} = \\frac{2\\cdot\\frac{2}{3}}{2+\\frac{2}{3}} = \\frac{\\frac{4}{3}}{\\frac{8}{3}} = \\frac{1}{2}'}</M>
             </>
           ),
         },
@@ -185,7 +191,11 @@ xₙ + yₙ = n + (−n) = 0 → konvergiert gegen 0 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: Schreibe die ersten vier Summenglieder deines Beispiels hin — sind sie alle gleich (also konvergent), obwohl die Einzelfolgen springen/wachsen? Frage: Warum darf man aus „xₙ + yₙ konvergiert" NICHT schließen, dass xₙ und yₙ einzeln konvergieren?</p>,
           ),
-          solution: 'Zum Beispiel (xₙ) = ((−1)ⁿ), (yₙ) = ((−1)ⁿ⁺¹):\nxₙ + yₙ = 0 für alle n → konvergiert gegen 0.\n(xₙ) divergiert.\n\nAlternativ: (xₙ) = (n), (yₙ) = (−n).',
+          solution: (
+            <>
+              {'Zum Beispiel '}<M>{'(x_n) = ((-1)^{n})'}</M>{', '}<M>{'(y_n) = ((-1)^{n+1})'}</M>{' oder '}<M>{'(x_n) = (n)'}</M>{', '}<M>{'(y_n) = (-n)'}</M>{'.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -224,7 +234,7 @@ Produkt: xₙ·yₙ = n·(1/n) = 1 für alle n ≥ 1
           ),
           solution: (
             <>
-              {'Zum Beispiel (xₙ) = (0,0,0,…), (yₙ) = ((−1)ⁿ):\nxₙ · yₙ = 0 für alle n → konvergiert gegen 0.\n(yₙ) divergiert.\n\nAlternativ: (xₙ) = (n), (yₙ) = ('}<Frac n="1" d="n" />{').'}
+              {'Zum Beispiel '}<M>{'(x_n) = (0,0,0,\\dots)'}</M>{', '}<M>{'(y_n) = ((-1)^{n})'}</M>{' oder '}<M>{'(x_n) = (n)'}</M>{', '}<M>{'(y_n) = \\left(\\frac{1}{n}\\right)'}</M>{'.'}
             </>
           ),
         },
@@ -262,7 +272,7 @@ lim xₙ = 0 = lim yₙ ✓ (beide gehen gegen 0)`}</pre>
           ),
           solution: (
             <>
-              {'(xₙ) = (0,0,0,…), (yₙ) = ('}<Frac n="1" d="n" />{'):\nxₙ = 0 < '}<Frac n="1" d="n" />{' = yₙ für alle n ≥ 1 ✓\nlim xₙ = 0 = lim yₙ ✓\n\nAus xₙ < yₙ folgt für Grenzwerte nur lim xₙ ≤ lim yₙ (keine strikte Ungleichung).'}
+              {'Zum Beispiel '}<M>{'(x_n) = (0,0,0,\\dots)'}</M>{', '}<M>{'(y_n) = \\left(\\frac{1}{n}\\right)'}</M>{'. (Es gilt '}<M>{'\\lim_{n\\to\\infty} x_n = 0 = \\lim_{n\\to\\infty} y_n'}</M>{'.)'}
             </>
           ),
         },
@@ -300,7 +310,11 @@ divergent (springt −2 ↔ 2);
             </ul>,
             <p>Selbstkontrolle: Schreibe die ersten 4 Glieder von xₙ und von |xₙ| untereinander — springt die obere Zeile und steht die untere still? Frage: Warum folgt aus lim |xₙ| = 0 zwingend xₙ → 0, aber aus lim |xₙ| = 1 nicht xₙ → 1?</p>,
           ),
-          solution: '(xₙ) = ((−1)ⁿ) = (−1, 1, −1, 1, …)\n\n(xₙ) divergiert (kein Grenzwert).\n|xₙ| = 1 für alle n → (|xₙ|) konvergiert gegen 1.',
+          solution: (
+            <>
+              {'Zum Beispiel '}<M>{'(x_n) = ((-1)^{n})'}</M>{'.'}
+            </>
+          ),
         },
       ],
     },
@@ -358,7 +372,7 @@ Grenzwert = 0.`}</pre>
           ),
           solution: (
             <>
-              {'xₙ = '}<Frac n="n²·(3 + 4/n + 20/n²)" d="n³·(4 + 1000/n³)" />{' = '}<Frac n="1" d="n" />{' · '}<Frac n="3 + 4/n + 20/n²" d="4 + 1000/n³" />{'\n\nsomit lim xₙ = 0 · '}<Frac n="3" d="4" />{' = 0'}
+              <M>{'x_n = \\frac{3n^{2}+4n+20}{4n^{3}+1000} = \\frac{n^{2}\\left(3+\\frac{4}{n}+\\frac{20}{n^{2}}\\right)}{n^{3}\\left(4+\\frac{1000}{n^{3}}\\right)} = \\frac{1}{n}\\cdot\\frac{3+\\frac{4}{n}+\\frac{20}{n^{2}}}{4+\\frac{1000}{n^{3}}}'}</M>{'; somit '}<M>{'\\lim_{n\\to\\infty} x_n = 0\\cdot\\frac{3}{4} = 0'}</M>
             </>
           ),
         },
@@ -406,7 +420,7 @@ Grenzwert = −2/5.`}</pre>
           ),
           solution: (
             <>
-              {'xₙ = '}<Frac n="2 + 7/n + 12/n³" d="−5 − 1/n² + 3/n³" />{';  somit lim xₙ = '}<Frac n="2" d="−5" />{' = −'}<Frac n="2" d="5" />
+              <M>{'x_n = \\frac{2n^{3}+7n^{2}+12}{-5n^{3}-n+3} = \\frac{n^{3}\\left(2+\\frac{7}{n}+\\frac{12}{n^{3}}\\right)}{n^{3}\\left(-5-\\frac{1}{n^{2}}+\\frac{3}{n^{3}}\\right)} = \\frac{2+\\frac{7}{n}+\\frac{12}{n^{3}}}{-5-\\frac{1}{n^{2}}+\\frac{3}{n^{3}}}'}</M>{'; somit '}<M>{'\\lim_{n\\to\\infty} x_n = -\\frac{2}{5}'}</M>
             </>
           ),
         },
@@ -449,7 +463,7 @@ lim (5 − 1/n)³ = 5³ = 125`}</pre>
           ),
           solution: (
             <>
-              {'lim '}<Frac n="3" d="n" />{' = 0\nlim xₙ = (2 + 0)⁵ = 2⁵ = 32'}
+              <M>{'x_n = \\left(2+\\underbrace{\\tfrac{3}{n}}_{\\to 0,\\, n\\to\\infty}\\right)^{5}'}</M>{'; somit '}<M>{'\\lim_{n\\to\\infty} x_n = 2^{5} = 32'}</M>
             </>
           ),
         },
@@ -488,7 +502,7 @@ Allgemein: ⁿ√c → 1 für jede feste Zahl c > 0`}</pre>
           ),
           solution: (
             <>
-              {'xₙ = ²ⁿ√(2¹⁰⁰⁰) = 2'}<sup>1000/(2n)</sup>{' = 2'}<sup>500/n</sup>{'\n\nlim '}<Frac n="500" d="n" />{' = 0\n\nlim xₙ = 2⁰ = 1'}
+              <M>{'x_n = \\sqrt[2n]{2^{1000}} = 2^{\\frac{1000}{2n}} = 2^{\\frac{500}{n}} = \\sqrt[n]{2^{500}}'}</M>{'; somit '}<M>{'\\lim_{n\\to\\infty} x_n = 1'}</M>
             </>
           ),
         },
@@ -530,7 +544,8 @@ Es gilt der erweiterte Standard: lim (1 + a/n)ⁿ = eᵃ
           ),
           solution: (
             <>
-              {'xₙ = ('}<Frac n="n+1" d="n" />{')ⁿ = (1 + '}<Frac n="1" d="n" />{')ⁿ\n\nlim (1 + '}<Frac n="1" d="n" />{')ⁿ = e\n\nDaher: lim xₙ = e'}
+              {'Erinnerung: '}<M>{'\\lim_{n\\to\\infty}\\left(1+\\frac{1}{n}\\right)^{n} = e'}</M>{'.\n'}
+              {'Es ist '}<M>{'x_n = \\left(\\frac{n+1}{n}\\right)^{n} = \\left(1+\\frac{1}{n}\\right)^{n}'}</M>{' und somit '}<M>{'\\lim_{n\\to\\infty} x_n = e'}</M>{'.'}
             </>
           ),
         },
@@ -574,7 +589,9 @@ Einschnürungssatz → lim sin(n)/n = 0`}</pre>
           ),
           solution: (
             <>
-              {'Da sin(n), cos(n) ∈ [−1, 1] gilt:\n\n0 ≤ |xₙ| = '}<Frac n="|sin(n)cos(n)|" d="3n³" />{' ≤ '}<Frac n="1" d="3n³" />{' =: yₙ\n\nlim yₙ = 0\n\nEinschnürungssatz: lim |xₙ| = 0, also lim xₙ = 0'}
+              {'Da '}<M>{'\\sin(n),\\, \\cos(n) \\in [-1,1]'}</M>{' erhalten wir\n'}
+              <M>{'0 \\le |x_n| = \\frac{|\\sin(n)\\cos(n)|}{3n^{3}} \\le \\frac{1}{3n^{3}} =: y_n'}</M>{'.\n'}
+              {'Verwendung von '}<M>{'\\lim_{n\\to\\infty}\\frac{1}{n^{k}} = 0'}</M>{' liefert mit den Rechenregeln für Folgen, dass '}<M>{'\\lim_{n\\to\\infty} y_n = 0'}</M>{'. Mit dem Einschnürungssatz folgt, dass '}<M>{'\\lim_{n\\to\\infty} |x_n| = 0'}</M>{'. Mit der Bemerkung zu Nullfolgen (Folie 124 der Vorlesung) folgt '}<M>{'\\lim_{n\\to\\infty} x_n = 0'}</M>{'.'}
             </>
           ),
         },
@@ -625,11 +642,11 @@ Probe: n=101 → 1/101 ≈ 0,0099 < 0,01 ✓
           ),
           solution: (
             <>
-              {'|'}<Frac n="1" d="√n" />{' − 0| < ε  ⟺  n > '}<Frac n="1" d="ε²" />{'\n\n'}
-              {'ε = 10:     '}<Frac n="1" d="ε²" />{' = '}<Frac n="1" d="100" />{',  N = 1\n'}
-              {'ε = 1:      '}<Frac n="1" d="ε²" />{' = 1,          N = 2\n'}
-              {'ε = '}<Frac n="1" d="10" />{':   '}<Frac n="1" d="ε²" />{' = 100,        N = 101\n'}
-              {'ε = '}<Frac n="1" d="10⁶" />{':  '}<Frac n="1" d="ε²" />{' = 10¹²,      N = 10¹² + 1'}
+              {'Es ist '}<M>{'\\left|\\frac{1}{\\sqrt{n}}-0\\right| < \\varepsilon'}</M>{' genau dann, wenn '}<M>{'n > \\frac{1}{\\varepsilon^{2}}'}</M>{' gilt. In der Tabelle finden Sie nun zu gegebenem '}<M>{'\\varepsilon'}</M>{' jeweils ein mögliches '}<M>{'N \\in \\mathbb{N}^{*}'}</M>{', so dass '}<M>{'|x_n - 0| < \\varepsilon'}</M>{' für alle '}<M>{'n \\ge N'}</M>{' erfüllt ist.\n\n'}
+              <M>{'\\varepsilon = 10:\\quad \\tfrac{1}{\\varepsilon^{2}} = \\tfrac{1}{100},\\quad N = 1'}</M>{'\n'}
+              <M>{'\\varepsilon = 1:\\quad \\tfrac{1}{\\varepsilon^{2}} = 1,\\quad N = 2'}</M>{'\n'}
+              <M>{'\\varepsilon = \\tfrac{1}{10}:\\quad \\tfrac{1}{\\varepsilon^{2}} = 100,\\quad N = 101'}</M>{'\n'}
+              <M>{'\\varepsilon = \\tfrac{1}{10^{6}}:\\quad \\tfrac{1}{\\varepsilon^{2}} = 10^{12},\\quad N = 10^{12}+1'}</M>
             </>
           ),
         },
@@ -677,7 +694,11 @@ Für n ≥ N: |1/n − 0| = 1/n ≤ 1/N < ε
           ),
           solution: (
             <>
-              {'Behauptung: lim '}<Frac n="1" d="√n" />{' = 0\n\nBeweis:\nSei ε > 0 beliebig. Wähle N ∈ ℕ mit N > '}<Frac n="1" d="ε²" />{'.\n\nDann gilt für alle n ≥ N:\n\n|'}<Frac n="1" d="√n" />{' − 0| = '}<Frac n="1" d="√n" />{' ≤ '}<Frac n="1" d="√N" />{' < '}<Frac n="1" d="√(1/ε²)" />{' = ε\n\n(Wurzel monoton; N > 1/ε² ⟹ √N > 1/ε)\n\nSomit lim '}<Frac n="1" d="√n" />{' = 0. □'}
+              {'Behauptung: '}<M>{'\\lim_{n\\to\\infty}\\frac{1}{\\sqrt{n}} = 0'}</M>{'.\n\n'}
+              {'Beweis:\n'}
+              {'Sei '}<M>{'\\varepsilon > 0'}</M>{' beliebig. Sei '}<M>{'N \\in \\mathbb{N}'}</M>{' so, dass '}<M>{'N > \\frac{1}{\\varepsilon^{2}}'}</M>{'. Dann gilt für alle '}<M>{'n \\ge N'}</M>{'\n'}
+              <M>{'\\left|\\frac{1}{\\sqrt{n}}-0\\right| = \\frac{1}{\\sqrt{n}} \\overset{\\text{Wurzel monoton}}{\\le} \\frac{1}{\\sqrt{N}} < \\frac{1}{\\sqrt{\\frac{1}{\\varepsilon^{2}}}} = \\varepsilon'}</M>{'.\n\n'}
+              {'Somit ist '}<M>{'\\lim_{n\\to\\infty}\\frac{1}{\\sqrt{n}} = 0'}</M>{'. □'}
             </>
           ),
         },
@@ -730,7 +751,7 @@ Ergebnis = 63/32.`}</pre>
           ),
           solution: (
             <>
-              <M>{'\\sum_{k=0}^{5} \\left(\\frac{1}{2}\\right)^{k}'}</M>{' = '}<Frac n="1 − (1/2)⁶" d="1 − 1/2" />{' = '}<Frac n="1 − 1/64" d="1/2" />{' = '}<Frac n="63/64" d="1/2" />{' = '}<Frac n="63" d="32" />
+              <M>{'\\sum_{k=0}^{5} \\left(\\frac{1}{2}\\right)^{k} = \\frac{1-\\left(\\frac{1}{2}\\right)^{6}}{1-\\frac{1}{2}} = \\frac{1-\\frac{1}{64}}{\\frac{1}{2}} = \\frac{\\frac{63}{64}}{\\frac{1}{2}} = \\frac{63}{32}'}</M>
             </>
           ),
         },
@@ -769,7 +790,7 @@ Ergebnis = 31/32.`}</pre>
           ),
           solution: (
             <>
-              <M>{'\\sum_{k=1}^{5} \\left(\\frac{1}{2}\\right)^{k}'}</M>{' = '}<M>{'\\sum_{k=0}^{5} \\left(\\frac{1}{2}\\right)^{k}'}</M>{' − ('}<Frac n="1" d="2" />{')⁰ = '}<Frac n="63" d="32" />{' − 1 = '}<Frac n="31" d="32" />
+              <M>{'\\sum_{k=1}^{5} \\left(\\frac{1}{2}\\right)^{k} = \\sum_{k=0}^{5} \\left(\\frac{1}{2}\\right)^{k} - \\left(\\frac{1}{2}\\right)^{0} = \\frac{63}{32} - 1 = \\frac{31}{32}'}</M>
             </>
           ),
         },
@@ -809,7 +830,7 @@ Ergebnis = 15/32.`}</pre>
           ),
           solution: (
             <>
-              <M>{'\\sum_{k=2}^{5} \\left(\\frac{1}{2}\\right)^{k}'}</M>{' = '}<M>{'\\sum_{k=0}^{5} \\left(\\frac{1}{2}\\right)^{k}'}</M>{' − ('}<Frac n="1" d="2" />{')⁰ − ('}<Frac n="1" d="2" />{')¹\n= '}<Frac n="63" d="32" />{' − 1 − '}<Frac n="1" d="2" />{' = '}<Frac n="63" d="32" />{' − '}<Frac n="32" d="32" />{' − '}<Frac n="16" d="32" />{' = '}<Frac n="15" d="32" />
+              <M>{'\\sum_{k=2}^{5} \\left(\\frac{1}{2}\\right)^{k} = \\sum_{k=0}^{5} \\left(\\frac{1}{2}\\right)^{k} - \\left(\\frac{1}{2}\\right)^{0} - \\left(\\frac{1}{2}\\right)^{1} = \\frac{63}{32} - 1 - \\frac{1}{2} = \\frac{15}{32}'}</M>
             </>
           ),
         },
@@ -849,7 +870,7 @@ plus der erste +1-Term → Summe = 1 ✓`}</pre>
           ),
           solution: (
             <>
-              <M>{'\\sum_{k=0}^{10} (-1)^k'}</M>{' = '}<Frac n="1 − (−1)¹¹" d="1 − (−1)" />{'\n= '}<Frac n="1 − (−1)" d="2" />{'\n= '}<Frac n="2" d="2" />{' = 1'}
+              <M>{'\\sum_{k=0}^{10} (-1)^{k} = \\frac{1-(-1)^{11}}{1-(-1)} = \\frac{1-(-1)}{1-(-1)} = 1'}</M>
             </>
           ),
         },
@@ -887,7 +908,7 @@ Ergebnis = 0.`}</pre>
           ),
           solution: (
             <>
-              <M>{'\\sum_{k=0}^{11} (-1)^k'}</M>{' = '}<Frac n="1 − (−1)¹²" d="1 − (−1)" />{'\n= '}<Frac n="1 − 1" d="2" />{'\n= 0'}
+              <M>{'\\sum_{k=0}^{11} (-1)^{k} = \\frac{1-(-1)^{12}}{1-(-1)} = \\frac{1-1}{2} = 0'}</M>
             </>
           ),
         },
@@ -927,7 +948,7 @@ Ergebnis = 13.`}</pre>
           ),
           solution: (
             <>
-              <M>{'\\sum_{k=0}^{2} 3^k'}</M>{' = '}<Frac n="1 − 3³" d="1 − 3" />{' = '}<Frac n="1 − 27" d="−2" />{' = '}<Frac n="−26" d="−2" />{' = 13'}
+              <M>{'\\sum_{k=0}^{2} 3^{k} = \\frac{1-3^{3}}{1-3} = \\frac{1-27}{-2} = \\frac{-26}{-2} = 13'}</M>
             </>
           ),
         },

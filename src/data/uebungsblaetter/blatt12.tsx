@@ -59,9 +59,11 @@ Produkt: 0 · 0 = 0.
           ),
           solution: (
             <>
-              <Frac n="1" d="x" />{' → 0 für x → ∞.\n\n'}
-              {'Da cos stetig: lim cos('}<Frac n="1" d="x" />{') = cos(0) = 1.\n\n'}
-              {'Insgesamt: lim '}<Frac n="1" d="x" />{' cos('}<Frac n="1" d="x" />{') = 0 · 1 = 0.'}
+              {'Es gilt '}<M>{'\\frac{1}{x} \\to 0,\\ x \\to \\infty'}</M>{'.'}
+              {'\n'}
+              {'Da cos stetig ist, ist '}<M>{'\\lim_{x\\to\\infty} \\cos\\left(\\frac{1}{x}\\right) = \\cos(0) = 1'}</M>{'.'}
+              {'\n'}
+              {'Insgesamt ergibt sich '}<M>{'\\lim_{x\\to\\infty} \\frac{1}{x}\\cos\\left(\\frac{1}{x}\\right) = 0\\cdot 1 = 0'}</M>{'.'}
             </>
           ),
         },
@@ -105,9 +107,9 @@ Produkt: 0 · 0 = 0.
           ),
           solution: (
             <>
-              {'cos(x) ∈ [−1, 1] für alle x ∈ ℝ. Außerdem '}<Frac n="1" d="x" />{' → 0 für x → ∞.\n\n'}
-              {'Beschränkte Funktion mal Nullfolge:\n\n'}
-              {'lim '}<Frac n="cos(x)" d="x" />{' = 0.'}
+              {'Es ist '}<M>{'\\cos(x) \\in [-1, 1]'}</M>{' für alle '}<M>{'x \\in \\mathbb{R}'}</M>{'. Außerdem ist '}<M>{'\\lim_{x\\to\\infty} \\frac{1}{x} = 0'}</M>{'. Mit den Rechenregeln für Grenzwerte („beschränkte Folge mal Nullfolge ergibt Nullfolge") ergibt sich'}
+              {'\n'}
+              <M>{'\\lim_{x\\to\\infty} \\frac{1}{x}\\cos(x) = 0'}</M>{'.'}
             </>
           ),
         },
@@ -144,7 +146,13 @@ Produktregel:
             </ul>,
             <p>Selbst-Probe: x = 0,01 → 0,01·exp(0,01) ≈ 0,01·1,01 ≈ 0,0101 → klein, Richtung 0. Frage: Warum darf man hier x = 0 direkt einsetzen (welche Eigenschaft von x·exp(x) erlaubt das), und wie viel ist exp(0)?</p>,
           ),
-          solution: <>{'x → 0 und exp(x) → exp(0) = 1 für x → 0.\n\nlim x · exp(x) = 0 · 1 = 0.'}</>,
+          solution: (
+            <>
+              {'Es gilt '}<M>{'x \\to 0,\\ x \\to 0'}</M>{' und '}<M>{'\\exp(x) \\to 1,\\ x \\to 0'}</M>{' und somit'}
+              {'\n'}
+              <M>{'\\lim_{x\\to 0} x\\exp(x) = 0\\cdot 1 = 0'}</M>{'.'}
+            </>
+          ),
         },
         {
           letter: 'd',
@@ -189,10 +197,13 @@ Aus der Hierarchie: lim(y→∞) y²/exp(y) = 0
           ),
           solution: (
             <>
-              {'Substitution y = −x (y → ∞ wenn x → −∞):\n\n'}
-              {'x · exp(x) = (−y) · exp(−y) = −'}<Frac n="y" d="exp(y)" />{'\n\n'}
-              {'Da lim'}<sub>{'y→∞'}</sub>{' '}<Frac n="y" d="exp(y)" />{' = 0 (aus Vorlesung):\n\n'}
-              {'lim'}<sub>{'x→−∞'}</sub>{' x · exp(x) = 0.'}
+              {'Mit '}<M>{'y = -x'}</M>{' berechnet man'}
+              {'\n'}
+              <M>{'x\\exp(x) = -(-x)\\exp(-(-x)) = -\\frac{-x}{\\exp(-x)} = -\\frac{y}{\\exp(y)}'}</M>{'.'}
+              {'\n'}
+              {'Es gilt '}<M>{'y \\to \\infty'}</M>{', falls '}<M>{'x \\to -\\infty'}</M>{'. Da nach Vorlesung '}<M>{'\\lim_{y\\to\\infty} \\frac{y}{\\exp(y)} = 0'}</M>{', erhält man'}
+              {'\n'}
+              <M>{'\\lim_{x\\to-\\infty} x\\exp(x) = \\lim_{y\\to\\infty} -\\frac{y}{\\exp(y)} = 0'}</M>{'.'}
             </>
           ),
         },
@@ -246,9 +257,9 @@ Aus der Hierarchie: lim(y→∞) y²/exp(y) = 0
           ),
           solution: (
             <>
-              {'cos(n) ∈ [−1,1] für alle n ∈ ℕ. Außerdem lim '}<Frac n="1" d="ln(n)" />{' = 0, da ln(n) → ∞.\n\n'}
-              {'Beschränkte Folge mal Nullfolge:\n\n'}
-              {'lim '}<Frac n="cos(n)" d="ln(n)" />{' = 0.'}
+              {'Es ist '}<M>{'\\cos(n) \\in [-1, 1]'}</M>{' für jedes '}<M>{'n \\in \\mathbb{N}'}</M>{'. Außerdem ist '}<M>{'\\lim_{n\\to\\infty} \\frac{1}{\\ln(n)} = 0'}</M>{', da '}<M>{'\\lim_{n\\to\\infty} \\ln(n) = \\infty'}</M>{' nach Vorlesung. Mit der Regel „beschränkte Folge mal Nullfolge ergibt Nullfolge" für Grenzwerte erhält man'}
+              {'\n'}
+              <M>{'\\lim_{n\\to\\infty} \\frac{\\cos(n)}{\\ln(n)} = 0'}</M>{'.'}
             </>
           ),
         },
@@ -296,9 +307,9 @@ Aus der Hierarchie: lim(y→∞) y²/exp(y) = 0
           ),
           solution: (
             <>
-              {'cos(n) ∈ [−1,1] für alle n ∈ ℕ. Da '}<Frac n="1" d="n" />{' → 0 und sin stetig: sin('}<Frac n="1" d="n" />{') → sin(0) = 0.\n\n'}
-              {'Beschränkte Folge mal Nullfolge:\n\n'}
-              {'lim sin('}<Frac n="1" d="n" />{') · cos(n) = 0.'}
+              {'Es ist '}<M>{'\\cos(n) \\in [-1, 1]'}</M>{' für jedes '}<M>{'n \\in \\mathbb{N}'}</M>{'. Außerdem ist '}<M>{'\\lim_{n\\to\\infty} \\frac{1}{n} = 0'}</M>{'. Da sin stetig ist, ist '}<M>{'\\lim_{n\\to\\infty} \\sin\\left(\\frac{1}{n}\\right) = \\sin(0) = 0'}</M>{'. Mit der Regel „beschränkte Folge mal Nullfolge ergibt Nullfolge" für Grenzwerte erhält man'}
+              {'\n'}
+              <M>{'\\lim_{n\\to\\infty} \\sin\\left(\\frac{1}{n}\\right)\\cos(n) = 0'}</M>{'.'}
             </>
           ),
         },
@@ -345,10 +356,17 @@ Produktregel:
           ),
           solution: (
             <>
-              {'Bruch durch n⁴ dividieren:\n\n'}
-              <Frac n="n⁴ − 3n²" d="n³ − 3n⁴" />{' = '}<Frac n="1 − 3/n²" d="1/n − 3" />{' → '}<Frac n="1" d="−3" />{' = −'}<Frac n="1" d="3" />{' für n → ∞.\n\n'}
-              {'Außerdem: '}<Frac n="2" d="n³ + 1" />{' → 0, da exp stetig: exp('}<Frac n="2" d="n³+1" />{') → exp(0) = 1.\n\n'}
-              {'Insgesamt: lim '}<Frac n="n⁴ − 3n²" d="n³ − 3n⁴" />{' · exp('}<Frac n="2" d="n³+1" />{') = −'}<Frac n="1" d="3" />{' · 1 = −'}<Frac n="1" d="3" />{'.'}
+              {'Es ist mit den Rechenregeln für Grenzwerte (siehe frühere Aufgaben)'}
+              {'\n'}
+              <M>{'\\lim_{n\\to\\infty} \\frac{n^4 - 3n^2}{n^3 - 3n^4} = -\\frac{1}{3}'}</M>{'.'}
+              {'\n'}
+              {'Außerdem ist '}<M>{'\\lim_{n\\to\\infty} \\frac{2}{n^3 + 1} = 0'}</M>{'.'}
+              {'\n'}
+              {'Da exp stetig ist, ist '}<M>{'\\lim_{n\\to\\infty} \\exp\\left(\\frac{2}{n^3+1}\\right) = \\exp(0) = 1'}</M>{'.'}
+              {'\n'}
+              {'Insgesamt erhält man'}
+              {'\n'}
+              <M>{'\\lim_{n\\to\\infty} \\frac{n^4 - 3n^2}{n^3 - 3n^4}\\cdot\\exp\\left(\\frac{2}{n^3+1}\\right) = -\\frac{1}{3}\\cdot 1 = -\\frac{1}{3}'}</M>{'.'}
             </>
           ),
         },
@@ -395,9 +413,13 @@ ln stetig ⇒ ln(e²) = 2.`}</pre>
           ),
           solution: (
             <>
-              {'n · ln(1 + '}<Frac n="1" d="n" />{') = ln((1 + '}<Frac n="1" d="n" />{')ⁿ).\n\n'}
-              {'Da lim (1 + '}<Frac n="1" d="n" />{')ⁿ = e und ln stetig:\n\n'}
-              {'lim n · ln(1 + '}<Frac n="1" d="n" />{') = ln(e) = 1.'}
+              {'Mit den Rechenregeln für den Logarithmus erhält man'}
+              {'\n'}
+              <M>{'n\\ln\\left(1 + \\frac{1}{n}\\right) = \\ln\\left(\\left(1 + \\frac{1}{n}\\right)^n\\right)'}</M>{'.'}
+              {'\n'}
+              {'Da '}<M>{'\\lim_{n\\to\\infty} \\left(1 + \\frac{1}{n}\\right)^n = e'}</M>{', und ln stetig, ergibt sich'}
+              {'\n'}
+              <M>{'\\lim_{n\\to\\infty} n\\ln\\left(1 + \\frac{1}{n}\\right) = \\ln(e) = 1'}</M>{'.'}
             </>
           ),
         },
@@ -455,7 +477,15 @@ exp(...)        → stetig
             </ul>,
             <p>Selbst-Probe: Prüfe die Formel an einer Stelle, z. B. a = 2, x = 3: exp(3·ln 2) = exp(ln 2³) = exp(ln 8) = 8 = 2³ ✓. Frage: Welche Definitionsformel führt aˣ auf exp zurück, warum ist dafür a &gt; 0 nötig, und aus welchen zwei stetigen Bausteinen setzt sich f zusammen?</p>,
           ),
-          solution: <>{'f(x) = aˣ = exp(x · ln(a)).\n\nDa a > 0 ist ln(a) ∈ ℝ. Das Argument x·ln(a) ist ein Polynom in x (stetig), und exp ist stetig auf ℝ.\nVerkettung stetiger Funktionen ist stetig → f ist stetig auf ℝ.'}</>,
+          solution: (
+            <>
+              {'Es ist nach Definition der allgemeinen Exponentialfunktion'}
+              {'\n'}
+              <M>{'f(x) = \\exp(x\\ln(a))'}</M>{'.'}
+              {'\n'}
+              {'Da exp und Polynome stetig nach Vorlesung und die Verkettung stetiger Funktionen wieder stetig ist, ist f stetig.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -498,9 +528,15 @@ exp(0) = 1.  (auch hier Grenzwert 1)`}</pre>
           ),
           solution: (
             <>
-              {'ᵏ√k = k'}<sup>{'1/k'}</sup>{' = exp('}<Frac n="ln(k)" d="k" />{').\n\n'}
-              {'Nach Vorlesung: lim '}<Frac n="ln(k)" d="k" />{' = 0.\n\n'}
-              {'Da exp stetig: lim ᵏ√k = exp(0) = 1.'}
+              {'Umformen ergibt'}
+              {'\n'}
+              <M>{'\\sqrt[k]{k} = k^{\\frac{1}{k}} = \\exp\\left(\\frac{1}{k}\\cdot\\ln(k)\\right)'}</M>{'.'}
+              {'\n'}
+              {'Nach Vorlesung ist '}<M>{'\\lim_{k\\to\\infty} \\frac{\\ln(k)}{k} = 0'}</M>{'.'}
+              {'\n'}
+              {'Da exp stetig ist, erhält man'}
+              {'\n'}
+              <M>{'\\lim_{k\\to\\infty} \\sqrt[k]{k} = \\lim_{k\\to\\infty} \\exp\\left(\\frac{\\ln(k)}{k}\\right) = \\exp(0) = 1'}</M>{'.'}
             </>
           ),
         },
@@ -555,10 +591,9 @@ exp(0) = 1.  (auch hier Grenzwert 1)`}</pre>
           ),
           solution: (
             <>
-              {'aˣ · aʸ = exp(x ln a) · exp(y ln a)\n'}
-              {'       = exp(x ln a + y ln a)\n'}
-              {'       = exp((x+y) ln a)\n'}
-              {'       = a'}<sup>{'x+y'}</sup>{'.'}
+              {'Mit der Definition für die allgemeine Exponentialfunktion und den Rechenregeln für exp erhält man:'}
+              {'\n'}
+              <M>{'a^x \\cdot a^y = \\exp(x\\ln(a)) \\cdot \\exp(y\\ln(a)) = \\exp(x\\ln(a) + y\\ln(a)) = \\exp((x+y)\\ln(a)) = a^{x+y}'}</M>{'.'}
             </>
           ),
         },
@@ -607,11 +642,7 @@ Damit z.B. ln(2⁵) = 5·ln 2.`}</pre>
           ),
           solution: (
             <>
-              {'(aˣ)^y = exp(y ln(aˣ))\n'}
-              {'       = exp(y · ln(exp(x ln a)))\n'}
-              {'       = exp(y · (x ln a))\n'}
-              {'       = exp(xy ln a)\n'}
-              {'       = a'}<sup>{'xy'}</sup>{'.'}
+              <M>{'(a^x)^y = \\exp(y\\ln(a^x)) = \\exp(y\\ln(\\exp(x\\ln(a)))) = \\exp(y(x\\ln(a))) = \\exp(xy\\ln(a)) = a^{xy}'}</M>{'.'}
             </>
           ),
         },
@@ -660,11 +691,7 @@ Damit z.B. ln(2⁵) = 5·ln 2.`}</pre>
           ),
           solution: (
             <>
-              {'aˣ · bˣ = exp(x ln a) · exp(x ln b)\n'}
-              {'       = exp(x ln a + x ln b)\n'}
-              {'       = exp(x(ln a + ln b))\n'}
-              {'       = exp(x ln(ab))\n'}
-              {'       = (ab)ˣ.'}
+              <M>{'a^x b^x = \\exp(x\\ln(a))\\exp(x\\ln(b)) = \\exp(x\\ln(a) + x\\ln(b)) = \\exp(x(\\ln(a) + \\ln(b))) = \\exp(x\\ln(ab)) = (ab)^x'}</M>{'.'}
             </>
           ),
         },
@@ -707,10 +734,13 @@ log₂(1/4) : 1/4 = 2⁻²   ⇒ −2  (4 = 2², Kehrwert ⇒ −2)`}</pre>
           ),
           solution: (
             <>
-              {'(i)   log₁₀(10)    = 1\n'}
-              {'(ii)  log₁₀(10000) = log₁₀(10⁴) = 4\n'}
-              {'(iii) log₁₀(1)     = 0\n'}
-              {'(iv)  log₁₀(0,01)  = log₁₀(10⁻²) = −2'}
+              {'(i) '}<M>{'\\log_{10}(10) = 1'}</M>{','}
+              {'\n'}
+              {'(ii) '}<M>{'\\log_{10}(10000) = \\log_{10}(10^4) = 4'}</M>{','}
+              {'\n'}
+              {'(iii) '}<M>{'\\log_{10}(1) = \\log_{10}(10^0) = 0'}</M>{','}
+              {'\n'}
+              {'(iv) '}<M>{'\\log_{10}(0{,}01) = \\log_{10}\\left(\\left(\\frac{1}{10}\\right)^2\\right) = \\log_{10}(10^{-2}) = -2'}</M>{'.'}
             </>
           ),
         },
@@ -761,11 +791,13 @@ log₉(3) = 1/2 (9^(1/2)=3)  ⇒ −1·(1/2) = −1/2.`}</pre>
           ),
           solution: (
             <>
-              <Frac n="2" d="64" />{' = '}<Frac n="1" d="32" />{' = 2⁻⁵.\n\n'}
-              {'(i)   log₂('}<Frac n="2" d="64" />{') = log₂(2⁻⁵) = −5.\n'}
-              {'(ii)  log₄('}<Frac n="2" d="64" />{') = log₄(2) − log₄(64) = '}<Frac n="1" d="2" />{' − 3 = −'}<Frac n="5" d="2" />{'.\n'}
-              {'(iii) log₃₂('}<Frac n="2" d="64" />{') = log₃₂(32⁻¹) = −1.\n'}
-              {'(iv)  log₆₄('}<Frac n="2" d="64" />{') = log₆₄(2) − log₆₄(64) = '}<Frac n="1" d="6" />{' − 1 = −'}<Frac n="5" d="6" />{'.'}
+              {'(i) '}<M>{'\\log_2\\left(\\frac{2}{64}\\right) = \\log_2\\left(\\frac{1}{32}\\right) = \\log_2(2^{-5}) = -5'}</M>{','}
+              {'\n'}
+              {'(ii) '}<M>{'\\log_4\\left(\\frac{2}{64}\\right) = \\log_4(2) - \\log_4(64) = \\log_4\\left(4^{\\frac{1}{2}}\\right) - \\log_4(4^3) = \\frac{1}{2} - 3 = -\\frac{5}{2}'}</M>{','}
+              {'\n'}
+              {'(iii) '}<M>{'\\log_{32}\\left(\\frac{2}{64}\\right) = \\log_{32}\\left(\\frac{1}{32}\\right) = \\log_{32}(32^{-1}) = -1'}</M>{','}
+              {'\n'}
+              {'(iv) '}<M>{'\\log_{64}\\left(\\frac{2}{64}\\right) = \\log_{64}(2) - \\log_{64}(64) = \\log_{64}\\left(64^{\\frac{1}{6}}\\right) - \\log_{64}(64^1) = \\frac{1}{6} - 1 = -\\frac{5}{6}'}</M>{'.'}
             </>
           ),
         },
@@ -807,10 +839,11 @@ Probe: 8^(1/3) = 2 ✓  (8 = 2³)`}</pre>
           ),
           solution: (
             <>
-              {'(i) log₂(64) = log₂(2⁶) = 6.\n\n'}
-              {'(ii) '}<Frac n="log₂(2/64)" d="log₂(64)" />{' = '}<Frac n="−5" d="6" />{' = −'}<Frac n="5" d="6" />{'.\n\n'}
-              {'Aus (b)(iv): log₆₄('}<Frac n="2" d="64" />{') = −'}<Frac n="5" d="6" />{'. Die Werte stimmen überein.\n\n'}
-              {'Allgemein gilt (Basiswechselsatz): '}<Frac n="log_a(x)" d="log_a(b)" />{' = log_b(x)  für a, b > 0, a,b ≠ 1.'}
+              {'(i) '}<M>{'\\log_2(64) = 6'}</M>{'.'}
+              {'\n'}
+              {'(ii) Es ist '}<M>{'\\frac{\\log_2\\left(\\frac{2}{64}\\right)}{\\log_2(64)} = \\frac{-5}{6} = -\\frac{5}{6}'}</M>{' und '}<M>{'\\log_{64}\\left(\\frac{2}{64}\\right) = -\\frac{5}{6}'}</M>{', siehe Teil (b)(iv).'}
+              {'\n'}
+              {'Es ist also '}<M>{'\\frac{\\log_2\\left(\\frac{2}{64}\\right)}{\\log_2(64)} = \\log_{64}\\left(\\frac{2}{64}\\right)'}</M>{'. Allgemein gilt (siehe Vorlesung): '}<M>{'\\frac{\\log_a(x)}{\\log_a(b)} = \\log_b(x)'}</M>{' für '}<M>{'a, b > 0,\\ a \\neq 1,\\ b \\neq 1'}</M>{'.'}
             </>
           ),
         },
@@ -882,12 +915,23 @@ konvergieren beide Reihen für alle x ∈ ℝ.`}</pre>
           ),
           solution: (
             <>
-              {'Sinusreihe: aₖ = (−1)ᵏ '}<Frac n="x²ᵏ⁺¹" d="(2k+1)!" />{'\n\n'}
-              {'|'}<Frac n="aₖ₊₁" d="aₖ" />{'| = '}<Frac n="x²" d="(2k+3)(2k+2)" />{' → 0 < 1  (k → ∞, x fest).\n'}
-              {'→ Sinusreihe konvergiert für alle x ∈ ℝ.\n\n'}
-              {'Kosinusreihe: aₖ = (−1)ᵏ '}<Frac n="x²ᵏ" d="(2k)!" />{'\n\n'}
-              {'|'}<Frac n="aₖ₊₁" d="aₖ" />{'| = '}<Frac n="x²" d="(2k+2)(2k+1)" />{' → 0 < 1  (k → ∞, x fest).\n'}
-              {'→ Kosinusreihe konvergiert für alle x ∈ ℝ.'}
+              {'Mit Quotientenkriterium:'}
+              {'\n'}
+              {'Sei '}<M>{'x \\in \\mathbb{R}'}</M>{'. Definiere '}<M>{'a_k := (-1)^k \\frac{x^{2k+1}}{(2k+1)!}'}</M>{'. Wir berechnen'}
+              {'\n'}
+              <M>{'\\left|\\frac{a_{k+1}}{a_k}\\right| = \\left|\\frac{(-1)^{k+1}\\frac{x^{2(k+1)+1}}{(2(k+1)+1)!}}{(-1)^k\\frac{x^{2k+1}}{(2k+1)!}}\\right| = \\left|\\frac{x^{2k+3}}{x^{2k+1}}\\cdot\\frac{(2k+1)!}{(2k+3)!}\\right| = \\frac{x^2}{(2k+3)(2k+2)}'}</M>{'.'}
+              {'\n'}
+              {'Es ist '}<M>{'\\lim_{k\\to\\infty} \\frac{x^2}{(2k+3)(2k+2)} = 0 < 1'}</M>{'.'}
+              {'\n'}
+              {'Nach dem Quotientenkriterium konvergiert die Sinusreihe für jedes '}<M>{'x \\in \\mathbb{R}'}</M>{'.'}
+              {'\n'}
+              {'Sei '}<M>{'x \\in \\mathbb{R}'}</M>{'. Definiere '}<M>{'a_k := (-1)^k \\frac{x^{2k}}{(2k)!}'}</M>{'. Wir berechnen'}
+              {'\n'}
+              <M>{'\\left|\\frac{a_{k+1}}{a_k}\\right| = \\left|\\frac{(-1)^{k+1}\\frac{x^{2(k+1)}}{(2(k+1))!}}{(-1)^k\\frac{x^{2k}}{(2k)!}}\\right| = \\left|\\frac{x^{2k+2}}{x^{2k}}\\cdot\\frac{(2k)!}{(2k+2)!}\\right| = \\frac{x^2}{(2k+2)(2k+1)}'}</M>{'.'}
+              {'\n'}
+              {'Es ist '}<M>{'\\lim_{k\\to\\infty} \\frac{x^2}{(2k+2)(2k+1)} = 0 < 1'}</M>{'.'}
+              {'\n'}
+              {'Nach dem Quotientenkriterium konvergiert die Cosinusreihe für jedes '}<M>{'x \\in \\mathbb{R}'}</M>{'.'}
             </>
           ),
         },
@@ -936,10 +980,13 @@ ungerade: (−x)³ = −x³, (−x)⁵ = −x⁵  (Vorzeichen dreht)
           ),
           solution: (
             <>
-              {'Da (−x)²ᵏ = x²ᵏ für jedes k ∈ ℕ:\n\n'}
-              <M>{'\\cos(-x) = \\sum_{k=0}^{\\infty} (-1)^k \\frac{(-x)^{2k}}{(2k)!} = \\sum_{k=0}^{\\infty} (-1)^k \\frac{x^{2k}}{(2k)!} = \\cos(x)'}</M>{' ✓\n\n'}
-              {'Da (−x)²ᵏ⁺¹ = −x²ᵏ⁺¹:\n\n'}
-              <M>{'\\sin(-x) = \\sum_{k=0}^{\\infty} (-1)^k \\frac{(-x)^{2k+1}}{(2k+1)!} = -\\sum_{k=0}^{\\infty} (-1)^k \\frac{x^{2k+1}}{(2k+1)!} = -\\sin(x)'}</M>{' ✓'}
+              {'Da '}<M>{'(-x)^{2k} = x^{2k}'}</M>{' für jedes '}<M>{'k \\in \\mathbb{N}'}</M>{', ergibt sich'}
+              {'\n'}
+              <M>{'\\cos(-x) = \\sum_{k=0}^{\\infty} (-1)^k \\frac{(-x)^{2k}}{(2k)!} = \\sum_{k=0}^{\\infty} (-1)^k \\frac{x^{2k}}{(2k)!} = \\cos(x)'}</M>{'.'}
+              {'\n'}
+              {'Da '}<M>{'(-x)^{2k+1} = -x^{2k+1}'}</M>{' für jedes '}<M>{'k \\in \\mathbb{N}'}</M>{', ergibt sich'}
+              {'\n'}
+              <M>{'\\sin(-x) = \\sum_{k=0}^{\\infty} (-1)^k \\frac{(-x)^{2k+1}}{(2k+1)!} = \\sum_{k=0}^{\\infty} (-1)^k \\frac{-x^{2k+1}}{(2k+1)!} = -\\sum_{k=0}^{\\infty} (-1)^k \\frac{x^{2k+1}}{(2k+1)!} = -\\sin(x)'}</M>{'.'}
             </>
           ),
         },

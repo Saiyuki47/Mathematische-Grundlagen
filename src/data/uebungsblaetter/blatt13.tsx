@@ -61,9 +61,9 @@ f'(x) = u'v + uv'
           ),
           solution: (
             <>
-              {'Mit Produkt- und Kettenregel:\n\n'}
-              {"f'(x) = 3x² · exp(1 + 2x) + x³ · exp(1 + 2x) · 2\n"}
-              {'      = (3x² + 2x³) · exp(1 + 2x).'}
+              {'Mit der Produkt- und Kettenregel erhält man'}
+              {'\n'}
+              <M>{'f\'(x) = 3x^2\\exp(1 + 2x) + x^3\\exp(1 + 2x)\\cdot 2 = (3x^2 + 2x^3)\\exp(1 + 2x)'}</M>{'.'}
             </>
           ),
         },
@@ -116,8 +116,9 @@ g'(x) = (u'v − uv')/v²
           ),
           solution: (
             <>
-              {'Mit der Quotientenregel:\n\n'}
-              {"g'(x) = "}<Frac n="2(2x²+1) − 2x · 4x" d="(2x²+1)²" />{' = '}<Frac n="4x² + 2 − 8x²" d="(2x²+1)²" />{' = '}<Frac n="−4x² + 2" d="(2x²+1)²" />{'.'}
+              {'Mit der Quotientenregel erhält man'}
+              {'\n'}
+              <M>{'g\'(x) = \\frac{2(2x^2 + 1) - 2x\\cdot 4x}{(2x^2 + 1)^2} = \\frac{4x^2 + 2 - 8x^2}{(2x^2 + 1)^2} = \\frac{-4x^2 + 2}{(2x^2 + 1)^2}'}</M>{'.'}
             </>
           ),
         },
@@ -164,8 +165,9 @@ h'(x) = u'v + uv'
           ),
           solution: (
             <>
-              {'Mit Produkt- und Kettenregel:\n\n'}
-              {"h'(x) = 3x² · ln(x² + x) + (x³ + √3) · "}<Frac n="1" d="x² + x" />{' · (2x + 1).'}
+              {'Mit der Produkt- und Kettenregel erhält man'}
+              {'\n'}
+              <M>{'h\'(x) = 3x^2\\ln(x^2 + x) + (x^3 + \\sqrt{3})\\frac{1}{x^2 + x}(2x + 1)'}</M>{'.'}
             </>
           ),
         },
@@ -217,16 +219,25 @@ Im Gegensatz dazu passt bei x|x| beides zu 0.`}</pre>
           ),
           solution: (
             <>
-              {'u(x) = x|x| = { x²,  x ≥ 0\n'}
-              {'              { −x², x < 0\n\n'}
-              {'Auf ℝ \\ {0}: u\'(x) = 2x (x > 0) bzw. −2x (x < 0).\n\n'}
-              {'In x = 0:\n\n'}
-              {"u'₊(0) = lim "}<Frac n="x² − 0" d="x − 0" />{' = lim x = 0,\n'}
-              {"u'₋(0) = lim "}<Frac n="−x² − 0" d="x − 0" />{' = lim (−x) = 0.\n\n'}
-              {"Da u'₊(0) = u'₋(0) = 0, gilt u'(0) = 0.\n\n"}
-              {"u' : ℝ → ℝ,  x ↦ { 2x,  x > 0\n"}
-              {'                  { 0,   x = 0\n'}
-              {'                  { −2x, x < 0'}
+              {'Verwendet man die Definition der Betragsfunktion, so ergibt sich'}
+              {'\n'}
+              <M>{'u : \\mathbb{R} \\to \\mathbb{R},\\quad \\begin{cases} x^2, & x \\ge 0, \\\\ -x^2, & x < 0. \\end{cases}'}</M>
+              {'\n'}
+              {'Es ist u in '}<M>{'\\mathbb{R} \\setminus \\{0\\}'}</M>{' differenzierbar, da quadratische Funktionen differenzierbar sind. Wir prüfen nun noch Differenzierbarkeit in 0. Dazu betrachten wir die einseitigen Grenzwerte der Differenzenquotienten:'}
+              {'\n'}
+              <M>{'u\'_+(0) = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{u(x) - u(0)}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{x^2 - 0}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{x^2}{x} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} x = 0'}</M>{','}
+              {'\n'}
+              <M>{'u\'_-(0) = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{u(x) - u(0)}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{-x^2 - 0}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{-x^2}{x} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} -x = 0'}</M>{'.'}
+              {'\n'}
+              {'Da '}<M>{'u\'_+(0) = u\'_-(0)'}</M>{' ist, ist u in 0 differenzierbar und '}<M>{'u\'(0) = 0'}</M>{'.'}
+              {'\n'}
+              {'Damit ergibt sich als Ableitungsfunktion'}
+              {'\n'}
+              <M>{'u\' : \\mathbb{R} \\to \\mathbb{R},\\quad x \\mapsto \\begin{cases} 2x, & x > 0, \\\\ 0, & x = 0, \\\\ -2x, & x < 0, \\end{cases}'}</M>
+              {'\n'}
+              {'bzw.'}
+              {'\n'}
+              <M>{'u\' : \\mathbb{R} \\to \\mathbb{R},\\quad x \\mapsto \\begin{cases} 2x, & x \\ge 0, \\\\ -2x, & x < 0. \\end{cases}'}</M>
             </>
           ),
         },
@@ -278,9 +289,13 @@ links:  lim (x³−0)/x = lim x² = 0
           ),
           solution: (
             <>
-              {"f'₊(0) = lim "}<Frac n="f(x) − f(0)" d="x − 0" />{' = lim '}<Frac n="x" d="x" />{' = lim 1 = 1,\n'}
-              {"f'₋(0) = lim "}<Frac n="f(x) − f(0)" d="x − 0" />{' = lim '}<Frac n="x²" d="x" />{' = lim x = 0.\n\n'}
-              {"Da f'₊(0) ≠ f'₋(0), ist f in 0 nicht differenzierbar."}
+              {'Wir betrachten die einseitigen Grenzwerte der Differenzenquotienten:'}
+              {'\n'}
+              <M>{'f\'_+(0) = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{f(x) - f(0)}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{x - 0}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{x}{x} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} 1 = 1'}</M>{','}
+              {'\n'}
+              <M>{'f\'_-(0) = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{f(x) - f(0)}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{x^2 - 0}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{x^2}{x} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} x = 0'}</M>{'.'}
+              {'\n'}
+              {'Da '}<M>{'f\'_+(0) \\neq f\'_-(0)'}</M>{' ist, existiert '}<M>{'\\lim_{x\\to 0} \\frac{f(x) - f(0)}{x - 0}'}</M>{' nicht. Daher ist f nicht in 0 differenzierbar.'}
             </>
           ),
         },
@@ -322,9 +337,13 @@ Bei x³/x² dagegen kommt 0 = 0 heraus → differenzierbar.`}</pre>
           ),
           solution: (
             <>
-              {"g'₊(0) = lim "}<Frac n="g(x) − g(0)" d="x − 0" />{' = lim '}<Frac n="x³" d="x" />{' = lim x² = 0,\n'}
-              {"g'₋(0) = lim "}<Frac n="g(x) − g(0)" d="x − 0" />{' = lim '}<Frac n="x²" d="x" />{' = lim x = 0.\n\n'}
-              {"Da g'₊(0) = g'₋(0) = 0, ist g in 0 differenzierbar mit g'(0) = 0."}
+              {'Wir betrachten die einseitigen Grenzwerte der Differenzenquotienten:'}
+              {'\n'}
+              <M>{'g\'_+(0) = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{g(x) - g(0)}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{x^3 - 0}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{x^3}{x} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} x^2 = 0'}</M>{','}
+              {'\n'}
+              <M>{'g\'_-(0) = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{g(x) - g(0)}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{x^2 - 0}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{x^2}{x} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} x = 0'}</M>{','}
+              {'\n'}
+              {'Da '}<M>{'g\'_+(0) = g\'_-(0)'}</M>{' ist, ist g in 0 differenzierbar und '}<M>{'g\'(0) = 0'}</M>{'.'}
             </>
           ),
         },
@@ -368,9 +387,17 @@ Bei x³/x² dagegen kommt 0 = 0 heraus → differenzierbar.`}</pre>
           ),
           solution: (
             <>
-              {'Da lim h(x) = 1 (x→0⁺) und lim h(x) = 0 (x→0⁻), ist h nicht stetig in 0.\n\n'}
-              {'Da Differenzierbarkeit Stetigkeit impliziert, ist h in 0 nicht differenzierbar.\n\n'}
-              {'Alternativ: h\'₋(0) = lim '}<Frac n="x² − 1" d="x" />{' = lim (x − '}<Frac n="1" d="x" />{') = −∞  (x→0⁻) — existiert nicht.'}
+              {'Da '}<M>{'\\lim_{\\substack{x\\to 0 \\\\ x>0}} h(x) = 1'}</M>{' und '}<M>{'\\lim_{\\substack{x\\to 0 \\\\ x<0}} h(x) = 0'}</M>{', ist h nicht stetig in 0 und damit nicht differenzierbar.'}
+              {'\n'}
+              {'Andere Argumentation:'}
+              {'\n'}
+              {'Wir betrachten die einseitigen Grenzwerte der Differenzenquotienten:'}
+              {'\n'}
+              <M>{'h\'_+(0) = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{h(x) - h(0)}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{x^3 + 1 - 1}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} \\frac{x^3}{x} = \\lim_{\\substack{x\\to 0 \\\\ x>0}} x^2 = 0'}</M>{','}
+              {'\n'}
+              <M>{'h\'_-(0) = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{h(x) - h(0)}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{x^2 - 1}{x - 0} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\frac{x^2 - 1}{x} = \\lim_{\\substack{x\\to 0 \\\\ x<0}} \\left(x - \\frac{1}{x}\\right) = -\\infty'}</M>{'.'}
+              {'\n'}
+              {'Da der linksseitige Grenzwert nicht existiert, ist h nicht differenzierbar in 0.'}
             </>
           ),
         },
@@ -426,8 +453,9 @@ Probe Potenzregel: (x^(1/3))' = (1/3)x^(−2/3) ✓`}</pre>
           ),
           solution: (
             <>
-              {"Es ist f'(x) = 2x. Mit der Umkehrfunktionsregel:\n\n"}
-              {"(f⁻¹)'(x) = "}<Frac n="1" d="f'(f⁻¹(x))" />{' = '}<Frac n="1" d="2 f⁻¹(x)" />{' = '}<Frac n="1" d="2√x" />{'.'}
+              {'Es ist '}<M>{'f\'(x) = 2x'}</M>{' für '}<M>{'x \\in (0,\\infty)'}</M>{'. Mit der Regel zur Berechnung der Ableitung der Umkehrfunktion erhält man für '}<M>{'x \\in (0,\\infty)'}</M>
+              {'\n'}
+              <M>{'(f^{-1})\'(x) = \\frac{1}{f\'(f^{-1}(x))} = \\frac{1}{2f^{-1}(x)} = \\frac{1}{2\\sqrt{x}}'}</M>{'.'}
             </>
           ),
         },
@@ -491,14 +519,15 @@ h'(x) = −(1−2x)⁻² · (−2) = 2/(1−2x)²`}</pre>
           ),
           solution: (
             <>
-              {"f'(x) = "}<M>{'\\sum_{k=1}^{\\infty} k \\cdot x^{k-1}'}</M>{' = '}<M>{'\\sum_{k=0}^{\\infty} (k+1)x^{k}'}</M>{'  (Indexshift).\n\n'}
-              {"g'(x) = −(1 − x)⁻² · (−1) = "}
-              <Frac n="1" d="(1 − x)²" />
-              {'.\n\n'}
-              {'Da '}<M>{'\\sum_{k=0}^{\\infty} x^k = \\frac{1}{1-x}'}</M>{' für x ∈ (−1,1), gilt f = g und damit f\' = g\'.\n\n'}
-              {'Das heißt: '}<M>{'\\sum_{k=0}^{\\infty} (k+1)x^{k}'}</M>{' konvergiert gegen '}
-              <Frac n="1" d="(1−x)²" />
-              {' für x ∈ (−1,1).'}
+              {'Mit der Regel zur Ableitung von Reihen erhält man für '}<M>{'x \\in (-1,1)'}</M>
+              {'\n'}
+              <M>{'f\'(x) = \\sum_{k=1}^{\\infty} k x^{k-1}'}</M>{' oder nach Indexshift '}<M>{'f\'(x) = \\sum_{k=0}^{\\infty} (k+1)x^{k}'}</M>{'.'}
+              {'\n'}
+              {'Ableitung von '}<M>{'g(x) = \\frac{1}{1-x} = (1-x)^{-1}'}</M>{' ergibt mit der Kettenregel'}
+              {'\n'}
+              <M>{'g\'(x) = -(1-x)^{-2}\\cdot(-1) = \\left(\\frac{1}{1-x}\\right)^2 = \\frac{1}{(1-x)^2}'}</M>{'.'}
+              {'\n'}
+              {'Da für '}<M>{'x \\in (-1,1)'}</M>{' die geometrische Reihe '}<M>{'\\sum_{k=0}^{\\infty} x^k'}</M>{' gegen '}<M>{'\\frac{1}{1-x}'}</M>{' konvergiert, ist also f = g. Damit ist dann auch f\' = g\'. Das heißt, für '}<M>{'x \\in (-1,1)'}</M>{' konvergiert die Reihe '}<M>{'\\sum_{k=0}^{\\infty} (k+1)x^{k}'}</M>{' gegen '}<M>{'\\frac{1}{(1-x)^2}'}</M>{'.'}
             </>
           ),
         },
@@ -552,10 +581,9 @@ f'(x) = exp(√2·ln x)·(√2/x) = x^√2·(√2/x)
           ),
           solution: (
             <>
-              {'f(x) = xᵃ = exp(a · ln(x)).\n\n'}
-              {"f'(x) = exp(a · ln(x)) · "}<Frac n="a" d="x" />{' = '}<Frac n="xᵃ · a" d="x" />{' = a · x'}
-              <sup>{'a−1'}</sup>
-              {'.'}
+              {'Es ist '}<M>{'f(x) = \\exp(a\\ln(x))'}</M>{'. Mit der Kettenregel erhält man'}
+              {'\n'}
+              <M>{'f\'(x) = \\exp(a\\ln(x))\\frac{a}{x} = a\\frac{x^a}{x} \\overset{\\text{Aufg. 12.4}}{=} a x^{a-1}'}</M>{'.'}
             </>
           ),
         },
@@ -596,8 +624,9 @@ g'(x) = exp(x·ln 2)·ln 2 = ln(2)·2ˣ ≈ 0,693·2ˣ`}</pre>
           ),
           solution: (
             <>
-              {'g(x) = cˣ = exp(x · ln(c)).\n\n'}
-              {"g'(x) = exp(x · ln(c)) · ln(c) = ln(c) · cˣ."}
+              {'Es ist '}<M>{'g(x) = \\exp(x\\ln(c))'}</M>{'. Mit der Kettenregel erhält man'}
+              {'\n'}
+              <M>{'g\'(x) = \\exp(x\\ln(c))\\ln(c) = \\ln(c)c^x'}</M>{'.'}
             </>
           ),
         },
@@ -655,10 +684,13 @@ cot'(x) = [ −sin·sin − cos·cos ] / sin²
           ),
           solution: (
             <>
-              {'Mit der Quotientenregel (sin\' = cos, cos\' = −sin):\n\n'}
-              {"tan'(x) = "}<Frac n="cos·cos − sin·(−sin)" d="(cos x)²" />{' = '}<Frac n="(cos x)² + (sin x)²" d="(cos x)²" />{' = '}<Frac n="1" d="(cos x)²" />{'. ✓\n\n'}
-              {'Zweite Darstellung:\n\n'}
-              <Frac n="1" d="(cos x)²" />{' = 1 + '}<Frac n="(sin x)²" d="(cos x)²" />{' = 1 + (tan x)². ✓'}
+              {'Mit der Quotientenregel, dem trigonometrischen Pythagoras und den Beziehungen '}<M>{'\\sin\' = \\cos'}</M>{' sowie '}<M>{'\\cos\' = -\\sin'}</M>{' erhält man'}
+              {'\n'}
+              <M>{'\\tan\'(x) = \\frac{\\cos(x)\\cos(x) - \\sin(x)\\cdot(-\\sin(x))}{(\\cos(x))^2} = \\frac{(\\cos(x))^2 + (\\sin(x))^2}{(\\cos(x))^2} = \\frac{1}{(\\cos(x))^2}'}</M>{'.'}
+              {'\n'}
+              {'Mit der Quotientenregel und den Beziehungen '}<M>{'\\sin\' = \\cos'}</M>{' sowie '}<M>{'\\cos\' = -\\sin'}</M>{' erhält man'}
+              {'\n'}
+              <M>{'\\tan\'(x) = \\frac{\\cos(x)\\cos(x) - \\sin(x)\\cdot(-\\sin(x))}{(\\cos(x))^2} = \\frac{(\\cos(x))^2 + (\\sin(x))^2}{(\\cos(x))^2} = 1 + \\frac{(\\sin(x))^2}{(\\cos(x))^2} = 1 + \\left(\\frac{\\sin(x)}{\\cos(x)}\\right)^2 = 1 + (\\tan(x))^2'}</M>{'.'}
             </>
           ),
         },
@@ -703,8 +735,9 @@ cos(arcsin x) = √(1 − sin²(arcsin x)) = √(1−x²)
           ),
           solution: (
             <>
-              {'Mit der Umkehrfunktionsregel und tan\' = 1 + tan²:\n\n'}
-              {"arctan'(x) = "}<Frac n="1" d="tan'(arctan(x))" />{' = '}<Frac n="1" d="1 + tan²(arctan(x))" />{' = '}<Frac n="1" d="1 + x²" />{'. ✓'}
+              {'Mit der Ableitungsregel für Umkehrfunktionen ergibt sich'}
+              {'\n'}
+              <M>{'\\arctan\'(x) = \\frac{1}{\\tan\'(\\arctan(x))} \\overset{\\text{Teil (a)}}{=} \\frac{1}{1 + \\tan^2(\\arctan(x))} = \\frac{1}{1 + x^2}'}</M>{'.'}
             </>
           ),
         },

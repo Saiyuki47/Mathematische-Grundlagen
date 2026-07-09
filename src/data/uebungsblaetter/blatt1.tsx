@@ -1,4 +1,5 @@
 import type { MatheBlatt } from '../../types'
+import M from '../../utils/M'
 import { h, Ol } from './shared'
 import { Venn2, Venn3 } from '../../components/Venn'
 
@@ -63,7 +64,13 @@ c ∈ A     → falsch   (nur {c} ist Element, c selbst nicht)`}</pre>
             </ul>,
             <p>Selbstkontrolle: {'{1}'} ∉ M, aber {'{1}'} ⊆ M — beides ist hier richtig. Probe: nenne alle direkten Elemente von M (1, 2, 3) und alle Teilmengen, die nur aus diesen bestehen. Frage: Warum können 1 ∈ M und {'{1}'} ⊆ M beide wahr sein, obwohl {'{1}'} ∉ M gilt — welche Ebene (Element oder Teilmenge) prüft welches Symbol?</p>,
           ),
-          solution: '(i) 1 ∈ M  → korrekt  (1 ist Element von {1,2,3})\n(ii) {1} ∈ M  → falsch  ({1} ist keine Menge in M; 1 ist ein Element, nicht {1})\n(iii) {1} ⊆ M  → korrekt  ({1} ist Teilmenge von {1,2,3})',
+          solution: (
+            <>
+              {'(i) '}<M>{'1 \\in M'}</M>{', korrekt'}{'\n'}
+              {'(ii) '}<M>{'\\{1\\} \\in M'}</M>{', falsch'}{'\n'}
+              {'(iii) '}<M>{'\\{1\\} \\subseteq M'}</M>{', korrekt'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -116,7 +123,14 @@ a ∈ M     → falsch   (a selbst steht nicht in M)
             </ul>,
             <p>Selbstkontrolle: (ii) und (iv) sind korrekt, (i) und (iii) falsch — die korrekten unterscheiden sich vom falschen Nachbarn um genau eine Schachtelungsebene. Frage: Warum ist {'{{2}}'} ⊆ L gleichbedeutend mit „{'{2}'} ∈ L?", und was bliebe bei {'{2}'} ⊆ L stattdessen zu prüfen?</p>,
           ),
-          solution: '(i) 2 ∈ L  → falsch  (2 ist kein direktes Element von L, nur {2} ist es)\n(ii) {2} ∈ L  → korrekt  ({2} ist direktes Element von L)\n(iii) {2} ⊆ L  → falsch  (wäre wahr, wenn 2 ∈ L gilt – das ist aber nicht der Fall)\n(iv) {{2}} ⊆ L  → korrekt  ({2} ∈ L, also ist {{2}} eine Teilmenge von L)',
+          solution: (
+            <>
+              {'(i) '}<M>{'2 \\in L'}</M>{', falsch'}{'\n'}
+              {'(ii) '}<M>{'\\{2\\} \\in L'}</M>{', korrekt'}{'\n'}
+              {'(iii) '}<M>{'\\{2\\} \\subseteq L'}</M>{', falsch'}{'\n'}
+              {'(iv) '}<M>{'\\{\\{2\\}\\} \\subseteq L'}</M>{', korrekt'}
+            </>
+          ),
         },
       ],
     },
@@ -181,7 +195,15 @@ A×B = {(1,2),(1,3),(2,2),(2,3)}   |A|·|B| = 2·2 = 4 ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: bei (v) müssen es 4·2 = 8 Paare sein — nachzählen. Frage: Warum ist A×B nicht vertauschbar, und was bedeutete es geometrisch, (a,b) und (b,a) gleichzusetzen (Stichwort: ungeordnetes Paar)?</p>,
           ),
-          solution: '(i) Z \\ X = {1,5} \\ {1,3,5,7} = ∅\n(ii) X \\ Z = {1,3,5,7} \\ {1,5} = {3,7}\n(iii) X ∩ Y ∩ Z = {5}\n(iv) X ∪ Y ∪ Z = {1,3,5,7,8}\n(v) X × Z = {(1,1),(1,5),(3,1),(3,5),(5,1),(5,5),(7,1),(7,5)}',
+          solution: (
+            <>
+              {'(i) '}<M>{'Z \\setminus X = \\{1, 5\\} \\setminus \\{1, 3, 5, 7\\} = \\emptyset'}</M>{'\n'}
+              {'(ii) '}<M>{'X \\setminus Z = \\{1, 3, 5, 7\\} \\setminus \\{1, 5\\} = \\{3, 7\\}'}</M>{'\n'}
+              {'(iii) '}<M>{'X \\cap Y \\cap Z = \\{5\\}'}</M>{'\n'}
+              {'(iv) '}<M>{'X \\cup Y \\cup Z = \\{1, 3, 5, 7, 8\\}'}</M>{'\n'}
+              {'(v) '}<M>{'X \\times Z = \\{(1, 1), (1, 5), (3, 1), (3, 5), (5, 1), (5, 5), (7, 1), (7, 5)\\}'}</M>
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -236,7 +258,13 @@ A ∪ Ā = {1,2,3} ∪ {4,5} = {1,2,3,4,5} = G ✓ (Regel)`}</pre>
             </ul>,
             <p>Selbstkontrolle: prüfe |L̅| = |G| − |L| = 5 und L ∪ L̅ = G. Frage: Warum ist A ∩ Ā = ∅ eine logische Notwendigkeit (kein Zufall dieser Zahlen) — kann ein Objekt zugleich in A und in G\A liegen?</p>,
           ),
-          solution: 'Komplemente: L̅ = {3,5,6,8,9}  M̅ = {1,2,4,7}  N̅ = {1,2,3,6,7,8}\n\n(i) L̅ ∩ N = {3,5,6,8,9} ∩ {4,5,9} = {5,9}\n(ii) (L ∩ M̅) ∪ (N ∩ N̅) = ({1,2,4,7} ∩ {1,2,4,7}) ∪ ∅ = {1,2,4,7} = L\n(iii) N ∩ M̅ = {4,5,9} ∩ {1,2,4,7} = {4}\n     (N ∩ M̅)‾ = G \\ {4} = {1,2,3,5,6,7,8,9}\n     L ∩ (N ∩ M̅)‾ = {1,2,4,7} ∩ {1,2,3,5,6,7,8,9} = {1,2,7}',
+          solution: (
+            <>
+              {'(i) '}<M>{'\\overline{L} \\cap N = \\{5, 9\\}'}</M>{'\n'}
+              {'(ii) '}<M>{'(L \\cap \\overline{M}) \\cup (N \\cap \\overline{N}) = L'}</M>{'\n'}
+              {'(iii) '}<M>{'L \\cap \\overline{N \\cap \\overline{M}} = \\{1, 2, 7\\}'}</M>
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -286,7 +314,13 @@ A ∪ Ā = {1,2,3} ∪ {4,5} = {1,2,3,4,5} = G ✓ (Regel)`}</pre>
             </ul>,
             <p>Selbstkontrolle: zeichne [−1,2) als Strecke mit offenem Punkt bei 2 und markiere die einzelnen Zahlen — so siehst du sofort, wer drin liegt. Frage: Worin unterscheiden sich [−1,2) und [−1,2] genau, und was ergäbe [0,1) ∪ {'{1}'} ∪ [1,2)?</p>,
           ),
-          solution: '(i) M₄ ∪ M₃ = [−1, 2) ∪ {2} = [−1, 2] = {x ∈ ℝ : −1 ≤ x ≤ 2}\n(ii) M₂ \\ M₃ = {0, 3, 4, 5, …}\n    M₄ ∩ (M₂ \\ M₃) = [−1, 2) ∩ {0, 3, 4, …} = {0}\n(iii) M₁ \\ M₂ = {…, −3, −2, −1}\n    M₃ \\ (M₁ \\ M₂) = {−1, 1, 2} \\ {…, −1} = {1, 2}',
+          solution: (
+            <>
+              {'(i) '}<M>{'M_4 \\cup M_3 = \\{x \\in \\mathbb{R} : -1 \\le x \\le 2\\}'}</M>{'\n'}
+              {'(ii) '}<M>{'M_4 \\cap (M_2 \\setminus M_3) = \\{0\\}'}</M>{'\n'}
+              {'(iii) '}<M>{'M_3 \\setminus (M_1 \\setminus M_2) = \\{1, 2\\}'}</M>
+            </>
+          ),
         },
         {
           letter: 'd',
@@ -323,7 +357,11 @@ Zählprobe: 1 + 2 + 1 = 4 = 2² ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: zähle deine Liste — es müssen 2³ = 8 Einträge sein, davon ∅ und A. Frage: Warum hat eine n-elementige Menge genau 2ⁿ Teilmengen — was hat die „drin/draußen"-Entscheidung pro Element damit zu tun?</p>,
           ),
-          solution: 'P(A) = {∅, {1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3}}',
+          solution: (
+            <>
+              <M>{'\\mathbb{P}(A) = \\{M : M \\subseteq A\\} = \\{\\emptyset, \\{1\\}, \\{2\\}, \\{3\\}, \\{1, 2\\}, \\{1, 3\\}, \\{2, 3\\}, \\{1, 2, 3\\}\\}'}</M>
+            </>
+          ),
         },
       ],
     },
@@ -382,7 +420,13 @@ kgV(2,3) = 6 → {6n}   = {0,6,12,18,…}     ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: setze in deine Formel n=0,1,2 ein und prüfe, ob die Zahlen die Wortbedingung wirklich erfüllen (z.B. lässt 8 = 5·1+3 wirklich Rest 3?). Frage: Warum beschreibt {'{kgV(2,3)·n}'} genau die durch 2 und 3 teilbaren Zahlen, während {'{ggT(2,3)·n}'} ganz ℕ liefert?</p>,
           ),
-          solution: '(i) {7n : n ∈ ℕ} = {0, 7, 14, 21, …}\n(ii) {5n + 3 : n ∈ ℕ} = {3, 8, 13, 18, …}\n(iii) kgV(2, 3) = 6  →  {6n : n ∈ ℕ} = {0, 6, 12, 18, …}',
+          solution: (
+            <>
+              {'(i) '}<M>{'\\{7n : n \\in \\mathbb{N}\\}'}</M>{'\n'}
+              {'(ii) '}<M>{'\\{5n + 3 : n \\in \\mathbb{N}\\}'}</M>{'\n'}
+              {'(iii) '}<M>{'\\{6n : n \\in \\mathbb{N}\\}'}</M>
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -423,7 +467,14 @@ kgV(2,3) = 6 → {6n}   = {0,6,12,18,…}     ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: prüfe bei (iv) per (2ⁿ)² — z.B. n=2: (2²)² = 4² = 16, gleiches Ergebnis. Frage: Warum wächst {'{2²ⁿ}'} = {'{4ⁿ}'} schneller als {'{2ⁿ}'}, und ist die eine Menge eine Teilmenge der anderen?</p>,
           ),
-          solution: '(i) {3n − 2 : n ∈ ℕ} = {−2, 1, 4, 7, 10, …}\n(ii) {3n + 2 : n ∈ ℕ} = {2, 5, 8, 11, 14, …}\n(iii) {2ⁿ : n ∈ ℕ} = {1, 2, 4, 8, 16, …}\n(iv) {2²ⁿ : n ∈ ℕ} = {4⁰, 4¹, 4², …} = {1, 4, 16, 64, 256, …}',
+          solution: (
+            <>
+              {'(i) '}<M>{'\\{3n - 2 : n \\in \\mathbb{N}\\} = \\{-2, 1, 4, 7, \\dots\\}'}</M>{'\n'}
+              {'(ii) '}<M>{'\\{3n + 2 : n \\in \\mathbb{N}\\} = \\{2, 5, 8, 11, \\dots\\}'}</M>{'\n'}
+              {'(iii) '}<M>{'\\{2^{n} : n \\in \\mathbb{N}\\} = \\{1, 2, 4, 8, \\dots\\}'}</M>{'\n'}
+              {'(iv) '}<M>{'\\{2^{2n} : n \\in \\mathbb{N}\\} = \\{1, 4, 16, 64, \\dots\\}'}</M>
+            </>
+          ),
         },
       ],
     },
@@ -475,7 +526,11 @@ kgV(2,3) = 6 → {6n}   = {0,6,12,18,…}     ✓`}</pre>
             </ul>,
             <p>Selbstkontrolle: rechne ein eigenes Zahlenbeispiel und vergleiche die vier Ergebnismengen. Frage: Was bedeutet x ∈ (A∩B)∪C auf Elementebene (in Worten), und warum ist das logisch dasselbe wie x ∈ (A∪C)∩(B∪C)?</p>,
           ),
-          solution: '(A ∩ B) ∪ C  =  (A ∪ C) ∩ (B ∪ C)\n→ Distributivgesetz: ∪ verteilt sich über ∩\n\n(A ∪ B) ∩ C  =  (A ∩ C) ∪ (B ∩ C)\n→ Distributivgesetz: ∩ verteilt sich über ∪\n\nDie Mengenoperationen ∪ und ∩ sind wechselseitig distributiv.',
+          solution: (
+            <>
+              {'Es fällt auf, dass '}<M>{'(A \\cap B) \\cup C = (A \\cup C) \\cap (B \\cup C)'}</M>{' gilt sowie '}<M>{'(A \\cup B) \\cap C = (A \\cap C) \\cup (B \\cap C)'}</M>{'.'}
+            </>
+          ),
           abbildung: (
             <>
               <p className="abb-title">Paar 1 — beide schattieren exakt dieselbe Fläche:</p>
@@ -529,7 +584,7 @@ fällt sie beim ∩C weg, weil 1 ∉ C.`}</pre>
             </ul>,
             <p>Selbstkontrolle: dein Gegenbeispiel ist gültig, sobald die beiden Ergebnismengen verschieden sind. Frage: Warum kann A ∪ (B∩C) ein Element aus A enthalten, das nichts mit B oder C zu tun hat, während (A∪B)∩C das nie kann?</p>,
           ),
-          solution: 'A ∪ (B ∩ C)  ≠  (A ∪ B) ∩ C  im Allgemeinen.\n\nBeispiel: A = {1,2}, B = {2,3}, C = {3,4}\n  A ∪ (B ∩ C) = {1,2} ∪ {3} = {1,2,3}\n  (A ∪ B) ∩ C = {1,2,3} ∩ {3,4} = {3}\n\n→ Klammern können nicht einfach weggelassen werden!',
+          solution: 'Es fällt auf, dass man die Klammern nicht weglassen kann.',
           abbildung: (
             <>
               <p className="abb-title">Die beiden schattierten Flächen sind verschieden:</p>
@@ -586,7 +641,11 @@ De-Morgan-Querprüfung an dieser Probe:
             </ul>,
             <p>Selbstkontrolle: prüfe an deiner Probe, ob (A∪B)‾ wirklich elementweise gleich Ā∩B̄ ist. Frage: Wie erkennst du mit De Morgan ganz ohne Venn-Diagramm, dass Ā∩B̄ das Komplement von A∪B ist — und wovon ist Ā∪B̄ das Komplement?</p>,
           ),
-          solution: 'Die vier Mengen veranschaulichen die De Morganschen Gesetze. Probe mit X = {1,2,3,4,5}, A = {1,2,3}, B = {3,4} (also A̅ = {4,5}, B̅ = {1,2,5}):\n\n  (A ∪ B)‾ = {1,2,3,4}‾ = {5}        ;  A̅ ∩ B̅ = {4,5} ∩ {1,2,5} = {5}\n  (A ∩ B)‾ = {3}‾ = {1,2,4,5}        ;  A̅ ∪ B̅ = {4,5} ∪ {1,2,5} = {1,2,4,5}\n\nEs fällt auf:\n  (A ∪ B)‾ = A̅ ∩ B̅   (Komplement der Vereinigung)\n  (A ∩ B)‾ = A̅ ∪ B̅   (Komplement des Schnitts)\n\nJedes Venn-Paar schattiert dieselbe Fläche — genau die De Morganschen Gesetze.',
+          solution: (
+            <>
+              {'Es fällt auf, dass '}<M>{'\\overline{A \\cup B} = \\overline{A} \\cap \\overline{B}'}</M>{' gilt sowie '}<M>{'\\overline{A \\cap B} = \\overline{A} \\cup \\overline{B}'}</M>{'.'}
+            </>
+          ),
           abbildung: (
             <>
               <p className="abb-title">De-Morgan-Paar 1 — gleiche Fläche:</p>
@@ -709,7 +768,12 @@ De-Morgan-Querprüfung an dieser Probe:
             </ul>,
             <p>Selbstkontrolle: teste jede als „gültig" eingestufte Gleichheit zusätzlich an Zahlen (z.B. A={'{1,2}'}, B={'{2}'}, C={'{3}'}) — sie muss aufgehen. Frage: Warum genügt für (i) ein einziges Gegenbeispiel, während (ii)–(iv) eine Äquivalenzkette x ∈ LHS ⟺ x ∈ RHS in beide Richtungen brauchen?</p>,
           ),
-          solution: '(i) NICHT immer erfüllt.\n    Gegenbeispiel A = B = C = {1,2,3}:\n      A \\ (B \\ C) = A \\ ∅ = A = {1,2,3}\n      (A \\ B) \\ C = ∅ \\ C = ∅\n      → A ≠ ∅\n\n(ii) Immer erfüllt.\n    A \\ B = {x : x ∈ A und x ∉ B} = A ∩ B̅  ✓\n\n(iii) Immer erfüllt.\n    A \\ (B ∩ C) = {x ∈ A : x ∉ B∩C}\n             = {x ∈ A : x ∉ B oder x ∉ C}\n             = (A \\ B) ∪ (A \\ C)  ✓\n\n(iv) Immer erfüllt.\n    A ∪ (A̅ ∩ B) = (A ∪ A̅) ∩ (A ∪ B)\n                = X ∩ (A ∪ B) = A ∪ B  ✓',
+          solution: (
+            <>
+              {'(i) nicht immer erfüllt\n(ii) immer erfüllt\n(iii) immer erfüllt\n(iv) immer erfüllt\n\nIn Zeile (i) der Tabelle gilt nicht immer Gleichheit. Zum Beispiel für '}
+              <M>{'A = B = C = \\{1, 2, 3\\}'}</M>{' ist '}<M>{'A \\setminus (B \\setminus C) = A \\setminus \\emptyset = A'}</M>{', aber '}<M>{'(A \\setminus B) \\setminus C = \\emptyset \\setminus C = \\emptyset'}</M>{'.'}
+            </>
+          ),
         },
       ],
     },

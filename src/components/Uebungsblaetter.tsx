@@ -219,7 +219,7 @@ export default function Uebungsblaetter() {
                         )}
                         {sub.solution && solOpen && (
                           <div className="solution-wrap">
-                            <pre className="solution-block">{sub.solution}</pre>
+                            <pre className="solution-block">{mathRich(sub.solution)}</pre>
                             {sub.graph && (
                               <div className="graph-wrap">
                                 <LineGraph data={sub.graph} />

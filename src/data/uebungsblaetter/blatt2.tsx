@@ -1,4 +1,5 @@
 import type { MatheBlatt } from '../../types'
+import M from '../../utils/M'
 import { h } from './shared'
 
 export const blatt2: MatheBlatt = {
@@ -102,7 +103,13 @@ Beispiel Zeile 2 (A=w, B=f):
             </ul>,
             <p>Selbstkontrolle: kontrolliere Zeile f/f — alle vier Endspalten sollten w sein. Frage: Welche zwei Spaltenpaare stimmen überein, und welches Gesetz (Stichwort De Morgan) sagt das vorher?</p>,
           ),
-          solution: ' A | B | ¬(A∧B) | ¬(A∨B) | ¬A∧¬B | ¬A∨¬B\n w | w |   f    |   f    |   f   |   f\n w | f |   w    |   f    |   f   |   w\n f | w |   w    |   f    |   f   |   w\n f | f |   w    |   w    |   w   |   w\n\nSpalten 1 und 4 stimmen überein → ¬(A∧B) ≡ ¬A∨¬B\nSpalten 2 und 3 stimmen überein → ¬(A∨B) ≡ ¬A∧¬B\n(De Morgansche Gesetze)',
+          solution: (
+            <>
+              <M>{'\\begin{array}{cc|cccc} A & B & \\neg(A \\wedge B) & \\neg(A \\vee B) & \\neg A \\wedge \\neg B & \\neg A \\vee \\neg B \\\\ w & w & f & f & f & f \\\\ w & f & w & f & f & w \\\\ f & w & w & f & f & w \\\\ f & f & w & w & w & w \\end{array}'}</M>
+              {'\n'}
+              {'Es fällt auf, dass die erste und vierte sowie die zweite und dritte Spalte übereinstimmen. Es ist also '}<M>{'\\neg(A \\wedge B)'}</M>{' äquivalent zu '}<M>{'\\neg A \\vee \\neg B'}</M>{' und '}<M>{'\\neg(A \\vee B)'}</M>{' zu '}<M>{'\\neg A \\wedge \\neg B'}</M>{'.'}
+            </>
+          ),
         },
       ],
     },
@@ -156,7 +163,11 @@ Hinrichtung z²=4 ⇒ z=2: Gegenbeispiel z=−2:
             </ul>,
             <p>Selbstkontrolle: ein gültiges Gegenbeispiel erfüllt die Prämisse, verletzt aber die Konklusion (prüfe beides an deinem z). Frage: Warum reicht eine einzige Gegenzahl zum Widerlegen, während ein Beweis ALLE z abdecken müsste?</p>,
           ),
-          solution: 'In Symbolen: z² ≥ 0 ⟺ z ≥ 0\n→ falsch\n\nGegenbeispiel: z = −1\n  z² = 1 ≥ 0, aber z = −1 < 0\n→ Die Hinrichtung z² ≥ 0 ⇒ z ≥ 0 ist falsch.',
+          solution: (
+            <>
+              {'In Symbolen: '}<M>{'z^{2} \\ge 0 \\Leftrightarrow z \\ge 0'}</M>{' (falsch)'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -197,7 +208,11 @@ Beispiel: "durch 6 teilbar" hinreichend für "durch 3 teilbar"?
             </ul>,
             <p>Selbstkontrolle: prüfe die Herleitung an einer Zahl, z.B. z = 12 = 4·3 = 2·6 → durch 4 und durch 2 teilbar. Frage: Worin unterscheiden sich „A hinreichend für B" und „B hinreichend für A" in der Pfeilrichtung — und welcher Pfeil fehlt, wenn A nur hinreichend, aber nicht notwendig ist?</p>,
           ),
-          solution: 'In Symbolen: z durch 2 teilbar ⟸ z durch 4 teilbar (wahr)\n\nBeweis: Wenn 4 | z, dann z = 4k für k ∈ ℤ.\n  z = 2·(2k) → 2 | z ✓',
+          solution: (
+            <>
+              {'In Symbolen: z durch 2 ohne Rest teilbar '}<M>{'\\Leftarrow'}</M>{' z durch 4 ohne Rest teilbar (wahr)'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -236,7 +251,11 @@ Muster: Zahlen 2, 6, 10, 14, … (Rest 2 bei :4)`}</pre>
             </ul>,
             <p>Selbstkontrolle: ein Gegenbeispiel muss durch 2, aber nicht durch 4 teilbar sein — prüfe z/2 (ganz) und z/4 (nicht ganz). Frage: Warum ist „notwendig" schwächer als „hinreichend", und was wäre an „4 | 2" absurd, wenn 4 | z für 2 | z notwendig wäre?</p>,
           ),
-          solution: 'In Symbolen: z durch 2 teilbar ⇒ z durch 4 teilbar (falsch)\n\nGegenbeispiel: z = 2\n  2 | 2 ✓, aber 4 ∤ 2 ✗\n→ Teilbarkeit durch 2 impliziert nicht Teilbarkeit durch 4.',
+          solution: (
+            <>
+              {'In Symbolen: z durch 2 ohne Rest teilbar '}<M>{'\\Rightarrow'}</M>{' z durch 4 ohne Rest teilbar (falsch)'}
+            </>
+          ),
         },
       ],
     },
@@ -286,7 +305,11 @@ Inverse:        ¬P ⇒ ¬Q    → NICHT äquivalent ✗
             </ul>,
             <p>Selbstkontrolle: vergleiche die Spalten P⇒Q und ¬P⇒¬Q Zeile für Zeile — schon eine Abweichung widerlegt die Äquivalenz. Frage: Welche zwei der vier Varianten sind äquivalent, und was haben sie strukturell gemeinsam (Negation + Pfeilrichtung)?</p>,
           ),
-          solution: '(a) In Symbolen: ¬P ⇒ ¬Q\n    → NICHT äquivalent zu P ⇒ Q (das ist die Inverse).',
+          solution: (
+            <>
+              {'In Symbolen: '}<M>{'\\neg P \\Rightarrow \\neg Q'}</M>{' — nicht äquivalent zu '}<M>{'P \\Rightarrow Q'}</M>{'.'}
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -320,7 +343,11 @@ sonst überall wahr.`}</pre>
             </ul>,
             <p>Selbstkontrolle: prüfe die Zeile P=f, Q=f in beiden Spalten — sie müssen verschieden sein. Frage: Sagt P ⇒ Q überhaupt etwas über den Fall P = f aus, und warum scheitert damit die Äquivalenz mit ¬P ⇒ Q?</p>,
           ),
-          solution: '(b) In Symbolen: ¬P ⇒ Q\n    → NICHT äquivalent zu P ⇒ Q.',
+          solution: (
+            <>
+              {'In Symbolen: '}<M>{'\\neg P \\Rightarrow Q'}</M>{' — nicht äquivalent zu '}<M>{'P \\Rightarrow Q'}</M>{'.'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -354,7 +381,11 @@ Verletzt nur, wenn es regnet UND ich keinen Schirm nehme.`}</pre>
             </ul>,
             <p>Selbstkontrolle: vergleiche die Spalten P⇒Q und ¬P∨Q — alle vier Zeilen müssen übereinstimmen. Frage: In welcher einzigen Zeile ist P ⇒ Q falsch, und wie macht ¬P ∨ Q genau dieselbe Zeile falsch?</p>,
           ),
-          solution: '(c) In Symbolen: ¬P ∨ Q\n    → ÄQUIVALENT zu P ⇒ Q, denn P ⇒ Q ≡ ¬P ∨ Q ✓',
+          solution: (
+            <>
+              {'In Symbolen: '}<M>{'\\neg P \\vee Q'}</M>{' — äquivalent zu '}<M>{'P \\Rightarrow Q'}</M>{'.'}
+            </>
+          ),
         },
         {
           letter: 'd',
@@ -394,7 +425,13 @@ P ⇒ Q ≢ ¬P ⇒ ¬Q   (Inverse)         → nicht äquiv. ✗`}</pre>
             </ul>,
             <p>Selbstkontrolle: die algebraische Kette und die Tafel müssen beide „äquivalent" ergeben. Frage: Warum ist „P impliziert Q" gleichwertig zu „nicht-Q impliziert nicht-P", die bloße Umkehrung „Q impliziert P" aber nicht?</p>,
           ),
-          solution: '(d) In Symbolen: ¬Q ⇒ ¬P\n    → ÄQUIVALENT zu P ⇒ Q (das ist die Kontraposition) ✓\n\nDie Aussage ist nur zu (c) und (d) äquivalent.',
+          solution: (
+            <>
+              {'In Symbolen: '}<M>{'\\neg Q \\Rightarrow \\neg P'}</M>{' — äquivalent zu '}<M>{'P \\Rightarrow Q'}</M>{'.'}
+              {'\n\n'}
+              {'Die Aussage ist nur zu (c) und zu (d) äquivalent.'}
+            </>
+          ),
         },
       ],
     },
@@ -444,7 +481,15 @@ n² = (2k)² = 4k² = 2·(2k²) = 2m  (mit m = 2k²)
             </ul>,
             <p>Selbstkontrolle: Probe mit k=2 → n=5, n²=25=2·12+1 (ungerade) ✓. Frage: Warum erfasst „n = 2k+1" alle ungeraden Zahlen gleichzeitig, was eine verbale Beschreibung „n ist ungerade" für die Rechnung nicht leisten kann?</p>,
           ),
-          solution: 'Direkter Beweis:\n\nEs genügt zu zeigen, dass A(n) = w, B(n) = f nicht auftreten kann.\n\nAnnahme: A(n) = w, d.h. n ist ungerade.\nDann ∃k ∈ ℕ mit n = 2k+1.\n\nn² = (2k+1)² = 4k²+4k+1 = 2(2k²+2k)+1\n\nDie Form 2m+1 zeigt: n² ist ungerade, also B(n) = w.\nDer Fall A(n)=w, B(n)=f kann somit nicht auftreten.\n\nZeilen mit A(n)=f werden nicht betrachtet (A⇒B dort automatisch wahr). □',
+          solution: (
+            <>
+              {'Es genügt zu zeigen, dass '}<M>{'A(n)'}</M>{' und '}<M>{'B(n)'}</M>{' stets gleichzeitig wahr sind, und der Fall '}<M>{'A(n) = w'}</M>{', '}<M>{'B(n) = f'}</M>{' nicht vorkommen kann. Dazu setzen wir '}<M>{'n = 2k + 1'}</M>{' mit '}<M>{'k \\in \\mathbb{N}'}</M>{'. Aussage '}<M>{'A(n)'}</M>{' ist somit erfüllt. Daraus berechnen wir '}
+              {'\n'}
+              <M>{'n^{2} = (2k + 1)^{2} = 4k^{2} + 4k + 1 = 2(2k^{2} + 2k) + 1,'}</M>
+              {'\n'}
+              {'woraus folgt dass '}<M>{'n^{2}'}</M>{' ungerade ist. Somit ist '}<M>{'B(n)'}</M>{' auch stets erfüllt wenn '}<M>{'A(n)'}</M>{' erfüllt ist und der Fall '}<M>{'A(n) = w'}</M>{', '}<M>{'B(n) = f'}</M>{' kann nicht vorkommen. Die Zeilen der Wahrheitstabelle, in denen '}<M>{'A'}</M>{' falsch ist müssen nicht betrachtet werden da '}<M>{'A \\Rightarrow B'}</M>{' in diesem Fall sowieso immer wahr ist, unabhängig von '}<M>{'B'}</M>{'.'}
+            </>
+          ),
         },
       ],
     },
@@ -496,7 +541,15 @@ n² = (2k)² = 4k² = 2·(2k²) = 2m  (mit m = 2k²)
             </ul>,
             <p>Selbstkontrolle: die hergeleitete Eigenschaft (n² ungerade) muss der Annahme (n² gerade) direkt widersprechen — sonst ist es kein gültiger Widerspruch. Frage: Worin unterscheiden sich direkter und Widerspruchsbeweis hier nur, und warum kommen beide zum selben Ergebnis?</p>,
           ),
-          solution: 'Widerspruchsbeweis:\n\nWir nehmen an: ¬(A(n) ⇒ B(n)) = A(n) ∧ ¬B(n),\nd.h. n ist ungerade und n² ist gerade.\n\nAus A(n)=w folgt n = 2k+1 für k ∈ ℕ.\n\nn² = (2k+1)² = 4k²+4k+1 = 2(2k²+2k)+1\n→ n² ist ungerade — Widerspruch zu ¬B(n)!\n\nDie Annahme war falsch → A(n) ⇒ B(n) ∀n. □',
+          solution: (
+            <>
+              {'Wir wollen zeigen dass '}<M>{'\\neg(A(n) \\Rightarrow B(n)) = f \\;\\forall n'}</M>{'. Dies kann man umformulieren als '}
+              {'\n'}
+              <M>{'\\neg(A(n) \\Rightarrow B(n)) = \\neg(\\neg(A \\wedge \\neg B)) = A \\wedge \\neg B.'}</M>
+              {'\n'}
+              {'Wir müssen also zeigen, dass '}<M>{'(A(n) \\wedge \\neg B(n)) = f \\;\\forall n'}</M>{'. Wiederum ist es nicht nötig, dies für '}<M>{'A(n) = f'}</M>{' zu zeigen da die Aussage dann sowieso falsch ist (Wahrheitstafel erstellen!). Wir nehmen also '}<M>{'A(n) = w'}</M>{' an: '}<M>{'n = 2k + 1,\\; k \\in \\mathbb{N}'}</M>{'. Damit gilt '}<M>{'n^{2} = 4k^{2} + 4k + 1'}</M>{' und somit '}<M>{'n^{2}'}</M>{' ungerade, daher auch '}<M>{'B(n) = w'}</M>{', die Aussage '}<M>{'\\neg(A(n) \\Rightarrow B(n))'}</M>{' ist somit falsch falls '}<M>{'A(n) = w'}</M>{'. Andere Möglichkeiten gibt es nicht, da '}<M>{'A(n) = w'}</M>{' stets bedeutet dass '}<M>{'B(n) = w'}</M>{' und somit ist der Wahrheitswert von '}<M>{'\\neg(A(n) \\Rightarrow B(n))'}</M>{' stets falsch. Damit ist der Satz '}<M>{'A(n) \\to B(n) \\;\\forall n'}</M>{' gezeigt.'}
+            </>
+          ),
         },
       ],
     },
@@ -549,7 +602,11 @@ f  f │  f   │    f     │  f   ✓ identisch`}</pre>
             </ul>,
             <p>Selbstkontrolle: die Wahrheitstafeln von A∨(¬A∧B) und A∨B müssen in allen vier Zeilen übereinstimmen. Frage: Wenn A wahr ist, trägt ¬A∧B nichts bei (es ist falsch); und wenn A falsch ist, reduziert sich ¬A∧B auf B — warum ergibt das zusammen genau A∨B?</p>,
           ),
-          solution: 'A ∨ (¬A ∧ B)\n= (A ∨ ¬A) ∧ (A ∨ B)   (Distributivgesetz)\n= t ∧ (A ∨ B)            (A ∨ ¬A = t)\n= A ∨ B                   (t ∧ X = X)',
+          solution: (
+            <>
+              <M>{'A \\vee (\\neg A \\wedge B)'}</M>{' =(Distributivgesetz)= '}<M>{'(A \\vee \\neg A) \\wedge (A \\vee B)'}</M>{' =(Komplementgesetz)= '}<M>{'t \\wedge (A \\vee B)'}</M>{' =(neutrales Element)= '}<M>{'A \\vee B'}</M>
+            </>
+          ),
         },
         {
           letter: 'b',
@@ -598,7 +655,11 @@ Hier mit X = ¬B, Y = A:  ¬B ∨ (A ∧ ¬B) = ¬B`}</pre>
             </ul>,
             <p>Selbstkontrolle: stelle die Wahrheitstafel von ¬(A∧B) ∨ ¬(¬A∨B) und von ¬(A∧B) auf — sie müssen identisch sein. Frage: Warum „absorbiert" X in X ∨ (Y ∧ X) den Term (Y ∧ X) — macht (Y ∧ X) noch einen Unterschied, wenn X wahr bzw. wenn X falsch ist?</p>,
           ),
-          solution: '¬(A ∧ B) ∨ ¬(¬A ∨ B)\n= (¬A ∨ ¬B) ∨ (A ∧ ¬B)   (De Morgan)\n= ¬A ∨ (¬B ∨ (A ∧ ¬B))   (Assoziativität)\n= ¬A ∨ ¬B                  (Absorption: X ∨ (Y ∧ X) = X)\n= ¬(A ∧ B)                 (De Morgan)',
+          solution: (
+            <>
+              <M>{'\\neg(A \\wedge B) \\vee \\neg(\\neg A \\vee B)'}</M>{' =(De Morgan)= '}<M>{'(\\neg A \\vee \\neg B) \\vee (A \\wedge \\neg B)'}</M>{' =(Absorption)= '}<M>{'\\neg A \\vee \\neg B'}</M>{' =(De Morgan)= '}<M>{'\\neg(A \\wedge B)'}</M>
+            </>
+          ),
         },
       ],
     },
