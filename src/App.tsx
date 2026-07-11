@@ -5,7 +5,7 @@ import { karteikarten } from './data/karteikarten'
 import { dateienTree } from './data/dateien'
 
 const Uebungsblaetter = lazy(() => import('./components/Uebungsblaetter'))
-const Cheatsheet = lazy(() => import('./components/Cheatsheet'))
+const Referenz = lazy(() => import('./components/Referenz'))
 const Hilfsmittel = lazy(() => import('./components/Hilfsmittel'))
 const Quiz = lazy(() => import('lernseiten-ui').then(m => ({ default: m.Quiz })))
 const Flashcards = lazy(() => import('lernseiten-ui').then(m => ({ default: m.Flashcards })))
@@ -37,7 +37,7 @@ function App() {
         </div>
         <Suspense fallback={<div className="card"><p className="quiz-hint">Lädt …</p></div>}>
           {activeTab === 'uebung' && <Uebungsblaetter />}
-          {activeTab === 'referenz' && <Cheatsheet />}
+          {activeTab === 'referenz' && <Referenz />}
           {activeTab === 'hilfsmittel' && <Hilfsmittel />}
           {activeTab === 'moodle' && <Moodle tree={dateienTree} baseUrl={import.meta.env.BASE_URL} />}
           {activeTab === 'quiz' && <Quiz fragen={quizFragen} />}
