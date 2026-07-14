@@ -48,7 +48,7 @@ const FS_CSS = `
 .fs-beispiele .fs-box-title{margin-bottom:2px}
 .fs-page .katex{font-size:1em;color:#111}
 @media print{
-  @page{margin:8mm}
+  @page{size:A4 portrait;margin:8mm}
   body{background:#fff!important} /* sonst druckt der dunkle Theme-Hintergrund unter dem Blatt schwarz mit */
   body *{visibility:hidden}
   .fs-print-area,.fs-print-area *{visibility:visible}
