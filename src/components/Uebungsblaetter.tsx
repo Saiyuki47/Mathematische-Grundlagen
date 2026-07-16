@@ -129,16 +129,29 @@ export default function Uebungsblaetter() {
             {blatt.beschreibung && (
               <p className="ub-desc">{blatt.beschreibung}</p>
             )}
-            {blatt.pdf && (
+            {(blatt.pdf || (blatt.loesungen && blatt.loesungen.length > 0)) && (
               <div style={refLinksRow}>
-                <a
-                  href={import.meta.env.BASE_URL + encodeURI(blatt.pdf)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={refLinkStyle}
-                >
-                  📄 Original-Übungsblatt (PDF) öffnen
-                </a>
+                {blatt.pdf && (
+                  <a
+                    href={import.meta.env.BASE_URL + encodeURI(blatt.pdf)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={refLinkStyle}
+                  >
+                    📄 Original-Übungsblatt (PDF) öffnen
+                  </a>
+                )}
+                {blatt.loesungen?.map(l => (
+                  <a
+                    key={l.pfad}
+                    href={import.meta.env.BASE_URL + encodeURI(l.pfad)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={refLinkStyle}
+                  >
+                    ✅ {l.label}
+                  </a>
+                ))}
               </div>
             )}
             {taskKeys.length > 0 && (

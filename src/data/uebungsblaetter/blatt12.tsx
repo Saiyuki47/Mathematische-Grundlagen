@@ -6,6 +6,10 @@ export const blatt12: MatheBlatt = {
   id: 'blatt12',
   nr: '12',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung12 - Spezielle Funktionen/12_aufg_spezielle-funktionen.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung12 - Spezielle Funktionen/12_lsg_spezielle-funktionen.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung12 - Spezielle Funktionen/12_lsg_mitschriften_G3_G4.pdf' },
+  ],
   titel: 'Spezielle Funktionen',
   aufgaben: [
     {

@@ -8,6 +8,10 @@ export const blatt11: MatheBlatt = {
   id: 'blatt11',
   nr: '11',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung11 - stetigkeit/11_aufg_stetigkeit.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung11 - stetigkeit/11_lsg_stetigkeit.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung11 - stetigkeit/11_lsg_mitschriften_G3_G4.pdf' },
+  ],
   titel: 'Stetigkeit',
   aufgaben: [
     {

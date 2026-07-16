@@ -7,6 +7,10 @@ export const blatt4: MatheBlatt = {
   id: 'blatt4',
   nr: '4',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung4 - Vollständige Induktion 2/04_aufg_vollst-ind-zahlbereiche.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung4 - Vollständige Induktion 2/04_lsg_vollst-ind-zahlbereiche.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung4 - Vollständige Induktion 2/04_lsg_Mitschriften_G3_G4.pdf' },
+  ],
   titel: 'vollständige Induktion, Zahlbereiche',
   aufgaben: [
     {

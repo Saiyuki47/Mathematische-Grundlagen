@@ -7,6 +7,10 @@ export const blatt3: MatheBlatt = {
   id: 'blatt3',
   nr: '3',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung3 - Vollständige Induktion 1/03_aufg_vollst-ind.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung3 - Vollständige Induktion 1/03_lsg_vollst-ind.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung3 - Vollständige Induktion 1/03_lsg_Handschrift_G3_G4.pdf' },
+  ],
   titel: 'Summenzeichen, Binomialkoeffizienten, vollständige Induktion',
   aufgaben: [
     {

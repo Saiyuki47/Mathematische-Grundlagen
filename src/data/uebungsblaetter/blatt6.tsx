@@ -6,6 +6,10 @@ export const blatt6: MatheBlatt = {
   id: 'blatt6',
   nr: '6',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung6 - Kombinatorik/06_aufg_abzaehlbarkeit-kombinatorik.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung6 - Kombinatorik/06_lsg_abzaehlbarkeit-kombinatorik.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung6 - Kombinatorik/06_lsg_Mitschriften_G3_G4.pdf' },
+  ],
   titel: 'Unendliche Mengen, Kombinatorik',
   aufgaben: [
     {

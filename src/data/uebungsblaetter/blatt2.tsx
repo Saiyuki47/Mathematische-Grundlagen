@@ -6,6 +6,10 @@ export const blatt2: MatheBlatt = {
   id: 'blatt2',
   nr: '2',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung2 - Logik/02a_aufg_logik.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung2 - Logik/02a_lsg_aufg_logik.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung2 - Logik/02_lsg_Handschrift_G3_G4.pdf' },
+  ],
   titel: 'Logik',
   aufgaben: [
     {

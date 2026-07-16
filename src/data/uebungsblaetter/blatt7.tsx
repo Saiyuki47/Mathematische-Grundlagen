@@ -7,6 +7,10 @@ export const blatt7: MatheBlatt = {
   id: 'blatt7',
   nr: '7',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung7 - Folgen 1/07_aufg_folgen.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung7 - Folgen 1/07_lsg_folgen.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung7 - Folgen 1/07_lsg_Mitschriften_G3_G4.pdf' },
+  ],
   titel: 'Folgen, geometrische Summenformel',
   aufgaben: [
     {

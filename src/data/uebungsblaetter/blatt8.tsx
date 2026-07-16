@@ -7,6 +7,10 @@ export const blatt8: MatheBlatt = {
   id: 'blatt8',
   nr: '8',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung8 - Folgen 2/08_aufg_folgen-divergenz.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung8 - Folgen 2/08_lsg_folgen-divergenz.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung8 - Folgen 2/08_lsg_Mitschriften_G3_G4.pdf' },
+  ],
   titel: 'Folgen, bestimmte Divergenz, geometrische Reihe',
   aufgaben: [
     {

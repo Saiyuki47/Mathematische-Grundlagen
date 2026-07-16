@@ -7,6 +7,9 @@ export const blatt10: MatheBlatt = {
   id: 'blatt10',
   nr: '10',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung10 - grenzwerte/10_aufg_grenzwerte-asymptotik.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung10 - grenzwerte/10_lsg_grenzwerte-asymptotik.pdf' },
+  ],
   titel: 'Reihen, Grenzwerte von Funktionen, Asymptotik',
   aufgaben: [
     {

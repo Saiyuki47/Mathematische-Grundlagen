@@ -6,6 +6,10 @@ export const blatt9: MatheBlatt = {
   id: 'blatt9',
   nr: '9',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung9- Reihen/09_aufg_reihen.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung9- Reihen/09_lsg_reihen.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung9- Reihen/09_lsg_Mitschriften_G3_G4.pdf' },
+  ],
   titel: 'Rekursive Folgen, Reihen, Polynomdivision',
   aufgaben: [
     {

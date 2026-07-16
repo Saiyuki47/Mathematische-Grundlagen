@@ -80,5 +80,7 @@ export interface MatheBlatt {
   beschreibung?: string
   /** Pfad zum Original-Übungsblatt (PDF) unter /public, relativ (z. B. 'material/…/00_aufg_rechenregeln.pdf'). */
   pdf?: string
+  /** Lösungen (relativ zu /public), je als „Lösung öffnen"-Link mit eigenem Label. */
+  loesungen?: { label: string; pfad: string }[]
   aufgaben: MatheAufgabe[]
 }

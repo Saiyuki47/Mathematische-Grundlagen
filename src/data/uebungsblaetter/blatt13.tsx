@@ -7,6 +7,10 @@ export const blatt13: MatheBlatt = {
   id: 'blatt13',
   nr: '13',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung13 - Differentation/13_aufg_differentiation.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung13 - Differentation/13_lsg_differentiation.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung13 - Differentation/13_lsg_mitschriften_G3_G4.pdf' },
+  ],
   titel: 'Differentiation',
   aufgaben: [
     {

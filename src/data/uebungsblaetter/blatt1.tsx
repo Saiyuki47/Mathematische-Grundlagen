@@ -7,6 +7,9 @@ export const blatt1: MatheBlatt = {
   id: 'blatt1',
   nr: '1',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung1 - Mengenlehre/01_aufg_mengen.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung1 - Mengenlehre/01_lsg_mengen.pdf' },
+  ],
   titel: 'Mengen',
   aufgaben: [
     {

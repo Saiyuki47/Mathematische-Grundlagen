@@ -7,6 +7,9 @@ export const blatt0: MatheBlatt = {
   id: 'blatt0',
   nr: '0',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung0 - Rechenregeln Grundlagen/00_aufg_rechenregeln.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung0 - Rechenregeln Grundlagen/00_lsg_rechenregeln.pdf' },
+  ],
   titel: 'Rechenregeln, Notationen, Geraden',
   aufgaben: [
     {

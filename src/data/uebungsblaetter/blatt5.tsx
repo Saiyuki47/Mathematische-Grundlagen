@@ -7,6 +7,10 @@ export const blatt5: MatheBlatt = {
   id: 'blatt5',
   nr: '5',
   pdf: 'material/Ein wenig zum Trainieren Übungen/uebung5 Relationen-und-Funktionen/05_aufg_relationen-funktionen.pdf',
+  loesungen: [
+    { label: 'Lösung (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung5 Relationen-und-Funktionen/05_lsg_relationen-funktionen.pdf' },
+    { label: 'Lösung – Mitschrift G3/G4 (PDF) öffnen', pfad: 'material/Ein wenig zum Trainieren Übungen/uebung5 Relationen-und-Funktionen/05_lsg_Mitschriften_G3_G4.pdf' },
+  ],
   titel: 'Relationen, Funktionen, Abzählbarkeit',
   aufgaben: [
     {
