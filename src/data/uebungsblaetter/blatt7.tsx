@@ -6,6 +6,7 @@ import { h } from './shared'
 export const blatt7: MatheBlatt = {
   id: 'blatt7',
   nr: '7',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung7 - Folgen 1/07_aufg_folgen.pdf',
   titel: 'Folgen, geometrische Summenformel',
   aufgaben: [
     {

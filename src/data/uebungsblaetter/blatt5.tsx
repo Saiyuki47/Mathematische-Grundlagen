@@ -6,6 +6,7 @@ import FunctionPlot from '../../components/FunctionPlot'
 export const blatt5: MatheBlatt = {
   id: 'blatt5',
   nr: '5',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung5 Relationen-und-Funktionen/05_aufg_relationen-funktionen.pdf',
   titel: 'Relationen, Funktionen, Abzählbarkeit',
   aufgaben: [
     {

@@ -78,5 +78,7 @@ export interface MatheBlatt {
   nr: string
   titel: string
   beschreibung?: string
+  /** Pfad zum Original-Übungsblatt (PDF) unter /public, relativ (z. B. 'material/…/00_aufg_rechenregeln.pdf'). */
+  pdf?: string
   aufgaben: MatheAufgabe[]
 }

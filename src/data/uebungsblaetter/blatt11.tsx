@@ -7,6 +7,7 @@ import FunctionPlot from '../../components/FunctionPlot'
 export const blatt11: MatheBlatt = {
   id: 'blatt11',
   nr: '11',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung11 - stetigkeit/11_aufg_stetigkeit.pdf',
   titel: 'Stetigkeit',
   aufgaben: [
     {

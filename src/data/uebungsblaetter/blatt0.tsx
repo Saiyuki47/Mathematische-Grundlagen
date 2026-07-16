@@ -6,6 +6,7 @@ import { h } from './shared'
 export const blatt0: MatheBlatt = {
   id: 'blatt0',
   nr: '0',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung0 - Rechenregeln Grundlagen/00_aufg_rechenregeln.pdf',
   titel: 'Rechenregeln, Notationen, Geraden',
   aufgaben: [
     {

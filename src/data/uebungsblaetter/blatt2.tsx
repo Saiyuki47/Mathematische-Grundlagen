@@ -5,6 +5,7 @@ import { h } from './shared'
 export const blatt2: MatheBlatt = {
   id: 'blatt2',
   nr: '2',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung2 - Logik/02a_aufg_logik.pdf',
   titel: 'Logik',
   aufgaben: [
     {

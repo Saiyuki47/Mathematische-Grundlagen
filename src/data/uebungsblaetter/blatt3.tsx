@@ -6,6 +6,7 @@ import { h } from './shared'
 export const blatt3: MatheBlatt = {
   id: 'blatt3',
   nr: '3',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung3 - Vollständige Induktion 1/03_aufg_vollst-ind.pdf',
   titel: 'Summenzeichen, Binomialkoeffizienten, vollständige Induktion',
   aufgaben: [
     {

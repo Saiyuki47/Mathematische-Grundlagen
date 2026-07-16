@@ -5,6 +5,7 @@ import { h } from './shared'
 export const blatt6: MatheBlatt = {
   id: 'blatt6',
   nr: '6',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung6 - Kombinatorik/06_aufg_abzaehlbarkeit-kombinatorik.pdf',
   titel: 'Unendliche Mengen, Kombinatorik',
   aufgaben: [
     {

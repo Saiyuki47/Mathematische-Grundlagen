@@ -129,6 +129,18 @@ export default function Uebungsblaetter() {
             {blatt.beschreibung && (
               <p className="ub-desc">{blatt.beschreibung}</p>
             )}
+            {blatt.pdf && (
+              <div style={refLinksRow}>
+                <a
+                  href={import.meta.env.BASE_URL + encodeURI(blatt.pdf)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={refLinkStyle}
+                >
+                  📄 Original-Übungsblatt (PDF) öffnen
+                </a>
+              </div>
+            )}
             {taskKeys.length > 0 && (
               <>
                 <div className="progress-wrap" style={{ marginTop: '0.75rem' }}>

@@ -5,6 +5,7 @@ import { h } from './shared'
 export const blatt9: MatheBlatt = {
   id: 'blatt9',
   nr: '9',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung9- Reihen/09_aufg_reihen.pdf',
   titel: 'Rekursive Folgen, Reihen, Polynomdivision',
   aufgaben: [
     {

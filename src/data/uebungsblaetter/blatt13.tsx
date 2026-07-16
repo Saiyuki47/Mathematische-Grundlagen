@@ -6,6 +6,7 @@ import { h } from './shared'
 export const blatt13: MatheBlatt = {
   id: 'blatt13',
   nr: '13',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung13 - Differentation/13_aufg_differentiation.pdf',
   titel: 'Differentiation',
   aufgaben: [
     {

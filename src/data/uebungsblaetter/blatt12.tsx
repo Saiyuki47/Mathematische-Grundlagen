@@ -5,6 +5,7 @@ import { h } from './shared'
 export const blatt12: MatheBlatt = {
   id: 'blatt12',
   nr: '12',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung12 - Spezielle Funktionen/12_aufg_spezielle-funktionen.pdf',
   titel: 'Spezielle Funktionen',
   aufgaben: [
     {

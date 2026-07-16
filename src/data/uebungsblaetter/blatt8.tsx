@@ -6,6 +6,7 @@ import { h } from './shared'
 export const blatt8: MatheBlatt = {
   id: 'blatt8',
   nr: '8',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung8 - Folgen 2/08_aufg_folgen-divergenz.pdf',
   titel: 'Folgen, bestimmte Divergenz, geometrische Reihe',
   aufgaben: [
     {

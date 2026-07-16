@@ -6,6 +6,7 @@ import { h } from './shared'
 export const blatt4: MatheBlatt = {
   id: 'blatt4',
   nr: '4',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/uebung4 - Vollständige Induktion 2/04_aufg_vollst-ind-zahlbereiche.pdf',
   titel: 'vollständige Induktion, Zahlbereiche',
   aufgaben: [
     {
