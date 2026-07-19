@@ -11,6 +11,26 @@ const Quiz = lazy(() => import('lernseiten-ui').then(m => ({ default: m.Quiz }))
 const Flashcards = lazy(() => import('lernseiten-ui').then(m => ({ default: m.Flashcards })))
 const Moodle = lazy(() => import('lernseiten-ui').then(m => ({ default: m.Moodle })))
 
+// Reihenfolge der Moodle-Kacheln: Themen in der Reihenfolge, wie sie im Kurs
+// drankamen (abgeleitet aus der Nummerierung der Übungssammlung), dann Übungen,
+// zuletzt Organisatorisches.
+const moodleOrder = [
+  'material/Mengen und Logik',
+  'material/Zahlenbereiche',
+  'material/Relationen und Abbildungen',
+  'material/Letzte Vorlesung Relationen, injektiv, surjektiv',
+  'material/Kombinatorik',
+  'material/Folgen und Reihen',
+  'material/Grenzwerte, Stetigkeit',
+  'material/Spezielle Funktionen',
+  'material/Differentialrechnung',
+  'material/Ein wenig zum Trainieren Übungen',
+  'material/ExtraÜbungslbatt',
+  'material/Orga',
+]
+
+const moodleGroupTitles = { material: 'Vorlesung & Themen', sonstiges: 'Organisation' }
+
 // Tab-IDs, -Reihenfolge und -Icons sind über alle Lernseiten vereinheitlicht;
 // die Tab-Leiste kommt zentral aus lernseiten-ui (tabDefs).
 const TABS = STANDARD_TAB_REIHENFOLGE
@@ -39,7 +59,14 @@ function App() {
           {activeTab === 'uebung' && <Uebungsblaetter />}
           {activeTab === 'referenz' && <Referenz />}
           {activeTab === 'hilfsmittel' && <Hilfsmittel />}
-          {activeTab === 'moodle' && <Moodle tree={dateienTree} baseUrl={import.meta.env.BASE_URL} />}
+          {activeTab === 'moodle' && (
+            <Moodle
+              tree={dateienTree}
+              baseUrl={import.meta.env.BASE_URL}
+              order={moodleOrder}
+              groupTitles={moodleGroupTitles}
+            />
+          )}
           {activeTab === 'quiz' && <Quiz fragen={quizFragen} />}
           {activeTab === 'karten' && <Flashcards cards={karteikarten} />}
         </Suspense>
