@@ -54,9 +54,9 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'A \\ B  = „in A, nicht in B"  → die Zone „nur A".\n'}
-              {'Ā ∩ B = „nicht in A, in B" → die Zone „nur B".\n\n'}
-              {'Die Überlappung A ∩ B bleibt in beiden Fällen unschattiert.'}
+              <M>{'A \\setminus B'}</M>{' = „in A, nicht in B" → die Zone „nur A".\n'}
+              <M>{'\\overline{A} \\cap B'}</M>{' = „nicht in A, in B" → die Zone „nur B".\n\n'}
+              {'Die Überlappung '}<M>{'A \\cap B'}</M>{' bleibt in beiden Fällen unschattiert.'}
             </>
           ),
           abbildung: (
@@ -94,9 +94,9 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'(i)   M₁ ∪ M₂ = (1,3] ; ∩ ℕ  →  {2, 3}\n'}
-              {'(ii)  M₁ ∩ M₂ = (2,3) ; ∩ ℕ  →  ∅  (keine ganze Zahl zwischen 2 und 3)\n'}
-              {'(iii) M₁ \\ M₂ = (1,2] ; ∩ ℕ  →  {2}'}
+              {'(i)   '}<M>{'(M_1 \\cup M_2)\\cap\\mathbb{N} = (1,3]\\cap\\mathbb{N} = \\{2, 3\\}'}</M>{'\n'}
+              {'(ii)  '}<M>{'(M_1 \\cap M_2)\\cap\\mathbb{N} = (2,3)\\cap\\mathbb{N} = \\emptyset'}</M>{'  (keine ganze Zahl zwischen 2 und 3)\n'}
+              {'(iii) '}<M>{'(M_1 \\setminus M_2)\\cap\\mathbb{N} = (1,2]\\cap\\mathbb{N} = \\{2\\}'}</M>
             </>
           ),
         },
@@ -127,8 +127,8 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'(i)  wahr.  z. B. x = 0, 1 oder 2 ∈ ℕ mit x² = 0, 1, 4 < 9.\n'}
-              {'(ii) wahr.  Wähle x = 1: dann 1·y = y für alle y ∈ ℝ.'}
+              {'(i)  wahr.  z. B. '}<M>{'x = 0,\\,1,\\,2 \\in \\mathbb{N}'}</M>{' mit '}<M>{'x^2 = 0,\\,1,\\,4 < 9'}</M>{'.\n'}
+              {'(ii) wahr.  Wähle '}<M>{'x = 1'}</M>{': dann '}<M>{'1\\cdot y = y'}</M>{' für alle '}<M>{'y \\in \\mathbb{R}'}</M>{'.'}
             </>
           ),
         },
@@ -153,7 +153,11 @@ export const probeklausur: MatheBlatt = {
               <p>Was ist das Gegenteil von „&lt; 9"? (≥ 9, nicht &gt; 9.)</p>
             </>,
           ),
-          solution: <>{'∀x ∈ ℝ : x² ≥ 9.\n\n(∃ → ∀, und „< 9" wird zu „≥ 9".)'}</>,
+          solution: (
+            <>
+              <M>{'\\forall x \\in \\mathbb{R} : x^2 \\ge 9'}</M>{'\n\n(∃ → ∀, und „'}<M>{'< 9'}</M>{'" wird zu „'}<M>{'\\ge 9'}</M>{'".)'}
+            </>
+          ),
         },
       ],
     },
@@ -195,17 +199,16 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Behauptung A(n):  Σ_{i=1}^{n} (2i−1) = n²  für alle n ≥ 1.\n\n'}
+              {'Behauptung A(n):  '}<M>{'\\sum_{i=1}^{n}(2i-1) = n^2'}</M>{'  für alle '}<M>{'n \\ge 1'}</M>{'.\n\n'}
               {'Induktionsanfang (n = 1):\n'}
-              {'  Σ_{i=1}^{1} (2i−1) = 2·1 − 1 = 1 = 1².   ✓\n\n'}
+              {'  '}<M>{'\\sum_{i=1}^{1}(2i-1) = 2\\cdot 1 - 1 = 1 = 1^2'}</M>{'   ✓\n\n'}
               {'Induktionsvoraussetzung (IV):\n'}
-              {'  Für ein festes n ≥ 1 gelte  Σ_{i=1}^{n} (2i−1) = n².\n\n'}
+              {'  Für ein festes '}<M>{'n \\ge 1'}</M>{' gelte  '}<M>{'\\sum_{i=1}^{n}(2i-1) = n^2'}</M>{'.\n\n'}
               {'Induktionsschritt (n → n+1):\n'}
-              {'  Σ_{i=1}^{n+1} (2i−1) = Σ_{i=1}^{n} (2i−1) + (2(n+1) − 1)\n'}
-              {'                     = n² + (2n + 1)              (IV eingesetzt)\n'}
-              {'                     = n² + 2n + 1\n'}
-              {'                     = (n + 1)².               (1. binom. Formel)\n\n'}
-              {'Damit gilt A(n+1). Nach dem Prinzip der vollständigen Induktion gilt A(n) für alle n ≥ 1.  ∎'}
+              {'  '}<M>{'\\sum_{i=1}^{n+1}(2i-1) = \\sum_{i=1}^{n}(2i-1) + \\bigl(2(n+1)-1\\bigr)'}</M>{'\n'}
+              {'  '}<M>{'= n^2 + (2n + 1)'}</M>{'   (IV eingesetzt)\n'}
+              {'  '}<M>{'= n^2 + 2n + 1 = (n+1)^2'}</M>{'   (1. binom. Formel)\n\n'}
+              {'Damit gilt A(n+1). Nach dem Prinzip der vollständigen Induktion gilt A(n) für alle '}<M>{'n \\ge 1'}</M>{'.  ∎'}
             </>
           ),
         },
@@ -248,13 +251,11 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'(a ∨ ā) ∧ a\n'}
-              {'= (1) ∧ a          | Komplementgesetz:  a ∨ ā = 1\n'}
-              {'  ‾\n'}
-              {'überstrichen:  1̄ = 0   | Negation der 1\n'}
-              {'= 0 ∧ a            | Dominanz-/Nullgesetz:  0 ∧ a = 0\n'}
-              {'= 0\n\n'}
-              {'Ergebnis:  0.'}
+              {'  '}<M>{'\\overline{a \\lor \\bar a} \\land a'}</M>{'\n'}
+              {'  '}<M>{'= \\overline{1} \\land a'}</M>{'    | Komplementgesetz:  '}<M>{'a \\lor \\bar a = 1'}</M>{'\n'}
+              {'  '}<M>{'= 0 \\land a'}</M>{'    | Negation:  '}<M>{'\\overline{1} = 0'}</M>{'\n'}
+              {'  '}<M>{'= 0'}</M>{'    | Dominanz-/Nullgesetz:  '}<M>{'0 \\land a = 0'}</M>{'\n\n'}
+              {'Ergebnis:  '}<M>{'0'}</M>{'.'}
             </>
           ),
         },
@@ -287,10 +288,10 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'(a ∨ 1) ∧ b\n'}
-              {'= 1 ∧ b     | Dominanzgesetz:  a ∨ 1 = 1\n'}
-              {'= b         | Neutralelement:  1 ∧ b = b\n\n'}
-              {'Ergebnis:  b.'}
+              {'  '}<M>{'(a \\lor 1) \\land b'}</M>{'\n'}
+              {'  '}<M>{'= 1 \\land b'}</M>{'    | Dominanzgesetz:  '}<M>{'a \\lor 1 = 1'}</M>{'\n'}
+              {'  '}<M>{'= b'}</M>{'    | Neutralelement:  '}<M>{'1 \\land b = b'}</M>{'\n\n'}
+              {'Ergebnis:  '}<M>{'b'}</M>{'.'}
             </>
           ),
         },
@@ -337,11 +338,11 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'A = {1,2,3,4},  B = {7,8,9}.\n\n'}
-              {'linkstotal:      NEIN  — 4 ∈ A hat kein Bild.\n'}
-              {'rechtstotal:     NEIN  — 9 ∈ B wird nicht getroffen.\n'}
+              <M>{'A = \\{1,2,3,4\\},\\quad B = \\{7,8,9\\}'}</M>{'\n\n'}
+              {'linkstotal:      NEIN  — '}<M>{'4 \\in A'}</M>{' hat kein Bild.\n'}
+              {'rechtstotal:     NEIN  — '}<M>{'9 \\in B'}</M>{' wird nicht getroffen.\n'}
               {'linkseindeutig:  NEIN  — 7 wird von 1 und 2 getroffen (auch 8 von 3 und 1).\n'}
-              {'rechtseindeutig: NEIN  — 1 hat zwei Bilder: (1,7) und (1,8).'}
+              {'rechtseindeutig: NEIN  — 1 hat zwei Bilder: '}<M>{'(1,7)'}</M>{' und '}<M>{'(1,8)'}</M>{'.'}
             </>
           ),
         },
@@ -370,10 +371,10 @@ export const probeklausur: MatheBlatt = {
           solution: (
             <>
               {'Nein, R ist keine Funktion.\n\n'}
-              {'Eine Funktion A → B muss linkstotal und rechtseindeutig sein\n'}
-              {'(jedes a ∈ A hat genau ein Bild). R verletzt beides:\n'}
-              {'  • nicht linkstotal:      4 ∈ A hat gar kein Bild;\n'}
-              {'  • nicht rechtseindeutig: 1 ∈ A hat zwei Bilder (1,7) und (1,8).\n\n'}
+              {'Eine Funktion '}<M>{'A \\to B'}</M>{' muss linkstotal und rechtseindeutig sein\n'}
+              {'(jedes '}<M>{'a \\in A'}</M>{' hat genau ein Bild). R verletzt beides:\n'}
+              {'  • nicht linkstotal:      '}<M>{'4 \\in A'}</M>{' hat gar kein Bild;\n'}
+              {'  • nicht rechtseindeutig: '}<M>{'1 \\in A'}</M>{' hat zwei Bilder '}<M>{'(1,7)'}</M>{' und '}<M>{'(1,8)'}</M>{'.\n\n'}
               {'Jede dieser Verletzungen allein genügt schon.'}
             </>
           ),
@@ -416,9 +417,9 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Waagerechte Strecke auf Höhe y = 1 für 0 ≤ x ≤ 1,\n'}
-              {'danach der Parabelast y = x² für x > 1.\n'}
-              {'Bei (1,1) gehen beide Teile stetig ineinander über.'}
+              {'Waagerechte Strecke auf Höhe '}<M>{'y = 1'}</M>{' für '}<M>{'0 \\le x \\le 1'}</M>{',\n'}
+              {'danach der Parabelast '}<M>{'y = x^2'}</M>{' für '}<M>{'x > 1'}</M>{'.\n'}
+              {'Bei '}<M>{'(1,1)'}</M>{' gehen beide Teile stetig ineinander über.'}
             </>
           ),
           abbildung: (
@@ -458,7 +459,12 @@ export const probeklausur: MatheBlatt = {
               <p>Gibt es zwei verschiedene x mit demselben Bild? (Ja, alle x ∈ [0,1] → 1.)</p>
             </>,
           ),
-          solution: <>{'Nein.  Auf [0,1] ist f konstant 1, z. B. f(0) = f(1) = 1 mit 0 ≠ 1.\nAlso werden verschiedene x auf denselben Wert abgebildet — nicht injektiv.'}</>,
+          solution: (
+            <>
+              {'Nein.  Auf '}<M>{'[0,1]'}</M>{' ist f konstant 1, z. B. '}<M>{'f(0) = f(1) = 1'}</M>{' mit '}<M>{'0 \\ne 1'}</M>{'.\n'}
+              {'Also werden verschiedene x auf denselben Wert abgebildet — nicht injektiv.'}
+            </>
+          ),
         },
         {
           letter: 'c',
@@ -481,7 +487,12 @@ export const probeklausur: MatheBlatt = {
               <p>Wird der Zielwert 0 (oder ½) von einem x getroffen? (Nein — f(x) ≥ 1 überall.)</p>
             </>,
           ),
-          solution: <>{'Nein.  Der Wertebereich ist [1,∞) (auf [0,1] nur der Wert 1, für x>1 alle Werte >1).\nWerte in [0,1) — etwa 0 oder ½ — liegen in der Zielmenge [0,∞), werden aber nie angenommen.'}</>,
+          solution: (
+            <>
+              {'Nein.  Der Wertebereich ist '}<M>{'[1,\\infty)'}</M>{' (auf '}<M>{'[0,1]'}</M>{' nur der Wert 1, für '}<M>{'x>1'}</M>{' alle Werte '}<M>{'>1'}</M>{').\n'}
+              {'Werte in '}<M>{'[0,1)'}</M>{' — etwa 0 oder '}<M>{'\\tfrac{1}{2}'}</M>{' — liegen in der Zielmenge '}<M>{'[0,\\infty)'}</M>{', werden aber nie angenommen.'}
+            </>
+          ),
         },
         {
           letter: 'd',
@@ -510,8 +521,8 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'f([0,1]) = {1}   und   f((1,2]) = (1, 4].\n'}
-              {'f([0,2]) = {1} ∪ (1,4] = [1, 4].'}
+              <M>{'f([0,1]) = \\{1\\}'}</M>{'   und   '}<M>{'f((1,2]) = (1, 4]'}</M>{'.\n'}
+              <M>{'f([0,2]) = \\{1\\} \\cup (1,4] = [1, 4]'}</M>{'.'}
             </>
           ),
         },
@@ -542,10 +553,10 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Gesucht: alle x ≥ 0 mit 1 ≤ f(x) ≤ 2.\n\n'}
-              {'• x ∈ [0,1]:  f(x) = 1 ∈ [1,2]  →  ganz [0,1].\n'}
-              {'• x > 1:      f(x) = x², und 1 ≤ x² ≤ 2 ⇔ x ≤ √2  →  (1, √2].\n\n'}
-              {'f⁻¹([1,2]) = [0,1] ∪ (1, √2] = [0, √2].'}
+              {'Gesucht: alle '}<M>{'x \\ge 0'}</M>{' mit '}<M>{'1 \\le f(x) \\le 2'}</M>{'.\n\n'}
+              {'• '}<M>{'x \\in [0,1]'}</M>{':  '}<M>{'f(x) = 1 \\in [1,2]'}</M>{'  →  ganz '}<M>{'[0,1]'}</M>{'.\n'}
+              {'• '}<M>{'x > 1'}</M>{':  '}<M>{'f(x) = x^2'}</M>{', und '}<M>{'1 \\le x^2 \\le 2 \\Leftrightarrow x \\le \\sqrt{2}'}</M>{'  →  '}<M>{'(1, \\sqrt{2}]'}</M>{'.\n\n'}
+              <M>{'f^{-1}([1,2]) = [0,1] \\cup (1, \\sqrt{2}] = [0, \\sqrt{2}]'}</M>{'.'}
             </>
           ),
         },
@@ -585,10 +596,8 @@ export const probeklausur: MatheBlatt = {
           solution: (
             <>
               {'Urnenmodell: Ziehen mit Zurücklegen, ohne Beachtung der Reihenfolge\n'}
-              {'(Kombination mit Wiederholung) — n = 7 Sorten, k = 5 Kugeln.\n\n'}
-              {'   ( n+k−1 )   ( 11 )     11!\n'}
-              {'   (   k   ) = (  5 ) = ──────── = 462.\n'}
-              {'                         5! · 6!\n\n'}
+              {'(Kombination mit Wiederholung) — '}<M>{'n = 7'}</M>{' Sorten, '}<M>{'k = 5'}</M>{' Kugeln.\n\n'}
+              {'  '}<M>{'\\binom{n+k-1}{k} = \\binom{11}{5} = \\frac{11!}{5!\\,6!} = 462'}</M>{'\n\n'}
               {'Es gibt 462 verschiedene Eisteller.'}
             </>
           ),
@@ -620,10 +629,8 @@ export const probeklausur: MatheBlatt = {
           solution: (
             <>
               {'Urnenmodell: Ziehen ohne Zurücklegen, ohne Reihenfolge\n'}
-              {'(Kombination ohne Wiederholung) — n = 7, k = 5.\n\n'}
-              {'   ( 7 )     7!        ( 7 )\n'}
-              {'   ( 5 ) = ─────── = 21 ( = ( 2 ) durch Symmetrie ).\n'}
-              {'           5! · 2!\n\n'}
+              {'(Kombination ohne Wiederholung) — '}<M>{'n = 7'}</M>{', '}<M>{'k = 5'}</M>{'.\n\n'}
+              {'  '}<M>{'\\binom{7}{5} = \\frac{7!}{5!\\,2!} = 21 = \\binom{7}{2}'}</M>{'   (Symmetrie)\n\n'}
               {'Es gibt 21 verschiedene Eisteller.'}
             </>
           ),
@@ -664,10 +671,10 @@ export const probeklausur: MatheBlatt = {
           solution: (
             <>
               {'Euklid (Division mit Rest, bis Rest 0):\n\n'}
-              {'  128 = 1 · 112 + 16\n'}
-              {'  112 = 7 ·  16 +  0\n\n'}
-              {'Letzter Rest ≠ 0 ist 16  →  ggT(128, 112) = 16.\n'}
-              {'(Probe: 128 = 8·16, 112 = 7·16.)'}
+              {'  '}<M>{'128 = 1 \\cdot 112 + 16'}</M>{'\n'}
+              {'  '}<M>{'112 = 7 \\cdot 16 + 0'}</M>{'\n\n'}
+              {'Letzter Rest ≠ 0 ist 16  →  '}<M>{'\\gcd(128,\\,112) = 16'}</M>{'.\n'}
+              {'(Probe: '}<M>{'128 = 8\\cdot 16'}</M>{', '}<M>{'112 = 7\\cdot 16'}</M>{'.)'}
             </>
           ),
         },
@@ -712,10 +719,10 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'xₙ = (−1)ⁿ · 2n,   n ∈ ℕ.\n\n'}
-              {'Vorzeichen +,−,+,−,… = (−1)ⁿ  (n=0 → +),\n'}
-              {'Beträge 0,2,4,6,8,… = 2n.\n\n'}
-              {'Probe: x₀=0, x₁=−2, x₂=4, x₃=−6, x₄=8, …\n'}
+              <M>{'x_n = (-1)^n \\cdot 2n, \\quad n \\in \\mathbb{N}'}</M>{'\n\n'}
+              {'Vorzeichen +,−,+,−,… = '}<M>{'(-1)^n'}</M>{'  (n=0 → +),\n'}
+              {'Beträge 0,2,4,6,8,… = '}<M>{'2n'}</M>{'.\n\n'}
+              {'Probe: '}<M>{'x_0=0,\\ x_1=-2,\\ x_2=4,\\ x_3=-6,\\ x_4=8, \\dots'}</M>{'\n'}
               {'(Der in der Angabe gedruckte 4. Wert „−8" passt nicht ins Muster — er sollte −6 heißen.)'}
             </>
           ),
@@ -751,11 +758,11 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Es gilt |sin(n)| ≤ 1 (beschränkt) und 1/n² → 0, also sin(1/n²) → 0.\n\n'}
+              {'Es gilt '}<M>{'|\\sin(n)| \\le 1'}</M>{' (beschränkt) und '}<M>{'\\tfrac{1}{n^2} \\to 0'}</M>{', also '}<M>{'\\sin\\!\\left(\\tfrac{1}{n^2}\\right) \\to 0'}</M>{'.\n\n'}
               {'Abschätzung (Sandwichsatz):\n'}
-              {'  0 ≤ |sin(n)·sin(1/n²)| ≤ 1 · |sin(1/n²)| ≤ 1/n² → 0.\n\n'}
+              {'  '}<M>{'0 \\le \\left|\\sin(n)\\,\\sin\\!\\left(\\tfrac{1}{n^2}\\right)\\right| \\le \\left|\\sin\\!\\left(\\tfrac{1}{n^2}\\right)\\right| \\le \\tfrac{1}{n^2} \\to 0'}</M>{'\n\n'}
               {'Da die Beträge gegen 0 gehen, folgt\n'}
-              {'  lim_{n→∞} sin(n)·sin(1/n²) = 0.'}
+              {'  '}<M>{'\\lim_{n\\to\\infty} \\sin(n)\\,\\sin\\!\\left(\\tfrac{1}{n^2}\\right) = 0'}</M>{'.'}
             </>
           ),
         },
@@ -797,10 +804,10 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Geometrische Reihe mit q = 0,25·x² = x²/4.\n'}
-              {'Konvergenz ⇔ |q| < 1 ⇔ x²/4 < 1 ⇔ x² < 4 ⇔ |x| < 2.\n\n'}
-              {'Die Reihe konvergiert genau für  x ∈ (−2, 2).\n'}
-              {'(Für x = ±2 ist q = 1 → Divergenz.)  Summe: 1/(1 − x²/4).'}
+              {'Geometrische Reihe mit '}<M>{'q = 0{,}25\\,x^2 = \\tfrac{x^2}{4}'}</M>{'.\n'}
+              {'Konvergenz  '}<M>{'\\Leftrightarrow |q| < 1 \\Leftrightarrow \\tfrac{x^2}{4} < 1 \\Leftrightarrow x^2 < 4 \\Leftrightarrow |x| < 2'}</M>{'.\n\n'}
+              {'Die Reihe konvergiert genau für  '}<M>{'x \\in (-2,\\,2)'}</M>{'.\n'}
+              {'(Für '}<M>{'x = \\pm 2'}</M>{' ist '}<M>{'q = 1'}</M>{' → Divergenz.)  Summe: '}<M>{'\\dfrac{1}{1 - \\frac{x^2}{4}}'}</M>{'.'}
             </>
           ),
         },
@@ -836,12 +843,10 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Quotientenkriterium mit aₖ = k/3ᵏ > 0:\n\n'}
-              {'  a_{k+1}     k+1     3ᵏ      k+1        1\n'}
-              {'  ─────── = ────── · ──── = ────── ───→ ─── < 1.\n'}
-              {'    aₖ       3^{k+1}   k      3k    k→∞   3\n\n'}
-              {'Da der Grenzwert 1/3 < 1 ist, konvergiert die Reihe (absolut).\n'}
-              {'(Zusatz: der Wert ist 3/4, hier nicht gefragt.)'}
+              {'Quotientenkriterium mit '}<M>{'a_k = \\tfrac{k}{3^k} > 0'}</M>{':\n\n'}
+              {'  '}<M>{'\\frac{a_{k+1}}{a_k} = \\frac{k+1}{3^{k+1}} \\cdot \\frac{3^k}{k} = \\frac{k+1}{3k} \\;\\xrightarrow[k\\to\\infty]{}\\; \\frac{1}{3} < 1'}</M>{'\n\n'}
+              {'Da der Grenzwert '}<M>{'\\tfrac{1}{3} < 1'}</M>{' ist, konvergiert die Reihe (absolut).\n'}
+              {'(Zusatz: der Wert ist '}<M>{'\\tfrac{3}{4}'}</M>{', hier nicht gefragt.)'}
             </>
           ),
         },
@@ -885,12 +890,12 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Polynomdivision (−x³+x²+x−2) : (x−1):\n\n'}
-              {'  (−x³ + x² + x − 2) : (x − 1) = −x² + 1  Rest −1\n'}
-              {'  ⇒  f(x) = −x² + 1 − 1/(x−1).\n\n'}
-              {'(i)  Für x → ±∞ gilt −1/(x−1) → 0, also ist\n'}
-              {'     die asymptotische Parabel  p(x) = −x² + 1.\n\n'}
-              {'(ii) lim_{x→∞} f(x) = −∞   (dominanter Term −x²).'}
+              {'Polynomdivision:\n\n'}
+              {'  '}<M>{'(-x^3 + x^2 + x - 2) : (x - 1) = -x^2 + 1 \\quad \\text{Rest } -1'}</M>{'\n'}
+              {'  '}<M>{'\\Rightarrow\\; f(x) = -x^2 + 1 - \\dfrac{1}{x-1}'}</M>{'\n\n'}
+              {'(i)  Für '}<M>{'x \\to \\pm\\infty'}</M>{' gilt '}<M>{'-\\tfrac{1}{x-1} \\to 0'}</M>{', also ist\n'}
+              {'     die asymptotische Parabel  '}<M>{'p(x) = -x^2 + 1'}</M>{'.\n\n'}
+              {'(ii) '}<M>{'\\lim_{x\\to\\infty} f(x) = -\\infty'}</M>{'   (dominanter Term '}<M>{'-x^2'}</M>{').'}
             </>
           ),
         },
@@ -925,12 +930,12 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Auf dem Definitionsbereich [0,∞) gilt |x| = x (da x ≥ 0).\n\n'}
-              {'  f(0) = |0| = 0,\n'}
-              {'  lim_{x→0⁺} f(x) = lim_{x→0⁺} x = 0.\n\n'}
+              {'Auf dem Definitionsbereich '}<M>{'[0,\\infty)'}</M>{' gilt '}<M>{'|x| = x'}</M>{' (da '}<M>{'x \\ge 0'}</M>{').\n\n'}
+              {'  '}<M>{'f(0) = |0| = 0'}</M>{'\n'}
+              {'  '}<M>{'\\lim_{x\\to 0^+} f(x) = \\lim_{x\\to 0^+} x = 0'}</M>{'\n\n'}
               {'Rechtsseitiger Grenzwert = Funktionswert = 0\n'}
               {'(negative x liegen nicht im Definitionsbereich).\n'}
-              {'⇒ f ist stetig in x = 0.'}
+              {'⇒ f ist stetig in '}<M>{'x = 0'}</M>{'.'}
             </>
           ),
         },
@@ -972,10 +977,10 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Regel:      Kettenregel  (u∘v)′ = u′(v(x))·v′(x).\n'}
-              {'Zerlegung:  äußere u(z) = exp(z), innere v(x) = x²;\n'}
-              {'            u′(z) = exp(z),  v′(x) = 2x.\n'}
-              {'Rechnung:   h′(x) = exp(x²) · 2x = 2x·exp(x²).'}
+              {'Regel:      Kettenregel  '}<M>{"(u\\circ v)' = u'(v(x))\\cdot v'(x)"}</M>{'\n'}
+              {'Zerlegung:  äußere '}<M>{'u(z) = \\exp(z)'}</M>{', innere '}<M>{'v(x) = x^2'}</M>{';\n'}
+              {'            '}<M>{"u'(z) = \\exp(z)"}</M>{',  '}<M>{"v'(x) = 2x"}</M>{'.\n'}
+              {'Rechnung:   '}<M>{"h'(x) = \\exp(x^2) \\cdot 2x = 2x\\,\\exp(x^2)"}</M>{'.'}
             </>
           ),
         },
@@ -1003,11 +1008,11 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Regel:      Produktregel  (u·v)′ = u′·v + u·v′.\n'}
-              {'Zerlegung:  u(x) = exp(x), v(x) = x²;\n'}
-              {'            u′(x) = exp(x),  v′(x) = 2x.\n'}
-              {'Rechnung:   h′(x) = exp(x)·x² + exp(x)·2x\n'}
-              {'                  = exp(x)·(x² + 2x) = x(x+2)·exp(x).'}
+              {'Regel:      Produktregel  '}<M>{"(u\\cdot v)' = u'\\cdot v + u\\cdot v'"}</M>{'\n'}
+              {'Zerlegung:  '}<M>{'u(x) = \\exp(x)'}</M>{', '}<M>{'v(x) = x^2'}</M>{';\n'}
+              {'            '}<M>{"u'(x) = \\exp(x)"}</M>{',  '}<M>{"v'(x) = 2x"}</M>{'.\n'}
+              {'Rechnung:   '}<M>{"h'(x) = \\exp(x)\\,x^2 + \\exp(x)\\,2x"}</M>{'\n'}
+              {'                  '}<M>{'= \\exp(x)\\,(x^2 + 2x) = x(x+2)\\,\\exp(x)'}</M>{'.'}
             </>
           ),
         },
@@ -1050,14 +1055,14 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'Stetigkeit bei x = 1:\n'}
-              {'  linker Ast:  ½·1 = ½,   rechter Ast (sonst):  ½.\n'}
-              {'  Beide Werte ½ ⇒ h ist stetig bei 1.  ✓\n\n'}
-              {'Einseitige Ableitungen bei x = 1:\n'}
-              {'  von links  (½x)′  = ½,\n'}
-              {'  von rechts (½)′   = 0.\n\n'}
-              {'Wegen ½ ≠ 0 stimmen die einseitigen Steigungen nicht überein.\n'}
-              {'⇒ h ist bei x = 1 NICHT differenzierbar (stetiger Knick).'}
+              {'Stetigkeit bei '}<M>{'x = 1'}</M>{':\n'}
+              {'  linker Ast:  '}<M>{'\\tfrac{1}{2}\\cdot 1 = \\tfrac{1}{2}'}</M>{',   rechter Ast (sonst):  '}<M>{'\\tfrac{1}{2}'}</M>{'.\n'}
+              {'  Beide Werte '}<M>{'\\tfrac{1}{2}'}</M>{' ⇒ h ist stetig bei 1.  ✓\n\n'}
+              {'Einseitige Ableitungen bei '}<M>{'x = 1'}</M>{':\n'}
+              {'  von links   '}<M>{"\\left(\\tfrac{1}{2}x\\right)' = \\tfrac{1}{2}"}</M>{',\n'}
+              {'  von rechts  '}<M>{"\\left(\\tfrac{1}{2}\\right)' = 0"}</M>{'.\n\n'}
+              {'Wegen '}<M>{'\\tfrac{1}{2} \\ne 0'}</M>{' stimmen die einseitigen Steigungen nicht überein.\n'}
+              {'⇒ h ist bei '}<M>{'x = 1'}</M>{' NICHT differenzierbar (stetiger Knick).'}
             </>
           ),
         },
@@ -1157,9 +1162,9 @@ export const probeklausur: MatheBlatt = {
           ),
           solution: (
             <>
-              {'(Ablesen aus den Skizzen — differenzierbar ⇒ stetig.)\n\n'}
-              {'a) Knick bei x = 0:      stetig JA,  differenzierbar NEIN.\n'}
-              {'b) Sprung bei x = 0:     stetig NEIN, differenzierbar NEIN.\n'}
+              {'(Ablesen aus den Skizzen — differenzierbar '}<M>{'\\Rightarrow'}</M>{' stetig.)\n\n'}
+              {'a) Knick bei '}<M>{'x = 0'}</M>{':      stetig JA,  differenzierbar NEIN.\n'}
+              {'b) Sprung bei '}<M>{'x = 0'}</M>{':     stetig NEIN, differenzierbar NEIN.\n'}
               {'c) Spitze (Ecke):        stetig JA,  differenzierbar NEIN.\n'}
               {'d) glatte Kurve:         stetig JA,  differenzierbar JA.\n\n'}
               {'Der unmögliche Fall „differenzierbar, aber nicht stetig" kommt\n'}
