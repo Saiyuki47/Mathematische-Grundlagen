@@ -96,11 +96,31 @@ function BoxPage({ boxes, nr, titel }: { boxes: HilfBox[]; nr: number; titel: st
 }
 
 const SAMMLUNGEN = [
-  { id: 'klausur', label: '📐 Klausur-Formelsammlung' },
-  { id: 'claude', label: '✍️ Claude-Formelsammlung' },
-  { id: 'madis', label: '📄 Madis Formelsammlung' },
-  { id: 'rezepte', label: '🧭 Lösungsrezepte' },
-  { id: 'beispiele', label: '📝 Musteraufgaben' },
+  {
+    id: 'klausur',
+    label: '📐 Klausur-Formelsammlung',
+    desc: 'Die wichtigsten Formeln und Definitionen – gezielt nach den Aufgabenarten der Probeklausur (AI1004) sortiert. Zwei A4-Seiten zum Ausdrucken.',
+  },
+  {
+    id: 'claude',
+    label: '✍️ Claude-Formelsammlung',
+    desc: 'Kompakte Formelübersicht über den gesamten Stoff der Übungsblätter 0–13. Zwei A4-Seiten zum Ausdrucken.',
+  },
+  {
+    id: 'madis',
+    label: '📄 Madis Formelsammlung',
+    desc: 'Madis eigene, vollständige Formelsammlung als PDF (A4) – zum Ansehen oder Herunterladen.',
+  },
+  {
+    id: 'rezepte',
+    label: '🧭 Lösungsrezepte',
+    desc: 'Schritt-für-Schritt-Anleitung für jede Aufgabenart – wie man sie systematisch angeht.',
+  },
+  {
+    id: 'beispiele',
+    label: '📝 Musteraufgaben',
+    desc: 'Je eine komplett durchgerechnete Beispielaufgabe pro Aufgabenart der Übungsblätter 0–13.',
+  },
 ] as const
 
 type SammlungId = (typeof SAMMLUNGEN)[number]['id']
@@ -116,13 +136,7 @@ export default function Hilfsmittel() {
       <div className="hilf-bar">
         <div className="hilf-bar-text">
           <h2>Hilfsmittel</h2>
-          <p>
-            Die Klausur-Formelsammlung (zweiseitig, druckbar) – gezielt auf die Aufgabenarten
-            der Probeklausur zugeschnitten, die allgemeine Claude-Formelsammlung, Madis
-            Formelsammlung als PDF, die Lösungsrezepte (Schritt-für-Schritt pro Aufgabenart)
-            und die Musteraufgaben — je eine durchgerechnete Beispielaufgabe zu jeder
-            Aufgabenart der Übungsblätter 0–13.
-          </p>
+          <p>{SAMMLUNGEN.find(s => s.id === active)?.desc}</p>
         </div>
         <div className="hilf-bar-actions">
           {active === 'madis' ? (
