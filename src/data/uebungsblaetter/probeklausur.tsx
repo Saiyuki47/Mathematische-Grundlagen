@@ -15,7 +15,9 @@ export const probeklausur: MatheBlatt = {
   tabLabel: 'Altklausur 2025/2026',
   titel: 'Mathematische Grundlagen der Informatik – AI1004 (Wintersemester 2025/2026)',
   beschreibung:
-    'Altklausur „Mathematische Grundlagen der Informatik – AI1004" (Hochschule Fulda, Prof. Dr. A. Gepperth, Wintersemester 2025/2026, Klausurtermin 27.02.2026). Aufgabe 1–13 mit Tipps und Lösungen zum Selbstkontrollieren.\n\n⚠️ Hinweis: Die hier gezeigten Lösungen und Tipps sind KEINE offiziellen Musterlösungen. Sie wurden vollständig von Claude (KI) erstellt und können Fehler enthalten – bitte kritisch prüfen und nicht als amtliche Lösung der Hochschule verstehen.',
+    'Altklausur „Mathematische Grundlagen der Informatik – AI1004" (Hochschule Fulda, Prof. Dr. A. Gepperth, Wintersemester 2025/2026, Klausurtermin 27.02.2026). Aufgabe 1–13 mit Tipps und Lösungen zum Selbstkontrollieren.',
+  hinweis:
+    'KEINE offiziellen Musterlösungen! Alle Lösungen und Tipps wurden von Claude (KI) erstellt, sind NICHT von der Hochschule geprüft und können Fehler enthalten. Nur zur Selbstkontrolle – immer kritisch nachrechnen.',
   aufgaben: [
     {
       id: 'pk1',

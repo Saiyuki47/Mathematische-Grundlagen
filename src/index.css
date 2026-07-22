@@ -250,6 +250,29 @@
 .hint-code-block:last-child {
   margin-bottom: 0;
 }
+/* Auffälliger Warnhinweis im Blatt-/Klausurkopf (z. B. „Lösungen nicht offiziell"). */
+.ub-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--red-dim, rgba(229, 83, 75, 0.12));
+  border: 1px solid var(--red, #e5534b);
+  border-left: 4px solid var(--red, #e5534b);
+  border-radius: var(--radius);
+}
+.ub-disclaimer-icon {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+.ub-disclaimer-text {
+  color: var(--text);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.55;
+}
 .hint-em {
   color: var(--amber);
   font-weight: 600;

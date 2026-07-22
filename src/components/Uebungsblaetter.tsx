@@ -129,6 +129,12 @@ export default function Uebungsblaetter() {
             {blatt.beschreibung && (
               <p className="ub-desc">{blatt.beschreibung}</p>
             )}
+            {blatt.hinweis && (
+              <div className="ub-disclaimer" role="note">
+                <span className="ub-disclaimer-icon" aria-hidden="true">⚠️</span>
+                <span className="ub-disclaimer-text">{blatt.hinweis}</span>
+              </div>
+            )}
             {(blatt.pdf || (blatt.loesungen && blatt.loesungen.length > 0)) && (
               <div style={refLinksRow}>
                 {blatt.pdf && (

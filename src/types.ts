@@ -80,6 +80,8 @@ export interface MatheBlatt {
   /** Optionaler Anzeigename für Reiter-Button und Kopf statt „Blatt {nr}" (z. B. Altklausuren). */
   tabLabel?: string
   beschreibung?: string
+  /** Auffälliger Warnhinweis (z. B. „Lösungen nicht offiziell"), als hervorgehobene Box im Kopf. */
+  hinweis?: string
   /** Pfad zum Original-Übungsblatt (PDF) unter /public, relativ (z. B. 'material/…/00_aufg_rechenregeln.pdf'). */
   pdf?: string
   /** Lösungen (relativ zu /public), je als „Lösung öffnen"-Link mit eigenem Label. */
