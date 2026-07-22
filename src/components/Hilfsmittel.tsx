@@ -4,6 +4,7 @@ import katex from 'katex'
 import 'katex/dist/katex.min.css'
 import type { HilfBox } from '../data/hilfsmittelTypes'
 import { PAGE1, PAGE2 } from '../data/formelsammlung'
+import { KLAUSUR1, KLAUSUR2 } from '../data/klausurformel'
 import { REZEPTE1, REZEPTE2 } from '../data/rezepte'
 import { BEISPIELE1, BEISPIELE2 } from '../data/musteraufgaben'
 
@@ -95,6 +96,7 @@ function BoxPage({ boxes, nr, titel }: { boxes: HilfBox[]; nr: number; titel: st
 }
 
 const SAMMLUNGEN = [
+  { id: 'klausur', label: '📐 Klausur-Formelsammlung' },
   { id: 'claude', label: '✍️ Claude-Formelsammlung' },
   { id: 'madis', label: '📄 Madis Formelsammlung' },
   { id: 'rezepte', label: '🧭 Lösungsrezepte' },
@@ -107,7 +109,7 @@ const SAMMLUNG_IDS: SammlungId[] = SAMMLUNGEN.map(s => s.id)
 export default function Hilfsmittel() {
   useEffect(() => injectFsCss(), [])
   // Offener Untertab steckt im Hash (#hilfsmittel/<id>) → teilbar; Standard: Claude.
-  const [active, setActive] = useHashSubTab(SAMMLUNG_IDS, 'claude')
+  const [active, setActive] = useHashSubTab(SAMMLUNG_IDS, 'klausur')
   const pdfUrl = `${import.meta.env.BASE_URL}Formelsammlung.pdf`
   return (
     <div>
@@ -115,9 +117,11 @@ export default function Hilfsmittel() {
         <div className="hilf-bar-text">
           <h2>Hilfsmittel</h2>
           <p>
-            Die Claude-Formelsammlung (zweiseitig, druckbar), Madis Formelsammlung als PDF,
-            die Lösungsrezepte (Schritt-für-Schritt pro Aufgabenart) und die Musteraufgaben —
-            je eine durchgerechnete Beispielaufgabe zu jeder Aufgabenart der Übungsblätter 0–13.
+            Die Klausur-Formelsammlung (zweiseitig, druckbar) – gezielt auf die Aufgabenarten
+            der Probeklausur zugeschnitten, die allgemeine Claude-Formelsammlung, Madis
+            Formelsammlung als PDF, die Lösungsrezepte (Schritt-für-Schritt pro Aufgabenart)
+            und die Musteraufgaben — je eine durchgerechnete Beispielaufgabe zu jeder
+            Aufgabenart der Übungsblätter 0–13.
           </p>
         </div>
         <div className="hilf-bar-actions">
@@ -154,6 +158,12 @@ export default function Hilfsmittel() {
         ))}
       </div>
 
+      {active === 'klausur' && (
+        <div className="fs-print-area">
+          <BoxPage boxes={KLAUSUR1} nr={1} titel="Klausur-Formelsammlung" />
+          <BoxPage boxes={KLAUSUR2} nr={2} titel="Klausur-Formelsammlung" />
+        </div>
+      )}
       {active === 'claude' && (
         <div className="fs-print-area">
           <BoxPage boxes={PAGE1} nr={1} titel="Claude-Formelsammlung" />
