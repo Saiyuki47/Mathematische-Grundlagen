@@ -14,6 +14,7 @@ export const probeklausur: MatheBlatt = {
   nr: 'PK',
   tabLabel: 'Altklausur 2025/2026',
   titel: 'Mathematische Grundlagen der Informatik – AI1004 (Wintersemester 2025/2026)',
+  pdf: 'material/Ein wenig zum Trainieren Übungen/Altklausur WS2025-26/Altklausur_WS2025-26_AI1004.pdf',
   beschreibung:
     'Altklausur „Mathematische Grundlagen der Informatik – AI1004" (Hochschule Fulda, Prof. Dr. A. Gepperth, Wintersemester 2025/2026, Klausurtermin 27.02.2026). Aufgabe 1–13 mit Tipps und Lösungen zum Selbstkontrollieren.',
   hinweis:
