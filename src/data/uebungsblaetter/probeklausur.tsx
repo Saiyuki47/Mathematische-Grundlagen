@@ -1090,7 +1090,9 @@ export const probeklausur: MatheBlatt = {
                 <FunctionPlot
                   data={{
                     series: [
-                      { f: (x) => 0.25 * x * x, from: -2, to: 0, color: '#4d9fff' },
+                      // links: sanfter Höcker (Start (−2,1), Gipfel ~(−1.5,1.1)), hinab bis (0,0)
+                      { f: (x) => -0.5 * x * x - 1.5 * x, from: -2, to: 0, color: '#4d9fff' },
+                      // rechts: steile Gerade von (0,0) nach (2,4) → Knick bei x=0
                       { f: (x) => 2 * x, from: 0, to: 2, color: '#4d9fff' },
                     ],
                     xMin: -2,
@@ -1132,7 +1134,9 @@ export const probeklausur: MatheBlatt = {
                 />
                 <FunctionPlot
                   data={{
-                    series: [{ f: (x) => 2.5 - 0.5 * x * x, from: -2, to: 2, color: '#4d9fff' }],
+                    // asymmetrischer, glatter Hügel: Gipfel ~2 links der Mitte (x≈−0.27),
+                    // von (−2,≈1) nach (2,≈0.3) → überall stetig und differenzierbar
+                    series: [{ f: (x) => -0.33 * x * x - 0.18 * x + 1.98, from: -2, to: 2, color: '#4d9fff' }],
                     xMin: -2,
                     xMax: 2,
                     yMin: 0,
