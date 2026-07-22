@@ -24,6 +24,8 @@ function K({ tex }: { tex: string }) {
 }
 
 const FS_CSS = `
+.hilf-desc-link{color:var(--blue,#4d9fff);font-weight:600;text-decoration:none}
+.hilf-desc-link:hover{text-decoration:underline}
 .hilf-pdf{margin:0 0 1.5rem}
 .hilf-pdf-fallback a{color:var(--blue,#4d9fff);font-weight:600;text-decoration:none}
 .hilf-pdf-fallback a:hover{text-decoration:underline}
@@ -99,7 +101,15 @@ const SAMMLUNGEN = [
   {
     id: 'klausur',
     label: '📐 Klausur-Formelsammlung',
-    desc: 'Die wichtigsten Formeln und Definitionen – gezielt nach den Aufgabenarten der Probeklausur (AI1004) sortiert. Zwei A4-Seiten zum Ausdrucken.',
+    desc: (
+      <>
+        Die wichtigsten Formeln und Definitionen – gezielt nach den Aufgabenarten der{' '}
+        <a className="hilf-desc-link" href="#uebung/probeklausur">
+          Altklausur 2025/2026 (AI1004)
+        </a>{' '}
+        sortiert. Zwei A4-Seiten zum Ausdrucken.
+      </>
+    ),
   },
   {
     id: 'claude',
