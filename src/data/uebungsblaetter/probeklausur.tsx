@@ -12,9 +12,10 @@ import { h, Ol } from './shared'
 export const probeklausur: MatheBlatt = {
   id: 'probeklausur',
   nr: 'PK',
-  titel: 'Probeklausur (WS 2025/26)',
+  tabLabel: 'Altklausur 2025/2026',
+  titel: 'Mathematische Grundlagen der Informatik – AI1004 (Wintersemester 2025/2026)',
   beschreibung:
-    'Klausur „Mathematische Grundlagen der Informatik – AI1004" (Hochschule Fulda, Prof. Dr. A. Gepperth, 27.02.2026). Aufgabe 1–13 mit Tipps und Musterlösungen zum Selbstkontrollieren.',
+    'Altklausur „Mathematische Grundlagen der Informatik – AI1004" (Hochschule Fulda, Prof. Dr. A. Gepperth, Wintersemester 2025/2026, Klausurtermin 27.02.2026). Aufgabe 1–13 mit Tipps und Lösungen zum Selbstkontrollieren.\n\n⚠️ Hinweis: Die hier gezeigten Lösungen und Tipps sind KEINE offiziellen Musterlösungen. Sie wurden vollständig von Claude (KI) erstellt und können Fehler enthalten – bitte kritisch prüfen und nicht als amtliche Lösung der Hochschule verstehen.',
   aufgaben: [
     {
       id: 'pk1',
@@ -706,8 +707,8 @@ export const probeklausur: MatheBlatt = {
               <p>Zusammen: xₙ = (−1)ⁿ · 2n.</p>
             </>,
             <>
-              <p>Probe: n=0 → +0 = 0 ✓, n=1 → −2 ✓, n=2 → +4 ✓, n=3 → −6, n=4 → +8, …</p>
-              <p>Hinweis: In der Angabe steht als 4. Wert „−8"; die zum Muster passende Zahl ist −6. Die klausurtypische Antwort ist xₙ = (−1)ⁿ·2n; die −8 ist mit hoher Wahrscheinlichkeit ein Druckfehler für −6.</p>
+              <p>Probe: n=0 → +0 = 0 ✓, n=1 → −2 ✓, n=2 → +4 ✓, n=3 → −6, n=4 → +8, n=5 → −10, …</p>
+              <p>Achtung: Die gedruckte Folge (0, −2, 4, −8, 10, −12, 14) passt nur in den ersten drei Gliedern zur Formel; ab dem 4. Glied sind die Beträge jeweils um 2 zu groß (8, 10, 12, 14 statt 6, 8, 10, 12 — die „6" wird übersprungen). Die gesuchte Abbildungsvorschrift ist trotzdem xₙ = (−1)ⁿ·2n; die durchgehende Abweichung deutet auf einen Druck-/Abtippfehler in der Angabe hin — prüfe die genaue Folge am Original.</p>
             </>,
             <>
               <p>Bei ℕ ab 0 startet der Index bei n = 0, nicht 1 — sonst verschiebt sich die Formel (z. B. zu (−1)^{'{n+1}'}·(2n−2)).</p>
@@ -722,8 +723,14 @@ export const probeklausur: MatheBlatt = {
               <M>{'x_n = (-1)^n \\cdot 2n, \\quad n \\in \\mathbb{N}'}</M>{'\n\n'}
               {'Vorzeichen +,−,+,−,… = '}<M>{'(-1)^n'}</M>{'  (n=0 → +),\n'}
               {'Beträge 0,2,4,6,8,… = '}<M>{'2n'}</M>{'.\n\n'}
-              {'Probe: '}<M>{'x_0=0,\\ x_1=-2,\\ x_2=4,\\ x_3=-6,\\ x_4=8, \\dots'}</M>{'\n'}
-              {'(Der in der Angabe gedruckte 4. Wert „−8" passt nicht ins Muster — er sollte −6 heißen.)'}
+              {'Probe: '}<M>{'x_0=0,\\ x_1=-2,\\ x_2=4,\\ x_3=-6,\\ x_4=8,\\ x_5=-10, \\dots'}</M>{'\n\n'}
+              {'⚠️ Achtung: Die in der Angabe gedruckte Folge (0, −2, 4, −8, 10, −12, 14) stimmt\n'}
+              {'nur in den ersten drei Gliedern mit dieser Formel überein; ab dem 4. Glied sind\n'}
+              {'die gedruckten Beträge jeweils um 2 größer (8, 10, 12, 14 statt 6, 8, 10, 12 —\n'}
+              {'die „6" wird übersprungen). Die gesuchte Abbildungsvorschrift ist '}<M>{'(-1)^n\\cdot 2n'}</M>{';\n'}
+              {'die durchgehende Abweichung deutet auf Druck-/Abtippfehler in der Angabe hin.\n'}
+              {'Bitte am Original prüfen: Ist die gemeinte Folge 0, −2, 4, −6, 8, −10, 12, …,\n'}
+              {'so ist '}<M>{'(-1)^n\\cdot 2n'}</M>{' exakt.'}
             </>
           ),
         },

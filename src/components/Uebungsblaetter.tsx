@@ -44,7 +44,7 @@ export default function Uebungsblaetter() {
             out.push({
               key,
               blattId: b.id,
-              blattLabel: `Blatt ${b.nr} — ${b.titel}`,
+              blattLabel: `${b.tabLabel ?? `Blatt ${b.nr}`} — ${b.titel}`,
               aufgabeNr: String(a.nr),
               label: `Aufgabe ${a.nr} (${sub.letter})${a.title ? ` — ${a.title}` : ''}`,
             })
@@ -116,7 +116,7 @@ export default function Uebungsblaetter() {
               className={`filter-btn${selectedId === b.id ? ' on' : ''}`}
               onClick={() => setSelectedId(b.id)}
             >
-              Blatt {b.nr}
+              {b.tabLabel ?? `Blatt ${b.nr}`}
             </button>
           ))}
         </div>
@@ -125,7 +125,7 @@ export default function Uebungsblaetter() {
       {blatt && (
         <>
           <div className="ub-header card">
-            <h3 className="ub-title">Übungsblatt {blatt.nr} – {blatt.titel}</h3>
+            <h3 className="ub-title">{blatt.tabLabel ? `${blatt.tabLabel} – ${blatt.titel}` : `Übungsblatt ${blatt.nr} – ${blatt.titel}`}</h3>
             {blatt.beschreibung && (
               <p className="ub-desc">{blatt.beschreibung}</p>
             )}

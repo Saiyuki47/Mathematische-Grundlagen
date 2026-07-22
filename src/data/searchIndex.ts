@@ -28,7 +28,7 @@ export const searchIndex: SearchItem[] = [
   // Übungsblätter → Tab "uebung"
   ...uebungsblaetter.flatMap(b =>
     b.aufgaben.map(a => ({
-      label: `Blatt ${b.nr}, Aufgabe ${a.nr}: ${a.title}`,
+      label: `${b.tabLabel ?? `Blatt ${b.nr}`}, Aufgabe ${a.nr}: ${a.title}`,
       snippet: b.titel,
       tab: 'uebung',
       keywords: b.titel,

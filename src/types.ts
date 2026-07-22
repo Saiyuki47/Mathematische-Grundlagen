@@ -77,6 +77,8 @@ export interface MatheBlatt {
   id: string
   nr: string
   titel: string
+  /** Optionaler Anzeigename für Reiter-Button und Kopf statt „Blatt {nr}" (z. B. Altklausuren). */
+  tabLabel?: string
   beschreibung?: string
   /** Pfad zum Original-Übungsblatt (PDF) unter /public, relativ (z. B. 'material/…/00_aufg_rechenregeln.pdf'). */
   pdf?: string
