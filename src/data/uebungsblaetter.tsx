@@ -14,6 +14,7 @@ import { blatt11 } from './uebungsblaetter/blatt11'
 import { blatt12 } from './uebungsblaetter/blatt12'
 import { blatt13 } from './uebungsblaetter/blatt13'
 import { probeklausur } from './uebungsblaetter/probeklausur'
+import { probeklausurClaude } from './uebungsblaetter/probeklausur-claude'
 
 export const uebungsblaetter: MatheBlatt[] = [
   blatt0,
@@ -31,4 +32,5 @@ export const uebungsblaetter: MatheBlatt[] = [
   blatt12,
   blatt13,
   probeklausur,
+  probeklausurClaude,
 ]
