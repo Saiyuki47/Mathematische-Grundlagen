@@ -706,34 +706,30 @@ export const probeklausur: MatheBlatt = {
             </>,
             <>
               <p><span className="hint-em">Vorzeichen</span>: +, −, +, −, … je nach n gerade/ungerade → Faktor (−1)ⁿ (für n = 0 ist (−1)⁰ = +1).</p>
-              <p><span className="hint-em">Betrag</span>: 0, 2, 4, 6, 8, … das sind die geraden Zahlen 2n.</p>
-              <p>Zusammen: xₙ = (−1)ⁿ · 2n.</p>
+              <p><span className="hint-em">Beträge</span>: 0, 2, 4, dann 8, 10, 12, 14, … — bis n = 2 sind es 2n; ab n = 3 aber 2n+2 (die Beträge springen bei n = 3 von 4 auf 8, die „6" wird ausgelassen).</p>
             </>,
             <>
-              <p>Probe: n=0 → +0 = 0 ✓, n=1 → −2 ✓, n=2 → +4 ✓, n=3 → −6, n=4 → +8, n=5 → −10, …</p>
-              <p>Achtung: Die gedruckte Folge (0, −2, 4, −8, 10, −12, 14) passt nur in den ersten drei Gliedern zur Formel; ab dem 4. Glied sind die Beträge jeweils um 2 zu groß (8, 10, 12, 14 statt 6, 8, 10, 12 — die „6" wird übersprungen). Die gesuchte Abbildungsvorschrift ist trotzdem xₙ = (−1)ⁿ·2n; die durchgehende Abweichung deutet auf einen Druck-/Abtippfehler in der Angabe hin — prüfe die genaue Folge am Original.</p>
+              <p>Das ergibt eine <span className="hint-em">abschnittsweise</span> Vorschrift: xₙ = (−1)ⁿ·2n für n ≤ 2 und xₙ = (−1)ⁿ·(2n+2) für n ≥ 3.</p>
+              <p>Probe: x₀=0, x₁=−2, x₂=4, x₃=−8, x₄=10, x₅=−12, x₆=14 — alle Glieder stimmen.</p>
             </>,
             <>
-              <p>Bei ℕ ab 0 startet der Index bei n = 0, nicht 1 — sonst verschiebt sich die Formel (z. B. zu (−1)^{'{n+1}'}·(2n−2)).</p>
-              <p>(−1)ⁿ liefert für gerades n „+", für ungerades „−" — genau das gewünschte Wechselmuster.</p>
+              <p>Der „glatte" Ansatz (−1)ⁿ·2n ist verlockend, trifft aber nur die ersten drei Glieder (0, −2, 4, −6, …) und passt ab dem 4. Glied nicht mehr — die Klausurfolge braucht die Fallunterscheidung.</p>
+              <p>Bei ℕ ab 0 startet der Index bei n = 0, nicht 1.</p>
             </>,
             <>
-              <p>Welche Formel liefert 0,2,4,6,… für die Beträge? (2n.) Und das Vorzeichenmuster +,−,+,−? ((−1)ⁿ.)</p>
+              <p>Was liefert die Vorschrift bei n = 3? ((−1)³·(2·3+2) = −8 ✓.) Und bei n = 6? (+14 ✓.)</p>
             </>,
           ),
           solution: (
             <>
-              <M>{'x_n = (-1)^n \\cdot 2n, \\quad n \\in \\mathbb{N}'}</M>{'\n\n'}
-              {'Vorzeichen +,−,+,−,… = '}<M>{'(-1)^n'}</M>{'  (n=0 → +),\n'}
-              {'Beträge 0,2,4,6,8,… = '}<M>{'2n'}</M>{'.\n\n'}
-              {'Probe: '}<M>{'x_0=0,\\ x_1=-2,\\ x_2=4,\\ x_3=-6,\\ x_4=8,\\ x_5=-10, \\dots'}</M>{'\n\n'}
-              {'⚠️ Achtung: Die in der Angabe gedruckte Folge (0, −2, 4, −8, 10, −12, 14) stimmt\n'}
-              {'nur in den ersten drei Gliedern mit dieser Formel überein; ab dem 4. Glied sind\n'}
-              {'die gedruckten Beträge jeweils um 2 größer (8, 10, 12, 14 statt 6, 8, 10, 12 —\n'}
-              {'die „6" wird übersprungen). Die gesuchte Abbildungsvorschrift ist '}<M>{'(-1)^n\\cdot 2n'}</M>{';\n'}
-              {'die durchgehende Abweichung deutet auf Druck-/Abtippfehler in der Angabe hin.\n'}
-              {'Bitte am Original prüfen: Ist die gemeinte Folge 0, −2, 4, −6, 8, −10, 12, …,\n'}
-              {'so ist '}<M>{'(-1)^n\\cdot 2n'}</M>{' exakt.'}
+              {'Die gedruckte Folge lässt sich exakt durch diese abschnittsweise Abbildungsvorschrift beschreiben:\n\n'}
+              {'  '}<M>{'x_n = \\begin{cases}(-1)^n\\,2n, & 0 \\le n \\le 2,\\\\[2pt] (-1)^n\\,(2n+2), & n \\ge 3.\\end{cases}'}</M>{'\n\n'}
+              {'Vorzeichen +,−,+,−,… = '}<M>{'(-1)^n'}</M>{'  (n=0 → +).\n'}
+              {'Beträge  0, 2, 4  |  8, 10, 12, 14, …  — ab dem 4. Glied ('}<M>{'n \\ge 3'}</M>{') um 2 erhöht.\n\n'}
+              {'Probe: '}<M>{'x_0=0,\\ x_1=-2,\\ x_2=4,\\ x_3=-8,\\ x_4=10,\\ x_5=-12,\\ x_6=14'}</M>{'   ✓ (alle Glieder stimmen)\n\n'}
+              {'Hinweis: Ein einzelner „glatter" Term wie '}<M>{'(-1)^n\\cdot 2n'}</M>{' träfe nur die ersten drei\n'}
+              {'Glieder (0, −2, 4, −6, …); ab dem 4. Glied weichen die Beträge der Klausurfolge um 2 ab\n'}
+              {'(die „6" wird ausgelassen). Genau deshalb die Fallunterscheidung.'}
             </>
           ),
         },
