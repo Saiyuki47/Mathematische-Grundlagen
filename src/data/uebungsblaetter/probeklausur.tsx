@@ -229,21 +229,21 @@ export const probeklausur: MatheBlatt = {
           text: (
             <>
               {'[4P] Vereinfachen Sie und geben Sie stets die zugrundeliegende Regel der Booleschen Algebra an:\n\n'}
-              <Ol>a ∨ <Ol>a</Ol></Ol>{' ∧ a'}
+              <M>{'\\overline{a \\lor \\bar a} \\land a'}</M>
             </>
           ),
           hint: h(
             <>
               <p>In der <span className="hint-em">Booleschen Algebra</span> rechnet man mit 0 (falsch) und 1 (wahr). ∨ = ODER, ∧ = UND, der Überstrich = Negation (NICHT). ¬ bindet stärker als ∧/∨.</p>
-              <p>Gemeint ist (<Ol>a ∨ <Ol>a</Ol></Ol>) ∧ a — erst die Klammer unter dem Überstrich vereinfachen.</p>
+              <p>Gemeint ist <M>{'\\overline{a \\lor \\bar a} \\land a'}</M> — erst die Klammer unter dem Überstrich vereinfachen.</p>
             </>,
             <>
-              <p>Schritt 1: a ∨ <Ol>a</Ol> = 1 (<span className="hint-em">Komplementgesetz</span>: eine Aussage oder ihr Gegenteil ist immer wahr).</p>
-              <p>Schritt 2: <Ol>1</Ol> = 0 (Negation von wahr).</p>
+              <p>Schritt 1: <M>{'a \\lor \\bar a = 1'}</M> (<span className="hint-em">Komplementgesetz</span>: eine Aussage oder ihr Gegenteil ist immer wahr).</p>
+              <p>Schritt 2: <M>{'\\overline{1} = 0'}</M> (Negation von wahr).</p>
               <p>Schritt 3: 0 ∧ a = 0 (<span className="hint-em">Dominanz-/Nullgesetz</span>: UND mit 0 ergibt immer 0).</p>
             </>,
             <>
-              <p>(<Ol>a ∨ <Ol>a</Ol></Ol>) ∧ a = <Ol>1</Ol> ∧ a = 0 ∧ a = 0.</p>
+              <p><M>{'\\overline{a \\lor \\bar a} \\land a = \\overline{1} \\land a = 0 \\land a = 0'}</M>.</p>
             </>,
             <>
               <p>Überstrich-Reichweite beachten: hier steht er über der <span className="hint-em">ganzen</span> Klammer a ∨ ā, nicht nur über a.</p>
