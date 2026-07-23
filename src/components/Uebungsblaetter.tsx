@@ -144,7 +144,7 @@ export default function Uebungsblaetter() {
                     rel="noopener noreferrer"
                     style={refLinkStyle}
                   >
-                    📄 {blatt.id === 'probeklausur' ? 'Original-Klausur' : 'Original-Übungsblatt'} (PDF) öffnen
+                    📄 {blatt.id.includes('klausur') ? 'Original-Klausur' : 'Original-Übungsblatt'} (PDF) öffnen
                   </a>
                 )}
                 {blatt.loesungen?.map(l => (
