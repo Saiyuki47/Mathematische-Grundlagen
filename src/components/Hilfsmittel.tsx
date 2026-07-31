@@ -120,6 +120,13 @@ const SAMMLUNGEN = [
     id: 'madis',
     label: '📄 Madis Formelsammlung',
     desc: 'Madis eigene, vollständige Formelsammlung als PDF (A4) – zum Ansehen oder Herunterladen.',
+    pdf: 'Formelsammlung.pdf',
+  },
+  {
+    id: 'mathe1',
+    label: '📄 Formelsammlung Mathe 1',
+    desc: 'Eine weitere Formelsammlung als PDF (A4) – zum Ansehen oder Herunterladen. Hinweis: Sie ist nicht ganz vollständig, ein paar Themen fehlen.',
+    pdf: 'Formelsammlung-Mathe1.pdf',
   },
   {
     id: 'rezepte',
@@ -140,16 +147,20 @@ export default function Hilfsmittel() {
   useEffect(() => injectFsCss(), [])
   // Offener Untertab steckt im Hash (#hilfsmittel/<id>) → teilbar; Standard: Claude.
   const [active, setActive] = useHashSubTab(SAMMLUNG_IDS, 'klausur')
-  const pdfUrl = `${import.meta.env.BASE_URL}Formelsammlung.pdf`
+  const aktiveSammlung = SAMMLUNGEN.find(s => s.id === active)
+  // PDF-Sammlungen (Madis, Mathe 1) tragen einen Dateinamen in `pdf` und werden als
+  // eingebettetes PDF gezeigt; alle anderen als druckbare Boxen (BoxPage).
+  const pdfDatei = aktiveSammlung && 'pdf' in aktiveSammlung ? aktiveSammlung.pdf : undefined
+  const pdfUrl = pdfDatei ? `${import.meta.env.BASE_URL}${pdfDatei}` : ''
   return (
     <div>
       <div className="hilf-bar">
         <div className="hilf-bar-text">
           <h2>Hilfsmittel</h2>
-          <p>{SAMMLUNGEN.find(s => s.id === active)?.desc}</p>
+          <p>{aktiveSammlung?.desc}</p>
         </div>
         <div className="hilf-bar-actions">
-          {active === 'madis' ? (
+          {pdfDatei ? (
             <>
               <span className="hilf-bar-hint">PDF · A4</span>
               <a className="hilf-print-btn" href={pdfUrl} target="_blank" rel="noopener noreferrer">
@@ -206,12 +217,12 @@ export default function Hilfsmittel() {
           <BoxPage boxes={BEISPIELE2} nr={2} titel="Musteraufgaben" />
         </div>
       )}
-      {active === 'madis' && (
+      {pdfDatei && (
         <section className="hilf-pdf">
           <iframe
             className="hilf-pdf-frame"
             src={pdfUrl}
-            title="Madis Formelsammlung (PDF)"
+            title={`${aktiveSammlung?.label} (PDF)`}
             sandbox="allow-same-origin allow-popups allow-downloads"
           />
           <p className="hilf-pdf-fallback">
