@@ -1,6 +1,7 @@
 import type { MatheBlatt } from '../../types'
 import M from '../../utils/M'
-import { h, Ol } from './shared'
+import { h } from './shared'
+import { Ol } from './Ol'
 import { Venn2, Venn3 } from '../../components/Venn'
 
 export const blatt1: MatheBlatt = {

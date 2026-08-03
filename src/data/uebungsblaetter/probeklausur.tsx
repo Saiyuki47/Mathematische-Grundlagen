@@ -2,7 +2,8 @@ import type { MatheBlatt } from '../../types'
 import M from '../../utils/M'
 import { Venn2 } from '../../components/Venn'
 import FunctionPlot from '../../components/FunctionPlot'
-import { h, Ol } from './shared'
+import { h } from './shared'
+import { Ol } from './Ol'
 
 // Probeklausur „Mathematische Grundlagen der Informatik — AI1004"
 // Hochschule Fulda, Prof. Dr. A. Gepperth, WS 2025/26 (27.02.2026).

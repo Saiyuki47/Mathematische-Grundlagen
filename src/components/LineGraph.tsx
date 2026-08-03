@@ -134,8 +134,8 @@ export default function LineGraph({ data }: Props) {
       })}
 
       {/* Lines */}
-      {lines.map((line, i) => {
-        const color = line.color ?? LINE_COLORS[i % LINE_COLORS.length]
+      {lines.map((line, li) => {
+        const color = line.color ?? LINE_COLORS[li % LINE_COLORS.length]
         const seg = clipLine(line.m, line.b, xMin, xMax, yMin, yMax)
         if (!seg) return null
         const [p1, p2] = seg
@@ -155,7 +155,7 @@ export default function LineGraph({ data }: Props) {
         const labelY = ly + ny * 12
 
         return (
-          <g key={i}>
+          <g key={li}>
             <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={color} strokeWidth="2.5" strokeLinecap="round" />
             <text
               x={labelX}
