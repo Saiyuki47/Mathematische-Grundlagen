@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
-import { Header, GlobalSearch, Tabs, tabDefs, STANDARD_TAB_REIHENFOLGE, useTheme, useHashTab } from 'lernseiten-ui'
+import { Header, GlobalSearch, Tabs, tabDefs, STANDARD_TAB_REIHENFOLGE, useTheme, useHashTab, Uebersicht } from 'lernseiten-ui'
+import uebersicht from '../Übersicht.md?raw'
 import { quizFragen } from './data/quiz'
 import { karteikarten } from './data/karteikarten'
 import { dateienTree } from './data/dateien'
@@ -38,7 +39,7 @@ export type TabId = (typeof TABS)[number]
 const tabs = tabDefs(TABS)
 
 function App() {
-  const [activeTab, setActiveTab] = useHashTab(TABS, 'uebung')
+  const [activeTab, setActiveTab] = useHashTab(TABS, 'uebersicht')
   const { theme, toggle } = useTheme()
 
   return (
@@ -56,6 +57,7 @@ function App() {
           <GlobalSearch loadIndex={() => import('./data/searchIndex').then(m => m.searchIndex)} onNavigate={t => setActiveTab(t as TabId)} />
         </div>
         <Suspense fallback={<div className="card"><p className="quiz-hint">Lädt …</p></div>}>
+          {activeTab === 'uebersicht' && <Uebersicht markdown={uebersicht} />}
           {activeTab === 'uebung' && <Uebungsblaetter />}
           {activeTab === 'referenz' && <Referenz />}
           {activeTab === 'hilfsmittel' && <Hilfsmittel />}

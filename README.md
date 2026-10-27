@@ -10,6 +10,7 @@ Formeln werden mit [KaTeX](https://katex.org/) gesetzt.
 
 | Tab | Beschreibung |
 |-----|-------------|
+| **Übersicht** | Standard-Tab: zeigt die selbst geschriebene [`Übersicht.md`](Übersicht.md) – wie die Seite funktioniert und woher die Inhalte kommen |
 | **Übungsblätter** | Aufgaben (Blatt 0–13) mit Tipps und aufklappbaren Musterlösungen, verlinkt auf passende Referenz-Themen |
 | **Referenz** | Erklärte Nachschlage-Karten zu allen Themen, je mit durchgerechneten Beispielen |
 | **Hilfsmittel** | Madis Formelsammlung (PDF), Claude-Formelsammlung (zweiseitig, druckbar) und Lösungsrezepte (zweiseitige Gebrauchsanleitung je Aufgabenart), je in einem eigenen Tab |
